@@ -17,22 +17,31 @@
 //     alert(data)
 // })
 
-/** 欄位一 */const grid1 = $('#grid1');
-/** 欄位二 */const grid2 = $('#grid2');
-/** 欄位三 */const grid3 = $('#grid3');
 
 
+/** test */
+class testClass1 {
 
-/** 按鈕按鈕 */
-function onClickSendBtn() {
-    const data = [[`${grid1.val()}`, `${grid2.val()}`, `${grid3.val()}`]]
-    const parameter = {
-        url: 'https://docs.google.com/spreadsheets/d/1VCzkXIRBMjF9iv0Ca89xBLIzTSbYHMvXxxGq6lceusk/edit#gid=0',
-        name: 'hong',
-        data: data.toString(),
-        insertType: 'bottom',
-        row: data.length,
-        column: data[0].length,
-    };
-    $.get('https://script.google.com/macros/s/AKfycbwC9bl6xw2PIbL6mF0ojN1RqokP_43JtxurpA2839FP80Ih2l19/exec', parameter);
+    /** 欄位一 */grid1 = $('#grid1');
+    /** 欄位二 */grid2 = $('#grid2');
+    /** 欄位三 */grid3 = $('#grid3');
+
+    constructor() {
+    }
+
+    /** 按鈕按鈕 */
+    onClickSendBtn() {
+        const data = [[`${this.grid1.val()}`, `${this.grid2.val()}`, `${this.grid3.val()}`]]
+        const parameter = {
+            url: 'https://docs.google.com/spreadsheets/d/1VCzkXIRBMjF9iv0Ca89xBLIzTSbYHMvXxxGq6lceusk/edit#gid=0',
+            name: 'hong',
+            data: data.toString(),
+            insertType: 'bottom',
+            row: data.length,
+            column: data[0].length,
+        };
+        $.get('https://script.google.com/macros/s/AKfycbwC9bl6xw2PIbL6mF0ojN1RqokP_43JtxurpA2839FP80Ih2l19/exec', parameter);
+    }
 }
+
+const function1 = new testClass1();
