@@ -18,15 +18,25 @@
 // })
 
 
+/** Get */
+class getFunction {
+    constructor() {
+        console.log('getFunction is ready.');
+        
+    }
+}
 
-/** test */
-class testClass1 {
+
+/** Post */
+class postFunction {
 
     /** 欄位一 */grid1 = $('#grid1');
     /** 欄位二 */grid2 = $('#grid2');
     /** 欄位三 */grid3 = $('#grid3');
 
     constructor() {
+        console.log('postFunction is ready.');
+        
     }
 
     /** 按鈕按鈕 */
@@ -34,7 +44,8 @@ class testClass1 {
         const data = [[`${this.grid1.val()}`, `${this.grid2.val()}`, `${this.grid3.val()}`]]
         const parameter = {
             url: 'https://docs.google.com/spreadsheets/d/1VCzkXIRBMjF9iv0Ca89xBLIzTSbYHMvXxxGq6lceusk/edit#gid=0',
-            name: 'hong',
+            name: '2020BalanceSheet_hong',
+            functionType: 'get',
             data: data.toString(),
             insertType: 'bottom',
             row: data.length,
@@ -44,4 +55,6 @@ class testClass1 {
     }
 }
 
-const function1 = new testClass1();
+
+const postFunction1 = new postFunction();
+// const getFunction1 = new getFunction();
