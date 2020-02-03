@@ -30,26 +30,44 @@ class getFunction {
 /** Post */
 class postFunction {
 
-    /** 欄位一 */grid1 = $('#grid1');
-    /** 欄位二 */grid2 = $('#grid2');
-    /** 欄位三 */grid3 = $('#grid3');
+    /** 用於計算目前 */itemAmount = 2;
+
+    /** 所有支出欄位 */itemInput1s = Array.from($('.itemInput1'));
 
     constructor() {
         console.log('postFunction is ready.');
         
     }
 
+    onAddItemsBtn() {
+
+    }
+
     /** 按鈕按鈕 */
     onClickSendBtn() {
-        const data = [[`${this.grid1.val()}`, `${this.grid2.val()}`, `${this.grid3.val()}`]]
+        // const data1 = [[`${this.grid1.val()}`, `${this.grid2.val()}`]]
+        const data1 = [];
+        const dataContianer1 = [];
+        this.itemInput1s.forEach(element => {
+            if (element.value) {
+                dataContianer1.push(`${element.value}`);
+            } else {
+                return;
+            }
+        });
+        
+        data1.push(dataContianer1);
+        console.log(data1);
+        
         const parameter = {
             url: 'https://docs.google.com/spreadsheets/d/1VCzkXIRBMjF9iv0Ca89xBLIzTSbYHMvXxxGq6lceusk/edit#gid=0',
             name: '2020BalanceSheet_hong',
-            functionType: 'get',
-            data: data.toString(),
-            insertType: 'bottom',
-            row: data.length,
-            column: data[0].length,
+            functionType: 'post',
+            data1: data1.toString(),
+            // insertType: 'bottom',
+            row1: data1.length,
+            column1: data1[0].length,
+            range: `2020BalanceSheet_hong!B2:B3`
         };
         $.get('https://script.google.com/macros/s/AKfycbwC9bl6xw2PIbL6mF0ojN1RqokP_43JtxurpA2839FP80Ih2l19/exec', parameter);
     }
