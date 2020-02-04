@@ -11,11 +11,22 @@ head
     title Hong-Yi Liou | Balance Sheet
 body
 
+    select#year(name="year")
+    select#month(name="month" onchange="onMonthChanged()")
+    select#day(name="day")
+
     br
-    input(type="text" id="grid1" class="itemInput1" placeholder="欄位一")
+    input(type="text" class="itemInput" placeholder="欄位一")
     br
     br
-    input(type="text" id="grid2" class="itemInput1" placeholder="欄位二")
+    input(type="text" class="itemInput" placeholder="欄位一")
+    br
+    br
+    br
+    input(type="text" class="amountInput" placeholder="欄位二")
+    br
+    br
+    input(type="text" class="amountInput" placeholder="欄位二")
     br
     br
 
