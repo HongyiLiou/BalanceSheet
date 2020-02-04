@@ -6,6 +6,7 @@
 /** 取得今年 */const year = today.getFullYear();
 /** 取得今月 */const month = today.getMonth() + 1;
 /** 取得今日 */const day = today.getDate();
+/** 取得天數 */const days = new Date(year,month,0).getDate();
 console.log(year,month,day);
 
 window.onload = function() {
@@ -43,7 +44,7 @@ function setYearMonthSelect() {
 function onMonthChanged() {
     selectDay.empty();
     // 日設置
-    for(let i = 1; i <= 31; i++) {
+    for(let i = 1; i <= days; i++) {
         const option = document.createElement('option');
         option.setAttribute('value', `${i}`);
         option.innerHTML = `${i}日`;
