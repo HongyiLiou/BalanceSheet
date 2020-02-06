@@ -1,9 +1,6 @@
 // date
-// /** 年份選擇 */const selectYear = $('#year');
 /** 年份選擇 */const selectYear = document.getElementById('year');
-// /** 月份選擇 */const selectMonth = $('#month');
 /** 月份選擇 */const selectMonth = document.getElementById('month');
-// /** 日期選擇 */const selectDay = $('#day');
 /** 日期選擇 */const selectDay = document.getElementById('day');
 /** 取得時間 */const today = new Date();
 /** 取得今年 */const year = today.getFullYear();
@@ -23,11 +20,13 @@ window.onload = function() {
 /** 設置初始年月 */
 function setYearMonthSelect() {
     // 年份設置
-    for(let i = year; i <= year; i++) {
-        const option = document.createElement('option');
-        option.setAttribute('value', `${i}`);
-        option.innerHTML = `${i}年`;
-        selectYear.appendChild(option);
+    for(let i = 0; i <= 3; i++) {
+        // const option = document.createElement('option');
+        // option.setAttribute('value', `${i}`);
+        // option.innerHTML = `${i}年`;
+        // option.appendChild(document.createTextNode(`${i}年`));
+        // selectYear.appendChild(option);
+        selectYear.add( new Option(`${ i + 2020 }年`, `${ i + 2020 }`));
     }
 
 
