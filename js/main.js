@@ -1,7 +1,10 @@
 // date
-/** 年份選擇 */const selectYear = $('#year');
-/** 月份選擇 */const selectMonth = $('#month');
-/** 日期選擇 */const selectDay = $('#day');
+// /** 年份選擇 */const selectYear = $('#year');
+/** 年份選擇 */const selectYear = document.getElementById('year');
+// /** 月份選擇 */const selectMonth = $('#month');
+/** 月份選擇 */const selectMonth = document.getElementById('month');
+// /** 日期選擇 */const selectDay = $('#day');
+/** 日期選擇 */const selectDay = document.getElementById('day');
 /** 取得時間 */const today = new Date();
 /** 取得今年 */const year = today.getFullYear();
 /** 取得今月 */const month = today.getMonth() + 1;
@@ -12,7 +15,7 @@ console.log(year,month,day);
 window.onload = function() {
     setYearMonthSelect();
 
-    console.log(selectYear[0].value, selectMonth[0].value, selectDay[0].value);
+    console.log(selectYear.value, selectMonth.value, selectDay.value);
     
     
 }
@@ -24,7 +27,7 @@ function setYearMonthSelect() {
         const option = document.createElement('option');
         option.setAttribute('value', `${i}`);
         option.innerHTML = `${i}年`;
-        selectYear[0].appendChild(option);
+        selectYear.appendChild(option);
     }
 
 
@@ -33,29 +36,29 @@ function setYearMonthSelect() {
         const option = document.createElement('option');
         option.setAttribute('value', `${i}`);
         option.innerHTML = `${i}月`;
-        selectMonth[0].appendChild(option);
+        selectMonth.appendChild(option);
     }
 
-    selectYear[0].value = year;
-    selectMonth[0].value = month;
+    selectYear.value = year;
+    selectMonth.value = month;
     
     // 日設置
     onMonthChanged();
     
-    selectDay[0].value = day;
+    selectDay.value = day;
 }
 
 /** 日 */
 function onMonthChanged() {
-    selectDay.empty();
+    selectDay.innerHTML = 'none';
     
-    days = new Date(year, selectMonth[0].value, 0).getDate();
+    days = new Date(year, selectMonth.value, 0).getDate();
     // 日設置
     for(let i = 1; i <= days; i++) {
         const option = document.createElement('option');
         option.setAttribute('value', `${i}`);
         option.innerHTML = `${i}日`;
-        selectDay[0].appendChild(option);
+        selectDay.appendChild(option);
     }
 }
 
@@ -122,8 +125,8 @@ class postFunction {
             functionType: 'post',
             dataType: 'balanceSheet',
             data: data.toString(),
-            month: Number(selectMonth[0].value) + 1,
-            day: Number(selectDay[0].value) + 1,
+            month: Number(selectMonth.value) + 1,
+            day: Number(selectDay.value) + 1,
         };
 
         $.get('https://script.google.com/macros/s/AKfycbwC9bl6xw2PIbL6mF0ojN1RqokP_43JtxurpA2839FP80Ih2l19/exec', parameter);
@@ -162,8 +165,8 @@ class postFunction {
             dataType: 'balanceSheetDetail',
             data1: data1.toString(),
             data2: data2.toString(),
-            month: Number(selectMonth[0].value) * 2,
-            day: Number(selectDay[0].value) + 1,
+            month: Number(selectMonth.value) * 2,
+            day: Number(selectDay.value) + 1,
         };
 
         $.get('https://script.google.com/macros/s/AKfycbwC9bl6xw2PIbL6mF0ojN1RqokP_43JtxurpA2839FP80Ih2l19/exec', parameter);
