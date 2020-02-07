@@ -20,15 +20,15 @@ body
     article.userInputArea_date
         section.userInput_year
             input#year.userInputHidden(type="text" readonly)
-            input#year_show(type="text" readonly onclick="onYearClick()")
+            input#year_show(type="text" readonly onclick="onDateClick({index: 0, type: 'userInput_year'})")
             ul.options
         section.userInput_month
             input#month.userInputHidden(type="text" readonly)
-            input#month_show(type="text" readonly onclick="onMonthClick()")
+            input#month_show(type="text" readonly onclick="onDateClick({index: 1, type: 'userInput_month'})")
             ul.options
         section.userInput_day
             input#day.userInputHidden(type="text" readonly)
-            input#day_show(type="text" readonly onclick="onDayClick()")
+            input#day_show(type="text" readonly onclick="onDateClick({index: 2, type: 'userInput_day'})")
             ul.options
 
 

@@ -21,61 +21,120 @@ window.onload = function() {
     
 }
 
+// 使用者輸入___________________________________________________________________________________
 /** 年份選擇 */
-function onYearClick() {
-    yearInput.style.pointerEvents = 'none';
-    const options = document.querySelector('.userInput_year .options');
-    for (let i = 0; i <= 0; i++) {
-        const li = document.createElement('li');
-        li.innerHTML = `${ i + 2020 }年`;
-        li.addEventListener('click', () => {
-            yearInput.value = i + 2020;
-            year_show.value = `${yearInput.value} 年`;
-            li.removeEventListener('click', onYearClick);
-            options.innerHTML = '';
-            yearInput.style.pointerEvents = 'auto';
-        });
-        options.appendChild(li);
-    }
-}
+// function onYearClick() {
+//     year_show.style.pointerEvents = 'none';
+//     const options = document.querySelector('.userInput_year .options');
+//     for (let i = 0; i <= 0; i++) {
+//         const li = document.createElement('li');
+//         li.innerHTML = `${ i + 2020 }年`;
+//         li.addEventListener('click', () => {
+//             yearInput.value = i + 2020;
+//             year_show.value = `${yearInput.value} 年`;
+//             li.removeEventListener('click', onYearClick);
+//             options.innerHTML = '';
+//             year_show.style.pointerEvents = 'auto';
+//         });
+//         options.appendChild(li);
+//     }
+// }
 
-/** 月份選擇 */
-function onMonthClick() {
-    monthInput.style.pointerEvents = 'none';
-    const options = document.querySelector('.userInput_month .options');
-    for (let i = 1; i <= 12; i++) {
-        const li = document.createElement('li');
-        li.innerHTML = `${i}月`;
-        li.addEventListener('click', () => {
-            monthInput.value = i;
-            month_show.value = `${monthInput.value} 月`;
-            li.removeEventListener('click', onMonthClick);
-            options.innerHTML = '';
-            monthInput.style.pointerEvents = 'auto';
-        });
-        options.appendChild(li);
-    }
+// /** 月份選擇 */
+// function onMonthClick() {
+//     month_show.style.pointerEvents = 'none';
+//     const options = document.querySelector('.userInput_month .options');
+//     for (let i = 1; i <= 12; i++) {
+//         const li = document.createElement('li');
+//         li.innerHTML = `${i}月`;
+//         li.addEventListener('click', () => {
+//             monthInput.value = i;
+//             month_show.value = `${monthInput.value} 月`;
+//             li.removeEventListener('click', onMonthClick);
+//             options.innerHTML = '';
+//             month_show.style.pointerEvents = 'auto';
+//         });
+//         options.appendChild(li);
+//     }
 
-}
+// }
 
-/** 日選擇 */
-function onDayClick() {
-    dayInput.style.pointerEvents = 'none';
+// /** 日選擇 */
+// function onDayClick() {
+//     day_show.style.pointerEvents = 'none';
+//     days = new Date(yearInput.value, monthInput.value, 0).getDate();
+//     const options = document.querySelector('.userInput_day .options');
+//     // 日設置
+//     for(let i = 1; i <= days; i++) {
+//         const li = document.createElement('li');
+//         li.innerHTML = `${i}日`;
+//         li.addEventListener('click', () => {
+//             dayInput.value = i;
+//             day_show.value = `${dayInput.value} 日`;
+//             console.log(`dayInput.value`, dayInput.value);
+//             options.innerHTML = '';
+//             day_show.style.pointerEvents = 'auto';
+//         });
+//         options.appendChild(li);
+//     }
+
+// }
+
+/** 日期選擇 */
+function onDateClick(obj = {index: number, type: string}) {
+    const inputArray = [ year_show, month_show, day_show ];
+    inputArray[obj.index].style.pointerEvents = 'none';    
+    
     days = new Date(yearInput.value, monthInput.value, 0).getDate();
-    const options = document.querySelector('.userInput_day .options');
-    // 日設置
-    for(let i = 1; i <= days; i++) {
-        const li = document.createElement('li');
-        li.innerHTML = `${i}日`;
-        li.addEventListener('click', () => {
-            dayInput.value = i;
-            day_show.value = `${dayInput.value} 日`;
-            console.log(`dayInput.value`, dayInput.value);
-            options.innerHTML = '';
-            dayInput.style.pointerEvents = 'auto';
-        });
-        options.appendChild(li);
+    const options = document.querySelector(`.${obj.type} .options`);
+
+    switch (obj.type) {
+        case 'userInput_year':
+            for (let i = 0; i <= 0; i++) {
+                const li = document.createElement('li');
+                li.innerHTML = `${ i + 2020 }年`;
+                li.addEventListener('click', () => {
+                    yearInput.value = i + 2020;
+                    year_show.value = `${yearInput.value} 年`;
+                    li.removeEventListener('click', onYearClick);
+                    options.innerHTML = '';
+                    year_show.style.pointerEvents = 'auto';
+                });
+                options.appendChild(li);
+            }
+            break;
+        case 'userInput_month':
+            for (let i = 1; i <= 12; i++) {
+                const li = document.createElement('li');
+                li.innerHTML = `${i}月`;
+                li.addEventListener('click', () => {
+                    monthInput.value = i;
+                    month_show.value = `${monthInput.value} 月`;
+                    li.removeEventListener('click', onMonthClick);
+                    options.innerHTML = '';
+                    month_show.style.pointerEvents = 'auto';
+                });
+                options.appendChild(li);
+            }
+            break;
+        case 'userInput_day':
+            for(let i = 1; i <= days; i++) {
+                const li = document.createElement('li');
+                li.innerHTML = `${i}日`;
+                li.addEventListener('click', () => {
+                    dayInput.value = i;
+                    day_show.value = `${dayInput.value} 日`;
+                    console.log(`dayInput.value`, dayInput.value);
+                    options.innerHTML = '';
+                    day_show.style.pointerEvents = 'auto';
+                });
+                options.appendChild(li);
+            }
+            break;
+
     }
+    
+    
 
 }
 
