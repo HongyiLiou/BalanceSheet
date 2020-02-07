@@ -96,7 +96,7 @@ function onDateClick(obj = {index: number, type: string}) {
                 li.addEventListener('click', () => {
                     yearInput.value = i + 2020;
                     year_show.value = `${yearInput.value} 年`;
-                    li.removeEventListener('click', onYearClick);
+                    li.removeEventListener('click', onDateClick);
                     options.innerHTML = '';
                     year_show.style.pointerEvents = 'auto';
                 });
@@ -110,7 +110,7 @@ function onDateClick(obj = {index: number, type: string}) {
                 li.addEventListener('click', () => {
                     monthInput.value = i;
                     month_show.value = `${monthInput.value} 月`;
-                    li.removeEventListener('click', onMonthClick);
+                    li.removeEventListener('click', onDateClick);
                     options.innerHTML = '';
                     month_show.style.pointerEvents = 'auto';
                 });
@@ -124,7 +124,7 @@ function onDateClick(obj = {index: number, type: string}) {
                 li.addEventListener('click', () => {
                     dayInput.value = i;
                     day_show.value = `${dayInput.value} 日`;
-                    console.log(`dayInput.value`, dayInput.value);
+                    li.removeEventListener('click', onDateClick);
                     options.innerHTML = '';
                     day_show.style.pointerEvents = 'auto';
                 });
