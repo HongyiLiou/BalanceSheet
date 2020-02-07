@@ -59,22 +59,22 @@ ul, li {
   padding: 0;
 }
 
-.userInputArea {
+.userInputArea_date {
   display: flex;
 }
-.userInputArea section {
+.userInputArea_date section {
   position: relative;
   width: 80px;
   text-align: center;
 }
-.userInputArea section input {
+.userInputArea_date section input {
   width: 100%;
   text-align: center;
 }
-.userInputArea section input.userInputHidden {
+.userInputArea_date section input.userInputHidden {
   display: none;
 }
-.userInputArea section .options {
+.userInputArea_date section .options {
   width: 100%;
   position: absolute;
   background: #cfcfcf;
@@ -83,12 +83,16 @@ ul, li {
   box-shadow: 0 2px 8px rgba(5, 0, 0, 0.5);
   cursor: pointer;
 }
-.userInputArea section .options::-webkit-scrollbar {
+.userInputArea_date section .options::-webkit-scrollbar {
   display: none;
 }
-.userInputArea section .options li {
+.userInputArea_date section .options li {
   transition: 0.2s;
 }
-.userInputArea section .options li:hover {
+.userInputArea_date section .options li:hover {
   background: #e7e7e7;
+}
+
+.userInputArea_itemList input {
+  width: 100px;
 }

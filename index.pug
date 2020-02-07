@@ -17,46 +17,47 @@ body
     br
 
     //- 年月日隱藏欄位 用來記錄使用者的選擇
-    article.userInputArea
+    article.userInputArea_date
         section.userInput_year
             input#year.userInputHidden(type="text" readonly)
-            input#year_show(type="text" readonly onclick="userInput.onYearClick()")
+            input#year_show(type="text" readonly onclick="onYearClick()")
             ul.options
         section.userInput_month
             input#month.userInputHidden(type="text" readonly)
-            input#month_show(type="text" readonly onclick="userInput.onMonthClick()")
+            input#month_show(type="text" readonly onclick="onMonthClick()")
             ul.options
         section.userInput_day
             input#day.userInputHidden(type="text" readonly)
-            input#day_show(type="text" readonly onclick="userInput.onDayClick()")
+            input#day_show(type="text" readonly onclick="onDayClick()")
             ul.options
 
 
 
-    ul
-        li
-            input(type="text" class="itemInput" placeholder="收支項目")
-            input(type="number" class="amountInput" placeholder="收支金額")
-            select(name="type" class="type")
-                option(value="expenditure") 支出
-                option(value="income") 收入
+    article.userInputArea_itemList
+        ul
+            li
+                input.item(type="text" class="itemInput" placeholder="收支項目")
+                input.amount(type="number" class="amountInput" placeholder="收支金額")
+                select(name="type" class="type")
+                    option(value="expenditure") 支出
+                    option(value="income") 收入
 
-        li
-            input(type="text" class="itemInput" placeholder="收支項目")
-            input(type="number" class="amountInput" placeholder="收支金額")
-            select(name="type" class="type")
-                option(value="expenditure") 支出
-                option(value="income") 收入
+            li
+                input.item(type="text" class="itemInput" placeholder="收支項目")
+                input.amount(type="number" class="amountInput" placeholder="收支金額")
+                select(name="type" class="type")
+                    option(value="expenditure") 支出
+                    option(value="income") 收入
 
         
 
 
-    button(onClick="postFunction1.onClickSendBtn()") 送出
+    button(onClick="onClickSendBtn()") 送出
     button(onClick="onClickResetBtn()") 重置
 
     br
     br
-    //- a(href="https://docs.google.com/spreadsheets/d/1VCzkXIRBMjF9iv0Ca89xBLIzTSbYHMvXxxGq6lceusk/edit#gid=0" target="_blank") Balance Sheet 連結
+    a(href="https://docs.google.com/spreadsheets/d/1VCzkXIRBMjF9iv0Ca89xBLIzTSbYHMvXxxGq6lceusk/edit#gid=0" target="_blank") Balance Sheet 連結
 
+    //- script(type="text/javascript" src="js/balanceSheet.js")
     script(type="text/javascript" src="js/main.js")
-    script(type="text/javascript" src="js/balanceSheet.js")

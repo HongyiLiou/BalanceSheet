@@ -9,43 +9,44 @@
   <title>Hong-Yi Liou | Balance Sheet</title>
 </head>
 <body><br/>
-  <article class="userInputArea">
+  <article class="userInputArea_date">
     <section class="userInput_year">
       <input class="userInputHidden" id="year" type="text" readonly="readonly"/>
-      <input id="year_show" type="text" readonly="readonly" onclick="userInput.onYearClick()"/>
+      <input id="year_show" type="text" readonly="readonly" onclick="onYearClick()"/>
       <ul class="options"></ul>
     </section>
     <section class="userInput_month">
       <input class="userInputHidden" id="month" type="text" readonly="readonly"/>
-      <input id="month_show" type="text" readonly="readonly" onclick="userInput.onMonthClick()"/>
+      <input id="month_show" type="text" readonly="readonly" onclick="onMonthClick()"/>
       <ul class="options"></ul>
     </section>
     <section class="userInput_day">
       <input class="userInputHidden" id="day" type="text" readonly="readonly"/>
-      <input id="day_show" type="text" readonly="readonly" onclick="userInput.onDayClick()"/>
+      <input id="day_show" type="text" readonly="readonly" onclick="onDayClick()"/>
       <ul class="options"></ul>
     </section>
   </article>
-  <ul>
-    <li>
-      <input class="itemInput" type="text" placeholder="收支項目"/>
-      <input class="amountInput" type="number" placeholder="收支金額"/>
-      <select class="type" name="type">
-        <option value="expenditure">支出</option>
-        <option value="income">收入</option>
-      </select>
-    </li>
-    <li>
-      <input class="itemInput" type="text" placeholder="收支項目"/>
-      <input class="amountInput" type="number" placeholder="收支金額"/>
-      <select class="type" name="type">
-        <option value="expenditure">支出</option>
-        <option value="income">收入</option>
-      </select>
-    </li>
-  </ul>
-  <button onClick="postFunction1.onClickSendBtn()">送出</button>
-  <button onClick="onClickResetBtn()">重置</button><br/><br/>
+  <article class="userInputArea_itemList">
+    <ul>
+      <li>
+        <input class="item itemInput" type="text" placeholder="收支項目"/>
+        <input class="amount amountInput" type="number" placeholder="收支金額"/>
+        <select class="type" name="type">
+          <option value="expenditure">支出</option>
+          <option value="income">收入</option>
+        </select>
+      </li>
+      <li>
+        <input class="item itemInput" type="text" placeholder="收支項目"/>
+        <input class="amount amountInput" type="number" placeholder="收支金額"/>
+        <select class="type" name="type">
+          <option value="expenditure">支出</option>
+          <option value="income">收入</option>
+        </select>
+      </li>
+    </ul>
+  </article>
+  <button onClick="onClickSendBtn()">送出</button>
+  <button onClick="onClickResetBtn()">重置</button><br/><br/><a href="https://docs.google.com/spreadsheets/d/1VCzkXIRBMjF9iv0Ca89xBLIzTSbYHMvXxxGq6lceusk/edit#gid=0" target="_blank">Balance Sheet 連結</a>
   <script type="text/javascript" src="js/main.js"></script>
-  <script type="text/javascript" src="js/balanceSheet.js"></script>
 </body>
