@@ -11,25 +11,25 @@ head
     title Hong-Yi Liou | Balance Sheet
 body
 
-    select#year
-    select#month(onchange="onMonthChanged()")
-    select#day
+    //- select#year
+    //- select#month(onchange="onMonthChanged()")
+    //- select#day
     br
 
     //- 年月日隱藏欄位 用來記錄使用者的選擇
-    //- article.userInputArea_date
-    //-     section.userInput_year
-    //-         input#year.userInputHidden(type="text" readonly)
-    //-         input#year_show(type="text" readonly onclick="onYearClick()")
-    //-         ul.options
-    //-     section.userInput_month
-    //-         input#month.userInputHidden(type="text" readonly)
-    //-         input#month_show(type="text" readonly onclick="onMonthClick()")
-    //-         ul.options
-    //-     section.userInput_day
-    //-         input#day.userInputHidden(type="text" readonly)
-    //-         input#day_show(type="text" readonly onclick="onDayClick()")
-    //-         ul.options
+    article.userInputArea_date
+        section.userInput_year
+            input#year.userInputHidden(type="text" readonly)
+            input#year_show(type="text" readonly onclick="onYearClick()")
+            ul.options
+        section.userInput_month
+            input#month.userInputHidden(type="text" readonly)
+            input#month_show(type="text" readonly onclick="onMonthClick()")
+            ul.options
+        section.userInput_day
+            input#day.userInputHidden(type="text" readonly)
+            input#day_show(type="text" readonly onclick="onDayClick()")
+            ul.options
 
 
 

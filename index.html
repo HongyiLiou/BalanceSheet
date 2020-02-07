@@ -8,10 +8,24 @@
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <title>Hong-Yi Liou | Balance Sheet</title>
 </head>
-<body>
-  <select id="year"></select>
-  <select id="month" onchange="onMonthChanged()"></select>
-  <select id="day"></select><br/>
+<body><br/>
+  <article class="userInputArea_date">
+    <section class="userInput_year">
+      <input class="userInputHidden" id="year" type="text" readonly="readonly"/>
+      <input id="year_show" type="text" readonly="readonly" onclick="onYearClick()"/>
+      <ul class="options"></ul>
+    </section>
+    <section class="userInput_month">
+      <input class="userInputHidden" id="month" type="text" readonly="readonly"/>
+      <input id="month_show" type="text" readonly="readonly" onclick="onMonthClick()"/>
+      <ul class="options"></ul>
+    </section>
+    <section class="userInput_day">
+      <input class="userInputHidden" id="day" type="text" readonly="readonly"/>
+      <input id="day_show" type="text" readonly="readonly" onclick="onDayClick()"/>
+      <ul class="options"></ul>
+    </section>
+  </article>
   <article class="userInputArea_itemList">
     <ul>
       <li>
