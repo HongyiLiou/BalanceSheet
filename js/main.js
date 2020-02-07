@@ -1,18 +1,18 @@
-// date
-/** 年份選擇 */const selectYear = document.getElementById('year');
-/** 月份選擇 */const selectMonth = document.getElementById('month');
-/** 日期選擇 */const selectDay = document.getElementById('day');
-/** 取得時間 */const today = new Date();
-/** 取得今年 */const year = today.getFullYear();
-/** 取得今月 */const month = today.getMonth() + 1;
-/** 取得今日 */const day = today.getDate();
-/** 根據月份取得日天數 */let days = new Date(year,month,0).getDate();
-console.log(year,month,day);
+// // date
+// /** 年份選擇 */const selectYear = document.getElementById('year');
+// /** 月份選擇 */const selectMonth = document.getElementById('month');
+// /** 日期選擇 */const selectDay = document.getElementById('day');
+// /** 取得時間 */const today = new Date();
+// /** 取得今年 */const year = today.getFullYear();
+// /** 取得今月 */const month = today.getMonth() + 1;
+// /** 取得今日 */const day = today.getDate();
+// /** 根據月份取得日天數 */let days = new Date(year,month,0).getDate();
+// console.log(year,month,day);
 
 window.onload = function() {
-    setYearMonthSelect();
+    // setYearMonthSelect();
 
-    console.log(selectYear.value, selectMonth.value, selectDay.value);
+    // console.log(selectYear.value, selectMonth.value, selectDay.value);
     
     
 }
@@ -21,12 +21,11 @@ window.onload = function() {
 function setYearMonthSelect() {
     // 年份設置
     for(let i = 0; i <= 3; i++) {
-        // const option = document.createElement('option');
-        // option.setAttribute('value', `${i}`);
-        // option.innerHTML = `${i}年`;
-        // option.appendChild(document.createTextNode(`${i}年`));
-        // selectYear.appendChild(option);
-        selectYear.add( new Option(`${ i + 2020 }年`, `${ i + 2020 }`));
+        const option = document.createElement('option');
+        option.setAttribute('value', `${i + 2020}`);
+        option.innerHTML = `${i + 2020}年`;
+        selectYear.appendChild(option);
+        // selectYear.options[i] = new Option(`${ i + 2020 }年`, `${ i + 2020 }`);
     }
 
 
@@ -59,6 +58,7 @@ function onMonthChanged() {
         option.innerHTML = `${i}日`;
         selectDay.appendChild(option);
     }
+    
 }
 
 /** 重置按鈕 */
@@ -124,9 +124,12 @@ class postFunction {
             functionType: 'post',
             dataType: 'balanceSheet',
             data: data.toString(),
-            month: Number(selectMonth.value) + 1,
-            day: Number(selectDay.value) + 1,
+            month: Number(userInput.monthInput.value) + 1,
+            day: Number(userInput.dayInput.value) + 1,
         };
+
+        console.log(parameter);
+        
 
         $.get('https://script.google.com/macros/s/AKfycbwC9bl6xw2PIbL6mF0ojN1RqokP_43JtxurpA2839FP80Ih2l19/exec', parameter);
 
@@ -164,8 +167,8 @@ class postFunction {
             dataType: 'balanceSheetDetail',
             data1: data1.toString(),
             data2: data2.toString(),
-            month: Number(selectMonth.value) * 2,
-            day: Number(selectDay.value) + 1,
+            month: Number(userInput.monthInput.value) * 2,
+            day: Number(userInput.dayInput.value) + 1,
         };
 
         $.get('https://script.google.com/macros/s/AKfycbwC9bl6xw2PIbL6mF0ojN1RqokP_43JtxurpA2839FP80Ih2l19/exec', parameter);

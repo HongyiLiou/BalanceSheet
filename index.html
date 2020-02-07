@@ -8,23 +8,44 @@
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <title>Hong-Yi Liou | Balance Sheet</title>
 </head>
-<body>
-  <select id="year" name="year"></select>
-  <select id="month" name="month" onchange="onMonthChanged()"></select>
-  <select id="day" name="day"></select><br/><br/>
-  <input class="itemInput" type="text" placeholder="欄位一"/><br/><br/>
-  <input class="itemInput" type="text" placeholder="欄位一"/><br/><br/><br/>
-  <input class="amountInput" type="number" placeholder="欄位二"/>
-  <select class="type" name="type">
-    <option value="expenditure">支出</option>
-    <option value="income">收入</option>
-  </select><br/><br/>
-  <input class="amountInput" type="number" placeholder="欄位二"/>
-  <select class="type" name="type">
-    <option value="expenditure">支出</option>
-    <option value="income">收入</option>
-  </select><br/><br/>
+<body><br/>
+  <article class="userInputArea">
+    <section class="userInput_year">
+      <input class="userInputHidden" id="year" type="text" readonly="readonly"/>
+      <input id="year_show" type="text" readonly="readonly" onclick="userInput.onYearClick()"/>
+      <ul class="options"></ul>
+    </section>
+    <section class="userInput_month">
+      <input class="userInputHidden" id="month" type="text" readonly="readonly"/>
+      <input id="month_show" type="text" readonly="readonly" onclick="userInput.onMonthClick()"/>
+      <ul class="options"></ul>
+    </section>
+    <section class="userInput_day">
+      <input class="userInputHidden" id="day" type="text" readonly="readonly"/>
+      <input id="day_show" type="text" readonly="readonly" onclick="userInput.onDayClick()"/>
+      <ul class="options"></ul>
+    </section>
+  </article>
+  <ul>
+    <li>
+      <input class="itemInput" type="text" placeholder="收支項目"/>
+      <input class="amountInput" type="number" placeholder="收支金額"/>
+      <select class="type" name="type">
+        <option value="expenditure">支出</option>
+        <option value="income">收入</option>
+      </select>
+    </li>
+    <li>
+      <input class="itemInput" type="text" placeholder="收支項目"/>
+      <input class="amountInput" type="number" placeholder="收支金額"/>
+      <select class="type" name="type">
+        <option value="expenditure">支出</option>
+        <option value="income">收入</option>
+      </select>
+    </li>
+  </ul>
   <button onClick="postFunction1.onClickSendBtn()">送出</button>
   <button onClick="onClickResetBtn()">重置</button><br/><br/>
   <script type="text/javascript" src="js/main.js"></script>
+  <script type="text/javascript" src="js/balanceSheet.js"></script>
 </body>

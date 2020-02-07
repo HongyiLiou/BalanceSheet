@@ -1,0 +1,31 @@
+.userInputArea
+    display: flex
+
+    section
+        position: relative
+        width: 80px
+        text-align: center
+
+        input
+            width: 100%
+            text-align: center
+
+            &.userInputHidden
+                display: none
+
+        .options
+            width: 100%
+            position: absolute
+            background: #cfcfcf
+            max-height: 50vh
+            overflow: auto
+            box-shadow: 0 2px 8px rgba(#050000, 0.5)
+            cursor: pointer
+
+            &::-webkit-scrollbar
+                display: none
+
+            li
+                transition: 0.2s
+                &:hover
+                    background: #e7e7e7

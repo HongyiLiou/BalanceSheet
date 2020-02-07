@@ -58,3 +58,37 @@ ul, li {
   margin: 0;
   padding: 0;
 }
+
+.userInputArea {
+  display: flex;
+}
+.userInputArea section {
+  position: relative;
+  width: 80px;
+  text-align: center;
+}
+.userInputArea section input {
+  width: 100%;
+  text-align: center;
+}
+.userInputArea section input.userInputHidden {
+  display: none;
+}
+.userInputArea section .options {
+  width: 100%;
+  position: absolute;
+  background: #cfcfcf;
+  max-height: 50vh;
+  overflow: auto;
+  box-shadow: 0 2px 8px rgba(5, 0, 0, 0.5);
+  cursor: pointer;
+}
+.userInputArea section .options::-webkit-scrollbar {
+  display: none;
+}
+.userInputArea section .options li {
+  transition: 0.2s;
+}
+.userInputArea section .options li:hover {
+  background: #e7e7e7;
+}

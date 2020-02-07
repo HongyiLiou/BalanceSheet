@@ -11,32 +11,45 @@ head
     title Hong-Yi Liou | Balance Sheet
 body
 
-    select#year(name="year")
-    select#month(name="month" onchange="onMonthChanged()")
-    select#day(name="day")
+    //- select#year
+    //- select#month(onchange="onMonthChanged()")
+    //- select#day
     br
 
+    //- 年月日隱藏欄位 用來記錄使用者的選擇
+    article.userInputArea
+        section.userInput_year
+            input#year.userInputHidden(type="text" readonly)
+            input#year_show(type="text" readonly onclick="userInput.onYearClick()")
+            ul.options
+        section.userInput_month
+            input#month.userInputHidden(type="text" readonly)
+            input#month_show(type="text" readonly onclick="userInput.onMonthClick()")
+            ul.options
+        section.userInput_day
+            input#day.userInputHidden(type="text" readonly)
+            input#day_show(type="text" readonly onclick="userInput.onDayClick()")
+            ul.options
 
-    br
-    input(type="text" class="itemInput" placeholder="欄位一")
-    br
-    br
-    input(type="text" class="itemInput" placeholder="欄位一")
-    br
-    br
-    br
-    input(type="number" class="amountInput" placeholder="欄位二")
-    select(name="type" class="type")
-        option(value="expenditure") 支出
-        option(value="income") 收入
-    br
-    br
-    input(type="number" class="amountInput" placeholder="欄位二")
-    select(name="type" class="type")
-        option(value="expenditure") 支出
-        option(value="income") 收入
-    br
-    br
+
+
+    ul
+        li
+            input(type="text" class="itemInput" placeholder="收支項目")
+            input(type="number" class="amountInput" placeholder="收支金額")
+            select(name="type" class="type")
+                option(value="expenditure") 支出
+                option(value="income") 收入
+
+        li
+            input(type="text" class="itemInput" placeholder="收支項目")
+            input(type="number" class="amountInput" placeholder="收支金額")
+            select(name="type" class="type")
+                option(value="expenditure") 支出
+                option(value="income") 收入
+
+        
+
 
     button(onClick="postFunction1.onClickSendBtn()") 送出
     button(onClick="onClickResetBtn()") 重置
@@ -46,3 +59,4 @@ body
     //- a(href="https://docs.google.com/spreadsheets/d/1VCzkXIRBMjF9iv0Ca89xBLIzTSbYHMvXxxGq6lceusk/edit#gid=0" target="_blank") Balance Sheet 連結
 
     script(type="text/javascript" src="js/main.js")
+    script(type="text/javascript" src="js/balanceSheet.js")
