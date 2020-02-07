@@ -13,129 +13,129 @@
 /** 根據月份取得日天數 */days = new Date(year, month, 0).getDate();
 
 window.onload = function() {
-    initialToday();
-    // setYearMonthSelect();
+    // initialToday();
+    setYearMonthSelect();
 
     // console.log(selectYear.value, selectMonth.value, selectDay.value);
     
     
 }
 
-/** 年份選擇 */
-function onYearClick() {
-    yearInput.style.pointerEvents = 'none';
-    const options = document.querySelector('.userInput_year .options');
-    for (let i = 0; i <= 0; i++) {
-        const li = document.createElement('li');
-        li.innerHTML = `${ i + 2020 }年`;
-        li.addEventListener('click', () => {
-            yearInput.value = i + 2020;
-            year_show.value = `${yearInput.value} 年`;
-            li.removeEventListener('click', onYearClick);
-            options.innerHTML = '';
-            yearInput.style.pointerEvents = 'auto';
-        });
-        options.appendChild(li);
-    }
-}
-
-/** 月份選擇 */
-function onMonthClick() {
-    monthInput.style.pointerEvents = 'none';
-    const options = document.querySelector('.userInput_month .options');
-    for (let i = 1; i <= 12; i++) {
-        const li = document.createElement('li');
-        li.innerHTML = `${i}月`;
-        li.addEventListener('click', () => {
-            monthInput.value = i;
-            month_show.value = `${monthInput.value} 月`;
-            li.removeEventListener('click', onMonthClick);
-            options.innerHTML = '';
-            monthInput.style.pointerEvents = 'auto';
-        });
-        options.appendChild(li);
-    }
-
-}
-
-/** 日選擇 */
-function onDayClick() {
-    dayInput.style.pointerEvents = 'none';
-    days = new Date(yearInput.value, monthInput.value, 0).getDate();
-    const options = document.querySelector('.userInput_day .options');
-    // 日設置
-    for(let i = 1; i <= days; i++) {
-        const li = document.createElement('li');
-        li.innerHTML = `${i}日`;
-        li.addEventListener('click', () => {
-            dayInput.value = i;
-            day_show.value = `${dayInput.value} 日`;
-            console.log(`dayInput.value`, dayInput.value);
-            options.innerHTML = '';
-            dayInput.style.pointerEvents = 'auto';
-        });
-        options.appendChild(li);
-    }
-
-}
-
-/** 初始化日期 */
-function initialToday() {
-    yearInput.value = year;
-    monthInput.value = month;
-    dayInput.value = day;
-    year_show.value = `${year} 年`;
-    month_show.value = `${month} 月`;
-    day_show.value = `${day} 日`;
-}
-
-
-
-
-
-// /** 設置初始年月 */
-// function setYearMonthSelect() {
-//     // 年份設置
-//     for(let i = 0; i <= 3; i++) {
-//         const option = document.createElement('option');
-//         option.setAttribute('value', `${i + 2020}`);
-//         option.innerHTML = `${i + 2020}年`;
-//         selectYear.appendChild(option);
-//         // selectYear.options[i] = new Option(`${ i + 2020 }年`, `${ i + 2020 }`);
+// /** 年份選擇 */
+// function onYearClick() {
+//     yearInput.style.pointerEvents = 'none';
+//     const options = document.querySelector('.userInput_year .options');
+//     for (let i = 0; i <= 0; i++) {
+//         const li = document.createElement('li');
+//         li.innerHTML = `${ i + 2020 }年`;
+//         li.addEventListener('click', () => {
+//             yearInput.value = i + 2020;
+//             year_show.value = `${yearInput.value} 年`;
+//             li.removeEventListener('click', onYearClick);
+//             options.innerHTML = '';
+//             yearInput.style.pointerEvents = 'auto';
+//         });
+//         options.appendChild(li);
 //     }
-
-
-//     // 月份設置
-//     for(let i = 1; i <= 12; i++) {
-//         const option = document.createElement('option');
-//         option.setAttribute('value', `${i}`);
-//         option.innerHTML = `${i}月`;
-//         selectMonth.appendChild(option);
-//     }
-
-//     selectYear.value = year;
-//     selectMonth.value = month;
-    
-//     // 日設置
-//     onMonthChanged();
-    
-//     selectDay.value = day;
 // }
 
-// /** 日 */
-// function onMonthChanged() {
-//     selectDay.innerHTML = 'none';
-    
-//     days = new Date(year, selectMonth.value, 0).getDate();
+// /** 月份選擇 */
+// function onMonthClick() {
+//     monthInput.style.pointerEvents = 'none';
+//     const options = document.querySelector('.userInput_month .options');
+//     for (let i = 1; i <= 12; i++) {
+//         const li = document.createElement('li');
+//         li.innerHTML = `${i}月`;
+//         li.addEventListener('click', () => {
+//             monthInput.value = i;
+//             month_show.value = `${monthInput.value} 月`;
+//             li.removeEventListener('click', onMonthClick);
+//             options.innerHTML = '';
+//             monthInput.style.pointerEvents = 'auto';
+//         });
+//         options.appendChild(li);
+//     }
+
+// }
+
+// /** 日選擇 */
+// function onDayClick() {
+//     dayInput.style.pointerEvents = 'none';
+//     days = new Date(yearInput.value, monthInput.value, 0).getDate();
+//     const options = document.querySelector('.userInput_day .options');
 //     // 日設置
 //     for(let i = 1; i <= days; i++) {
-//         const option = document.createElement('option');
-//         option.setAttribute('value', `${i}`);
-//         option.innerHTML = `${i}日`;
-//         selectDay.appendChild(option);
+//         const li = document.createElement('li');
+//         li.innerHTML = `${i}日`;
+//         li.addEventListener('click', () => {
+//             dayInput.value = i;
+//             day_show.value = `${dayInput.value} 日`;
+//             console.log(`dayInput.value`, dayInput.value);
+//             options.innerHTML = '';
+//             dayInput.style.pointerEvents = 'auto';
+//         });
+//         options.appendChild(li);
 //     }
-    
+
 // }
+
+// /** 初始化日期 */
+// function initialToday() {
+//     yearInput.value = year;
+//     monthInput.value = month;
+//     dayInput.value = day;
+//     year_show.value = `${year} 年`;
+//     month_show.value = `${month} 月`;
+//     day_show.value = `${day} 日`;
+// }
+
+
+
+
+
+/** 設置初始年月 */
+function setYearMonthSelect() {
+    // 年份設置
+    for(let i = 0; i <= 3; i++) {
+        const option = document.createElement('option');
+        option.setAttribute('value', `${i + 2020}`);
+        option.innerHTML = `${i + 2020}年`;
+        yearInput.appendChild(option);
+        // selectYear.options[i] = new Option(`${ i + 2020 }年`, `${ i + 2020 }`);
+    }
+
+
+    // 月份設置
+    for(let i = 1; i <= 12; i++) {
+        const option = document.createElement('option');
+        option.setAttribute('value', `${i}`);
+        option.innerHTML = `${i}月`;
+        monthInput.appendChild(option);
+    }
+
+    yearInput.value = year;
+    monthInput.value = month;
+    
+    // 日設置
+    onMonthChanged();
+    
+    dayInput.value = day;
+}
+
+/** 日 */
+function onMonthChanged() {
+    dayInput.innerHTML = 'none';
+    
+    days = new Date(year, monthInput.value, 0).getDate();
+    // 日設置
+    for(let i = 1; i <= days; i++) {
+        const option = document.createElement('option');
+        option.setAttribute('value', `${i}`);
+        option.innerHTML = `${i}日`;
+        dayInput.appendChild(option);
+    }
+    
+}
 
 /** 重置按鈕 */
 function onClickResetBtn() {
