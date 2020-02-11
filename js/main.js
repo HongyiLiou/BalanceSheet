@@ -12,14 +12,32 @@
 /** 取得今日 */day = today.getDate();
 /** 根據月份取得日天數 */days = new Date(year, month, 0).getDate();
 
+// 其他元件
+/** Screen Holder */const screenHolder = document.querySelector('.screenHolder');
+
 window.onload = function() {
     initialToday();
+    screenHolder.addEventListener('click', () => {
+        console.log(123);
+        
+        showScreenHolder(true);
+    });
     // setYearMonthSelect();
 
     // console.log(selectYear.value, selectMonth.value, selectDay.value);
     
     
 }
+
+/** 顯示 screenHolder */
+function showScreenHolder(boolean) {
+    if (boolean) {
+        screenHolder.classList.add('show');
+    } else {
+        screenHolder.classList.remove('show');
+    }
+}
+
 
 // 使用者輸入___________________________________________________________________________________
 /** 年份選擇 */
