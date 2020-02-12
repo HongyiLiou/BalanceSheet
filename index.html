@@ -13,17 +13,17 @@
   <article class="userInputArea_date">
     <section class="userInput_year">
       <input class="userInputHidden" id="year" type="text" readonly="readonly"/>
-      <input id="year_show" type="text" readonly="readonly" onclick="onDateClick({index: 0, type: 'userInput_year'})"/>
+      <input class="input_show" id="year_show" type="text" readonly="readonly" onclick="onDateClick({index: 0, type: 'userInput_year'})"/>
       <ul class="options"></ul>
     </section>
     <section class="userInput_month">
       <input class="userInputHidden" id="month" type="text" readonly="readonly"/>
-      <input id="month_show" type="text" readonly="readonly" onclick="onDateClick({index: 1, type: 'userInput_month'})"/>
+      <input class="input_show" id="month_show" type="text" readonly="readonly" onclick="onDateClick({index: 1, type: 'userInput_month'})"/>
       <ul class="options"></ul>
     </section>
     <section class="userInput_day">
       <input class="userInputHidden" id="day" type="text" readonly="readonly"/>
-      <input id="day_show" type="text" readonly="readonly" onclick="onDateClick({index: 2, type: 'userInput_day'})"/>
+      <input class="input_show" id="day_show" type="text" readonly="readonly" onclick="onDateClick({index: 2, type: 'userInput_day'})"/>
       <ul class="options"></ul>
     </section>
   </article>
@@ -48,6 +48,7 @@
     </ul>
   </article>
   <button onClick="onClickSendBtn()">送出</button>
-  <button onClick="onClickResetBtn()">重置</button><br/><br/><a href="https://docs.google.com/spreadsheets/d/1VCzkXIRBMjF9iv0Ca89xBLIzTSbYHMvXxxGq6lceusk/edit#gid=0" target="_blank">Balance Sheet 連結</a>
+  <button onClick="onClickResetBtn()">重置</button>
+  <button onClick="onClickAddBtn()">新增</button><br/><br/><a href="https://docs.google.com/spreadsheets/d/1VCzkXIRBMjF9iv0Ca89xBLIzTSbYHMvXxxGq6lceusk/edit#gid=0" target="_blank">Balance Sheet 連結</a>
   <script type="text/javascript" src="js/main.js"></script>
 </body>

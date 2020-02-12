@@ -61,16 +61,19 @@ ul, li {
 
 .screenHolder {
   position: fixed;
-  display: none;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   background: #999;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s;
   z-index: 1;
 }
 .screenHolder.show {
-  display: block;
+  opacity: 0.3;
+  pointer-events: auto;
 }
 
 .userInputArea_date {

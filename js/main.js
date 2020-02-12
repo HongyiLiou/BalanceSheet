@@ -20,7 +20,7 @@ window.onload = function() {
     screenHolder.addEventListener('click', () => {
         console.log(123);
         
-        showScreenHolder(true);
+        showScreenHolder(false);
     });
     // setYearMonthSelect();
 
@@ -34,7 +34,15 @@ function showScreenHolder(boolean) {
     if (boolean) {
         screenHolder.classList.add('show');
     } else {
+        const allInput_show = document.querySelectorAll('.input_show');
+        const allOptions = document.querySelectorAll('.options');
         screenHolder.classList.remove('show');
+        allInput_show.forEach(input_show => {
+            input_show.style.pointerEvents = 'auto';
+        });
+        allOptions.forEach(option => {
+            option.innerHTML = '';
+        });
     }
 }
 
@@ -101,7 +109,8 @@ function showScreenHolder(boolean) {
 /** 日期選擇 */
 function onDateClick(obj = {index: number, type: string}) {
     const inputArray = [ year_show, month_show, day_show ];
-    inputArray[obj.index].style.pointerEvents = 'none';    
+    inputArray[obj.index].style.pointerEvents = 'none';
+    showScreenHolder(true);
     
     days = new Date(yearInput.value, monthInput.value, 0).getDate();
     const options = document.querySelector(`.${obj.type} .options`);
@@ -114,9 +123,9 @@ function onDateClick(obj = {index: number, type: string}) {
                 li.addEventListener('click', () => {
                     yearInput.value = i + 2020;
                     year_show.value = `${yearInput.value} 年`;
-                    // li.removeEventListener('click', onDateClick);
                     options.innerHTML = '';
                     year_show.style.pointerEvents = 'auto';
+                    showScreenHolder(false);
                 });
                 options.appendChild(li);
             }
@@ -128,9 +137,9 @@ function onDateClick(obj = {index: number, type: string}) {
                 li.addEventListener('click', () => {
                     monthInput.value = i;
                     month_show.value = `${monthInput.value} 月`;
-                    // li.removeEventListener('click', onDateClick);
                     options.innerHTML = '';
                     month_show.style.pointerEvents = 'auto';
+                    showScreenHolder(false);
                 });
                 options.appendChild(li);
             }
@@ -142,9 +151,9 @@ function onDateClick(obj = {index: number, type: string}) {
                 li.addEventListener('click', () => {
                     dayInput.value = i;
                     day_show.value = `${dayInput.value} 日`;
-                    // li.removeEventListener('click', onDateClick);
                     options.innerHTML = '';
                     day_show.style.pointerEvents = 'auto';
+                    showScreenHolder(false);
                 });
                 options.appendChild(li);
             }
@@ -214,22 +223,34 @@ function initialToday() {
     
 // }
 
-// /** 重置按鈕 */
-// function onClickResetBtn() {
-//     for(let i = 0; i < $('.itemInput').length; i++) {
-//         $('.itemInput')[i].value = '';
-//         $('.amountInput')[i].value = '';
-//     }
-// }
+/** 重置按鈕 */
+function onClickResetBtn() {
+    const itemInput = document.querySelectorAll('.itemInput');
+    const amountInput = document.querySelectorAll('.amountInput');
 
+    for(let i = 0; i < itemInput.length; i++) {
+        itemInput[i].value = '';
+        amountInput[i].value = '';
+    }
+}
+
+/** 新增按鈕 */
+function onClickAddBtn() {
+    const userInputArea = document.querySelector('.userInputArea_itemList ul');
+
+    userInputArea.write('\
+        <li>\
+        <input class="item itemInput" type="text" placeholder="收支項目"/>\
+        <input class="amount amountInput" type="number" placeholder="收支金額"/>\
+        <select class="type" name="type">\
+            <option value="expenditure">支出</option>\
+            <option value="income">收入</option>\
+        </select>\
+        </li>');
+}
 
 
 // Post Functions _______________________________________________________________________________________________
-
-/** 所有收支項目欄位 */itemInputs = Array.from($('.itemInput'));
-/** 所有收支金額欄位 */amountInputs = Array.from($('.amountInput'));
-
-
 /** 上傳支出按鈕 */
 function onClickSendBtn() {
     sendBalanceSheet();
@@ -238,6 +259,8 @@ function onClickSendBtn() {
 
 /** 更新收支表 */
 function sendBalanceSheet() {
+    /** 所有收支項目欄位 */itemInputs = Array.from($('.itemInput'));
+    /** 所有收支金額欄位 */amountInputs = Array.from($('.amountInput'));
     /** 最後要送至後端的 收支data */const data = [];
     /** amountInputs總和的值 */let dataContainer = 0;
     /** 收支型態 */const type = $('.type');
@@ -246,7 +269,7 @@ function sendBalanceSheet() {
         if (itemInputs[i].value && amountInputs[i].value) {
             let amount = amountInputs[i].value;
 
-            if (type[i].value === 'expenditure' && (amountInputs[i].value).toString().indexOf('-') === -1 ) {
+            if (type[i].value === 'expenditure' && (amountInputs[i].value).toString().indexOf('-') === -1) {
                 amount = -(amountInputs[i].value);
             }
 
@@ -271,13 +294,14 @@ function sendBalanceSheet() {
 
     console.log(parameter);
     
-
     $.get('https://script.google.com/macros/s/AKfycbwC9bl6xw2PIbL6mF0ojN1RqokP_43JtxurpA2839FP80Ih2l19/exec', parameter);
 
 }
 
 /** 更新收支表 Detail */
 function sendBalanceSheetDetail() {
+    /** 所有收支項目欄位 */itemInputs = Array.from($('.itemInput'));
+    /** 所有收支金額欄位 */amountInputs = Array.from($('.amountInput'));
     /** 最後要送至後端的 項目data */const data1 = [];
     /** 最後要送至後端的 金額data */const data2 = [];
     /** 用來裝 itemInputs的值 */const dataContianer1 = [];
