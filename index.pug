@@ -38,14 +38,14 @@ body
             li
                 input.item(type="text" class="itemInput" placeholder="收支項目")
                 input.amount(type="number" class="amountInput" placeholder="收支金額")
-                select(name="type" class="type")
+                select.type(name="type")
                     option(value="expenditure") 支出
                     option(value="income") 收入
 
             li
                 input.item(type="text" class="itemInput" placeholder="收支項目")
                 input.amount(type="number" class="amountInput" placeholder="收支金額")
-                select(name="type" class="type")
+                select.type(name="type")
                     option(value="expenditure") 支出
                     option(value="income") 收入
 
@@ -55,12 +55,10 @@ body
     button(onClick="onClickSendBtn()") 送出
     button(onClick="onClickResetBtn()") 重置
     button(onClick="onClickAddBtn()") 新增
-    input#timeInput(type="datetime-local")
-    input#resault(type="text" placeholder="顯示結果")
 
     br
     br
     a(href="https://docs.google.com/spreadsheets/d/1VCzkXIRBMjF9iv0Ca89xBLIzTSbYHMvXxxGq6lceusk/edit#gid=0" target="_blank") Balance Sheet 連結
 
-    //- script(type="text/javascript" src="js/balanceSheet.js")
     script(type="text/javascript" src="js/main.js")
+    script(type="text/javascript" src="js/balanceSheet.js")
