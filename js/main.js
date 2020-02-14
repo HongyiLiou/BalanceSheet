@@ -1,4 +1,6 @@
 // import ('./balanceSheet.js');
+const timeInput = document.querySelector('#timeInput');
+const resault = document.querySelector('#resault');
 // date
 /** 年份選擇 */yearInput = document.querySelector('#year');
 /** 月份選擇 */monthInput = document.querySelector('#month');
@@ -230,6 +232,8 @@ function onClickResetBtn() {
         itemInput[i].value = '';
         amountInput[i].value = '';
     }
+
+    resault.value = `${timeInput.value}`;
 }
 
 /** 新增按鈕 */
