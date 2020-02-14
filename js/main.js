@@ -18,8 +18,6 @@
 window.onload = function() {
     initialToday();
     screenHolder.addEventListener('click', () => {
-        console.log(123);
-        
         showScreenHolder(false);
     });
     // setYearMonthSelect();
@@ -237,8 +235,17 @@ function onClickResetBtn() {
 /** 新增按鈕 */
 function onClickAddBtn() {
     const userInputArea = document.querySelector('.userInputArea_itemList ul');
+    const originalHtml = userInputArea.innerHTML;
+    const userInput_items = document.querySelectorAll('.item');
+    const userInput_amounts = document.querySelectorAll('.amount');
+    const inputContent = [];
 
-    userInputArea.write('\
+    // 儲存原有欄位的值
+    for (let i = 0; i < userInput_items.length; i++) {
+        inputContent.push({ item: userInput_items[i].value, amount: userInput_amounts[i].value });
+    }
+
+    userInputArea.innerHTML = originalHtml + '\
         <li>\
         <input class="item itemInput" type="text" placeholder="收支項目"/>\
         <input class="amount amountInput" type="number" placeholder="收支金額"/>\
@@ -246,7 +253,17 @@ function onClickAddBtn() {
             <option value="expenditure">支出</option>\
             <option value="income">收入</option>\
         </select>\
-        </li>');
+        </li>';
+
+    const userInput_itemsNew = document.querySelectorAll('.item');
+    const userInput_amountsNew = document.querySelectorAll('.amount');
+
+    // 將原有欄位的值寫入新欄位
+    for (let i = 0; i < userInput_items.length; i++) {
+        userInput_itemsNew[i].value = inputContent[i].item;
+        userInput_amountsNew[i].value = inputContent[i].amount;
+    }
+    
 }
 
 
