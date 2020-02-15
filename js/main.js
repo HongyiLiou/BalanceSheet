@@ -170,5 +170,9 @@ function onClickAddBtn() {
 }
 
 function loadDatePicker() {
-    $('.testBox').load('html/datePicker.html');
+    $('.testBox').load('html/datePicker.html', function() {
+        const sc = document.createElement('script');
+        sc.src = 'js/datePicker.js';
+        $('body').append(sc);
+    });
 }
