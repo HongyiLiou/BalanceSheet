@@ -54,7 +54,9 @@ function initialDatePicker() {
             selectYearAreaBtns.forEach(x => {
                 x.classList.remove('active');
             });
-            const dateString = `${btn.innerHTML}/${dataPickerShowMonth.innerHTML}/${dataPickerShowDay.innerHTML}`;
+            const dateString = `${btn.innerHTML}/${datePicker_month.innerHTML.slice(0, 2).trim()}/${dataPickerShowDay.innerHTML}`;
+            console.log(dateString);
+            
             setDateToShow(dateString);
             btn.classList.add('active');
             selectMonthArea.classList.remove('active');
@@ -132,7 +134,7 @@ function setShowWeek(weekString) {
 
 /** 設定 Calender內容 */
 function setCalender(monthString) {
-
+    const month = monthString ? monthString : Number(dataPickerShowMonth.innerHTML);
     const date = new Date(Number(dataPickerShowYear.innerHTML), monthString, 0);
     const week = new Date(`${dataPickerShowYear.innerHTML}/${monthString}/1`).getDay();
     const fullMonth = date.getDate();

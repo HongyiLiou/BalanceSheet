@@ -141,7 +141,7 @@ html {
   display: flex;
   width: 600px;
   height: 330px;
-  background: linear-gradient(120deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.7));
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.8));
   color: #000;
   overflow: hidden;
   border-radius: 8px;
@@ -173,7 +173,7 @@ html {
 }
 .datePickerBox .showArea .content .year {
   font-size: 120%;
-  opacity: 0.7;
+  opacity: 0.6;
 }
 .datePickerBox .selectArea {
   position: relative;
