@@ -1,0 +1,31 @@
+article.datePickerBox
+    section.showArea
+        header
+            p.week 星期六
+        .content
+            p.month Feb
+            p.day 15
+            p.year 2020
+
+    section.selectArea
+        header
+            //- 用於程式讀取，不顯示
+            .displayNone
+                input#datePicker_year(type="number")
+                input#datePicker_month(type="number")
+            .datePicker_year 2020 年
+                .prev
+                .next
+            .datePicker_month 2 月
+                .prev
+                .next
+        .calender
+            ul
+                li.weekDays
+                    p 日
+                    p 一
+                    p 二
+                    p 三
+                    p 四
+                    p 五
+                    p 六

@@ -17,6 +17,7 @@
 
 window.onload = function() {
     initialToday();
+    loadDatePicker();
     screenHolder.addEventListener('click', () => {
         showScreenHolder(false);
     });
@@ -166,4 +167,8 @@ function onClickAddBtn() {
         userInput_typeNew[i].value = inputContent[i].type;
     }
     
+}
+
+function loadDatePicker() {
+    $('.testBox').load('../datePicker.html');
 }

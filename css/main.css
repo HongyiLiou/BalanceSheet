@@ -59,6 +59,11 @@ ul, li {
   padding: 0;
 }
 
+html {
+  font-size: 16px;
+}
+
+/** 收支表 */
 .screenHolder {
   position: fixed;
   top: 0;
@@ -113,4 +118,11 @@ ul, li {
 
 .userInputArea_itemList input {
   width: 100px;
+}
+
+.testBox {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
