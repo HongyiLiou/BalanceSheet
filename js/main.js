@@ -170,5 +170,5 @@ function onClickAddBtn() {
 }
 
 function loadDatePicker() {
-    $('.testBox').load('../datePicker.html');
+    $('.testBox').load('html/datePicker.html');
 }
