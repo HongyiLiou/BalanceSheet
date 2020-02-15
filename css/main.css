@@ -49,7 +49,7 @@ a {
 }
 
 * {
-  font-family: "微軟正黑體";
+  font-family: "Muli", sans-serif, "微軟正黑體";
   box-sizing: border-box;
 }
 
@@ -61,6 +61,15 @@ ul, li {
 
 html {
   font-size: 16px;
+}
+
+.background {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: url("https://ae01.alicdn.com/kf/HTB1mplegr1YBuNjSszhq6AUsFXaK/Laeacco-Forest-Park-Bench-Trees-Dusk-Spring-Nature-Photography-Background-Customized-Photographic-Backdrops-For-Photo-Studio.jpg") center center;
+  background-size: cover;
+  z-index: -1;
 }
 
 /** 收支表 */
@@ -122,7 +131,260 @@ html {
 
 .testBox {
   position: absolute;
-  top: 50%;
   left: 50%;
+  top: 50%;
   transform: translate(-50%, -50%);
+}
+
+/** 日期選取器 Date-Picker */
+.datePickerBox {
+  display: flex;
+  width: 600px;
+  height: 330px;
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.7));
+  color: #000;
+  overflow: hidden;
+  border-radius: 8px;
+  opacity: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  animation: showDatePicker 0.3s 0.1s forwards;
+}
+.datePickerBox .showArea {
+  width: 45%;
+}
+.datePickerBox .showArea header {
+  height: 35px;
+  line-height: 35px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.7);
+  text-align: center;
+}
+.datePickerBox .showArea .content {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 40px 0 40px 0;
+}
+.datePickerBox .showArea .content .month {
+  font-size: 150%;
+}
+.datePickerBox .showArea .content .day {
+  font-size: 450%;
+  font-weight: 600;
+}
+.datePickerBox .showArea .content .year {
+  font-size: 120%;
+  opacity: 0.7;
+}
+.datePickerBox .selectArea {
+  position: relative;
+  width: 55%;
+}
+.datePickerBox .selectArea header {
+  width: 100%;
+  height: 35px;
+  display: flex;
+  padding: 0 5px;
+}
+.datePickerBox .selectArea header .displayNone {
+  display: none;
+}
+.datePickerBox .selectArea header .datePicker_year, .datePickerBox .selectArea header .datePicker_month {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+  line-height: 35px;
+}
+.datePickerBox .selectArea header .datePicker_year p, .datePickerBox .selectArea header .datePicker_month p {
+  width: 70px;
+  height: 25px;
+  line-height: 25px;
+  text-align: center;
+  border-radius: 100px;
+  transition: 0.3s;
+  cursor: pointer;
+  -webkit-user-select: none;
+          user-select: none;
+}
+.datePickerBox .selectArea header .datePicker_year p:hover, .datePickerBox .selectArea header .datePicker_month p:hover {
+  background: rgba(255, 255, 255, 0.6);
+}
+.datePickerBox .selectArea header .datePicker_year .prev, .datePickerBox .selectArea header .datePicker_year .next, .datePickerBox .selectArea header .datePicker_month .prev, .datePickerBox .selectArea header .datePicker_month .next {
+  display: flex;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 50%;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-50%);
+  border-radius: 100px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.datePickerBox .selectArea header .datePicker_year .prev:hover, .datePickerBox .selectArea header .datePicker_year .next:hover, .datePickerBox .selectArea header .datePicker_month .prev:hover, .datePickerBox .selectArea header .datePicker_month .next:hover {
+  background: rgba(255, 255, 255, 0.7);
+}
+.datePickerBox .selectArea header .datePicker_year .prev:hover i, .datePickerBox .selectArea header .datePicker_year .next:hover i, .datePickerBox .selectArea header .datePicker_month .prev:hover i, .datePickerBox .selectArea header .datePicker_month .next:hover i {
+  color: rgba(0, 0, 0, 0.95);
+}
+.datePickerBox .selectArea header .datePicker_year .prev i, .datePickerBox .selectArea header .datePicker_year .next i, .datePickerBox .selectArea header .datePicker_month .prev i, .datePickerBox .selectArea header .datePicker_month .next i {
+  transition: 0.3s;
+  color: rgba(0, 0, 0, 0.3);
+}
+.datePickerBox .selectArea header .datePicker_year .prev, .datePickerBox .selectArea header .datePicker_month .prev {
+  left: 15px;
+}
+.datePickerBox .selectArea header .datePicker_year .next, .datePickerBox .selectArea header .datePicker_month .next {
+  right: 15px;
+}
+.datePickerBox .selectArea .calender .userSelectArea {
+  position: absolute;
+  opacity: 0;
+  -webkit-user-select: none;
+          user-select: none;
+  transition: 0.5s;
+  pointer-events: none;
+}
+.datePickerBox .selectArea .calender .userSelectArea.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+.datePickerBox .selectArea .calender .userSelectArea .weekDays {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 25px;
+}
+.datePickerBox .selectArea .calender .userSelectArea .weekDays p {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  font-size: 90%;
+  line-height: 30px;
+}
+.datePickerBox .selectArea .calender .userSelectArea .weekDays p:first-child, .datePickerBox .selectArea .calender .userSelectArea .weekDays p:last-child {
+  color: #f36565;
+}
+.datePickerBox .selectArea .calender .userSelectArea ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 21px;
+}
+.datePickerBox .selectArea .calender .userSelectArea .datePicker_day li {
+  width: 34px;
+  height: 34px;
+  line-height: 34px;
+  text-align: center;
+  font-size: 90%;
+  margin: 1px 2px;
+  border-radius: 100px;
+  -webkit-user-select: none;
+          user-select: none;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.datePickerBox .selectArea .calender .userSelectArea .datePicker_day li:hover {
+  background: rgba(255, 255, 255, 0.7);
+}
+.datePickerBox .selectArea .calender .userSelectArea .datePicker_day li.active {
+  background: rgba(0, 0, 0, 0.6);
+  color: #FFF;
+}
+.datePickerBox .selectArea .calender .selectYearArea, .datePickerBox .selectArea .calender .selectMonthArea {
+  position: absolute;
+  opacity: 0;
+  transition: 0.5s;
+  -webkit-user-select: none;
+          user-select: none;
+  pointer-events: none;
+}
+.datePickerBox .selectArea .calender .selectYearArea.active, .datePickerBox .selectArea .calender .selectMonthArea.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+.datePickerBox .selectArea .calender .selectYearArea ul, .datePickerBox .selectArea .calender .selectMonthArea ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 21px;
+}
+.datePickerBox .selectArea .calender .selectYearArea ul li, .datePickerBox .selectArea .calender .selectMonthArea ul li {
+  width: 60px;
+  height: 35px;
+  background: rgba(255, 255, 255, 0.3);
+  text-align: center;
+  font-size: 90%;
+  margin: 1px 2px;
+  line-height: 35px;
+  border-radius: 100px;
+  -webkit-user-select: none;
+          user-select: none;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.datePickerBox .selectArea .calender .selectYearArea ul li:hover, .datePickerBox .selectArea .calender .selectMonthArea ul li:hover {
+  background: rgba(255, 255, 255, 0.7);
+}
+.datePickerBox .selectArea .calender .selectYearArea ul li:active, .datePickerBox .selectArea .calender .selectMonthArea ul li:active {
+  transition: 0s;
+  background: white;
+}
+.datePickerBox .selectArea .calender .selectYearArea ul li.active, .datePickerBox .selectArea .calender .selectMonthArea ul li.active {
+  background: rgba(0, 0, 0, 0.6);
+  color: #FFF;
+}
+.datePickerBox .selectArea footer {
+  position: absolute;
+  right: 21px;
+  bottom: 10px;
+}
+.datePickerBox .selectArea footer button {
+  width: 60px;
+  height: 30px;
+  border: none;
+  font-size: 100%;
+  border-radius: 100px;
+  background: transparent;
+  outline: none;
+  -webkit-user-select: none;
+          user-select: none;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.datePickerBox .selectArea footer button:hover {
+  background: rgba(255, 255, 255, 0.7);
+}
+.datePickerBox .selectArea footer button:active {
+  transition: 0s;
+  background: rgba(255, 255, 255, 0.95);
+}
+@keyframes showDatePicker {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  60% {
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@media screen and (max-width: 500px) {
+  .datePickerBox {
+    flex-wrap: wrap;
+    width: 340px;
+    height: 600px;
+  }
+  .datePickerBox .showArea {
+    width: 100%;
+    height: 0;
+  }
+  .datePickerBox .selectArea {
+    width: 100%;
+  }
 }

@@ -1,0 +1,40 @@
+// * Mixins */
+@mixin clearfix()
+  &::after    
+    display: block
+    content: ""
+    clear: both
+
+// 絕對定位垂直水平置中
+// 用法: +ab_center
+@mixin ab_center
+    position: absolute
+    left: 50%
+    top: 50%
+    transform: translate(-50%,-50%)
+
+// 快速指定尺寸
+// 用法: +size(width, height)
+@mixin size($w, $h)
+    width: $w
+    height: $h
+
+// keyframes
+// 用法:
+// +keyframes(animation name)
+//    content...
+@mixin keyframes($a)
+  @-webkit-keyframes #{$a}
+    @content
+  @-moz-keyframes #{$a}
+    @content
+  @keyframes #{$a}
+    @content
+
+
+// 絕對定位(左, 上)
+// 用法: +abpos(left, top)
+=abpos($l:initial, $t:initial)
+  position: absolute
+  left: $l
+  top: $t

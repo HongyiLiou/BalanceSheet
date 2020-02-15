@@ -15,62 +15,94 @@ article.datePickerBox
                 input#datePicker_year(type="number")
                 input#datePicker_month(type="number")
                 input#datePicker_day(type="number")
-            .datePicker_year 2020 年
+            .datePicker_year
+                p 2020 年
                 .prev
+                    i.fa.fa-chevron-left
                 .next
-            .datePicker_month 2 月
+                    i.fa.fa-chevron-right
+            .datePicker_month
+                p 2 月
                 .prev
+                    i.fa.fa-chevron-left
                 .next
+                    i.fa.fa-chevron-right
 
         .calender
-            .weekDays
-                p 日
-                p 一
-                p 二
-                p 三
-                p 四
-                p 五
-                p 六
-            ul.datePicker_day
-                li
-                li
-                li
-                li
-                li
-                li
-                li 1
-                li 2
-                li 3
-                li 4
-                li 5
-                li 6
-                li 7
-                li 8
-                li 9
-                li 10
-                li 11
-                li 12
-                li 13
-                li 14
-                li 15
-                li 16
-                li 17
-                li 18
-                li 19
-                li 20
-                li 21
-                li 22
-                li 23
-                li 24
-                li 25
-                li 26
-                li 27
-                li 28
-                li 29
-                li
-                li
-                li
-                li
-                li
-                li
-                li
+            .userSelectArea.active
+                .weekDays
+                    p 日
+                    p 一
+                    p 二
+                    p 三
+                    p 四
+                    p 五
+                    p 六
+                ul.datePicker_day
+                    li
+                    li
+                    li
+                    li
+                    li
+                    li
+                    li 1
+                    li 2
+                    li 3
+                    li 4
+                    li 5
+                    li 6
+                    li 7
+                    li 8
+                    li 9
+                    li 10
+                    li 11
+                    li 12
+                    li 13
+                    li 14
+                    li.active 15
+                    li 16
+                    li 17
+                    li 18
+                    li 19
+                    li 20
+                    li 21
+                    li 22
+                    li 23
+                    li 24
+                    li 25
+                    li 26
+                    li 27
+                    li 28
+                    li 29
+                    li
+                    li
+                    li
+                    li
+                    li
+                    li
+                    li
+
+            .selectYearArea
+                ul
+                    li.active 2020
+                    li 2021
+                    li 2022
+            .selectMonthArea
+                ul
+                    li 1 月
+                    li.active 2 月
+                    li 3 月
+                    li 4 月
+                    li 5 月
+                    li 6 月
+                    li 7 月
+                    li 8 月
+                    li 9 月
+                    li 10 月
+                    li 11 月
+                    li 12 月
+
+        footer
+            button.todayBtn 今日
+            button.cancelBtn 取消
+            button.okBtn 確認
