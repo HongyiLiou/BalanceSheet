@@ -342,8 +342,7 @@ html {
   bottom: 10px;
 }
 .datePickerBox .selectArea footer button {
-  width: 60px;
-  height: 30px;
+  padding: 8px 18px;
   border: none;
   font-size: 100%;
   border-radius: 100px;
