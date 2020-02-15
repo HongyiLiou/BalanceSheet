@@ -162,7 +162,7 @@ html {
 .datePickerBox .showArea .content {
   text-align: center;
   background: rgba(255, 255, 255, 0.7);
-  padding: 40px 0 40px 0;
+  padding: 40px 0;
 }
 .datePickerBox .showArea .content .month {
   font-size: 150%;
@@ -375,15 +375,20 @@ html {
 }
 @media screen and (max-width: 500px) {
   .datePickerBox {
-    flex-wrap: wrap;
     width: 340px;
-    height: 600px;
+    height: 570px;
+    flex-wrap: wrap;
   }
   .datePickerBox .showArea {
     width: 100%;
-    height: 0;
+    height: 20px;
+  }
+  .datePickerBox .showArea .content {
+    padding: 15px 0;
   }
   .datePickerBox .selectArea {
+    top: 95px;
     width: 100%;
+    height: 340px;
   }
 }
