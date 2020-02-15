@@ -211,6 +211,10 @@ html {
 .datePickerBox .selectArea header .datePicker_year p:hover, .datePickerBox .selectArea header .datePicker_month p:hover {
   background: rgba(255, 255, 255, 0.6);
 }
+.datePickerBox .selectArea header .datePicker_year p:active, .datePickerBox .selectArea header .datePicker_month p:active {
+  transition: 0s;
+  background: white;
+}
 .datePickerBox .selectArea header .datePicker_year .prev, .datePickerBox .selectArea header .datePicker_year .next, .datePickerBox .selectArea header .datePicker_month .prev, .datePickerBox .selectArea header .datePicker_month .next {
   display: flex;
   position: absolute;
