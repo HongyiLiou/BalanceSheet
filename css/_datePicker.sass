@@ -5,7 +5,8 @@
 .datePickerBox
     display: flex
     +size(600px, 330px)
-    background: linear-gradient(120deg, rgba(#FFF, 0.6), rgba(#FFF, 0.8))
+    // background: linear-gradient(120deg, rgba(#FFF, 0.6), rgba(#FFF, 0.8))
+    background: rgba(#FFF, 0.7)
     color: #000
     overflow: hidden
     border-radius: 8px
@@ -19,13 +20,13 @@
         header
             height: 35px
             line-height: 35px
-            background: rgba(#FFF, 0.9)
+            background: rgba(#FFF, 0.95)
             box-shadow: 0 5px 5px -5px rgba(#000, 0.7)
             text-align: center
 
         .content
             text-align: center
-            background: rgba(#FFF, 0.7)
+            background: rgba(#FFF, 0.6)
             padding: 40px 0
 
             .month
@@ -142,6 +143,7 @@
                         margin: 1px 2px
                         border-radius: 100px
                         user-select: none
+                        pointer-events: none
                         transition: 0.3s
                         cursor: pointer
 
@@ -152,8 +154,8 @@
                             background: rgba(#000, 0.6)
                             color: #FFF
 
-                        &.pointerEventNone
-                            pointer-events: none
+                        &.pointerEventAuto
+                            pointer-events: auto
 
             .selectYearArea, .selectMonthArea
                 position: absolute

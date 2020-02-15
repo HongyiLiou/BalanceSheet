@@ -55,9 +55,9 @@ function initialDatePicker() {
                 x.classList.remove('active');
             });
             const dateString = `${btn.innerHTML}/${datePicker_month.innerHTML.slice(0, 2).trim()}/${dataPickerShowDay.innerHTML}`;
-            console.log(dateString);
             
             setDateToShow(dateString);
+            setCalender(datePicker_month.innerHTML.slice(0, 2).trim());
             btn.classList.add('active');
             selectMonthArea.classList.remove('active');
             selectYearArea.classList.remove('active');
@@ -105,6 +105,7 @@ function setDateToShow(dateString) {
 
 }
 
+
 /** 轉換顯示星期 */
 function setShowWeek(weekString) {
     switch(weekString) {
@@ -132,22 +133,26 @@ function setShowWeek(weekString) {
     }
 }
 
+
 /** 設定 Calender內容 */
 function setCalender(monthString) {
-    const month = monthString ? monthString : Number(dataPickerShowMonth.innerHTML);
     const date = new Date(Number(dataPickerShowYear.innerHTML), monthString, 0);
     const week = new Date(`${dataPickerShowYear.innerHTML}/${monthString}/1`).getDay();
     const fullMonth = date.getDate();
     console.log('week', week);
     console.log('fullMonth', fullMonth);
-    console.log('dataPickerShowYear.innerHTML', dataPickerShowYear.innerHTML);
     datePicker_day.forEach(x => {
         x.innerHTML = '';
+        x.classList = '';
     });
 
+    // 依據月份天數將日期置入月曆中
     for (let i = week; i < fullMonth + week; i++) {
         datePicker_day[i].innerHTML = i - week + 1;
-                
+        datePicker_day[i].classList.add('pointerEventAuto');
+        if (datePicker_day[i].innerHTML === dataPickerShowDay.innerHTML) {
+            datePicker_day[i].classList.add('active');
+        }
     }
     
 }
