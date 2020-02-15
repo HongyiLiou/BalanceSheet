@@ -154,6 +154,19 @@ function setCalender(monthString) {
             datePicker_day[i].classList.add('active');
         }
     }
+
+    // 註冊點擊事件
+    const dateBtns = document.querySelectorAll('.pointerEventAuto');
+    dateBtns.forEach((btn, i) => {
+        btn.addEventListener('click', () => {
+            dateBtns.forEach(x => {
+                x.classList.remove('active');
+            });
+
+            btn.classList.add('active');
+            setDateToShow(`${dataPickerShowYear.innerHTML}/${monthString}/${i + 1}`);
+        });
+    });
     
 }
 
