@@ -297,6 +297,9 @@ html {
   background: rgba(0, 0, 0, 0.6);
   color: #FFF;
 }
+.datePickerBox .selectArea .calender .userSelectArea .datePicker_day li.pointerEventNone {
+  pointer-events: none;
+}
 .datePickerBox .selectArea .calender .selectYearArea, .datePickerBox .selectArea .calender .selectMonthArea {
   position: absolute;
   opacity: 0;

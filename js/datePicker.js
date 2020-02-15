@@ -7,6 +7,7 @@
 
 /** 年份選取按鈕 */const datePicker_year = document.querySelector('.datePicker_year p');
 /** 月份選取按鈕 */const datePicker_month = document.querySelector('.datePicker_month p');
+/** 日期選取按鈕 */const datePicker_day = document.querySelectorAll('.datePicker_day li');
 
 /** 區塊顯示 - 日期選擇 */const userSelectArea = document.querySelector('.userSelectArea');
 /** 區塊顯示 - 年份選擇 */const selectYearArea = document.querySelector('.selectYearArea');
@@ -20,22 +21,31 @@
 function initialDatePicker() {
     setDateToShow(`${ year }/${ month }/${ day }`);
 
-    const monthBtnIndex = new Date().getMonth();
-    selectMonthAreaBtns[monthBtnIndex].classList.add('active');
+    
+    setCalender(month);
+
+    const dateBtnIndex = new Date();
+    selectMonthAreaBtns[dateBtnIndex.getMonth()].classList.add('active');
+    
+    // datePicker_day[dateBtnIndex.getDate()].classList.add('active');
+    // console.log(datePicker_day);
     
     
+    // 顯示年份按鈕
     datePicker_year.addEventListener('click', () => {
         userSelectArea.classList.remove('active');
         selectMonthArea.classList.remove('active');
         selectYearArea.classList.add('active');
     });
 
+    // 顯示月份按鈕
     datePicker_month.addEventListener('click', () => {
         userSelectArea.classList.remove('active');
         selectYearArea.classList.remove('active');
         selectMonthArea.classList.add('active');
     });
 
+    // 年份按鈕
     selectYearAreaBtns.forEach(btn => {
         if (dataPickerShowYear.innerHTML === btn.innerHTML) {
             btn.classList.add('active');
@@ -53,6 +63,7 @@ function initialDatePicker() {
         });
     });
 
+    // 月份按鈕
     selectMonthAreaBtns.forEach((btn, i) => {
         btn.addEventListener('click', () => {
             selectMonthAreaBtns.forEach(x => {
@@ -60,12 +71,14 @@ function initialDatePicker() {
             })
             const dateString = `${dataPickerShowYear.innerHTML}/${i + 1}/${dataPickerShowDay.innerHTML}`;
             setDateToShow(dateString);
+            setCalender(i + 1);
             btn.classList.add('active');
             selectMonthArea.classList.remove('active');
             selectYearArea.classList.remove('active');
             userSelectArea.classList.add('active');
         });
     });
+    
 }
 
 
@@ -115,6 +128,26 @@ function setShowWeek(weekString) {
             dataPickerShowWeek.innerHTML = '星期六';
             break;
     }
+}
+
+/** 設定 Calender內容 */
+function setCalender(monthString) {
+
+    const date = new Date(Number(dataPickerShowYear.innerHTML), monthString, 0);
+    const week = new Date(`${dataPickerShowYear.innerHTML}/${monthString}/1`).getDay();
+    const fullMonth = date.getDate();
+    console.log('week', week);
+    console.log('fullMonth', fullMonth);
+    console.log('dataPickerShowYear.innerHTML', dataPickerShowYear.innerHTML);
+    datePicker_day.forEach(x => {
+        x.innerHTML = '';
+    });
+
+    for (let i = week; i < fullMonth + week; i++) {
+        datePicker_day[i].innerHTML = i - week + 1;
+                
+    }
+    
 }
 
 initialDatePicker();
