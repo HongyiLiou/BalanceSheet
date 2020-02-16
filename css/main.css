@@ -235,6 +235,10 @@ html {
 .datePickerBox .selectArea header .datePicker_year .prev:hover i, .datePickerBox .selectArea header .datePicker_year .next:hover i, .datePickerBox .selectArea header .datePicker_month .prev:hover i, .datePickerBox .selectArea header .datePicker_month .next:hover i {
   color: rgba(0, 0, 0, 0.95);
 }
+.datePickerBox .selectArea header .datePicker_year .prev:active, .datePickerBox .selectArea header .datePicker_year .next:active, .datePickerBox .selectArea header .datePicker_month .prev:active, .datePickerBox .selectArea header .datePicker_month .next:active {
+  transition: 0s;
+  background: white;
+}
 .datePickerBox .selectArea header .datePicker_year .prev i, .datePickerBox .selectArea header .datePicker_year .next i, .datePickerBox .selectArea header .datePicker_month .prev i, .datePickerBox .selectArea header .datePicker_month .next i {
   transition: 0.3s;
   color: rgba(0, 0, 0, 0.3);
