@@ -244,6 +244,13 @@ function setButtons() {
 
     // 取消按鈕
     cancelBtn.addEventListener('click', () => {
+        const datePickerBox = document.querySelector('.datePickerBox');
+        const popupBox = document.querySelector('.popupBox');
+        datePickerBox.classList.add('hide');
+        setTimeout(() => {
+            popupBox.innerHTML = '';
+            $('#datePickerJS').remove();
+        }, 300);
         
     });
     

@@ -151,6 +151,10 @@ html {
   -webkit-user-select: none;
           user-select: none;
 }
+.datePickerBox.hide {
+  animation: hideDatePicker 0.3s forwards;
+  pointer-events: none;
+}
 .datePickerBox .showArea {
   width: 45%;
 }
@@ -378,7 +382,19 @@ html {
     transform: scale(1);
   }
 }
-@keyframes hideDatePicker {}
+@keyframes hideDatePicker {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+}
 @media screen and (max-width: 500px) {
   .datePickerBox {
     width: 340px;
