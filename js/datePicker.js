@@ -130,6 +130,7 @@ function setButtons() {
     /** Next - month */const datePicker_monthNextBtn = document.querySelector('.datePicker_month .next');
     /** Today button */const todayBtn = document.querySelector('.datePickerBox .todayBtn');
     /** Cancel button */const cancelBtn = document.querySelector('.datePickerBox .cancelBtn');
+    /** OK button */const okBtn = document.querySelector('.datePickerBox .okBtn');
 
     const today = new Date();
     selectMonthAreaBtns[today.getMonth()].classList.add('active');
@@ -254,9 +255,24 @@ function setButtons() {
             popupBox.innerHTML = '';
             $('#datePickerJS').remove();
         }, 300);
-        
     });
-    
+
+    // OK按鈕
+    okBtn.addEventListener('click', () => {
+        switch (datePickerType) {
+            case 'datePicker':
+                year_show.value = `${dataPickerShowYear.innerHTML} 年`;
+                month_show.value = `${datePicker_month.innerHTML.slice(0, 2).trim()} 月`;
+                day_show.value = `${dataPickerShowDay.innerHTML} 日`;
+                monthInput.value = Number(datePicker_month.innerHTML.slice(0, 2).trim());
+                dayInput.value = Number(dataPickerShowDay.innerHTML);
+                cancelBtn.click();
+
+            default:
+                break;
+        }
+    });
+
 }
 
 initialDatePicker();

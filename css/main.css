@@ -193,9 +193,6 @@ html {
   display: flex;
   padding: 0 5px;
 }
-.datePickerBox .selectArea header .displayNone {
-  display: none;
-}
 .datePickerBox .selectArea header .datePicker_year, .datePickerBox .selectArea header .datePicker_month {
   position: relative;
   display: flex;
