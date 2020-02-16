@@ -1,22 +1,5 @@
 // Date-Picker
 
-/** 顯示星期 */const dataPickerShowWeek = document.querySelector('.datePickerBox .week');
-/** 顯示月 */const dataPickerShowMonth = document.querySelector('.datePickerBox .month');
-/** 顯示日 */const dataPickerShowDay = document.querySelector('.datePickerBox .day');
-/** 顯示年 */const dataPickerShowYear = document.querySelector('.datePickerBox .year');
-
-/** 年份選取按鈕 */const datePicker_year = document.querySelector('.datePicker_year p');
-/** 月份選取按鈕 */const datePicker_month = document.querySelector('.datePicker_month p');
-/** 日期選取按鈕 */const datePicker_day = document.querySelectorAll('.datePicker_day li');
-
-/** 區塊顯示 - 日期選擇 */const userSelectArea = document.querySelector('.userSelectArea');
-/** 區塊顯示 - 年份選擇 */const selectYearArea = document.querySelector('.selectYearArea');
-/** 區塊顯示 - 月份選擇  */const selectMonthArea = document.querySelector('.selectMonthArea');
-
-/** 所有年份選單 */const selectYearAreaBtns = document.querySelectorAll('.selectYearArea ul li');
-/** 所有月份選單 */const selectMonthAreaBtns = document.querySelectorAll('.selectMonthArea ul li');
-
-
 /** 初始化 */
 function initialDatePicker() {
     setButtons();
@@ -34,6 +17,11 @@ function initialDatePicker() {
  * 日期字串，格式： yyyy/mm/dd
  */
 function setDateToShow(dateString) {
+    /** 顯示年 */const dataPickerShowYear = document.querySelector('.datePickerBox .year');
+    /** 顯示月 */const dataPickerShowMonth = document.querySelector('.datePickerBox .month');
+    /** 顯示日 */const dataPickerShowDay = document.querySelector('.datePickerBox .day');
+    /** 年份選取按鈕 */const datePicker_year = document.querySelector('.datePicker_year p');
+    /** 月份選取按鈕 */const datePicker_month = document.querySelector('.datePicker_month p');
     const date = new Date(dateString);
     const dateToString = date.toString();    
     
@@ -55,6 +43,7 @@ function setDateToShow(dateString) {
 
 /** 轉換顯示星期 */
 function setShowWeek(weekString) {
+    /** 顯示星期 */const dataPickerShowWeek = document.querySelector('.datePickerBox .week');
     switch(weekString) {
         case 'Sun':
             dataPickerShowWeek.innerHTML = '星期日';
@@ -87,6 +76,9 @@ function setShowWeek(weekString) {
  * 月份字串 
  */
 function setCalender(monthString) {
+    /** 顯示年 */const dataPickerShowYear = document.querySelector('.datePickerBox .year');
+    /** 顯示日 */const dataPickerShowDay = document.querySelector('.datePickerBox .day');
+    /** 日期選取按鈕 */const datePicker_day = document.querySelectorAll('.datePicker_day li');
     const date = new Date(Number(dataPickerShowYear.innerHTML), monthString, 0);
     const week = new Date(`${dataPickerShowYear.innerHTML}/${monthString}/1`).getDay();
     const fullMonth = date.getDate();
@@ -123,6 +115,15 @@ function setCalender(monthString) {
 
 /** 設定所有按鈕 */
 function setButtons() {
+    /** 顯示年 */const dataPickerShowYear = document.querySelector('.datePickerBox .year');
+    /** 顯示日 */const dataPickerShowDay = document.querySelector('.datePickerBox .day');
+    /** 年份選取按鈕 */const datePicker_year = document.querySelector('.datePicker_year p');
+    /** 月份選取按鈕 */const datePicker_month = document.querySelector('.datePicker_month p');
+    /** 區塊顯示 - 日期選擇 */const userSelectArea = document.querySelector('.userSelectArea');
+    /** 區塊顯示 - 年份選擇 */const selectYearArea = document.querySelector('.selectYearArea');
+    /** 區塊顯示 - 月份選擇  */const selectMonthArea = document.querySelector('.selectMonthArea');
+    /** 所有年份選單 */const selectYearAreaBtns = document.querySelectorAll('.selectYearArea ul li');
+    /** 所有月份選單 */const selectMonthAreaBtns = document.querySelectorAll('.selectMonthArea ul li');
     /** Prev - year */const datePicker_yearPrevBtn = document.querySelector('.datePicker_year .prev');
     /** Next - year */const datePicker_yearNextBtn = document.querySelector('.datePicker_year .next');
     /** Prev - month */const datePicker_monthPrevBtn = document.querySelector('.datePicker_month .prev');
