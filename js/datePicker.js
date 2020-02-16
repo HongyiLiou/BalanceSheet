@@ -24,69 +24,6 @@ function initialDatePicker() {
     setDateToShow(`${ year }/${ month }/${ day }`);
     
     setCalender(month);
-
-    const dateBtnIndex = new Date();
-    selectMonthAreaBtns[dateBtnIndex.getMonth()].classList.add('active');
-    
-    
-    // 顯示年份區塊
-    datePicker_year.addEventListener('click', () => {
-        userSelectArea.classList.remove('active');
-        selectMonthArea.classList.remove('active');
-        selectYearArea.classList.add('active');
-    });
-
-    // 顯示月份區塊
-    datePicker_month.addEventListener('click', () => {
-        userSelectArea.classList.remove('active');
-        selectYearArea.classList.remove('active');
-        selectMonthArea.classList.add('active');
-    });
-
-    // 年份按鈕
-    selectYearAreaBtns.forEach(btn => {
-        if (dataPickerShowYear.innerHTML === btn.innerHTML) {
-            btn.classList.add('active');
-        }
-        btn.addEventListener('click', () => {
-            selectYearAreaBtns.forEach(x => {
-                x.classList.remove('active');
-            });
-            const dateString = `${btn.innerHTML}/${datePicker_month.innerHTML.slice(0, 2).trim()}/${dataPickerShowDay.innerHTML}`;
-            
-            setDateToShow(dateString);
-            setCalender(datePicker_month.innerHTML.slice(0, 2).trim());
-            btn.classList.add('active');
-            selectMonthArea.classList.remove('active');
-            selectYearArea.classList.remove('active');
-            userSelectArea.classList.add('active');
-        });
-    });
-
-    // 月份按鈕
-    selectMonthAreaBtns.forEach((btn, i) => {
-        btn.addEventListener('click', () => {
-            selectMonthAreaBtns.forEach(x => {
-                x.classList.remove('active');
-            })
-            let dateString;
-            const fullMonth = new Date(Number(dataPickerShowYear.innerHTML), i + 1, 0).getDate();
-
-            // 若選取的月份總天數超過上一次選取的，需做判斷處理
-            if (Number(dataPickerShowDay.innerHTML) > fullMonth) {
-                dateString = `${dataPickerShowYear.innerHTML}/${i + 1}/${fullMonth}`;
-            } else {
-                dateString = `${dataPickerShowYear.innerHTML}/${i + 1}/${dataPickerShowDay.innerHTML}`;
-            }
-
-            setDateToShow(dateString);
-            setCalender(i + 1);
-            btn.classList.add('active');
-            selectMonthArea.classList.remove('active');
-            selectYearArea.classList.remove('active');
-            userSelectArea.classList.add('active');
-        });
-    });
     
 }
 
@@ -184,12 +121,76 @@ function setCalender(monthString) {
 }
 
 
-/** 註冊按鈕點擊事件 */
+/** 設定所有按鈕 */
 function setButtons() {
-    /** Prev按鈕 - 年份 */const datePicker_yearPrevBtn = document.querySelector('.datePicker_year .prev');
-    /** Next按鈕 - 年份 */const datePicker_yearNextBtn = document.querySelector('.datePicker_year .next');
-    /** Prev按鈕 - 月份 */const datePicker_monthPrevBtn = document.querySelector('.datePicker_month .prev');
-    /** Next按鈕 - 月份 */const datePicker_monthNextBtn = document.querySelector('.datePicker_month .next');
+    /** Prev - year */const datePicker_yearPrevBtn = document.querySelector('.datePicker_year .prev');
+    /** Next - year */const datePicker_yearNextBtn = document.querySelector('.datePicker_year .next');
+    /** Prev - month */const datePicker_monthPrevBtn = document.querySelector('.datePicker_month .prev');
+    /** Next - month */const datePicker_monthNextBtn = document.querySelector('.datePicker_month .next');
+    /** Today button */const todayBtn = document.querySelector('.todayBtn');
+    /** Cancel button */const cancelBtn = document.querySelector('.cancelBtn');
+
+    const today = new Date();
+    selectMonthAreaBtns[today.getMonth()].classList.add('active');
+    
+    // 顯示年份區塊按鈕
+    datePicker_year.addEventListener('click', () => {
+        userSelectArea.classList.remove('active');
+        selectMonthArea.classList.remove('active');
+        selectYearArea.classList.add('active');
+    });
+
+    // 顯示月份區塊按鈕
+    datePicker_month.addEventListener('click', () => {
+        userSelectArea.classList.remove('active');
+        selectYearArea.classList.remove('active');
+        selectMonthArea.classList.add('active');
+    });
+
+    // 年份按鈕
+    selectYearAreaBtns.forEach(btn => {
+        if (dataPickerShowYear.innerHTML === btn.innerHTML) {
+            btn.classList.add('active');
+        }
+        btn.addEventListener('click', () => {
+            selectYearAreaBtns.forEach(x => {
+                x.classList.remove('active');
+            });
+            const dateString = `${btn.innerHTML}/${datePicker_month.innerHTML.slice(0, 2).trim()}/${dataPickerShowDay.innerHTML}`;
+            
+            setDateToShow(dateString);
+            setCalender(datePicker_month.innerHTML.slice(0, 2).trim());
+            btn.classList.add('active');
+            selectMonthArea.classList.remove('active');
+            selectYearArea.classList.remove('active');
+            userSelectArea.classList.add('active');
+        });
+    });
+
+    // 月份按鈕
+    selectMonthAreaBtns.forEach((btn, i) => {
+        btn.addEventListener('click', () => {
+            selectMonthAreaBtns.forEach(x => {
+                x.classList.remove('active');
+            })
+            let dateString;
+            const fullMonth = new Date(Number(dataPickerShowYear.innerHTML), i + 1, 0).getDate();
+
+            // 若選取的月份總天數超過上一次選取的，需做判斷處理
+            if (Number(dataPickerShowDay.innerHTML) > fullMonth) {
+                dateString = `${dataPickerShowYear.innerHTML}/${i + 1}/${fullMonth}`;
+            } else {
+                dateString = `${dataPickerShowYear.innerHTML}/${i + 1}/${dataPickerShowDay.innerHTML}`;
+            }
+
+            setDateToShow(dateString);
+            setCalender(i + 1);
+            btn.classList.add('active');
+            selectMonthArea.classList.remove('active');
+            selectYearArea.classList.remove('active');
+            userSelectArea.classList.add('active');
+        });
+    });
 
     // 上一年
     datePicker_yearPrevBtn.addEventListener('click', () => {
@@ -233,6 +234,17 @@ function setButtons() {
                 return;
             }
         }
+    });
+
+    // 今日按鈕
+    todayBtn.addEventListener('click', () => {
+        setDateToShow(`${ year }/${ month }/${ day }`);
+        setCalender(month);
+    });
+
+    // 取消按鈕
+    cancelBtn.addEventListener('click', () => {
+        
     });
     
 }

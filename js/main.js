@@ -12,8 +12,10 @@
 /** 取得今日 */day = today.getDate();
 /** 根據月份取得日天數 */days = new Date(year, month, 0).getDate();
 
+
 // 其他元件
 /** Screen Holder */const screenHolder = document.querySelector('.screenHolder');
+/** Date Picker type */let datePickerType;
 
 window.onload = function() {
     initialToday();
@@ -169,7 +171,9 @@ function onClickAddBtn() {
     
 }
 
+/** 載入日期選擇彈窗 */
 function loadDatePicker() {
+    datePickerType = 'datePicker';
     $('.popupBox').load('html/datePicker.html', function() {
         const sc = document.createElement('script');
         sc.id = 'datePickerJS';
