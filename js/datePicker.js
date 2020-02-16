@@ -19,6 +19,8 @@
 
 /** 初始化 */
 function initialDatePicker() {
+    setButtons();
+
     setDateToShow(`${ year }/${ month }/${ day }`);
     
     setCalender(month);
@@ -177,6 +179,60 @@ function setCalender(monthString) {
             btn.classList.add('active');
             setDateToShow(`${dataPickerShowYear.innerHTML}/${monthString}/${i + 1}`);
         });
+    });
+    
+}
+
+
+/** 註冊按鈕點擊事件 */
+function setButtons() {
+    /** Prev按鈕 - 年份 */const datePicker_yearPrevBtn = document.querySelector('.datePicker_year .prev');
+    /** Next按鈕 - 年份 */const datePicker_yearNextBtn = document.querySelector('.datePicker_year .next');
+    /** Prev按鈕 - 月份 */const datePicker_monthPrevBtn = document.querySelector('.datePicker_month .prev');
+    /** Next按鈕 - 月份 */const datePicker_monthNextBtn = document.querySelector('.datePicker_month .next');
+
+    // 上一年
+    datePicker_yearPrevBtn.addEventListener('click', () => {
+        /** 目前顯示的年份 */const yearShowNow = Number(dataPickerShowYear.innerHTML);
+        for (let i = selectYearAreaBtns.length - 1; i >= 0; i--) {
+            if (Number(selectYearAreaBtns[i].innerHTML) < yearShowNow) {
+                selectYearAreaBtns[i].click();
+                return;
+            }
+        }
+    });
+
+    // 下一年
+    datePicker_yearNextBtn.addEventListener('click', () => {
+        /** 目前顯示的年份 */const yearShowNow = Number(dataPickerShowYear.innerHTML);
+        for (let btn of selectYearAreaBtns) {
+            if (Number(btn.innerHTML) > yearShowNow) {
+                btn.click();
+                return;
+            }
+        }
+    });
+
+    // 上一月
+    datePicker_monthPrevBtn.addEventListener('click', () => {
+        /** 目前顯示的年份 */const yearShowNow = Number(datePicker_month.innerHTML.slice(0, 2).trim());
+        for (let i = selectMonthAreaBtns.length - 1; i >= 0; i--) {
+            if (Number(selectMonthAreaBtns[i].innerHTML.slice(0, 2).trim()) < yearShowNow) {
+                selectMonthAreaBtns[i].click();
+                return;
+            }
+        }
+    });
+
+    // 下一月
+    datePicker_monthNextBtn.addEventListener('click', () => {
+        /** 目前顯示的年份 */const yearShowNow = Number(datePicker_month.innerHTML.slice(0, 2).trim());
+        for (let btn of selectMonthAreaBtns) {
+            if (Number(btn.innerHTML.slice(0, 2).trim()) > yearShowNow) {
+                btn.click();
+                return;
+            }
+        }
     });
     
 }
