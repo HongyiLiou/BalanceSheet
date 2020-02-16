@@ -20,7 +20,6 @@
 /** 初始化 */
 function initialDatePicker() {
     setDateToShow(`${ year }/${ month }/${ day }`);
-
     
     setCalender(month);
 
@@ -92,7 +91,7 @@ function initialDatePicker() {
 
 /**
  * 設定顯示日期
- * @param {*dateString}
+ * @param {*} dateString
  * 日期字串，格式： yyyy/mm/dd
  */
 function setDateToShow(dateString) {
@@ -143,13 +142,16 @@ function setShowWeek(weekString) {
 }
 
 
-/** 設定 Calender內容 */
+/**
+ * 設定 Calender內容
+ * @param {*} monthString
+ * 月份字串 
+ */
 function setCalender(monthString) {
     const date = new Date(Number(dataPickerShowYear.innerHTML), monthString, 0);
     const week = new Date(`${dataPickerShowYear.innerHTML}/${monthString}/1`).getDay();
     const fullMonth = date.getDate();
-    console.log('week', week);
-    console.log('fullMonth', fullMonth);
+
     datePicker_day.forEach(x => {
         x.innerHTML = '';
         x.classList = '';

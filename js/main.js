@@ -170,8 +170,9 @@ function onClickAddBtn() {
 }
 
 function loadDatePicker() {
-    $('.testBox').load('html/datePicker.html', function() {
+    $('.popupBox').load('html/datePicker.html', function() {
         const sc = document.createElement('script');
+        sc.id = 'datePickerJS';
         sc.src = 'js/datePicker.js';
         $('body').append(sc);
     });
