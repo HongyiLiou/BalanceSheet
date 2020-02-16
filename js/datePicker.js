@@ -27,18 +27,15 @@ function initialDatePicker() {
     const dateBtnIndex = new Date();
     selectMonthAreaBtns[dateBtnIndex.getMonth()].classList.add('active');
     
-    // datePicker_day[dateBtnIndex.getDate()].classList.add('active');
-    // console.log(datePicker_day);
     
-    
-    // 顯示年份按鈕
+    // 顯示年份區塊
     datePicker_year.addEventListener('click', () => {
         userSelectArea.classList.remove('active');
         selectMonthArea.classList.remove('active');
         selectYearArea.classList.add('active');
     });
 
-    // 顯示月份按鈕
+    // 顯示月份區塊
     datePicker_month.addEventListener('click', () => {
         userSelectArea.classList.remove('active');
         selectYearArea.classList.remove('active');
@@ -71,7 +68,16 @@ function initialDatePicker() {
             selectMonthAreaBtns.forEach(x => {
                 x.classList.remove('active');
             })
-            const dateString = `${dataPickerShowYear.innerHTML}/${i + 1}/${dataPickerShowDay.innerHTML}`;
+            let dateString;
+            const fullMonth = new Date(Number(dataPickerShowYear.innerHTML), i + 1, 0).getDate();
+
+            // 若選取的月份總天數超過上一次選取的，需做判斷處理
+            if (Number(dataPickerShowDay.innerHTML) > fullMonth) {
+                dateString = `${dataPickerShowYear.innerHTML}/${i + 1}/${fullMonth}`;
+            } else {
+                dateString = `${dataPickerShowYear.innerHTML}/${i + 1}/${dataPickerShowDay.innerHTML}`;
+            }
+
             setDateToShow(dateString);
             setCalender(i + 1);
             btn.classList.add('active');
@@ -84,11 +90,14 @@ function initialDatePicker() {
 }
 
 
-/** 設定顯示日期 */
+/**
+ * 設定顯示日期
+ * @param {*dateString}
+ * 日期字串，格式： yyyy/mm/dd
+ */
 function setDateToShow(dateString) {
     const date = new Date(dateString);
-    const dateToString = date.toString();
-    console.log(dateToString);
+    const dateToString = date.toString();    
     
     setShowWeek(dateToString.slice(0, 3));
     dataPickerShowMonth.innerHTML = dateToString.slice(4, 7);
