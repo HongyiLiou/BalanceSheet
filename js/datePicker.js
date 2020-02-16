@@ -128,8 +128,8 @@ function setButtons() {
     /** Next - year */const datePicker_yearNextBtn = document.querySelector('.datePicker_year .next');
     /** Prev - month */const datePicker_monthPrevBtn = document.querySelector('.datePicker_month .prev');
     /** Next - month */const datePicker_monthNextBtn = document.querySelector('.datePicker_month .next');
-    /** Today button */const todayBtn = document.querySelector('.todayBtn');
-    /** Cancel button */const cancelBtn = document.querySelector('.cancelBtn');
+    /** Today button */const todayBtn = document.querySelector('.datePickerBox .todayBtn');
+    /** Cancel button */const cancelBtn = document.querySelector('.datePickerBox .cancelBtn');
 
     const today = new Date();
     selectMonthAreaBtns[today.getMonth()].classList.add('active');
@@ -248,6 +248,8 @@ function setButtons() {
         const datePickerBox = document.querySelector('.datePickerBox');
         const popupBox = document.querySelector('.popupBox');
         datePickerBox.classList.add('hide');
+        showScreenHolder(false);
+        screenHolder.removeEventListener('click', loadDatePicker);
         setTimeout(() => {
             popupBox.innerHTML = '';
             $('#datePickerJS').remove();

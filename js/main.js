@@ -179,5 +179,11 @@ function loadDatePicker() {
         sc.id = 'datePickerJS';
         sc.src = 'js/datePicker.js';
         $('body').append(sc);
+        showScreenHolder(true);
+        screenHolder.addEventListener('click', () => {
+            /** Cancel button */const cancelBtn = document.querySelector('.datePickerBox .cancelBtn');
+            cancelBtn.click();
+            screenHolder.removeEventListener('click', loadDatePicker);
+        });
     });
 }

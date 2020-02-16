@@ -86,7 +86,7 @@ html {
   z-index: 1;
 }
 .screenHolder.show {
-  opacity: 0.3;
+  opacity: 0;
   pointer-events: auto;
 }
 
@@ -134,6 +134,7 @@ html {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  z-index: 1;
 }
 
 /** 日期選取器 Date-Picker */
