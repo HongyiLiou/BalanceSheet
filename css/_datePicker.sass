@@ -343,7 +343,7 @@
                         &.active
                             background: rgba(#FFF, 0.9)
                             border: solid 2px rgba(#666666, 0.3)
-                            color: #000
+                            color: #000 !important
                             font-weight: 800
         footer
             button
@@ -404,6 +404,12 @@
                 font-size: 85% !important
                 button
                     padding: 8px 10px !important
+            .calender
+                .userSelectArea
+                    .datePicker_day
+                        &:hover
+                            li
+                                color: #a5a5a5
         .toggleSwitch
-            bottom: 17px !important
+            bottom: 20px !important
             transform: translateX(-50%) scale(0.8) !important
