@@ -505,6 +505,9 @@ html {
   transition: 0s;
   background: rgba(255, 255, 255, 0.5);
 }
+.darkTheme .selectArea .calender .userSelectArea .datePicker_day:hover li {
+  color: #a5a5a5;
+}
 .darkTheme .toggleSwitch:hover::before, .darkTheme .toggleSwitch:hover::after {
   color: #fafafa;
 }
@@ -562,9 +565,6 @@ html {
   }
   .datePickerBox .selectArea footer button {
     padding: 8px 10px !important;
-  }
-  .datePickerBox .selectArea .calender .userSelectArea .datePicker_day:hover li {
-    color: #a5a5a5;
   }
   .datePickerBox .toggleSwitch {
     bottom: 20px !important;

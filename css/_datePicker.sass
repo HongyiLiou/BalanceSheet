@@ -354,14 +354,18 @@
                 &:active
                     transition: 0s
                     background: rgba(#FFF, 0.5)
+        .calender
+            .userSelectArea
+                .datePicker_day
+                    &:hover
+                        li
+                            color: #a5a5a5
     .toggleSwitch
         &:hover
             &::before, &::after
                 color: #fafafa
         &::before, &::after
             color: #777
-
-
 
 
 // animations
@@ -404,12 +408,6 @@
                 font-size: 85% !important
                 button
                     padding: 8px 10px !important
-            .calender
-                .userSelectArea
-                    .datePicker_day
-                        &:hover
-                            li
-                                color: #a5a5a5
         .toggleSwitch
             bottom: 20px !important
             transform: translateX(-50%) scale(0.8) !important
