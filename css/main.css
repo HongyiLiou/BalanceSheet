@@ -556,23 +556,15 @@ html {
     height: 340px;
   }
   .datePickerBox .selectArea footer {
-    position: absolute;
-    right: 20px;
-    bottom: 10px;
-    font-size: 85%;
+    right: 20px !important;
+    bottom: 7px !important;
+    font-size: 85% !important;
   }
   .datePickerBox .selectArea footer button {
-    padding: 8px 10px;
-    border: none;
-    font-size: 100%;
-    border-radius: 100px;
-    background: transparent;
-    outline: none;
-    transition: 0.3s;
-    cursor: pointer;
+    padding: 8px 10px !important;
   }
   .datePickerBox .toggleSwitch {
-    bottom: 17px;
-    transform: translateX(-50%) scale(0.8);
+    bottom: 17px !important;
+    transform: translateX(-50%) scale(0.8) !important;
   }
 }
