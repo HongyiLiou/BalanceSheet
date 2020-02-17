@@ -148,12 +148,12 @@ html {
   border-radius: 8px;
   opacity: 0;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
-  animation: showDatePicker 0.3s 0.1s forwards;
+  animation: showDatePicker 0.4s 0.1s forwards;
   -webkit-user-select: none;
           user-select: none;
 }
 .datePickerBox.hide {
-  animation: hideDatePicker 0.3s forwards;
+  animation: hideDatePicker 0.4s forwards;
   pointer-events: none;
 }
 .datePickerBox .showArea {
@@ -289,6 +289,7 @@ html {
   align-items: center;
   justify-content: center;
   font-size: 90%;
+  color: #000;
   margin: 1px 2px;
   border-radius: 100px;
   pointer-events: none;
@@ -366,6 +367,149 @@ html {
 .datePickerBox .selectArea footer button:active {
   transition: 0s;
   background: rgba(255, 255, 255, 0.95);
+}
+.datePickerBox .toggleSwitch {
+  position: absolute;
+  display: block;
+  width: 60px;
+  height: 34px;
+  left: calc(45% / 2);
+  bottom: 16px;
+  border-radius: 100px;
+  transform: translateX(-50%);
+}
+.datePickerBox .toggleSwitch:hover::before, .datePickerBox .toggleSwitch:hover::after {
+  color: #555;
+}
+.datePickerBox .toggleSwitch::before {
+  position: absolute;
+  content: "";
+  display: block;
+  left: -35px;
+  top: 50%;
+  font-family: FontAwesome;
+  font-style: solid;
+  font-size: 150%;
+  font-weight: 900;
+  color: #919191;
+  transform: translateY(-50%);
+  transition: 0.4s;
+}
+.datePickerBox .toggleSwitch::after {
+  position: absolute;
+  content: "";
+  display: block;
+  right: -35px;
+  top: 50%;
+  font-family: FontAwesome;
+  font-style: solid;
+  font-size: 150%;
+  font-weight: 900;
+  color: #919191;
+  transform: translateY(-50%);
+  transition: 0.4s;
+}
+.datePickerBox .toggleSwitch input {
+  display: none;
+}
+.datePickerBox .toggleSwitch input:checked + .slider {
+  background: #555;
+}
+.datePickerBox .toggleSwitch input:checked + .slider::before {
+  background: #FFF;
+  transform: translateX(26px);
+}
+.datePickerBox .toggleSwitch input:focus + .slider {
+  box-shadow: 0 2px 5px #000000;
+}
+.datePickerBox .toggleSwitch .slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #ffffff;
+  border-radius: 100px;
+  transition: 0.4s;
+  cursor: pointer;
+}
+.datePickerBox .toggleSwitch .slider::before {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 26px;
+  height: 26px;
+  left: 4px;
+  bottom: 4px;
+  background: #bdbdbd;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+.darkTheme {
+  background: rgba(0, 0, 0, 0.6);
+  color: #fafafa;
+}
+.darkTheme .showArea header {
+  background: rgba(0, 0, 0, 0.9);
+}
+.darkTheme .showArea .content {
+  background: rgba(0, 0, 0, 0.5);
+}
+.darkTheme .selectArea {
+  color: #fafafa;
+}
+.darkTheme .selectArea header .datePicker_year p:hover, .darkTheme .selectArea header .datePicker_month p:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+.darkTheme .selectArea header .datePicker_year p:active, .darkTheme .selectArea header .datePicker_month p:active {
+  transition: 0s;
+  background: rgba(255, 255, 255, 0.5);
+}
+.darkTheme .selectArea header .datePicker_year .prev:hover, .darkTheme .selectArea header .datePicker_year .next:hover, .darkTheme .selectArea header .datePicker_month .prev:hover, .darkTheme .selectArea header .datePicker_month .next:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+.darkTheme .selectArea header .datePicker_year .prev:hover i, .darkTheme .selectArea header .datePicker_year .next:hover i, .darkTheme .selectArea header .datePicker_month .prev:hover i, .darkTheme .selectArea header .datePicker_month .next:hover i {
+  color: rgba(255, 255, 255, 0.95);
+}
+.darkTheme .selectArea header .datePicker_year .prev:active, .darkTheme .selectArea header .datePicker_year .next:active, .darkTheme .selectArea header .datePicker_month .prev:active, .darkTheme .selectArea header .datePicker_month .next:active {
+  transition: 0s;
+  background: rgba(255, 255, 255, 0.5);
+}
+.darkTheme .selectArea header .datePicker_year .prev i, .darkTheme .selectArea header .datePicker_year .next i, .darkTheme .selectArea header .datePicker_month .prev i, .darkTheme .selectArea header .datePicker_month .next i {
+  color: rgba(255, 255, 255, 0.3);
+}
+.darkTheme .selectArea .calender .userSelectArea .datePicker_day:hover li {
+  color: #ececec;
+}
+.darkTheme .selectArea .calender .userSelectArea .datePicker_day li {
+  color: #a5a5a5;
+}
+.darkTheme .selectArea .calender .userSelectArea .datePicker_day li:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+.darkTheme .selectArea .calender .userSelectArea .datePicker_day li.active {
+  background: rgba(255, 255, 255, 0.9);
+  border: solid 2px rgba(102, 102, 102, 0.3);
+  color: #000;
+  font-weight: 800;
+}
+.darkTheme .selectArea footer button {
+  color: #c0c0c0;
+}
+.darkTheme .selectArea footer button:hover {
+  color: #fafafa;
+  background: rgba(255, 255, 255, 0.3);
+}
+.darkTheme .selectArea footer button:active {
+  transition: 0s;
+  background: rgba(255, 255, 255, 0.5);
+}
+.darkTheme .toggleSwitch:hover::before, .darkTheme .toggleSwitch:hover::after {
+  color: #fafafa;
+}
+.darkTheme .toggleSwitch::before, .darkTheme .toggleSwitch::after {
+  color: #777;
 }
 @keyframes showDatePicker {
   0% {

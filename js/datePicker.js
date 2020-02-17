@@ -136,6 +136,7 @@ function setButtons() {
     /** Today button */const todayBtn = document.querySelector('.datePickerBox .todayBtn');
     /** Cancel button */const cancelBtn = document.querySelector('.datePickerBox .cancelBtn');
     /** OK button */const okBtn = document.querySelector('.datePickerBox .okBtn');
+    /** Toggle Switch */const toggleSwitch = document.querySelector('.toggleSwitch');
 
     const today = new Date();
     selectMonthAreaBtns[today.getMonth()].classList.add('active');
@@ -179,7 +180,7 @@ function setButtons() {
         btn.addEventListener('click', () => {
             selectMonthAreaBtns.forEach(x => {
                 x.classList.remove('active');
-            })
+            });
             let dateString;
             const fullMonth = new Date(Number(dataPickerShowYear.innerHTML), i + 1, 0).getDate();
 
@@ -245,6 +246,23 @@ function setButtons() {
 
     // 今日按鈕
     todayBtn.addEventListener('click', () => {
+        const todayYear = today.getFullYear();        
+        const todayMonth = today.getMonth() + 1;
+
+        selectYearAreaBtns.forEach(x => {
+            x.classList.remove('active');
+            if (Number(x.innerHTML) === todayYear) {
+                x.classList.add('active');
+            }
+        });
+
+        selectMonthAreaBtns.forEach(x => {
+            x.classList.remove('active');
+            if (x.innerHTML.slice(0, 2).trim() == todayMonth){
+                x.classList.add('active');
+            }
+        });
+
         setDateToShow(`${ year }/${ month }/${ day }`);
         setCalender(month);
     });
@@ -276,6 +294,20 @@ function setButtons() {
             default:
                 break;
         }
+    });
+
+    // 主題切換 switch按鈕
+    toggleSwitch.addEventListener('click', () => {
+        const checkBox = document.querySelector('.toggleSwitch input');
+        const datePickerBox = document.querySelector('.datePickerBox');
+
+        setTimeout(() => {
+            if (checkBox.checked === true) {
+                datePickerBox.classList.add('darkTheme');
+            } else {
+                datePickerBox.classList.remove('darkTheme');
+            }
+        }, 50);
     });
 
 }
