@@ -304,11 +304,19 @@ function setButtons() {
         setTimeout(() => {
             if (checkBox.checked === true) {
                 datePickerBox.classList.add('darkTheme');
+                localStorage.setItem('datePickerTheme', 'dark');
             } else {
                 datePickerBox.classList.remove('darkTheme');
+                localStorage.removeItem('datePickerTheme');
             }
         }, 50);
     });
+
+    const theme = localStorage.getItem('datePickerTheme');
+
+    if (theme === 'dark') {
+        toggleSwitch.click();
+    }
 
 }
 
