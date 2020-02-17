@@ -11,61 +11,14 @@ head
     
     title Hong-Yi Liou | Balance Sheet
 body
-    div.background
-    div.screenHolder
-    //- select#year
-    //- select#month(onchange="onMonthChanged()")
-    //- select#day
-    br
-
-    //- 年月日隱藏欄位 用來記錄使用者的選擇
-    article.userInputArea_date
-        section.userInput_year
-            input#year.userInputHidden(type="text" readonly)
-            input#year_show.input_show(type="text" readonly onclick="onDateClick({index: 0, type: 'userInput_year'})")
-            ul.options
-        section.userInput_month
-            input#month.userInputHidden(type="text" readonly)
-            input#month_show.input_show(type="text" readonly onclick="onDateClick({index: 1, type: 'userInput_month'})")
-            ul.options
-        section.userInput_day
-            input#day.userInputHidden(type="text" readonly)
-            input#day_show.input_show(type="text" readonly onclick="onDateClick({index: 2, type: 'userInput_day'})")
-            ul.options
-
-
-
-    article.userInputArea_itemList
-        ul
-            li
-                input.item(type="text" class="itemInput" placeholder="收支項目")
-                input.amount(type="number" class="amountInput" placeholder="收支金額")
-                select.type(name="type")
-                    option(value="expenditure") 支出
-                    option(value="income") 收入
-
-            li
-                input.item(type="text" class="itemInput" placeholder="收支項目")
-                input.amount(type="number" class="amountInput" placeholder="收支金額")
-                select.type(name="type")
-                    option(value="expenditure") 支出
-                    option(value="income") 收入
-
-        
-
-
-    button(onClick="onClickSendBtn()") 送出
-    button(onClick="onClickResetBtn()") 重置
-    button(onClick="onClickAddBtn()") 新增
-    button(onClick="loadDatePicker()") 日期選擇器
-
-    br
-    br
-    a(href="https://docs.google.com/spreadsheets/d/1VCzkXIRBMjF9iv0Ca89xBLIzTSbYHMvXxxGq6lceusk/edit#gid=0" target="_blank") Balance Sheet 連結
-
-    br
-    br
+    .mainBackground
+    .screenHolder
     .popupBox
+    br
+
+    .page#homePage
+    .page#balanceSheetPage
+
 
     script(type="text/javascript" src="js/main.js")
-    script(type="text/javascript" src="js/balanceSheet.js")
+    //- script(type="text/javascript" src="js/balanceSheet.js")

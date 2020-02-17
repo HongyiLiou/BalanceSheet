@@ -137,6 +137,9 @@ function setButtons() {
     /** Cancel button */const cancelBtn = document.querySelector('.datePickerBox .cancelBtn');
     /** OK button */const okBtn = document.querySelector('.datePickerBox .okBtn');
     /** Toggle Switch */const toggleSwitch = document.querySelector('.toggleSwitch');
+    
+    /** 主題開關 checkbox */const checkBox = document.querySelector('.toggleSwitch input');
+    /** 最外層 BOX */const datePickerBox = document.querySelector('.datePickerBox');
 
     const today = new Date();
     selectMonthAreaBtns[today.getMonth()].classList.add('active');
@@ -283,12 +286,17 @@ function setButtons() {
     // OK按鈕
     okBtn.addEventListener('click', () => {
         switch (datePickerType) {
-            case 'datePicker':
-                year_show.value = `${dataPickerShowYear.innerHTML} 年`;
-                month_show.value = `${datePicker_month.innerHTML.slice(0, 2).trim()} 月`;
-                day_show.value = `${dataPickerShowDay.innerHTML} 日`;
+            case 'datePicker_balanceSheet':
+                const showDate = document.querySelector('.balanceSheetBox .showDate');
+
+                // 設定送至後端的值
+                yearInput.value = Number(dataPickerShowYear.innerHTML);
                 monthInput.value = Number(datePicker_month.innerHTML.slice(0, 2).trim());
                 dayInput.value = Number(dataPickerShowDay.innerHTML);
+
+                // 設定顯示的日期
+                showDate.value = `${yearInput.value} 年  ${monthInput.value} 月  ${dayInput.value} 日`;
+
                 cancelBtn.click();
 
             default:
@@ -298,9 +306,6 @@ function setButtons() {
 
     // 主題切換 switch按鈕
     toggleSwitch.addEventListener('click', () => {
-        const checkBox = document.querySelector('.toggleSwitch input');
-        const datePickerBox = document.querySelector('.datePickerBox');
-
         setTimeout(() => {
             if (checkBox.checked === true) {
                 datePickerBox.classList.add('darkTheme');
@@ -315,7 +320,8 @@ function setButtons() {
     const theme = localStorage.getItem('datePickerTheme');
 
     if (theme === 'dark') {
-        toggleSwitch.click();
+        checkBox.checked = true;
+        datePickerBox.classList.add('darkTheme');
     }
 
 }

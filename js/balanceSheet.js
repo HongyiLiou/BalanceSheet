@@ -1,3 +1,78 @@
+// Balance Sheet
+
+/** 輸入年份值 (年) */yearInput = document.querySelector('#year');
+/** 輸入月份值 (月) */monthInput = document.querySelector('#month');
+/** 輸入日期值 (日) */dayInput = document.querySelector('#day'); // date
+
+
+/** 初始化收支表日期 */
+function inititialDate_balanceSheet() {
+    const showDate = document.querySelector('.balanceSheetBox .showDate');
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = today.getMonth() + 1;
+    const day = today.getDate();
+
+    yearInput.value = year;
+    monthInput.value = month;
+    dayInput.value = day;
+
+    showDate.value = `${year} 年  ${month} 月  ${day} 日`;
+}
+
+// 使用者輸入___________________________________________________________________________________
+
+
+/** 重置按鈕 */
+function onClickResetBtn() {
+    const itemInput = document.querySelectorAll('.itemInput');
+    const amountInput = document.querySelectorAll('.amountInput');
+    const typeSelect = document.querySelectorAll('.typeSelect');
+
+    for(let i = 0; i < itemInput.length; i++) {
+        itemInput[i].value = '';
+        amountInput[i].value = '';
+        typeSelect[i].value = '';
+    }
+}
+
+/** 新增按鈕 */
+function onClickAddBtn() {
+    const userInputArea = document.querySelector('.userInputArea_itemList ul');
+    const originalHtml = userInputArea.innerHTML;
+    const userInput_items = document.querySelectorAll('.item');
+    const userInput_amounts = document.querySelectorAll('.amount');
+    const userInput_type = document.querySelectorAll('.type');
+    const inputContent = [];
+
+    // 儲存原有欄位的值
+    for (let i = 0; i < userInput_items.length; i++) {
+        inputContent.push({ item: userInput_items[i].value, amount: userInput_amounts[i].value, type: userInput_type[i].value });
+    }
+
+    userInputArea.innerHTML = originalHtml + '\
+        <li>\
+        <input class="item itemInput" type="text" placeholder="收支項目"/>\
+        <input class="amount amountInput" type="number" placeholder="收支金額"/>\
+        <select class="type" name="type">\
+            <option value="expenditure">支出</option>\
+            <option value="income">收入</option>\
+        </select>\
+        </li>';
+
+    const userInput_itemsNew = document.querySelectorAll('.item');
+    const userInput_amountsNew = document.querySelectorAll('.amount');
+    const userInput_typeNew = document.querySelectorAll('.type');
+
+    // 將原有欄位的值寫入新欄位
+    for (let i = 0; i < userInput_items.length; i++) {
+        userInput_itemsNew[i].value = inputContent[i].item;
+        userInput_amountsNew[i].value = inputContent[i].amount;
+        userInput_typeNew[i].value = inputContent[i].type;
+    }
+    
+}
+
 // Post Functions _______________________________________________________________________________________________
 
 /** 上傳支出按鈕 */
@@ -5,6 +80,7 @@ function onClickSendBtn() {
     sendBalanceSheet();
     sendBalanceSheetDetail();
 }
+
 
 /** 更新收支表 */
 function sendBalanceSheet() {
@@ -32,8 +108,10 @@ function sendBalanceSheet() {
     
     
     const parameter = {
-        url: 'https://docs.google.com/spreadsheets/d/1VCzkXIRBMjF9iv0Ca89xBLIzTSbYHMvXxxGq6lceusk/edit#gid=0',
-        name: '2020BalanceSheet_hong',
+        // url: 'https://docs.google.com/spreadsheets/d/1VCzkXIRBMjF9iv0Ca89xBLIzTSbYHMvXxxGq6lceusk/edit#gid=0',
+        url: 'https://docs.google.com/spreadsheets/d/1qk0sCr8iWS-DSaWTx1lhe8x5JrgvN2Iwwd_zQkD3jUg/edit#gid=0',
+        name: '2020BalanceSheet_meng',
+        // name: '2020BalanceSheet_hong',
         functionType: 'post',
         dataType: 'balanceSheet',
         data: data.toString(),
@@ -46,6 +124,7 @@ function sendBalanceSheet() {
     $.get('https://script.google.com/macros/s/AKfycbwC9bl6xw2PIbL6mF0ojN1RqokP_43JtxurpA2839FP80Ih2l19/exec', parameter);
 
 }
+
 
 /** 更新收支表 Detail */
 function sendBalanceSheetDetail() {
@@ -75,8 +154,10 @@ function sendBalanceSheetDetail() {
     data2.push(dataContianer2);
     
     const parameter = {
-        url: 'https://docs.google.com/spreadsheets/d/1VCzkXIRBMjF9iv0Ca89xBLIzTSbYHMvXxxGq6lceusk/edit#gid=1948153821',
-        name: '2020BalanceSheetDetail_hong',
+        // url: 'https://docs.google.com/spreadsheets/d/1VCzkXIRBMjF9iv0Ca89xBLIzTSbYHMvXxxGq6lceusk/edit#gid=1948153821',
+        url: 'https://docs.google.com/spreadsheets/d/1qk0sCr8iWS-DSaWTx1lhe8x5JrgvN2Iwwd_zQkD3jUg/edit#gid=1723505957',
+        name: '2020BalanceSheetDetail_meng',
+        // name: '2020BalanceSheetDetail_hong',
         functionType: 'post',
         dataType: 'balanceSheetDetail',
         data1: data1.toString(),

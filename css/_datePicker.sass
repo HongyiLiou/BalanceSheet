@@ -1,8 +1,5 @@
-.popupBox
-    +ab_center
-    z-index: 1
-
 /** 日期選取器 Date-Picker */
+
 .datePickerBox
     display: flex
     +size(600px, 330px)
@@ -12,6 +9,7 @@
     border-radius: 8px
     opacity: 0
     box-shadow: 0 2px 8px rgba(#000, 0.5)
+    transition: background 0.4s
     animation: showDatePicker 0.4s 0.1s forwards
     user-select: none
 
@@ -28,11 +26,13 @@
             background: rgba(#FFF, 0.95)
             box-shadow: 0 5px 5px -5px rgba(#000, 0.7)
             text-align: center
+            transition: background 0.4s
 
         .content
             text-align: center
             background: rgba(#FFF, 0.6)
             padding: 40px 0
+            transition: background 0.4s
 
             .month
                 font-size: 150%
@@ -43,7 +43,7 @@
                 font-size: 120%
                 opacity: 0.6
 
-    
+
     .selectArea
         position: relative
         width: 55%

@@ -63,7 +63,7 @@ html {
   font-size: 16px;
 }
 
-.background {
+.mainBackground {
   position: fixed;
   width: 100%;
   height: 100%;
@@ -72,7 +72,6 @@ html {
   z-index: -1;
 }
 
-/** 收支表 */
 .screenHolder {
   position: fixed;
   top: 0;
@@ -90,6 +89,15 @@ html {
   pointer-events: auto;
 }
 
+.popupBox {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+/** 收支表 Balance Sheet */        
 .userInputArea_date {
   display: flex;
 }
@@ -129,14 +137,6 @@ html {
   width: 100px;
 }
 
-.popupBox {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1;
-}
-
 /** 日期選取器 Date-Picker */
 .datePickerBox {
   display: flex;
@@ -148,6 +148,7 @@ html {
   border-radius: 8px;
   opacity: 0;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  transition: background 0.4s;
   animation: showDatePicker 0.4s 0.1s forwards;
   -webkit-user-select: none;
           user-select: none;
@@ -165,11 +166,13 @@ html {
   background: rgba(255, 255, 255, 0.95);
   box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.7);
   text-align: center;
+  transition: background 0.4s;
 }
 .datePickerBox .showArea .content {
   text-align: center;
   background: rgba(255, 255, 255, 0.6);
   padding: 40px 0;
+  transition: background 0.4s;
 }
 .datePickerBox .showArea .content .month {
   font-size: 150%;
