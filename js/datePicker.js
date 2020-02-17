@@ -98,7 +98,8 @@ function setCalender(monthString) {
     }
 
     // 註冊點擊事件
-    const dateBtns = document.querySelectorAll('.pointerEventAuto');
+    /** 所有日期 button */const dateBtns = document.querySelectorAll('.pointerEventAuto');
+    /** OK button */const okBtn = document.querySelector('.datePickerBox .okBtn');
     dateBtns.forEach((btn, i) => {
         btn.addEventListener('click', () => {
             dateBtns.forEach(x => {
@@ -107,6 +108,10 @@ function setCalender(monthString) {
 
             btn.classList.add('active');
             setDateToShow(`${dataPickerShowYear.innerHTML}/${monthString}/${i + 1}`);
+        });
+
+        btn.addEventListener('dblclick', () => {
+            okBtn.click();
         });
     });
     
