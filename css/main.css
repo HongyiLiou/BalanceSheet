@@ -494,6 +494,20 @@ html {
   color: #000 !important;
   font-weight: 800;
 }
+.darkTheme .selectArea .calender .selectYearArea ul li, .darkTheme .selectArea .calender .selectMonthArea ul li {
+  background: rgba(0, 0, 0, 0.6);
+}
+.darkTheme .selectArea .calender .selectYearArea ul li:hover, .darkTheme .selectArea .calender .selectMonthArea ul li:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+.darkTheme .selectArea .calender .selectYearArea ul li:active, .darkTheme .selectArea .calender .selectMonthArea ul li:active {
+  transition: 0s;
+  background: rgba(255, 255, 255, 0.5);
+}
+.darkTheme .selectArea .calender .selectYearArea ul li.active, .darkTheme .selectArea .calender .selectMonthArea ul li.active {
+  background: rgba(255, 255, 255, 0.6);
+  color: #FFF;
+}
 .darkTheme .selectArea footer button {
   color: #c0c0c0;
 }
