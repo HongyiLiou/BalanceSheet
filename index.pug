@@ -12,9 +12,22 @@ head
     title Hong-Yi Liou | Balance Sheet
 body
     .mainBackground
+        .mainBackgroundImg
     .screenHolder
     .popupBox
-    br
+
+
+    article.sidebar
+        .topArea
+            .photo
+            input.name(type="text" spellcheck="false" value="Hong")
+
+        .sidebarContent
+            ul
+                li
+                    p.home 首頁
+                li
+                    p.balanceSheet(onClick="loadDatePicker()") 收支表
 
     .page#homePage
     .page#balanceSheetPage

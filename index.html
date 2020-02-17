@@ -10,9 +10,27 @@
   <title>Hong-Yi Liou | Balance Sheet</title>
 </head>
 <body>
-  <div class="mainBackground"></div>
+  <div class="mainBackground">
+    <div class="mainBackgroundImg"></div>
+  </div>
   <div class="screenHolder"></div>
-  <div class="popupBox"></div><br/>
+  <div class="popupBox"></div>
+  <article class="sidebar">
+    <div class="topArea">
+      <div class="photo"></div>
+      <input class="name" type="text" spellcheck="false" value="Hong"/>
+    </div>
+    <div class="sidebarContent">
+      <ul>
+        <li>
+          <p class="home">首頁</p>
+        </li>
+        <li>
+          <p class="balanceSheet" onClick="loadDatePicker()">收支表</p>
+        </li>
+      </ul>
+    </div>
+  </article>
   <div class="page" id="homePage"></div>
   <div class="page" id="balanceSheetPage"></div>
   <script type="text/javascript" src="js/main.js"></script>

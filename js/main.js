@@ -18,7 +18,6 @@
 window.onload = function() {
     
     loadPages();
-    loadDatePicker();
 
     /** 初始化screenHolder狀態 */
     screenHolder.addEventListener('click', () => {
@@ -41,9 +40,9 @@ function showScreenHolder(boolean) {
 /** 載入 Pages */
 function loadPages() {
     // Balance Sheet Page
-    $('#balanceSheetPage').load('html/balanceSheet.html', function() {
+    $('#balanceSheetPage').load('/html/balanceSheet.html', function() {
         const sc = document.createElement('script');
-        sc.src = 'js/balanceSheet.js';
+        sc.src = '/js/balanceSheet.js';
         $('body').append(sc);
         
         inititialDate_balanceSheet();
@@ -57,10 +56,10 @@ function loadPages() {
 /** 載入日期選擇彈窗 Date Picker */
 function loadDatePicker() {
     datePickerType = 'datePicker_balanceSheet';
-    $('.popupBox').load('html/datePicker.html', function() {
+    $('.popupBox').load('/html/datePicker.html', function() {
         const sc = document.createElement('script');
         sc.id = 'datePickerJS';
-        sc.src = 'js/datePicker.js';
+        sc.src = '/js/datePicker.js';
         $('body').append(sc);
         showScreenHolder(true);
         screenHolder.addEventListener('click', () => {

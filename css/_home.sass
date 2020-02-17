@@ -3,9 +3,18 @@
 .mainBackground
     position: fixed
     +size(100%, 100%)
-    background: url('https://ak6.picdn.net/shutterstock/videos/6429656/thumb/10.jpg') center center
+    background: #000000
     background-size: cover
     z-index: -1
+
+    .mainBackgroundImg
+        position: absolute
+        background: url('/images/defaultBg.jpg') center center no-repeat
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        opacity: 0.9
 
 // 螢幕點擊覆蓋
 .screenHolder
@@ -28,3 +37,14 @@
 .popupBox
     +ab_center
     z-index: 1
+
+
+// Pages
+.page
+    position: absolute
+    pointer-events: none
+    opacity: 0
+
+    &.active
+        pointer-events: auto
+        opacity: 1

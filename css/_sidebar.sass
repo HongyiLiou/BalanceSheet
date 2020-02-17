@@ -1,0 +1,99 @@
+// Sidebar
+
+.sidebar
+    position: fixed
+    +size(30%, 100%)
+    min-width: 250px
+    background: linear-gradient(to right, rgba(#000, 1) 5%, rgba(#000, 0.8) 50%, transparent)
+    // border: solid 1px #FFF
+
+    .topArea
+        width: 250px
+        // border: solid 1px #FFF
+        padding: 40px 0 20px 0
+
+        .photo
+            +size(70px, 70px)
+            background: url('/images/pictureHolder.png') center center no-repeat
+            background-size: cover
+            margin: auto
+            border-radius: 50%
+            border: solid 1px #FFF
+            box-shadow: 0 0 20px rgba(#FFF, 0.8)
+
+        .name
+            width: 100%
+            color: #FFF
+            text-align: center
+            margin-top: 15px
+            font-size: 150%
+            background: transparent
+            font-weight: 100
+            border: none
+            outline: none
+
+
+    .sidebarContent
+        +size(250px, 100%)
+
+        ul
+            max-height: 500px
+            overflow: auto
+
+            &::-webkit-scrollbar
+                display: none
+
+            li
+                position: relative
+                padding: 18px 0 18px 80px
+                box-sizing: border-box
+                transition: 0.3s
+                cursor: pointer
+
+                &:hover
+                    &::before
+                        opacity: 1
+                    p
+                        color: #FFF
+                        &::before
+                            color: #9e9e9e
+
+                &::before
+                    content: ''
+                    display: block
+                    position: absolute
+                    top: 0
+                    left: 0
+                    right: 0
+                    bottom: 0
+                    border-top: solid 1px rgba(#FFF, 0.07)
+                    border-bottom: solid 1px rgba(#FFF, 0.07)
+                    background: linear-gradient(to right, transparent, rgba(#FFF, 0.15) 35%, transparent)
+                    opacity: 0
+                    transition: 0.3s
+                    pointer-events: none
+
+                p
+                    position: relative
+                    font-size:  90%
+                    color: #adadad
+                    transition: 0.3s
+
+                    &::before
+                        position: absolute
+                        display: block
+                        top: 50%
+                        left: -40px
+                        font-family: FontAwesome
+                        font-size: 150%
+                        color: #5c5c5c
+                        transform: translateY(-50%)
+                        transition: 0.3s
+
+                    &.home
+                        &::before
+                            content: '\f015'
+                    &.balanceSheet
+                        &::before
+                            content: '\f200'
+
