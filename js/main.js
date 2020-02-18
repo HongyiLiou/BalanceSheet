@@ -44,6 +44,8 @@ function loadPages() {
         const sc = document.createElement('script');
         sc.src = 'js/home.js';
         $('body').append(sc);
+
+        initialHomePageTime();
     });
 
     // Balance Sheet Page
