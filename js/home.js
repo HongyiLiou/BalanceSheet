@@ -17,7 +17,10 @@ function initialHomePageTime() {
     let minute = time.getMinutes();
     let second = time.getSeconds();
 
-    if (hour < 12) {
+    if (hour == 0) {
+        showAPM.innerHTML = '上午';
+        showHour.innerHTML = `12:`;
+    } else if (hour < 12) {
         showAPM.innerHTML = '上午';
         showHour.innerHTML = `${hour}:`;
     } else {
@@ -25,8 +28,8 @@ function initialHomePageTime() {
         showHour.innerHTML = `${hour - 12}:`;
     }
     
-    showMinute.innerHTML = minute;
-    showSecond.innerHTML = second;
+    showSecond.innerHTML = second < 10 ? `0${second}` : second;
+    showMinute.innerHTML = minute < 10 ? `0${minute}` : minute;
     
 
     console.log(hour);
@@ -35,17 +38,23 @@ function initialHomePageTime() {
     setInterval(() => {
         second += 1;
         showSecond.innerHTML = second < 10 ? `0${second}` : second;
+        showMinute.innerHTML = minute < 10 ? `0${minute}` : minute;
 
         if (second > 59) {
             second = 0;
             minute += 1;
             showSecond.innerHTML = '00';
-            showMinute.innerHTML = minute;
+            showMinute.innerHTML = minute < 10 ? `0${minute}` : minute;
         }
 
         if (minute > 59) {
+            minute = 0
             hour += 1;
-            if (hour < 12) {
+            showMinute.innerHTML = '00';
+            if (hour == 0) {
+                showAPM.innerHTML = '上午';
+                showHour.innerHTML = `12:`;
+            } else if (hour < 12) {
                 showAPM.innerHTML = '上午';
                 showHour.innerHTML = `${hour}:`;
             } else {
@@ -53,6 +62,7 @@ function initialHomePageTime() {
                 showHour.innerHTML = `${hour - 12}:`;
             }
         }
+        // alert(hour)
     }, 1000);
     
 }
