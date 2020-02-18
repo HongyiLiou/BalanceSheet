@@ -39,6 +39,13 @@ function showScreenHolder(boolean) {
 
 /** 載入 Pages */
 function loadPages() {
+    // Home Page
+    $('#homePage').load('/html/home.html', function() {
+        const sc = document.createElement('script');
+        sc.src = '/js/home.js';
+        $('body').append(sc);
+    });
+
     // Balance Sheet Page
     $('#balanceSheetPage').load('/html/balanceSheet.html', function() {
         const sc = document.createElement('script');
