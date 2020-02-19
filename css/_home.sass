@@ -43,8 +43,8 @@
     display: none
     position: fixed
     +size(46px, 46px)
-    top: 5px
-    left: 5px
+    top: 10px
+    left: 10px
     background: rgba(#000, 0.7)
     border-radius: 50%
     z-index: 4
@@ -63,7 +63,7 @@
         +size(28px, 2px)
         display: block
         background: #cecece
-        box-shadow: 0 0 10px #FFF
+        box-shadow: 0 0 3px #FFF
         transition: 0.4s
         +ab_center
 
@@ -73,7 +73,7 @@
             display: block
             +size(100%, 100%)
             background: #cecece
-            box-shadow: 0 0 5px #FFF
+            box-shadow: 0 0 3px #FFF
             transition: 0.4s
 
         &::before
@@ -94,6 +94,7 @@
     right: 0
     pointer-events: none
     opacity: 0
+    transition: 0.4s
 
     &.active
         pointer-events: auto

@@ -77,6 +77,17 @@
                     transition: 0.3s
                     pointer-events: none
 
+                &.active
+                    &::before
+                        opacity: 1
+                    p
+                        color: #FFF
+                        text-shadow: 0 0 10px rgba(#FFF, 0.8)
+                        &::before
+                            text-shadow: none
+                            color: #c9c9c9
+
+
                 p
                     position: relative
                     font-size:  90%

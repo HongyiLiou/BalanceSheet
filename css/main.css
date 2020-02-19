@@ -111,8 +111,8 @@ html {
   position: fixed;
   width: 46px;
   height: 46px;
-  top: 5px;
-  left: 5px;
+  top: 10px;
+  left: 10px;
   background: rgba(0, 0, 0, 0.7);
   border-radius: 50%;
   z-index: 4;
@@ -131,7 +131,7 @@ html {
   height: 2px;
   display: block;
   background: #cecece;
-  box-shadow: 0 0 10px #FFF;
+  box-shadow: 0 0 3px #FFF;
   transition: 0.4s;
   position: absolute;
   left: 50%;
@@ -145,7 +145,7 @@ html {
   width: 100%;
   height: 100%;
   background: #cecece;
-  box-shadow: 0 0 5px #FFF;
+  box-shadow: 0 0 3px #FFF;
   transition: 0.4s;
 }
 .burgerMenu span::before {
@@ -163,6 +163,7 @@ html {
   right: 0;
   pointer-events: none;
   opacity: 0;
+  transition: 0.4s;
 }
 .page.active {
   pointer-events: auto;
@@ -325,6 +326,17 @@ html {
   opacity: 0;
   transition: 0.3s;
   pointer-events: none;
+}
+.sidebar .sidebarContent ul li.active::before {
+  opacity: 1;
+}
+.sidebar .sidebarContent ul li.active p {
+  color: #FFF;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+.sidebar .sidebarContent ul li.active p::before {
+  text-shadow: none;
+  color: #c9c9c9;
 }
 .sidebar .sidebarContent ul li p {
   position: relative;

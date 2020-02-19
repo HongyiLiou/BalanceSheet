@@ -1,5 +1,10 @@
 // home.js
 
+/** Sidebar 選單設定檔 */const sidebarList = [
+    { name: '首頁', id: 'homePage', class: 'home' },
+    { name: '收支表', id: 'balanceSheetPage', class: 'balanceSheet' },
+]
+
 /** 初始化 home page 時間 */
 function initialHomePageTime() {
     const time = new Date();
@@ -72,10 +77,13 @@ function initialSidebar() {
     /** Sidebar 本人 */const sidebar = document.querySelector('.sidebar');
     /** Screen Holder */const screenHolder = document.querySelector('.screenHolder');
 
+    let toggleScreenHolder = false;
+
     burgerMenu.addEventListener('click', () => {
+        toggleScreenHolder = !toggleScreenHolder;
         burgerMenu.classList.toggle('active');
         sidebar.classList.toggle('active');
-        showScreenHolder(true);
+        showScreenHolder(toggleScreenHolder);
     });
 
     screenHolder.addEventListener('click', () => {
@@ -83,4 +91,40 @@ function initialSidebar() {
         sidebar.classList.remove('active');
         screenHolder.removeEventListener('click', initialSidebar);
     })
+
+    sidebarList.forEach(obj => {
+        setSidebarBtns(obj);
+    });
+
+}
+
+
+function setSidebarBtns(listObj) {
+    const sidebarBtnsList = document.querySelector('.sidebarContent ul');
+    const btn = document.createElement('li');
+    const p = document.createElement('p');
+
+    p.classList.add(listObj.class);
+    p.innerHTML = listObj.name;
+    btn.appendChild(p);
+    sidebarBtnsList.appendChild(btn);
+
+    const sidebarBtn = document.querySelector(`.sidebarContent ul li .${listObj.class}`);
+
+    sidebarBtn.parentNode.addEventListener('click', () => {
+        const removeClassBtns = document.querySelectorAll('.sidebarContent ul li');
+        const removeClassPages = document.querySelectorAll('.page');
+        const activePage = document.querySelector(`#${listObj.id}`);
+        const burgerBtn = document.querySelector('.burgerMenu');
+
+        removeClassBtns.forEach((btn, i) => {
+            btn.classList.remove('active');
+            removeClassPages[i].classList.remove('active');
+        });
+
+        sidebarBtn.parentNode.classList.add('active');
+        activePage.classList.add('active');
+
+        burgerBtn.click();
+    });
 }
