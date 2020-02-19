@@ -90,6 +90,7 @@ function initialSidebar() {
         burgerMenu.classList.remove('active');
         sidebar.classList.remove('active');
         screenHolder.removeEventListener('click', initialSidebar);
+        toggleScreenHolder = false;
     })
 
     sidebarList.forEach(obj => {
