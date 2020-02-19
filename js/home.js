@@ -126,6 +126,9 @@ function setSidebarBtns(listObj) {
         sidebarBtn.parentNode.classList.add('active');
         activePage.classList.add('active');
 
-        burgerBtn.click();
+        if (window.screen.width < 500) {
+            burgerBtn.click();
+        }
+
     });
 }

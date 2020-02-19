@@ -329,10 +329,13 @@ html {
 }
 .sidebar .sidebarContent ul li.active::before {
   opacity: 1;
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.2) 35%, transparent);
+  border-top: solid 1px rgba(255, 255, 255, 0.1);
+  border-bottom: solid 1px rgba(255, 255, 255, 0.1);
 }
 .sidebar .sidebarContent ul li.active p {
   color: #FFF;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  text-shadow: 0 0 10px white;
 }
 .sidebar .sidebarContent ul li.active p::before {
   text-shadow: none;
