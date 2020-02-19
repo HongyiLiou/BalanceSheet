@@ -9,7 +9,8 @@
 
     .mainBackgroundImg
         position: absolute
-        background: url('../images/defaultBg.jpg') center center no-repeat
+        background: url('../images/defaultBg.jpg') 25% center no-repeat
+        background-size: cover
         top: 0
         left: 0
         right: 0
@@ -37,6 +38,52 @@
     +ab_center
     z-index: 3
 
+// 漢堡選單
+.burgerMenu
+    display: none
+    position: fixed
+    +size(46px, 46px)
+    top: 5px
+    left: 5px
+    background: rgba(#000, 0.7)
+    border-radius: 50%
+    z-index: 4
+
+    &.active
+        span
+            &::before
+                width: 60%
+                transform: rotate(-45deg) translateX(-2px)
+            &::after
+                width: 60%
+                transform: rotate(45deg) translateX(-2px)
+
+    span
+        position: absolute
+        +size(28px, 2px)
+        display: block
+        background: #cecece
+        box-shadow: 0 0 10px #FFF
+        transition: 0.4s
+        +ab_center
+
+        &::before, &::after
+            position: absolute
+            content: ''
+            display: block
+            +size(100%, 100%)
+            background: #cecece
+            box-shadow: 0 0 5px #FFF
+            transition: 0.4s
+
+        &::before
+            top: -8px
+        &::after
+            bottom: -8px
+
+
+
+    
 
 // Pages
 .page
@@ -65,14 +112,14 @@
         transform: translateX(-50%)
 
         p
-            text-shadow: 0px 3px 0px #b2a98f, 0px 14px 10px rgba(0,0,0,0.4), 0px 24px 2px rgba(0,0,0,0.3), 0px 34px 30px rgba(0,0,0,0.3)
-
-        p
             display: inline-block
             color: #ffffff
             font-size: 200%
             vertical-align: baseline
             font-weight: 100
+
+            &.hour, &.minute, &.second
+                text-shadow: 0px 3px 0px #b2a98f, 0px 14px 10px rgba(0,0,0,0.4), 0px 24px 2px rgba(0,0,0,0.3), 0px 34px 30px rgba(0,0,0,0.3)
 
             &.hour, &.minute
                 font-size: 1000%
@@ -85,3 +132,36 @@
             font-weight: 100
             vertical-align: baseline
             text-shadow: 0px 1px 0px #b2a98f, 0px 7px 10px rgba(0,0,0,0.4), 0px 12px 2px rgba(0,0,0,0.3), 0px 17px 30px rgba(0,0,0,0.3)
+
+
+
+// RWD
+@media screen and (max-width: 1400px)
+    .homePageBox
+        .clock
+            width: 70%
+            p
+                font-size: 150%
+                &.hour, &.minute
+                    font-size: 750%
+                &.second
+                    font-size: 262%
+            span
+                font-size: 90%
+
+
+@media screen and (max-width: 500px)
+    .burgerMenu
+        display: block
+    .page
+        width: 100%
+        .homePageBox
+            .clock
+                width: 100%
+                text-align: center
+                p
+                    font-size: 100%
+                    &.hour, &.minute
+                        font-size: 600%
+                    &.second
+                        font-size: 200%

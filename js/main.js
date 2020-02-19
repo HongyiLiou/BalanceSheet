@@ -46,6 +46,7 @@ function loadPages() {
         $('body').append(sc);
 
         initialHomePageTime();
+        initialSidebar();
     });
 
     // Balance Sheet Page

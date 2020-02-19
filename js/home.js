@@ -20,7 +20,7 @@ function initialHomePageTime() {
     if (hour == 0) {
         showAPM.innerHTML = '上午';
         showHour.innerHTML = `12:`;
-    } else if (hour < 12) {
+    } else if (hour <= 12) {
         showAPM.innerHTML = '上午';
         showHour.innerHTML = `${hour}:`;
     } else {
@@ -31,8 +31,6 @@ function initialHomePageTime() {
     showSecond.innerHTML = second < 10 ? `0${second}` : second;
     showMinute.innerHTML = minute < 10 ? `0${minute}` : minute;
     
-
-    console.log(hour);
     showDate.innerHTML = `${year}年 ${month}月 ${day}日`;
 
     setInterval(() => {
@@ -54,7 +52,7 @@ function initialHomePageTime() {
             if (hour == 0) {
                 showAPM.innerHTML = '上午';
                 showHour.innerHTML = `12:`;
-            } else if (hour < 12) {
+            } else if (hour <= 12) {
                 showAPM.innerHTML = '上午';
                 showHour.innerHTML = `${hour}:`;
             } else {
@@ -65,4 +63,24 @@ function initialHomePageTime() {
         // alert(hour)
     }, 1000);
     
+}
+
+
+/** 初始化 Sidebar */
+function initialSidebar() {
+    /** 漢堡選單 */const burgerMenu = document.querySelector('.burgerMenu');
+    /** Sidebar 本人 */const sidebar = document.querySelector('.sidebar');
+    /** Screen Holder */const screenHolder = document.querySelector('.screenHolder');
+
+    burgerMenu.addEventListener('click', () => {
+        burgerMenu.classList.toggle('active');
+        sidebar.classList.toggle('active');
+        showScreenHolder(true);
+    });
+
+    screenHolder.addEventListener('click', () => {
+        burgerMenu.classList.remove('active');
+        sidebar.classList.remove('active');
+        screenHolder.removeEventListener('click', initialSidebar);
+    })
 }
