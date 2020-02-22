@@ -1,5 +1,10 @@
 // home.js
 
+/** Sidebar 選單設定檔 */const sidebarList = [
+    { name: '首頁', id: 'homePage', class: 'home' },
+    { name: '收支表', id: 'balanceSheetPage', class: 'balanceSheet' },
+]
+
 /** 初始化 home page 時間 */
 function initialHomePageTime() {
     const time = new Date();
@@ -22,7 +27,7 @@ function initialHomePageTime() {
     if (hour == 0) {
         showAPM.innerHTML = '上午';
         showHour.innerHTML = `12:`;
-    } else if (hour < 12) {
+    } else if (hour <= 12) {
         showAPM.innerHTML = '上午';
         showHour.innerHTML = `${hour}:`;
     } else {
@@ -82,7 +87,7 @@ function initialHomePageTime() {
             if (hour == 0) {
                 showAPM.innerHTML = '上午';
                 showHour.innerHTML = `12:`;
-            } else if (hour < 12) {
+            } else if (hour <= 12) {
                 showAPM.innerHTML = '上午';
                 showHour.innerHTML = `${hour}:`;
             } else {
@@ -92,12 +97,68 @@ function initialHomePageTime() {
         }
         // alert(hour)
     }, 1000);
+    
+}
 
 
-    const request = require('request')
-    const url = 'http://www.cwb.gov.tw/V7/forecast/taiwan/Taipei_City.htm'
-    request(url, (err, res, body) => {
-    console.log(body)
+/** 初始化 Sidebar */
+function initialSidebar() {
+    /** 漢堡選單 */const burgerMenu = document.querySelector('.burgerMenu');
+    /** Sidebar 本人 */const sidebar = document.querySelector('.sidebar');
+    /** Screen Holder */const screenHolder = document.querySelector('.screenHolder');
+
+    let toggleScreenHolder = false;
+
+    burgerMenu.addEventListener('click', () => {
+        toggleScreenHolder = !toggleScreenHolder;
+        burgerMenu.classList.toggle('active');
+        sidebar.classList.toggle('active');
+        showScreenHolder(toggleScreenHolder);
+    });
+
+    screenHolder.addEventListener('click', () => {
+        burgerMenu.classList.remove('active');
+        sidebar.classList.remove('active');
+        screenHolder.removeEventListener('click', initialSidebar);
+        toggleScreenHolder = false;
     })
-        
+
+    sidebarList.forEach(obj => {
+        setSidebarBtns(obj);
+    });
+
+}
+
+
+function setSidebarBtns(listObj) {
+    const sidebarBtnsList = document.querySelector('.sidebarContent ul');
+    const btn = document.createElement('li');
+    const p = document.createElement('p');
+
+    p.classList.add(listObj.class);
+    p.innerHTML = listObj.name;
+    btn.appendChild(p);
+    sidebarBtnsList.appendChild(btn);
+
+    const sidebarBtn = document.querySelector(`.sidebarContent ul li .${listObj.class}`);
+
+    sidebarBtn.parentNode.addEventListener('click', () => {
+        const removeClassBtns = document.querySelectorAll('.sidebarContent ul li');
+        const removeClassPages = document.querySelectorAll('.page');
+        const activePage = document.querySelector(`#${listObj.id}`);
+        const burgerBtn = document.querySelector('.burgerMenu');
+
+        removeClassBtns.forEach((btn, i) => {
+            btn.classList.remove('active');
+            removeClassPages[i].classList.remove('active');
+        });
+
+        sidebarBtn.parentNode.classList.add('active');
+        activePage.classList.add('active');
+
+        if (window.screen.width < 500) {
+            burgerBtn.click();
+        }
+
+    });
 }
