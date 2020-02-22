@@ -5,7 +5,8 @@ function initialHomePageTime() {
     const time = new Date();
     const year = time.getFullYear();
     const month = time.getMonth() + 1;
-    const day = time.getDate();
+    const date = time.getDate();
+    const day = time.getDay();    
 
     const showAPM = document.querySelector('.homePageBox .clock .morningAfternoon');
     const showHour = document.querySelector('.homePageBox .clock .hour');
@@ -16,6 +17,7 @@ function initialHomePageTime() {
     let hour = time.getHours();
     let minute = time.getMinutes();
     let second = time.getSeconds();
+    let dayText;
 
     if (hour == 0) {
         showAPM.innerHTML = '上午';
@@ -27,13 +29,39 @@ function initialHomePageTime() {
         showAPM.innerHTML = '下午';
         showHour.innerHTML = `${hour - 12}:`;
     }
+
+    switch (day) {
+        case 0:
+            dayText = '日';
+            break;
+        case 1:
+            dayText = '一';
+            break;
+        case 2:
+            dayText = '二';
+            break;
+        case 3:
+            dayText = '三';
+            break;
+        case 4:
+            dayText = '四';
+            break;
+        case 5:
+            dayText = '五';
+            break;
+        case 6:
+            dayText = '六';
+            break;
+        default:
+            break;
+    }
     
     showSecond.innerHTML = second < 10 ? `0${second}` : second;
     showMinute.innerHTML = minute < 10 ? `0${minute}` : minute;
     
 
     console.log(hour);
-    showDate.innerHTML = `${year}年 ${month}月 ${day}日`;
+    showDate.innerHTML = `${year}年 ${month}月 ${date}日  週${dayText}`;
 
     setInterval(() => {
         second += 1;
@@ -64,5 +92,12 @@ function initialHomePageTime() {
         }
         // alert(hour)
     }, 1000);
-    
+
+
+    const request = require('request')
+    const url = 'http://www.cwb.gov.tw/V7/forecast/taiwan/Taipei_City.htm'
+    request(url, (err, res, body) => {
+    console.log(body)
+    })
+        
 }
