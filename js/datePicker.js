@@ -13,7 +13,7 @@ function initialDatePicker() {
 
 /**
  * 設定顯示日期
- * @param {*} dateString
+ * @param {String} dateString
  * 日期字串，格式： yyyy/mm/dd
  */
 function setDateToShow(dateString) {
@@ -72,7 +72,7 @@ function setShowWeek(weekString) {
 
 /**
  * 設定 Calender內容
- * @param {*} monthString
+ * @param {String} monthString
  * 月份字串 
  */
 function setCalender(monthString) {

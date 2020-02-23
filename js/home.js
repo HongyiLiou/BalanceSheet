@@ -35,37 +35,10 @@ function initialHomePageTime() {
         showHour.innerHTML = `${hour - 12}:`;
     }
 
-    switch (day) {
-        case 0:
-            dayText = '日';
-            break;
-        case 1:
-            dayText = '一';
-            break;
-        case 2:
-            dayText = '二';
-            break;
-        case 3:
-            dayText = '三';
-            break;
-        case 4:
-            dayText = '四';
-            break;
-        case 5:
-            dayText = '五';
-            break;
-        case 6:
-            dayText = '六';
-            break;
-        default:
-            break;
-    }
+    dayText = changeWeekDay(day);
     
     showSecond.innerHTML = second < 10 ? `0${second}` : second;
     showMinute.innerHTML = minute < 10 ? `0${minute}` : minute;
-    
-
-    console.log(hour);
     showDate.innerHTML = `${year}年 ${month}月 ${date}日  週${dayText}`;
 
     setInterval(() => {
