@@ -7,11 +7,11 @@
 
 /** 初始化 home page 時間 */
 function initialHomePageTime() {
-    const time = new Date();
-    const year = time.getFullYear();
-    const month = time.getMonth() + 1;
-    const date = time.getDate();
-    const day = time.getDay();    
+    const timeObj = getToday();
+    const year = timeObj.year;
+    const month = timeObj.month;
+    const date = timeObj.date;
+    let day = timeObj.day;
 
     const showAPM = document.querySelector('.homePageBox .clock .morningAfternoon');
     const showHour = document.querySelector('.homePageBox .clock .hour');
@@ -19,10 +19,9 @@ function initialHomePageTime() {
     const showSecond = document.querySelector('.homePageBox .clock .second');
     const showDate = document.querySelector('.homePageBox .clock span');
     
-    let hour = time.getHours();
-    let minute = time.getMinutes();
-    let second = time.getSeconds();
-    let dayText;
+    let hour = timeObj.hour;
+    let minute = timeObj.minute;
+    let second = timeObj.second;
 
     if (hour == 0) {
         showAPM.innerHTML = '上午';
@@ -34,12 +33,10 @@ function initialHomePageTime() {
         showAPM.innerHTML = '下午';
         showHour.innerHTML = `${hour - 12}:`;
     }
-
-    dayText = changeWeekDay(day);
     
     showSecond.innerHTML = second < 10 ? `0${second}` : second;
     showMinute.innerHTML = minute < 10 ? `0${minute}` : minute;
-    showDate.innerHTML = `${year}年 ${month}月 ${date}日  週${dayText}`;
+    showDate.innerHTML = `${year}年 ${month}月 ${date}日  週${changeWeekDay(day)}`;
 
     setInterval(() => {
         second += 1;
@@ -58,8 +55,10 @@ function initialHomePageTime() {
             hour += 1;
             showMinute.innerHTML = '00';
             if (hour == 0) {
+                day = day > 6 ? day + 1 : 0;
                 showAPM.innerHTML = '上午';
                 showHour.innerHTML = `12:`;
+                showDate.innerHTML = `${year}年 ${month}月 ${date}日  週${changeWeekDay(day)}`;
             } else if (hour <= 12) {
                 showAPM.innerHTML = '上午';
                 showHour.innerHTML = `${hour}:`;
@@ -70,7 +69,6 @@ function initialHomePageTime() {
         }
         // alert(hour)
     }, 1000);
-    
 }
 
 
@@ -99,7 +97,6 @@ function initialSidebar() {
     sidebarList.forEach(obj => {
         setSidebarBtns(obj);
     });
-
 }
 
 
@@ -133,6 +130,5 @@ function setSidebarBtns(listObj) {
         if (window.screen.width < 500) {
             burgerBtn.click();
         }
-
     });
 }

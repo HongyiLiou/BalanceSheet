@@ -81,6 +81,48 @@
         &::after
             bottom: -8px
 
+.brightness
+    position: fixed
+    +size(600px, 400px)
+    top: 0
+    right: 0
+    // background: rgba(#000, 0.5)
+    .beams
+        [class^='beam']
+            position: absolute
+            top: -10px
+            right: -10px
+            background: linear-gradient(to left, rgba(#FFF, 0.4), transparent)
+            border-radius: 100px
+            filter: blur(2px)
+            transform-origin: top right
+            animation: beam 3s infinite
+        //產生30顆星星不同的偏移位置跟動畫delay
+        @for $i from 1 through 6
+            .beam#{$i}
+                $w: random(6) * 50px + 200px
+                $h: random(6) * 5px
+                $deg: random(6) * -12deg
+                width: $w
+                height: $h
+                transform: rotate($deg)
+                // $posX: random(6)*1%
+                // $posY: random(80)*-1% + 30%
+                // +abpos($posX,$posY)
+                animation-delay: $i*-0.9s
+
+                +keyframes(beam)
+                    0%
+                        opacity: 0
+                    50%
+                        opacity: 1
+                    100%
+                        opacity: 0
+
+
+
+
+    
 
 
     

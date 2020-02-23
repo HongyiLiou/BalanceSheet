@@ -1,5 +1,32 @@
 // Common.js
 
+/** 取得今日日期時間 Obj */
+function getToday() {
+    const time = new Date();
+    const year = time.getFullYear();
+    const month = time.getMonth() + 1;
+    const date = time.getDate();
+    const day = time.getDay();
+
+    const hour = time.getHours();
+    const minute = time.getMinutes();
+    const second = time.getSeconds();
+
+    const timeObj = {
+        dateString: `${time}`,
+        year: year,
+        month: month + 1,
+        date: date,
+        day: day,
+        hour: hour,
+        minute: minute,
+        second: second
+    }
+
+    return timeObj;
+}
+
+
 /**
  * 轉換星期中文 (0 ~ 6 → 日 ~ 一)
  * @param {Number} day 0 ~ 6
