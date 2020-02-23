@@ -1,8 +1,8 @@
 // home.js
 
 /** Sidebar 選單設定檔 */const sidebarList = [
-    { name: '首頁', id: 'homePage', class: 'home' },
-    { name: '收支表', id: 'balanceSheetPage', class: 'balanceSheet' },
+    { name: '首頁', id: 'homePage', class: 'home', selected: true },
+    { name: '收支表', id: 'balanceSheetPage', class: 'balanceSheet', selected: false },
 ]
 
 /** 初始化 home page 時間 */
@@ -135,9 +135,10 @@ function setSidebarBtns(listObj) {
     const btn = document.createElement('li');
     const p = document.createElement('p');
 
-    p.classList.add(listObj.class);
+    p.className = listObj.class;
     p.innerHTML = listObj.name;
     btn.appendChild(p);
+    if (listObj.selected) { btn.classList.add('active'); }
     sidebarBtnsList.appendChild(btn);
 
     const sidebarBtn = document.querySelector(`.sidebarContent ul li .${listObj.class}`);

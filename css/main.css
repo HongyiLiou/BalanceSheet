@@ -188,7 +188,7 @@ html {
   vertical-align: baseline;
   font-weight: 100;
 }
-.homePageBox .clock p.hour, .homePageBox .clock p.minute, .homePageBox .clock p.second {
+.homePageBox .clock p.hour, .homePageBox .clock p.minute {
   text-shadow: 0px 3px 0px #b2a98f, 0px 14px 10px rgba(0, 0, 0, 0.4), 0px 24px 2px rgba(0, 0, 0, 0.3), 0px 34px 30px rgba(0, 0, 0, 0.3);
 }
 .homePageBox .clock p.hour, .homePageBox .clock p.minute {
@@ -196,13 +196,13 @@ html {
 }
 .homePageBox .clock p.second {
   font-size: 350%;
+  text-shadow: 0px 2px 0px #b2a98f, 0px 14px 10px rgba(0, 0, 0, 0.4), 0px 24px 2px rgba(0, 0, 0, 0.3), 0px 34px 30px rgba(0, 0, 0, 0.3);
 }
 .homePageBox .clock span {
   color: #ffffff;
   font-size: 120%;
   font-weight: 100;
   vertical-align: baseline;
-  text-shadow: 0px 1px 0px #b2a98f, 0px 7px 10px rgba(0, 0, 0, 0.4), 0px 12px 2px rgba(0, 0, 0, 0.3), 0px 17px 30px rgba(0, 0, 0, 0.3);
 }
 
 @media screen and (max-width: 1400px) {
@@ -237,7 +237,7 @@ html {
   .page .homePageBox .clock p {
     font-size: 100%;
   }
-  .page .homePageBox .clock p.hour, .page .homePageBox .clock p.minute, .page .homePageBox .clock p.second {
+  .page .homePageBox .clock p.hour, .page .homePageBox .clock p.minute {
     text-shadow: 0px 3px 0px #b2a98f, 0px 7px 10px rgba(0, 0, 0, 0.4), 0px 12px 2px rgba(0, 0, 0, 0.3), 0px 17px 30px rgba(0, 0, 0, 0.3);
   }
   .page .homePageBox .clock p.hour, .page .homePageBox .clock p.minute {
@@ -245,6 +245,7 @@ html {
   }
   .page .homePageBox .clock p.second {
     font-size: 200%;
+    text-shadow: 0px 2px 0px #b2a98f, 0px 7px 10px rgba(0, 0, 0, 0.4), 0px 12px 2px rgba(0, 0, 0, 0.3), 0px 17px 30px rgba(0, 0, 0, 0.3);
   }
 }
 .sidebar {
@@ -421,6 +422,9 @@ html {
   }
   .sidebar .sidebarContent ul li {
     padding: 14px 0 14px 60px;
+  }
+  .sidebar .sidebarContent ul li.active::before {
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.18) 30%, transparent);
   }
   .sidebar .sidebarContent ul li p {
     font-size: 80%;
