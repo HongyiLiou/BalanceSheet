@@ -431,7 +431,7 @@ html {
     padding: 14px 0 14px 60px;
   }
   .sidebar .sidebarContent ul li.active::before {
-    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.18) 30%, transparent);
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.15) 30%, transparent);
   }
   .sidebar .sidebarContent ul li p {
     font-size: 80%;
