@@ -83,10 +83,12 @@
 
 .brightness
     position: fixed
-    +size(600px, 400px)
+    +size(800px, 600px)
     top: 0
     right: 0
     // background: rgba(#000, 0.5)
+    pointer-events: none
+
     .beams
         [class^='beam']
             position: absolute
@@ -100,7 +102,7 @@
         //產生30顆星星不同的偏移位置跟動畫delay
         @for $i from 1 through 6
             .beam#{$i}
-                $w: random(6) * 50px + 200px
+                $w: random(6) * 50px + 400px
                 $h: random(6) * 5px
                 $deg: random(6) * -12deg
                 width: $w
