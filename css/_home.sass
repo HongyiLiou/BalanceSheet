@@ -111,7 +111,7 @@
                 // $posX: random(6)*1%
                 // $posY: random(80)*-1% + 30%
                 // +abpos($posX,$posY)
-                animation-delay: $i*-0.9s
+                animation-delay: $i*-0.5s
 
                 +keyframes(beam)
                     0%
@@ -133,12 +133,12 @@
             filter: blur(1px)
         @for $i from 1 through 10
             .shine#{$i}
-                $x1: random(10) * -20px
-                $y1: random(10) * 20px
+                $x1: random(10) * -30px
+                $y1: random(10) * 30px
                 $x2: random(10) * -50px
                 $y2: random(10) * 50px
                 animation: shine#{$i} 20s infinite
-                animation-delay: $i*-0.5s
+                animation-delay: $i*-0.9s
 
                 +keyframes(shine#{$i})
                     0%
