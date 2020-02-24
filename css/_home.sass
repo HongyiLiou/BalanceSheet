@@ -111,7 +111,7 @@
                 // $posX: random(6)*1%
                 // $posY: random(80)*-1% + 30%
                 // +abpos($posX,$posY)
-                animation-delay: $i*-0.5s
+                animation-delay: $i*-0.9s
 
                 +keyframes(beam)
                     0%
@@ -121,13 +121,36 @@
                     100%
                         opacity: 0
 
+    .shines
+        [class^='shine']
+            position: absolute
+            +size(3px, 3px)
+            border-radius: 50%
+            background: rgba(#FFF, 0.9)
+            box-shadow: 0 0 10px rgba(#FFF, 0.9)
+            top: 0
+            right: 0
+            filter: blur(1px)
+        @for $i from 1 through 10
+            .shine#{$i}
+                $x1: random(10) * -20px
+                $y1: random(10) * 20px
+                $x2: random(10) * -50px
+                $y2: random(10) * 50px
+                animation: shine#{$i} 20s infinite
+                animation-delay: $i*-0.5s
 
-
-
-    
-
-
-    
+                +keyframes(shine#{$i})
+                    0%
+                        opacity: 0
+                    30%
+                        opacity: 1
+                        transform: translate($x1, $y1)
+                    60%
+                        opacity: 1
+                    100%
+                        opacity: 0
+                        transform: translate($x2, $y2)  
 
 // Pages
 .page
