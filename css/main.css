@@ -175,9 +175,9 @@ html {
 }
 .brightness .beams .beam1 {
   width: 650px;
-  height: 20px;
-  transform: rotate(-48deg);
-  animation-delay: -0.9s;
+  height: 15px;
+  transform: rotate(-24deg);
+  animation-delay: -0.5s;
 }
 @keyframes beam {
   0% {
@@ -192,9 +192,9 @@ html {
 }
 .brightness .beams .beam2 {
   width: 650px;
-  height: 25px;
-  transform: rotate(-36deg);
-  animation-delay: -1.8s;
+  height: 10px;
+  transform: rotate(-48deg);
+  animation-delay: -1s;
 }
 @keyframes beam {
   0% {
@@ -208,10 +208,10 @@ html {
   }
 }
 .brightness .beams .beam3 {
-  width: 600px;
-  height: 30px;
+  width: 650px;
+  height: 20px;
   transform: rotate(-12deg);
-  animation-delay: -2.7s;
+  animation-delay: -1.5s;
 }
 @keyframes beam {
   0% {
@@ -225,10 +225,10 @@ html {
   }
 }
 .brightness .beams .beam4 {
-  width: 600px;
+  width: 450px;
   height: 25px;
-  transform: rotate(-48deg);
-  animation-delay: -3.6s;
+  transform: rotate(-36deg);
+  animation-delay: -2s;
 }
 @keyframes beam {
   0% {
@@ -242,10 +242,10 @@ html {
   }
 }
 .brightness .beams .beam5 {
-  width: 550px;
+  width: 450px;
   height: 30px;
-  transform: rotate(-72deg);
-  animation-delay: -4.5s;
+  transform: rotate(-60deg);
+  animation-delay: -2.5s;
 }
 @keyframes beam {
   0% {
@@ -259,10 +259,10 @@ html {
   }
 }
 .brightness .beams .beam6 {
-  width: 450px;
-  height: 20px;
-  transform: rotate(-36deg);
-  animation-delay: -5.4s;
+  width: 700px;
+  height: 25px;
+  transform: rotate(-72deg);
+  animation-delay: -3s;
 }
 @keyframes beam {
   0% {
