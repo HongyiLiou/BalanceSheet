@@ -10,6 +10,7 @@
     .mainBackgroundImg
         position: absolute
         background: url('../images/defaultBg.jpg') 25% center no-repeat
+        // background: #000
         background-size: cover
         top: 0
         left: 0
@@ -138,7 +139,7 @@
                 $x2: random(10) * -50px
                 $y2: random(10) * 50px
                 animation: shine#{$i} 20s infinite
-                animation-delay: $i*-0.9s
+                animation-delay: $i*-1.5s
 
                 +keyframes(shine#{$i})
                     0%
