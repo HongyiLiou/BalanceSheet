@@ -174,9 +174,9 @@ html {
   animation: beam 3s infinite;
 }
 .brightness .beams .beam1 {
-  width: 650px;
-  height: 15px;
-  transform: rotate(-24deg);
+  width: 600px;
+  height: 5px;
+  transform: rotate(-72deg);
   animation-delay: -0.5s;
 }
 @keyframes beam {
@@ -191,9 +191,9 @@ html {
   }
 }
 .brightness .beams .beam2 {
-  width: 650px;
-  height: 10px;
-  transform: rotate(-48deg);
+  width: 600px;
+  height: 25px;
+  transform: rotate(-12deg);
   animation-delay: -1s;
 }
 @keyframes beam {
@@ -208,9 +208,9 @@ html {
   }
 }
 .brightness .beams .beam3 {
-  width: 650px;
-  height: 20px;
-  transform: rotate(-12deg);
+  width: 600px;
+  height: 5px;
+  transform: rotate(-36deg);
   animation-delay: -1.5s;
 }
 @keyframes beam {
@@ -225,8 +225,8 @@ html {
   }
 }
 .brightness .beams .beam4 {
-  width: 450px;
-  height: 25px;
+  width: 500px;
+  height: 20px;
   transform: rotate(-36deg);
   animation-delay: -2s;
 }
@@ -242,9 +242,9 @@ html {
   }
 }
 .brightness .beams .beam5 {
-  width: 450px;
-  height: 30px;
-  transform: rotate(-60deg);
+  width: 650px;
+  height: 10px;
+  transform: rotate(-36deg);
   animation-delay: -2.5s;
 }
 @keyframes beam {
@@ -259,9 +259,9 @@ html {
   }
 }
 .brightness .beams .beam6 {
-  width: 700px;
-  height: 25px;
-  transform: rotate(-72deg);
+  width: 550px;
+  height: 5px;
+  transform: rotate(-36deg);
   animation-delay: -3s;
 }
 @keyframes beam {
@@ -419,6 +419,7 @@ html {
 .sidebar .sidebarContent ul {
   max-height: 500px;
   overflow: auto;
+  padding: 10px 0;
 }
 .sidebar .sidebarContent ul::-webkit-scrollbar {
   display: none;
@@ -455,6 +456,9 @@ html {
   opacity: 0;
   transition: 0.3s;
   pointer-events: none;
+}
+.sidebar .sidebarContent ul li.active {
+  box-shadow: inset 2px 0 25px -20px #FFF;
 }
 .sidebar .sidebarContent ul li.active::before {
   opacity: 1;
