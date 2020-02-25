@@ -69,7 +69,7 @@ function initialHomePageTime() {
         if (hour > 23) {
             hour = 0;
             day = day < 6 ? day + 1 : 0;
-            showDate.innerHTML = `${year}年 ${month}月 ${date}日  週${changeWeekDay(day)}`;
+            showDate.innerHTML = `${year}年 ${month}月 ${date + 1}日  週${changeWeekDay(day)}`;
         }
         // alert(hour)
     }, 1000);
