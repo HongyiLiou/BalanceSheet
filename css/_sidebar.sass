@@ -145,11 +145,16 @@
             transition: 0.3s
 
         &.active
-            transition: 0.3s, transform 99999s
-            transform: rotate(55555turn)
+            animation: userSettingBtn 5s infinite linear
             &::before
                 color: #FFF
                 text-shadow: 0 0 10px rgba(#FFF, 0.7)
+            
+            +keyframes(userSettingBtn)
+                0%
+                    transform: rotate(0deg)
+                100%
+                    transform: rotate(360deg)
 
 
 

@@ -174,9 +174,9 @@ html {
   animation: beam 3s infinite;
 }
 .brightness .beams .beam1 {
-  width: 600px;
-  height: 30px;
-  transform: rotate(-36deg);
+  width: 500px;
+  height: 5px;
+  transform: rotate(-12deg);
   animation-delay: -0.5s;
 }
 @keyframes beam {
@@ -191,8 +191,8 @@ html {
   }
 }
 .brightness .beams .beam2 {
-  width: 600px;
-  height: 30px;
+  width: 700px;
+  height: 20px;
   transform: rotate(-12deg);
   animation-delay: -1s;
 }
@@ -208,9 +208,9 @@ html {
   }
 }
 .brightness .beams .beam3 {
-  width: 550px;
-  height: 10px;
-  transform: rotate(-48deg);
+  width: 650px;
+  height: 25px;
+  transform: rotate(-24deg);
   animation-delay: -1.5s;
 }
 @keyframes beam {
@@ -225,9 +225,9 @@ html {
   }
 }
 .brightness .beams .beam4 {
-  width: 500px;
-  height: 25px;
-  transform: rotate(-36deg);
+  width: 600px;
+  height: 15px;
+  transform: rotate(-24deg);
   animation-delay: -2s;
 }
 @keyframes beam {
@@ -242,9 +242,9 @@ html {
   }
 }
 .brightness .beams .beam5 {
-  width: 650px;
-  height: 15px;
-  transform: rotate(-60deg);
+  width: 550px;
+  height: 20px;
+  transform: rotate(-24deg);
   animation-delay: -2.5s;
 }
 @keyframes beam {
@@ -259,7 +259,7 @@ html {
   }
 }
 .brightness .beams .beam6 {
-  width: 600px;
+  width: 500px;
   height: 5px;
   transform: rotate(-36deg);
   animation-delay: -3s;
@@ -296,14 +296,14 @@ html {
   }
   30% {
     opacity: 1;
-    transform: translate(-120px, 300px);
+    transform: translate(-60px, 240px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-350px, 400px);
+    transform: translate(-350px, 150px);
   }
 }
 .brightness .shines .shine2 {
@@ -316,14 +316,14 @@ html {
   }
   30% {
     opacity: 1;
-    transform: translate(-240px, 150px);
+    transform: translate(-30px, 30px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-150px, 350px);
+    transform: translate(-300px, 250px);
   }
 }
 .brightness .shines .shine3 {
@@ -336,14 +336,14 @@ html {
   }
   30% {
     opacity: 1;
-    transform: translate(-150px, 120px);
+    transform: translate(-60px, 30px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-150px, 100px);
+    transform: translate(-300px, 450px);
   }
 }
 .brightness .shines .shine4 {
@@ -356,14 +356,14 @@ html {
   }
   30% {
     opacity: 1;
-    transform: translate(-270px, 60px);
+    transform: translate(-240px, 30px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-250px, 100px);
+    transform: translate(-150px, 450px);
   }
 }
 .brightness .shines .shine5 {
@@ -376,14 +376,14 @@ html {
   }
   30% {
     opacity: 1;
-    transform: translate(-30px, 270px);
+    transform: translate(-180px, 150px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-250px, 450px);
+    transform: translate(-300px, 250px);
   }
 }
 .brightness .shines .shine6 {
@@ -396,14 +396,14 @@ html {
   }
   30% {
     opacity: 1;
-    transform: translate(-120px, 150px);
+    transform: translate(-180px, 270px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-500px, 400px);
+    transform: translate(-200px, 300px);
   }
 }
 .brightness .shines .shine7 {
@@ -416,14 +416,14 @@ html {
   }
   30% {
     opacity: 1;
-    transform: translate(-210px, 120px);
+    transform: translate(-300px, 240px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-200px, 100px);
+    transform: translate(-450px, 300px);
   }
 }
 .brightness .shines .shine8 {
@@ -436,14 +436,14 @@ html {
   }
   30% {
     opacity: 1;
-    transform: translate(-60px, 180px);
+    transform: translate(-30px, 60px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-200px, 100px);
+    transform: translate(-350px, 300px);
   }
 }
 .brightness .shines .shine9 {
@@ -456,14 +456,14 @@ html {
   }
   30% {
     opacity: 1;
-    transform: translate(-210px, 150px);
+    transform: translate(-270px, 270px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-450px, 200px);
+    transform: translate(-400px, 150px);
   }
 }
 .brightness .shines .shine10 {
@@ -476,14 +476,14 @@ html {
   }
   30% {
     opacity: 1;
-    transform: translate(-300px, 210px);
+    transform: translate(-30px, 240px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-300px, 50px);
+    transform: translate(-300px, 100px);
   }
 }
 
@@ -737,12 +737,19 @@ html {
   transition: 0.3s;
 }
 .sidebar .userSettingBtn.active {
-  transition: 0.3s, transform 99999s;
-  transform: rotate(55555turn);
+  animation: userSettingBtn 5s infinite linear;
 }
 .sidebar .userSettingBtn.active::before {
   color: #FFF;
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+}
+@keyframes userSettingBtn {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 @media screen and (max-width: 1400px) {
