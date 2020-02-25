@@ -174,8 +174,8 @@ html {
   animation: beam 3s infinite;
 }
 .brightness .beams .beam1 {
-  width: 450px;
-  height: 20px;
+  width: 600px;
+  height: 30px;
   transform: rotate(-36deg);
   animation-delay: -0.5s;
 }
@@ -191,9 +191,9 @@ html {
   }
 }
 .brightness .beams .beam2 {
-  width: 700px;
-  height: 25px;
-  transform: rotate(-24deg);
+  width: 600px;
+  height: 30px;
+  transform: rotate(-12deg);
   animation-delay: -1s;
 }
 @keyframes beam {
@@ -208,9 +208,9 @@ html {
   }
 }
 .brightness .beams .beam3 {
-  width: 600px;
-  height: 25px;
-  transform: rotate(-60deg);
+  width: 550px;
+  height: 10px;
+  transform: rotate(-48deg);
   animation-delay: -1.5s;
 }
 @keyframes beam {
@@ -225,9 +225,9 @@ html {
   }
 }
 .brightness .beams .beam4 {
-  width: 550px;
-  height: 15px;
-  transform: rotate(-48deg);
+  width: 500px;
+  height: 25px;
+  transform: rotate(-36deg);
   animation-delay: -2s;
 }
 @keyframes beam {
@@ -244,7 +244,7 @@ html {
 .brightness .beams .beam5 {
   width: 650px;
   height: 15px;
-  transform: rotate(-24deg);
+  transform: rotate(-60deg);
   animation-delay: -2.5s;
 }
 @keyframes beam {
@@ -259,9 +259,9 @@ html {
   }
 }
 .brightness .beams .beam6 {
-  width: 450px;
-  height: 25px;
-  transform: rotate(-60deg);
+  width: 600px;
+  height: 5px;
+  transform: rotate(-36deg);
   animation-delay: -3s;
 }
 @keyframes beam {
@@ -296,14 +296,14 @@ html {
   }
   30% {
     opacity: 1;
-    transform: translate(-60px, 180px);
+    transform: translate(-120px, 300px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-400px, 300px);
+    transform: translate(-350px, 400px);
   }
 }
 .brightness .shines .shine2 {
@@ -316,14 +316,14 @@ html {
   }
   30% {
     opacity: 1;
-    transform: translate(-30px, 30px);
+    transform: translate(-240px, 150px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-500px, 450px);
+    transform: translate(-150px, 350px);
   }
 }
 .brightness .shines .shine3 {
@@ -336,14 +336,14 @@ html {
   }
   30% {
     opacity: 1;
-    transform: translate(-120px, 210px);
+    transform: translate(-150px, 120px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-400px, 350px);
+    transform: translate(-150px, 100px);
   }
 }
 .brightness .shines .shine4 {
@@ -356,14 +356,14 @@ html {
   }
   30% {
     opacity: 1;
-    transform: translate(-300px, 30px);
+    transform: translate(-270px, 60px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-200px, 350px);
+    transform: translate(-250px, 100px);
   }
 }
 .brightness .shines .shine5 {
@@ -376,14 +376,14 @@ html {
   }
   30% {
     opacity: 1;
-    transform: translate(-60px, 300px);
+    transform: translate(-30px, 270px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-450px, 250px);
+    transform: translate(-250px, 450px);
   }
 }
 .brightness .shines .shine6 {
@@ -396,14 +396,14 @@ html {
   }
   30% {
     opacity: 1;
-    transform: translate(-60px, 300px);
+    transform: translate(-120px, 150px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-300px, 200px);
+    transform: translate(-500px, 400px);
   }
 }
 .brightness .shines .shine7 {
@@ -416,14 +416,14 @@ html {
   }
   30% {
     opacity: 1;
-    transform: translate(-90px, 30px);
+    transform: translate(-210px, 120px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-500px, 250px);
+    transform: translate(-200px, 100px);
   }
 }
 .brightness .shines .shine8 {
@@ -436,14 +436,14 @@ html {
   }
   30% {
     opacity: 1;
-    transform: translate(-270px, 150px);
+    transform: translate(-60px, 180px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-350px, 200px);
+    transform: translate(-200px, 100px);
   }
 }
 .brightness .shines .shine9 {
@@ -456,14 +456,14 @@ html {
   }
   30% {
     opacity: 1;
-    transform: translate(-30px, 300px);
+    transform: translate(-210px, 150px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-300px, 300px);
+    transform: translate(-450px, 200px);
   }
 }
 .brightness .shines .shine10 {
@@ -476,14 +476,14 @@ html {
   }
   30% {
     opacity: 1;
-    transform: translate(-240px, 270px);
+    transform: translate(-300px, 210px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-500px, 300px);
+    transform: translate(-300px, 50px);
   }
 }
 
@@ -668,9 +668,6 @@ html {
   transition: 0.3s;
   pointer-events: none;
 }
-.sidebar .sidebarContent ul li.active {
-  box-shadow: inset 2px 0 25px -20px #FFF;
-}
 .sidebar .sidebarContent ul li.active::before {
   opacity: 1;
   background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.2) 35%, transparent);
@@ -708,6 +705,45 @@ html {
 .sidebar .sidebarContent ul li p.balanceSheet::before {
   content: "";
 }
+.sidebar .userSettingBtn {
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  bottom: 60px;
+  left: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  transform-origin: center center;
+  transition: 0.3s;
+}
+.sidebar .userSettingBtn:hover {
+  transform: rotate(0.5turn);
+}
+.sidebar .userSettingBtn:hover::before {
+  color: #FFF;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+}
+.sidebar .userSettingBtn::before {
+  position: absolute;
+  content: "";
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-family: FontAwesome;
+  font-size: 200%;
+  color: #adadad;
+  transition: 0.3s;
+}
+.sidebar .userSettingBtn.active {
+  transition: 0.3s, transform 99999s;
+  transform: rotate(55555turn);
+}
+.sidebar .userSettingBtn.active::before {
+  color: #FFF;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+}
 
 @media screen and (max-width: 1400px) {
   .sidebar .topArea {
@@ -732,6 +768,14 @@ html {
   }
   .sidebar .sidebarContent ul li p {
     font-size: 80%;
+  }
+  .sidebar .userSettingBtn {
+    width: 30px;
+    height: 30px;
+    left: 20px;
+  }
+  .sidebar .userSettingBtn::before {
+    font-size: 180%;
   }
 }
 @media screen and (max-width: 500px) {
@@ -771,6 +815,9 @@ html {
   }
   .sidebar .sidebarContent ul li p {
     font-size: 80%;
+  }
+  .sidebar .userSettingBtn {
+    bottom: 20px;
   }
 }
 /** 收支表 Balance Sheet */        

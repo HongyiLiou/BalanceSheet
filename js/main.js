@@ -58,6 +58,13 @@ function loadPages() {
         inititialDate_balanceSheet();
     });
 
+    // User Setting Page
+    $('#userSettingPage').load('html/userSetting.html', function() {
+        const sc = document.createElement('script');
+        sc.src = 'js/userSetting.js';
+        $('body').append(sc);
+    });
+
 }
 
 

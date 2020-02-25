@@ -55,10 +55,8 @@ function initialHomePageTime() {
             hour += 1;
             showMinute.innerHTML = '00';
             if (hour == 0) {
-                day = day > 6 ? day + 1 : 0;
                 showAPM.innerHTML = '上午';
                 showHour.innerHTML = `12:`;
-                showDate.innerHTML = `${year}年 ${month}月 ${date}日  週${changeWeekDay(day)}`;
             } else if (hour <= 12) {
                 showAPM.innerHTML = '上午';
                 showHour.innerHTML = `${hour}:`;
@@ -66,6 +64,12 @@ function initialHomePageTime() {
                 showAPM.innerHTML = '下午';
                 showHour.innerHTML = `${hour - 12}:`;
             }
+        }
+
+        if (hour > 23) {
+            hour = 0;
+            day = day < 6 ? day + 1 : 0;
+            showDate.innerHTML = `${year}年 ${month}月 ${date}日  週${changeWeekDay(day)}`;
         }
         // alert(hour)
     }, 1000);
@@ -77,6 +81,7 @@ function initialSidebar() {
     /** 漢堡選單 */const burgerMenu = document.querySelector('.burgerMenu');
     /** Sidebar 本人 */const sidebar = document.querySelector('.sidebar');
     /** Screen Holder */const screenHolder = document.querySelector('.screenHolder');
+    /** UserSettingBtn */const userSettingBtn = document.querySelector('.userSettingBtn');
 
     let toggleScreenHolder = false;
 
@@ -92,14 +97,29 @@ function initialSidebar() {
         sidebar.classList.remove('active');
         screenHolder.removeEventListener('click', initialSidebar);
         toggleScreenHolder = false;
-    })
+    });
 
     sidebarList.forEach(obj => {
         setSidebarBtns(obj);
     });
+
+    userSettingBtn.addEventListener('click', (event) => {
+        const userSettingPage = document.querySelector(`#userSettingPage`);
+        const burgerBtn = document.querySelector('.burgerMenu');
+        
+        removeAllSiderbarActive();
+        userSettingPage.classList.add('active');
+        event.target.classList.add('active');
+        
+        if (window.screen.width < 500) {
+            burgerBtn.click();
+        }
+
+    });
 }
 
 
+/** 設定 Sidebar按鈕 */
 function setSidebarBtns(listObj) {
     const sidebarBtnsList = document.querySelector('.sidebarContent ul');
     const btn = document.createElement('li');
@@ -114,15 +134,10 @@ function setSidebarBtns(listObj) {
     const sidebarBtn = document.querySelector(`.sidebarContent ul li .${listObj.class}`);
 
     sidebarBtn.parentNode.addEventListener('click', () => {
-        const removeClassBtns = document.querySelectorAll('.sidebarContent ul li');
-        const removeClassPages = document.querySelectorAll('.page');
         const activePage = document.querySelector(`#${listObj.id}`);
         const burgerBtn = document.querySelector('.burgerMenu');
 
-        removeClassBtns.forEach((btn, i) => {
-            btn.classList.remove('active');
-            removeClassPages[i].classList.remove('active');
-        });
+        removeAllSiderbarActive();
 
         sidebarBtn.parentNode.classList.add('active');
         activePage.classList.add('active');
@@ -131,4 +146,24 @@ function setSidebarBtns(listObj) {
             burgerBtn.click();
         }
     });
+
+}
+
+
+/** 移除所有 Sidbar 按鈕、Pages 的 class active */
+function removeAllSiderbarActive() {
+    const removeClassBtns = document.querySelectorAll('.sidebarContent ul li');
+    const removeClassPages = document.querySelectorAll('.page');
+    /** UserSettingBtn */const userSettingBtn = document.querySelector('.userSettingBtn');
+
+    removeClassBtns.forEach(btn => {
+        btn.classList.remove('active');
+    });
+
+    removeClassPages.forEach(page => {
+        page.classList.remove('active');
+    });
+
+    userSettingBtn.classList.remove('active');
+
 }
