@@ -50,6 +50,7 @@
                 position: relative
                 padding: 18px 0 18px 80px
                 box-sizing: border-box
+                overflow: hidden
                 transition: 0.3s
                 cursor: pointer
 
@@ -84,18 +85,39 @@
                         background: linear-gradient(to right, transparent, rgba(#FFF, 0.2) 35%, transparent)
                         border-top: solid 1px rgba(#FFF, 0.1)
                         border-bottom: solid 1px rgba(#FFF, 0.1)
+                    .clickCircle
+                        display: block
                     p
                         color: #FFF
                         text-shadow: 0 0 10px rgba(#FFF, 1)
                         &::before
                             text-shadow: none
                             color: #c9c9c9
+                
+                .clickCircle
+                    +size(5px, 5px)
+                    +ab_center
+                    display: none
+                    border-radius: 50%
+                    background: rgba(#fff, 0.1)
+                    pointer-events: none
+                    animation: clickCircle 0.8s forwards
 
+                    +keyframes(clickCircle)
+                        0%
+                            opacity: 0
+                            transform: translate(-50%, -50%) scale(1)
+                        20%
+                            opacity: 1
+                        100%
+                            opacity: 0
+                            transform: translate(-50%, -50%) scale(50)
 
                 p
                     position: relative
                     font-size:  90%
                     color: #adadad
+                    pointer-events: none
                     transition: 0.3s
 
                     &::before

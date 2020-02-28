@@ -15,7 +15,7 @@ function getToday() {
     const timeObj = {
         dateString: `${time}`,
         year: year,
-        month: month + 1,
+        month: month,
         date: date,
         day: day,
         hour: hour,
@@ -61,4 +61,29 @@ function changeWeekDay(day) {
     }
 
     return dayString;
+}
+
+
+/**
+ * 取得滑鼠座標相對於文件位置
+ * @param {MouseEvent} event 滑鼠事件
+ */
+function getMousePos(event) {
+    const e = event || window.event;
+    const scrollX = document.documentElement.scrollLeft || document.body.scrollLeft;
+    const scrollY = document.documentElement.scrollTop || document.body.scrollTop;
+    const x = e.pageX || e.clientX + scrollX;
+    const y = e.pageY || e.clientY + scrollY;
+    //alert('x: ' + x + '\ny: ' + y);
+    return { 'x': x, 'y': y };
+}
+
+
+/** 取得滑鼠座標相對於元素位置 */
+function getMousePos(event) {
+    const e = event || window.event;
+    const x = e.offsetX;
+    const y = e.offsetY;
+    //alert('x: ' + x + '\ny: ' + y);
+    return { 'x': x, 'y': y };
 }

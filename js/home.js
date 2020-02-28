@@ -7,7 +7,7 @@
 
 /** 初始化 home page 時間 */
 function initialHomePageTime() {
-    const timeObj = getToday();
+    const timeObj = getToday(); // common.js
     const year = timeObj.year;
     const month = timeObj.month;
     const date = timeObj.date;
@@ -123,19 +123,30 @@ function initialSidebar() {
 function setSidebarBtns(listObj) {
     const sidebarBtnsList = document.querySelector('.sidebarContent ul');
     const btn = document.createElement('li');
+    const clickCircle = document.createElement('div');
     const p = document.createElement('p');
 
+    clickCircle.className = 'clickCircle';
     p.className = listObj.class;
     p.innerHTML = listObj.name;
+    btn.appendChild(clickCircle);
     btn.appendChild(p);
     if (listObj.selected) { btn.classList.add('active'); }
     sidebarBtnsList.appendChild(btn);
 
     const sidebarBtn = document.querySelector(`.sidebarContent ul li .${listObj.class}`);
+    // const clickCircle = document.querySelector(`.sidebarContent ul li .${listObj.class}`);
 
-    sidebarBtn.parentNode.addEventListener('click', () => {
+    sidebarBtn.parentNode.addEventListener('click', (event) => {
         const activePage = document.querySelector(`#${listObj.id}`);
         const burgerBtn = document.querySelector('.burgerMenu');
+        const clickCircles = document.querySelectorAll('.clickCircle');
+        const mousePos = getMousePos(event);
+
+        clickCircles.forEach(circle => {
+            circle.style.top = `${mousePos.y}px`;
+            circle.style.left = `${mousePos.x}px`;
+        });
 
         removeAllSiderbarActive();
 
