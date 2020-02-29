@@ -119,14 +119,6 @@
                     transform: translate(-50%, -50%) rotate(0deg)
                 100%
                     transform: translate(-50%, -50%) rotate(-360deg)
-                
-
-        .circle
-            +size(100%, 100%)
-            +ab_center
-            background: #0e0e0e
-            border-radius: 50%
-            z-index: -1
 
         p
             text-align: center
@@ -136,6 +128,15 @@
             font-style: italic
             font-weight: 100
             text-shadow: 0 0 8px #ffffff
+
+            &::before
+                content: ''
+                display: block
+                +size(100%, 100%)
+                +ab_center
+                background: #0e0e0e
+                border-radius: 50%
+                z-index: -1
 
     &.active
         opacity: 1
