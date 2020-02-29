@@ -122,21 +122,20 @@
 
         p
             text-align: center
-            line-height: 150px
-            color: #ffffff
-            font-size: 150%
-            font-style: italic
-            font-weight: 100
-            text-shadow: 0 0 8px #ffffff
+            display: block
+            +size(100%, 100%)
+            +ab_center
+            background: #0e0e0e
+            border-radius: 50%
 
             &::before
-                content: ''
-                display: block
-                +size(100%, 100%)
-                +ab_center
-                background: #0e0e0e
-                border-radius: 50%
-                z-index: -1
+                content: 'Loading...'
+                line-height: 150px
+                color: #ffffff
+                font-size: 150%
+                font-style: italic
+                font-weight: 100
+                text-shadow: 0 0 8px #ffffff
 
     &.active
         opacity: 1
@@ -288,8 +287,9 @@
             .border
                 +size(calc(100% + 7px), calc(100% + 7px))
             p
-                font-size: 100%
-                line-height: 100px
+                &::before
+                    font-size: 100%
+                    line-height: 100px
     .burgerMenu
         display: block
     .page
