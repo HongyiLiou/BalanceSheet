@@ -1,0 +1,62 @@
+// User Setting
+.userSettingPageBox
+    position: relative
+    +size(100%, 100%)
+
+    .container
+        width: 80%
+        padding-top: 100px
+        // background: rgba(#000, 0.3)
+
+        h1
+            font-size: 220%
+            color: #FFF
+            font-weight: 500
+            text-shadow: 0px 2px 0px #b2a98f, 0px 7px 10px rgba(0,0,0,0.4), 0px 12px 2px rgba(0,0,0,0.3), 0px 17px 30px rgba(0,0,0,0.3)
+
+        hr
+            border: solid 1px rgba(#FFF, 0.5)
+
+        
+        .toggleSwitch
+            display: block
+            +size(60px, 34px)
+            border-radius: 100px
+            transform: translateX(50%)
+
+
+            input
+                display: none
+
+                &:checked
+                    +.slider
+                        background: #555
+                        &::before
+                            background: #FFF
+                            transform: translateX(26px)
+                &:focus
+                    +.slider
+                        box-shadow: 0 2px 5px #000000
+                        
+
+            .slider
+                position: absolute
+                top: 0
+                left: 0
+                right: 0
+                bottom: 0
+                background: #ffffff
+                border-radius: 100px
+                transition: 0.4s
+                cursor: pointer
+
+                &::before
+                    position: absolute
+                    content: ''
+                    display: block
+                    +size(26px, 26px)
+                    left: 4px
+                    bottom: 4px
+                    background: #bdbdbd
+                    border-radius: 50%
+                    transition: 0.4s

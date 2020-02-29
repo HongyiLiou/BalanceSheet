@@ -152,6 +152,7 @@
                             content: '\f200'
 
 
+    // 『使用者設定』按鈕
     .userSettingBtn
         position: absolute
         +size(35px, 35px)
@@ -190,6 +191,38 @@
                     transform: rotate(0deg)
                 100%
                     transform: rotate(360deg)
+
+
+    // Sidebar 收合按鈕
+    .changeWidthBtn
+        position: absolute
+        +size(35px, 22px)
+        bottom: 20px
+        left: 30px
+        background: #adadad
+        cursor: pointer
+        transform-origin: center center
+        transition: 0.3s
+
+        &:hover
+            background: #FFF
+            
+
+        &::before
+            content: ''
+            position: absolute
+            display: block
+            +size(20px, 22px)
+            top: 0
+            left: 0
+            background: linear-gradient(to right, #181818, transparent)
+            transition: 0.3s
+
+        &.active
+            &::before
+                width: 10px
+
+                
 
 
 
