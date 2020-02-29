@@ -105,8 +105,7 @@
         border-radius: 50%
         box-shadow: 0 0 30px rgba(#FFF, 0.7)
 
-        &::before
-            content: ''
+        .border
             +size(calc(100% + 10px), calc(100% + 10px))
             +ab_center
             // background: radial-gradient(#FFF 0deg, #999 90deg)
@@ -122,8 +121,7 @@
                     transform: translate(-50%, -50%) rotate(360deg)
                 
 
-        &::after
-            content: ''
+        .circle
             +size(100%, 100%)
             +ab_center
             background: #0e0e0e
@@ -287,7 +285,7 @@
     .loaging
         .loadingCircle
             +size(100px, 100px)
-            &::before
+            .border
                 +size(calc(100% + 7px), calc(100% + 7px))
             p
                 font-size: 100%
