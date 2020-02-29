@@ -95,7 +95,7 @@
     bottom: 0
     background: rgba(#000, 0.7)
     z-index: 5
-    opacity: 0
+    // opacity: 0
     transition: 0.3s
     pointer-events: none
 
@@ -104,7 +104,6 @@
         +ab_center
         border-radius: 50%
         box-shadow: 0 0 30px rgba(#FFF, 0.7)
-        z-index: 1
 
         &::before
             content: ''
@@ -139,6 +138,7 @@
             font-style: italic
             font-weight: 100
             text-shadow: 0 0 8px #FFF
+            z-index: 1
 
     &.active
         opacity: 1
@@ -288,7 +288,7 @@
         .loadingCircle
             +size(100px, 100px)
             &::before
-                display: none
+                +size(calc(100% + 7px), calc(100% + 7px))
             p
                 font-size: 100%
                 line-height: 100px
