@@ -90,6 +90,8 @@ function sendBalanceSheet() {
     /** amountInputs總和的值 */let dataContainer = 0;
     /** 收支型態 */const type = $('.type');
 
+    showLoading(true);
+    
     for (let i = 0; i < amountInputs.length; i++) {
         if (itemInputs[i].value && amountInputs[i].value) {
             let amount = amountInputs[i].value;
@@ -122,8 +124,8 @@ function sendBalanceSheet() {
     console.log(parameter);
     
     $.get('https://script.google.com/macros/s/AKfycbwC9bl6xw2PIbL6mF0ojN1RqokP_43JtxurpA2839FP80Ih2l19/exec', parameter).then(res => {
-        console.log(res);
-        
+        showLoading(false);
+        return res;
     });
 
 }
@@ -138,6 +140,8 @@ function sendBalanceSheetDetail() {
     /** 用來裝 itemInputs的值 */const dataContianer1 = [];
     /** 用來裝 amountInputs的值 */const dataContianer2 = [];
     /** 收支型態 */const type = $('.type');
+
+    showLoading(true);
 
     for (let i = 0; i < itemInputs.length; i++) {
         if (itemInputs[i].value && amountInputs[i].value) {
@@ -169,6 +173,8 @@ function sendBalanceSheetDetail() {
         day: Number(dayInput.value) + 1,
     };
 
-    $.get('https://script.google.com/macros/s/AKfycbwC9bl6xw2PIbL6mF0ojN1RqokP_43JtxurpA2839FP80Ih2l19/exec', parameter);
+    $.get('https://script.google.com/macros/s/AKfycbwC9bl6xw2PIbL6mF0ojN1RqokP_43JtxurpA2839FP80Ih2l19/exec', parameter).then(res => {
+        showLoading(false);
+    });
 
 }

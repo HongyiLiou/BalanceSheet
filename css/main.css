@@ -161,8 +161,11 @@ html {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.7);
   z-index: 5;
+  opacity: 0;
+  transition: 0.3s;
+  pointer-events: none;
 }
 .loaging .loadingCircle {
   width: 150px;
@@ -172,6 +175,7 @@ html {
   top: 50%;
   transform: translate(-50%, -50%);
   border-radius: 50%;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.7);
   z-index: 1;
 }
 .loaging .loadingCircle::before {
@@ -182,9 +186,18 @@ html {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  background: conic-gradient(#FFF 0deg, #999 90deg);
+  background: conic-gradient(#c7c7c7 0deg, #3b3b3b 270deg);
   border-radius: 50%;
-  z-index: 0;
+  z-index: -2;
+  animation: loadingCircle 1.5s infinite linear;
+}
+@keyframes loadingCircle {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  0% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
 }
 .loaging .loadingCircle::after {
   content: "";
@@ -194,7 +207,7 @@ html {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  background: #1b1b1b;
+  background: #0e0e0e;
   border-radius: 50%;
   z-index: -1;
 }
@@ -231,9 +244,9 @@ html {
   animation: beam 3s infinite;
 }
 .brightness .beams .beam1 {
-  width: 700px;
-  height: 30px;
-  transform: rotate(-60deg);
+  width: 450px;
+  height: 25px;
+  transform: rotate(-72deg);
   animation-delay: -0.5s;
 }
 @keyframes beam {
@@ -248,8 +261,8 @@ html {
   }
 }
 .brightness .beams .beam2 {
-  width: 450px;
-  height: 20px;
+  width: 650px;
+  height: 15px;
   transform: rotate(-24deg);
   animation-delay: -1s;
 }
@@ -265,9 +278,9 @@ html {
   }
 }
 .brightness .beams .beam3 {
-  width: 700px;
-  height: 10px;
-  transform: rotate(-36deg);
+  width: 500px;
+  height: 15px;
+  transform: rotate(-72deg);
   animation-delay: -1.5s;
 }
 @keyframes beam {
@@ -283,8 +296,8 @@ html {
 }
 .brightness .beams .beam4 {
   width: 650px;
-  height: 20px;
-  transform: rotate(-72deg);
+  height: 5px;
+  transform: rotate(-48deg);
   animation-delay: -2s;
 }
 @keyframes beam {
@@ -299,9 +312,9 @@ html {
   }
 }
 .brightness .beams .beam5 {
-  width: 700px;
-  height: 25px;
-  transform: rotate(-60deg);
+  width: 450px;
+  height: 15px;
+  transform: rotate(-12deg);
   animation-delay: -2.5s;
 }
 @keyframes beam {
@@ -316,9 +329,9 @@ html {
   }
 }
 .brightness .beams .beam6 {
-  width: 650px;
-  height: 25px;
-  transform: rotate(-48deg);
+  width: 700px;
+  height: 10px;
+  transform: rotate(-12deg);
   animation-delay: -3s;
 }
 @keyframes beam {
@@ -353,14 +366,14 @@ html {
   }
   30% {
     opacity: 1;
-    transform: translate(-120px, 270px);
+    transform: translate(-270px, 60px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-50px, 250px);
+    transform: translate(-500px, 300px);
   }
 }
 .brightness .shines .shine2 {
@@ -373,14 +386,14 @@ html {
   }
   30% {
     opacity: 1;
-    transform: translate(-210px, 210px);
+    transform: translate(-60px, 60px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-450px, 200px);
+    transform: translate(-500px, 100px);
   }
 }
 .brightness .shines .shine3 {
@@ -393,14 +406,14 @@ html {
   }
   30% {
     opacity: 1;
-    transform: translate(-30px, 60px);
+    transform: translate(-180px, 210px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-500px, 200px);
+    transform: translate(-500px, 150px);
   }
 }
 .brightness .shines .shine4 {
@@ -413,14 +426,14 @@ html {
   }
   30% {
     opacity: 1;
-    transform: translate(-300px, 30px);
+    transform: translate(-120px, 180px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-200px, 100px);
+    transform: translate(-500px, 50px);
   }
 }
 .brightness .shines .shine5 {
@@ -433,14 +446,14 @@ html {
   }
   30% {
     opacity: 1;
-    transform: translate(-60px, 300px);
+    transform: translate(-300px, 60px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-50px, 500px);
+    transform: translate(-100px, 400px);
   }
 }
 .brightness .shines .shine6 {
@@ -453,14 +466,14 @@ html {
   }
   30% {
     opacity: 1;
-    transform: translate(-90px, 30px);
+    transform: translate(-300px, 60px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-500px, 300px);
+    transform: translate(-100px, 500px);
   }
 }
 .brightness .shines .shine7 {
@@ -473,14 +486,14 @@ html {
   }
   30% {
     opacity: 1;
-    transform: translate(-210px, 210px);
+    transform: translate(-60px, 240px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-450px, 350px);
+    transform: translate(-400px, 450px);
   }
 }
 .brightness .shines .shine8 {
@@ -493,14 +506,14 @@ html {
   }
   30% {
     opacity: 1;
-    transform: translate(-150px, 270px);
+    transform: translate(-270px, 240px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-400px, 150px);
+    transform: translate(-200px, 150px);
   }
 }
 .brightness .shines .shine9 {
@@ -513,14 +526,14 @@ html {
   }
   30% {
     opacity: 1;
-    transform: translate(-180px, 30px);
+    transform: translate(-300px, 300px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-500px, 250px);
+    transform: translate(-400px, 250px);
   }
 }
 .brightness .shines .shine10 {
@@ -533,14 +546,14 @@ html {
   }
   30% {
     opacity: 1;
-    transform: translate(-240px, 30px);
+    transform: translate(-240px, 90px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-100px, 250px);
+    transform: translate(-450px, 250px);
   }
 }
 

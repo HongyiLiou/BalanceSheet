@@ -93,28 +93,41 @@
     left: 0
     right: 0
     bottom: 0
-    background: rgba(#000, 0.5)
+    background: rgba(#000, 0.7)
     z-index: 5
+    opacity: 0
+    transition: 0.3s
+    pointer-events: none
 
     .loadingCircle
         +size(150px, 150px)
         +ab_center
         border-radius: 50%
+        box-shadow: 0 0 30px rgba(#FFF, 0.7)
         z-index: 1
 
         &::before
             content: ''
             +size(calc(100% + 10px), calc(100% + 10px))
             +ab_center
-            background: conic-gradient(#FFF 0deg, #999 90deg)
+            // background: radial-gradient(#FFF 0deg, #999 90deg)
+            background: conic-gradient(#c7c7c7 0deg, #3b3b3b 270deg)
             border-radius: 50%
-            z-index: 0
+            z-index: -2
+            animation: loadingCircle 1.5s infinite linear
+
+            +keyframes(loadingCircle)
+                0%
+                    transform: translate(-50%, -50%) rotate(0deg)
+                0%
+                    transform: translate(-50%, -50%) rotate(360deg)
+                
 
         &::after
             content: ''
             +size(100%, 100%)
             +ab_center
-            background: #1b1b1b
+            background: #0e0e0e
             border-radius: 50%
             z-index: -1
 

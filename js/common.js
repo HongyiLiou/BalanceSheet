@@ -87,3 +87,19 @@ function getMousePos(event) {
     //alert('x: ' + x + '\ny: ' + y);
     return { 'x': x, 'y': y };
 }
+
+
+/**
+ * 顯示 Loading畫面
+ * @param {Boolean} isShow 
+ */
+function showLoading(isShow) {
+    const loaging = document.querySelector('.loaging');
+
+    if (isShow) {
+        loaging.classList.add('active');
+    } else {
+        loaging.classList.remove('active');
+    }
+
+}
