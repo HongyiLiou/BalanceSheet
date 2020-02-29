@@ -111,8 +111,8 @@
             // background: radial-gradient(#FFF 0deg, #999 90deg)
             background: conic-gradient(#c7c7c7 0deg, #3b3b3b 270deg)
             border-radius: 50%
-            z-index: -2
             animation: loadingCircle 1.5s infinite linear
+            z-index: -1
 
             +keyframes(loadingCircle)
                 0%
@@ -135,8 +135,7 @@
             font-size: 150%
             font-style: italic
             font-weight: 100
-            text-shadow: 0 0 8px #FFF
-            z-index: 1
+            text-shadow: 0 0 8px #ffffff
 
     &.active
         opacity: 1
