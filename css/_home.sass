@@ -37,9 +37,53 @@
 
 
 // 彈窗容器
-.popupBox_checkMessage
+[class^='popupBox']
     +ab_center
     z-index: 3
+
+.popupBox_checkMessage
+    display: none
+    max-width: 300px
+    padding: 25px 50px
+    background: rgba(#000, 0.7)
+    color: #fafafa
+    border-radius: 8px
+    box-shadow: 0 5px 8px rgba(#000, 0.5)
+    opacity: 0
+    animation: showPopup 0.4s 0.1s forwards
+
+    &.hide
+        animation: hidePopup 0.4s forwards
+
+    p
+        text-align: center
+        line-height: 25px
+
+    .buttonArea
+        display: flex
+        align-items: center
+        justify-content: center
+        margin-top: 25px
+
+        button
+            padding: 8px 18px
+            margin: 0 5px
+            border: solid 0.5px rgba(#FFF, 0.3)
+            font-size: 100%
+            border-radius: 100px
+            color: #FFF
+            background: #000
+            cursor: pointer
+            outline: none
+            transition: 0.3s
+
+            &:hover
+                background: #3a3a3a
+            &:active
+                transition: 0s
+                background: #666666
+
+
 
 
 // 漢堡選單
@@ -262,6 +306,30 @@
             font-size: 120%
             font-weight: 100
             vertical-align: baseline
+
+
+
+
+// animations
++keyframes(showPopup)
+    0%
+        opacity: 0
+        transform: translate(-50%, -50%) scale(0.8)
+    60%
+        transform: translate(-50%, -50%) scale(1.1)
+    100%
+        opacity: 1
+        transform: translate(-50%, -50%) scale(1)
+
++keyframes(hidePopup)
+    0%
+        opacity: 1
+        transform: translate(-50%, -50%) scale(1)
+    40%
+        transform: translate(-50%, -50%) scale(1.1)
+    100%
+        opacity: 0
+        transform: translate(-50%, -50%) scale(0.8)
 
 
 

@@ -125,7 +125,12 @@ function sendBalanceSheet() {
     
     $.get('https://script.google.com/macros/s/AKfycbwC9bl6xw2PIbL6mF0ojN1RqokP_43JtxurpA2839FP80Ih2l19/exec', parameter).then(res => {
         showLoading(false);
-        return res;
+        if (res == 'true') {
+            const popupObj = {
+                text: '傳送成功！',
+            }
+            showPopupBox(popupObj);
+        }
     });
 
 }

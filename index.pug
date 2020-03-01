@@ -18,9 +18,6 @@ body
     //- 螢幕 Holder
     .screenHolder
 
-    //- 彈窗彈窗
-    .popupBox_checkMessage
-
     //- 手機版的漢堡選單
     .burgerMenu
         span
@@ -70,9 +67,18 @@ body
         //- .changeWidthBtn
 
     //- Pages
-    .page#homePage
+    .page#homePage.active
     .page#balanceSheetPage
-    .page#userSettingPage.active
+    .page#userSettingPage
+
+    
+    //- 彈窗彈窗
+    .popupBox
+    .popupBox_checkMessage
+        p 傳送成功！
+        .buttonArea
+            button.cancel Cancel
+            button.enter OK
 
 
     //- js

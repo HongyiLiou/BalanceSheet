@@ -136,9 +136,9 @@ function setButtons() {
     /** Today button */const todayBtn = document.querySelector('.datePickerBox .todayBtn');
     /** Cancel button */const cancelBtn = document.querySelector('.datePickerBox .cancelBtn');
     /** OK button */const okBtn = document.querySelector('.datePickerBox .okBtn');
-    /** Toggle Switch */const toggleSwitch = document.querySelector('.toggleSwitch');
+    /** Toggle Switch */const toggleSwitch = document.querySelector('.datePickerBox .toggleSwitch');
     
-    /** 主題開關 checkbox */const checkBox = document.querySelector('.toggleSwitch input');
+    /** 主題開關 checkbox */const checkBox = document.querySelector('.datePickerBox .toggleSwitch input');
     /** 最外層 BOX */const datePickerBox = document.querySelector('.datePickerBox');
 
     const today = new Date();

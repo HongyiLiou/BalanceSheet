@@ -103,3 +103,71 @@ function showLoading(isShow) {
     }
 
 }
+
+
+/**
+ * 訊息彈窗
+ * @param {{
+ *  text: string,
+ *  showCancel: boolean,
+ *  enterBtn: string,
+ *  cancelBtn: string,
+ *  enterClick: function(),
+ *  cancelClick: function(),
+ * }} popupSettingObj 
+ */
+function showPopupBox(popupSettingObj) {
+    const popupBox_checkMessage = document.querySelector('.popupBox_checkMessage');
+    // popupBox_checkMessage.innerHTML = '<p></p>\
+    //     <div class="buttonArea">\
+    //         <button class="cancel">Cancel</button>\
+    //         <button class="enter">OK</button>\
+    //     </div>\
+    // ';
+
+    const message = document.querySelector('.popupBox_checkMessage p');
+    const cancelBtn = document.querySelector('.popupBox_checkMessage .cancel');
+    const enterBtn = document.querySelector('.popupBox_checkMessage .enter');
+    const settingObj = popupSettingObj;
+
+    popupBox_checkMessage.style.display = 'block';
+    cancelBtn.style.display = settingObj.showCancel ? 'block' : 'none';
+    message.innerHTML = settingObj.text;
+    enterBtn.innerHTML = settingObj.enterBtn ? settingObj.enterBtn : 'OK';
+    
+    if (settingObj.enterClick) {
+        enterBtn.addEventListener('click', settingObj.enterClick);
+    }
+
+    enterBtn.addEventListener('click', () => {
+        popupBox_checkMessage.classList.add('hide');
+        setTimeout(() => {
+            popupBox_checkMessage.style.display = 'none';
+            popupBox_checkMessage.classList.remove('hide');
+        }, 500);
+    });
+
+    if (settingObj.showCancel && settingObj.cancelClick) {
+        cancelBtn.addEventListener('click', settingObj.cancelClick);
+        cancelBtn.addEventListener('click', () => {
+            popupBox_checkMessage.classList.add('hide');
+            setTimeout(() => {
+                popupBox_checkMessage.style.display = 'none';
+                popupBox_checkMessage.classList.remove('hide');
+            }, 500);
+        });
+
+    } else if (settingObj.showCancel) {
+        cancelBtn.addEventListener('click', () => {
+            popupBox_checkMessage.classList.add('hide');
+            setTimeout(() => {
+                popupBox_checkMessage.style.display = 'none';
+                popupBox_checkMessage.classList.remove('hide');
+            }, 500);
+        });
+    }
+
+
+}
+
+// showPopupBox({text: '早安您好', enterClick: () => {alert('測試成功')}, showCancel: true})
