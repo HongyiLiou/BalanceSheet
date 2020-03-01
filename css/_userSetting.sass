@@ -4,59 +4,140 @@
     +size(100%, 100%)
 
     .container
-        width: 80%
-        padding-top: 100px
+        padding-top: 180px
         // background: rgba(#000, 0.3)
 
         h1
+            position: fixed
+            top: 120px
             font-size: 220%
             color: #FFF
             font-weight: 500
             text-shadow: 0px 2px 0px #b2a98f, 0px 7px 10px rgba(0,0,0,0.4), 0px 12px 2px rgba(0,0,0,0.3), 0px 17px 30px rgba(0,0,0,0.3)
+            transition: 0.3s
 
         hr
+            position: absolute
+            top: 170px
+            width: 80%
             border: solid 1px rgba(#FFF, 0.5)
+            transition: 0.3s
 
-        
-        .toggleSwitch
-            display: block
-            +size(60px, 34px)
-            border-radius: 100px
-            transform: translateX(50%)
+        .content
+            height: calc(100vh - 180px)
+            padding-top: 40px
+            // background: rgba(#000, 0.3)
+            overflow-y: scroll
+            user-select: none
 
-
-            input
+            &::-webkit-scrollbar
                 display: none
 
-                &:checked
-                    +.slider
-                        background: #555
-                        &::before
-                            background: #FFF
-                            transform: translateX(26px)
-                &:focus
-                    +.slider
-                        box-shadow: 0 2px 5px #000000
-                        
+            .settingProject
+                padding-left: 20px
 
-            .slider
-                position: absolute
-                top: 0
-                left: 0
-                right: 0
-                bottom: 0
-                background: #ffffff
-                border-radius: 100px
-                transition: 0.4s
-                cursor: pointer
+                h4
+                    color: #FFF
+                    font-size: 150%
+                    font-weight: 500
+                    margin-bottom: 20px
+                    text-shadow: 0 0 5px #000
+                    transition: 0.3s
 
-                &::before
-                    position: absolute
-                    content: ''
+                    span
+                        font-size: 70%
+                        vertical-align: baseline
+                        font-weight: 300
+                        margin-left: 10px
+
+                .toggleSwitch
                     display: block
-                    +size(26px, 26px)
-                    left: 4px
-                    bottom: 4px
-                    background: #bdbdbd
-                    border-radius: 50%
-                    transition: 0.4s
+                    +size(60px, 34px)
+                    border-radius: 100px
+                    transform: translateX(50%)
+                    margin-left: 50px
+
+                    p
+                        position: absolute
+                        color: #FFF
+                        font-size: 110%
+                        line-height: 34px
+                        transition: 0.3s
+
+                        &:first-child
+                            left: -50px
+                        &:last-child
+                            right: -50px
+
+                    input
+                        display: none
+
+                        &:checked
+                            +.slider
+                                background: #555
+                                &::before
+                                    background: #FFF
+                                    transform: translateX(26px)
+                        &:focus
+                            +.slider
+                                box-shadow: 0 2px 5px #000000
+                                
+
+                    .slider
+                        position: absolute
+                        top: 0
+                        left: 0
+                        right: 0
+                        bottom: 0
+                        background: #ffffff
+                        border-radius: 100px
+                        transition: 0.4s
+                        cursor: pointer
+
+                        &::before
+                            position: absolute
+                            content: ''
+                            display: block
+                            +size(26px, 26px)
+                            left: 4px
+                            bottom: 4px
+                            background: #bdbdbd
+                            border-radius: 50%
+                            transition: 0.4s
+
+
+
+// RWD
+@media screen and (max-width: 1400px)
+    .userSettingPageBox
+        .container
+            h1
+                font-size: 200%
+            hr
+                top: 165px
+            .content
+                padding-top: 35px
+                .settingProject
+                    h4
+                        font-size: 140%
+                    .toggleSwitch
+                        p
+                            font-size: 100%
+
+
+
+@media screen and (max-width: 500px)
+    .userSettingPageBox
+        .container
+            padding-top: 110px
+            h1
+                top: 60px
+                left: 60px
+                font-size: 180%
+            hr
+                top: 100px
+                left: 50%
+                transform: translateX(-50%)
+            .content
+                .settingProject
+                    padding: 0 40px
