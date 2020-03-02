@@ -123,7 +123,7 @@ function sendBalanceSheet() {
 
     console.log(parameter);
     
-    $.get('https://script.google.com/macros/s/AKfycbwC9bl6xw2PIbL6mF0ojN1RqokP_43JtxurpA2839FP80Ih2l19/exec', parameter).then(res => {
+    $.get('https://script.google.com/macros/s/AKfycbwC9bl6xw2PIbL6mF0ojN1RqokP_43JtxurpA2839FP80Ih2l19/exec', parameter).done(res => {
         showLoading(false);
         if (res == 'true') {
             const popupObj = {
@@ -178,7 +178,7 @@ function sendBalanceSheetDetail() {
         day: Number(dayInput.value) + 1,
     };
 
-    $.get('https://script.google.com/macros/s/AKfycbwC9bl6xw2PIbL6mF0ojN1RqokP_43JtxurpA2839FP80Ih2l19/exec', parameter).then(res => {
+    $.get('https://script.google.com/macros/s/AKfycbwC9bl6xw2PIbL6mF0ojN1RqokP_43JtxurpA2839FP80Ih2l19/exec', parameter).done(res => {
         showLoading(false);
     });
 
