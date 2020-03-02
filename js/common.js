@@ -134,6 +134,13 @@ function showPopupBox(popupSettingObj) {
     cancelBtn.style.display = settingObj.showCancel ? 'block' : 'none';
     message.innerHTML = settingObj.text;
     enterBtn.innerHTML = settingObj.enterBtn ? settingObj.enterBtn : 'OK';
+
+    if (settingObj.enterBtn) {
+        enterBtn.innerHTML = settingObj.enterBtn;
+    }
+    if (settingObj.cancelBtn) {
+        cancelBtn.innerHTML = settingObj.cancelBtn;
+    }
     
     if (settingObj.enterClick) {
         enterBtn.addEventListener('click', settingObj.enterClick);

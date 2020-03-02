@@ -54,7 +54,10 @@ function initialHomePageTime() {
             minute = 0
             hour += 1;
             showMinute.innerHTML = '00';
-            if (hour == 0) {
+            if (hour > 23) {
+                hour = 0;
+                day = day < 6 ? day + 1 : 0;
+                showDate.innerHTML = `${year}年 ${month}月 ${date + 1}日  週${changeWeekDay(day)}`;
                 showAPM.innerHTML = '上午';
                 showHour.innerHTML = `12:`;
             } else if (hour <= 12) {
@@ -64,12 +67,6 @@ function initialHomePageTime() {
                 showAPM.innerHTML = '下午';
                 showHour.innerHTML = `${hour - 12}:`;
             }
-        }
-
-        if (hour > 23) {
-            hour = 0;
-            day = day < 6 ? day + 1 : 0;
-            showDate.innerHTML = `${year}年 ${month}月 ${date + 1}日  週${changeWeekDay(day)}`;
         }
         // alert(hour)
     }, 1000);
