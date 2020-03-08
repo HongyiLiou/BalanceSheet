@@ -17,7 +17,7 @@ function inititialDate_balanceSheet() {
     monthInput.value = month;
     dayInput.value = day;
 
-    showDate.value = `${year} 年  ${month} 月  ${day} 日`;
+    showDate.value = `${year} 年 ${month} 月 ${day} 日`;
 }
 
 // 使用者輸入___________________________________________________________________________________

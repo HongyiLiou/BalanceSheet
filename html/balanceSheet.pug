@@ -1,7 +1,6 @@
 article.balanceSheetBox
-    //- 年月日隱藏欄位 用來記錄使用者的選擇
+    //- 年月日隱藏欄位 不顯示 用來記錄使用者的選擇
     section.userInputArea_date
-        input.showDate(type="text" readonly onClick="loadDatePicker()")
         //- section.userInput_year
         input#year.userInputHidden(type="text" readonly style="display: none;")
             //- input#year_show.input_show(type="text" readonly onclick="onDateClick({index: 0, type: 'userInput_year'})")
@@ -16,6 +15,32 @@ article.balanceSheetBox
             //- ul.options
 
 
+    section.showListArea
+        .container
+            header
+                h4.today 本日
+                input.showDate(type="text" readonly onClick="loadDatePicker()")
+                button.editBtn 編輯
+            ul
+                li.topFix
+                    p.item 項目
+                    p.type 類別
+                    p.amount 收支金額
+                ol
+                    li
+                        p.item 買G排
+                        p.type 支出
+                        p.amount -$50
+                    li
+                        p.item 買卡包
+                        p.type 支出
+                        p.amount -$220
+                    li
+                        p.item 早餐
+                        p.type 支出
+                        p.amount -$50
+                li.total
+                    p 合計： -$350
 
     section.userInputArea_itemList
         ul

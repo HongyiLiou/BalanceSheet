@@ -295,7 +295,7 @@ function setButtons() {
                 dayInput.value = Number(dataPickerShowDay.innerHTML);
 
                 // 設定顯示的日期
-                showDate.value = `${yearInput.value} 年  ${monthInput.value} 月  ${dayInput.value} 日`;
+                showDate.value = `${yearInput.value} 年 ${monthInput.value} 月 ${dayInput.value} 日`;
 
                 cancelBtn.click();
 

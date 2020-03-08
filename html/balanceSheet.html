@@ -1,10 +1,45 @@
 
 <article class="balanceSheetBox">
   <section class="userInputArea_date">
-    <input class="showDate" type="text" readonly="readonly" onClick="loadDatePicker()"/>
     <input class="userInputHidden" id="year" type="text" readonly="readonly" style="display: none;"/>
     <input class="userInputHidden" id="month" type="text" readonly="readonly" style="display: none;"/>
     <input class="userInputHidden" id="day" type="text" readonly="readonly" style="display: none;"/>
+  </section>
+  <section class="showListArea">
+    <div class="container">
+      <header>
+        <h4 class="today">本日</h4>
+        <input class="showDate" type="text" readonly="readonly" onClick="loadDatePicker()"/>
+        <button class="editBtn">編輯</button>
+      </header>
+      <ul>
+        <li class="topFix">
+          <p class="item">項目</p>
+          <p class="type">類別</p>
+          <p class="amount">收支金額</p>
+        </li>
+        <ol>
+          <li>
+            <p class="item">買G排</p>
+            <p class="type">支出</p>
+            <p class="amount">-$50</p>
+          </li>
+          <li>
+            <p class="item">買卡包</p>
+            <p class="type">支出</p>
+            <p class="amount">-$220</p>
+          </li>
+          <li>
+            <p class="item">早餐</p>
+            <p class="type">支出</p>
+            <p class="amount">-$50</p>
+          </li>
+        </ol>
+        <li class="total">
+          <p>合計： -$350</p>
+        </li>
+      </ul>
+    </div>
   </section>
   <section class="userInputArea_itemList">
     <ul>

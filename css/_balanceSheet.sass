@@ -33,6 +33,116 @@
                 &:hover
                     background: #e7e7e7
 
+
+.showListArea
+    padding-top: 270px
+    .container
+        width: 80%
+
+        header
+            position: absolute
+            display: flex
+            align-items: baseline
+            top: 200px
+
+            .today
+                color: #FFF
+                font-size: 220%
+                font-weight: 500
+                margin-right: 15px
+                text-shadow: 0px 2px 0px #b2a98f, 0px 7px 10px rgba(0,0,0,0.4), 0px 12px 2px rgba(0,0,0,0.3), 0px 17px 30px rgba(0,0,0,0.3)
+
+            .showDate
+                background: transparent
+                border: none
+                color: #FFF
+                font-size: 150%
+                text-shadow: 0px 1px 0px #b2a98f, 0px 7px 10px rgba(0,0,0,0.4), 0px 12px 2px rgba(0,0,0,0.3), 0px 17px 30px rgba(0,0,0,0.3)
+                outline: none
+                cursor: pointer
+
+            .editBtn
+                padding: 8px 18px
+                border: none
+                font-size: 100%
+                border-radius: 100px
+                background: rgba(#FFF, 0.6)
+                outline: none
+                transition: 0.2s
+                cursor: pointer
+                transform: translateY(-5px)
+
+                &:hover
+                    background: rgba(#FFF, 0.8)
+                &:active
+                    transition: 0s
+                    background: rgba(#FFF, 1)
+
+        ul
+            width: 700px
+            // background: rgba(#000, 0.3)
+            padding-right: 100px
+
+            li
+                position: relative
+                display: flex
+                padding: 0 30px
+                color: #FFF
+                line-height: 40px
+                transition: 0.3s
+                
+                &::before
+                    content: ''
+                    position: absolute
+                    display: block
+                    +size(100%, 100%)
+                    top: 0
+                    left: 0
+                    z-index: 0
+
+                &.topFix
+                    border-bottom: solid 1px rgba(#FFF, 0.6)
+                    &::before
+                        background: rgba(#000, 0.8)
+
+                &.total
+                    border-top: solid 1px rgba(#FFF, 0.6)
+                    padding: 0
+                    p
+                        font-size: 180%
+                        width: 100%
+                        text-align: right
+
+                p
+                    text-shadow: 0 0 5px #000
+                    z-index: 1
+
+            ol
+                padding-bottom: 60px
+                max-height: calc(100vh - 500px)
+                overflow-y: auto
+
+                &::-webkit-scrollbar
+                    display: none
+
+                li
+                    &:nth-child(odd)
+                        &::before
+                            background: linear-gradient(to right, rgba(#000, 0.5), transparent)
+                    &:nth-child(even)
+                        &::before
+                            background: linear-gradient(to left, rgba(#000, 0.5), transparent)
+
+            .item
+                width: 50%
+            .type
+                width: 15%
+            .amount
+                text-align: right
+                width: 35%
+
+
+
 .userInputArea_itemList
     input
         width: 100px
