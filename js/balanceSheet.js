@@ -1,8 +1,8 @@
 // Balance Sheet
 
-/** 輸入年份值 (年) */yearInput = document.querySelector('#year');
-/** 輸入月份值 (月) */monthInput = document.querySelector('#month');
-/** 輸入日期值 (日) */dayInput = document.querySelector('#day'); // date
+/** 輸入年份值 (年) */yearInput = document.querySelector('.balanceSheetBox #year');
+/** 輸入月份值 (月) */monthInput = document.querySelector('.balanceSheetBox #month');
+/** 輸入日期值 (日) */dayInput = document.querySelector('.balanceSheetBox #day'); // date
 
 
 /** 初始化收支表日期 */
@@ -84,11 +84,11 @@ function onClickSendBtn() {
 
 /** 更新收支表 */
 function sendBalanceSheet() {
-    /** 所有收支項目欄位 */itemInputs = Array.from($('.itemInput'));
-    /** 所有收支金額欄位 */amountInputs = Array.from($('.amountInput'));
+    /** 所有收支項目欄位 */itemInputs = Array.from($('.balanceSheetBox .userInputArea_itemList .itemInput'));
+    /** 所有收支金額欄位 */amountInputs = Array.from($('.balanceSheetBox .userInputArea_itemList .amountInput'));
     /** 最後要送至後端的 收支data */const data = [];
     /** amountInputs總和的值 */let dataContainer = 0;
-    /** 收支型態 */const type = $('.type');
+    /** 收支型態 */const type = $('.balanceSheetBox .userInputArea_itemList .type');
 
     showLoading(true);
     
@@ -124,7 +124,8 @@ function sendBalanceSheet() {
     console.log(parameter);
     
     $.get('https://script.google.com/macros/s/AKfycbwC9bl6xw2PIbL6mF0ojN1RqokP_43JtxurpA2839FP80Ih2l19/exec', parameter).done(res => {
-        showLoading(false);
+        getBalanceSheet();
+        getBalanceSheetDetail();
         if (res == 'true') {
             const popupObj = {
                 text: '傳送成功！',
@@ -138,13 +139,13 @@ function sendBalanceSheet() {
 
 /** 更新收支表 Detail */
 function sendBalanceSheetDetail() {
-    /** 所有收支項目欄位 */itemInputs = Array.from($('.itemInput'));
-    /** 所有收支金額欄位 */amountInputs = Array.from($('.amountInput'));
+    /** 所有收支項目欄位 */itemInputs = Array.from($('.balanceSheetBox .userInputArea_itemList .itemInput'));
+    /** 所有收支金額欄位 */amountInputs = Array.from($('.balanceSheetBox .userInputArea_itemList .amountInput'));
     /** 最後要送至後端的 項目data */const data1 = [];
     /** 最後要送至後端的 金額data */const data2 = [];
     /** 用來裝 itemInputs的值 */const dataContianer1 = [];
     /** 用來裝 amountInputs的值 */const dataContianer2 = [];
-    /** 收支型態 */const type = $('.type');
+    /** 收支型態 */const type = $('.balanceSheetBox .userInputArea_itemList .type');
 
     showLoading(true);
 
@@ -156,7 +157,7 @@ function sendBalanceSheetDetail() {
             if (type[i].value === 'expenditure' && (amountInputs[i].value).toString().indexOf('-') === -1 ) {
                 amount = -(amountInputs[i].value);
             }
-
+            
             dataContianer1.push(item);
             dataContianer2.push(amount.toString());
         }
@@ -179,7 +180,58 @@ function sendBalanceSheetDetail() {
     };
 
     $.get('https://script.google.com/macros/s/AKfycbwC9bl6xw2PIbL6mF0ojN1RqokP_43JtxurpA2839FP80Ih2l19/exec', parameter).done(res => {
+    });
+
+}
+
+
+
+
+// Get Functions _______________________________________________________________________________________________
+
+/** 讀取收支表 */
+function getBalanceSheet() {
+    showLoading(true);
+    
+    const parameter = {
+        // url: 'https://docs.google.com/spreadsheets/d/1VCzkXIRBMjF9iv0Ca89xBLIzTSbYHMvXxxGq6lceusk/edit#gid=0',
+        url: 'https://docs.google.com/spreadsheets/d/1qk0sCr8iWS-DSaWTx1lhe8x5JrgvN2Iwwd_zQkD3jUg/edit#gid=0',
+        name: '2020BalanceSheet_meng',
+        // name: '2020BalanceSheet_hong',
+        functionType: 'get',
+        dataType: 'balanceSheet',
+        month: Number(monthInput.value) + 1,
+        day: Number(dayInput.value) + 1,
+    };
+    
+    $.get('https://script.google.com/macros/s/AKfycbwC9bl6xw2PIbL6mF0ojN1RqokP_43JtxurpA2839FP80Ih2l19/exec', parameter).done(res => {
+        console.log('balanceSheet', res);
         showLoading(false);
+        
+    });
+
+}
+
+
+/** 更新收支表 Detail */
+function getBalanceSheetDetail() {
+    showLoading(true);
+    
+    const parameter = {
+        // url: 'https://docs.google.com/spreadsheets/d/1VCzkXIRBMjF9iv0Ca89xBLIzTSbYHMvXxxGq6lceusk/edit#gid=1948153821',
+        url: 'https://docs.google.com/spreadsheets/d/1qk0sCr8iWS-DSaWTx1lhe8x5JrgvN2Iwwd_zQkD3jUg/edit#gid=1723505957',
+        name: '2020BalanceSheetDetail_meng',
+        // name: '2020BalanceSheetDetail_hong',
+        functionType: 'get',
+        dataType: 'balanceSheetDetail',
+        month: Number(monthInput.value) * 2,
+        day: Number(dayInput.value) + 1,
+    };
+
+    $.get('https://script.google.com/macros/s/AKfycbwC9bl6xw2PIbL6mF0ojN1RqokP_43JtxurpA2839FP80Ih2l19/exec', parameter).done(res => {
+        console.log('balanceSheetDetail', res);
+        showLoading(false);
+        
     });
 
 }
