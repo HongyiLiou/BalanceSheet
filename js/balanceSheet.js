@@ -73,6 +73,24 @@ function onClickAddBtn() {
     
 }
 
+
+/**
+ * 設定總金額
+ * @param {object} res 
+ */
+function setTotalAmount(res) {
+    const showTotal = document.querySelector('.balanceSheetBox .showListArea .total p');
+    const totalAmount = res.TotalAmount;
+    if (!totalAmount) { return; }
+
+    if (totalAmount < 0) {
+        showTotal.innerHTML = `-$${ totalAmount * -1 }`;
+    } else {
+        showTotal.innerHTML = `$${ totalAmount }`;
+    }
+}
+
+
 // Post Functions _______________________________________________________________________________________________
 
 /** 上傳支出按鈕 */
@@ -104,8 +122,10 @@ function sendBalanceSheet() {
         }
     }
 
-    if (dataContainer !== 0) {
+    if (dataContainer) {
         data.push(dataContainer);
+    } else {
+        return;
     }
     
     
@@ -126,6 +146,7 @@ function sendBalanceSheet() {
     $.get('https://script.google.com/macros/s/AKfycbwC9bl6xw2PIbL6mF0ojN1RqokP_43JtxurpA2839FP80Ih2l19/exec', parameter).done(res => {
         getBalanceSheet();
         getBalanceSheetDetail();
+        showLoading(false);
         if (res == 'true') {
             const popupObj = {
                 text: '傳送成功！',
@@ -158,13 +179,22 @@ function sendBalanceSheetDetail() {
                 amount = -(amountInputs[i].value);
             }
             
-            dataContianer1.push(item);
-            dataContianer2.push(amount.toString());
+            if (item && amount) {
+                dataContianer1.push(item);
+                dataContianer2.push(amount.toString());
+            } else {
+                return;
+            }
         }
     }
+
+    if (dataContianer1 && dataContianer2) {
+        data1.push(dataContianer1);
+        data2.push(dataContianer2);
+    } else {
+        return;
+    }
     
-    data1.push(dataContianer1);
-    data2.push(dataContianer2);
     
     const parameter = {
         // url: 'https://docs.google.com/spreadsheets/d/1VCzkXIRBMjF9iv0Ca89xBLIzTSbYHMvXxxGq6lceusk/edit#gid=1948153821',
@@ -180,6 +210,7 @@ function sendBalanceSheetDetail() {
     };
 
     $.get('https://script.google.com/macros/s/AKfycbwC9bl6xw2PIbL6mF0ojN1RqokP_43JtxurpA2839FP80Ih2l19/exec', parameter).done(res => {
+        showLoading(false);
     });
 
 }
@@ -206,6 +237,7 @@ function getBalanceSheet() {
     
     $.get('https://script.google.com/macros/s/AKfycbwC9bl6xw2PIbL6mF0ojN1RqokP_43JtxurpA2839FP80Ih2l19/exec', parameter).done(res => {
         console.log('balanceSheet', res);
+        setTotalAmount(res);
         showLoading(false);
         
     });
@@ -213,7 +245,7 @@ function getBalanceSheet() {
 }
 
 
-/** 更新收支表 Detail */
+/** 讀取收支表 Detail */
 function getBalanceSheetDetail() {
     showLoading(true);
     
