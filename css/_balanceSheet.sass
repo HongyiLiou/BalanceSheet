@@ -148,10 +148,20 @@
         width: 100px
 
 
-// @media screen and (max-width: 800px)
-//     .options
-//         position: fixed
-//         width: 100vw
-//         height: 200px
-//         max-height: unset
-//         bottom: calc(-100vh + 200%)
+@media screen and (max-width: 500px)
+    .balanceSheetBox
+        .showListArea
+            padding-top: 180px
+            .container
+                width: 100%
+                header
+                    top: 100px
+                    left: 50%
+                    transform: translateX(-50%)
+                    .today
+                        font-size: 180%
+                        white-space: nowrap
+                    .showDate
+                        font-size: 110%
+                    .editBtn
+                        white-space: nowrap

@@ -286,9 +286,9 @@ html {
   animation: beam 3s infinite;
 }
 .brightness .beams .beam1 {
-  width: 500px;
+  width: 650px;
   height: 25px;
-  transform: rotate(-12deg);
+  transform: rotate(-48deg);
   animation-delay: -0.5s;
 }
 @keyframes beam {
@@ -303,9 +303,9 @@ html {
   }
 }
 .brightness .beams .beam2 {
-  width: 450px;
-  height: 5px;
-  transform: rotate(-60deg);
+  width: 700px;
+  height: 25px;
+  transform: rotate(-12deg);
   animation-delay: -1s;
 }
 @keyframes beam {
@@ -320,9 +320,9 @@ html {
   }
 }
 .brightness .beams .beam3 {
-  width: 550px;
-  height: 5px;
-  transform: rotate(-60deg);
+  width: 500px;
+  height: 20px;
+  transform: rotate(-12deg);
   animation-delay: -1.5s;
 }
 @keyframes beam {
@@ -337,9 +337,9 @@ html {
   }
 }
 .brightness .beams .beam4 {
-  width: 500px;
-  height: 15px;
-  transform: rotate(-24deg);
+  width: 600px;
+  height: 5px;
+  transform: rotate(-60deg);
   animation-delay: -2s;
 }
 @keyframes beam {
@@ -354,8 +354,8 @@ html {
   }
 }
 .brightness .beams .beam5 {
-  width: 650px;
-  height: 20px;
+  width: 450px;
+  height: 15px;
   transform: rotate(-12deg);
   animation-delay: -2.5s;
 }
@@ -371,9 +371,9 @@ html {
   }
 }
 .brightness .beams .beam6 {
-  width: 700px;
-  height: 25px;
-  transform: rotate(-24deg);
+  width: 500px;
+  height: 15px;
+  transform: rotate(-72deg);
   animation-delay: -3s;
 }
 @keyframes beam {
@@ -408,14 +408,14 @@ html {
   }
   30% {
     opacity: 1;
-    transform: translate(-180px, 60px);
+    transform: translate(-270px, 30px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-500px, 150px);
+    transform: translate(-200px, 250px);
   }
 }
 .brightness .shines .shine2 {
@@ -428,14 +428,14 @@ html {
   }
   30% {
     opacity: 1;
-    transform: translate(-150px, 120px);
+    transform: translate(-300px, 60px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-350px, 400px);
+    transform: translate(-350px, 350px);
   }
 }
 .brightness .shines .shine3 {
@@ -448,14 +448,14 @@ html {
   }
   30% {
     opacity: 1;
-    transform: translate(-240px, 30px);
+    transform: translate(-150px, 60px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-200px, 300px);
+    transform: translate(-50px, 200px);
   }
 }
 .brightness .shines .shine4 {
@@ -468,14 +468,14 @@ html {
   }
   30% {
     opacity: 1;
-    transform: translate(-270px, 270px);
+    transform: translate(-120px, 270px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-50px, 200px);
+    transform: translate(-300px, 250px);
   }
 }
 .brightness .shines .shine5 {
@@ -488,14 +488,14 @@ html {
   }
   30% {
     opacity: 1;
-    transform: translate(-300px, 240px);
+    transform: translate(-30px, 210px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-50px, 100px);
+    transform: translate(-500px, 100px);
   }
 }
 .brightness .shines .shine6 {
@@ -508,14 +508,14 @@ html {
   }
   30% {
     opacity: 1;
-    transform: translate(-90px, 90px);
+    transform: translate(-150px, 240px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-200px, 150px);
+    transform: translate(-300px, 150px);
   }
 }
 .brightness .shines .shine7 {
@@ -528,14 +528,14 @@ html {
   }
   30% {
     opacity: 1;
-    transform: translate(-210px, 60px);
+    transform: translate(-150px, 300px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-50px, 350px);
+    transform: translate(-350px, 100px);
   }
 }
 .brightness .shines .shine8 {
@@ -548,14 +548,14 @@ html {
   }
   30% {
     opacity: 1;
-    transform: translate(-150px, 60px);
+    transform: translate(-30px, 120px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-250px, 400px);
+    transform: translate(-500px, 500px);
   }
 }
 .brightness .shines .shine9 {
@@ -568,14 +568,14 @@ html {
   }
   30% {
     opacity: 1;
-    transform: translate(-180px, 210px);
+    transform: translate(-30px, 210px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-400px, 500px);
+    transform: translate(-500px, 300px);
   }
 }
 .brightness .shines .shine10 {
@@ -588,14 +588,14 @@ html {
   }
   30% {
     opacity: 1;
-    transform: translate(-30px, 120px);
+    transform: translate(-210px, 180px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-200px, 50px);
+    transform: translate(-500px, 400px);
   }
 }
 
@@ -1208,6 +1208,29 @@ html {
   width: 100px;
 }
 
+@media screen and (max-width: 500px) {
+  .balanceSheetBox .showListArea {
+    padding-top: 180px;
+  }
+  .balanceSheetBox .showListArea .container {
+    width: 100%;
+  }
+  .balanceSheetBox .showListArea .container header {
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .balanceSheetBox .showListArea .container header .today {
+    font-size: 180%;
+    white-space: nowrap;
+  }
+  .balanceSheetBox .showListArea .container header .showDate {
+    font-size: 110%;
+  }
+  .balanceSheetBox .showListArea .container header .editBtn {
+    white-space: nowrap;
+  }
+}
 .userSettingPageBox {
   position: relative;
   width: 100%;
@@ -1344,6 +1367,7 @@ html {
     font-size: 180%;
   }
   .userSettingPageBox .container hr {
+    width: 80%;
     top: 100px;
     left: 50%;
     transform: translateX(-50%);
@@ -1352,7 +1376,7 @@ html {
     padding: 0 40px;
   }
   .userSettingPageBox .container .content .settingProject h4 {
-    font-size: 120%;
+    font-size: 110%;
   }
 }
 /** 日期選取器 Date-Picker */
