@@ -286,9 +286,9 @@ html {
   animation: beam 3s infinite;
 }
 .brightness .beams .beam1 {
-  width: 650px;
-  height: 25px;
-  transform: rotate(-48deg);
+  width: 700px;
+  height: 20px;
+  transform: rotate(-60deg);
   animation-delay: -0.5s;
 }
 @keyframes beam {
@@ -303,9 +303,9 @@ html {
   }
 }
 .brightness .beams .beam2 {
-  width: 700px;
-  height: 25px;
-  transform: rotate(-12deg);
+  width: 500px;
+  height: 5px;
+  transform: rotate(-24deg);
   animation-delay: -1s;
 }
 @keyframes beam {
@@ -320,9 +320,9 @@ html {
   }
 }
 .brightness .beams .beam3 {
-  width: 500px;
-  height: 20px;
-  transform: rotate(-12deg);
+  width: 700px;
+  height: 5px;
+  transform: rotate(-24deg);
   animation-delay: -1.5s;
 }
 @keyframes beam {
@@ -338,8 +338,8 @@ html {
 }
 .brightness .beams .beam4 {
   width: 600px;
-  height: 5px;
-  transform: rotate(-60deg);
+  height: 15px;
+  transform: rotate(-72deg);
   animation-delay: -2s;
 }
 @keyframes beam {
@@ -354,9 +354,9 @@ html {
   }
 }
 .brightness .beams .beam5 {
-  width: 450px;
-  height: 15px;
-  transform: rotate(-12deg);
+  width: 600px;
+  height: 30px;
+  transform: rotate(-72deg);
   animation-delay: -2.5s;
 }
 @keyframes beam {
@@ -371,9 +371,9 @@ html {
   }
 }
 .brightness .beams .beam6 {
-  width: 500px;
-  height: 15px;
-  transform: rotate(-72deg);
+  width: 650px;
+  height: 30px;
+  transform: rotate(-60deg);
   animation-delay: -3s;
 }
 @keyframes beam {
@@ -408,14 +408,14 @@ html {
   }
   30% {
     opacity: 1;
-    transform: translate(-270px, 30px);
+    transform: translate(-240px, 300px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-200px, 250px);
+    transform: translate(-450px, 450px);
   }
 }
 .brightness .shines .shine2 {
@@ -428,14 +428,14 @@ html {
   }
   30% {
     opacity: 1;
-    transform: translate(-300px, 60px);
+    transform: translate(-120px, 150px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-350px, 350px);
+    transform: translate(-450px, 300px);
   }
 }
 .brightness .shines .shine3 {
@@ -448,14 +448,14 @@ html {
   }
   30% {
     opacity: 1;
-    transform: translate(-150px, 60px);
+    transform: translate(-210px, 180px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-50px, 200px);
+    transform: translate(-250px, 500px);
   }
 }
 .brightness .shines .shine4 {
@@ -468,14 +468,14 @@ html {
   }
   30% {
     opacity: 1;
-    transform: translate(-120px, 270px);
+    transform: translate(-150px, 60px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-300px, 250px);
+    transform: translate(-300px, 150px);
   }
 }
 .brightness .shines .shine5 {
@@ -488,14 +488,14 @@ html {
   }
   30% {
     opacity: 1;
-    transform: translate(-30px, 210px);
+    transform: translate(-120px, 60px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-500px, 100px);
+    transform: translate(-200px, 50px);
   }
 }
 .brightness .shines .shine6 {
@@ -508,14 +508,14 @@ html {
   }
   30% {
     opacity: 1;
-    transform: translate(-150px, 240px);
+    transform: translate(-60px, 180px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-300px, 150px);
+    transform: translate(-450px, 250px);
   }
 }
 .brightness .shines .shine7 {
@@ -528,14 +528,14 @@ html {
   }
   30% {
     opacity: 1;
-    transform: translate(-150px, 300px);
+    transform: translate(-150px, 30px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-350px, 100px);
+    transform: translate(-350px, 450px);
   }
 }
 .brightness .shines .shine8 {
@@ -548,14 +548,14 @@ html {
   }
   30% {
     opacity: 1;
-    transform: translate(-30px, 120px);
+    transform: translate(-300px, 60px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-500px, 500px);
+    transform: translate(-100px, 150px);
   }
 }
 .brightness .shines .shine9 {
@@ -568,14 +568,14 @@ html {
   }
   30% {
     opacity: 1;
-    transform: translate(-30px, 210px);
+    transform: translate(-150px, 150px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-500px, 300px);
+    transform: translate(-450px, 100px);
   }
 }
 .brightness .shines .shine10 {
@@ -588,14 +588,14 @@ html {
   }
   30% {
     opacity: 1;
-    transform: translate(-210px, 180px);
+    transform: translate(-120px, 270px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-500px, 400px);
+    transform: translate(-300px, 500px);
   }
 }
 
@@ -1101,8 +1101,9 @@ html {
 .showListArea .container header {
   position: absolute;
   display: flex;
-  align-items: baseline;
+  align-items: bottom;
   top: 200px;
+  width: 100%;
 }
 .showListArea .container header .today {
   color: #FFF;
@@ -1119,17 +1120,19 @@ html {
   text-shadow: 0px 1px 0px #b2a98f, 0px 7px 10px rgba(0, 0, 0, 0.4), 0px 12px 2px rgba(0, 0, 0, 0.3), 0px 17px 30px rgba(0, 0, 0, 0.3);
   outline: none;
   cursor: pointer;
+  transform: translateY(5px);
 }
 .showListArea .container header .editBtn {
   padding: 8px 18px;
+  height: 40px;
   border: none;
   font-size: 100%;
   border-radius: 100px;
   background: rgba(255, 255, 255, 0.6);
   outline: none;
+  white-space: nowrap;
   transition: 0.2s;
   cursor: pointer;
-  transform: translateY(-5px);
 }
 .showListArea .container header .editBtn:hover {
   background: rgba(255, 255, 255, 0.8);
@@ -1210,15 +1213,15 @@ html {
 
 @media screen and (max-width: 500px) {
   .balanceSheetBox .showListArea {
-    padding-top: 180px;
+    padding-top: 160px;
   }
   .balanceSheetBox .showListArea .container {
     width: 100%;
   }
   .balanceSheetBox .showListArea .container header {
     top: 100px;
-    left: 50%;
-    transform: translateX(-50%);
+    justify-content: space-between;
+    padding: 0 3vw;
   }
   .balanceSheetBox .showListArea .container header .today {
     font-size: 180%;
@@ -1227,8 +1230,19 @@ html {
   .balanceSheetBox .showListArea .container header .showDate {
     font-size: 110%;
   }
-  .balanceSheetBox .showListArea .container header .editBtn {
-    white-space: nowrap;
+  .balanceSheetBox .showListArea .container ul {
+    width: 100%;
+    padding: 0 3vw;
+    font-size: 90%;
+  }
+  .balanceSheetBox .showListArea .container ul li {
+    padding: 0 15px;
+  }
+  .balanceSheetBox .showListArea .container ul li.total p {
+    font-size: 130%;
+  }
+  .balanceSheetBox .showListArea .container ul ol {
+    max-height: 55vh;
   }
 }
 .userSettingPageBox {

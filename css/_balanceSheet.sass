@@ -42,8 +42,9 @@
         header
             position: absolute
             display: flex
-            align-items: baseline
+            align-items: bottom
             top: 200px
+            width: 100%
 
             .today
                 color: #FFF
@@ -60,17 +61,20 @@
                 text-shadow: 0px 1px 0px #b2a98f, 0px 7px 10px rgba(0,0,0,0.4), 0px 12px 2px rgba(0,0,0,0.3), 0px 17px 30px rgba(0,0,0,0.3)
                 outline: none
                 cursor: pointer
+                transform: translateY(5px)
 
             .editBtn
                 padding: 8px 18px
+                height: 40px
                 border: none
                 font-size: 100%
                 border-radius: 100px
                 background: rgba(#FFF, 0.6)
                 outline: none
+                white-space: nowrap
                 transition: 0.2s
                 cursor: pointer
-                transform: translateY(-5px)
+                // transform: translateY(5px)
 
                 &:hover
                     background: rgba(#FFF, 0.8)
@@ -151,17 +155,28 @@
 @media screen and (max-width: 500px)
     .balanceSheetBox
         .showListArea
-            padding-top: 180px
+            padding-top: 160px
             .container
                 width: 100%
                 header
                     top: 100px
-                    left: 50%
-                    transform: translateX(-50%)
+                    justify-content: space-between
+                    padding: 0 3vw
                     .today
                         font-size: 180%
                         white-space: nowrap
                     .showDate
                         font-size: 110%
                     .editBtn
-                        white-space: nowrap
+                ul
+                    width: 100%
+                    padding: 0 3vw
+                    font-size: 90%
+                    li
+                        padding: 0 15px
+                        &.total
+                            p
+                                font-size: 130%
+                    ol
+                        max-height: 55vh
+                        

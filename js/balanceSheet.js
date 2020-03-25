@@ -18,6 +18,10 @@ function inititialDate_balanceSheet() {
     dayInput.value = day;
 
     showDate.value = `${year} 年 ${month} 月 ${day} 日`;
+
+    
+    getBalanceSheet();
+    getBalanceSheetDetail();
 }
 
 // 使用者輸入___________________________________________________________________________________
@@ -78,16 +82,51 @@ function onClickAddBtn() {
  * 設定總金額
  * @param {object} res 
  */
-function setTotalAmount(res) {
+function setBalanceSheetTotal(res) {
     const showTotal = document.querySelector('.balanceSheetBox .showListArea .total p');
     const totalAmount = res.TotalAmount;
-    if (!totalAmount) { return; }
+    if (!totalAmount) {
+        showTotal.innerHTML = '';
+        return;
+    }
 
     if (totalAmount < 0) {
-        showTotal.innerHTML = `-$${ totalAmount * -1 }`;
+        showTotal.innerHTML = `合計： -$${ totalAmount * -1 }`;
     } else {
-        showTotal.innerHTML = `$${ totalAmount }`;
+        showTotal.innerHTML = `合計： $${ totalAmount }`;
     }
+}
+
+/**
+ * 設定 Detail
+ * @param {object} res 
+ */
+function setBalanceSheetDetail(res) {
+    const showDetail = document.querySelector('.balanceSheetBox .showListArea ol');
+    const detailItems = res.DetailData[0].split(',');
+    const detailAmounts = res.DetailData[1].split(',').map(x => Number(x));
+    console.log(detailAmounts, detailItems);
+    if (!detailItems || !detailAmounts || !detailItems[0]) {
+        showDetail.innerHTML = '';
+        const li = document.createElement('li');
+        li.innerHTML = 
+        `<p class="noDate">無資料</p>`
+        showDetail.appendChild(li);
+        return;
+    }
+
+    showDetail.innerHTML = '';
+
+    detailItems.forEach((item, i) => {
+        const li = document.createElement('li');
+        li.innerHTML = 
+        `
+        <p class="item">${ item }</p>\
+        <p class="type">${ detailAmounts[i] < 0 ? '支出' : '收入' }</p>\
+        <p class="amount">${ detailAmounts[i] < 0 ? `-$${ detailAmounts[i] * -1 }` : `$${ detailAmounts[i] }` }</P>\
+        `
+        showDetail.appendChild(li);
+    });
 }
 
 
@@ -237,7 +276,7 @@ function getBalanceSheet() {
     
     $.get('https://script.google.com/macros/s/AKfycbwC9bl6xw2PIbL6mF0ojN1RqokP_43JtxurpA2839FP80Ih2l19/exec', parameter).done(res => {
         console.log('balanceSheet', res);
-        setTotalAmount(res);
+        setBalanceSheetTotal(res);
         showLoading(false);
         
     });
@@ -262,6 +301,8 @@ function getBalanceSheetDetail() {
 
     $.get('https://script.google.com/macros/s/AKfycbwC9bl6xw2PIbL6mF0ojN1RqokP_43JtxurpA2839FP80Ih2l19/exec', parameter).done(res => {
         console.log('balanceSheetDetail', res);
+        setBalanceSheetDetail(res);
+        
         showLoading(false);
         
     });

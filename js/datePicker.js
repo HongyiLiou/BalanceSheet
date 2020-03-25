@@ -297,6 +297,10 @@ function setButtons() {
                 // 設定顯示的日期
                 showDate.value = `${yearInput.value} 年 ${monthInput.value} 月 ${dayInput.value} 日`;
 
+                // 由後端取德該日期資料
+                getBalanceSheet();
+                getBalanceSheetDetail();
+
                 cancelBtn.click();
 
             default:
