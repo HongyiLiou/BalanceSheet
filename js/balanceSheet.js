@@ -102,9 +102,28 @@ function setBalanceSheetTotal(res) {
  * @param {object} res 
  */
 function setBalanceSheetDetail(res) {
+    const userInputArea_itemList = document.querySelector('.balanceSheetBox .userInputArea_itemList ul');
     const showDetail = document.querySelector('.balanceSheetBox .showListArea ol');
     const detailItems = res.DetailData[0].split(',');
     const detailAmounts = res.DetailData[1].split(',').map(x => Number(x));
+    let template = '\
+        <li>\
+            <input class="item itemInput" type="text" placeholder="收支項目">\
+            <input class="amount amountInput" type="text" placeholder="收支金額">\
+            <select class="type" name="type">\
+                <option value="expenditure">支出</option>\
+                <option value="income">收入</option>\
+            </select>\
+        </li>\
+        <li>\
+            <input class="item itemInput" type="text" placeholder="收支項目">\
+            <input class="amount amountInput" type="text" placeholder="收支金額">\
+            <select class="type" name="type">\
+                <option value="expenditure">支出</option>\
+                <option value="income">收入</option>\
+            </select>\
+        </li>\
+    ';
     console.log(detailAmounts, detailItems);
     if (!detailItems || !detailAmounts || !detailItems[0]) {
         showDetail.innerHTML = '';
@@ -112,12 +131,25 @@ function setBalanceSheetDetail(res) {
         li.innerHTML = 
         `<p class="noDate">無資料</p>`
         showDetail.appendChild(li);
+        userInputArea_itemList.innerHTML = template;
         return;
     }
 
     showDetail.innerHTML = '';
 
+    let dataTemplate = '';
+
     detailItems.forEach((item, i) => {
+        dataTemplate = dataTemplate + `\
+            <li>\
+                <input class="item itemInput" type="text" placeholder="收支項目" value="${ item }">\
+                <input class="amount amountInput" type="text" placeholder="收支金額" value="${ Math.abs(detailAmounts[i]) }">\
+                <select class="type" name="type" value="${ detailAmounts[i] < 0 ? '支出' : '收入' }">\
+                    <option value="expenditure">支出</option>\
+                    <option value="income">收入</option>\
+                </select>\
+            </li>\
+        `;
         const li = document.createElement('li');
         li.innerHTML = 
         `
@@ -127,6 +159,9 @@ function setBalanceSheetDetail(res) {
         `
         showDetail.appendChild(li);
     });
+
+    dataTemplate = dataTemplate + template;
+    userInputArea_itemList.innerHTML = dataTemplate;
 }
 
 
