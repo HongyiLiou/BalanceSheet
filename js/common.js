@@ -22,7 +22,7 @@ function getToday() {
         minute: minute,
         second: second
     }
-
+    
     return timeObj;
 }
 
@@ -85,7 +85,7 @@ function getMousePos(event) {
     const x = e.offsetX;
     const y = e.offsetY;
     //alert('x: ' + x + '\ny: ' + y);
-    return { 'x': x, 'y': y };
+    return { x: x, y: y };
 }
 
 

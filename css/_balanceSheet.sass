@@ -148,6 +148,15 @@
 
 // 彈窗
 .editPopup
+    position: absolute
+    +size(300px, calc(100vh - 300px))
+    top: 50%
+    right: 100px
+    background: rgba(#000, 0.7)
+    border-radius: 8px
+    transform: translateY(-50%)
+    z-index: 3
+
     .userInputArea_itemList
         input
             width: 100px

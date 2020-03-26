@@ -11,6 +11,9 @@ function initialDatePicker() {
 }
 
 
+
+
+
 /**
  * 設定顯示日期
  * @param {String} dateString
@@ -23,7 +26,7 @@ function setDateToShow(dateString) {
     /** 年份選取按鈕 */const datePicker_year = document.querySelector('.datePicker_year p');
     /** 月份選取按鈕 */const datePicker_month = document.querySelector('.datePicker_month p');
     const date = new Date(dateString);
-    const dateToString = date.toString();    
+    const dateToString = date.toString();
     
     setShowWeek(dateToString.slice(0, 3));
     dataPickerShowMonth.innerHTML = dateToString.slice(4, 7);
@@ -37,7 +40,6 @@ function setDateToShow(dateString) {
 
     datePicker_year.innerHTML = `${dateToString.slice(11, 15)} 年`;
     datePicker_month.innerHTML = `${date.getMonth() + 1} 月`;
-
 }
 
 
@@ -296,6 +298,23 @@ function setButtons() {
 
                 // 設定顯示的日期
                 showDate.value = `${yearInput.value} 年 ${monthInput.value} 月 ${dayInput.value} 日`;
+
+                console.log(yearInput.value , monthInput.value , dayInput.value);
+
+                // 控制是否顯示「今日」文字
+                const todayObj = getToday();
+                if (
+                    Number(yearInput.value) === todayObj.year &&
+                    Number(monthInput.value) === todayObj.month &&
+                    Number(dayInput.value) === todayObj.date
+                ) {
+                    const showToday = document.querySelector('.balanceSheetBox .showListArea .today');
+                    showToday.style.display = 'block';
+                } else {
+                    const showToday = document.querySelector('.balanceSheetBox .showListArea .today');
+                    showToday.style.display = 'none';
+                }
+                
 
                 // 由後端取德該日期資料
                 getBalanceSheet();

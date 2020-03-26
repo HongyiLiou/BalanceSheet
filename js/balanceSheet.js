@@ -20,8 +20,8 @@ function inititialDate_balanceSheet() {
     showDate.value = `${year} 年 ${month} 月 ${day} 日`;
 
     
-    getBalanceSheet();
-    getBalanceSheetDetail();
+    // getBalanceSheet();
+    // getBalanceSheetDetail();
 }
 
 // 使用者輸入___________________________________________________________________________________
