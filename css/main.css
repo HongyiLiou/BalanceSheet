@@ -63,6 +63,15 @@ html {
   font-size: 16px;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 .mainBackground {
   position: fixed;
   width: 100%;
@@ -286,9 +295,9 @@ html {
   animation: beam 3s infinite;
 }
 .brightness .beams .beam1 {
-  width: 650px;
-  height: 30px;
-  transform: rotate(-12deg);
+  width: 500px;
+  height: 15px;
+  transform: rotate(-24deg);
   animation-delay: -0.5s;
 }
 @keyframes beam {
@@ -303,9 +312,9 @@ html {
   }
 }
 .brightness .beams .beam2 {
-  width: 650px;
-  height: 20px;
-  transform: rotate(-24deg);
+  width: 600px;
+  height: 25px;
+  transform: rotate(-48deg);
   animation-delay: -1s;
 }
 @keyframes beam {
@@ -320,9 +329,9 @@ html {
   }
 }
 .brightness .beams .beam3 {
-  width: 700px;
-  height: 15px;
-  transform: rotate(-24deg);
+  width: 600px;
+  height: 25px;
+  transform: rotate(-60deg);
   animation-delay: -1.5s;
 }
 @keyframes beam {
@@ -337,9 +346,9 @@ html {
   }
 }
 .brightness .beams .beam4 {
-  width: 450px;
-  height: 15px;
-  transform: rotate(-48deg);
+  width: 700px;
+  height: 25px;
+  transform: rotate(-12deg);
   animation-delay: -2s;
 }
 @keyframes beam {
@@ -355,8 +364,8 @@ html {
 }
 .brightness .beams .beam5 {
   width: 550px;
-  height: 10px;
-  transform: rotate(-48deg);
+  height: 5px;
+  transform: rotate(-12deg);
   animation-delay: -2.5s;
 }
 @keyframes beam {
@@ -371,9 +380,9 @@ html {
   }
 }
 .brightness .beams .beam6 {
-  width: 600px;
-  height: 25px;
-  transform: rotate(-12deg);
+  width: 450px;
+  height: 5px;
+  transform: rotate(-72deg);
   animation-delay: -3s;
 }
 @keyframes beam {
@@ -408,14 +417,14 @@ html {
   }
   30% {
     opacity: 1;
-    transform: translate(-180px, 270px);
+    transform: translate(-120px, 90px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-250px, 450px);
+    transform: translate(-450px, 100px);
   }
 }
 .brightness .shines .shine2 {
@@ -428,14 +437,14 @@ html {
   }
   30% {
     opacity: 1;
-    transform: translate(-120px, 270px);
+    transform: translate(-120px, 60px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-350px, 150px);
+    transform: translate(-350px, 50px);
   }
 }
 .brightness .shines .shine3 {
@@ -448,14 +457,14 @@ html {
   }
   30% {
     opacity: 1;
-    transform: translate(-60px, 30px);
+    transform: translate(-60px, 240px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-200px, 100px);
+    transform: translate(-100px, 500px);
   }
 }
 .brightness .shines .shine4 {
@@ -468,14 +477,14 @@ html {
   }
   30% {
     opacity: 1;
-    transform: translate(-240px, 30px);
+    transform: translate(-90px, 30px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-200px, 150px);
+    transform: translate(-100px, 350px);
   }
 }
 .brightness .shines .shine5 {
@@ -488,14 +497,14 @@ html {
   }
   30% {
     opacity: 1;
-    transform: translate(-300px, 150px);
+    transform: translate(-210px, 120px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-50px, 400px);
+    transform: translate(-250px, 100px);
   }
 }
 .brightness .shines .shine6 {
@@ -508,14 +517,14 @@ html {
   }
   30% {
     opacity: 1;
-    transform: translate(-240px, 180px);
+    transform: translate(-240px, 120px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-500px, 400px);
+    transform: translate(-500px, 50px);
   }
 }
 .brightness .shines .shine7 {
@@ -528,14 +537,14 @@ html {
   }
   30% {
     opacity: 1;
-    transform: translate(-300px, 240px);
+    transform: translate(-300px, 60px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-200px, 100px);
+    transform: translate(-300px, 100px);
   }
 }
 .brightness .shines .shine8 {
@@ -548,14 +557,14 @@ html {
   }
   30% {
     opacity: 1;
-    transform: translate(-90px, 300px);
+    transform: translate(-30px, 270px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-450px, 250px);
+    transform: translate(-500px, 100px);
   }
 }
 .brightness .shines .shine9 {
@@ -568,14 +577,14 @@ html {
   }
   30% {
     opacity: 1;
-    transform: translate(-150px, 30px);
+    transform: translate(-180px, 270px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-450px, 200px);
+    transform: translate(-500px, 450px);
   }
 }
 .brightness .shines .shine10 {
@@ -588,14 +597,14 @@ html {
   }
   30% {
     opacity: 1;
-    transform: translate(-150px, 30px);
+    transform: translate(-240px, 90px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-250px, 450px);
+    transform: translate(-200px, 300px);
   }
 }
 
@@ -1209,17 +1218,249 @@ html {
 
 .editPopup {
   position: absolute;
-  width: 300px;
-  height: calc(100vh - 300px);
+  width: 350px;
+  height: calc(100vh - 310px);
   top: 50%;
-  right: 100px;
-  background: rgba(0, 0, 0, 0.7);
+  left: 630px;
+  background: rgba(0, 0, 0, 0.8);
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.5);
   border-radius: 8px;
   transform: translateY(-50%);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s;
   z-index: 3;
 }
-.editPopup .userInputArea_itemList input {
-  width: 100px;
+.editPopup.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+.editPopup .userInputArea_itemList {
+  position: relative;
+  width: 320px;
+  height: calc(100vh - 400px);
+  margin: 20px auto 0 auto;
+  background: rgba(51, 51, 51, 0.6);
+  border-radius: 35px;
+  overflow: hidden;
+}
+.editPopup .userInputArea_itemList::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 35px;
+  pointer-events: none;
+  box-shadow: inset 0 0 15px #000, inset 0 0 10px #000;
+}
+.editPopup .userInputArea_itemList ul {
+  width: 100%;
+  height: 100%;
+  padding: 10px 0 80px 0;
+  border-radius: 35px;
+  overflow-y: auto;
+}
+.editPopup .userInputArea_itemList ul::-webkit-scrollbar {
+  display: none;
+}
+.editPopup .userInputArea_itemList ul li {
+  width: 300px;
+  height: 50px;
+  margin: auto;
+  margin-bottom: 10px;
+  background: rgba(34, 34, 34, 0.9);
+  border-radius: 100px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.6), inset 0 -1px 5px rgba(255, 255, 255, 0.3);
+  overflow: hidden;
+}
+.editPopup .userInputArea_itemList ul li.fadeIn {
+  animation: fadeIn 0.3s forwards;
+}
+.editPopup .userInputArea_itemList ul li.hide {
+  animation: hide 0.3s forwards;
+}
+.editPopup .userInputArea_itemList ul li.translate {
+  animation: translate 0.3s 0.2s forwards;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  80% {
+    transform: translateY(-10%);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes hide {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+}
+@keyframes translate {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(calc(-100% - 10px));
+  }
+}
+.editPopup .userInputArea_itemList ul li .delBtn {
+  width: 35px;
+  height: 100%;
+  border: none;
+  padding: 0;
+  background: transparent;
+  outline: none;
+  cursor: pointer;
+}
+.editPopup .userInputArea_itemList ul li .delBtn:hover i {
+  color: white;
+}
+.editPopup .userInputArea_itemList ul li .delBtn i {
+  margin-left: 10px;
+  line-height: 70%;
+  font-size: 160%;
+  color: rgba(255, 255, 255, 0.15);
+  transition: 0.3s;
+}
+.editPopup .userInputArea_itemList ul li .itemInput, .editPopup .userInputArea_itemList ul li .amountInput {
+  padding: 0 10px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #FFF;
+  border: none;
+  outline: none;
+}
+.editPopup .userInputArea_itemList ul li .itemInput {
+  width: 110px;
+  height: 35px;
+  border-radius: 100px 0 0 100px;
+}
+.editPopup .userInputArea_itemList ul li .amountInput {
+  width: 90px;
+  height: 35px;
+  border-radius: 0 100px 100px 0;
+}
+.editPopup .userInputArea_itemList ul li .type {
+  height: 35px;
+  background: transparent;
+  border: none;
+  color: #FFF;
+  outline: none;
+}
+.editPopup .userInputArea_itemList ul li .type option {
+  background: #000;
+}
+.editPopup footer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 15px 30px;
+}
+.editPopup footer .controlBtn {
+  padding: 8px 18px;
+  border: none;
+  font-size: 100%;
+  border-radius: 100px;
+  background: transparent;
+  color: #c0c0c0;
+  outline: none;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.editPopup footer .controlBtn:hover {
+  color: #fafafa;
+  background: rgba(255, 255, 255, 0.3);
+}
+.editPopup footer .controlBtn:active {
+  transition: 0s;
+  background: rgba(255, 255, 255, 0.5);
+}
+.editPopup .toggleSwitch {
+  position: absolute;
+  display: block;
+  width: 60px;
+  height: 34px;
+  left: 30px;
+  bottom: 19px;
+  border-radius: 100px;
+  transform: scale(0.6);
+}
+.editPopup .toggleSwitch:hover::before, .editPopup .toggleSwitch:hover::after {
+  color: #fafafa;
+}
+.editPopup .toggleSwitch::before {
+  position: absolute;
+  content: "";
+  display: block;
+  left: -35px;
+  top: 50%;
+  font-family: FontAwesome;
+  font-style: solid;
+  font-size: 150%;
+  font-weight: 900;
+  color: #777;
+  transform: translateY(-50%);
+  transition: 0.4s;
+}
+.editPopup .toggleSwitch::after {
+  position: absolute;
+  content: "";
+  display: block;
+  right: -35px;
+  top: 50%;
+  font-family: FontAwesome;
+  font-style: solid;
+  font-size: 150%;
+  font-weight: 900;
+  color: #777;
+  transform: translateY(-50%);
+  transition: 0.4s;
+}
+.editPopup .toggleSwitch input {
+  display: none;
+}
+.editPopup .toggleSwitch input:checked + .slider {
+  background: #555;
+}
+.editPopup .toggleSwitch input:checked + .slider::before {
+  background: #FFF;
+  transform: translateX(26px);
+}
+.editPopup .toggleSwitch input:focus + .slider {
+  box-shadow: 0 2px 5px #000000;
+}
+.editPopup .toggleSwitch .slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #ffffff;
+  border-radius: 100px;
+  transition: 0.4s;
+  cursor: pointer;
+}
+.editPopup .toggleSwitch .slider::before {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 26px;
+  height: 26px;
+  left: 4px;
+  bottom: 4px;
+  background: #bdbdbd;
+  border-radius: 50%;
+  transition: 0.4s;
 }
 
 @media screen and (max-width: 500px) {

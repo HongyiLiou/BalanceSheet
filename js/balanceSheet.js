@@ -20,44 +20,64 @@ function inititialDate_balanceSheet() {
     showDate.value = `${year} 年 ${month} 月 ${day} 日`;
 
     
-    // getBalanceSheet();
-    // getBalanceSheetDetail();
+    getBalanceSheet();
+    getBalanceSheetDetail();
 }
 
 // 使用者輸入___________________________________________________________________________________
 
 /** 刪除按鈕 */
 function onClickDeleteBtn() {
-    const userInputArea = document.querySelector('.balanceSheetBox .userInputArea_itemList ul');
     const list = document.querySelectorAll('.balanceSheetBox .userInputArea_itemList ul li');
     const delBtns = document.querySelectorAll('.balanceSheetBox .userInputArea_itemList .delBtn');
 
-    delBtns.forEach((delBtn, i) => {
-        delBtn.addEventListener('mouseup', () => {
+    // delBtns.forEach((delBtn, i) => {
+    //     delBtn.addEventListener('click', () => {
+    //         const listParent = list[i].parentNode;
+    //         list[i].classList.add('hide');
+    //         setTimeout(() => {
+    //             listParent.removeChild(list[i]);
+    //         }, 300);
+    //     });
+    // });
+
+    for (let i = 0; i < delBtns.length; i++) {
+        delBtns[i].addEventListener('click', () => {
             const listParent = list[i].parentNode;
-            listParent.removeChild(list[i]);
+            list[i].classList.add('hide');
+            for (let j = i + 1; j < delBtns.length; j++) {
+                list[j].classList.remove('fadeIn');
+                list[j].classList.add('translate');
+            }
+            setTimeout(() => {
+                listParent.removeChild(list[i]);
+                for (let j = i + 1; j < delBtns.length; j++) {
+                    list[j].classList.remove('translate');
+                }
+            }, 500);
+
         });
-    });
+    }
 }
 
 
 /** 重置按鈕 */
 function onClickResetBtn() {
-    const itemInput = document.querySelectorAll('.itemInput');
-    const amountInput = document.querySelectorAll('.amountInput');
-    const typeSelect = document.querySelectorAll('.typeSelect');
+    const itemInput = document.querySelectorAll('.balanceSheetBox .itemInput');
+    const amountInput = document.querySelectorAll('.balanceSheetBox .amountInput');
+    const typeSelect = document.querySelectorAll('.balanceSheetBox select.type');
 
     for(let i = 0; i < itemInput.length; i++) {
         itemInput[i].value = '';
         amountInput[i].value = '';
-        typeSelect[i].value = '';
+        typeSelect[i].value = 'expenditure'; // 預設收支為支出
     }
 }
 
 /** 新增按鈕 */
 function onClickAddBtn() {
     const userInputArea = document.querySelector('.balanceSheetBox .userInputArea_itemList ul');
-    const originalHtml = userInputArea.innerHTML;
+    const userInputList = document.querySelectorAll('.balanceSheetBox .userInputArea_itemList ul li');
     const userInput_items = document.querySelectorAll('.item');
     const userInput_amounts = document.querySelectorAll('.amount');
     const userInput_type = document.querySelectorAll('.type');
@@ -68,8 +88,14 @@ function onClickAddBtn() {
         inputContent.push({ item: userInput_items[i].value, amount: userInput_amounts[i].value, type: userInput_type[i].value });
     }
 
+    userInputList.forEach(list => {
+        list.classList.remove('fadeIn');
+    });
+
+    
+    const originalHtml = userInputArea.innerHTML;
     userInputArea.innerHTML = originalHtml + `\
-        <li>\
+        <li class="fadeIn">\
             <button class="delBtn"><i class="fa fa-close"></i></button>\
             <input class="item itemInput" type="text" placeholder="收支項目"/>\
             <input class="amount amountInput" type="number" placeholder="收支金額"/>\

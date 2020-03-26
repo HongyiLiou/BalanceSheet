@@ -25,13 +25,17 @@
       </ul>
     </div>
   </section>
-  <section class="editPopup">
+  <section class="editPopup active">
     <div class="userInputArea_itemList">
       <ul></ul>
     </div>
-    <button onClick="onClickSendBtn()">送出</button>
-    <button onClick="onClickResetBtn()">重置</button>
-    <button onClick="onClickAddBtn()">新增</button>
-    <button onClick="loadDatePicker()">日期選擇器</button>
+    <footer>
+      <button class="controlBtn" onClick="onClickResetBtn()" title="清除全部">Clear</button>
+      <button class="controlBtn" onClick="onClickAddBtn()" title="新增">Add</button>
+      <button class="controlBtn" onClick="onClickSendBtn()" title="送出">Send</button>
+    </footer>
+    <label class="toggleSwitch" title="主題變更">
+      <input id="toggleInput" type="checkbox"/><span class="slider"></span>
+    </label>
   </section><br/><br/><a href="https://docs.google.com/spreadsheets/d/1VCzkXIRBMjF9iv0Ca89xBLIzTSbYHMvXxxGq6lceusk/edit#gid=0" target="_blank">Balance Sheet 連結 (hong)</a><a href="https://docs.google.com/spreadsheets/d/1qk0sCr8iWS-DSaWTx1lhe8x5JrgvN2Iwwd_zQkD3jUg/edit#gid=0" target="_blank">Balance Sheet 連結 (meng)</a><br/><br/>
 </article>

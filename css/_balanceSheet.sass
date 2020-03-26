@@ -149,17 +149,254 @@
 // 彈窗
 .editPopup
     position: absolute
-    +size(300px, calc(100vh - 300px))
+    +size(350px, calc(100vh - 310px))
     top: 50%
-    right: 100px
-    background: rgba(#000, 0.7)
+    left: 630px
+    background: rgba(#000, 0.8)
+    box-shadow: 0 5px 8px rgba(#000, 0.5)
     border-radius: 8px
     transform: translateY(-50%)
+    opacity: 0
+    pointer-events: none
+    transition: 0.3s
     z-index: 3
 
+    &.active
+        opacity: 1
+        pointer-events: auto
+
     .userInputArea_itemList
+        position: relative
+        +size(320px, calc(100vh - 400px))
+        margin: 20px auto 0 auto
+        background: rgba(#333333, 0.6)
+        border-radius: 35px
+        overflow: hidden
+
+        &::after
+            content: ''
+            position: absolute
+            display: block
+            +size(100%, 100%)
+            top: 0
+            left: 0
+            border-radius: 35px
+            pointer-events: none
+            box-shadow: inset 0 0 15px #000, inset 0 0 10px #000
+
+        ul
+            +size(100%, 100%)
+            padding: 10px 0 80px 0
+            border-radius: 35px
+            overflow-y: auto
+
+            &::-webkit-scrollbar
+                display: none
+
+            li
+                +size(300px, 50px)
+                margin: auto
+                margin-bottom: 10px
+                background: rgba(#222, 0.9)
+                border-radius: 100px
+                box-shadow: 0 2px 5px rgba(#000, 0.6), inset 0 -1px 5px rgba(#FFF, 0.3)
+                overflow: hidden
+
+                &.fadeIn
+                    animation: fadeIn 0.3s forwards
+
+                &.hide
+                    animation: hide 0.3s forwards
+
+                &.translate
+                    animation: translate 0.3s 0.2s forwards
+
+                +keyframes(fadeIn)
+                    0%
+                        opacity: 0
+                        transform: translateY(100%)
+                    80%
+                        transform: translateY(-10%)
+                    100%
+                        opacity: 1
+
+                +keyframes(hide)
+                    0%
+                        opacity: 1
+                        transform: scale(1)
+                    100%
+                        opacity: 0
+                        transform: scale(0.3)
+
+                +keyframes(translate)
+                    0%
+                        transform: translateY(0%)
+                    100%
+                        transform: translateY(calc(-100% - 10px))
+
+                .delBtn
+                    +size(35px, 100%)
+                    border: none
+                    padding: 0
+                    background: transparent
+                    outline: none
+                    cursor: pointer
+
+                    &:hover
+                        i
+                            color: rgba(#FFF, 1)
+
+                    i
+                        margin-left: 10px
+                        line-height: 70%
+                        font-size: 160%
+                        color: rgba(#FFF, 0.15)
+                        transition: 0.3s
+
+                .itemInput, .amountInput
+                    padding: 0 10px
+                    background: rgba(#000, 0.6)
+                    color: #FFF
+                    border: none
+                    // font-size: 90%
+                    outline: none
+
+                .itemInput
+                    +size(110px, 35px)
+                    border-radius: 100px 0 0 100px
+                
+                .amountInput
+                    +size(90px, 35px)
+                    border-radius: 0 100px 100px 0
+
+                .type
+                    height: 35px
+                    background: transparent
+                    border: none
+                    color: #FFF
+                    outline: none
+                    option
+                        background: #000
+
+    
+    footer
+        display: flex
+        justify-content: flex-end
+        padding: 15px 30px
+
+        .controlBtn
+            padding: 8px 18px
+            border: none
+            font-size: 100%
+            border-radius: 100px
+            background: transparent
+            color: #c0c0c0
+            outline: none
+            transition: 0.3s
+            cursor: pointer
+            
+            &:hover
+                color: #fafafa
+                background: rgba(#FFF, 0.3)
+            &:active
+                transition: 0s
+                background: rgba(#FFF, 0.5)
+
+            // lightTheme
+            // color: #000
+            // &:hover
+            //     background: rgba(#FFF, 0.7)
+            // &:active
+            //     transition: 0s
+            //     background: rgba(#FFF, 0.95)
+
+    .toggleSwitch
+        position: absolute
+        display: block
+        +size(60px, 34px)
+        left: 30px
+        bottom: 19px
+        border-radius: 100px
+        transform: scale(0.6)
+        // transform: translateX(-50%)
+
+        &:hover
+            &::before, &::after
+                color: #fafafa
+
+        // lightTheme
+        // &:hover
+        //     &::before, &::after
+        //         color: #555
+
+        &::before
+            position: absolute
+            content: '\f185'
+            display: block
+            left: -35px
+            top: 50%
+            font-family: FontAwesome
+            font-style: solid
+            font-size: 150%
+            font-weight: 900
+            color: #777
+            // color: #919191
+            transform: translateY(-50%)
+            transition: 0.4s
+            
+        &::after
+            position: absolute
+            content: '\f186'
+            display: block
+            right: -35px
+            top: 50%
+            font-family: FontAwesome
+            font-style: solid
+            font-size: 150%
+            font-weight: 900
+            color: #777
+            // color: #919191
+            transform: translateY(-50%)
+            transition: 0.4s
+
         input
-            width: 100px
+            display: none
+
+            &:checked
+                +.slider
+                    background: #555
+                    &::before
+                        background: #FFF
+                        transform: translateX(26px)
+            &:focus
+                +.slider
+                    box-shadow: 0 2px 5px #000000
+                    
+
+        .slider
+            position: absolute
+            top: 0
+            left: 0
+            right: 0
+            bottom: 0
+            background: #ffffff
+            border-radius: 100px
+            transition: 0.4s
+            cursor: pointer
+
+            &::before
+                position: absolute
+                content: ''
+                display: block
+                +size(26px, 26px)
+                left: 4px
+                bottom: 4px
+                background: #bdbdbd
+                border-radius: 50%
+                transition: 0.4s
+
+            
+                        
 
 
 @media screen and (max-width: 500px)

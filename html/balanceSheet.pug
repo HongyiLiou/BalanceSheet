@@ -44,7 +44,7 @@ article.balanceSheetBox
                     p
 
     //- 彈窗
-    section.editPopup
+    section.editPopup.active
         .userInputArea_itemList
             ul
                 //- li
@@ -65,11 +65,17 @@ article.balanceSheetBox
                 //-         option(value="expenditure") 支出
                 //-         option(value="income") 收入
 
-        button(onClick="onClickSendBtn()") 送出
-        button(onClick="onClickResetBtn()") 重置
-        button(onClick="onClickAddBtn()") 新增
-        button(onClick="loadDatePicker()") 日期選擇器
-    
+        footer
+            button.controlBtn(onClick="onClickResetBtn()" title="清除全部") Clear
+            button.controlBtn(onClick="onClickAddBtn()" title="新增") Add
+            button.controlBtn(onClick="onClickSendBtn()" title="送出") Send
+            //- button.controlBtn(onClick="loadDatePicker()" title="日期選取器") DatePicker
+
+
+        label.toggleSwitch(title="主題變更")
+            input#toggleInput(type="checkbox")
+            span.slider
+        
 
     br
     br
