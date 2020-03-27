@@ -185,6 +185,7 @@
             box-shadow: inset 0 0 15px #000, inset 0 0 10px #000
 
         ul
+            position: relative
             +size(100%, 100%)
             padding: 10px 0 80px 0
             border-radius: 35px
@@ -398,9 +399,32 @@
             
                         
 
+// RWD
+@media screen and (max-width: 1400px)
+    .balanceSheetBox
+        transform-origin: left top
+        transform: scale(0.85)
+        .showListArea
+            padding-top: 215px
+            .container
+                header
+                    top: 150px
+                ul
+                    ol
+                        max-height: calc(100vh - 300px)
+        .editPopup
+            +size(350px, calc(100vh - 90px))
+            top: 90px
+            transform: initial
+            .userInputArea_itemList
+                +size(320px, calc(100vh - 180px))
+
+
+
 
 @media screen and (max-width: 500px)
     .balanceSheetBox
+        transform: initial
         .showListArea
             padding-top: 160px
             .container

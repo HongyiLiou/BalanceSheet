@@ -337,6 +337,13 @@
 
 // RWD
 @media screen and (max-width: 1400px)
+    .popupBox
+        transform-origin: center center
+        transform: translate(-50%, -50%) scale(0.85)
+    .loaging
+        .loadingCircle
+            transform-origin: center center
+            transform: translate(-50%, -50%) scale(0.85)
     .homePageBox
         .clock
             width: 70%
@@ -352,6 +359,8 @@
 
 
 @media screen and (max-width: 500px)
+    // .popupBox
+    //     transform: translate(-50%, -50%)
     .loaging
         .loadingCircle
             +size(100px, 100px)

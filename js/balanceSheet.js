@@ -73,7 +73,7 @@ function onClickResetBtn() {
         typeSelect[i].value = 'expenditure'; // 預設收支為支出
     }
 }
-
+aa = 1;
 /** 新增按鈕 */
 function onClickAddBtn() {
     const userInputArea = document.querySelector('.balanceSheetBox .userInputArea_itemList ul');
@@ -92,10 +92,11 @@ function onClickAddBtn() {
         list.classList.remove('fadeIn');
     });
 
+    aa += 1;
     
     const originalHtml = userInputArea.innerHTML;
     userInputArea.innerHTML = originalHtml + `\
-        <li class="fadeIn">\
+        <li class="fadeIn test${ aa }">\
             <button class="delBtn"><i class="fa fa-close"></i></button>\
             <input class="item itemInput" type="text" placeholder="收支項目"/>\
             <input class="amount amountInput" type="number" placeholder="收支金額"/>\
@@ -116,7 +117,22 @@ function onClickAddBtn() {
         userInput_typeNew[i].value = inputContent[i].type;
     }
 
+    
+
     onClickDeleteBtn();
+    
+    $('.balanceSheetBox .userInputArea_itemList ul').animate({
+        scrollTop: $('.balanceSheetBox .userInputArea_itemList ul li:last-child()').offset().top
+    }, 300, 'swing');
+
+    // const timer = setInterval(() => {
+    //     $(window).scrollTop($(window).scrollTop() - 50);
+    //     if ($(window).scrollTop() == 0) {
+    //         clearInterval(timer);
+    //     }
+    // },2);
+
+    console.log($('.balanceSheetBox .userInputArea_itemList ul li:last-child()'), $('.balanceSheetBox .userInputArea_itemList ul li:last-child()').offset().top);
     
 }
 
@@ -149,7 +165,7 @@ function setBalanceSheetDetail(res) {
     const showDetail = document.querySelector('.balanceSheetBox .showListArea ol');
     const detailItems = res.DetailData[0].split(',');
     const detailAmounts = res.DetailData[1].split(',').map(x => Number(x));
-    let template = `\
+    /** list模板 */let template = `\
         <li>\
             <button class="delBtn"><i class="fa fa-close"></i></button>\
             <input class="item itemInput" type="text" placeholder="收支項目">\
@@ -182,15 +198,16 @@ function setBalanceSheetDetail(res) {
 
     showDetail.innerHTML = '';
 
-    let dataTemplate = '';
+    /** 目前的所有list */let dataTemplate = '';
 
     detailItems.forEach((item, i) => {
+        
         dataTemplate = dataTemplate + `\
             <li>\
                 <button class="delBtn"><i class="fa fa-close"></i></button>\
                 <input class="item itemInput" type="text" placeholder="收支項目" value="${ item }">\
                 <input class="amount amountInput" type="text" placeholder="收支金額" value="${ Math.abs(detailAmounts[i]) }">\
-                <select class="type" name="type" value="${ detailAmounts[i] < 0 ? '支出' : '收入' }">\
+                <select class="type" name="type">\
                     <option value="expenditure">支出</option>\
                     <option value="income">收入</option>\
                 </select>\
@@ -208,6 +225,12 @@ function setBalanceSheetDetail(res) {
 
     dataTemplate = dataTemplate + template;
     userInputArea_itemList.innerHTML = dataTemplate;
+
+    // 設定編輯器內 List的收支類別
+    const allSelect = document.querySelectorAll('.balanceSheetBox .userInputArea_itemList ul li .type');
+    detailAmounts.forEach((amount, i) => {
+        allSelect[i].value = amount < 0 ? 'expenditure' : 'income';
+    })
     
     onClickDeleteBtn();
 }
