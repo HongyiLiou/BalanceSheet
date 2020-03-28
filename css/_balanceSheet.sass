@@ -165,11 +165,32 @@
         opacity: 1
         pointer-events: auto
 
+    .closeBtn
+        +size(28px, 28px)
+        position: absolute
+        right: 2px
+        top: 2px
+        background: transparent
+        border: none
+        border-radius: 50%
+        color: #c0c0c0
+        outline: none
+        font-size: 100%
+        transition: 0.3s
+        cursor: pointer
+
+        &:hover
+            color: #fafafa
+            background: rgba(#FFF, 0.3)
+        &:active
+            transition: 0s
+            background: rgba(#FFF, 0.5)
+
     .userInputArea_itemList
         position: relative
         +size(320px, calc(100vh - 400px))
         margin: 20px auto 0 auto
-        background: rgba(#333333, 0.6)
+        background: rgba(#2e2c2c, 0.6)
         border-radius: 35px
         overflow: hidden
 
