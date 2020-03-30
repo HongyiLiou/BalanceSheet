@@ -4,6 +4,13 @@
 /** 輸入月份值 (月) */monthInput = document.querySelector('.balanceSheetBox #month');
 /** 輸入日期值 (日) */dayInput = document.querySelector('.balanceSheetBox #day'); // date
 
+function test() {
+    const doSomething = () => {
+        console.log('看這看這，然後應該被關掉');
+    }
+    showScreenHolder(true, doSomething);
+}
+
 
 /** 初始化收支表日期 */
 function inititialDate_balanceSheet() {
@@ -26,6 +33,7 @@ function inititialDate_balanceSheet() {
 
 // 使用者輸入___________________________________________________________________________________
 
+/** 編輯按鈕 */
 function onClickEditBtn() {
     const editPopup = document.querySelector('.balanceSheetBox .editPopup');
     editPopup.classList.toggle('active');
@@ -92,15 +100,15 @@ function onClickAddBtn() {
 
     
     const originalHtml = userInputArea.innerHTML;
-    userInputArea.innerHTML = originalHtml + `\
-        <li class="fadeIn">\
-            <button class="delBtn"><i class="fa fa-close"></i></button>\
-            <input class="item itemInput" type="text" placeholder="收支項目"/>\
-            <input class="amount amountInput" type="number" placeholder="收支金額"/>\
-            <select class="type" name="type">\
-                <option value="expenditure">支出</option>\
-                <option value="income">收入</option>\
-            </select>\
+    userInputArea.innerHTML = originalHtml + `
+        <li class="fadeIn">
+            <button class="delBtn"><i class="fa fa-close"></i></button>
+            <input class="item itemInput" type="text" placeholder="收支項目"/>
+            <input class="amount amountInput" type="number" placeholder="收支金額"/>
+            <select class="type" name="type">
+                <option value="expenditure">支出</option>
+                <option value="income">收入</option>
+            </select>
         </li>`;
 
     const userInput_itemsNew = document.querySelectorAll('.item');
@@ -115,8 +123,12 @@ function onClickAddBtn() {
     }
 
     
-
-    onClickDeleteBtn();
+    const keys = [','];
+    userInput_itemsNew.forEach((item, i) => {
+        preventInputKeys(item, keys);
+        preventInputKeys(userInput_amountsNew[i], keys);
+    });
+    
     
     $('.balanceSheetBox .userInputArea_itemList ul').animate({
         scrollTop: $('.balanceSheetBox .userInputArea_itemList ul li:last-child()').offset().top
@@ -128,6 +140,7 @@ function onClickAddBtn() {
     //         clearInterval(timer);
     //     }
     // }, 50);
+    onClickDeleteBtn();
 
     console.log($('.balanceSheetBox .userInputArea_itemList ul li:last-child()'), $('.balanceSheetBox .userInputArea_itemList ul li:last-child()').offset().top);
     
@@ -162,24 +175,24 @@ function setBalanceSheetDetail(res) {
     const showDetail = document.querySelector('.balanceSheetBox .showListArea ol');
     const detailItems = res.DetailData[0].split(',');
     const detailAmounts = res.DetailData[1].split(',').map(x => Number(x));
-    /** list模板 */let template = `\
-        <li>\
-            <button class="delBtn"><i class="fa fa-close"></i></button>\
-            <input class="item itemInput" type="text" placeholder="收支項目">\
-            <input class="amount amountInput" type="text" placeholder="收支金額">\
-            <select class="type" name="type">\
-                <option value="expenditure">支出</option>\
-                <option value="income">收入</option>\
-            </select>\
-        </li>\
-        <li>\
-            <button class="delBtn"><i class="fa fa-close"></i></button>\
-            <input class="item itemInput" type="text" placeholder="收支項目">\
-            <input class="amount amountInput" type="text" placeholder="收支金額">\
-            <select class="type" name="type">\
-                <option value="expenditure">支出</option>\
-                <option value="income">收入</option>\
-            </select>\
+    /** list模板 */let template = `
+        <li>
+            <button class="delBtn"><i class="fa fa-close"></i></button>
+            <input class="item itemInput" type="text" placeholder="收支項目">
+            <input class="amount amountInput" type="text" placeholder="收支金額">
+            <select class="type" name="type">
+                <option value="expenditure">支出</option>
+                <option value="income">收入</option>
+            </select>
+        </li>
+        <li>
+            <button class="delBtn"><i class="fa fa-close"></i></button>
+            <input class="item itemInput" type="text" placeholder="收支項目">
+            <input class="amount amountInput" type="text" placeholder="收支金額">
+            <select class="type" name="type">
+                <option value="expenditure">支出</option>
+                <option value="income">收入</option>
+            </select>
         </li>`;
 
     console.log(detailAmounts, detailItems);
@@ -199,24 +212,23 @@ function setBalanceSheetDetail(res) {
 
     detailItems.forEach((item, i) => {
         
-        dataTemplate = dataTemplate + `\
-            <li>\
-                <button class="delBtn"><i class="fa fa-close"></i></button>\
-                <input class="item itemInput" type="text" placeholder="收支項目" value="${ item }">\
-                <input class="amount amountInput" type="text" placeholder="收支金額" value="${ Math.abs(detailAmounts[i]) }">\
-                <select class="type" name="type">\
-                    <option value="expenditure">支出</option>\
-                    <option value="income">收入</option>\
-                </select>\
+        dataTemplate = dataTemplate + `
+            <li>
+                <button class="delBtn"><i class="fa fa-close"></i></button>
+                <input class="item itemInput" type="text" placeholder="收支項目" value="${ item }">
+                <input class="amount amountInput" type="text" placeholder="收支金額" value="${ Math.abs(detailAmounts[i]) }">
+                <select class="type" name="type">
+                    <option value="expenditure">支出</option>
+                    <option value="income">收入</option>
+                </select>
             </li>`;
 
         const li = document.createElement('li');
-        li.innerHTML = 
-        `
-        <p class="item">${ item }</p>\
-        <p class="type">${ detailAmounts[i] < 0 ? '支出' : '收入' }</p>\
-        <p class="amount">${ detailAmounts[i] < 0 ? `-$${ detailAmounts[i] * -1 }` : `$${ detailAmounts[i] }` }</P>\
-        `
+        li.innerHTML = `
+            <p class="item">${ item }</p>
+            <p class="type">${ detailAmounts[i] < 0 ? '支出' : '收入' }</p>
+            <p class="amount">${ detailAmounts[i] < 0 ? `-$${ detailAmounts[i] * -1 }` : `$${ detailAmounts[i] }` }</p>`;
+    
         showDetail.appendChild(li);
     });
 
@@ -228,6 +240,15 @@ function setBalanceSheetDetail(res) {
     detailAmounts.forEach((amount, i) => {
         allSelect[i].value = amount < 0 ? 'expenditure' : 'income';
     })
+
+    // 禁止使用者輸入逗號
+    const detailItemsNew = document.querySelectorAll('.balanceSheetBox .userInputArea_itemList ul li .item');
+    const detailAmountsNew = document.querySelectorAll('.balanceSheetBox .userInputArea_itemList ul li .amount');
+    const keys = [','];
+    detailItemsNew.forEach((item, i) => {
+        preventInputKeys(item, keys);
+        preventInputKeys(detailAmountsNew[i], keys);
+    });
     
     onClickDeleteBtn();
 }

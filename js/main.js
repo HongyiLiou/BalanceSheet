@@ -10,7 +10,7 @@
 
 
 // 其他元件
-/** Screen Holder */const screenHolder = document.querySelector('.screenHolder');
+// /** Screen Holder */const screenHolder = document.querySelector('.screenHolder');
 /** Date Picker type */let datePickerType;
 
 
@@ -27,14 +27,14 @@ window.onload = function() {
 }
 
 
-/** 顯示 screenHolder */
-function showScreenHolder(boolean) {
-    if (boolean) {
-        screenHolder.classList.add('show');
-    } else {
-        screenHolder.classList.remove('show');
-    }
-}
+// /** 顯示 screenHolder */
+// function showScreenHolder(boolean) {
+//     if (boolean) {
+//         screenHolder.classList.add('show');
+//     } else {
+//         screenHolder.classList.remove('show');
+//     }
+// }
 
 
 /** 載入 Pages */

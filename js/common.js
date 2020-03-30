@@ -91,7 +91,7 @@ function getMousePos(event) {
 
 /**
  * 顯示 Loading畫面
- * @param {Boolean} isShow 
+ * @param {Boolean} isShow 是否顯示
  */
 function showLoading(isShow) {
     const loaging = document.querySelector('.loaging');
@@ -103,6 +103,63 @@ function showLoading(isShow) {
     }
 
 }
+
+
+/**
+ * 禁止輸入某些按鈕
+ * @param {Document} document 
+ * @param {String[]} keys 
+ */
+function preventInputKeys(document, keys) {    
+    document.addEventListener('keypress', function(e) {
+        console.log(e.key);
+        
+        keys.forEach(key => {
+            if (e.key === key) { 
+              e.preventDefault();
+            } // 當輸出等於 key的時候，阻止預設行為
+        });
+    })
+}
+
+
+/**
+ * 顯示/關閉 ScreenHolder
+ * @param {Boolean} boolean 是否顯示
+ * @param {Void} doSomething 按下 ScreenHolder時要做的事
+ */
+function showScreenHolder(boolean, doSomething) {
+    /** Screen Holder */const screenHolder = document.querySelector('.screenHolder');
+    console.log('screenHolder');
+    this.preventDefault;
+
+    if (boolean) {
+        screenHolder.classList.add('show');
+    } else {
+        screenHolder.classList.remove('show');
+        return;
+    }
+    
+    const onScreenClick = screenHolder.addEventListener('click', () => {
+        if (doSomething) {
+            doSomething();
+        }
+
+        screenHolder.classList.remove('show');
+        screenHolder.removeEventListener('click', onScreenClick);
+    });
+
+    
+
+}
+
+// function showScreenHolder(boolean) {
+//     if (boolean) {
+//         screenHolder.classList.add('show');
+//     } else {
+//         screenHolder.classList.remove('show');
+//     }
+// }
 
 
 /**

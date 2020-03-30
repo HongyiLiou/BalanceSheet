@@ -21,6 +21,7 @@ article.balanceSheetBox
                 h4.today 本日
                 input.showDate(type="text" readonly onClick="loadDatePicker()")
                 button.editBtn(onClick="onClickEditBtn()") 編輯
+                //- button.editBtn(onClick="test()") 編輯
             ul
                 li.topFix
                     p.item 項目
@@ -67,7 +68,7 @@ article.balanceSheetBox
                 //-         option(value="income") 收入
 
         footer
-            button.controlBtn(onClick="onClickResetBtn()" title="清除全部") Clear
+            button.controlBtn.clearBtn(onClick="onClickResetBtn()" title="清除全部") Clear
             button.controlBtn(onClick="onClickAddBtn()" title="新增") Add
             button.controlBtn(onClick="onClickSendBtn()" title="送出") Send
             //- button.controlBtn(onClick="loadDatePicker()" title="日期選取器") DatePicker
