@@ -26,6 +26,12 @@ function inititialDate_balanceSheet() {
 
 // 使用者輸入___________________________________________________________________________________
 
+function onClickEditBtn() {
+    const editPopup = document.querySelector('.balanceSheetBox .editPopup');
+    editPopup.classList.toggle('active');
+}
+
+
 /** 刪除按鈕 */
 function onClickDeleteBtn() {
     const list = document.querySelectorAll('.balanceSheetBox .userInputArea_itemList ul li');
@@ -64,7 +70,8 @@ function onClickResetBtn() {
         typeSelect[i].value = 'expenditure'; // 預設收支為支出
     }
 }
-aa = 1;
+
+
 /** 新增按鈕 */
 function onClickAddBtn() {
     const userInputArea = document.querySelector('.balanceSheetBox .userInputArea_itemList ul');
@@ -83,11 +90,10 @@ function onClickAddBtn() {
         list.classList.remove('fadeIn');
     });
 
-    aa += 1;
     
     const originalHtml = userInputArea.innerHTML;
     userInputArea.innerHTML = originalHtml + `\
-        <li class="fadeIn test${ aa }">\
+        <li class="fadeIn">\
             <button class="delBtn"><i class="fa fa-close"></i></button>\
             <input class="item itemInput" type="text" placeholder="收支項目"/>\
             <input class="amount amountInput" type="number" placeholder="收支金額"/>\
@@ -114,14 +120,14 @@ function onClickAddBtn() {
     
     $('.balanceSheetBox .userInputArea_itemList ul').animate({
         scrollTop: $('.balanceSheetBox .userInputArea_itemList ul li:last-child()').offset().top
-    }, 300, 'swing');
+    }, 600, 'swing');
 
     // const timer = setInterval(() => {
-    //     $(window).scrollTop($(window).scrollTop() - 50);
-    //     if ($(window).scrollTop() == 0) {
+    //     $('.balanceSheetBox .userInputArea_itemList ul').scrollTop($('.balanceSheetBox .userInputArea_itemList ul li:last-child()').offset().top);
+    //     if ($('.balanceSheetBox .userInputArea_itemList ul').scrollTop == 0) {
     //         clearInterval(timer);
     //     }
-    // },2);
+    // }, 50);
 
     console.log($('.balanceSheetBox .userInputArea_itemList ul li:last-child()'), $('.balanceSheetBox .userInputArea_itemList ul li:last-child()').offset().top);
     

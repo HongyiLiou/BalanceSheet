@@ -10,7 +10,7 @@
       <header>
         <h4 class="today">本日</h4>
         <input class="showDate" type="text" readonly="readonly" onClick="loadDatePicker()"/>
-        <button class="editBtn">編輯</button>
+        <button class="editBtn" onClick="onClickEditBtn()">編輯</button>
       </header>
       <ul>
         <li class="topFix">
@@ -25,7 +25,8 @@
       </ul>
     </div>
   </section>
-  <section class="editPopup active">
+  <section class="editPopup">
+    <button class="closeBtn" onClick="onClickEditBtn()">✖</button>
     <div class="userInputArea_itemList">
       <ul></ul>
     </div>

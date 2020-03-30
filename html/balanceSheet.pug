@@ -20,7 +20,7 @@ article.balanceSheetBox
             header
                 h4.today 本日
                 input.showDate(type="text" readonly onClick="loadDatePicker()")
-                button.editBtn 編輯
+                button.editBtn(onClick="onClickEditBtn()") 編輯
             ul
                 li.topFix
                     p.item 項目
@@ -44,7 +44,8 @@ article.balanceSheetBox
                     p
 
     //- 彈窗
-    section.editPopup.active
+    section.editPopup
+        button.closeBtn(onClick="onClickEditBtn()") ✖
         .userInputArea_itemList
             ul
                 //- li
