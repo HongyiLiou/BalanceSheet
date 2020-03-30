@@ -103,17 +103,19 @@ function setCalender(monthString) {
     /** 所有日期 button */const dateBtns = document.querySelectorAll('.pointerEventAuto');
     /** OK button */const okBtn = document.querySelector('.datePickerBox .okBtn');
     dateBtns.forEach((btn, i) => {
-        btn.addEventListener('click', () => {
+        const timer = btn.addEventListener('click', () => {
             dateBtns.forEach(x => {
                 x.classList.remove('active');
             });
 
             btn.classList.add('active');
             setDateToShow(`${dataPickerShowYear.innerHTML}/${monthString}/${i + 1}`);
+            btn.removeEventListener('click', timer);
         });
 
-        btn.addEventListener('dblclick', () => {
+        const timer2 = btn.addEventListener('dblclick', () => {
             okBtn.click();
+            btn.removeEventListener('dblclick', timer2);
         });
     });
     

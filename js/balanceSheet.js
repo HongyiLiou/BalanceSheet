@@ -31,18 +31,8 @@ function onClickDeleteBtn() {
     const list = document.querySelectorAll('.balanceSheetBox .userInputArea_itemList ul li');
     const delBtns = document.querySelectorAll('.balanceSheetBox .userInputArea_itemList .delBtn');
 
-    // delBtns.forEach((delBtn, i) => {
-    //     delBtn.addEventListener('click', () => {
-    //         const listParent = list[i].parentNode;
-    //         list[i].classList.add('hide');
-    //         setTimeout(() => {
-    //             listParent.removeChild(list[i]);
-    //         }, 300);
-    //     });
-    // });
-
     for (let i = 0; i < delBtns.length; i++) {
-        delBtns[i].addEventListener('click', () => {
+        const timer = delBtns[i].addEventListener('click', () => {            
             const listParent = list[i].parentNode;
             list[i].classList.add('hide');
             for (let j = i + 1; j < delBtns.length; j++) {
@@ -54,6 +44,7 @@ function onClickDeleteBtn() {
                 for (let j = i + 1; j < delBtns.length; j++) {
                     list[j].classList.remove('translate');
                 }
+                delBtns[i].removeEventListener('click', timer);
             }, 500);
 
         });

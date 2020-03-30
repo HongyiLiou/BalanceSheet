@@ -146,30 +146,34 @@ function showPopupBox(popupSettingObj) {
         enterBtn.addEventListener('click', settingObj.enterClick);
     }
 
-    enterBtn.addEventListener('click', () => {
+    const enterTimer = enterBtn.addEventListener('click', () => {
         popupBox_checkMessage.classList.add('hide');
         setTimeout(() => {
             popupBox_checkMessage.style.display = 'none';
             popupBox_checkMessage.classList.remove('hide');
+            enterBtn.removeEventListener('click', enterTimer);
         }, 500);
     });
 
     if (settingObj.showCancel && settingObj.cancelClick) {
-        cancelBtn.addEventListener('click', settingObj.cancelClick);
-        cancelBtn.addEventListener('click', () => {
+        const timer = cancelBtn.addEventListener('click', settingObj.cancelClick);
+        const timer2 = cancelBtn.addEventListener('click', () => {
             popupBox_checkMessage.classList.add('hide');
             setTimeout(() => {
                 popupBox_checkMessage.style.display = 'none';
                 popupBox_checkMessage.classList.remove('hide');
+                cancelBtn.removeEventListener('click', timer);
+                cancelBtn.removeEventListener('click', timer2);
             }, 500);
         });
 
     } else if (settingObj.showCancel) {
-        cancelBtn.addEventListener('click', () => {
+        const timer = cancelBtn.addEventListener('click', () => {
             popupBox_checkMessage.classList.add('hide');
             setTimeout(() => {
                 popupBox_checkMessage.style.display = 'none';
                 popupBox_checkMessage.classList.remove('hide');
+                cancelBtn.removeEventListener('click', timer);
             }, 500);
         });
     }
