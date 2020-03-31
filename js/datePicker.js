@@ -3,11 +3,8 @@
 /** 初始化 */
 function initialDatePicker() {
     setButtons();
-
     setDateToShow(`${ year }/${ month }/${ day }`);
-    
     setCalender(month);
-    
 }
 
 
@@ -280,7 +277,6 @@ function setButtons() {
         const popupBox = document.querySelector('.popupBox');
         datePickerBox.classList.add('hide');
         showScreenHolder(false);
-        screenHolder.removeEventListener('click', loadDatePicker);
         setTimeout(() => {
             popupBox.innerHTML = '';
             $('#datePickerJS').remove();

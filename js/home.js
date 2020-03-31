@@ -77,7 +77,6 @@ function initialHomePageTime() {
 function initialSidebar() {
     /** 漢堡選單 */const burgerMenu = document.querySelector('.burgerMenu');
     /** Sidebar 本人 */const sidebar = document.querySelector('.sidebar');
-    /** Screen Holder */const screenHolder = document.querySelector('.screenHolder');
     /** UserSettingBtn */const userSettingBtn = document.querySelector('.userSettingBtn');
 
     let toggleScreenHolder = false;
@@ -86,15 +85,18 @@ function initialSidebar() {
         toggleScreenHolder = !toggleScreenHolder;
         burgerMenu.classList.toggle('active');
         sidebar.classList.toggle('active');
-        showScreenHolder(toggleScreenHolder);
+
+        // 點擊 ScreenHolder 時要做的事
+        const clickScreenHolderToDo = () => {
+            burgerMenu.classList.remove('active');
+            sidebar.classList.remove('active');
+            toggleScreenHolder = false;
+        }
+
+        showScreenHolder(toggleScreenHolder, clickScreenHolderToDo, ['bgColorMain']);
+
     });
 
-    screenHolder.addEventListener('click', () => {
-        burgerMenu.classList.remove('active');
-        sidebar.classList.remove('active');
-        screenHolder.removeEventListener('click', initialSidebar);
-        toggleScreenHolder = false;
-    });
 
     sidebarList.forEach(obj => {
         setSidebarBtns(obj);

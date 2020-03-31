@@ -4,15 +4,8 @@
 /** 輸入月份值 (月) */monthInput = document.querySelector('.balanceSheetBox #month');
 /** 輸入日期值 (日) */dayInput = document.querySelector('.balanceSheetBox #day'); // date
 
-function test() {
-    const doSomething = () => {
-        console.log('看這看這，然後應該被關掉');
-    }
-    showScreenHolder(true, doSomething);
-}
 
-
-/** 初始化收支表日期 */
+/** 初始化收支表 */
 function inititialDate_balanceSheet() {
     const showDate = document.querySelector('.balanceSheetBox .showDate');
     const today = new Date();
@@ -29,12 +22,13 @@ function inititialDate_balanceSheet() {
     
     getBalanceSheet();
     getBalanceSheetDetail();
+    toggleSwitch_BalanceSheet();
 }
 
 // 使用者輸入___________________________________________________________________________________
 
-/** 編輯按鈕 */
-function onClickEditBtn() {
+/** 編輯收支表 */
+function toggleBalanceSheetEdit() {
     const editPopup = document.querySelector('.balanceSheetBox .editPopup');
     editPopup.classList.toggle('active');
 }
@@ -144,6 +138,35 @@ function onClickAddBtn() {
 
     console.log($('.balanceSheetBox .userInputArea_itemList ul li:last-child()'), $('.balanceSheetBox .userInputArea_itemList ul li:last-child()').offset().top);
     
+}
+
+
+function toggleSwitch_BalanceSheet() {
+    /** Toggle Switch */const toggleSwitch = document.querySelector('.balanceSheetBox .toggleSwitch');
+    /** 主題開關 checkbox */const checkBox = document.querySelector('.balanceSheetBox .toggleSwitch input');
+    /** 外層 BOX */const balanceSheetEdit = document.querySelector('.balanceSheetBox .editPopup');
+
+    // 主題切換 switch按鈕
+    toggleSwitch.addEventListener('click', () => {
+        setTimeout(() => {
+            if (checkBox.checked === false) {
+                balanceSheetEdit.classList.add('lightTheme');
+                localStorage.setItem('balanceSheetEditTheme', 'light');
+            } else {
+                balanceSheetEdit.classList.remove('lightTheme');
+                localStorage.removeItem('balanceSheetEditTheme');
+            }
+        }, 50);
+    });
+
+    const theme = localStorage.getItem('balanceSheetEditTheme');
+
+    if (theme === 'light') {
+        checkBox.checked = false;
+        balanceSheetEdit.classList.add('lightTheme');
+    } else {
+        checkBox.checked = true;
+    }
 }
 
 
@@ -260,6 +283,7 @@ function setBalanceSheetDetail(res) {
 function onClickSendBtn() {
     sendBalanceSheet();
     sendBalanceSheetDetail();
+    toggleBalanceSheetEdit();
 }
 
 

@@ -84,7 +84,7 @@ function getMousePos(event) {
     const e = event || window.event;
     const x = e.offsetX;
     const y = e.offsetY;
-    //alert('x: ' + x + '\ny: ' + y);
+    // alert('x: ' + x + '\ny: ' + y);
     return { x: x, y: y };
 }
 
@@ -94,12 +94,12 @@ function getMousePos(event) {
  * @param {Boolean} isShow 是否顯示
  */
 function showLoading(isShow) {
-    const loaging = document.querySelector('.loaging');
+    const loading = document.querySelector('.loading');
 
     if (isShow) {
-        loaging.classList.add('active');
+        loading.classList.add('active');
     } else {
-        loaging.classList.remove('active');
+        loading.classList.remove('active');
     }
 
 }
@@ -107,8 +107,8 @@ function showLoading(isShow) {
 
 /**
  * 禁止輸入某些按鈕
- * @param {Document} document 
- * @param {String[]} keys 
+ * @param {Document} document
+ * @param {String[]} keys
  */
 function preventInputKeys(document, keys) {    
     document.addEventListener('keypress', function(e) {
@@ -126,51 +126,76 @@ function preventInputKeys(document, keys) {
 /**
  * 顯示/關閉 ScreenHolder
  * @param {Boolean} boolean 是否顯示
- * @param {Void} doSomething 按下 ScreenHolder時要做的事
+ * @param {Void} doSomething 按下 ScreenHolder 時要做的事
+ * @param {String[]} cssClass 要附加的 css class
  */
-function showScreenHolder(boolean, doSomething) {
-    /** Screen Holder */const screenHolder = document.querySelector('.screenHolder');
-    console.log('screenHolder');
-    this.preventDefault;
+function showScreenHolder(boolean, doSomething, cssClass) {
+    const body = document.querySelector('body');
 
     if (boolean) {
+        // 建立一個 ScreenHolder
+        const screenHolderTag = document.createElement('div');
+        screenHolderTag.className = 'screenHolder';
+        body.appendChild(screenHolderTag);
+        /** Screen Holder */const screenHolder = document.querySelector('.screenHolder');
         screenHolder.classList.add('show');
-    } else {
-        screenHolder.classList.remove('show');
-        return;
-    }
-    
-    const onScreenClick = screenHolder.addEventListener('click', () => {
-        if (doSomething) {
-            doSomething();
-        }
 
+        // css class
+        if (cssClass) {
+            setTimeout(() => {
+                cssClass.forEach(cssClass => {
+                    screenHolder.classList.add(cssClass);
+                });
+            }, 0)
+        }
+    
+        // 監聽事件
+        screenHolder.addEventListener('click', () => {            
+            if (doSomething) {
+                doSomething();
+            }
+    
+            screenHolder.classList.remove('show');
+            
+            if (cssClass) {
+                cssClass.forEach(cssClass => {
+                    screenHolder.classList.remove(cssClass);
+                });
+            }
+            
+            setTimeout(() => {
+                body.removeChild(screenHolder);
+            }, 300)
+        });
+
+    } else {
+        // 移除 ScreenHolder
+        const screenHolder = document.querySelector('.screenHolder');
         screenHolder.classList.remove('show');
-        screenHolder.removeEventListener('click', onScreenClick);
-    });
+        if (cssClass) {
+            cssClass.forEach(cssClass => {
+                screenHolder.classList.remove(cssClass);
+            });
+        }
+        setTimeout(() => {
+            body.removeChild(screenHolder);
+        }, 300)
+    }
 
     
 
 }
 
-// function showScreenHolder(boolean) {
-//     if (boolean) {
-//         screenHolder.classList.add('show');
-//     } else {
-//         screenHolder.classList.remove('show');
-//     }
-// }
-
 
 /**
  * 訊息彈窗
  * @param {{
- *  text: string,
- *  showCancel: boolean,
- *  enterBtn: string,
- *  cancelBtn: string,
- *  enterClick: function(),
- *  cancelClick: function(),
+ *  text: string
+ *  showCancel: boolean
+ *  enterBtn: string
+ *  cancelBtn: string
+ *  enterClick: function()
+ *  cancelClick: function()
  * }} popupSettingObj 
  */
 function showPopupBox(popupSettingObj) {
@@ -186,6 +211,7 @@ function showPopupBox(popupSettingObj) {
     const cancelBtn = document.querySelector('.popupBox_checkMessage .cancel');
     const enterBtn = document.querySelector('.popupBox_checkMessage .enter');
     const settingObj = popupSettingObj;
+    
 
     popupBox_checkMessage.style.display = 'block';
     cancelBtn.style.display = settingObj.showCancel ? 'block' : 'none';
@@ -203,8 +229,15 @@ function showPopupBox(popupSettingObj) {
         enterBtn.addEventListener('click', settingObj.enterClick);
     }
 
+    const onClickScreenHolder = () => {
+        enterBtn.click();
+    }
+    
+    showScreenHolder(true, onClickScreenHolder);
+
     const enterTimer = enterBtn.addEventListener('click', () => {
         popupBox_checkMessage.classList.add('hide');
+        showScreenHolder(false);
         setTimeout(() => {
             popupBox_checkMessage.style.display = 'none';
             popupBox_checkMessage.classList.remove('hide');
@@ -215,6 +248,7 @@ function showPopupBox(popupSettingObj) {
     if (settingObj.showCancel && settingObj.cancelClick) {
         const timer = cancelBtn.addEventListener('click', settingObj.cancelClick);
         const timer2 = cancelBtn.addEventListener('click', () => {
+            showScreenHolder(false);
             popupBox_checkMessage.classList.add('hide');
             setTimeout(() => {
                 popupBox_checkMessage.style.display = 'none';
@@ -226,6 +260,7 @@ function showPopupBox(popupSettingObj) {
 
     } else if (settingObj.showCancel) {
         const timer = cancelBtn.addEventListener('click', () => {
+            showScreenHolder(false);
             popupBox_checkMessage.classList.add('hide');
             setTimeout(() => {
                 popupBox_checkMessage.style.display = 'none';

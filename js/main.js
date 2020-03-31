@@ -10,7 +10,7 @@
 
 
 // 其他元件
-// /** Screen Holder */const screenHolder = document.querySelector('.screenHolder');
+// /** Screen Holder */const screenHolderBasic = document.querySelector('.screenHolderBasic');
 /** Date Picker type */let datePickerType;
 
 
@@ -19,22 +19,12 @@ window.onload = function() {
     
     loadPages();
 
-    /** 初始化screenHolder狀態 */
-    screenHolder.addEventListener('click', () => {
-        showScreenHolder(false);
-    });    
+    /** 初始化screenHolderBasic狀態 */
+    // screenHolderBasic.addEventListener('click', () => {
+    //     // showScreenHolderBasic(false);
+    // });
     
 }
-
-
-// /** 顯示 screenHolder */
-// function showScreenHolder(boolean) {
-//     if (boolean) {
-//         screenHolder.classList.add('show');
-//     } else {
-//         screenHolder.classList.remove('show');
-//     }
-// }
 
 
 /** 載入 Pages */
@@ -78,11 +68,13 @@ function loadDatePicker() {
         sc.id = 'datePickerJS';
         sc.src = 'js/datePicker.js';
         $('body').append(sc);
-        showScreenHolder(true);
-        screenHolder.addEventListener('click', () => {
+
+        const onClickScreenHolder = () => {
             /** Cancel button */const cancelBtn = document.querySelector('.datePickerBox .cancelBtn');
             cancelBtn.click();
-            screenHolder.removeEventListener('click', loadDatePicker);
-        });
+        }
+
+        
+        showScreenHolder(true, onClickScreenHolder);
     });
 }

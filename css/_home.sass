@@ -26,11 +26,17 @@
     left: 0
     right: 0
     bottom: 0
-    background: #999
     opacity: 0
     pointer-events: none
     transition: .3s
     z-index: 2
+
+    &.bgColorMain
+        background: #000000
+        opacity: 0.2
+    &.bgColorRed
+        background: #aa6000
+        opacity: 0.2
 
     &.show
         pointer-events: auto
@@ -131,7 +137,7 @@
 
 
 // 讀取畫面
-.loaging
+.loading
     position: fixed
     top: 0
     left: 0
@@ -340,7 +346,7 @@
     .popupBox
         transform-origin: center center
         transform: translate(-50%, -50%) scale(0.85)
-    .loaging
+    .loading
         .loadingCircle
             transform-origin: center center
             transform: translate(-50%, -50%) scale(0.85)
@@ -361,7 +367,7 @@
 @media screen and (max-width: 500px)
     // .popupBox
     //     transform: translate(-50%, -50%)
-    .loaging
+    .loading
         .loadingCircle
             +size(100px, 100px)
             .border
