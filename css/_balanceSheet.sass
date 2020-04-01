@@ -221,6 +221,8 @@
                 display: none
 
             li
+                display: flex
+                align-items: center
                 +size(300px, 50px)
                 margin: auto
                 margin-bottom: 10px
@@ -284,6 +286,7 @@
 
                 .itemInput, .amountInput
                     padding: 0 10px
+                    margin-right: 4px
                     background: rgba(#000, 0.6)
                     color: #FFF
                     border: none
@@ -312,7 +315,7 @@
     footer
         display: flex
         justify-content: flex-end
-        padding: 15px
+        padding: 15px 0
 
         .controlBtn
             padding: 8px 18px
@@ -344,10 +347,10 @@
         position: absolute
         display: block
         +size(60px, 34px)
-        left: 30px
+        left: 35px
         bottom: 19px
         border-radius: 100px
-        transform: scale(0.6)
+        transform: scale(0.8)
         // transform: translateX(-50%)
 
         &:hover
