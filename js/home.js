@@ -2,8 +2,10 @@
 
 /** Sidebar 選單設定檔 */
 const sidebarList = [
-    { name: '首頁', id: 'homePage', class: 'home', selected: true },
+    { name: '登入', id: 'loginPage', class: 'logIn', selected: true },
+    { name: '首頁', id: 'homePage', class: 'home', selected: false },
     { name: '收支表', id: 'balanceSheetPage', class: 'balanceSheet', selected: false },
+    { name: '登出', id: 'loginPage', class: 'logOut', selected: false },
 ]
 
 /** 初始化 home page 時間 */
@@ -159,7 +161,7 @@ function setSidebarBtns(listObj) {
 
         if (window.screen.width < 500) {
             burgerBtn.click();
-        }
+        }        
     });
 
     // 滑鼠移入事件
@@ -196,9 +198,8 @@ function removeAllSiderbarActive() {
 }
 
 
-function toggleSwitch_userSetting_themes() {
-    console.log(123);
-    
+/** 主題切換 */
+function toggleSwitch_userSetting_themes() {    
     /** Toggle Switch */const toggleSwitch = document.querySelector('.userSettingPageBox .toggleSwitch');
     /** 主題開關 checkbox */const checkBox = document.querySelector('.userSettingPageBox .toggleSwitch input');
     /** 外層 BOX */const webApp = document.querySelector('body');

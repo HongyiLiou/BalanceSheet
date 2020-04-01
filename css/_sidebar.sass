@@ -130,10 +130,16 @@
                         transform: translateY(-50%)
                         transition: 0.3s
 
-                    &.home
+                    &.logIn                   // 登入
+                        &::before
+                            content: '\f109'
+                    &.logOut                  // 登出
+                        &::before
+                            content: '\f112'
+                    &.home                    // 首頁
                         &::before
                             content: '\f015'
-                    &.balanceSheet
+                    &.balanceSheet            // 收支表
                         &::before
                             content: '\f200'
                 

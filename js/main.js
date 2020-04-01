@@ -18,17 +18,20 @@
 window.onload = function() {
     
     loadPages();
-
-    /** 初始化screenHolderBasic狀態 */
-    // screenHolderBasic.addEventListener('click', () => {
-    //     // showScreenHolderBasic(false);
-    // });
     
 }
 
 
 /** 載入 Pages */
 function loadPages() {
+    // Login Page
+    $('#loginPage').load('html/login.html', function() {
+        const sc = document.createElement('script');
+        sc.src = 'js/login.js';
+        $('body').append(sc);
+
+    });
+
     // Home Page
     $('#homePage').load('html/home.html', function() {
         const sc = document.createElement('script');
