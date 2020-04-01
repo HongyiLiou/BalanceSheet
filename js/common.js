@@ -179,6 +179,7 @@ function showScreenHolder(boolean, doSomething, cssClass) {
         }
         setTimeout(() => {
             body.removeChild(screenHolder);
+            screenHolder = null;            
         }, 300)
     }
 

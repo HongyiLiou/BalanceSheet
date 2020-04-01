@@ -53,6 +53,7 @@ function onClickDeleteBtn() {
                     list[j].classList.remove('translate');
                 }
                 delBtns[i].removeEventListener('click', timer);
+                list[i] = null;                
             }, 500);
 
         });
