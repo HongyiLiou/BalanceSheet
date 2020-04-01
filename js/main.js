@@ -53,6 +53,8 @@ function loadPages() {
         const sc = document.createElement('script');
         sc.src = 'js/userSetting.js';
         $('body').append(sc);
+        
+        toggleSwitch_userSetting_themes();
     });
 
 }

@@ -1,6 +1,7 @@
 // home.js
 
-/** Sidebar 選單設定檔 */const sidebarList = [
+/** Sidebar 選單設定檔 */
+const sidebarList = [
     { name: '首頁', id: 'homePage', class: 'home', selected: true },
     { name: '收支表', id: 'balanceSheetPage', class: 'balanceSheet', selected: false },
 ]
@@ -123,12 +124,15 @@ function setSidebarBtns(listObj) {
     const sidebarBtnsList = document.querySelector('.sidebarContent ul');
     const btn = document.createElement('li');
     const clickCircle = document.createElement('div');
+    const hoverCircle = document.createElement('div');
     const p = document.createElement('p');
 
     clickCircle.className = 'clickCircle';
+    hoverCircle.className = 'hoverCircle';
     p.className = listObj.class;
     p.innerHTML = listObj.name;
     btn.appendChild(clickCircle);
+    btn.appendChild(hoverCircle);
     btn.appendChild(p);
     if (listObj.selected) { btn.classList.add('active'); }
     sidebarBtnsList.appendChild(btn);
@@ -136,6 +140,7 @@ function setSidebarBtns(listObj) {
     const sidebarBtn = document.querySelector(`.sidebarContent ul li .${listObj.class}`);
     // const clickCircle = document.querySelector(`.sidebarContent ul li .${listObj.class}`);
 
+    // 點擊事件
     sidebarBtn.parentNode.addEventListener('click', (event) => {
         const activePage = document.querySelector(`#${listObj.id}`);
         const burgerBtn = document.querySelector('.burgerMenu');
@@ -157,6 +162,18 @@ function setSidebarBtns(listObj) {
         }
     });
 
+    // 滑鼠移入事件
+    sidebarBtn.parentNode.addEventListener('mousemove', (event) => {
+        const hoverCircles = document.querySelectorAll('.hoverCircle');
+        const mousePos = getMousePos(event);
+
+        hoverCircles.forEach(circle => {
+            // circle.style.top = `${mousePos.y}px`;
+            // circle.style.left = `${mousePos.x}px`;
+            circle.setAttribute('style', `top: ${mousePos.y}px; left: ${mousePos.x}px;`);
+        });
+    });
+
 }
 
 
@@ -176,4 +193,35 @@ function removeAllSiderbarActive() {
 
     userSettingBtn.classList.remove('active');
 
+}
+
+
+function toggleSwitch_userSetting_themes() {
+    console.log(123);
+    
+    /** Toggle Switch */const toggleSwitch = document.querySelector('.userSettingPageBox .toggleSwitch');
+    /** 主題開關 checkbox */const checkBox = document.querySelector('.userSettingPageBox .toggleSwitch input');
+    /** 外層 BOX */const webApp = document.querySelector('body');
+
+    // 主題切換 switch按鈕
+    toggleSwitch.addEventListener('click', () => {
+        setTimeout(() => {
+            if (checkBox.checked === false) {
+                webApp.classList.add('lightTheme');
+                localStorage.setItem('userSettingTheme', 'light');
+            } else {
+                webApp.classList.remove('lightTheme');
+                localStorage.removeItem('userSettingTheme');
+            }
+        }, 50);
+    });
+
+    const theme = localStorage.getItem('userSettingTheme');
+
+    if (theme === 'light') {
+        checkBox.checked = false;
+        webApp.classList.add('lightTheme');
+    } else {
+        checkBox.checked = true;
+    }
 }
