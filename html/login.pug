@@ -1,0 +1,29 @@
+article.loginPageBox
+    section.userArea
+        label.userInput
+            p.active 使用者帳號
+            input.acn(typa="text" spellcheck="false" value="hong")
+        label.userInput
+            p.active 使用者密碼
+            input.psw(type="password" value="123")
+
+        label.remember
+            p 記住我
+            input(type="checkbox" checked="true")
+            .checkHolder
+
+        button.loginBtn Login
+
+        
+
+    
+
+
+
+//- 1. 登入時，在 localhost 記下最後登入時間與帳號密碼 (若有勾選「記住我」)。
+
+//- 2. 若沒登出，下次進入網站時讀取最後登入時間間隔 > 8小時則跳至登入畫面 (需重新登入)。
+
+//- 3. 若有勾選「記住我」，localhost 記下帳號密碼狀態並自動填入欄位。
+
+//- 4. 登出時，清空 localhost 除 userSettingTheme、帳號密碼 (若有勾選「記住我」) 以外的所有 data。
