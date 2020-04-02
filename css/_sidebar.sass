@@ -373,3 +373,15 @@
                         font-size: 80%
         .userSettingBtn
             bottom: 20px
+    
+    
+    .lightTheme
+        .sidebar
+            background: linear-gradient(to right, rgba(#FFF, 1) 15%, rgba(#FFF, 0.8) 50%, rgba(#FFF, 0.6) 70%, transparent)
+            .sidebarContent
+                ul
+                    li
+                        &.active
+                            &::before
+                                background: linear-gradient(to right, rgba(#000, 0.05) 0%, rgba(#000, 0.15) 30%, transparent)
+

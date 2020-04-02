@@ -200,6 +200,7 @@ function removeAllSiderbarActive() {
 
 /** 主題切換 */
 function toggleSwitch_userSetting_themes() {    
+    /** css root */const root = document.documentElement;
     /** Toggle Switch */const toggleSwitch = document.querySelector('.userSettingPageBox .toggleSwitch');
     /** 主題開關 checkbox */const checkBox = document.querySelector('.userSettingPageBox .toggleSwitch input');
     /** 外層 BOX */const webApp = document.querySelector('body');
@@ -208,9 +209,11 @@ function toggleSwitch_userSetting_themes() {
     toggleSwitch.addEventListener('click', () => {
         setTimeout(() => {
             if (checkBox.checked === false) {
+                root.style.setProperty('--colorMain', '#FFFFFF');
                 webApp.classList.add('lightTheme');
                 localStorage.setItem('userSettingTheme', 'light');
             } else {
+                root.style.setProperty('--colorMain', '#111111');
                 webApp.classList.remove('lightTheme');
                 localStorage.removeItem('userSettingTheme');
             }
@@ -220,9 +223,11 @@ function toggleSwitch_userSetting_themes() {
     const theme = localStorage.getItem('userSettingTheme');
 
     if (theme === 'light') {
+        root.style.setProperty('--colorMain', '#FFFFFF');
         checkBox.checked = false;
         webApp.classList.add('lightTheme');
     } else {
+        root.style.setProperty('--colorMain', '#111111');
         checkBox.checked = true;
     }
 }
