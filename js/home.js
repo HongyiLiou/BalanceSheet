@@ -170,8 +170,6 @@ function setSidebarBtns(listObj) {
         const mousePos = getMousePos(event);
 
         hoverCircles.forEach(circle => {
-            // circle.style.top = `${mousePos.y}px`;
-            // circle.style.left = `${mousePos.x}px`;
             circle.setAttribute('style', `top: ${mousePos.y}px; left: ${mousePos.x}px;`);
         });
     });

@@ -44,6 +44,7 @@
                 padding: 5px 8px
                 border: none
                 border-bottom: solid 1px #4e4e4e
+                border-radius: 0
                 color: #FFF
                 font-size: 120%
                 font-weight: 100
@@ -92,6 +93,7 @@
                     text-align: center
                     line-height: 20px
                     background: #FFF
+                    box-shadow: 0 0 10px #FFF
                     border-radius: 50%
                     transition: 0.3s
                     transform-origin: center center
@@ -126,3 +128,19 @@
             &:active
                 transition: 0s
                 background: #666666
+
+
+
+
+// RWD
+@media screen and (max-width: 500px)
+    .loginPageBox
+        .userArea
+            +ab_center
+            .remember
+                width: 90px
+                .checkHolder
+                    +size(25px, 25px)
+                    &::before
+                        font-size: 120%
+                        line-height: 25px
