@@ -1,11 +1,11 @@
 article.loginPageBox
     section.userArea
         label.userInput
-            p.active 使用者帳號
-            input.acn(typa="text" spellcheck="false" value="hong")
+            p 使用者帳號
+            input.acn(typa="text" spellcheck="false" value="hong" onblur="setloginInputTitle(true, 0)")
         label.userInput
-            p.active 使用者密碼
-            input.psw(type="password" value="123")
+            p 使用者密碼
+            input.psw(type="password" value="123" onblur="setloginInputTitle(true, 1)")
 
         label.remember
             p 記住我

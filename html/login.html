@@ -2,12 +2,12 @@
 <article class="loginPageBox">
   <section class="userArea">
     <label class="userInput">
-      <p class="active">使用者帳號</p>
-      <input class="acn" typa="text" spellcheck="false" value="hong"/>
+      <p>使用者帳號</p>
+      <input class="acn" typa="text" spellcheck="false" value="hong" onblur="setloginInputTitle(true, 0)"/>
     </label>
     <label class="userInput">
-      <p class="active">使用者密碼</p>
-      <input class="psw" type="password" value="123"/>
+      <p>使用者密碼</p>
+      <input class="psw" type="password" value="123" onblur="setloginInputTitle(true, 1)"/>
     </label>
     <label class="remember">
       <p>記住我</p>

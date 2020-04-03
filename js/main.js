@@ -30,6 +30,7 @@ function loadPages() {
         sc.src = 'js/login.js';
         $('body').append(sc);
 
+        setloginInputTitle(false);
     });
 
     // Home Page
