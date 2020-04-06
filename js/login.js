@@ -195,6 +195,7 @@ function checkLoginState() {
 
 /** 登出 */
 function setLogOutBtn() {
+    const sidebarLoginBtn = document.querySelector('.sidebar .sidebarContent ul li .login');
     const logOutBtn = document.querySelector('.sidebarContent .logOut').parentNode;
 
     logOutBtn.addEventListener('click', () => {
@@ -204,6 +205,7 @@ function setLogOutBtn() {
         localStorage.removeItem('lastLoginTime');
         localStorage.removeItem('userSetting');
         initialLoginPage();
+        sidebarLoginBtn.click();
     });
 }
 
