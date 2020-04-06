@@ -112,6 +112,11 @@
                             color: #c9c9c9
 
 
+                &.hide
+                    display: none
+                    pointer-events: none
+
+
                 p
                     position: relative
                     font-size:  90%
@@ -130,7 +135,7 @@
                         transform: translateY(-50%)
                         transition: 0.3s
 
-                    &.logIn                   // 登入
+                    &.login                   // 登入
                         &::before
                             content: '\f109'
                     &.logOut                  // 登出
@@ -213,6 +218,10 @@
                     transform: rotate(0deg)
                 100%
                     transform: rotate(360deg)
+
+        &.hide
+            display: none
+            pointer-events: none
 
 
     // Sidebar 收合按鈕 (暫時沒用)

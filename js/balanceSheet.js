@@ -321,11 +321,14 @@ function sendBalanceSheet() {
     }
     
     
+    const userSetting = JSON.parse(localStorage.getItem('userSetting'));
     const parameter = {
         // url: 'https://docs.google.com/spreadsheets/d/1VCzkXIRBMjF9iv0Ca89xBLIzTSbYHMvXxxGq6lceusk/edit#gid=0',
-        url: 'https://docs.google.com/spreadsheets/d/1qk0sCr8iWS-DSaWTx1lhe8x5JrgvN2Iwwd_zQkD3jUg/edit#gid=0',
-        name: '2020BalanceSheet_meng',
+        // url: 'https://docs.google.com/spreadsheets/d/1qk0sCr8iWS-DSaWTx1lhe8x5JrgvN2Iwwd_zQkD3jUg/edit#gid=0',
         // name: '2020BalanceSheet_hong',
+        // name: '2020BalanceSheet_meng',
+        url: userSetting.balanceSheetUrl,
+        name: userSetting.balanceSheetName,
         functionType: 'post',
         dataType: 'balanceSheet',
         data: data.toString(),
@@ -388,11 +391,14 @@ function sendBalanceSheetDetail() {
     }
     
     
+    const userSetting = JSON.parse(localStorage.getItem('userSetting'));
     const parameter = {
         // url: 'https://docs.google.com/spreadsheets/d/1VCzkXIRBMjF9iv0Ca89xBLIzTSbYHMvXxxGq6lceusk/edit#gid=1948153821',
-        url: 'https://docs.google.com/spreadsheets/d/1qk0sCr8iWS-DSaWTx1lhe8x5JrgvN2Iwwd_zQkD3jUg/edit#gid=1723505957',
-        name: '2020BalanceSheetDetail_meng',
+        // url: 'https://docs.google.com/spreadsheets/d/1qk0sCr8iWS-DSaWTx1lhe8x5JrgvN2Iwwd_zQkD3jUg/edit#gid=1723505957',
         // name: '2020BalanceSheetDetail_hong',
+        // name: '2020BalanceSheetDetail_meng',
+        url: userSetting.balanceSheetDetailUrl,
+        name: userSetting.balanceSheetDetailName,
         functionType: 'post',
         dataType: 'balanceSheetDetail',
         data1: data1.toString(),
@@ -416,11 +422,17 @@ function sendBalanceSheetDetail() {
 function getBalanceSheet() {
     showLoading(true);
     
+    
+    const userSetting = JSON.parse(localStorage.getItem('userSetting'));
+    console.log(userSetting);
+    
     const parameter = {
         // url: 'https://docs.google.com/spreadsheets/d/1VCzkXIRBMjF9iv0Ca89xBLIzTSbYHMvXxxGq6lceusk/edit#gid=0',
-        url: 'https://docs.google.com/spreadsheets/d/1qk0sCr8iWS-DSaWTx1lhe8x5JrgvN2Iwwd_zQkD3jUg/edit#gid=0',
-        name: '2020BalanceSheet_meng',
+        // url: 'https://docs.google.com/spreadsheets/d/1qk0sCr8iWS-DSaWTx1lhe8x5JrgvN2Iwwd_zQkD3jUg/edit#gid=0',
         // name: '2020BalanceSheet_hong',
+        // name: '2020BalanceSheet_meng',
+        url: userSetting.balanceSheetUrl,
+        name: userSetting.balanceSheetName,
         functionType: 'get',
         dataType: 'balanceSheet',
         month: Number(monthInput.value) + 1,
@@ -441,11 +453,14 @@ function getBalanceSheet() {
 function getBalanceSheetDetail() {
     showLoading(true);
     
+    const userSetting = JSON.parse(localStorage.getItem('userSetting'));
     const parameter = {
         // url: 'https://docs.google.com/spreadsheets/d/1VCzkXIRBMjF9iv0Ca89xBLIzTSbYHMvXxxGq6lceusk/edit#gid=1948153821',
-        url: 'https://docs.google.com/spreadsheets/d/1qk0sCr8iWS-DSaWTx1lhe8x5JrgvN2Iwwd_zQkD3jUg/edit#gid=1723505957',
-        name: '2020BalanceSheetDetail_meng',
+        // url: 'https://docs.google.com/spreadsheets/d/1qk0sCr8iWS-DSaWTx1lhe8x5JrgvN2Iwwd_zQkD3jUg/edit#gid=1723505957',
         // name: '2020BalanceSheetDetail_hong',
+        // name: '2020BalanceSheetDetail_meng',
+        url: userSetting.balanceSheetDetailUrl,
+        name: userSetting.balanceSheetDetailName,
         functionType: 'get',
         dataType: 'balanceSheetDetail',
         month: Number(monthInput.value) * 2,

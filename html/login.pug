@@ -2,17 +2,17 @@ article.loginPageBox
     section.userArea
         label.userInput
             p 使用者帳號
-            input.acn(typa="text" spellcheck="false" value="hong" onblur="setloginInputTitle(true, 0)")
+            input.acn(typa="text" spellcheck="false" onblur="setloginInputTitle(true, 0)")
         label.userInput
             p 使用者密碼
-            input.psw(type="password" value="123" onblur="setloginInputTitle(true, 1)")
+            input.psw(type="password" onblur="setloginInputTitle(true, 1)")
 
         label.remember
             p 記住我
-            input(type="checkbox" checked="true")
+            input.rememberChecked(type="checkbox")
             .checkHolder
 
-        button.loginBtn Login
+        button.loginBtn(onclick="onLoginBtn()") Login
 
         
 

@@ -30,7 +30,11 @@ function loadPages() {
         sc.src = 'js/login.js';
         $('body').append(sc);
 
-        setloginInputTitle(false);
+        setTimeout(() => {
+            initialLoginPage();
+            setLogOutBtn();
+            checkLoginState();
+        }, 50);
     });
 
     // Home Page
@@ -49,7 +53,9 @@ function loadPages() {
         sc.src = 'js/balanceSheet.js';
         $('body').append(sc);
         
-        inititialDate_balanceSheet();
+        setTimeout(() => {
+            inititialDate_balanceSheet();
+        }, 0);
     });
 
     // User Setting Page
@@ -58,7 +64,9 @@ function loadPages() {
         sc.src = 'js/userSetting.js';
         $('body').append(sc);
         
-        toggleSwitch_userSetting_themes();
+        setTimeout(() => {
+            toggleSwitch_userSetting_themes();
+        }, 0);
     });
 
 }

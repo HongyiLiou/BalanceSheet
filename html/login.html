@@ -3,17 +3,17 @@
   <section class="userArea">
     <label class="userInput">
       <p>使用者帳號</p>
-      <input class="acn" typa="text" spellcheck="false" value="hong" onblur="setloginInputTitle(true, 0)"/>
+      <input class="acn" typa="text" spellcheck="false" onblur="setloginInputTitle(true, 0)"/>
     </label>
     <label class="userInput">
       <p>使用者密碼</p>
-      <input class="psw" type="password" value="123" onblur="setloginInputTitle(true, 1)"/>
+      <input class="psw" type="password" onblur="setloginInputTitle(true, 1)"/>
     </label>
     <label class="remember">
       <p>記住我</p>
-      <input type="checkbox" checked="true"/>
+      <input class="rememberChecked" type="checkbox"/>
       <div class="checkHolder"></div>
     </label>
-    <button class="loginBtn">Login</button>
+    <button class="loginBtn" onclick="onLoginBtn()">Login</button>
   </section>
 </article>

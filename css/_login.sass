@@ -131,6 +131,46 @@
 
 
 
+// Light Theme
+.lightTheme
+    .loginPageBox
+        .userArea
+            background: rgba(#FFF, 0.8)
+            color: #000
+            box-shadow: 0 5px 8px rgba(#000, 0.5)
+            .userInput
+                p
+                    color: #4e4e4e
+                    &.active
+                        bottom: 32px
+                        font-size: 90%
+                        color: #aaaaaa
+                input
+                    color: #3a3a3a
+                    border-bottom: solid 1px #c0c0c0
+                    &:focus
+                        border-bottom: solid 1px #4e4e4e
+            .remember
+                p
+                    color: #4e4e4e
+                .checkHolder
+                    background: #b3b3b3
+                    &::before
+                        font-weight: light
+                        color: #FFF
+                        background: #5a5a5a
+                        box-shadow: none
+            button
+                color: #333
+                border: solid 1px rgba(#000, 0.3)
+                background: #d8d8d8
+                &:hover
+                    background: #ececec
+                &:active
+                    transition: 0s
+                    background: #FFF
+
+
 
 // RWD
 @media screen and (max-width: 500px)
