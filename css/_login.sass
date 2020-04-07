@@ -17,6 +17,24 @@
         border-radius: 8px
         box-shadow: 0 5px 8px rgba(#000, 0.5)
 
+        &::before
+            position: absolute
+            content: ''
+            display: block
+            +size(500px, 400px)
+            background: rgba(#000, 0.5)
+            pointer-events: none
+            z-index: -1
+
+        &::after
+            position: absolute
+            content: ''
+            display: block
+            +size(600px, 490px)
+            border: solid 3px rgba(#000, 0.3)
+            pointer-events: none
+            z-index: -1
+
     
         .userInput
             position: relative
@@ -138,6 +156,10 @@
             background: rgba(#FFF, 0.8)
             color: #000
             box-shadow: 0 5px 8px rgba(#000, 0.5)
+            &::before
+                background: rgba(#FFF, 0.5)
+            &::after
+                border: solid 3px rgba(#FFF, 0.3)
             .userInput
                 p
                     color: #4e4e4e

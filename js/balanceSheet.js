@@ -157,9 +157,32 @@ function toggleSwitch_BalanceSheet() {
             if (checkBox.checked === false) {
                 balanceSheetEdit.classList.add('lightTheme');
                 localStorage.setItem('balanceSheetEditTheme', 'light');
+                const userSetting = JSON.parse(localStorage.getItem('userSetting'));
+                const accountNumber = JSON.parse(localStorage.getItem('login')).AccountNumber;
+                const parameter = {
+                    accountNumber: accountNumber,
+                    url: userSetting.userSettingUrl,
+                    name: userSetting.userSettingName,
+                    functionType: 'post',
+                    dataType: 6, // balanceSheetEditTheme
+                    data: 'light',
+                }
+                $.get('https://script.google.com/macros/s/AKfycbwKNaOjxPaTafWlrLMB4q9zt0RkAHKc2m9D0StpmXsWqsJvYXy1/exec', parameter)
+
             } else {
                 balanceSheetEdit.classList.remove('lightTheme');
                 localStorage.removeItem('balanceSheetEditTheme');
+                const userSetting = JSON.parse(localStorage.getItem('userSetting'));
+                const accountNumber = JSON.parse(localStorage.getItem('login')).AccountNumber;
+                const parameter = {
+                    accountNumber: accountNumber,
+                    url: userSetting.userSettingUrl,
+                    name: userSetting.userSettingName,
+                    functionType: 'post',
+                    dataType: 6, // balanceSheetEditTheme
+                    data: 'dark',
+                }
+                $.get('https://script.google.com/macros/s/AKfycbwKNaOjxPaTafWlrLMB4q9zt0RkAHKc2m9D0StpmXsWqsJvYXy1/exec', parameter)
             }
         }, 50);
     });

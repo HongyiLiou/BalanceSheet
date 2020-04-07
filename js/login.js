@@ -47,6 +47,7 @@ function setloginInputTitle(check, index) {
     }
 }
 
+
 /**
  * 是否隱藏導覽列按鈕 (登入 / 登出狀態)
  * @param {Boolean} boolean 是 / 否
