@@ -168,6 +168,7 @@ function toggleSwitch_BalanceSheet() {
                     data: 'light',
                 }
                 $.get('https://script.google.com/macros/s/AKfycbwKNaOjxPaTafWlrLMB4q9zt0RkAHKc2m9D0StpmXsWqsJvYXy1/exec', parameter)
+                
 
             } else {
                 balanceSheetEdit.classList.remove('lightTheme');
@@ -187,9 +188,14 @@ function toggleSwitch_BalanceSheet() {
         }, 50);
     });
 
-    const theme = localStorage.getItem('balanceSheetEditTheme');
+    const usertheme = JSON.parse(localStorage.getItem('userSetting')).balanceSheetEditTheme;
+    const localTheme = localStorage.getItem('balanceSheetEditTheme');
 
-    if (theme === 'light') {
+
+    if (usertheme === 'light') {
+        checkBox.checked = false;
+        balanceSheetEdit.classList.add('lightTheme');
+    } else if (localTheme === 'light') {
         checkBox.checked = false;
         balanceSheetEdit.classList.add('lightTheme');
     } else {

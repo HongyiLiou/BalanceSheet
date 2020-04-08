@@ -13,7 +13,7 @@ function initialLoginPage() {
     psw.value = loginData ? loginData.Password : '';
     rememberChecked.checked = loginData ? true : false;
 
-    // setloginInputTitle(false);
+    setloginInputTitle(false);
     setloginInputTitle(true, 0);
     setloginInputTitle(true, 1);
     setSidebarBtnHidden(true);
@@ -90,8 +90,8 @@ function onLoginBtn(accountNumber, password) {
 
         const parameter = {
             functionType: 'get',
-            accountNumber: acn.value,
-            password: psw.value,
+            accountNumber: login.AccountNumber,
+            password: login.Password,
         };
 
         $.get('https://script.google.com/macros/s/AKfycbwKNaOjxPaTafWlrLMB4q9zt0RkAHKc2m9D0StpmXsWqsJvYXy1/exec', parameter).done(res => {

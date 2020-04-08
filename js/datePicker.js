@@ -331,16 +331,44 @@ function setButtons() {
             if (checkBox.checked === true) {
                 datePickerBox.classList.add('darkTheme');
                 localStorage.setItem('datePickerTheme', 'dark');
+                const userSetting = JSON.parse(localStorage.getItem('userSetting'));
+                const accountNumber = JSON.parse(localStorage.getItem('login')).AccountNumber;
+                const parameter = {
+                    accountNumber: accountNumber,
+                    url: userSetting.userSettingUrl,
+                    name: userSetting.userSettingName,
+                    functionType: 'post',
+                    dataType: 7, // datePickerTheme
+                    data: 'dark',
+                }
+                $.get('https://script.google.com/macros/s/AKfycbwKNaOjxPaTafWlrLMB4q9zt0RkAHKc2m9D0StpmXsWqsJvYXy1/exec', parameter)
             } else {
                 datePickerBox.classList.remove('darkTheme');
                 localStorage.removeItem('datePickerTheme');
+                const userSetting = JSON.parse(localStorage.getItem('userSetting'));
+                const accountNumber = JSON.parse(localStorage.getItem('login')).AccountNumber;
+                const parameter = {
+                    accountNumber: accountNumber,
+                    url: userSetting.userSettingUrl,
+                    name: userSetting.userSettingName,
+                    functionType: 'post',
+                    dataType: 7, // datePickerTheme
+                    data: 'light',
+                }
+                $.get('https://script.google.com/macros/s/AKfycbwKNaOjxPaTafWlrLMB4q9zt0RkAHKc2m9D0StpmXsWqsJvYXy1/exec', parameter)
             }
         }, 50);
     });
 
-    const theme = localStorage.getItem('datePickerTheme');
+    
+    const userTheme = JSON.parse(localStorage.getItem('userSetting')).datePickerTheme;
+    const localTheme = localStorage.getItem('datePickerTheme');
 
-    if (theme === 'dark') {
+
+    if (userTheme === 'dark') {
+        checkBox.checked = true;
+        datePickerBox.classList.add('darkTheme');
+    } else if (localTheme === 'dark') {
         checkBox.checked = true;
         datePickerBox.classList.add('darkTheme');
     }
