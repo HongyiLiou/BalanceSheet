@@ -371,6 +371,10 @@ function setButtons() {
     } else if (localTheme === 'dark') {
         checkBox.checked = true;
         datePickerBox.classList.add('darkTheme');
+    } else {
+        checkBox.checked = false;
+        datePickerBox.classList.remove('darkTheme');
+
     }
 
 }
