@@ -312,7 +312,11 @@ input[type=number] {
   left: 0;
   right: 0;
   bottom: 0;
+  transition: 0.3s;
   opacity: 0.9;
+}
+.mainBackground .mainBackgroundImg.active {
+  background-image: url(https://cdn.suwalls.com/wallpapers/digital-art/little-countryside-church-26522-1920x1080.jpg);
 }
 
 .screenHolder {
@@ -528,9 +532,9 @@ input[type=number] {
   animation: beam 3s infinite;
 }
 .brightness .beams .beam1 {
-  width: 450px;
+  width: 600px;
   height: 25px;
-  transform: rotate(-48deg);
+  transform: rotate(-12deg);
   animation-delay: -0.5s;
 }
 @keyframes beam {
@@ -545,9 +549,9 @@ input[type=number] {
   }
 }
 .brightness .beams .beam2 {
-  width: 650px;
-  height: 5px;
-  transform: rotate(-72deg);
+  width: 600px;
+  height: 25px;
+  transform: rotate(-36deg);
   animation-delay: -1s;
 }
 @keyframes beam {
@@ -562,9 +566,9 @@ input[type=number] {
   }
 }
 .brightness .beams .beam3 {
-  width: 650px;
+  width: 550px;
   height: 15px;
-  transform: rotate(-48deg);
+  transform: rotate(-60deg);
   animation-delay: -1.5s;
 }
 @keyframes beam {
@@ -579,9 +583,9 @@ input[type=number] {
   }
 }
 .brightness .beams .beam4 {
-  width: 550px;
-  height: 25px;
-  transform: rotate(-72deg);
+  width: 500px;
+  height: 15px;
+  transform: rotate(-36deg);
   animation-delay: -2s;
 }
 @keyframes beam {
@@ -596,9 +600,9 @@ input[type=number] {
   }
 }
 .brightness .beams .beam5 {
-  width: 650px;
+  width: 450px;
   height: 15px;
-  transform: rotate(-36deg);
+  transform: rotate(-24deg);
   animation-delay: -2.5s;
 }
 @keyframes beam {
@@ -613,9 +617,9 @@ input[type=number] {
   }
 }
 .brightness .beams .beam6 {
-  width: 550px;
-  height: 15px;
-  transform: rotate(-60deg);
+  width: 650px;
+  height: 5px;
+  transform: rotate(-24deg);
   animation-delay: -3s;
 }
 @keyframes beam {
@@ -650,14 +654,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-270px, 120px);
+    transform: translate(-300px, 60px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-200px, 100px);
+    transform: translate(-500px, 150px);
   }
 }
 .brightness .shines .shine2 {
@@ -670,14 +674,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-210px, 150px);
+    transform: translate(-240px, 210px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-450px, 300px);
+    transform: translate(-300px, 100px);
   }
 }
 .brightness .shines .shine3 {
@@ -690,14 +694,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-120px, 180px);
+    transform: translate(-270px, 180px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-450px, 50px);
+    transform: translate(-250px, 300px);
   }
 }
 .brightness .shines .shine4 {
@@ -710,14 +714,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-240px, 30px);
+    transform: translate(-270px, 270px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-500px, 200px);
+    transform: translate(-50px, 200px);
   }
 }
 .brightness .shines .shine5 {
@@ -730,14 +734,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-300px, 30px);
+    transform: translate(-30px, 270px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-400px, 250px);
+    transform: translate(-100px, 300px);
   }
 }
 .brightness .shines .shine6 {
@@ -750,14 +754,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-180px, 240px);
+    transform: translate(-60px, 180px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-350px, 250px);
+    transform: translate(-200px, 200px);
   }
 }
 .brightness .shines .shine7 {
@@ -770,14 +774,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-270px, 90px);
+    transform: translate(-240px, 30px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-50px, 500px);
+    transform: translate(-500px, 400px);
   }
 }
 .brightness .shines .shine8 {
@@ -790,14 +794,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-120px, 180px);
+    transform: translate(-90px, 120px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-100px, 50px);
+    transform: translate(-250px, 450px);
   }
 }
 .brightness .shines .shine9 {
@@ -810,14 +814,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-180px, 150px);
+    transform: translate(-240px, 240px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-350px, 300px);
+    transform: translate(-450px, 200px);
   }
 }
 .brightness .shines .shine10 {
@@ -830,14 +834,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-30px, 240px);
+    transform: translate(-210px, 90px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-500px, 500px);
+    transform: translate(-500px, 100px);
   }
 }
 
@@ -1048,7 +1052,7 @@ input[type=number] {
   min-width: 250px;
   top: 0;
   left: 0;
-  background: linear-gradient(to right, black 5%, rgba(0, 0, 0, 0.8) 50%, transparent);
+  background: linear-gradient(to right, black 5%, rgba(0, 0, 0, 0.7) 40%, transparent);
   transition: 0.4s;
   z-index: 1;
 }
@@ -1314,7 +1318,7 @@ input[type=number] {
 }
 
 .lightTheme .sidebar {
-  background: linear-gradient(to right, white 5%, rgba(255, 255, 255, 0.8) 50%, transparent);
+  background: linear-gradient(to right, white 5%, rgba(255, 255, 255, 0.7) 40%, transparent);
 }
 .lightTheme .sidebar .topArea .photo {
   border: solid 2px #999;
