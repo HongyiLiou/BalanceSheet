@@ -209,17 +209,41 @@ function toggleSwitch_BalanceSheet() {
  * @param {object} res 
  */
 function setBalanceSheetTotal(res) {
+    const showMonthTotal = document.querySelector('.balanceSheetBox .showListArea .total .monthTotal');
+    const showYearTotal = document.querySelector('.balanceSheetBox .showListArea .total .yearTotal');
     const showTotal = document.querySelector('.balanceSheetBox .showListArea .total p');
     const totalAmount = res.TotalAmount;
+    const monthTotal = res.MonthTotal;
+    const yearTotal = res.YearTotal;
+
+    // 日合計
     if (!totalAmount) {
         showTotal.innerHTML = '';
-        return;
     }
-
     if (totalAmount < 0) {
         showTotal.innerHTML = `合計： -$${ totalAmount * -1 }`;
     } else {
         showTotal.innerHTML = `合計： $${ totalAmount }`;
+    }
+
+    // 月合計
+    if (!monthTotal) {
+        showMonthTotal.innerHTML = '月合計： -';
+    }
+    if (monthTotal < 0) {
+        showMonthTotal.innerHTML = `月合計： -$${ monthTotal * -1 }`;
+    } else {
+        showMonthTotal.innerHTML = `月合計： $${ monthTotal }`;
+    }
+
+    // 年合計
+    if (!yearTotal) {
+        showYearTotal.innerHTML = '年合計： -';
+    }
+    if (yearTotal < 0) {
+        showYearTotal.innerHTML = `年合計： -$${ yearTotal * -1 }`;
+    } else {
+        showYearTotal.innerHTML = `年合計： $${ yearTotal }`;
     }
 }
 
