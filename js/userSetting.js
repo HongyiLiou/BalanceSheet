@@ -114,11 +114,11 @@ function changeBackground() {
 
     if (userSetting) {
         const userBackground = userSetting.background;
-        mainBackground.style.backgroundImage = `url("./images/${userBackground}Bg.jpg")`;
+        mainBackground.style.backgroundImage = `url("../images/${userBackground}Bg.jpg")`;
     } else if (localBackground) {
-        mainBackground.style.backgroundImage = `url("./images/${localBackground}Bg.jpg")`;
+        mainBackground.style.backgroundImage = `url("../images/${localBackground}Bg.jpg")`;
     } else {
-        mainBackground.style.backgroundImage = `url("./images/defaultBg.jpg")`;
+        mainBackground.style.backgroundImage = `url("../images/defaultBg.jpg")`;
     }
 
 
@@ -132,7 +132,7 @@ function changeBackground() {
 
     backgroundList.forEach(background => {
         const li = document.createElement('li');
-        li.style.background = `url('../images/${background.name}Bg.jpg') center center no-repeat`;
+        li.style.background = `url('./images/${background.name}Bg.jpg') center center no-repeat`;
         li.style.backgroundSize = 'cover';
         settingBglist.appendChild(li);
 
