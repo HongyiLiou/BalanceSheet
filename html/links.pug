@@ -1,0 +1,33 @@
+article.linksPageBox
+    section.showLinksType
+        label(for="showLinksType_home")
+            input(type="radio" id="showLinksType_home" name="showLinksType" value="home")
+            .selectedHolder
+            p 僅首頁
+
+        label(for="showLinksType_bottom")
+            input(type="radio" id="showLinksType_bottom" name="showLinksType" value="bottom")
+            .selectedHolder
+            p 首頁及底端
+        
+        label(for="showLinksType_left")
+            input(type="radio" id="showLinksType_left" name="showLinksType" value="left")
+            .selectedHolder
+            p 首頁及右測 (手機板無效)
+
+    ul.links
+        li(title="Youtube")
+            a(href="" target="_blank")
+                button.delete
+                .logo
+                p Youtube
+        li(title="臉書")
+            a(href="" target="_blank")
+                button.delete
+                .logo
+                p 臉書
+        li(title="Gmail")
+            a(href="" target="_blank")
+                button.delete
+                .logo
+                p Gmail

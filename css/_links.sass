@@ -1,0 +1,65 @@
+.linksPageBox
+    position: relative
+    .showLinksType
+        position: relative
+        display: flex
+        width: fit-content
+        margin-top: 200px
+        padding: 5px 10px
+        flex-wrap: nowrap
+        align-items: center
+        border-radius: 100px
+        background: rgba(#000, 0.6)
+        
+        label
+            display: flex
+            align-items: center
+            cursor: pointer
+
+            &:not(:first-child)
+                margin-left: 20px
+
+            input
+                display: none
+
+                &:checked
+                    ~.selectedHolder
+                        &::before
+                            display: block
+                            
+            .selectedHolder
+                position: relative
+                +size(20px, 20px)
+                background: #5a5a5a
+                border-radius: 50%
+
+                &::before
+                    display: none
+                    content: "\f00c"
+                    position: absolute
+                    +size(100%, 100%)
+                    top: 0
+                    left: 0
+                    font-family: FontAwesome
+                    color: #000
+                    text-align: center
+                    line-height: 20px
+                    background: #FFF
+                    box-shadow: 0 0 10px #FFF
+                    border-radius: 50%
+                    transition: 0.3s
+                    transform-origin: center center
+                    animation: remember 0.3s forwards
+
+                    +keyframes(remember)
+                        0%
+                            opacity: 0
+                            transform: scale(0.8)
+                        60%
+                            transform: scale(1.2)
+                        100%
+                            opacity: 1
+                            transform: scale(1)
+            
+            p
+                color: #FFF

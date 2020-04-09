@@ -58,6 +58,14 @@ function loadPages() {
         }, 0);
     });
 
+    // Links Page
+    $('#linksPage').load('html/links.html', function() {
+        const sc = document.createElement('script');
+        sc.src = 'js/links.js';
+        $('body').append(sc);
+        
+    });
+
     // User Setting Page
     $('#userSettingPage').load('html/userSetting.html', function() {
         const sc = document.createElement('script');

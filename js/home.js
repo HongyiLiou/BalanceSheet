@@ -5,6 +5,7 @@ const sidebarList = [
     { name: '登入', id: 'loginPage', class: 'login', selected: true },
     { name: '首頁', id: 'homePage', class: 'home', selected: false },
     { name: '收支表', id: 'balanceSheetPage', class: 'balanceSheet', selected: false },
+    { name: '快速連結', id: 'linksPage', class: 'links', selected: false },
     { name: '登出', id: 'loginPage', class: 'logOut', selected: false },
 ]
 
