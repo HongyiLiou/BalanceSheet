@@ -66,6 +66,7 @@ function loadPages() {
         
         setTimeout(() => {
             toggleSwitch_userSetting_themes();
+            changeBackground();
         }, 0);
     });
 

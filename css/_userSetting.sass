@@ -36,9 +36,15 @@
             .settingProject
                 padding-left: 20px
 
+                &:not(:first-child)
+                    margin-top: 50px
+
                 h4
+                    width: 300px
+                    padding: 2px 8px
                     color: #FFF
-                    font-size: 150%
+                    background: linear-gradient(45deg, rgba(#000, 0.7), transparent 70%)
+                    font-size: 120%
                     font-weight: 500
                     margin-bottom: 20px
                     text-shadow: 0 0 5px #000
@@ -104,6 +110,22 @@
                             background: #bdbdbd
                             border-radius: 50%
                             transition: 0.4s
+
+
+                .backgroundList
+                    width: 80%
+                    display: flex
+                    flex-wrap: wrap
+                    li
+                        +size(320px, 180px)
+                        margin: 0 10px 10px 0
+                        background: rgba(#000, 0.5)
+                        background: url('../images/defaultBg.jpg') center center no-repeat
+                        background-size: cover
+                        border: double 5px #1d1d1d
+                        cursor: pointer
+                        transition: 0.3s
+
 
 
 

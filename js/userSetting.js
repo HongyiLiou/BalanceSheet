@@ -83,14 +83,17 @@ function toggleSwitch_userSetting_themes() {
     });
 
 
-    const userTheme = JSON.parse(localStorage.getItem('userSetting')).Theme;
+    const userSetting = JSON.parse(localStorage.getItem('userSetting'));
     const localTheme = localStorage.getItem('userSettingTheme');
 
 
-    if (userTheme === 'light') {        
-        root.style.setProperty('--colorMain', '#FFFFFF');
-        checkBox.checked = false;
-        webApp.classList.add('lightTheme');
+    if (userSetting !== null) { 
+        const userTheme = userSetting.Theme;
+        if (userTheme === 'light') {
+            root.style.setProperty('--colorMain', '#FFFFFF');
+            checkBox.checked = false;
+            webApp.classList.add('lightTheme');
+        }
     } else if (localTheme === 'light') {
         root.style.setProperty('--colorMain', '#FFFFFF');
         checkBox.checked = false;
@@ -99,4 +102,52 @@ function toggleSwitch_userSetting_themes() {
         root.style.setProperty('--colorMain', '#111111');
         checkBox.checked = true;
     }
+}
+
+
+/** 背景設定 */
+function changeBackground() {
+    /** 背景 */const mainBackground = document.querySelector('.mainBackground .mainBackgroundImg');
+    const userSetting = JSON.parse(localStorage.getItem('userSetting'));
+    const localBackground = localStorage.getItem('userSettingBackground');
+    const settingBglist = document.querySelector('.userSettingPageBox .settingProject .backgroundList');
+
+    if (userSetting) {
+        const userBackground = userSetting.background;
+        mainBackground.style.backgroundImage = `url("../images/${userBackground}Bg.jpg")`;
+    } else {
+        mainBackground.style.backgroundImage = `url("../images/${localBackground}Bg.jpg")`;
+    }
+
+
+    // 載入所有背景圖片
+    const backgroundList = [
+        { name: 'default' },    // 預設
+        { name: 'AegeanSea' },  // 愛琴海
+        { name: 'Deer' },       // 夜鹿
+        { name: 'NightLake' },  // 夜湖
+    ]
+
+    backgroundList.forEach(background => {
+        const li = document.createElement('li');
+        li.style.background = `url('../images/${background.name}Bg.jpg') center center no-repeat`;
+        li.style.backgroundSize = 'cover';
+        settingBglist.appendChild(li);
+
+        li.addEventListener('click', () => {
+            mainBackground.style.backgroundImage = `url("../images/${background.name}Bg.jpg")`;
+            localStorage.setItem('userSettingBackground', background.name);
+            const accountNumber = JSON.parse(localStorage.getItem('login')).AccountNumber;
+            const parameter = {
+                accountNumber: accountNumber,
+                url: userSetting.userSettingUrl,
+                name: userSetting.userSettingName,
+                functionType: 'post',
+                dataType: 14, // background
+                data: background.name,
+            }
+            $.get('https://script.google.com/macros/s/AKfycbwKNaOjxPaTafWlrLMB4q9zt0RkAHKc2m9D0StpmXsWqsJvYXy1/exec', parameter)
+        });
+    });
+    
 }
