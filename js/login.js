@@ -106,6 +106,7 @@ function onLoginBtn(accountNumber, password) {
             } else {
                 const jsonString = JSON.stringify(res);
                 localStorage.setItem('userSetting', jsonString);
+
                 afterLogin();
             }
             
@@ -149,6 +150,13 @@ function onLoginBtn(accountNumber, password) {
                 // 登入資訊用於暫存
                 const login = JSON.stringify({ AccountNumber: acn.value, Password: psw.value });
                 localStorage.setItem('login', login);
+
+                // 歡迎回來
+                const userName = JSON.parse(localStorage.getItem('userSetting')).UserName;
+                const popupObj = {
+                    text: `歡迎回來，${userName}！`,
+                }
+                showPopupBox(popupObj);
          
                 afterLogin();
             }
