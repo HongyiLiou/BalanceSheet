@@ -114,11 +114,11 @@ function changeBackground() {
 
     if (userSetting) {
         const userBackground = userSetting.background;
-        mainBackground.style.backgroundImage = `url("../images/${userBackground}Bg.jpg")`;
+        mainBackground.style.backgroundImage = `url("./images/${userBackground}Bg.jpg")`;
     } else if (localBackground) {
-        mainBackground.style.backgroundImage = `url("../images/${localBackground}Bg.jpg")`;
+        mainBackground.style.backgroundImage = `url("./images/${localBackground}Bg.jpg")`;
     } else {
-        mainBackground.style.backgroundImage = `url("../images/defaultBg.jpg")`;
+        mainBackground.style.backgroundImage = `url("./images/defaultBg.jpg")`;
     }
 
 
@@ -137,7 +137,7 @@ function changeBackground() {
         settingBglist.appendChild(li);
 
         li.addEventListener('click', () => {
-            mainBackground.style.backgroundImage = `url("../images/${background.name}Bg.jpg")`;
+            mainBackground.style.backgroundImage = `url("./images/${background.name}Bg.jpg")`;
             localStorage.setItem('userSettingBackground', background.name);
             const accountNumber = JSON.parse(localStorage.getItem('login')).AccountNumber;
             const parameter = {
