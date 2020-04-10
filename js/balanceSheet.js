@@ -306,7 +306,9 @@ function setBalanceSheetDetail(res) {
 
         const li = document.createElement('li');
         li.innerHTML = `
-            <p class="item">${ item }</p>
+            <p class="item" title="[${ detailAmounts[i] < 0 ? '支出' : '收入' }] ${ item } ${ detailAmounts[i] < 0 ? `-$${ detailAmounts[i] * -1 }` : `$${ detailAmounts[i] }` }">
+                ${ item }
+            </p>
             <p class="type">${ detailAmounts[i] < 0 ? '支出' : '收入' }</p>
             <p class="amount">${ detailAmounts[i] < 0 ? `-$${ detailAmounts[i] * -1 }` : `$${ detailAmounts[i] }` }</p>`;
     
