@@ -537,9 +537,9 @@ input[type=number] {
   animation: beam 3s infinite;
 }
 .brightness .beams .beam1 {
-  width: 500px;
+  width: 600px;
   height: 30px;
-  transform: rotate(-60deg);
+  transform: rotate(-72deg);
   animation-delay: -0.5s;
 }
 @keyframes beam {
@@ -554,9 +554,9 @@ input[type=number] {
   }
 }
 .brightness .beams .beam2 {
-  width: 550px;
+  width: 650px;
   height: 25px;
-  transform: rotate(-60deg);
+  transform: rotate(-36deg);
   animation-delay: -1s;
 }
 @keyframes beam {
@@ -571,9 +571,9 @@ input[type=number] {
   }
 }
 .brightness .beams .beam3 {
-  width: 650px;
-  height: 30px;
-  transform: rotate(-72deg);
+  width: 700px;
+  height: 15px;
+  transform: rotate(-60deg);
   animation-delay: -1.5s;
 }
 @keyframes beam {
@@ -588,9 +588,9 @@ input[type=number] {
   }
 }
 .brightness .beams .beam4 {
-  width: 500px;
-  height: 30px;
-  transform: rotate(-36deg);
+  width: 600px;
+  height: 5px;
+  transform: rotate(-48deg);
   animation-delay: -2s;
 }
 @keyframes beam {
@@ -605,8 +605,8 @@ input[type=number] {
   }
 }
 .brightness .beams .beam5 {
-  width: 450px;
-  height: 5px;
+  width: 700px;
+  height: 20px;
   transform: rotate(-24deg);
   animation-delay: -2.5s;
 }
@@ -622,8 +622,8 @@ input[type=number] {
   }
 }
 .brightness .beams .beam6 {
-  width: 600px;
-  height: 30px;
+  width: 500px;
+  height: 5px;
   transform: rotate(-60deg);
   animation-delay: -3s;
 }
@@ -659,14 +659,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-180px, 60px);
+    transform: translate(-270px, 180px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-200px, 150px);
+    transform: translate(-150px, 250px);
   }
 }
 .brightness .shines .shine2 {
@@ -679,14 +679,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-30px, 240px);
+    transform: translate(-30px, 30px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-100px, 250px);
+    transform: translate(-100px, 100px);
   }
 }
 .brightness .shines .shine3 {
@@ -706,7 +706,7 @@ input[type=number] {
   }
   100% {
     opacity: 0;
-    transform: translate(-250px, 450px);
+    transform: translate(-150px, 400px);
   }
 }
 .brightness .shines .shine4 {
@@ -719,14 +719,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-120px, 270px);
+    transform: translate(-270px, 30px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-500px, 350px);
+    transform: translate(-450px, 450px);
   }
 }
 .brightness .shines .shine5 {
@@ -739,14 +739,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-90px, 120px);
+    transform: translate(-240px, 60px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-250px, 250px);
+    transform: translate(-100px, 250px);
   }
 }
 .brightness .shines .shine6 {
@@ -759,14 +759,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-60px, 120px);
+    transform: translate(-300px, 300px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-150px, 50px);
+    transform: translate(-350px, 200px);
   }
 }
 .brightness .shines .shine7 {
@@ -779,14 +779,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-150px, 60px);
+    transform: translate(-150px, 120px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-250px, 150px);
+    transform: translate(-200px, 300px);
   }
 }
 .brightness .shines .shine8 {
@@ -799,14 +799,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-60px, 240px);
+    transform: translate(-210px, 150px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-150px, 500px);
+    transform: translate(-200px, 450px);
   }
 }
 .brightness .shines .shine9 {
@@ -819,14 +819,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-240px, 90px);
+    transform: translate(-300px, 180px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-150px, 500px);
+    transform: translate(-450px, 50px);
   }
 }
 .brightness .shines .shine10 {
@@ -839,14 +839,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-90px, 120px);
+    transform: translate(-60px, 120px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-400px, 300px);
+    transform: translate(-200px, 200px);
   }
 }
 
@@ -1780,7 +1780,7 @@ input[type=number] {
   cursor: pointer;
 }
 .linksPageBox .showLinksType label:not(:first-child) {
-  margin-left: 20px;
+  margin-left: 25px;
 }
 .linksPageBox .showLinksType label input {
   display: none;
@@ -1794,7 +1794,7 @@ input[type=number] {
   height: 20px;
   background: #5a5a5a;
   border-radius: 50%;
-  margin-right: 10px;
+  margin-right: 8px;
 }
 .linksPageBox .showLinksType label .selectedHolder::before {
   display: none;
@@ -1831,6 +1831,125 @@ input[type=number] {
 .linksPageBox .showLinksType label p {
   color: #FFF;
   vertical-align: top;
+}
+.linksPageBox .links {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  width: 80%;
+  min-height: calc(100vh - 350px);
+  margin-top: 20px;
+  overflow: auto;
+}
+.linksPageBox .links::-webkit-scrollbar {
+  display: none;
+}
+.linksPageBox .links li {
+  width: 120px;
+  height: 140px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 8px;
+  margin: 0 20px 20px 0;
+}
+.linksPageBox .links li a {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+}
+.linksPageBox .links li a .delete {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  right: 7px;
+  top: 0;
+  font-size: 110%;
+  text-align: center;
+  line-height: 25px;
+  color: rgba(255, 255, 255, 0.3);
+  background: transparent;
+  border-radius: 50%;
+  border: none;
+  transition: 0.3s;
+  outline: none;
+  cursor: pointer;
+}
+.linksPageBox .links li a .delete:hover {
+  color: rgba(255, 255, 255, 0.9);
+}
+.linksPageBox .links li a .logo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: solid 1px #ffffff;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+  color: #FFF;
+  text-align: center;
+  font-size: 180%;
+  font-weight: 700;
+  line-height: 60px;
+  background-color: #181818;
+  background-size: 1300%;
+}
+.linksPageBox .links li a .logo.facebook {
+  background-image: url("../images/linksLogo.png");
+  background-position-x: 0%;
+}
+.linksPageBox .links li a .logo.instagram {
+  background-image: url("../images/linksLogo.png");
+  background-position-x: 8.3333333333%;
+}
+.linksPageBox .links li a .logo.youtube {
+  background-image: url("../images/linksLogo.png");
+  background-position-x: 16.6666666667%;
+}
+.linksPageBox .links li a .logo.netflix {
+  background-image: url("../images/linksLogo.png");
+  background-position-x: 25%;
+}
+.linksPageBox .links li a .logo.google {
+  background-image: url("../images/linksLogo.png");
+  background-position-x: 33.3333333333%;
+}
+.linksPageBox .links li a .logo.gmail {
+  background-image: url("../images/linksLogo.png");
+  background-position-x: 41.6666666667%;
+}
+.linksPageBox .links li a .logo.translate {
+  background-image: url("../images/linksLogo.png");
+  background-position-x: 50%;
+}
+.linksPageBox .links li a .logo.googleMap {
+  background-image: url("../images/linksLogo.png");
+  background-position-x: 58.3333333333%;
+}
+.linksPageBox .links li a .logo.codepen {
+  background-image: url("../images/linksLogo.png");
+  background-position-x: 66.6666666667%;
+}
+.linksPageBox .links li a .logo.github {
+  background-image: url("../images/linksLogo.png");
+  background-position-x: 75%;
+}
+.linksPageBox .links li a .logo.googleDrive {
+  background-image: url("../images/linksLogo.png");
+  background-position-x: 83.3333333333%;
+}
+.linksPageBox .links li a .logo.pinterest {
+  background-image: url("../images/linksLogo.png");
+  background-position-x: 91.6666666667%;
+}
+.linksPageBox .links li a .logo.railway {
+  background-image: url("../images/linksLogo.png");
+  background-position-x: 100%;
+}
+.linksPageBox .links li a p {
+  margin-top: 15px;
+  color: #FFF;
 }
 
 .userSettingPageBox {
