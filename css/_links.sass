@@ -101,12 +101,9 @@
                 .delete
                     position: absolute
                     +size(20px, 20px)
-                    right: 7px
-                    top: 0
-                    font-size: 110%
+                    right: 2px
+                    top: 2px
                     text-align: center
-                    line-height: 25px
-                    color: rgba(#FFF, 0.3)
                     background: transparent
                     border-radius: 50%
                     border: none
@@ -116,6 +113,14 @@
 
                     &:hover
                         color: rgba(#FFF, 0.9)
+
+                    &::before
+                        content: '✖'
+                        display: block
+                        +ab_center
+                        +size(100%, 100%)
+                        font-size: 110%
+                        color: rgba(#FFF, 0.3)
 
 
                 //   background-position-x: #{100% / (length($logo) - 1) * ($i - 1)};
