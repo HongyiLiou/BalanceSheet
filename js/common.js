@@ -274,4 +274,12 @@ function showPopupBox(popupSettingObj) {
 
 }
 
+
+/** 位數不足前方補0， ex: prefixInteger(100, 6) // 100 -> 000100 */
+function prefixInteger(num, length) {
+    return (Array(length).join('0') + num).slice(-length);
+}
+
+
+
 // showPopupBox({text: '早安您好', enterClick: () => {alert('測試成功')}, showCancel: true})
