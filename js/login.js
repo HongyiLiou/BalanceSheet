@@ -21,7 +21,7 @@ function initialLoginPage() {
 
 
 /**
- * 設定 Login Input 標題
+ * 設定 Login Input 標題 css
  * @param {Boolean} check 是否檢查欄位值
  * @param {Number} index
  */
@@ -175,12 +175,50 @@ function onLoginBtn(accountNumber, password) {
 
 /** 登入後要做的事 */
 function afterLogin() {
-    const sidebarHomeBtn = document.querySelector('.sidebar .sidebarContent ul li .home');
+    /** css root */const root = document.documentElement;
+    /** 主題開關 checkbox */const checkBox = document.querySelector('.userSettingPageBox .toggleSwitch input');
+    /** 外層 BOX */const webApp = document.querySelector('body');
+    /** 背景 */const mainBackground = document.querySelector('.mainBackground .mainBackgroundImg');
     const userName = document.querySelector('.sidebar .topArea .name');
     const userSetting = JSON.parse(localStorage.getItem('userSetting'));
     userName.value = userSetting.UserName;
     setSidebarBtnHidden(false);
 
+    // 設定主題
+    const localTheme = localStorage.getItem('userSettingTheme');
+    if (userSetting !== null) { 
+        const userTheme = userSetting.Theme;
+        if (userTheme === 'light') {
+            localStorage.setItem('userSettingTheme', 'light');
+            root.style.setProperty('--colorMain', '#FFFFFF');
+            checkBox.checked = false;
+            webApp.classList.add('lightTheme');
+        } else {
+            localStorage.removeItem('userSettingTheme');
+        }
+    } else if (localTheme === 'light') {
+        root.style.setProperty('--colorMain', '#FFFFFF');
+        checkBox.checked = false;
+        webApp.classList.add('lightTheme');
+    } else {
+        root.style.setProperty('--colorMain', '#111111');
+            localStorage.setItem('userSettingTheme', 'light');
+        checkBox.checked = true;
+    }
+
+    // 設定背景
+    if (userSetting) {
+        const userBackground = userSetting.background;
+        mainBackground.style.backgroundImage = `url("./images/${userBackground}Bg.jpg")`;
+        localStorage.setItem('userSettingBackground', userBackground);
+    } else if (localBackground) {
+        mainBackground.style.backgroundImage = `url("./images/${localBackground}Bg.jpg")`;
+    } else {
+        mainBackground.style.backgroundImage = `url("./images/defaultBg.jpg")`;
+    }
+
+    // 預設首頁
+    const sidebarHomeBtn = document.querySelector('.sidebar .sidebarContent ul li .home');
     sidebarHomeBtn.click();
 }
 
