@@ -284,7 +284,7 @@ input[type=number] {
   background: #FFF;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 1000px) {
   .loginPageBox .userArea {
     position: absolute;
     left: 50%;
@@ -540,9 +540,9 @@ input[type=number] {
   animation: beam 3s infinite;
 }
 .brightness .beams .beam1 {
-  width: 600px;
+  width: 500px;
   height: 30px;
-  transform: rotate(-36deg);
+  transform: rotate(-72deg);
   animation-delay: -0.5s;
 }
 @keyframes beam {
@@ -557,9 +557,9 @@ input[type=number] {
   }
 }
 .brightness .beams .beam2 {
-  width: 650px;
-  height: 20px;
-  transform: rotate(-72deg);
+  width: 550px;
+  height: 5px;
+  transform: rotate(-24deg);
   animation-delay: -1s;
 }
 @keyframes beam {
@@ -574,9 +574,9 @@ input[type=number] {
   }
 }
 .brightness .beams .beam3 {
-  width: 700px;
-  height: 20px;
-  transform: rotate(-12deg);
+  width: 550px;
+  height: 30px;
+  transform: rotate(-24deg);
   animation-delay: -1.5s;
 }
 @keyframes beam {
@@ -591,9 +591,9 @@ input[type=number] {
   }
 }
 .brightness .beams .beam4 {
-  width: 550px;
-  height: 5px;
-  transform: rotate(-60deg);
+  width: 450px;
+  height: 15px;
+  transform: rotate(-72deg);
   animation-delay: -2s;
 }
 @keyframes beam {
@@ -608,9 +608,9 @@ input[type=number] {
   }
 }
 .brightness .beams .beam5 {
-  width: 550px;
-  height: 5px;
-  transform: rotate(-24deg);
+  width: 650px;
+  height: 15px;
+  transform: rotate(-12deg);
   animation-delay: -2.5s;
 }
 @keyframes beam {
@@ -625,9 +625,9 @@ input[type=number] {
   }
 }
 .brightness .beams .beam6 {
-  width: 550px;
-  height: 30px;
-  transform: rotate(-48deg);
+  width: 650px;
+  height: 5px;
+  transform: rotate(-72deg);
   animation-delay: -3s;
 }
 @keyframes beam {
@@ -662,14 +662,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-180px, 30px);
+    transform: translate(-120px, 90px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-50px, 200px);
+    transform: translate(-350px, 100px);
   }
 }
 .brightness .shines .shine2 {
@@ -682,14 +682,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-60px, 150px);
+    transform: translate(-180px, 210px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-400px, 300px);
+    transform: translate(-200px, 200px);
   }
 }
 .brightness .shines .shine3 {
@@ -702,14 +702,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-300px, 90px);
+    transform: translate(-300px, 180px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-250px, 300px);
+    transform: translate(-250px, 500px);
   }
 }
 .brightness .shines .shine4 {
@@ -722,14 +722,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-150px, 150px);
+    transform: translate(-300px, 30px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-50px, 50px);
+    transform: translate(-250px, 500px);
   }
 }
 .brightness .shines .shine5 {
@@ -742,14 +742,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-120px, 240px);
+    transform: translate(-90px, 270px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-250px, 250px);
+    transform: translate(-400px, 50px);
   }
 }
 .brightness .shines .shine6 {
@@ -762,14 +762,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-120px, 210px);
+    transform: translate(-180px, 300px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-400px, 200px);
+    transform: translate(-100px, 250px);
   }
 }
 .brightness .shines .shine7 {
@@ -782,14 +782,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-240px, 30px);
+    transform: translate(-210px, 150px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-450px, 100px);
+    transform: translate(-300px, 250px);
   }
 }
 .brightness .shines .shine8 {
@@ -802,14 +802,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-270px, 300px);
+    transform: translate(-60px, 300px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-200px, 400px);
+    transform: translate(-100px, 100px);
   }
 }
 .brightness .shines .shine9 {
@@ -822,14 +822,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-60px, 180px);
+    transform: translate(-240px, 150px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-150px, 150px);
+    transform: translate(-500px, 50px);
   }
 }
 .brightness .shines .shine10 {
@@ -842,14 +842,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-30px, 60px);
+    transform: translate(-120px, 300px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-350px, 250px);
+    transform: translate(-50px, 50px);
   }
 }
 
@@ -1005,7 +1005,7 @@ input[type=number] {
     font-size: 90%;
   }
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 1000px) {
   .loading .loadingCircle {
     width: 100px;
     height: 100px;
@@ -1137,7 +1137,7 @@ input[type=number] {
   border: none;
   color: #FFF;
   font-size: 150%;
-  text-shadow: 0px 1px 0px #b2a98f, 0px 7px 10px rgba(0, 0, 0, 0.4), 0px 12px 2px rgba(0, 0, 0, 0.3), 0px 17px 30px rgba(0, 0, 0, 0.3);
+  text-shadow: 0px 1px 0px #b2a98f, 0px 2px 10px rgba(0, 0, 0, 0.4), 0px 3px 2px rgba(0, 0, 0, 0.3), 0px 4px 10px rgba(0, 0, 0, 0.3);
   outline: none;
   cursor: pointer;
   transform: translateY(5px);
@@ -1685,7 +1685,7 @@ input[type=number] {
     height: calc(100vh - 180px);
   }
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 1000px) {
   .balanceSheetBox {
     transform: initial;
   }
@@ -1849,22 +1849,34 @@ input[type=number] {
   display: none;
 }
 .linksPageBox .links li {
+  position: relative;
   width: 120px;
   height: 140px;
   background: rgba(0, 0, 0, 0.6);
   border-radius: 8px;
   margin: 0 20px 20px 0;
+  transition: 0.3s;
+  cursor: pointer;
 }
-.linksPageBox .links li a {
-  width: 100%;
-  height: 100%;
-  position: relative;
+.linksPageBox .links li:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+.linksPageBox .links li.addLinkBtn {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  padding-top: 20px;
 }
-.linksPageBox .links li a .delete {
+.linksPageBox .links li.addLinkBtn span {
+  width: 50px;
+  height: 50px;
+  display: block;
+  text-align: center;
+  font-size: 400%;
+  line-height: 40px;
+  color: #FFF;
+  font-weight: 100;
+}
+.linksPageBox .links li .delete {
   position: absolute;
   width: 20px;
   height: 20px;
@@ -1878,10 +1890,10 @@ input[type=number] {
   outline: none;
   cursor: pointer;
 }
-.linksPageBox .links li a .delete:hover::before {
+.linksPageBox .links li .delete:hover::before {
   color: rgba(255, 255, 255, 0.9);
 }
-.linksPageBox .links li a .delete::before {
+.linksPageBox .links li .delete::before {
   content: "✖";
   display: block;
   position: absolute;
@@ -1892,6 +1904,15 @@ input[type=number] {
   height: 100%;
   font-size: 110%;
   color: rgba(255, 255, 255, 0.3);
+  transition: 0.3s;
+}
+.linksPageBox .links li a {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
 }
 .linksPageBox .links li a .logo {
   width: 60px;
@@ -1906,50 +1927,63 @@ input[type=number] {
   line-height: 60px;
   background-color: #181818;
   background-size: 1300%;
-  background-image: url("../images/linksLogo.png");
 }
 .linksPageBox .links li a .logo.facebook {
+  background-image: url("../images/linksLogo.png");
   background-position-x: 0%;
 }
 .linksPageBox .links li a .logo.instagram {
+  background-image: url("../images/linksLogo.png");
   background-position-x: 8.3333333333%;
 }
 .linksPageBox .links li a .logo.youtube {
+  background-image: url("../images/linksLogo.png");
   background-position-x: 16.6666666667%;
 }
 .linksPageBox .links li a .logo.netflix {
+  background-image: url("../images/linksLogo.png");
   background-position-x: 25%;
 }
 .linksPageBox .links li a .logo.google {
+  background-image: url("../images/linksLogo.png");
   background-position-x: 33.3333333333%;
 }
 .linksPageBox .links li a .logo.gmail {
+  background-image: url("../images/linksLogo.png");
   background-position-x: 41.6666666667%;
 }
 .linksPageBox .links li a .logo.translate {
+  background-image: url("../images/linksLogo.png");
   background-position-x: 50%;
 }
 .linksPageBox .links li a .logo.googleMap {
+  background-image: url("../images/linksLogo.png");
   background-position-x: 58.3333333333%;
 }
 .linksPageBox .links li a .logo.codepen {
+  background-image: url("../images/linksLogo.png");
   background-position-x: 66.6666666667%;
 }
 .linksPageBox .links li a .logo.github {
+  background-image: url("../images/linksLogo.png");
   background-position-x: 75%;
 }
 .linksPageBox .links li a .logo.googleDrive {
+  background-image: url("../images/linksLogo.png");
   background-position-x: 83.3333333333%;
 }
 .linksPageBox .links li a .logo.pinterest {
+  background-image: url("../images/linksLogo.png");
   background-position-x: 91.6666666667%;
 }
 .linksPageBox .links li a .logo.railway {
+  background-image: url("../images/linksLogo.png");
   background-position-x: 100%;
 }
 .linksPageBox .links li a p {
-  margin-top: 15px;
+  margin-top: 10px;
   color: #FFF;
+  text-align: center;
 }
 
 .lightTheme .linksPageBox .showLinksType {
@@ -1969,12 +2003,22 @@ input[type=number] {
 .lightTheme .linksPageBox .links li {
   background: rgba(255, 255, 255, 0.6);
 }
-.lightTheme .linksPageBox .links li a .delete::before {
+.lightTheme .linksPageBox .links li:hover {
+  background: rgba(255, 255, 255, 0.8);
+}
+.lightTheme .linksPageBox .links li.addLinkBtn span {
+  color: #4e4e4e;
+}
+.lightTheme .linksPageBox .links li .delete::before {
   color: rgba(0, 0, 0, 0.3);
+}
+.lightTheme .linksPageBox .links li .delete:hover::before {
+  color: rgba(0, 0, 0, 0.8);
 }
 .lightTheme .linksPageBox .links li a .logo {
   box-shadow: 0 0 10px rgba(78, 78, 78, 0.7);
   color: #4e4e4e;
+  background-color: #d6d6d6;
 }
 .lightTheme .linksPageBox .links li a p {
   color: #303030;
@@ -1992,7 +2036,7 @@ input[type=number] {
     max-height: calc(100vh - 100px);
   }
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 1000px) {
   .linksPageBox {
     transform: initial;
   }
@@ -2000,7 +2044,8 @@ input[type=number] {
     display: none;
   }
   .linksPageBox .links {
-    width: 100%;
+    width: 330px;
+    margin: auto;
     margin-top: 100px;
     max-height: calc(100vh - 100px);
   }
@@ -2012,6 +2057,7 @@ input[type=number] {
   .linksPageBox .links li a .logo {
     width: 50px;
     height: 50px;
+    line-height: 50px;
   }
   .linksPageBox .links li a p {
     font-size: 85%;
@@ -2212,7 +2258,7 @@ input[type=number] {
     width: 100%;
   }
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 1000px) {
   .userSettingPageBox {
     transform: initial;
     width: 100%;
@@ -2629,7 +2675,7 @@ input[type=number] {
     font-size: 180%;
   }
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 1000px) {
   .sidebar {
     width: 80%;
     pointer-events: none;
@@ -3098,7 +3144,7 @@ input[type=number] {
     transform: scale(0.8);
   }
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 1000px) {
   .datePickerBox {
     width: 340px;
     height: 570px;

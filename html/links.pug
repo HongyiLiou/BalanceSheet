@@ -1,7 +1,7 @@
 article.linksPageBox
     section.showLinksType
         label(for="showLinksType_home")
-            input(type="radio" id="showLinksType_home" name="showLinksType" value="home")
+            input(type="radio" id="showLinksType_home" name="showLinksType" value="home" checked)
             .selectedHolder
             p 僅首頁
 
@@ -22,27 +22,29 @@ article.linksPageBox
 
     ul.links
         li
+            button.delete
             a(href="" target="_blank")
-                button.delete
                 .logo.youtube(title="Youtube")
-                p Youtube
+                p YouTube
         li
+            button.delete
             a(href="" target="_blank")
-                button.delete
                 .logo.facebook(title="臉書")
                 p 臉書
         li
+            button.delete
             a(href="" target="_blank")
-                button.delete
                 .logo.gmail(title="Gmail")
                 p Gmail
         li
-            a(href="" target="_blank")
-                button.delete
-                .logo.gmail(title="Gmail")
-                p Gmail
+            button.delete
+            a(href="https://drive.google.com/drive/my-drive" target="_blank")
+                .logo.googleDrive(title="Google Drive")
+                p Google Drive
         li
+            button.delete
             a(href="" target="_blank")
-                button.delete
-                .logo.gmail(title="Gmail")
+                .logo(title="Gmail") G
                 p Gmail
+        li.addLinkBtn
+            span +

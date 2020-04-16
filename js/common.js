@@ -1,5 +1,6 @@
 // Common.js
 
+
 /** 取得今日日期時間 Obj */
 function getToday() {
     const time = new Date();
