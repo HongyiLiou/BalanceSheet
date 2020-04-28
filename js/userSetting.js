@@ -49,6 +49,7 @@ function toggleSwitch_userSetting_themes() {
         const accountNumber = JSON.parse(localStorage.getItem('login')).AccountNumber;
 
         setTimeout(() => {
+            showLoading(true);
             if (checkBox.checked === false) {
                 root.style.setProperty('--colorMain', '#FFFFFF');
                 webApp.classList.add('lightTheme');
@@ -61,8 +62,15 @@ function toggleSwitch_userSetting_themes() {
                     dataType: 5, // Theme
                     data: 'light',
                 }
-                $.get('https://script.google.com/macros/s/AKfycbwKNaOjxPaTafWlrLMB4q9zt0RkAHKc2m9D0StpmXsWqsJvYXy1/exec', parameter)
-
+                $.get('https://script.google.com/macros/s/AKfycbwKNaOjxPaTafWlrLMB4q9zt0RkAHKc2m9D0StpmXsWqsJvYXy1/exec', parameter).done(res => {
+                    showLoading(false);
+                    if (res == 'true') {
+                        const popupObj = {
+                            text: '主題變更成功❤',
+                        }
+                        showPopupBox(popupObj);
+                    }
+                });
 
             } else {
                 root.style.setProperty('--colorMain', '#111111');
@@ -77,7 +85,15 @@ function toggleSwitch_userSetting_themes() {
                     dataType: 5, // Theme
                     data: 'dark',
                 }
-                $.get('https://script.google.com/macros/s/AKfycbwKNaOjxPaTafWlrLMB4q9zt0RkAHKc2m9D0StpmXsWqsJvYXy1/exec', parameter)
+                $.get('https://script.google.com/macros/s/AKfycbwKNaOjxPaTafWlrLMB4q9zt0RkAHKc2m9D0StpmXsWqsJvYXy1/exec', parameter).done(res => {
+                    showLoading(false);
+                    if (res == 'true') {
+                        const popupObj = {
+                            text: '主題變更成功❤',
+                        }
+                        showPopupBox(popupObj);
+                    }
+                });
             }
         }, 50);
     });
@@ -137,6 +153,7 @@ function changeBackground() {
         settingBglist.appendChild(li);
 
         li.addEventListener('click', () => {
+            showLoading(true);
             mainBackground.style.backgroundImage = `url("./images/${background.name}Bg.jpg")`;
             localStorage.setItem('userSettingBackground', background.name);
             const accountNumber = JSON.parse(localStorage.getItem('login')).AccountNumber;
@@ -148,7 +165,15 @@ function changeBackground() {
                 dataType: 14, // background
                 data: background.name,
             }
-            $.get('https://script.google.com/macros/s/AKfycbwKNaOjxPaTafWlrLMB4q9zt0RkAHKc2m9D0StpmXsWqsJvYXy1/exec', parameter)
+            $.get('https://script.google.com/macros/s/AKfycbwKNaOjxPaTafWlrLMB4q9zt0RkAHKc2m9D0StpmXsWqsJvYXy1/exec', parameter).done(res => {
+                showLoading(false);
+                if (res == 'true') {
+                    const popupObj = {
+                        text: '背景變更成功😊',
+                    }
+                    showPopupBox(popupObj);
+                }
+            });
         });
     });
     

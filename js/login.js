@@ -106,6 +106,8 @@ function onLoginBtn(accountNumber, password) {
             } else {
                 const jsonString = JSON.stringify(res);
                 localStorage.setItem('userSetting', jsonString);
+                const lastLoginTime = new Date();
+                localStorage.setItem('lastLoginTime', lastLoginTime);
 
                 afterLogin();
             }
