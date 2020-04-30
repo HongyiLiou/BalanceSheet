@@ -66,7 +66,7 @@ function toggleSwitch_userSetting_themes() {
                     showLoading(false);
                     if (res == 'true') {
                         const popupObj = {
-                            text: '主題變更成功❤',
+                            text: '主題變更成功 ❤',
                         }
                         showPopupBox(popupObj);
                     }
@@ -89,7 +89,7 @@ function toggleSwitch_userSetting_themes() {
                     showLoading(false);
                     if (res == 'true') {
                         const popupObj = {
-                            text: '主題變更成功❤',
+                            text: '主題變更成功 ❤',
                         }
                         showPopupBox(popupObj);
                     }
