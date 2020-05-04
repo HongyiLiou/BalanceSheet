@@ -63,6 +63,11 @@ function loadPages() {
         const sc = document.createElement('script');
         sc.src = 'js/links.js';
         $('body').append(sc);
+
+        setTimeout(() => {
+            inititialSidebarBtn_links();
+            getlinks();
+        }, 0)
         
     });
 

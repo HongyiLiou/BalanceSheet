@@ -202,12 +202,14 @@ function showScreenHolder(boolean, doSomething, cssClass) {
  */
 function showPopupBox(popupSettingObj) {
     const popupBox_checkMessage = document.querySelector('.popupBox_checkMessage');
-    // popupBox_checkMessage.innerHTML = '<p></p>\
-    //     <div class="buttonArea">\
-    //         <button class="cancel">Cancel</button>\
-    //         <button class="enter">OK</button>\
-    //     </div>\
-    // ';
+    popupBox_checkMessage.innerHTML = '';
+    popupBox_checkMessage.innerHTML = `
+        <p></p>
+        <div class="buttonArea">
+            <button class="cancel">Cancel</button>
+            <button class="enter">OK</button>
+        </div>
+    `;
 
     const message = document.querySelector('.popupBox_checkMessage p');
     const cancelBtn = document.querySelector('.popupBox_checkMessage .cancel');
@@ -232,7 +234,7 @@ function showPopupBox(popupSettingObj) {
     }
 
     const onClickScreenHolder = () => {
-        enterBtn.click();
+        cancelBtn.click();
     }
     
     showScreenHolder(true, onClickScreenHolder);
