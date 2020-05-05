@@ -201,8 +201,8 @@ function showScreenHolder(boolean, doSomething, cssClass) {
  * }} popupSettingObj 
  */
 function showPopupBox(popupSettingObj) {
-    const popupBox_checkMessage = document.querySelector('.popupBox_checkMessage');
-    popupBox_checkMessage.innerHTML = '';
+    const popupBox_checkMessage = document.createElement('div');
+    popupBox_checkMessage.className = 'popupBox_checkMessage';
     popupBox_checkMessage.innerHTML = `
         <p></p>
         <div class="buttonArea">
@@ -210,10 +210,11 @@ function showPopupBox(popupSettingObj) {
             <button class="enter">OK</button>
         </div>
     `;
+    document.body.appendChild(popupBox_checkMessage);
 
-    const message = document.querySelector('.popupBox_checkMessage p');
-    const cancelBtn = document.querySelector('.popupBox_checkMessage .cancel');
-    const enterBtn = document.querySelector('.popupBox_checkMessage .enter');
+    /** 彈窗訊息 */const message = document.querySelector('.popupBox_checkMessage p');
+    /** 取消按鈕 */const cancelBtn = document.querySelector('.popupBox_checkMessage .cancel');
+    /** 確認按鈕 */const enterBtn = document.querySelector('.popupBox_checkMessage .enter');
     const settingObj = popupSettingObj;
     
 
@@ -234,7 +235,12 @@ function showPopupBox(popupSettingObj) {
     }
 
     const onClickScreenHolder = () => {
-        cancelBtn.click();
+        popupBox_checkMessage.classList.add('hide');
+        setTimeout(() => {
+            popupBox_checkMessage.classList.remove('hide');
+            document.body.removeChild(popupBox_checkMessage);
+            cancelBtn.removeEventListener('click', timer);
+        }, 500);
     }
     
     showScreenHolder(true, onClickScreenHolder);
@@ -243,8 +249,8 @@ function showPopupBox(popupSettingObj) {
         popupBox_checkMessage.classList.add('hide');
         showScreenHolder(false);
         setTimeout(() => {
-            popupBox_checkMessage.style.display = 'none';
             popupBox_checkMessage.classList.remove('hide');
+            document.body.removeChild(popupBox_checkMessage);
             enterBtn.removeEventListener('click', enterTimer);
         }, 500);
     });
@@ -255,8 +261,8 @@ function showPopupBox(popupSettingObj) {
             showScreenHolder(false);
             popupBox_checkMessage.classList.add('hide');
             setTimeout(() => {
-                popupBox_checkMessage.style.display = 'none';
                 popupBox_checkMessage.classList.remove('hide');
+                document.body.removeChild(popupBox_checkMessage);
                 cancelBtn.removeEventListener('click', timer);
                 cancelBtn.removeEventListener('click', timer2);
             }, 500);
@@ -267,8 +273,8 @@ function showPopupBox(popupSettingObj) {
             showScreenHolder(false);
             popupBox_checkMessage.classList.add('hide');
             setTimeout(() => {
-                popupBox_checkMessage.style.display = 'none';
                 popupBox_checkMessage.classList.remove('hide');
+                document.body.removeChild(popupBox_checkMessage);
                 cancelBtn.removeEventListener('click', timer);
             }, 500);
         });

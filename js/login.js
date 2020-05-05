@@ -153,14 +153,15 @@ function onLoginBtn(accountNumber, password) {
                 const login = JSON.stringify({ AccountNumber: acn.value, Password: psw.value });
                 localStorage.setItem('login', login);
 
+         
+                afterLogin();
+                
                 // 歡迎回來
                 const userName = JSON.parse(localStorage.getItem('userSetting')).UserName;
                 const popupObj = {
                     text: `歡迎回來，${userName}！😊`,
                 }
                 showPopupBox(popupObj);
-         
-                afterLogin();
             }
             
         });
