@@ -131,13 +131,13 @@ function preventInputKeys(document, keys) {
  * @param {String[]} cssClass 要附加的 css class
  */
 function showScreenHolder(boolean, doSomething, cssClass) {
-    const body = document.querySelector('body');
+    // const body = document.querySelector('body');
 
     if (boolean) {
         // 建立一個 ScreenHolder
         const screenHolderTag = document.createElement('div');
         screenHolderTag.className = 'screenHolder';
-        body.appendChild(screenHolderTag);
+        document.body.appendChild(screenHolderTag);
         /** Screen Holder */const screenHolder = document.querySelector('.screenHolder');
         screenHolder.classList.add('show');
 
@@ -165,7 +165,7 @@ function showScreenHolder(boolean, doSomething, cssClass) {
             }
             
             setTimeout(() => {
-                body.removeChild(screenHolder);
+                document.body.removeChild(screenHolder);
             }, 300)
         });
 
@@ -179,7 +179,7 @@ function showScreenHolder(boolean, doSomething, cssClass) {
             });
         }
         setTimeout(() => {
-            body.removeChild(screenHolder);
+            document.body.removeChild(screenHolder);
             screenHolder = null;            
         }, 300)
     }
@@ -194,17 +194,40 @@ function showScreenHolder(boolean, doSomething, cssClass) {
  * @param {{
  *  text: string
  *  showCancel: boolean
+ *  showInput: number
+ *  inputText1: string
+ *  inputText2: string
  *  enterBtn: string
  *  cancelBtn: string
  *  enterClick: function()
  *  cancelClick: function()
- * }} popupSettingObj 
+ * }} popupSettingObj
+ * 
+  text: 訊息文字,
+  showCancel: 是否顯示取消按鈕,
+  showInput: 顯示幾個 input,
+  inputText1: 第 1個 input標題文字,
+  inputText2: 第 2個 input標題文字,
+  enterBtn: 確認按鈕文字,
+  cancelBtn: 取消按鈕文字,
+  enterClick: 確認按鈕執行之方法,
+  cancelClick: 取消按鈕執行之方法,
  */
 function showPopupBox(popupSettingObj) {
     const popupBox_checkMessage = document.createElement('div');
     popupBox_checkMessage.className = 'popupBox_checkMessage';
     popupBox_checkMessage.innerHTML = `
         <p></p>
+        <div class="inputArea">
+            <label class="userInput">
+                <p></p>
+                <input id="popupInput1" type="text" spellcheck="false" onblur="setPopupInputTitle(true, 0)">
+            </label>
+            <label class="userInput">
+                <p></p>
+                <input id="popupInput2" type="text" spellcheck="false" onblur="setPopupInputTitle(true, 1)">
+            </label>
+        </div>
         <div class="buttonArea">
             <button class="cancel">Cancel</button>
             <button class="enter">OK</button>
@@ -213,6 +236,9 @@ function showPopupBox(popupSettingObj) {
     document.body.appendChild(popupBox_checkMessage);
 
     /** 彈窗訊息 */const message = document.querySelector('.popupBox_checkMessage p');
+    /** 彈窗 Input Area */const popupInputArea = document.querySelector('.popupBox_checkMessage .inputArea');
+    /** 彈窗 Input */const popupInput = document.querySelectorAll('.popupBox_checkMessage .inputArea .userInput');
+    /** 彈窗 Input 標題 */const popupInputTitle = document.querySelectorAll('.popupBox_checkMessage .inputArea p');
     /** 取消按鈕 */const cancelBtn = document.querySelector('.popupBox_checkMessage .cancel');
     /** 確認按鈕 */const enterBtn = document.querySelector('.popupBox_checkMessage .enter');
     const settingObj = popupSettingObj;
@@ -220,14 +246,26 @@ function showPopupBox(popupSettingObj) {
 
     popupBox_checkMessage.style.display = 'block';
     cancelBtn.style.display = settingObj.showCancel ? 'block' : 'none';
-    message.innerHTML = settingObj.text;
+    popupInputArea.style.display = settingObj.showInput ? 'flex' : 'none';
+    popupInput[1].style.display = settingObj.showInput && settingObj.showInput === 1 ? 'none' : 'block';
+    popupInputTitle[0].innerHTML = settingObj.inputText1 ? settingObj.inputText1 : '標題文字一';
+    popupInputTitle[1].innerHTML = settingObj.inputText2 ? settingObj.inputText2 : '標題文字二';
+    message.innerHTML = settingObj.text ? settingObj.text : '';
     enterBtn.innerHTML = settingObj.enterBtn ? settingObj.enterBtn : 'OK';
 
+    if (settingObj.showInput) {
+        setPopupInputTitle(false);
+        setPopupInputTitle(true, 0);
+        setPopupInputTitle(true, 1);
+    }
     if (settingObj.enterBtn) {
         enterBtn.innerHTML = settingObj.enterBtn;
     }
     if (settingObj.cancelBtn) {
         cancelBtn.innerHTML = settingObj.cancelBtn;
+    }
+    if (settingObj.showInput && settingObj.showInput === 1) {
+        
     }
     
     if (settingObj.enterClick) {
@@ -281,6 +319,34 @@ function showPopupBox(popupSettingObj) {
     }
 
 
+}
+
+
+/**
+ * 設定 Popup Input 標題 css
+ * @param {Boolean} check 是否檢查欄位值
+ * @param {Number} index
+ */
+function setPopupInputTitle(check, index) {
+    const userInputTitle = document.querySelectorAll('.popupBox_checkMessage .inputArea .userInput p');
+    const userInput = document.querySelectorAll('.popupBox_checkMessage .inputArea .userInput input');
+
+    if (check) {
+        if (userInput[index].value) {
+            userInputTitle[index].classList.add('active');
+        } else {
+            userInputTitle[index].classList.remove('active');
+        }
+    } else {
+        userInput.forEach((input, i) => {
+            input.addEventListener('focus', () => {
+                userInputTitle[i].classList.add('active');
+            })
+            if (input.value) {
+                userInputTitle[i].classList.add('active');
+            }
+        });
+    }
 }
 
 

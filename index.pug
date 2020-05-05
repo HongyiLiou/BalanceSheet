@@ -77,11 +77,23 @@ body
     //- 彈窗彈窗
     .popupBox
     //- .popupBox_checkMessage
-        //- p 傳送成功！
-        //- p
-        //- .buttonArea
-        //-     button.cancel Cancel
-        //-     button.enter OK
+    //-     p 傳送成功！
+    //-     .inputArea
+    //-         label.userInput
+    //-             p 連結名稱
+    //-             input#popupInput1(type="text" spellcheck="false" onblur="setPopupInputTitle(true, 0)")
+    //-         label.userInput
+    //-             p 連結內容
+    //-             input#popupInput2(type="text" spellcheck="false" onblur="setPopupInputTitle(true, 1)")
+    //-     .buttonArea
+    //-         button.cancel Cancel
+    //-         button.enter OK
+
+
+    //- 底端快速連結
+    .fixBottomLinks
+        
+
 
 
     //- js

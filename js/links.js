@@ -7,6 +7,7 @@ function inititialSidebarBtn_links() {
     linksSidebarBtn.addEventListener('click', () => {
         getlinks();
     });
+
 }
 
 /** 取得快速連結 Links */
@@ -24,6 +25,15 @@ function getlinks() {
         const showLinksList = document.querySelector('.linksPageBox .links');
         const outputData = [];
         showLinksList.innerHTML = '';
+
+        if (resData === 'true') {
+            showLinksList.innerHTML = showLinksList.innerHTML + `
+                <li class="addLinkBtn" onclick="onClickAddLink()" title="新增快速連結">
+                    <span>+</span>
+                </li>
+            `;
+            return;
+        }
 
         resData.forEach(data => {
             const listData = {
@@ -75,7 +85,7 @@ function getlinks() {
         })
 
         showLinksList.innerHTML = showLinksList.innerHTML + `
-            <li class="addLinkBtn" onclick="getlinks()">
+            <li class="addLinkBtn" onclick="onClickAddLink()" title="新增快速連結">
                 <span>+</span>
             </li>
         `;
@@ -106,20 +116,95 @@ function getlinks() {
 
             });
         });
-  
-        // if (res == 'true') {
-        //     const popupObj = {
-        //         text: '使用者名稱變更成功！',
-        //     }
-        //     showPopupBox(popupObj);
-        // } else {
-        //     const popupObj = {
-        //         text: '請稍後再試',
-        //     }
-        //     showPopupBox(popupObj);
-        // }
-
 
     });
 
+}
+
+
+/** 註冊快速連結類型點擊事件 */
+function onClickLinksType() {
+    // const showLinksType = document.querySelectorAll('.linksPageBox .showLinksType label');
+    const showLinksType = document.querySelectorAll('.linksPageBox .showLinksType label');
+    const userSetting = JSON.parse(localStorage.getItem('userSetting'));
+    const accountNumber = JSON.parse(localStorage.getItem('login')).AccountNumber;
+    let type = userSetting.showLinksType;
+    
+    showLinksType.forEach(radio => {
+        radio.addEventListener('click', (e) => {
+            e.stopPropagation();
+            setTimeout(() => {
+                const value = $('input[type="radio"][name="showLinksType"]:checked').val();
+                console.log(value);
+
+                if (type !== value) {
+                    type = value;
+                    showLoading(true);
+
+                    const parameter = {
+                        accountNumber: accountNumber,
+                        url: userSetting.userSettingUrl,
+                        name: userSetting.userSettingName,
+                        functionType: 'post',
+                        dataType: 15, // ShowLinksType
+                        data: value,
+                    }
+                    $.get('https://script.google.com/macros/s/AKfycbwKNaOjxPaTafWlrLMB4q9zt0RkAHKc2m9D0StpmXsWqsJvYXy1/exec', parameter).done(res => {
+                        showLoading(false);
+                        if (res == 'true') {
+                            const popupObj = {
+                                text: '設定好了嗷嗷😃',
+                            }
+                            showPopupBox(popupObj);
+                        }
+                    });
+
+                } else {
+                    return;
+                }
+
+            }, 0);
+            
+        });
+    });
+    
+}
+
+
+/** 新增快速連結 Link */
+function onClickAddLink() {
+    const sendLink = () => {
+        const accountNumber = JSON.parse(localStorage.getItem('login')).AccountNumber;
+        const linkName = document.querySelector('#popupInput1').value;
+        const linkUrl = document.querySelector('#popupInput2').value;
+        
+        showLoading(true);
+
+        const parameter = {
+            accountNumber: accountNumber,
+            functionType: 'post',
+            data1: linkName.toString(),
+            data2: linkUrl.toString(),
+        }
+        $.get('https://script.google.com/macros/s/AKfycbz7O-mKaU-dKpbDxIA0DLQ8U-71cI_4IhM7F9STav4v4BJwNf3U/exec', parameter).done(res => {
+            showLoading(false);
+            getlinks();
+            if (res == 'true') {
+                const popupObj = {
+                    text: '新增好了！🤗',
+                }
+                showPopupBox(popupObj);
+            }
+        });
+    }
+
+    const popupSetting = {
+        showCancel: true,
+        showInput: 2,
+        inputText1: '連結名稱',
+        inputText2: '連結網址',
+        enterClick: sendLink
+    }
+
+    showPopupBox(popupSetting);
 }

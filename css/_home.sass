@@ -54,7 +54,7 @@
     z-index: 3
 
 .popupBox_checkMessage
-    display: none
+    // display: none
     max-width: 300px
     padding: 25px 50px
     background: rgba(#000, 0.8)
@@ -68,9 +68,52 @@
     &.hide
         animation: hidePopup 0.4s forwards
 
-    p
+    >p
         text-align: center
         line-height: 25px
+
+    .inputArea
+        display: flex
+        width: 100%
+        justify-content: center
+        flex-wrap: wrap
+        margin-top: 10px
+
+        .userInput
+            position: relative
+            margin-top: 25px
+
+            &:first-child
+                margin-top: 10px
+
+            p
+                position: absolute
+                color: #fafafa
+                font-size: 100%
+                transition: 0.5s
+                bottom: 5px
+                left: 0
+
+                &.active
+                    bottom: 32px
+                    font-size: 90%
+                    color: #858585
+
+            input
+                width: 200px
+                background: transparent !important
+                padding: 5px 8px
+                border: none
+                border-bottom: solid 1px #4e4e4e
+                border-radius: 0
+                color: #FFF
+                font-size: 120%
+                font-weight: 100
+                outline: none
+                transition: 0.3s
+
+                &:focus
+                    border-bottom: solid 1px #c4c4c4
 
     .buttonArea
         display: flex
@@ -339,6 +382,17 @@
         background: rgba(#FFF, 0.8)
         color: #000
         box-shadow: 0 5px 8px rgba(#000, 0.5)
+        .inputArea
+            .userInput
+                p
+                    color: #4e4e4e
+                    &.active
+                        color: #aaaaaa
+                input
+                    color: #3a3a3a
+                    border-bottom: solid 1px #c0c0c0
+                    &:focus
+                        border-bottom: solid 1px #4e4e4e
         .buttonArea
             button
                 color: #333

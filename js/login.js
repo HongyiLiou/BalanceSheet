@@ -155,7 +155,7 @@ function onLoginBtn(accountNumber, password) {
 
          
                 afterLogin();
-                
+
                 // 歡迎回來
                 const userName = JSON.parse(localStorage.getItem('userSetting')).UserName;
                 const popupObj = {
@@ -226,6 +226,7 @@ function afterLogin() {
 
     // 取得 Links
     getlinks();
+    onClickLinksType();
 }
 
 
