@@ -66,7 +66,6 @@ function loadPages() {
 
         setTimeout(() => {
             inititialSidebarBtn_links();
-            getlinks();
         }, 0)
         
     });

@@ -29,7 +29,7 @@ function setloginInputTitle(check, index) {
     const userInputTitle = document.querySelectorAll('.loginPageBox .userArea .userInput p');
     const userInput = document.querySelectorAll('.loginPageBox .userArea .userInput input');
 
-    if (check) {        
+    if (check) {
         if (userInput[index].value) {
             userInputTitle[index].classList.add('active');
         } else {
@@ -222,6 +222,9 @@ function afterLogin() {
     // 預設首頁
     const sidebarHomeBtn = document.querySelector('.sidebar .sidebarContent ul li .home');
     sidebarHomeBtn.click();
+
+    // 取得 Links
+    getlinks();
 }
 
 
