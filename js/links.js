@@ -366,7 +366,7 @@ function setShowLinksType(type) {
         case 'home':
             showLinksTypeRadio[0].setAttribute('checked', true);
             showLinksList_bottom.style.display = showLinksList_right.style.display = 'none';
-            showLinksList_home.display = 'block';
+            showLinksList_home.style.display = 'block';
             break;
 
 
@@ -379,7 +379,7 @@ function setShowLinksType(type) {
         case 'bottom':
             showLinksTypeRadio[2].setAttribute('checked', true);
             showLinksList_right.style.display = showLinksList_bottom.style.display = 'none';
-            showLinksList_home.display = 'block';
+            showLinksList_home.style.display = 'block';
             sidebarBtn.forEach((btn, i) => {                
                 if (i === 2) {
                     btn.setAttribute('onclick', 'showBottomLinksList()');
@@ -393,7 +393,7 @@ function setShowLinksType(type) {
         case 'right':
             showLinksTypeRadio[3].setAttribute('checked', true);
             showLinksList_bottom.style.display = showLinksList_right.style.display = 'none';
-            showLinksList_home.display = 'block';
+            showLinksList_home.style.display = 'block';
             sidebarBtn.forEach((btn, i) => {
                 if (i === 2) {
                     btn.setAttribute('onclick', 'showRightLinksList()');
