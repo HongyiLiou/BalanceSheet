@@ -367,12 +367,16 @@ function setShowLinksType(type) {
             showLinksTypeRadio[0].setAttribute('checked', true);
             showLinksList_bottom.style.display = showLinksList_right.style.display = 'none';
             showLinksList_home.style.display = 'block';
+            hideBottomLinksList();
+            hideRightLinksList();
             break;
 
 
         case 'here':
             showLinksTypeRadio[1].setAttribute('checked', true);
             showLinksList_bottom.style.display = showLinksList_right.style.display = showLinksList_home.style.display = 'none';
+            hideBottomLinksList();
+            hideRightLinksList();
             break;
 
 
@@ -380,7 +384,7 @@ function setShowLinksType(type) {
             showLinksTypeRadio[2].setAttribute('checked', true);
             showLinksList_right.style.display = showLinksList_bottom.style.display = 'none';
             showLinksList_home.style.display = 'block';
-            sidebarBtn.forEach((btn, i) => {                
+            sidebarBtn.forEach((btn, i) => {
                 if (i === 2) {
                     btn.setAttribute('onclick', 'showBottomLinksList()');
                 } else {
