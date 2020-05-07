@@ -441,6 +441,133 @@ input[type=number] {
   background: #666666;
 }
 
+.fixBottomLinks {
+  bottom: 0;
+  left: 50%;
+  border-radius: 35px 35px 0 0;
+  transform-origin: bottom center;
+  transform: translateX(-50%);
+  animation: showLinksList_bottom 0.3s forwards;
+}
+
+.fixRightLinks {
+  right: 0;
+  top: 50%;
+  border-radius: 35px 0 0 35px;
+  transform-origin: right center;
+  transform: translateY(-50%);
+  animation: showLinksList_right 0.3s forwards;
+}
+.fixRightLinks ul {
+  flex-direction: column;
+}
+.fixRightLinks ul li:not(:first-child) {
+  margin-left: unset !important;
+  margin-top: 10px;
+}
+
+.fixHomeLinks {
+  position: absolute !important;
+  background: transparent !important;
+  left: 0;
+  bottom: -100px;
+}
+
+.fixBottomLinks, .fixRightLinks, .fixHomeLinks {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.6);
+  transition: 0.3s;
+}
+.fixBottomLinks ul, .fixRightLinks ul, .fixHomeLinks ul {
+  display: flex;
+  padding: 10px;
+  align-items: center;
+}
+.fixBottomLinks ul li, .fixRightLinks ul li, .fixHomeLinks ul li {
+  position: relative;
+  display: flex;
+  width: 50px;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: solid 1px #ffffff;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+  color: #FFF;
+  background-color: #181818;
+  background-size: 1300%;
+  font-size: 150%;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.fixBottomLinks ul li:hover, .fixRightLinks ul li:hover, .fixHomeLinks ul li:hover {
+  box-shadow: 0 0 15px white;
+}
+.fixBottomLinks ul li:not(:first-child), .fixRightLinks ul li:not(:first-child), .fixHomeLinks ul li:not(:first-child) {
+  margin-left: 10px;
+}
+.fixBottomLinks ul li.facebook, .fixRightLinks ul li.facebook, .fixHomeLinks ul li.facebook {
+  background-image: url("../images/linksLogo.png");
+  background-position-x: 0%;
+}
+.fixBottomLinks ul li.instagram, .fixRightLinks ul li.instagram, .fixHomeLinks ul li.instagram {
+  background-image: url("../images/linksLogo.png");
+  background-position-x: 8.3333333333%;
+}
+.fixBottomLinks ul li.youtube, .fixRightLinks ul li.youtube, .fixHomeLinks ul li.youtube {
+  background-image: url("../images/linksLogo.png");
+  background-position-x: 16.6666666667%;
+}
+.fixBottomLinks ul li.netflix, .fixRightLinks ul li.netflix, .fixHomeLinks ul li.netflix {
+  background-image: url("../images/linksLogo.png");
+  background-position-x: 25%;
+}
+.fixBottomLinks ul li.google, .fixRightLinks ul li.google, .fixHomeLinks ul li.google {
+  background-image: url("../images/linksLogo.png");
+  background-position-x: 33.3333333333%;
+}
+.fixBottomLinks ul li.gmail, .fixRightLinks ul li.gmail, .fixHomeLinks ul li.gmail {
+  background-image: url("../images/linksLogo.png");
+  background-position-x: 41.6666666667%;
+}
+.fixBottomLinks ul li.translate, .fixRightLinks ul li.translate, .fixHomeLinks ul li.translate {
+  background-image: url("../images/linksLogo.png");
+  background-position-x: 50%;
+}
+.fixBottomLinks ul li.googleMap, .fixRightLinks ul li.googleMap, .fixHomeLinks ul li.googleMap {
+  background-image: url("../images/linksLogo.png");
+  background-position-x: 58.3333333333%;
+}
+.fixBottomLinks ul li.codepen, .fixRightLinks ul li.codepen, .fixHomeLinks ul li.codepen {
+  background-image: url("../images/linksLogo.png");
+  background-position-x: 66.6666666667%;
+}
+.fixBottomLinks ul li.github, .fixRightLinks ul li.github, .fixHomeLinks ul li.github {
+  background-image: url("../images/linksLogo.png");
+  background-position-x: 75%;
+}
+.fixBottomLinks ul li.googleDrive, .fixRightLinks ul li.googleDrive, .fixHomeLinks ul li.googleDrive {
+  background-image: url("../images/linksLogo.png");
+  background-position-x: 83.3333333333%;
+}
+.fixBottomLinks ul li.pinterest, .fixRightLinks ul li.pinterest, .fixHomeLinks ul li.pinterest {
+  background-image: url("../images/linksLogo.png");
+  background-position-x: 91.6666666667%;
+}
+.fixBottomLinks ul li.railway, .fixRightLinks ul li.railway, .fixHomeLinks ul li.railway {
+  background-image: url("../images/linksLogo.png");
+  background-position-x: 100%;
+}
+.fixBottomLinks ul li a, .fixRightLinks ul li a, .fixHomeLinks ul li a {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  top: 0;
+  left: 0;
+}
+
 .burgerMenu {
   display: none;
   position: fixed;
@@ -583,8 +710,8 @@ input[type=number] {
 }
 .brightness .beams .beam1 {
   width: 600px;
-  height: 25px;
-  transform: rotate(-48deg);
+  height: 30px;
+  transform: rotate(-72deg);
   animation-delay: -0.5s;
 }
 @keyframes beam {
@@ -599,9 +726,9 @@ input[type=number] {
   }
 }
 .brightness .beams .beam2 {
-  width: 450px;
-  height: 10px;
-  transform: rotate(-12deg);
+  width: 700px;
+  height: 30px;
+  transform: rotate(-24deg);
   animation-delay: -1s;
 }
 @keyframes beam {
@@ -616,9 +743,9 @@ input[type=number] {
   }
 }
 .brightness .beams .beam3 {
-  width: 700px;
+  width: 600px;
   height: 30px;
-  transform: rotate(-12deg);
+  transform: rotate(-48deg);
   animation-delay: -1.5s;
 }
 @keyframes beam {
@@ -633,9 +760,9 @@ input[type=number] {
   }
 }
 .brightness .beams .beam4 {
-  width: 450px;
-  height: 25px;
-  transform: rotate(-36deg);
+  width: 550px;
+  height: 15px;
+  transform: rotate(-72deg);
   animation-delay: -2s;
 }
 @keyframes beam {
@@ -650,9 +777,9 @@ input[type=number] {
   }
 }
 .brightness .beams .beam5 {
-  width: 600px;
+  width: 650px;
   height: 5px;
-  transform: rotate(-60deg);
+  transform: rotate(-24deg);
   animation-delay: -2.5s;
 }
 @keyframes beam {
@@ -667,9 +794,9 @@ input[type=number] {
   }
 }
 .brightness .beams .beam6 {
-  width: 500px;
-  height: 20px;
-  transform: rotate(-60deg);
+  width: 700px;
+  height: 15px;
+  transform: rotate(-12deg);
   animation-delay: -3s;
 }
 @keyframes beam {
@@ -704,14 +831,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-120px, 150px);
+    transform: translate(-210px, 210px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-200px, 350px);
+    transform: translate(-450px, 150px);
   }
 }
 .brightness .shines .shine2 {
@@ -724,14 +851,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-30px, 30px);
+    transform: translate(-270px, 90px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-200px, 300px);
+    transform: translate(-100px, 50px);
   }
 }
 .brightness .shines .shine3 {
@@ -744,14 +871,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-210px, 210px);
+    transform: translate(-180px, 90px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-350px, 50px);
+    transform: translate(-500px, 500px);
   }
 }
 .brightness .shines .shine4 {
@@ -764,14 +891,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-120px, 270px);
+    transform: translate(-240px, 120px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-300px, 450px);
+    transform: translate(-300px, 100px);
   }
 }
 .brightness .shines .shine5 {
@@ -784,14 +911,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-120px, 180px);
+    transform: translate(-180px, 300px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-450px, 400px);
+    transform: translate(-50px, 500px);
   }
 }
 .brightness .shines .shine6 {
@@ -804,14 +931,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-300px, 210px);
+    transform: translate(-30px, 240px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-50px, 100px);
+    transform: translate(-150px, 400px);
   }
 }
 .brightness .shines .shine7 {
@@ -824,14 +951,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-300px, 180px);
+    transform: translate(-180px, 240px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-350px, 200px);
+    transform: translate(-200px, 50px);
   }
 }
 .brightness .shines .shine8 {
@@ -844,14 +971,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-60px, 120px);
+    transform: translate(-300px, 210px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-350px, 350px);
+    transform: translate(-350px, 250px);
   }
 }
 .brightness .shines .shine9 {
@@ -864,14 +991,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-300px, 240px);
+    transform: translate(-210px, 30px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-250px, 200px);
+    transform: translate(-400px, 250px);
   }
 }
 .brightness .shines .shine10 {
@@ -884,14 +1011,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-150px, 210px);
+    transform: translate(-60px, 30px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-200px, 350px);
+    transform: translate(-500px, 500px);
   }
 }
 
@@ -980,6 +1107,17 @@ input[type=number] {
   transition: 0s;
   background: #FFF;
 }
+.lightTheme .fixBottomLinks, .lightTheme .fixRightLinks {
+  background: rgba(255, 255, 255, 0.6);
+}
+.lightTheme .fixBottomLinks ul li, .lightTheme .fixRightLinks ul li, .lightTheme .fixHomeLinks ul li {
+  color: #4e4e4e;
+  box-shadow: 0 0 10px rgba(78, 78, 78, 0.7);
+  background-color: #d6d6d6;
+}
+.lightTheme .fixBottomLinks ul li:hover, .lightTheme .fixRightLinks ul li:hover, .lightTheme .fixHomeLinks ul li:hover {
+  box-shadow: 0 0 15px #4e4e4e;
+}
 .lightTheme .burgerMenu {
   background: rgba(255, 255, 255, 0.7);
 }
@@ -1032,6 +1170,32 @@ input[type=number] {
     transform: translate(-50%, -50%) scale(0.8);
   }
 }
+@keyframes showLinksList_bottom {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) scale(0.8);
+  }
+  60% {
+    transform: translateX(-50%) scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+  }
+}
+@keyframes showLinksList_right {
+  0% {
+    opacity: 0;
+    transform: translateY(-50%) scale(0.8);
+  }
+  60% {
+    transform: translateY(-50%) scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(-50%) scale(1);
+  }
+}
 @media screen and (max-width: 1400px) {
   .popupBox {
     transform-origin: center center;
@@ -1043,8 +1207,25 @@ input[type=number] {
     transform: translate(-50%, -50%) scale(0.85);
   }
 
+  .fixBottomLinks {
+    border-radius: 28px 28px 0 0;
+  }
+
+  .fixRightLinks {
+    border-radius: 28px 0 0 28px;
+  }
+
+  .fixBottomLinks ul, .fixRightLinks ul, .fixHomeLinks ul {
+    padding: 8px;
+  }
+  .fixBottomLinks ul li, .fixRightLinks ul li, .fixHomeLinks ul li {
+    width: 40px;
+    height: 40px;
+  }
+
   .homePageBox .clock {
     width: 70%;
+    left: 70%;
   }
   .homePageBox .clock p {
     font-size: 150%;
@@ -1074,6 +1255,10 @@ input[type=number] {
     line-height: 100px;
   }
 
+  .fixBottomLinks, .fixRightLinks, .fixHomeLinks {
+    display: none;
+  }
+
   .burgerMenu {
     display: block;
   }
@@ -1083,6 +1268,7 @@ input[type=number] {
   }
   .page .homePageBox .clock {
     width: 100%;
+    left: 50%;
     text-align: center;
   }
   .page .homePageBox .clock p {

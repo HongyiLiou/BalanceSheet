@@ -238,6 +238,7 @@ function afterLogin() {
     // 取得 Links
     getlinks();
     onClickLinksType();
+    setShowLinksType(userSetting.showLinksType);
 }
 
 

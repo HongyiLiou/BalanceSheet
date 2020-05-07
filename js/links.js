@@ -23,8 +23,11 @@ function getlinks() {
         console.log('Links：', res);
         const resData = res;
         const showLinksList = document.querySelector('.linksPageBox .links');
+        const showLinksList_bottom = document.querySelector('.fixBottomLinks ul');
+        const showLinksList_right = document.querySelector('.fixRightLinks ul');
+        const showLinksList_home = document.querySelector('.fixHomeLinks ul');
         const outputData = [];
-        showLinksList.innerHTML = '';
+        showLinksList.innerHTML = showLinksList_bottom.innerHTML = showLinksList_right.innerHTML = showLinksList_home.innerHTML = '';
 
         if (resData === 'true') {
             showLinksList.innerHTML = showLinksList.innerHTML + `
@@ -45,6 +48,9 @@ function getlinks() {
 
         outputData.forEach(x => {
             const li = document.createElement('li');
+            const li_bottom = document.createElement('li');
+            const li_right = document.createElement('li');
+            const li_home = document.createElement('li');
             li.innerHTML = `
                 <button class="delete"></button>
                 <a href="${x.link}" target="_blank">
@@ -80,9 +86,120 @@ function getlinks() {
                     <p>${x.name}</p>
                 </a>
             `;
+
+            li_bottom.className = `${
+                x.link.indexOf('facebook') !== -1 ? 'facebook' : '' ||
+                x.link.indexOf('instagram') !== -1 ? 'instagram' : '' ||
+                x.link.indexOf('youtube') !== -1 ? 'youtube' : '' ||
+                x.link.indexOf('netflix') !== -1 ? 'netflix' : '' ||
+                x.link.indexOf('translate') !== -1 ? 'translate' : '' ||
+                x.link.indexOf('google') !== -1 && x.link.indexOf('mail') !== -1 ? 'gmail' : '' ||
+                x.link.indexOf('google') !== -1 && x.link.indexOf('maps') !== -1 ? 'googleMap' : '' ||
+                x.link.indexOf('google') !== -1 && x.link.indexOf('drive') !== -1 ? 'googleDrive' : '' ||
+                x.link.indexOf('google') !== -1 ? 'google' : '' ||
+                x.link.indexOf('codepen') !== -1 ? 'codepen' : '' ||
+                x.link.indexOf('github') !== -1 ? 'github' : '' ||
+                x.link.indexOf('pinterest') !== -1 ? 'pinterest' : '' ||
+                x.link.indexOf('railway') !== -1 ? 'railway' : ''
+            }`;
+
+            li_bottom.innerHTML = `${
+                    x.link.indexOf('facebook') !== -1 ||
+                    x.link.indexOf('instagram') !== -1 ||
+                    x.link.indexOf('youtube') !== -1 ||
+                    x.link.indexOf('netflix') !== -1 ||
+                    x.link.indexOf('translate') !== -1 ||
+                    x.link.indexOf('google') !== -1 && x.link.indexOf('mail') !== -1 ||
+                    x.link.indexOf('google') !== -1 && x.link.indexOf('maps') !== -1 ||
+                    x.link.indexOf('google') !== -1 && x.link.indexOf('drive') !== -1 ||
+                    x.link.indexOf('google') !== -1 ||
+                    x.link.indexOf('codepen') !== -1 ||
+                    x.link.indexOf('github') !== -1 ||
+                    x.link.indexOf('pinterest') !== -1 ||
+                    x.link.indexOf('railway') !== -1 ? '' : x.name.split('')[0]
+                }
+                <a href="${x.link}" target="_blank" title="${x.name}"></a>
+            `;
+            li_right.className = `${
+                x.link.indexOf('facebook') !== -1 ? 'facebook' : '' ||
+                x.link.indexOf('instagram') !== -1 ? 'instagram' : '' ||
+                x.link.indexOf('youtube') !== -1 ? 'youtube' : '' ||
+                x.link.indexOf('netflix') !== -1 ? 'netflix' : '' ||
+                x.link.indexOf('translate') !== -1 ? 'translate' : '' ||
+                x.link.indexOf('google') !== -1 && x.link.indexOf('mail') !== -1 ? 'gmail' : '' ||
+                x.link.indexOf('google') !== -1 && x.link.indexOf('maps') !== -1 ? 'googleMap' : '' ||
+                x.link.indexOf('google') !== -1 && x.link.indexOf('drive') !== -1 ? 'googleDrive' : '' ||
+                x.link.indexOf('google') !== -1 ? 'google' : '' ||
+                x.link.indexOf('codepen') !== -1 ? 'codepen' : '' ||
+                x.link.indexOf('github') !== -1 ? 'github' : '' ||
+                x.link.indexOf('pinterest') !== -1 ? 'pinterest' : '' ||
+                x.link.indexOf('railway') !== -1 ? 'railway' : ''
+            }`;
+
+            li_right.innerHTML = `${
+                    x.link.indexOf('facebook') !== -1 ||
+                    x.link.indexOf('instagram') !== -1 ||
+                    x.link.indexOf('youtube') !== -1 ||
+                    x.link.indexOf('netflix') !== -1 ||
+                    x.link.indexOf('translate') !== -1 ||
+                    x.link.indexOf('google') !== -1 && x.link.indexOf('mail') !== -1 ||
+                    x.link.indexOf('google') !== -1 && x.link.indexOf('maps') !== -1 ||
+                    x.link.indexOf('google') !== -1 && x.link.indexOf('drive') !== -1 ||
+                    x.link.indexOf('google') !== -1 ||
+                    x.link.indexOf('codepen') !== -1 ||
+                    x.link.indexOf('github') !== -1 ||
+                    x.link.indexOf('pinterest') !== -1 ||
+                    x.link.indexOf('railway') !== -1 ? '' : x.name.split('')[0]
+                }
+                <a href="${x.link}" target="_blank" title="${x.name}"></a>
+            `;
+            li_home.className = `${
+                x.link.indexOf('facebook') !== -1 ? 'facebook' : '' ||
+                x.link.indexOf('instagram') !== -1 ? 'instagram' : '' ||
+                x.link.indexOf('youtube') !== -1 ? 'youtube' : '' ||
+                x.link.indexOf('netflix') !== -1 ? 'netflix' : '' ||
+                x.link.indexOf('translate') !== -1 ? 'translate' : '' ||
+                x.link.indexOf('google') !== -1 && x.link.indexOf('mail') !== -1 ? 'gmail' : '' ||
+                x.link.indexOf('google') !== -1 && x.link.indexOf('maps') !== -1 ? 'googleMap' : '' ||
+                x.link.indexOf('google') !== -1 && x.link.indexOf('drive') !== -1 ? 'googleDrive' : '' ||
+                x.link.indexOf('google') !== -1 ? 'google' : '' ||
+                x.link.indexOf('codepen') !== -1 ? 'codepen' : '' ||
+                x.link.indexOf('github') !== -1 ? 'github' : '' ||
+                x.link.indexOf('pinterest') !== -1 ? 'pinterest' : '' ||
+                x.link.indexOf('railway') !== -1 ? 'railway' : ''
+            }`;
+
+            li_home.innerHTML = `${
+                    x.link.indexOf('facebook') !== -1 ||
+                    x.link.indexOf('instagram') !== -1 ||
+                    x.link.indexOf('youtube') !== -1 ||
+                    x.link.indexOf('netflix') !== -1 ||
+                    x.link.indexOf('translate') !== -1 ||
+                    x.link.indexOf('google') !== -1 && x.link.indexOf('mail') !== -1 ||
+                    x.link.indexOf('google') !== -1 && x.link.indexOf('maps') !== -1 ||
+                    x.link.indexOf('google') !== -1 && x.link.indexOf('drive') !== -1 ||
+                    x.link.indexOf('google') !== -1 ||
+                    x.link.indexOf('codepen') !== -1 ||
+                    x.link.indexOf('github') !== -1 ||
+                    x.link.indexOf('pinterest') !== -1 ||
+                    x.link.indexOf('railway') !== -1 ? '' : x.name.split('')[0]
+                }
+                <a href="${x.link}" target="_blank" title="${x.name}"></a>
+            `;
+
+            
             showLinksList.appendChild(li);
+            showLinksList_bottom.appendChild(li_bottom);
+            showLinksList_right.appendChild(li_right);
+            showLinksList_home.appendChild(li_home);
 
         })
+
+        if (!outputData.length) {
+            showLinksList_bottom.style.display = 'none';
+            showLinksList_right.style.display = 'none';
+            showLinksList_home.style.display = 'none';
+        }
 
         showLinksList.innerHTML = showLinksList.innerHTML + `
             <li class="addLinkBtn" onclick="onClickAddLink()" title="新增快速連結">
@@ -151,6 +268,7 @@ function onClickLinksType() {
                     }
                     $.get('https://script.google.com/macros/s/AKfycbwKNaOjxPaTafWlrLMB4q9zt0RkAHKc2m9D0StpmXsWqsJvYXy1/exec', parameter).done(res => {
                         showLoading(false);
+                        setShowLinksType(value);
                         if (res == 'true') {
                             const popupObj = {
                                 text: '設定好了嗷嗷😃',
@@ -207,4 +325,88 @@ function onClickAddLink() {
     }
 
     showPopupBox(popupSetting);
+}
+
+
+// 
+function showBottomLinksList() {
+    console.log('底下出現');
+    const showLinksList_bottom = document.querySelector('.fixBottomLinks');
+    showLinksList_bottom.style.display = 'block';
+};
+function hideBottomLinksList() {
+    console.log('底下消失');
+    const showLinksList_bottom = document.querySelector('.fixBottomLinks');
+    showLinksList_bottom.style.display = 'none';
+}
+function showRightLinksList() {
+    console.log('右邊出現');
+    const showLinksList_right = document.querySelector('.fixRightLinks');
+    showLinksList_right.style.display = 'block';
+};
+function hideRightLinksList() {
+    console.log('右邊消失');
+    const showLinksList_right = document.querySelector('.fixRightLinks');
+    showLinksList_right.style.display = 'none';
+}
+
+
+/**
+ * 設定顯示 Links的方式
+ * @param {'home' | 'here' | 'bottom' | 'right'} type
+ */
+function setShowLinksType(type) {
+    const sidebarBtn = document.querySelectorAll('.sidebarContent ul li');
+    const showLinksTypeRadio = document.querySelectorAll('.linksPageBox .showLinksType input');
+    const showLinksList_bottom = document.querySelector('.fixBottomLinks');
+    const showLinksList_right = document.querySelector('.fixRightLinks');
+    const showLinksList_home = document.querySelector('.fixHomeLinks');
+
+    switch (type) {
+        case 'home':
+            showLinksTypeRadio[0].setAttribute('checked', true);
+            showLinksList_bottom.style.display = showLinksList_right.style.display = 'none';
+            showLinksList_home.display = 'block';
+            break;
+
+
+        case 'here':
+            showLinksTypeRadio[1].setAttribute('checked', true);
+            showLinksList_bottom.style.display = showLinksList_right.style.display = showLinksList_home.style.display = 'none';
+            break;
+
+
+        case 'bottom':
+            showLinksTypeRadio[2].setAttribute('checked', true);
+            showLinksList_right.style.display = showLinksList_bottom.style.display = 'none';
+            showLinksList_home.display = 'block';
+            sidebarBtn.forEach((btn, i) => {                
+                if (i === 2) {
+                    btn.setAttribute('onclick', 'showBottomLinksList()');
+                } else {
+                    btn.setAttribute('onclick', 'hideBottomLinksList()');
+                }
+            });
+            break;
+
+
+        case 'right':
+            showLinksTypeRadio[3].setAttribute('checked', true);
+            showLinksList_bottom.style.display = showLinksList_right.style.display = 'none';
+            showLinksList_home.display = 'block';
+            sidebarBtn.forEach((btn, i) => {
+                if (i === 2) {
+                    btn.setAttribute('onclick', 'showRightLinksList()');
+                } else {
+                    btn.setAttribute('onclick', 'hideRightLinksList()');
+                }
+            });
+            break;
+            
+
+        default:
+            break;
+    }
+    
+
 }
