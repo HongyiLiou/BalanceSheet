@@ -73,12 +73,20 @@ function setSidebarBtnHidden(boolean) {
 }
 
 
+/** 按 Enter鍵登入 */
+function loginEnterKeyboard(e) {
+    if (e.key === 'Enter') {
+        onLoginBtn();
+    }
+}
+
+
 /**
  * 使用帳號密碼登入並取得使用者資料
  * @param {String} accountNumber 
  * @param {String} password 
  */
-function onLoginBtn(accountNumber, password) {
+function onLoginBtn() {
     const acn = document.querySelector('.loginPageBox .userInput .acn');
     const psw = document.querySelector('.loginPageBox .userInput .psw');
     const rememberChecked = document.querySelector('.loginPageBox .remember .rememberChecked');
@@ -198,6 +206,9 @@ function afterLogin() {
             webApp.classList.add('lightTheme');
         } else {
             localStorage.removeItem('userSettingTheme');
+            root.style.setProperty('--colorMain', '#111111');
+            checkBox.checked = true;
+            webApp.classList.remove('lightTheme');
         }
     } else if (localTheme === 'light') {
         root.style.setProperty('--colorMain', '#FFFFFF');
@@ -205,7 +216,7 @@ function afterLogin() {
         webApp.classList.add('lightTheme');
     } else {
         root.style.setProperty('--colorMain', '#111111');
-            localStorage.setItem('userSettingTheme', 'light');
+        localStorage.setItem('userSettingTheme', 'light');
         checkBox.checked = true;
     }
 

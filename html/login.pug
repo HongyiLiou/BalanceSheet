@@ -2,10 +2,10 @@ article.loginPageBox
     section.userArea
         label.userInput
             p 使用者帳號
-            input.acn(type="text" spellcheck="false" onblur="setloginInputTitle(true, 0)")
+            input.acn(type="text" spellcheck="false" onblur="setloginInputTitle(true, 0)" onkeyup="loginEnterKeyboard(event)")
         label.userInput
             p 使用者密碼
-            input.psw(type="password" onblur="setloginInputTitle(true, 1)")
+            input.psw(type="password" onblur="setloginInputTitle(true, 1)" onkeyup="loginEnterKeyboard(event)")
 
         label.remember
             p 記住我

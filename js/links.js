@@ -20,7 +20,7 @@ function getlinks() {
     };
     $.get('https://script.google.com/macros/s/AKfycbz7O-mKaU-dKpbDxIA0DLQ8U-71cI_4IhM7F9STav4v4BJwNf3U/exec', parameter).done(res => {
         showLoading(false);
-        console.log(res);
+        console.log('Links：', res);
         const resData = res;
         const showLinksList = document.querySelector('.linksPageBox .links');
         const outputData = [];

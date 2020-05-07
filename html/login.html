@@ -3,11 +3,11 @@
   <section class="userArea">
     <label class="userInput">
       <p>使用者帳號</p>
-      <input class="acn" type="text" spellcheck="false" onblur="setloginInputTitle(true, 0)"/>
+      <input class="acn" type="text" spellcheck="false" onblur="setloginInputTitle(true, 0)" onkeyup="loginEnterKeyboard(event)"/>
     </label>
     <label class="userInput">
       <p>使用者密碼</p>
-      <input class="psw" type="password" onblur="setloginInputTitle(true, 1)"/>
+      <input class="psw" type="password" onblur="setloginInputTitle(true, 1)" onkeyup="loginEnterKeyboard(event)"/>
     </label>
     <label class="remember">
       <p>記住我</p>
