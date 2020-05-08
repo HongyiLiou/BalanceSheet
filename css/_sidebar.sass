@@ -15,6 +15,7 @@
         padding: 40px 0 20px 0
 
         .photo
+            position: relative
             +size(70px, 70px)
             background: url('../images/pictureHolder.png') center center no-repeat
             background-size: cover
@@ -23,6 +24,38 @@
             border: solid 2px #FFF
             box-shadow: 0 0 20px rgba(#FFF, 0.8)
             transition: 0.4s
+
+            .editPhoto
+                position: absolute
+                +size(32px, 32px)
+                bottom: -8px
+                right: -8px
+                border-radius: 50%
+                border: solid 1px #FFF
+                background: #222
+                outline: none
+                cursor: pointer
+                transition: 0.2s
+
+                &:hover
+                    background: #555
+                &:active
+                    transition: 0s
+                    background: #777
+
+                &::before
+                    content: '\f030'
+                    display: flex
+                    position: absolute
+                    +size(100%, 100%)
+                    justify-content: center
+                    align-items: center
+                    top: 0
+                    left: 0
+                    font-family: FontAwesome
+                    font-size: 120%
+                    color: #FFF
+                    border-radius: 50%
 
         .name
             width: 100%
@@ -266,6 +299,19 @@
             .photo
                 border: solid 2px #999
                 box-shadow: 0 0 20px rgba(#555, 0.8)
+                .editPhoto
+                    border: solid 1px #999
+                    background: #eee
+                    &:hover
+                        background: #eee
+                        &::before
+                            color: #111
+                    &:active
+                        transition: 0s
+                        background: #FFF
+                    &::before
+                        color: #555
+                        transition: 0.2s
             .name
                 color: #000
         .sidebarContent
@@ -338,6 +384,10 @@
             padding: 30px 0 15px 0
             .photo
                 +size(55px, 55px)
+                .editPhoto
+                    +size(25px, 25px)
+                    &::before
+                        font-size: 90%
             .name
                 font-size: 120%
         .sidebarContent
