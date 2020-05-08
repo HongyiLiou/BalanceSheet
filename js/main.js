@@ -64,9 +64,9 @@ function loadPages() {
         sc.src = 'js/links.js';
         $('body').append(sc);
 
-        setTimeout(() => {
-            inititialSidebarBtn_links();
-        }, 0)
+        // setTimeout(() => {
+        //     inititialSidebarBtn_links();
+        // }, 0)
         
     });
 

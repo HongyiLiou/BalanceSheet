@@ -46,11 +46,8 @@ function getlinks() {
             outputData.push(listData);
         });
 
-        outputData.forEach(x => {
+        outputData.forEach((x, i) => {
             const li = document.createElement('li');
-            const li_bottom = document.createElement('li');
-            const li_right = document.createElement('li');
-            const li_home = document.createElement('li');
             li.innerHTML = `
                 <button class="delete"></button>
                 <a href="${x.link}" target="_blank">
@@ -87,111 +84,119 @@ function getlinks() {
                 </a>
             `;
 
-            li_bottom.className = `${
-                x.link.indexOf('facebook') !== -1 ? 'facebook' : '' ||
-                x.link.indexOf('instagram') !== -1 ? 'instagram' : '' ||
-                x.link.indexOf('youtube') !== -1 ? 'youtube' : '' ||
-                x.link.indexOf('netflix') !== -1 ? 'netflix' : '' ||
-                x.link.indexOf('translate') !== -1 ? 'translate' : '' ||
-                x.link.indexOf('google') !== -1 && x.link.indexOf('mail') !== -1 ? 'gmail' : '' ||
-                x.link.indexOf('google') !== -1 && x.link.indexOf('maps') !== -1 ? 'googleMap' : '' ||
-                x.link.indexOf('google') !== -1 && x.link.indexOf('drive') !== -1 ? 'googleDrive' : '' ||
-                x.link.indexOf('google') !== -1 ? 'google' : '' ||
-                x.link.indexOf('codepen') !== -1 ? 'codepen' : '' ||
-                x.link.indexOf('github') !== -1 ? 'github' : '' ||
-                x.link.indexOf('pinterest') !== -1 ? 'pinterest' : '' ||
-                x.link.indexOf('railway') !== -1 ? 'railway' : ''
-            }`;
+            // Links頁面以外，僅顯示10筆
+            if (i <= 9) {
+                const li_bottom = document.createElement('li');
+                const li_right = document.createElement('li');
+                const li_home = document.createElement('li');
 
-            li_bottom.innerHTML = `${
-                    x.link.indexOf('facebook') !== -1 ||
-                    x.link.indexOf('instagram') !== -1 ||
-                    x.link.indexOf('youtube') !== -1 ||
-                    x.link.indexOf('netflix') !== -1 ||
-                    x.link.indexOf('translate') !== -1 ||
-                    x.link.indexOf('google') !== -1 && x.link.indexOf('mail') !== -1 ||
-                    x.link.indexOf('google') !== -1 && x.link.indexOf('maps') !== -1 ||
-                    x.link.indexOf('google') !== -1 && x.link.indexOf('drive') !== -1 ||
-                    x.link.indexOf('google') !== -1 ||
-                    x.link.indexOf('codepen') !== -1 ||
-                    x.link.indexOf('github') !== -1 ||
-                    x.link.indexOf('pinterest') !== -1 ||
-                    x.link.indexOf('railway') !== -1 ? '' : x.name.split('')[0]
-                }
-                <a href="${x.link}" target="_blank" title="${x.name}"></a>
-            `;
-            li_right.className = `${
-                x.link.indexOf('facebook') !== -1 ? 'facebook' : '' ||
-                x.link.indexOf('instagram') !== -1 ? 'instagram' : '' ||
-                x.link.indexOf('youtube') !== -1 ? 'youtube' : '' ||
-                x.link.indexOf('netflix') !== -1 ? 'netflix' : '' ||
-                x.link.indexOf('translate') !== -1 ? 'translate' : '' ||
-                x.link.indexOf('google') !== -1 && x.link.indexOf('mail') !== -1 ? 'gmail' : '' ||
-                x.link.indexOf('google') !== -1 && x.link.indexOf('maps') !== -1 ? 'googleMap' : '' ||
-                x.link.indexOf('google') !== -1 && x.link.indexOf('drive') !== -1 ? 'googleDrive' : '' ||
-                x.link.indexOf('google') !== -1 ? 'google' : '' ||
-                x.link.indexOf('codepen') !== -1 ? 'codepen' : '' ||
-                x.link.indexOf('github') !== -1 ? 'github' : '' ||
-                x.link.indexOf('pinterest') !== -1 ? 'pinterest' : '' ||
-                x.link.indexOf('railway') !== -1 ? 'railway' : ''
-            }`;
+                li_bottom.className = `${
+                    x.link.indexOf('facebook') !== -1 ? 'facebook' : '' ||
+                    x.link.indexOf('instagram') !== -1 ? 'instagram' : '' ||
+                    x.link.indexOf('youtube') !== -1 ? 'youtube' : '' ||
+                    x.link.indexOf('netflix') !== -1 ? 'netflix' : '' ||
+                    x.link.indexOf('translate') !== -1 ? 'translate' : '' ||
+                    x.link.indexOf('google') !== -1 && x.link.indexOf('mail') !== -1 ? 'gmail' : '' ||
+                    x.link.indexOf('google') !== -1 && x.link.indexOf('maps') !== -1 ? 'googleMap' : '' ||
+                    x.link.indexOf('google') !== -1 && x.link.indexOf('drive') !== -1 ? 'googleDrive' : '' ||
+                    x.link.indexOf('google') !== -1 ? 'google' : '' ||
+                    x.link.indexOf('codepen') !== -1 ? 'codepen' : '' ||
+                    x.link.indexOf('github') !== -1 ? 'github' : '' ||
+                    x.link.indexOf('pinterest') !== -1 ? 'pinterest' : '' ||
+                    x.link.indexOf('railway') !== -1 ? 'railway' : ''
+                }`;
 
-            li_right.innerHTML = `${
-                    x.link.indexOf('facebook') !== -1 ||
-                    x.link.indexOf('instagram') !== -1 ||
-                    x.link.indexOf('youtube') !== -1 ||
-                    x.link.indexOf('netflix') !== -1 ||
-                    x.link.indexOf('translate') !== -1 ||
-                    x.link.indexOf('google') !== -1 && x.link.indexOf('mail') !== -1 ||
-                    x.link.indexOf('google') !== -1 && x.link.indexOf('maps') !== -1 ||
-                    x.link.indexOf('google') !== -1 && x.link.indexOf('drive') !== -1 ||
-                    x.link.indexOf('google') !== -1 ||
-                    x.link.indexOf('codepen') !== -1 ||
-                    x.link.indexOf('github') !== -1 ||
-                    x.link.indexOf('pinterest') !== -1 ||
-                    x.link.indexOf('railway') !== -1 ? '' : x.name.split('')[0]
-                }
-                <a href="${x.link}" target="_blank" title="${x.name}"></a>
-            `;
-            li_home.className = `${
-                x.link.indexOf('facebook') !== -1 ? 'facebook' : '' ||
-                x.link.indexOf('instagram') !== -1 ? 'instagram' : '' ||
-                x.link.indexOf('youtube') !== -1 ? 'youtube' : '' ||
-                x.link.indexOf('netflix') !== -1 ? 'netflix' : '' ||
-                x.link.indexOf('translate') !== -1 ? 'translate' : '' ||
-                x.link.indexOf('google') !== -1 && x.link.indexOf('mail') !== -1 ? 'gmail' : '' ||
-                x.link.indexOf('google') !== -1 && x.link.indexOf('maps') !== -1 ? 'googleMap' : '' ||
-                x.link.indexOf('google') !== -1 && x.link.indexOf('drive') !== -1 ? 'googleDrive' : '' ||
-                x.link.indexOf('google') !== -1 ? 'google' : '' ||
-                x.link.indexOf('codepen') !== -1 ? 'codepen' : '' ||
-                x.link.indexOf('github') !== -1 ? 'github' : '' ||
-                x.link.indexOf('pinterest') !== -1 ? 'pinterest' : '' ||
-                x.link.indexOf('railway') !== -1 ? 'railway' : ''
-            }`;
+                li_bottom.innerHTML = `${
+                        x.link.indexOf('facebook') !== -1 ||
+                        x.link.indexOf('instagram') !== -1 ||
+                        x.link.indexOf('youtube') !== -1 ||
+                        x.link.indexOf('netflix') !== -1 ||
+                        x.link.indexOf('translate') !== -1 ||
+                        x.link.indexOf('google') !== -1 && x.link.indexOf('mail') !== -1 ||
+                        x.link.indexOf('google') !== -1 && x.link.indexOf('maps') !== -1 ||
+                        x.link.indexOf('google') !== -1 && x.link.indexOf('drive') !== -1 ||
+                        x.link.indexOf('google') !== -1 ||
+                        x.link.indexOf('codepen') !== -1 ||
+                        x.link.indexOf('github') !== -1 ||
+                        x.link.indexOf('pinterest') !== -1 ||
+                        x.link.indexOf('railway') !== -1 ? '' : x.name.split('')[0]
+                    }
+                    <a href="${x.link}" target="_blank" title="${x.name}"></a>
+                `;
+                li_right.className = `${
+                    x.link.indexOf('facebook') !== -1 ? 'facebook' : '' ||
+                    x.link.indexOf('instagram') !== -1 ? 'instagram' : '' ||
+                    x.link.indexOf('youtube') !== -1 ? 'youtube' : '' ||
+                    x.link.indexOf('netflix') !== -1 ? 'netflix' : '' ||
+                    x.link.indexOf('translate') !== -1 ? 'translate' : '' ||
+                    x.link.indexOf('google') !== -1 && x.link.indexOf('mail') !== -1 ? 'gmail' : '' ||
+                    x.link.indexOf('google') !== -1 && x.link.indexOf('maps') !== -1 ? 'googleMap' : '' ||
+                    x.link.indexOf('google') !== -1 && x.link.indexOf('drive') !== -1 ? 'googleDrive' : '' ||
+                    x.link.indexOf('google') !== -1 ? 'google' : '' ||
+                    x.link.indexOf('codepen') !== -1 ? 'codepen' : '' ||
+                    x.link.indexOf('github') !== -1 ? 'github' : '' ||
+                    x.link.indexOf('pinterest') !== -1 ? 'pinterest' : '' ||
+                    x.link.indexOf('railway') !== -1 ? 'railway' : ''
+                }`;
 
-            li_home.innerHTML = `${
-                    x.link.indexOf('facebook') !== -1 ||
-                    x.link.indexOf('instagram') !== -1 ||
-                    x.link.indexOf('youtube') !== -1 ||
-                    x.link.indexOf('netflix') !== -1 ||
-                    x.link.indexOf('translate') !== -1 ||
-                    x.link.indexOf('google') !== -1 && x.link.indexOf('mail') !== -1 ||
-                    x.link.indexOf('google') !== -1 && x.link.indexOf('maps') !== -1 ||
-                    x.link.indexOf('google') !== -1 && x.link.indexOf('drive') !== -1 ||
-                    x.link.indexOf('google') !== -1 ||
-                    x.link.indexOf('codepen') !== -1 ||
-                    x.link.indexOf('github') !== -1 ||
-                    x.link.indexOf('pinterest') !== -1 ||
-                    x.link.indexOf('railway') !== -1 ? '' : x.name.split('')[0]
-                }
-                <a href="${x.link}" target="_blank" title="${x.name}"></a>
-            `;
+                li_right.innerHTML = `${
+                        x.link.indexOf('facebook') !== -1 ||
+                        x.link.indexOf('instagram') !== -1 ||
+                        x.link.indexOf('youtube') !== -1 ||
+                        x.link.indexOf('netflix') !== -1 ||
+                        x.link.indexOf('translate') !== -1 ||
+                        x.link.indexOf('google') !== -1 && x.link.indexOf('mail') !== -1 ||
+                        x.link.indexOf('google') !== -1 && x.link.indexOf('maps') !== -1 ||
+                        x.link.indexOf('google') !== -1 && x.link.indexOf('drive') !== -1 ||
+                        x.link.indexOf('google') !== -1 ||
+                        x.link.indexOf('codepen') !== -1 ||
+                        x.link.indexOf('github') !== -1 ||
+                        x.link.indexOf('pinterest') !== -1 ||
+                        x.link.indexOf('railway') !== -1 ? '' : x.name.split('')[0]
+                    }
+                    <a href="${x.link}" target="_blank" title="${x.name}"></a>
+                `;
+                li_home.className = `${
+                    x.link.indexOf('facebook') !== -1 ? 'facebook' : '' ||
+                    x.link.indexOf('instagram') !== -1 ? 'instagram' : '' ||
+                    x.link.indexOf('youtube') !== -1 ? 'youtube' : '' ||
+                    x.link.indexOf('netflix') !== -1 ? 'netflix' : '' ||
+                    x.link.indexOf('translate') !== -1 ? 'translate' : '' ||
+                    x.link.indexOf('google') !== -1 && x.link.indexOf('mail') !== -1 ? 'gmail' : '' ||
+                    x.link.indexOf('google') !== -1 && x.link.indexOf('maps') !== -1 ? 'googleMap' : '' ||
+                    x.link.indexOf('google') !== -1 && x.link.indexOf('drive') !== -1 ? 'googleDrive' : '' ||
+                    x.link.indexOf('google') !== -1 ? 'google' : '' ||
+                    x.link.indexOf('codepen') !== -1 ? 'codepen' : '' ||
+                    x.link.indexOf('github') !== -1 ? 'github' : '' ||
+                    x.link.indexOf('pinterest') !== -1 ? 'pinterest' : '' ||
+                    x.link.indexOf('railway') !== -1 ? 'railway' : ''
+                }`;
+
+                li_home.innerHTML = `${
+                        x.link.indexOf('facebook') !== -1 ||
+                        x.link.indexOf('instagram') !== -1 ||
+                        x.link.indexOf('youtube') !== -1 ||
+                        x.link.indexOf('netflix') !== -1 ||
+                        x.link.indexOf('translate') !== -1 ||
+                        x.link.indexOf('google') !== -1 && x.link.indexOf('mail') !== -1 ||
+                        x.link.indexOf('google') !== -1 && x.link.indexOf('maps') !== -1 ||
+                        x.link.indexOf('google') !== -1 && x.link.indexOf('drive') !== -1 ||
+                        x.link.indexOf('google') !== -1 ||
+                        x.link.indexOf('codepen') !== -1 ||
+                        x.link.indexOf('github') !== -1 ||
+                        x.link.indexOf('pinterest') !== -1 ||
+                        x.link.indexOf('railway') !== -1 ? '' : x.name.split('')[0]
+                    }
+                    <a href="${x.link}" target="_blank" title="${x.name}"></a>
+                `;
+
+                showLinksList_bottom.appendChild(li_bottom);
+                showLinksList_right.appendChild(li_right);
+                showLinksList_home.appendChild(li_home);
+            }
 
             
             showLinksList.appendChild(li);
-            showLinksList_bottom.appendChild(li_bottom);
-            showLinksList_right.appendChild(li_right);
-            showLinksList_home.appendChild(li_home);
 
         })
 
@@ -328,43 +333,22 @@ function onClickAddLink() {
 }
 
 
-// 
-function showBottomLinksList() {
-    console.log('底下出現');
-    const showLinksList_bottom = document.querySelector('.fixBottomLinks');
-    showLinksList_bottom.style.display = 'block';
-};
-function hideBottomLinksList() {
-    console.log('底下消失');
-    const showLinksList_bottom = document.querySelector('.fixBottomLinks');
-    showLinksList_bottom.style.display = 'none';
-}
-function showRightLinksList() {
-    console.log('右邊出現');
-    const showLinksList_right = document.querySelector('.fixRightLinks');
-    showLinksList_right.style.display = 'block';
-};
-function hideRightLinksList() {
-    console.log('右邊消失');
-    const showLinksList_right = document.querySelector('.fixRightLinks');
-    showLinksList_right.style.display = 'none';
-}
 /**
  * 設定 Links顯示/消失
  * @param {'home' | 'bottom' | 'right'} type 
  */
 function showOrHideLinkListWithType(type, show) {
     if (type === 'home') {
-        const showLinksList_home = document.querySelector('.fixHomeLinks');
-        showLinksList_home.style.display = show ? 'block' : 'none';
+        const showLinksList_home = document.querySelector('.fixHomeLinks ul');
+        showLinksList_home.style.display = show ? 'flex' : 'none';
 
     } else if (type === 'bottom') {
-        const showLinksList_bottom = document.querySelector('.fixBottomLinks');
-        showLinksList_bottom.style.display = show ? 'block' : 'none';
+        const showLinksList_bottom = document.querySelector('.fixBottomLinks ul');
+        showLinksList_bottom.style.display = show ? 'flex' : 'none';
 
     } else if (type === 'right') {
-        const showLinksList_right = document.querySelector('.fixRightLinks');
-        showLinksList_right.style.display = show ? 'block' : 'none';
+        const showLinksList_right = document.querySelector('.fixRightLinks ul');
+        showLinksList_right.style.display = show ? 'flex' : 'none';
 
     } else {
         return;
