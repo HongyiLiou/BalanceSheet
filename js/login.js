@@ -83,10 +83,9 @@ function loginEnterKeyboard(e) {
 
 /**
  * 使用帳號密碼登入並取得使用者資料
- * @param {String} accountNumber 
- * @param {String} password 
+ * @param {Boolean} autoLogOut 
  */
-function onLoginBtn() {
+function onLoginBtn(autoLogOut) {
     const acn = document.querySelector('.loginPageBox .userInput .acn');
     const psw = document.querySelector('.loginPageBox .userInput .psw');
     const rememberChecked = document.querySelector('.loginPageBox .remember .rememberChecked');
@@ -118,6 +117,17 @@ function onLoginBtn() {
                 localStorage.setItem('lastLoginTime', lastLoginTime);
 
                 afterLogin();
+
+                if (autoLogOut) {
+                    return;
+                } else {
+                    // 歡迎回來
+                    const userName = JSON.parse(localStorage.getItem('userSetting')).UserName;
+                    const popupObj = {
+                        text: `歡迎回來，${userName}！😊`,
+                    }
+                    showPopupBox(popupObj);
+                }
             }
             
         });
@@ -239,6 +249,8 @@ function afterLogin() {
     getlinks();
     onClickLinksType();
     setShowLinksType(userSetting.showLinksType);
+    showOrHideLinkListWithType('bottom', false);
+    showOrHideLinkListWithType('right', false);
 }
 
 
@@ -246,6 +258,7 @@ function afterLogin() {
 function checkLoginState() {
     const lastLoginTime = new Date(localStorage.getItem('lastLoginTime'));
     const now = new Date();
+    const autoLogOut = true;
 
     // 若距離上次登入時間超過 8 小時，需重新登入
     if ((parseInt(now - lastLoginTime) / 1000 / 60 / 60) > 8) {
@@ -253,7 +266,7 @@ function checkLoginState() {
         initialLoginPage();
         setloginInputTitle(false);
     } else {
-        onLoginBtn();
+        onLoginBtn(autoLogOut);
         setSidebarBtnHidden(false);
     }
 }

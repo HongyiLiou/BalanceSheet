@@ -349,6 +349,27 @@ function hideRightLinksList() {
     const showLinksList_right = document.querySelector('.fixRightLinks');
     showLinksList_right.style.display = 'none';
 }
+/**
+ * 設定 Links顯示/消失
+ * @param {'home' | 'bottom' | 'right'} type 
+ */
+function showOrHideLinkListWithType(type, show) {
+    if (type === 'home') {
+        const showLinksList_home = document.querySelector('.fixHomeLinks');
+        showLinksList_home.style.display = show ? 'block' : 'none';
+
+    } else if (type === 'bottom') {
+        const showLinksList_bottom = document.querySelector('.fixBottomLinks');
+        showLinksList_bottom.style.display = show ? 'block' : 'none';
+
+    } else if (type === 'right') {
+        const showLinksList_right = document.querySelector('.fixRightLinks');
+        showLinksList_right.style.display = show ? 'block' : 'none';
+
+    } else {
+        return;
+    }
+}
 
 
 /**
@@ -358,37 +379,43 @@ function hideRightLinksList() {
 function setShowLinksType(type) {
     const sidebarBtn = document.querySelectorAll('.sidebarContent ul li');
     const showLinksTypeRadio = document.querySelectorAll('.linksPageBox .showLinksType input');
-    const showLinksList_bottom = document.querySelector('.fixBottomLinks');
-    const showLinksList_right = document.querySelector('.fixRightLinks');
-    const showLinksList_home = document.querySelector('.fixHomeLinks');
+    // const showLinksList_bottom = document.querySelector('.fixBottomLinks');
+    // const showLinksList_right = document.querySelector('.fixRightLinks');
+    // const showLinksList_home = document.querySelector('.fixHomeLinks');
 
     switch (type) {
         case 'home':
             showLinksTypeRadio[0].setAttribute('checked', true);
-            showLinksList_bottom.style.display = showLinksList_right.style.display = 'none';
-            showLinksList_home.style.display = 'block';
-            hideBottomLinksList();
-            hideRightLinksList();
+            showOrHideLinkListWithType('home', true);
+            showOrHideLinkListWithType('bottom', false);
+            showOrHideLinkListWithType('right', false);
+            sidebarBtn.forEach(btn => {
+                btn.removeAttribute('onclick');
+            });
             break;
 
 
         case 'here':
             showLinksTypeRadio[1].setAttribute('checked', true);
-            showLinksList_bottom.style.display = showLinksList_right.style.display = showLinksList_home.style.display = 'none';
-            hideBottomLinksList();
-            hideRightLinksList();
+            showOrHideLinkListWithType('home', false);
+            showOrHideLinkListWithType('bottom', false);
+            showOrHideLinkListWithType('right', false);
+            sidebarBtn.forEach(btn => {
+                btn.removeAttribute('onclick');
+            });
             break;
 
 
         case 'bottom':
             showLinksTypeRadio[2].setAttribute('checked', true);
-            showLinksList_right.style.display = showLinksList_bottom.style.display = 'none';
-            showLinksList_home.style.display = 'block';
+            showOrHideLinkListWithType('home', true);
+            showOrHideLinkListWithType('bottom', true);
+            showOrHideLinkListWithType('right', false);
             sidebarBtn.forEach((btn, i) => {
-                if (i === 2) {
-                    btn.setAttribute('onclick', 'showBottomLinksList()');
+                if (i === 2 || i === 3) {
+                    btn.setAttribute('onclick', 'showOrHideLinkListWithType("bottom", true)');
                 } else {
-                    btn.setAttribute('onclick', 'hideBottomLinksList()');
+                    btn.setAttribute('onclick', 'showOrHideLinkListWithType("bottom", false)');
                 }
             });
             break;
@@ -396,13 +423,14 @@ function setShowLinksType(type) {
 
         case 'right':
             showLinksTypeRadio[3].setAttribute('checked', true);
-            showLinksList_bottom.style.display = showLinksList_right.style.display = 'none';
-            showLinksList_home.style.display = 'block';
+            showOrHideLinkListWithType('home', true);
+            showOrHideLinkListWithType('bottom', false);
+            showOrHideLinkListWithType('right', true);
             sidebarBtn.forEach((btn, i) => {
-                if (i === 2) {
-                    btn.setAttribute('onclick', 'showRightLinksList()');
+                if (i === 2 || i === 3) {
+                    btn.setAttribute('onclick', 'showOrHideLinkListWithType("right", true)');
                 } else {
-                    btn.setAttribute('onclick', 'hideRightLinksList()');
+                    btn.setAttribute('onclick', 'showOrHideLinkListWithType("right", false)');
                 }
             });
             break;
