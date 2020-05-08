@@ -205,13 +205,13 @@ function showScreenHolder(boolean, doSomething, cssClass) {
  * 
   text: 訊息文字,
   showCancel: 是否顯示取消按鈕,
-  showInput: 顯示幾個 input,
+  showInput: 顯示幾個 input(最多2個),
   inputText1: 第 1個 input標題文字,
   inputText2: 第 2個 input標題文字,
-  enterBtn: 確認按鈕文字,
-  cancelBtn: 取消按鈕文字,
-  enterClick: 確認按鈕執行之方法,
-  cancelClick: 取消按鈕執行之方法,
+  enterBtn: 「確認」按鈕文字,
+  cancelBtn: 「取消」按鈕文字,
+  enterClick: 「確認」按鈕 function,
+  cancelClick: 「取消」按鈕 function,
  */
 function showPopupBox(popupSettingObj) {
     const popupBox_checkMessage = document.createElement('div');
@@ -355,6 +355,3 @@ function prefixInteger(num, length) {
     return (Array(length).join('0') + num).slice(-length);
 }
 
-
-
-// showPopupBox({text: '早安您好', enterClick: () => {alert('測試成功')}, showCancel: true})

@@ -170,7 +170,7 @@
 .fixHomeLinks
     position: absolute !important
     background: transparent !important
-    left: 0
+    left: -10px
     bottom: -100px
     ul
         background: transparent !important
@@ -195,7 +195,7 @@
             align-items: center
             border-radius: 50%
             border: solid 1px #ffffff
-            box-shadow: 0 0 0px rgba(#FFF, 0.7)
+            // box-shadow: 0 0 0px rgba(#FFF, 0.7)
             color: #FFF
             background-color: #181818
             background-size: 1300%
@@ -205,10 +205,25 @@
             transition: 0.2s
 
             &:hover
-                box-shadow: 0 0 15px rgba(#FFF, 1)                
+                // box-shadow: 0 0 15px rgba(#FFF, 1)
+                &::before
+                    opacity: 1
 
             &:not(:first-child)
                 margin-left: 10px
+
+            &::before
+                content: ''
+                display: block
+                +size(100%, 100%)
+                position: absolute
+                top: 0
+                left: 0
+                border-radius: 50%
+                background: rgba(#FFF, 0.5)
+                opacity: 0
+                transition: 0.2s
+                pointer-events: none
 
             $logos: 13
             &.facebook
@@ -530,8 +545,6 @@
                 color: #4e4e4e
                 box-shadow: 0 0 10px rgba(#4e4e4e, 0.7)
                 background-color: #d6d6d6
-                &:hover
-                    box-shadow: 0 0 15px rgba(#4e4e4e, 1)
     // 漢堡選單
     .burgerMenu
         background: rgba(#FFF, 0.7)

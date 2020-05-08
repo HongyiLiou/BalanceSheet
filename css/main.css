@@ -473,7 +473,7 @@ input[type=number] {
 .fixHomeLinks {
   position: absolute !important;
   background: transparent !important;
-  left: 0;
+  left: -10px;
   bottom: -100px;
 }
 .fixHomeLinks ul {
@@ -500,7 +500,6 @@ input[type=number] {
   align-items: center;
   border-radius: 50%;
   border: solid 1px #ffffff;
-  box-shadow: 0 0 0px rgba(255, 255, 255, 0.7);
   color: #FFF;
   background-color: #181818;
   background-size: 1300%;
@@ -509,11 +508,25 @@ input[type=number] {
   cursor: pointer;
   transition: 0.2s;
 }
-.fixBottomLinks ul li:hover, .fixRightLinks ul li:hover, .fixHomeLinks ul li:hover {
-  box-shadow: 0 0 15px white;
+.fixBottomLinks ul li:hover::before, .fixRightLinks ul li:hover::before, .fixHomeLinks ul li:hover::before {
+  opacity: 1;
 }
 .fixBottomLinks ul li:not(:first-child), .fixRightLinks ul li:not(:first-child), .fixHomeLinks ul li:not(:first-child) {
   margin-left: 10px;
+}
+.fixBottomLinks ul li::before, .fixRightLinks ul li::before, .fixHomeLinks ul li::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  transition: 0.2s;
+  pointer-events: none;
 }
 .fixBottomLinks ul li.facebook, .fixRightLinks ul li.facebook, .fixHomeLinks ul li.facebook {
   background-image: url("../images/linksLogo.png");
@@ -717,9 +730,9 @@ input[type=number] {
   animation: beam 3s infinite;
 }
 .brightness .beams .beam1 {
-  width: 650px;
-  height: 5px;
-  transform: rotate(-36deg);
+  width: 700px;
+  height: 30px;
+  transform: rotate(-48deg);
   animation-delay: -0.5s;
 }
 @keyframes beam {
@@ -735,8 +748,8 @@ input[type=number] {
 }
 .brightness .beams .beam2 {
   width: 600px;
-  height: 5px;
-  transform: rotate(-72deg);
+  height: 20px;
+  transform: rotate(-48deg);
   animation-delay: -1s;
 }
 @keyframes beam {
@@ -751,9 +764,9 @@ input[type=number] {
   }
 }
 .brightness .beams .beam3 {
-  width: 600px;
-  height: 25px;
-  transform: rotate(-36deg);
+  width: 450px;
+  height: 5px;
+  transform: rotate(-48deg);
   animation-delay: -1.5s;
 }
 @keyframes beam {
@@ -768,9 +781,9 @@ input[type=number] {
   }
 }
 .brightness .beams .beam4 {
-  width: 650px;
-  height: 15px;
-  transform: rotate(-36deg);
+  width: 450px;
+  height: 10px;
+  transform: rotate(-12deg);
   animation-delay: -2s;
 }
 @keyframes beam {
@@ -785,9 +798,9 @@ input[type=number] {
   }
 }
 .brightness .beams .beam5 {
-  width: 450px;
-  height: 5px;
-  transform: rotate(-24deg);
+  width: 500px;
+  height: 25px;
+  transform: rotate(-60deg);
   animation-delay: -2.5s;
 }
 @keyframes beam {
@@ -802,9 +815,9 @@ input[type=number] {
   }
 }
 .brightness .beams .beam6 {
-  width: 700px;
-  height: 10px;
-  transform: rotate(-60deg);
+  width: 550px;
+  height: 30px;
+  transform: rotate(-12deg);
   animation-delay: -3s;
 }
 @keyframes beam {
@@ -839,14 +852,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-300px, 180px);
+    transform: translate(-300px, 120px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-200px, 350px);
+    transform: translate(-400px, 350px);
   }
 }
 .brightness .shines .shine2 {
@@ -859,14 +872,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-270px, 150px);
+    transform: translate(-60px, 270px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-450px, 300px);
+    transform: translate(-300px, 150px);
   }
 }
 .brightness .shines .shine3 {
@@ -879,14 +892,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-60px, 120px);
+    transform: translate(-210px, 90px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-50px, 450px);
+    transform: translate(-300px, 300px);
   }
 }
 .brightness .shines .shine4 {
@@ -899,14 +912,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-180px, 90px);
+    transform: translate(-180px, 60px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-50px, 150px);
+    transform: translate(-450px, 100px);
   }
 }
 .brightness .shines .shine5 {
@@ -919,14 +932,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-240px, 300px);
+    transform: translate(-210px, 30px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-400px, 250px);
+    transform: translate(-450px, 250px);
   }
 }
 .brightness .shines .shine6 {
@@ -939,14 +952,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-240px, 240px);
+    transform: translate(-180px, 270px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-450px, 450px);
+    transform: translate(-150px, 250px);
   }
 }
 .brightness .shines .shine7 {
@@ -959,14 +972,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-300px, 210px);
+    transform: translate(-150px, 240px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-100px, 200px);
+    transform: translate(-400px, 350px);
   }
 }
 .brightness .shines .shine8 {
@@ -979,14 +992,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-60px, 180px);
+    transform: translate(-120px, 30px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-200px, 350px);
+    transform: translate(-250px, 200px);
   }
 }
 .brightness .shines .shine9 {
@@ -999,14 +1012,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-180px, 270px);
+    transform: translate(-300px, 270px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-350px, 300px);
+    transform: translate(-150px, 300px);
   }
 }
 .brightness .shines .shine10 {
@@ -1019,14 +1032,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-180px, 90px);
+    transform: translate(-30px, 30px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-50px, 50px);
+    transform: translate(-50px, 200px);
   }
 }
 
@@ -1122,9 +1135,6 @@ input[type=number] {
   color: #4e4e4e;
   box-shadow: 0 0 10px rgba(78, 78, 78, 0.7);
   background-color: #d6d6d6;
-}
-.lightTheme .fixBottomLinks ul li:hover, .lightTheme .fixRightLinks ul li:hover, .lightTheme .fixHomeLinks ul li:hover {
-  box-shadow: 0 0 15px #4e4e4e;
 }
 .lightTheme .burgerMenu {
   background: rgba(255, 255, 255, 0.7);
@@ -2023,6 +2033,7 @@ input[type=number] {
   position: relative;
   display: flex;
   width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
   margin-top: 200px;
   padding: 8px 10px;
