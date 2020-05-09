@@ -46,7 +46,9 @@
   <article class="sidebar">
     <div class="topArea">
       <div class="photo">
-        <button class="editPhoto"></button>
+        <label class="editPhoto" title="修改照片">
+          <input type="file" accept="image/*" onchange="editPhoto(event)"/>
+        </label>
       </div>
       <input class="name" type="text" spellcheck="false" value="User Name" onchange="onChangeUserName(value)"/>
     </div>

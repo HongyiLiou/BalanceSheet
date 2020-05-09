@@ -54,7 +54,8 @@ body
     article.sidebar
         .topArea
             .photo
-                button.editPhoto
+                label.editPhoto(title="修改照片")
+                    input(type="file" accept="image/*" onchange="editPhoto(event)")
             input.name(type="text" spellcheck="false" value="User Name" onchange="onChangeUserName(value)")
 
         .sidebarContent

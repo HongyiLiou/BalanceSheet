@@ -185,3 +185,57 @@ function changeBackground() {
 }
 
 
+/**
+ * 修改大頭照
+ * @param {event} e 
+ */
+function editPhoto(e) {
+
+    if (e.target.files && e.target.files[0]) {
+        const id = '8a47724fe82de23';
+        const token = '681844b133f8b48bde360cb2a6386f12f295f9de';
+        const album = 'P6zvdD0';
+
+        const data = {
+            file: e.target.files[0],                                    // input type="file" 的值
+            name: e.target.files[0].name,                               // input 的圖檔名稱
+            size: Math.floor(e.target.files[0].size * 0.001) + 'KB',    // input 的圖片大小
+            thumbnail: window.URL.createObjectURL(e.target.files[0]),   // input 的圖片縮圖
+            title: 'balanceSheetPhoto',                                 // 圖片標題
+            des: 'balanceSheet photo of users'                          // 圖片描述
+        }
+        console.log(data);
+    
+        let settings = {
+            async: false,
+            crossDomain: true,
+            processData: false,
+            contentType: false,
+            type: 'POST',
+            url: 'https://api.imgur.com/3/image',
+            headers: {
+                Authorization: 'Bearer ' + token
+            },
+            mimeType: 'multipart/form-data'
+        }
+    
+        let form = new FormData();
+        form.append('image', data.file);
+        form.append('title', data.title);
+        form.append('description', data.des);
+        form.append('album', album);
+    
+        settings.data = form;
+    
+        $.ajax(settings).done(res => {
+            console.log('res===', res);
+            
+        })
+
+    } else {
+        return;
+    }
+
+    
+
+}
