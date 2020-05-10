@@ -290,7 +290,7 @@ function setLogOutBtn() {
     logOutBtn.addEventListener('click', () => {
         const userName = document.querySelector('.sidebar .topArea .name');
         userName.value = 'User Name';
-        userPhoto.style.backgroundImage = 'url(../images/pictureHolder.png)';
+        userPhoto.style.backgroundImage = 'url("images/pictureHolder.png")';
         editPhoto.style.display = 'none';
         localStorage.removeItem('login');
         localStorage.removeItem('lastLoginTime');
