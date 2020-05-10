@@ -192,6 +192,7 @@ function changeBackground() {
 function editPhoto(e) {
 
     if (e.target.files && e.target.files[0]) {
+
         const id = '8a47724fe82de23';
         const token = '681844b133f8b48bde360cb2a6386f12f295f9de';
         const album = 'P6zvdD0';
@@ -205,6 +206,16 @@ function editPhoto(e) {
             des: 'balanceSheet photo of users'                          // 圖片描述
         }
         console.log(data);
+
+        if (Math.floor(e.target.files[0].size * 0.001) >= 5120) {
+            showLoading(false);
+            const popupObj = {
+                text: '檔案大小勿超過5MB',
+            }
+            showPopupBox(popupObj);
+            e.target.value = '';
+            return;
+        }
     
         let settings = {
             async: false,
@@ -228,8 +239,38 @@ function editPhoto(e) {
         settings.data = form;
     
         $.ajax(settings).done(res => {
-            console.log('res===', res);
-            
+            const resObj = JSON.parse(res);
+            console.log('resObj===', resObj);
+            if (resObj.success) {
+                showLoading(true);
+                const userSetting = JSON.parse(localStorage.getItem('userSetting'));
+                const accountNumber = JSON.parse(localStorage.getItem('login')).AccountNumber;
+                const userPhoto = document.querySelector('.sidebar .topArea .photo');
+                const parameter = {
+                    accountNumber: accountNumber,
+                    url: userSetting.userSettingUrl,
+                    name: userSetting.userSettingName,
+                    functionType: 'post',
+                    dataType: 16, // userPhotoUrl
+                    data: resObj.data.link,
+                }
+                $.get('https://script.google.com/macros/s/AKfycbwKNaOjxPaTafWlrLMB4q9zt0RkAHKc2m9D0StpmXsWqsJvYXy1/exec', parameter).done(res => {
+                    showLoading(false);
+                    userPhoto.style.backgroundImage = `url(${resObj.data.link})`;
+                    if (res == 'true') {
+                        const popupObj = {
+                            text: '大頭照變更成功😊',
+                        }
+                        showPopupBox(popupObj);
+                    }
+                });
+
+            } else {
+                const popupObj = {
+                    text: '檔案上傳失敗，請再嘗試😌',
+                }
+                showPopupBox(popupObj);
+            }
         })
 
     } else {

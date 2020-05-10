@@ -241,6 +241,12 @@ function afterLogin() {
         mainBackground.style.backgroundImage = `url("./images/defaultBg.jpg")`;
     }
 
+    // 設定使用者照片
+    if (userSetting && userSetting.userPhotoUrl !== 'default') {
+        const userPhoto = document.querySelector('.sidebar .topArea .photo');
+        userPhoto.style.backgroundImage = `url(${userSetting.userPhotoUrl})`;
+    }
+
     // 預設首頁
     const sidebarHomeBtn = document.querySelector('.sidebar .sidebarContent ul li .home');
     sidebarHomeBtn.click();
@@ -276,10 +282,12 @@ function checkLoginState() {
 function setLogOutBtn() {
     const sidebarLoginBtn = document.querySelector('.sidebar .sidebarContent ul li .login');
     const logOutBtn = document.querySelector('.sidebarContent .logOut').parentNode;
+    const userPhoto = document.querySelector('.sidebar .topArea .photo');    
 
     logOutBtn.addEventListener('click', () => {
         const userName = document.querySelector('.sidebar .topArea .name');
         userName.value = 'User Name';
+        userPhoto.style.backgroundImage = 'url(../images/pictureHolder.png)';
         localStorage.removeItem('login');
         localStorage.removeItem('lastLoginTime');
         localStorage.removeItem('userSetting');
