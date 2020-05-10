@@ -731,8 +731,8 @@ input[type=number] {
 }
 .brightness .beams .beam1 {
   width: 600px;
-  height: 10px;
-  transform: rotate(-48deg);
+  height: 15px;
+  transform: rotate(-12deg);
   animation-delay: -0.5s;
 }
 @keyframes beam {
@@ -747,9 +747,9 @@ input[type=number] {
   }
 }
 .brightness .beams .beam2 {
-  width: 450px;
-  height: 10px;
-  transform: rotate(-36deg);
+  width: 550px;
+  height: 20px;
+  transform: rotate(-48deg);
   animation-delay: -1s;
 }
 @keyframes beam {
@@ -764,9 +764,9 @@ input[type=number] {
   }
 }
 .brightness .beams .beam3 {
-  width: 500px;
-  height: 5px;
-  transform: rotate(-60deg);
+  width: 550px;
+  height: 10px;
+  transform: rotate(-36deg);
   animation-delay: -1.5s;
 }
 @keyframes beam {
@@ -782,8 +782,8 @@ input[type=number] {
 }
 .brightness .beams .beam4 {
   width: 700px;
-  height: 20px;
-  transform: rotate(-60deg);
+  height: 25px;
+  transform: rotate(-12deg);
   animation-delay: -2s;
 }
 @keyframes beam {
@@ -799,8 +799,8 @@ input[type=number] {
 }
 .brightness .beams .beam5 {
   width: 650px;
-  height: 10px;
-  transform: rotate(-12deg);
+  height: 5px;
+  transform: rotate(-24deg);
   animation-delay: -2.5s;
 }
 @keyframes beam {
@@ -815,9 +815,9 @@ input[type=number] {
   }
 }
 .brightness .beams .beam6 {
-  width: 450px;
-  height: 20px;
-  transform: rotate(-12deg);
+  width: 650px;
+  height: 10px;
+  transform: rotate(-60deg);
   animation-delay: -3s;
 }
 @keyframes beam {
@@ -852,14 +852,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-180px, 150px);
+    transform: translate(-240px, 120px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-250px, 500px);
+    transform: translate(-400px, 200px);
   }
 }
 .brightness .shines .shine2 {
@@ -872,14 +872,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-180px, 270px);
+    transform: translate(-240px, 180px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-450px, 400px);
+    transform: translate(-250px, 400px);
   }
 }
 .brightness .shines .shine3 {
@@ -892,14 +892,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-120px, 30px);
+    transform: translate(-120px, 120px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-500px, 450px);
+    transform: translate(-400px, 200px);
   }
 }
 .brightness .shines .shine4 {
@@ -912,14 +912,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-210px, 240px);
+    transform: translate(-210px, 210px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-450px, 150px);
+    transform: translate(-100px, 50px);
   }
 }
 .brightness .shines .shine5 {
@@ -932,14 +932,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-270px, 30px);
+    transform: translate(-240px, 210px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-300px, 50px);
+    transform: translate(-350px, 300px);
   }
 }
 .brightness .shines .shine6 {
@@ -952,14 +952,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-180px, 90px);
+    transform: translate(-60px, 300px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-250px, 250px);
+    transform: translate(-500px, 150px);
   }
 }
 .brightness .shines .shine7 {
@@ -972,14 +972,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-60px, 120px);
+    transform: translate(-240px, 30px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-100px, 350px);
+    transform: translate(-450px, 100px);
   }
 }
 .brightness .shines .shine8 {
@@ -992,14 +992,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-180px, 150px);
+    transform: translate(-120px, 120px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-500px, 400px);
+    transform: translate(-500px, 450px);
   }
 }
 .brightness .shines .shine9 {
@@ -1012,14 +1012,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-270px, 120px);
+    transform: translate(-240px, 240px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-500px, 50px);
+    transform: translate(-200px, 450px);
   }
 }
 .brightness .shines .shine10 {
@@ -1032,14 +1032,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-60px, 210px);
+    transform: translate(-240px, 120px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-100px, 400px);
+    transform: translate(-250px, 400px);
   }
 }
 
@@ -2592,6 +2592,7 @@ input[type=number] {
   position: absolute;
   width: 32px;
   height: 32px;
+  display: none;
   bottom: -8px;
   right: -8px;
   border-radius: 50%;

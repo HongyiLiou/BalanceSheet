@@ -200,6 +200,7 @@ function afterLogin() {
     /** 主題開關 checkbox */const checkBox = document.querySelector('.userSettingPageBox .toggleSwitch input');
     /** 外層 BOX */const webApp = document.querySelector('body');
     /** 背景 */const mainBackground = document.querySelector('.mainBackground .mainBackgroundImg');
+    /** 變更大頭照按鈕 */const editPhoto = document.querySelector('.sidebar .topArea .photo .editPhoto');
     const userName = document.querySelector('.sidebar .topArea .name');
     const userSetting = JSON.parse(localStorage.getItem('userSetting'));
     userName.value = userSetting.UserName;
@@ -243,6 +244,7 @@ function afterLogin() {
 
     // 設定使用者照片
     if (userSetting && userSetting.userPhotoUrl !== 'default') {
+        editPhoto.style.display = 'block';
         const userPhoto = document.querySelector('.sidebar .topArea .photo');
         userPhoto.style.backgroundImage = `url(${userSetting.userPhotoUrl})`;
     }
@@ -282,12 +284,14 @@ function checkLoginState() {
 function setLogOutBtn() {
     const sidebarLoginBtn = document.querySelector('.sidebar .sidebarContent ul li .login');
     const logOutBtn = document.querySelector('.sidebarContent .logOut').parentNode;
-    const userPhoto = document.querySelector('.sidebar .topArea .photo');    
+    const userPhoto = document.querySelector('.sidebar .topArea .photo');
+    const editPhoto = document.querySelector('.sidebar .topArea .photo .editPhoto');
 
     logOutBtn.addEventListener('click', () => {
         const userName = document.querySelector('.sidebar .topArea .name');
         userName.value = 'User Name';
         userPhoto.style.backgroundImage = 'url(../images/pictureHolder.png)';
+        editPhoto.style.display = 'none';
         localStorage.removeItem('login');
         localStorage.removeItem('lastLoginTime');
         localStorage.removeItem('userSetting');
