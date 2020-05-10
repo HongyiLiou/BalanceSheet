@@ -204,6 +204,7 @@ function afterLogin() {
     const userName = document.querySelector('.sidebar .topArea .name');
     const userSetting = JSON.parse(localStorage.getItem('userSetting'));
     userName.value = userSetting.UserName;
+    editPhoto.style.display = 'block';
     setSidebarBtnHidden(false);
 
     // 設定主題
@@ -244,7 +245,6 @@ function afterLogin() {
 
     // 設定使用者照片
     if (userSetting && userSetting.userPhotoUrl !== 'default') {
-        editPhoto.style.display = 'block';
         const userPhoto = document.querySelector('.sidebar .topArea .photo');
         userPhoto.style.backgroundImage = `url(${userSetting.userPhotoUrl})`;
     }
