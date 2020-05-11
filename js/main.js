@@ -62,12 +62,14 @@ function loadPages() {
     $('#linksPage').load('html/links.html', function() {
         const sc = document.createElement('script');
         sc.src = 'js/links.js';
-        $('body').append(sc);
+        $('body').append(sc);        
+    });
 
-        // setTimeout(() => {
-        //     inititialSidebarBtn_links();
-        // }, 0)
-        
+    // Notes Page
+    $('#notesPage').load('html/notes.html', function() {
+        const sc = document.createElement('script');
+        sc.src = 'js/notes.js';
+        $('body').append(sc);        
     });
 
     // User Setting Page

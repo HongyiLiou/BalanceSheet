@@ -396,10 +396,10 @@ function setShowLinksType(type) {
             showOrHideLinkListWithType('bottom', true);
             showOrHideLinkListWithType('right', false);
             sidebarBtn.forEach((btn, i) => {
-                if (i === 2 || i === 3) {
-                    btn.setAttribute('onclick', 'showOrHideLinkListWithType("bottom", true)');
-                } else {
+                if (i === 0 || i === 1 || i === sidebarBtn.length - 1) {
                     btn.setAttribute('onclick', 'showOrHideLinkListWithType("bottom", false)');
+                } else {
+                    btn.setAttribute('onclick', 'showOrHideLinkListWithType("bottom", true)');
                 }
             });
             break;
@@ -411,10 +411,10 @@ function setShowLinksType(type) {
             showOrHideLinkListWithType('bottom', false);
             showOrHideLinkListWithType('right', true);
             sidebarBtn.forEach((btn, i) => {
-                if (i === 2 || i === 3) {
-                    btn.setAttribute('onclick', 'showOrHideLinkListWithType("right", true)');
-                } else {
+                if (i === 0 || i === 1 || i === sidebarBtn.length - 1) {
                     btn.setAttribute('onclick', 'showOrHideLinkListWithType("right", false)');
+                } else {
+                    btn.setAttribute('onclick', 'showOrHideLinkListWithType("right", true)');
                 }
             });
             break;
