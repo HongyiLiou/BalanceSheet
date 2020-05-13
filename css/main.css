@@ -162,6 +162,7 @@ input[type=number] {
   align-items: center;
   margin-top: 15px;
   -webkit-user-select: none;
+      -ms-user-select: none;
           user-select: none;
   cursor: pointer;
 }
@@ -730,9 +731,9 @@ input[type=number] {
   animation: beam 3s infinite;
 }
 .brightness .beams .beam1 {
-  width: 600px;
+  width: 450px;
   height: 20px;
-  transform: rotate(-48deg);
+  transform: rotate(-12deg);
   animation-delay: -0.5s;
 }
 @keyframes beam {
@@ -747,9 +748,9 @@ input[type=number] {
   }
 }
 .brightness .beams .beam2 {
-  width: 600px;
-  height: 10px;
-  transform: rotate(-60deg);
+  width: 500px;
+  height: 15px;
+  transform: rotate(-72deg);
   animation-delay: -1s;
 }
 @keyframes beam {
@@ -764,9 +765,9 @@ input[type=number] {
   }
 }
 .brightness .beams .beam3 {
-  width: 500px;
-  height: 20px;
-  transform: rotate(-48deg);
+  width: 600px;
+  height: 30px;
+  transform: rotate(-72deg);
   animation-delay: -1.5s;
 }
 @keyframes beam {
@@ -781,9 +782,9 @@ input[type=number] {
   }
 }
 .brightness .beams .beam4 {
-  width: 650px;
-  height: 25px;
-  transform: rotate(-12deg);
+  width: 700px;
+  height: 20px;
+  transform: rotate(-60deg);
   animation-delay: -2s;
 }
 @keyframes beam {
@@ -799,8 +800,8 @@ input[type=number] {
 }
 .brightness .beams .beam5 {
   width: 550px;
-  height: 20px;
-  transform: rotate(-36deg);
+  height: 15px;
+  transform: rotate(-24deg);
   animation-delay: -2.5s;
 }
 @keyframes beam {
@@ -815,9 +816,9 @@ input[type=number] {
   }
 }
 .brightness .beams .beam6 {
-  width: 600px;
-  height: 20px;
-  transform: rotate(-12deg);
+  width: 550px;
+  height: 15px;
+  transform: rotate(-48deg);
   animation-delay: -3s;
 }
 @keyframes beam {
@@ -852,14 +853,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-300px, 150px);
+    transform: translate(-30px, 300px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-350px, 150px);
+    transform: translate(-250px, 250px);
   }
 }
 .brightness .shines .shine2 {
@@ -872,14 +873,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-150px, 90px);
+    transform: translate(-180px, 240px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-450px, 250px);
+    transform: translate(-500px, 200px);
   }
 }
 .brightness .shines .shine3 {
@@ -892,14 +893,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-300px, 240px);
+    transform: translate(-180px, 210px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-400px, 450px);
+    transform: translate(-150px, 50px);
   }
 }
 .brightness .shines .shine4 {
@@ -912,14 +913,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-150px, 90px);
+    transform: translate(-120px, 120px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-200px, 500px);
+    transform: translate(-300px, 200px);
   }
 }
 .brightness .shines .shine5 {
@@ -932,14 +933,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-180px, 150px);
+    transform: translate(-90px, 210px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-200px, 50px);
+    transform: translate(-150px, 150px);
   }
 }
 .brightness .shines .shine6 {
@@ -952,14 +953,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-180px, 180px);
+    transform: translate(-60px, 90px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-100px, 400px);
+    transform: translate(-500px, 100px);
   }
 }
 .brightness .shines .shine7 {
@@ -972,14 +973,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-180px, 30px);
+    transform: translate(-240px, 30px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-500px, 350px);
+    transform: translate(-150px, 150px);
   }
 }
 .brightness .shines .shine8 {
@@ -992,14 +993,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-90px, 120px);
+    transform: translate(-180px, 90px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-100px, 300px);
+    transform: translate(-50px, 400px);
   }
 }
 .brightness .shines .shine9 {
@@ -1012,14 +1013,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-240px, 30px);
+    transform: translate(-150px, 150px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-450px, 250px);
+    transform: translate(-250px, 350px);
   }
 }
 .brightness .shines .shine10 {
@@ -1032,14 +1033,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-180px, 300px);
+    transform: translate(-210px, 120px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-400px, 300px);
+    transform: translate(-450px, 200px);
   }
 }
 
@@ -2033,6 +2034,7 @@ input[type=number] {
   position: relative;
   display: flex;
   width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
   margin-top: 200px;
   padding: 8px 10px;
@@ -2338,7 +2340,7 @@ input[type=number] {
   margin-top: 120px;
   padding: 80px;
   width: calc(100% - 150px);
-  max-height: calc(100vh - 250px);
+  max-height: calc(100vh - 120px);
   overflow: auto;
 }
 .notesPageBox .noteList::-webkit-scrollbar {
@@ -2352,6 +2354,7 @@ input[type=number] {
 .notesPageBox .noteList ul li {
   max-width: 300px;
   padding: 20px 60px;
+  margin-bottom: 40px;
 }
 .notesPageBox .noteList ul li .book {
   width: 130px;
@@ -2359,47 +2362,58 @@ input[type=number] {
   margin: auto;
   transform: rotate3d(1, -0.5, 0.33, 30deg);
   -webkit-perspective: 700;
-  -webkit-perspective-origin: 20% 80%;
+  -webkit-perspective-origin: 100% 100%;
   -webkit-transform-style: -webkit-preserve-3d;
   transition: 0.3s;
+  border-radius: 5px 8px 8px 5px;
   cursor: pointer;
 }
 .notesPageBox .noteList ul li .book:hover {
+  box-shadow: 0 0 15px #FFF;
   transform: rotate3d(0, 1, 0, 0deg);
 }
 .notesPageBox .noteList ul li .book:hover .backPages {
   box-shadow: 0px 0px #111, 0px 0px #111, 0px 0px #111, 0px 0px #111, 0px 0px #111, 0px 0px #111, 0px 0px #111;
 }
-.notesPageBox .noteList ul li .book:hover .backPages::before {
-  box-shadow: 2px 0 30px #FFF;
-}
 .notesPageBox .noteList ul li .book.active {
-  transform: rotate3d(0, 1, 0, 0deg) translateX(50%);
+  transform: perspective(1000px) rotate3d(1, -1, 0.5, 15deg) translateX(50%);
+  animation: bookFloat 5s 0.5s infinite;
+}
+.notesPageBox .noteList ul li .book.active:hover {
+  box-shadow: unset;
 }
 .notesPageBox .noteList ul li .book.active .firstPage {
+  box-shadow: 0px 1px #000, 0px 2px #000, 0 2px 15px #FFF, 2px 0 60px #FFF;
   transition: 0.4s;
-  transform: rotate3d(0, 1, 0, -180deg);
-  animation: innerPage 5s infinite;
+  transform: rotate3d(0, 1, 0, -160deg);
 }
 .notesPageBox .noteList ul li .book.active .firstPage::before {
   transition: 0.3s;
   opacity: 1;
-  box-shadow: 2px 0 30px #FFF;
-  animation: innerPage 5s infinite;
+  box-shadow: 0 1px rgba(95, 62, 0, 0.5), 0 2px rgba(95, 62, 0, 0.5), -2px 4px 5px rgba(0, 0, 0, 0.7), 2px 0 30px #FFF;
+}
+.notesPageBox .noteList ul li .book.active .firstPage::after {
+  transition: 0.3s;
+  opacity: 0.5;
 }
 .notesPageBox .noteList ul li .book.active .firstPage .bookTitle {
   transition: 0.2s;
   opacity: 0;
 }
 .notesPageBox .noteList ul li .book.active .backPages {
-  animation: innerPage 5s infinite;
+  box-shadow: 1px 1px #000, 1px 2px #000, 1px 3px #000, 2px 4px #000, 3px 7px #000, 0 5px 15px #FFF, 2px 0 60px #FFF;
 }
 .notesPageBox .noteList ul li .book.active .backPages::before {
-  box-shadow: 2px 0 30px #FFF;
-  animation: innerPage 5s infinite;
+  box-shadow: 0 1px rgba(95, 62, 0, 0.5), 0 2px rgba(95, 62, 0, 0.5), 2px 4px 5px rgba(0, 0, 0, 0.7), 2px 0 30px #FFF;
+}
+.notesPageBox .noteList ul li .book.back {
+  animation: bookBack 0.5s forwards;
 }
 .notesPageBox .noteList ul li .book.addNew {
-  opacity: 0.5;
+  opacity: 0.7;
+}
+.notesPageBox .noteList ul li .book.addNew .firstPage::after, .notesPageBox .noteList ul li .book.addNew .backPages::after {
+  display: none;
 }
 .notesPageBox .noteList ul li .book .firstPage {
   position: absolute;
@@ -2421,15 +2435,32 @@ input[type=number] {
   height: calc(100% - 16px);
   top: 8px;
   left: 0px;
-  background: url(../images/paper.jpg) right center no-repeat;
+  background: url(../images/paper.jpg) left center no-repeat;
   background-size: cover;
+  box-shadow: 1px 1px 5px #000;
   opacity: 0;
   transition: 0.3s 0.2s;
+  transform: rotateY(-180deg);
+  z-index: -1;
+}
+.notesPageBox .noteList ul li .book .firstPage::after {
+  content: "";
+  position: absolute;
+  width: calc(100% - 40px);
+  height: calc(100% - 40px);
+  top: 20px;
+  right: 25px;
+  background: url(../images/noteText.png) center left repeat space;
+  background-size: 150%;
+  opacity: 0;
+  transition: 0.3s 0.2s;
+  transform: rotateY(-180deg);
   z-index: -1;
 }
 .notesPageBox .noteList ul li .book .firstPage .bookTitle {
   display: block;
   width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
   margin: auto;
   margin-top: 25px;
@@ -2440,6 +2471,7 @@ input[type=number] {
   font-weight: 900;
   transition: 0.3s 0.3s;
   -webkit-user-select: none;
+      -ms-user-select: none;
           user-select: none;
 }
 .notesPageBox .noteList ul li .book .backPages {
@@ -2461,9 +2493,22 @@ input[type=number] {
   left: 0px;
   background: url(../images/paper.jpg) right center no-repeat;
   background-size: cover;
+  box-shadow: 1px 1px 5px #000;
+}
+.notesPageBox .noteList ul li .book .backPages::after {
+  content: "";
+  position: absolute;
+  width: calc(100% - 40px);
+  height: calc(100% - 80px);
+  top: 20px;
+  left: 20px;
+  opacity: 0.5;
+  background: url(../images/noteText.png) top center repeat;
+  background-size: 150%;
   transition: 0.3s 0.2s;
 }
 .notesPageBox .noteList ul li .noteTitle {
+  position: relative;
   max-width: 100%;
   color: #FFF;
   margin: auto;
@@ -2476,9 +2521,34 @@ input[type=number] {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+.notesPageBox .noteList ul li .noteTitle.addNew {
+  padding: 5px 25px 5px 10px;
+}
+.notesPageBox .noteList ul li .noteTitle.addNew::after {
+  position: absolute;
+  content: "";
+  width: 20px;
+  height: 20px;
+  display: flex;
+  top: 50%;
+  right: 5px;
+  justify-content: center;
+  align-items: center;
+  font-family: FontAwesome;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  color: #FFF;
+  transform: translateY(-50%);
+}
 
 .lightTheme .notesPageBox .noteList ul li .book:hover .backPages {
   box-shadow: 0px 0px #746f61, 0px 0px #746f61, 0px 0px #746f61, 0px 0px #746f61, 0px 0px #746f61, 0px 0px #746f61, 0px 0px #746f61;
+}
+.lightTheme .notesPageBox .noteList ul li .book.active .firstPage {
+  box-shadow: 0px 1px #746f61, 0px 2px #746f61, 0 2px 15px #FFF, 2px 0 60px #FFF;
+}
+.lightTheme .notesPageBox .noteList ul li .book.active .backPages {
+  box-shadow: 1px 1px #746f61, 1px 2px #746f61, 1px 3px #746f61, 2px 4px #746f61, 3px 7px #746f61, 0 5px 15px #FFF, 2px 0 60px #FFF;
 }
 .lightTheme .notesPageBox .noteList ul li .book .firstPage {
   background: #e2e0d9;
@@ -2494,16 +2564,65 @@ input[type=number] {
 }
 .lightTheme .notesPageBox .noteList ul li .noteTitle {
   color: #222;
+  background: rgba(255, 255, 255, 0.6);
 }
-@keyframes innerPage {
+.lightTheme .notesPageBox .noteList ul li .noteTitle.addNew::after {
+  background: rgba(0, 0, 0, 0.3);
+  color: #FFF;
+}
+@keyframes bookFloat {
   0% {
-    box-shadow: 2px 0 30px #FFF;
+    transform: perspective(1000px) rotate3d(1, -1, 0.5, 15deg) translateX(50%) translateY(0px);
   }
   60% {
-    box-shadow: 2px 0 60px #FFF;
+    transform: perspective(1000px) rotate3d(1, -1, 0.5, 15deg) translateX(48%) translateY(-20px);
   }
   100% {
-    box-shadow: 2px 0 30px #FFF;
+    transform: perspective(1000px) rotate3d(1, -1, 0.5, 15deg) translateX(50%) translateY(0px);
+  }
+}
+@keyframes bookBack {
+  0% {
+    transform: perspective(1000px) rotate3d(1, -1, 0.5, 15deg) translateX(50%);
+  }
+  100% {
+    transform: rotate3d(1, -0.5, 0.33, 30deg) translateX(0%);
+  }
+}
+@media screen and (max-width: 1400px) {
+  .notesPageBox .noteList {
+    margin-top: 80px;
+    padding: 45px;
+    max-height: calc(100vh - 80px);
+  }
+  .notesPageBox .noteList ul li .book {
+    width: 100px;
+    height: 135px;
+  }
+  .notesPageBox .noteList ul li .book.active .firstPage {
+    animation: innerPage_RWD 5s infinite;
+  }
+  .notesPageBox .noteList ul li .book.active .firstPage::before {
+    animation: innerPage_RWD 5s infinite;
+  }
+  .notesPageBox .noteList ul li .book.active .backPages {
+    animation: innerPage_RWD 5s infinite;
+  }
+  .notesPageBox .noteList ul li .book.active .backPages::before {
+    animation: innerPage_RWD 5s infinite;
+  }
+  .notesPageBox .noteList ul li .book .firstPage .bookTitle {
+    margin-top: 20px;
+    font-size: 80%;
+  }
+  .notesPageBox .noteList ul li .book .backPages {
+    box-shadow: 1px 1px #111, 2px 2px #111, 3px 3px #111, 4px 4px #111, 5px 5px #111;
+  }
+  .notesPageBox .noteList ul li .noteTitle {
+    font-size: 80%;
+  }
+  .notesPageBox .noteList ul li .noteTitle.addNew::after {
+    font-size: 80%;
   }
 }
 .userSettingPageBox {
@@ -2535,6 +2654,7 @@ input[type=number] {
   padding-top: 40px;
   overflow-y: scroll;
   -webkit-user-select: none;
+      -ms-user-select: none;
           user-select: none;
 }
 .userSettingPageBox .container .content::-webkit-scrollbar {
@@ -3249,6 +3369,7 @@ input[type=number] {
   transition: background 0.4s;
   animation: showDatePicker 0.4s 0.1s forwards;
   -webkit-user-select: none;
+      -ms-user-select: none;
           user-select: none;
 }
 .datePickerBox.hide {
