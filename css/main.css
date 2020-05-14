@@ -731,9 +731,9 @@ input[type=number] {
   animation: beam 3s infinite;
 }
 .brightness .beams .beam1 {
-  width: 450px;
-  height: 20px;
-  transform: rotate(-12deg);
+  width: 500px;
+  height: 5px;
+  transform: rotate(-24deg);
   animation-delay: -0.5s;
 }
 @keyframes beam {
@@ -748,9 +748,9 @@ input[type=number] {
   }
 }
 .brightness .beams .beam2 {
-  width: 500px;
+  width: 450px;
   height: 15px;
-  transform: rotate(-72deg);
+  transform: rotate(-60deg);
   animation-delay: -1s;
 }
 @keyframes beam {
@@ -765,9 +765,9 @@ input[type=number] {
   }
 }
 .brightness .beams .beam3 {
-  width: 600px;
+  width: 500px;
   height: 30px;
-  transform: rotate(-72deg);
+  transform: rotate(-24deg);
   animation-delay: -1.5s;
 }
 @keyframes beam {
@@ -782,9 +782,9 @@ input[type=number] {
   }
 }
 .brightness .beams .beam4 {
-  width: 700px;
-  height: 20px;
-  transform: rotate(-60deg);
+  width: 650px;
+  height: 25px;
+  transform: rotate(-36deg);
   animation-delay: -2s;
 }
 @keyframes beam {
@@ -799,9 +799,9 @@ input[type=number] {
   }
 }
 .brightness .beams .beam5 {
-  width: 550px;
-  height: 15px;
-  transform: rotate(-24deg);
+  width: 700px;
+  height: 10px;
+  transform: rotate(-72deg);
   animation-delay: -2.5s;
 }
 @keyframes beam {
@@ -816,9 +816,9 @@ input[type=number] {
   }
 }
 .brightness .beams .beam6 {
-  width: 550px;
-  height: 15px;
-  transform: rotate(-48deg);
+  width: 700px;
+  height: 20px;
+  transform: rotate(-72deg);
   animation-delay: -3s;
 }
 @keyframes beam {
@@ -853,14 +853,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-30px, 300px);
+    transform: translate(-300px, 240px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-250px, 250px);
+    transform: translate(-100px, 200px);
   }
 }
 .brightness .shines .shine2 {
@@ -873,14 +873,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-180px, 240px);
+    transform: translate(-270px, 180px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-500px, 200px);
+    transform: translate(-350px, 500px);
   }
 }
 .brightness .shines .shine3 {
@@ -893,14 +893,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-180px, 210px);
+    transform: translate(-90px, 120px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-150px, 50px);
+    transform: translate(-200px, 200px);
   }
 }
 .brightness .shines .shine4 {
@@ -913,14 +913,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-120px, 120px);
+    transform: translate(-240px, 300px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-300px, 200px);
+    transform: translate(-450px, 150px);
   }
 }
 .brightness .shines .shine5 {
@@ -933,14 +933,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-90px, 210px);
+    transform: translate(-60px, 270px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-150px, 150px);
+    transform: translate(-400px, 300px);
   }
 }
 .brightness .shines .shine6 {
@@ -953,14 +953,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-60px, 90px);
+    transform: translate(-270px, 180px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-500px, 100px);
+    transform: translate(-150px, 100px);
   }
 }
 .brightness .shines .shine7 {
@@ -973,14 +973,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-240px, 30px);
+    transform: translate(-30px, 300px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-150px, 150px);
+    transform: translate(-300px, 100px);
   }
 }
 .brightness .shines .shine8 {
@@ -993,14 +993,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-180px, 90px);
+    transform: translate(-60px, 120px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-50px, 400px);
+    transform: translate(-100px, 350px);
   }
 }
 .brightness .shines .shine9 {
@@ -1013,14 +1013,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-150px, 150px);
+    transform: translate(-90px, 240px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-250px, 350px);
+    transform: translate(-100px, 100px);
   }
 }
 .brightness .shines .shine10 {
@@ -1033,14 +1033,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-210px, 120px);
+    transform: translate(-300px, 120px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-450px, 200px);
+    transform: translate(-400px, 250px);
   }
 }
 
@@ -2337,14 +2337,18 @@ input[type=number] {
   position: relative;
 }
 .notesPageBox .noteList {
-  margin-top: 120px;
-  padding: 80px;
-  width: calc(100% - 150px);
-  max-height: calc(100vh - 120px);
+  padding: 200px 80px 200px 140px;
+  margin-left: -200px;
+  width: calc(125% - 150px);
+  max-height: 100vh;
   overflow: auto;
+  transition: 0.5s;
 }
 .notesPageBox .noteList::-webkit-scrollbar {
   display: none;
+}
+.notesPageBox .noteList.hide {
+  opacity: 0;
 }
 .notesPageBox .noteList ul {
   display: flex;
@@ -2352,9 +2356,9 @@ input[type=number] {
   width: 100%;
 }
 .notesPageBox .noteList ul li {
-  max-width: 300px;
+  width: 20%;
   padding: 20px 60px;
-  margin-bottom: 40px;
+  margin-bottom: 100px;
 }
 .notesPageBox .noteList ul li .book {
   width: 130px;
@@ -2423,7 +2427,7 @@ input[type=number] {
   left: 0;
   background: #222;
   border-radius: 5px 8px 8px 5px;
-  box-shadow: inset -2px -2px 10px rgba(0, 0, 0, 0.7);
+  box-shadow: inset -2px -2px 5px rgba(0, 0, 0, 0.7);
   transform-origin: left center;
   transition: 0.3s 0.2s;
   z-index: 1;
@@ -2433,7 +2437,7 @@ input[type=number] {
   position: absolute;
   width: calc(100% - 8px);
   height: calc(100% - 16px);
-  top: 8px;
+  top: 6px;
   left: 0px;
   background: url(../images/paper.jpg) left center no-repeat;
   background-size: cover;
@@ -2489,7 +2493,7 @@ input[type=number] {
   position: absolute;
   width: calc(100% - 8px);
   height: calc(100% - 16px);
-  top: 8px;
+  top: 6px;
   left: 0px;
   background: url(../images/paper.jpg) right center no-repeat;
   background-size: cover;
@@ -2510,12 +2514,15 @@ input[type=number] {
 .notesPageBox .noteList ul li .noteTitle {
   position: relative;
   max-width: 100%;
+  width: -webkit-max-content;
+  width: max-content;
   color: #FFF;
   margin: auto;
   margin-top: 25px;
   padding: 5px 10px;
   border-radius: 100px;
   text-align: center;
+  font-size: 90%;
   background: rgba(0, 0, 0, 0.6);
   overflow: hidden;
   text-overflow: ellipsis;
@@ -2540,6 +2547,456 @@ input[type=number] {
   color: #FFF;
   transform: translateY(-50%);
 }
+.notesPageBox .editNoteArea {
+  margin-top: 200px;
+  width: calc(100% - 150px);
+  transition: 0.5s;
+}
+.notesPageBox .editNoteArea::-webkit-scrollbar {
+  display: none;
+}
+.notesPageBox .editNoteArea.hide {
+  opacity: 0;
+}
+.notesPageBox .editNoteArea .editNoteBackground {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 250px);
+}
+.notesPageBox .editNoteArea .editNoteBackground::before {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 100%;
+  height: calc(100vh - 230px);
+  top: -60px;
+  left: -30px;
+  background: rgba(0, 0, 0, 0.3);
+  pointer-events: none;
+  z-index: -1;
+}
+.notesPageBox .editNoteArea .editNoteBackground::after {
+  position: absolute;
+  content: "";
+  display: block;
+  width: calc(100% - 5px);
+  height: calc(100vh - 235px);
+  top: -30px;
+  left: -60px;
+  border: solid 4px rgba(0, 0, 0, 0.4);
+  pointer-events: none;
+  z-index: -1;
+}
+.notesPageBox .editNoteArea .editNoteBackground .top {
+  display: flex;
+}
+.notesPageBox .editNoteArea .editNoteBackground .top .noteTitleInput {
+  width: 300px;
+  margin-right: 10px;
+  letter-spacing: 1px;
+}
+.notesPageBox .editNoteArea .editNoteBackground .top .noteTitleInput, .notesPageBox .editNoteArea .editNoteBackground .top .noteColorSelect {
+  padding: 8px 20px;
+  font-size: 110%;
+  color: #FFF;
+  background: rgba(24, 24, 24, 0.4);
+  border: solid 1px rgba(255, 255, 255, 0.4);
+  box-shadow: inset 0 0 15px #000;
+  border-radius: 100px;
+  outline: none;
+}
+.notesPageBox .editNoteArea .editNoteBackground .top .noteColorSelect {
+  cursor: pointer;
+}
+.notesPageBox .editNoteArea .editNoteBackground .top .book {
+  position: absolute;
+  width: 130px;
+  height: 180px;
+  right: 80px;
+  -webkit-perspective: 700;
+  -webkit-perspective-origin: 100% 100%;
+  -webkit-transform-style: -webkit-preserve-3d;
+  transition: 0.3s;
+  border-radius: 5px 8px 8px 5px;
+  transform: perspective(1000px) rotate3d(1, -1, 0.5, 15deg) translateX(50%);
+  animation: bookFloat 5s 0.5s infinite;
+  -webkit-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.notesPageBox .editNoteArea .editNoteBackground .top .book .firstPage {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: #222;
+  border-radius: 5px 8px 8px 5px;
+  transform-origin: left center;
+  box-shadow: 0px 1px #000, 0px 2px #000, 0 2px 15px #FFF, 2px 0 60px #FFF;
+  transition: 0.4s;
+  transform: rotate3d(0, 1, 0, -160deg);
+  z-index: 1;
+}
+.notesPageBox .editNoteArea .editNoteBackground .top .book .firstPage::before {
+  content: "";
+  position: absolute;
+  width: calc(100% - 8px);
+  height: calc(100% - 16px);
+  top: 6px;
+  left: 0px;
+  background: url(../images/paper.jpg) left center no-repeat;
+  background-size: cover;
+  box-shadow: 0 1px rgba(95, 62, 0, 0.5), 0 2px rgba(95, 62, 0, 0.5), -2px 4px 5px rgba(0, 0, 0, 0.7), 2px 0 30px #FFF;
+  transform: rotateY(-180deg);
+  z-index: -1;
+}
+.notesPageBox .editNoteArea .editNoteBackground .top .book .firstPage::after {
+  content: "";
+  position: absolute;
+  width: calc(100% - 40px);
+  height: calc(100% - 40px);
+  top: 20px;
+  right: 25px;
+  opacity: 0.5;
+  background: url(../images/noteText.png) center left repeat space;
+  background-size: 150%;
+  transform: rotateY(-180deg);
+  z-index: -1;
+}
+.notesPageBox .editNoteArea .editNoteBackground .top .book .backPages {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  border-radius: 5px 8px 8px 5px;
+  box-shadow: 1px 1px #000, 1px 2px #000, 1px 3px #000, 2px 4px #000, 3px 7px #000, 0 5px 15px #FFF, 2px 0 60px #FFF;
+  transition: 0.3s;
+  z-index: 0;
+}
+.notesPageBox .editNoteArea .editNoteBackground .top .book .backPages::before {
+  content: "";
+  position: absolute;
+  width: calc(100% - 8px);
+  height: calc(100% - 16px);
+  top: 6px;
+  left: 0px;
+  background: url(../images/paper.jpg) right center no-repeat;
+  background-size: cover;
+  box-shadow: 0 1px rgba(95, 62, 0, 0.5), 0 2px rgba(95, 62, 0, 0.5), 2px 4px 5px rgba(0, 0, 0, 0.7), 2px 0 30px #FFF;
+}
+.notesPageBox .editNoteArea .editNoteBackground .top .book .backPages::after {
+  content: "";
+  position: absolute;
+  width: calc(100% - 40px);
+  height: calc(100% - 80px);
+  top: 20px;
+  left: 20px;
+  opacity: 0.5;
+  background: url(../images/noteText.png) top center repeat;
+  background-size: 150%;
+  transition: 0.3s 0.2s;
+}
+.notesPageBox .editNoteArea .editNoteBackground .noteContentTextArea {
+  width: 70%;
+  height: calc(100vh - 450px);
+  margin-top: 30px;
+  padding: 8px 20px;
+  font-size: 100%;
+  color: #d4d4d4;
+  background: linear-gradient(transparent 98%, rgba(255, 255, 255, 0.1) 0);
+  background-color: rgba(29, 29, 29, 0.5);
+  background-attachment: local;
+  line-height: 2.5em;
+  background-size: 100% 2.5em;
+  border: solid 1px rgba(255, 255, 255, 0.4);
+  box-shadow: inset 0 0 15px #000;
+  border-radius: 20px;
+  outline: none;
+  resize: none;
+}
+.notesPageBox .editNoteArea .editNoteBackground .noteContentTextArea::-webkit-scrollbar {
+  display: none;
+}
+.notesPageBox .editNoteArea .editNoteBackground .buttons {
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 25px;
+}
+.notesPageBox .editNoteArea .editNoteBackground .buttons button {
+  padding: 8px 18px;
+  margin: 0 5px;
+  border: solid 1px rgba(255, 255, 255, 0.3);
+  font-size: 100%;
+  border-radius: 100px;
+  color: #FFF;
+  background: #000;
+  cursor: pointer;
+  outline: none;
+  transition: 0.3s;
+}
+.notesPageBox .editNoteArea .editNoteBackground .buttons button:hover {
+  background: #3a3a3a;
+}
+.notesPageBox .editNoteArea .editNoteBackground .buttons button:active {
+  transition: 0s;
+  background: #666666;
+}
+
+.book.red:hover .backPages {
+  box-shadow: 0px 0px #2b0707, 0px 0px #2b0707, 0px 0px #2b0707, 0px 0px #2b0707, 0px 0px #2b0707, 0px 0px #2b0707, 0px 0px #2b0707 !important;
+}
+.book.red.active .firstPage {
+  box-shadow: 0px 1px #3f0b0b, 0px 2px #3f0b0b, 0 2px 15px #FFF, 2px 0 60px #FFF !important;
+}
+.book.red.active .backPages {
+  box-shadow: 1px 1px #3f0b0b, 1px 2px #3f0b0b, 1px 3px #3f0b0b, 2px 4px #3f0b0b, 3px 7px #3f0b0b, 0 5px 15px #FFF, 2px 0 60px #FFF !important;
+}
+.book.red .firstPage {
+  background: #832323 !important;
+  box-shadow: inset -2px -2px 5px rgba(29, 0, 0, 0.9) !important;
+}
+.book.red .firstPage .bookTitle {
+  color: #fdd1d1 !important;
+  background: #641919 !important;
+}
+.book.red .backPages {
+  background: #641414 !important;
+  box-shadow: 1px 1px #2b0707, 2px 2px #2b0707, 3px 3px #2b0707, 4px 4px #2b0707, 5px 5px #2b0707, 6px 6px #2b0707, 7px 7px #2b0707 !important;
+}
+.book.blue:hover .backPages {
+  box-shadow: 0px 0px #071d2b, 0px 0px #071d2b, 0px 0px #071d2b, 0px 0px #071d2b, 0px 0px #071d2b, 0px 0px #071d2b, 0px 0px #071d2b !important;
+}
+.book.blue.active .firstPage {
+  box-shadow: 0px 1px #0b283f, 0px 2px #0b283f, 0 2px 15px #FFF, 2px 0 60px #FFF !important;
+}
+.book.blue.active .backPages {
+  box-shadow: 1px 1px #0b283f, 1px 2px #0b283f, 1px 3px #0b283f, 2px 4px #0b283f, 3px 7px #0b283f, 0 5px 15px #FFF, 2px 0 60px #FFF !important;
+}
+.book.blue .firstPage {
+  background: #237083 !important;
+  box-shadow: inset -2px -2px 5px rgba(0, 16, 29, 0.9) !important;
+}
+.book.blue .firstPage .bookTitle {
+  color: #d1edfd !important;
+  background: #194c64 !important;
+}
+.book.blue .backPages {
+  background: #144b64 !important;
+  box-shadow: 1px 1px #071d2b, 2px 2px #071d2b, 3px 3px #071d2b, 4px 4px #071d2b, 5px 5px #071d2b, 6px 6px #071d2b, 7px 7px #071d2b !important;
+}
+.book.green:hover .backPages {
+  box-shadow: 0px 0px #072b0f, 0px 0px #072b0f, 0px 0px #072b0f, 0px 0px #072b0f, 0px 0px #072b0f, 0px 0px #072b0f, 0px 0px #072b0f !important;
+}
+.book.green.active .firstPage {
+  box-shadow: 0px 1px #0b3f1c, 0px 2px #0b3f1c, 0 2px 15px #FFF, 2px 0 60px #FFF !important;
+}
+.book.green.active .backPages {
+  box-shadow: 1px 1px #0b3f1c, 1px 2px #0b3f1c, 1px 3px #0b3f1c, 2px 4px #0b3f1c, 3px 7px #0b3f1c, 0 5px 15px #FFF, 2px 0 60px #FFF !important;
+}
+.book.green .firstPage {
+  background: #238340 !important;
+  box-shadow: inset -2px -2px 5px rgba(0, 16, 29, 0.9) !important;
+}
+.book.green .firstPage .bookTitle {
+  color: #d1fdeb !important;
+  background: #196436 !important;
+}
+.book.green .backPages {
+  background: #146438 !important;
+  box-shadow: 1px 1px #072b0f, 2px 2px #072b0f, 3px 3px #072b0f, 4px 4px #072b0f, 5px 5px #072b0f, 6px 6px #072b0f, 7px 7px #072b0f !important;
+}
+.book.greenBlue:hover .backPages {
+  box-shadow: 0px 0px #072b22, 0px 0px #072b22, 0px 0px #072b22, 0px 0px #072b22, 0px 0px #072b22, 0px 0px #072b22, 0px 0px #072b22 !important;
+}
+.book.greenBlue.active .firstPage {
+  box-shadow: 0px 1px #0b3f32, 0px 2px #0b3f32, 0 2px 15px #FFF, 2px 0 60px #FFF !important;
+}
+.book.greenBlue.active .backPages {
+  box-shadow: 1px 1px #0b3f32, 1px 2px #0b3f32, 1px 3px #0b3f32, 2px 4px #0b3f32, 3px 7px #0b3f32, 0 5px 15px #FFF, 2px 0 60px #FFF !important;
+}
+.book.greenBlue .firstPage {
+  background: #23837e !important;
+  box-shadow: inset -2px -2px 5px rgba(0, 29, 27, 0.9) !important;
+}
+.book.greenBlue .firstPage .bookTitle {
+  color: #d1fdf7 !important;
+  background: #196460 !important;
+}
+.book.greenBlue .backPages {
+  background: #14645d !important;
+  box-shadow: 1px 1px #072b22, 2px 2px #072b22, 3px 3px #072b22, 4px 4px #072b22, 5px 5px #072b22, 6px 6px #072b22, 7px 7px #072b22 !important;
+}
+.book.tiffiny:hover .backPages {
+  box-shadow: 0px 0px #065050, 0px 0px #065050, 0px 0px #065050, 0px 0px #065050, 0px 0px #065050, 0px 0px #065050, 0px 0px #065050 !important;
+}
+.book.tiffiny.active .firstPage {
+  box-shadow: 0px 1px #0b3f3f, 0px 2px #0b3f3f, 0 2px 15px #FFF, 2px 0 60px #FFF !important;
+}
+.book.tiffiny.active .backPages {
+  box-shadow: 1px 1px #0b3f3f, 1px 2px #0b3f3f, 1px 3px #0b3f3f, 2px 4px #0b3f3f, 3px 7px #0b3f3f, 0 5px 15px #FFF, 2px 0 60px #FFF !important;
+}
+.book.tiffiny .firstPage {
+  background: #7ddbd7 !important;
+  box-shadow: inset -2px -2px 5px rgba(0, 27, 29, 0.9) !important;
+}
+.book.tiffiny .firstPage .bookTitle {
+  color: #d1fdf7 !important;
+  background: #3f7e7b !important;
+}
+.book.tiffiny .backPages {
+  background: #54c0bb !important;
+  box-shadow: 1px 1px #065050, 2px 2px #065050, 3px 3px #065050, 4px 4px #065050, 5px 5px #065050, 6px 6px #065050, 7px 7px #065050 !important;
+}
+.book.yellow:hover .backPages {
+  box-shadow: 0px 0px #53502d, 0px 0px #53502d, 0px 0px #53502d, 0px 0px #53502d, 0px 0px #53502d, 0px 0px #53502d, 0px 0px #53502d !important;
+}
+.book.yellow.active .firstPage {
+  box-shadow: 0px 1px #3f3a0b, 0px 2px #3f3a0b, 0 2px 15px #FFF, 2px 0 60px #FFF !important;
+}
+.book.yellow.active .backPages {
+  box-shadow: 1px 1px #3f3a0b, 1px 2px #3f3a0b, 1px 3px #3f3a0b, 2px 4px #3f3a0b, 3px 7px #3f3a0b, 0 5px 15px #FFF, 2px 0 60px #FFF !important;
+}
+.book.yellow .firstPage {
+  background: #f1f081 !important;
+  box-shadow: inset -2px -2px 5px rgba(29, 25, 0, 0.9) !important;
+}
+.book.yellow .firstPage .bookTitle {
+  color: #fdfad1 !important;
+  background: #918b59 !important;
+}
+.book.yellow .backPages {
+  background: #f1f083 !important;
+  box-shadow: 1px 1px #53502d, 2px 2px #53502d, 3px 3px #53502d, 4px 4px #53502d, 5px 5px #53502d, 6px 6px #53502d, 7px 7px #53502d !important;
+}
+.book.orange:hover .backPages {
+  box-shadow: 0px 0px #492106, 0px 0px #492106, 0px 0px #492106, 0px 0px #492106, 0px 0px #492106, 0px 0px #492106, 0px 0px #492106 !important;
+}
+.book.orange.active .firstPage {
+  box-shadow: 0px 1px #3f2a0b, 0px 2px #3f2a0b, 0 2px 15px #FFF, 2px 0 60px #FFF !important;
+}
+.book.orange.active .backPages {
+  box-shadow: 1px 1px #3f2a0b, 1px 2px #3f2a0b, 1px 3px #3f2a0b, 2px 4px #3f2a0b, 3px 7px #3f2a0b, 0 5px 15px #FFF, 2px 0 60px #FFF !important;
+}
+.book.orange .firstPage {
+  background: #c9743b !important;
+  box-shadow: inset -2px -2px 5px rgba(29, 12, 0, 0.9) !important;
+}
+.book.orange .firstPage .bookTitle {
+  color: #fde6d1 !important;
+  background: #8d4706 !important;
+}
+.book.orange .backPages {
+  background: #c9743b !important;
+  box-shadow: 1px 1px #492106, 2px 2px #492106, 3px 3px #492106, 4px 4px #492106, 5px 5px #492106, 6px 6px #492106, 7px 7px #492106 !important;
+}
+.book.purple:hover .backPages {
+  box-shadow: 0px 0px #411b5a, 0px 0px #411b5a, 0px 0px #411b5a, 0px 0px #411b5a, 0px 0px #411b5a, 0px 0px #411b5a, 0px 0px #411b5a !important;
+}
+.book.purple.active .firstPage {
+  box-shadow: 0px 1px #280b3f, 0px 2px #280b3f, 0 2px 15px #FFF, 2px 0 60px #FFF !important;
+}
+.book.purple.active .backPages {
+  box-shadow: 1px 1px #280b3f, 1px 2px #280b3f, 1px 3px #280b3f, 2px 4px #280b3f, 3px 7px #280b3f, 0 5px 15px #FFF, 2px 0 60px #FFF !important;
+}
+.book.purple .firstPage {
+  background: #9662eb !important;
+  box-shadow: inset -2px -2px 5px rgba(18, 0, 29, 0.9) !important;
+}
+.book.purple .firstPage .bookTitle {
+  color: #e2d1fd !important;
+  background: #5b2c99 !important;
+}
+.book.purple .backPages {
+  background: #9662eb !important;
+  box-shadow: 1px 1px #411b5a, 2px 2px #411b5a, 3px 3px #411b5a, 4px 4px #411b5a, 5px 5px #411b5a, 6px 6px #411b5a, 7px 7px #411b5a !important;
+}
+.book.pink:hover .backPages {
+  box-shadow: 0px 0px #752d57, 0px 0px #752d57, 0px 0px #752d57, 0px 0px #752d57, 0px 0px #752d57, 0px 0px #752d57, 0px 0px #752d57 !important;
+}
+.book.pink.active .firstPage {
+  box-shadow: 0px 1px #691d5f, 0px 2px #691d5f, 0 2px 15px #FFF, 2px 0 60px #FFF !important;
+}
+.book.pink.active .backPages {
+  box-shadow: 1px 1px #691d5f, 1px 2px #691d5f, 1px 3px #691d5f, 2px 4px #691d5f, 3px 7px #691d5f, 0 5px 15px #FFF, 2px 0 60px #FFF !important;
+}
+.book.pink .firstPage {
+  background: #e595db !important;
+  box-shadow: inset -2px -2px 5px rgba(29, 0, 25, 0.9) !important;
+}
+.book.pink .firstPage .bookTitle {
+  color: #fdd1f9 !important;
+  background: #703a64 !important;
+}
+.book.pink .backPages {
+  background: #e595db !important;
+  box-shadow: 1px 1px #752d57, 2px 2px #752d57, 3px 3px #752d57, 4px 4px #752d57, 5px 5px #752d57, 6px 6px #752d57, 7px 7px #752d57 !important;
+}
+.book.black:hover .backPages {
+  box-shadow: 0px 0px #111, 0px 0px #111, 0px 0px #111, 0px 0px #111, 0px 0px #111, 0px 0px #111, 0px 0px #111 !important;
+}
+.book.black.active .firstPage {
+  box-shadow: 0px 1px #000, 0px 2px #000, 0 2px 15px #FFF, 2px 0 60px #FFF !important;
+}
+.book.black.active .backPages {
+  box-shadow: 1px 1px #000, 1px 2px #000, 1px 3px #000, 2px 4px #000, 3px 7px #000, 0 5px 15px #FFF, 2px 0 60px #FFF !important;
+}
+.book.black .firstPage {
+  background: #222 !important;
+  box-shadow: inset -2px -2px 5px rgba(0, 0, 0, 0.7) !important;
+}
+.book.black .firstPage .bookTitle {
+  color: #FFF !important;
+  background: #000 !important;
+}
+.book.black .backPages {
+  background: #111 !important;
+  box-shadow: 1px 1px #111, 2px 2px #111, 3px 3px #111, 4px 4px #111, 5px 5px #111, 6px 6px #111, 7px 7px #111 !important;
+}
+.book.white:hover .backPages {
+  box-shadow: 0px 0px #746f61, 0px 0px #746f61, 0px 0px #746f61, 0px 0px #746f61, 0px 0px #746f61, 0px 0px #746f61, 0px 0px #746f61 !important;
+}
+.book.white.active .firstPage {
+  box-shadow: 0px 1px #746f61, 0px 2px #746f61, 0 2px 15px #FFF, 2px 0 60px #FFF !important;
+}
+.book.white.active .backPages {
+  box-shadow: 1px 1px #746f61, 1px 2px #746f61, 1px 3px #746f61, 2px 4px #746f61, 3px 7px #746f61, 0 5px 15px #FFF, 2px 0 60px #FFF !important;
+}
+.book.white .firstPage {
+  background: #e2e0d9 !important;
+  box-shadow: inset -2px -2px 5px rgba(56, 36, 0, 0.9) !important;
+}
+.book.white .firstPage .bookTitle {
+  color: #222 !important;
+  background: #bebab6 !important;
+}
+.book.white .backPages {
+  background: #e2e0d9 !important;
+  box-shadow: 1px 1px #746f61, 2px 2px #746f61, 3px 3px #746f61, 4px 4px #746f61, 5px 5px #746f61, 6px 6px #746f61, 7px 7px #746f61 !important;
+}
+.book.gray:hover .backPages {
+  box-shadow: 0px 0px #2c2c2c, 0px 0px #2c2c2c, 0px 0px #2c2c2c, 0px 0px #2c2c2c, 0px 0px #2c2c2c, 0px 0px #2c2c2c, 0px 0px #2c2c2c !important;
+}
+.book.gray.active .firstPage {
+  box-shadow: 0px 1px #444444, 0px 2px #444444, 0 2px 15px #FFF, 2px 0 60px #FFF !important;
+}
+.book.gray.active .backPages {
+  box-shadow: 1px 1px #444444, 1px 2px #444444, 1px 3px #444444, 2px 4px #444444, 3px 7px #444444, 0 5px 15px #FFF, 2px 0 60px #FFF !important;
+}
+.book.gray .firstPage {
+  background: #646464 !important;
+  box-shadow: inset -2px -2px 5px rgba(0, 0, 0, 0.7) !important;
+}
+.book.gray .firstPage .bookTitle {
+  color: #FFF !important;
+  background: #4e4e4e !important;
+}
+.book.gray .backPages {
+  background: #646464 !important;
+  box-shadow: 1px 1px #2c2c2c, 2px 2px #2c2c2c, 3px 3px #2c2c2c, 4px 4px #2c2c2c, 5px 5px #2c2c2c, 6px 6px #2c2c2c, 7px 7px #2c2c2c !important;
+}
 
 .lightTheme .notesPageBox .noteList ul li .book:hover .backPages {
   box-shadow: 0px 0px #746f61, 0px 0px #746f61, 0px 0px #746f61, 0px 0px #746f61, 0px 0px #746f61, 0px 0px #746f61, 0px 0px #746f61;
@@ -2552,7 +3009,7 @@ input[type=number] {
 }
 .lightTheme .notesPageBox .noteList ul li .book .firstPage {
   background: #e2e0d9;
-  box-shadow: inset -2px -2px 10px rgba(56, 36, 0, 0.9);
+  box-shadow: inset -2px -2px 5px rgba(56, 36, 0, 0.9);
 }
 .lightTheme .notesPageBox .noteList ul li .book .firstPage .bookTitle {
   color: #222;
@@ -2569,6 +3026,47 @@ input[type=number] {
 .lightTheme .notesPageBox .noteList ul li .noteTitle.addNew::after {
   background: rgba(0, 0, 0, 0.3);
   color: #FFF;
+}
+.lightTheme .notesPageBox .editNoteArea .editNoteBackground::before {
+  background: rgba(255, 255, 255, 0.3);
+}
+.lightTheme .notesPageBox .editNoteArea .editNoteBackground::after {
+  border: solid 4px rgba(255, 255, 255, 0.4);
+}
+.lightTheme .notesPageBox .editNoteArea .editNoteBackground .top .noteTitleInput, .lightTheme .notesPageBox .editNoteArea .editNoteBackground .top .noteColorSelect {
+  color: #222;
+  background: rgba(255, 255, 255, 0.4);
+  border: solid 1px rgba(255, 255, 255, 0.6);
+  box-shadow: inset 0 0 15px #818181;
+}
+.lightTheme .notesPageBox .editNoteArea .editNoteBackground .top .book .firstPage {
+  background: #e2e0d9;
+  box-shadow: 0px 1px #746f61, 0px 2px #746f61, 0 2px 15px #FFF, 2px 0 60px #FFF;
+}
+.lightTheme .notesPageBox .editNoteArea .editNoteBackground .top .book .backPages {
+  background: #e2e0d9;
+  box-shadow: 1px 1px #746f61, 1px 2px #746f61, 1px 3px #746f61, 2px 4px #746f61, 3px 7px #746f61, 0 5px 15px #FFF, 2px 0 60px #FFF;
+}
+.lightTheme .notesPageBox .editNoteArea .editNoteBackground .noteContentTextArea {
+  color: #555;
+  background: linear-gradient(transparent 98%, rgba(0, 0, 0, 0.1) 0);
+  background-color: rgba(255, 255, 255, 0.5);
+  background-attachment: local;
+  line-height: 2.5em;
+  background-size: 100% 2.5em;
+  box-shadow: inset 0 0 15px #818181;
+}
+.lightTheme .notesPageBox .editNoteArea .editNoteBackground .buttons button {
+  color: #333;
+  border: solid 1px rgba(0, 0, 0, 0.3);
+  background: #d8d8d8;
+}
+.lightTheme .notesPageBox .editNoteArea .editNoteBackground .buttons button:hover {
+  background: #ececec;
+}
+.lightTheme .notesPageBox .editNoteArea .editNoteBackground .buttons button:active {
+  transition: 0s;
+  background: #FFF;
 }
 @keyframes bookFloat {
   0% {
@@ -2591,9 +3089,13 @@ input[type=number] {
 }
 @media screen and (max-width: 1400px) {
   .notesPageBox .noteList {
-    margin-top: 80px;
-    padding: 45px;
-    max-height: calc(100vh - 80px);
+    margin-left: 0;
+    padding: 80px 60px 100px 60px;
+    width: calc(100% - 150px);
+  }
+  .notesPageBox .noteList ul li {
+    width: 33.3%;
+    margin-bottom: 40px;
   }
   .notesPageBox .noteList ul li .book {
     width: 100px;
@@ -2623,6 +3125,89 @@ input[type=number] {
   }
   .notesPageBox .noteList ul li .noteTitle.addNew::after {
     font-size: 80%;
+  }
+  .notesPageBox .editNoteArea {
+    margin-top: 80px;
+  }
+  .notesPageBox .editNoteArea .editNoteBackground {
+    width: 100%;
+    height: calc(100vh - 130px);
+  }
+  .notesPageBox .editNoteArea .editNoteBackground::before {
+    width: 100%;
+    height: calc(100vh - 110px);
+  }
+  .notesPageBox .editNoteArea .editNoteBackground::after {
+    width: calc(100% - 5px);
+    height: calc(100vh - 115px);
+  }
+  .notesPageBox .editNoteArea .editNoteBackground .top .noteTitleInput, .notesPageBox .editNoteArea .editNoteBackground .top .noteColorSelect {
+    font-size: 90%;
+  }
+  .notesPageBox .editNoteArea .editNoteBackground .top .book {
+    width: 100px;
+    height: 135px;
+    right: 40px;
+  }
+  .notesPageBox .editNoteArea .editNoteBackground .noteContentTextArea {
+    width: 70%;
+    height: calc(100vh - 330px);
+    font-size: 90%;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .notesPageBox .noteList {
+    padding: 80px 0;
+    width: 100%;
+  }
+  .notesPageBox .noteList ul li {
+    width: 50%;
+    padding: 20px 10px;
+  }
+  .notesPageBox .noteList ul li .book {
+    width: 80px;
+    height: 110px;
+  }
+  .notesPageBox .noteList ul li .book .firstPage::before {
+    width: calc(100% - 8px);
+    height: calc(100% - 12px);
+    top: 4px;
+  }
+  .notesPageBox .noteList ul li .book .backPages::before {
+    width: calc(100% - 8px);
+    height: calc(100% - 12px);
+    top: 4px;
+  }
+  .notesPageBox .editNoteArea {
+    width: 100%;
+  }
+  .notesPageBox .editNoteArea .editNoteBackground {
+    width: 100%;
+    height: calc(100vh - 130px);
+  }
+  .notesPageBox .editNoteArea .editNoteBackground::before {
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 110px);
+  }
+  .notesPageBox .editNoteArea .editNoteBackground::after {
+    left: -5px;
+    width: calc(100% + 5px);
+    height: calc(100vh - 115px);
+  }
+  .notesPageBox .editNoteArea .editNoteBackground .top .noteTitleInput, .notesPageBox .editNoteArea .editNoteBackground .top .noteColorSelect {
+    font-size: 90%;
+  }
+  .notesPageBox .editNoteArea .editNoteBackground .top .book {
+    width: 100px;
+    height: 135px;
+    right: 40px;
+  }
+  .notesPageBox .editNoteArea .editNoteBackground .noteContentTextArea {
+    margin-left: 5%;
+    width: 90%;
+    height: calc(100vh - 330px);
+    font-size: 90%;
   }
 }
 .userSettingPageBox {

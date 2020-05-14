@@ -2,14 +2,18 @@
     position: relative
 
     .noteList
-        margin-top: 120px
-        padding: 80px
-        width: calc(100% - 150px)
-        max-height: calc(100vh - 120px)
+        padding: 200px 80px 200px 140px
+        margin-left: -200px
+        width: calc(125% - 150px)
+        max-height: 100vh
         overflow: auto
+        transition: 0.5s
 
         &::-webkit-scrollbar
             display: none
+
+        &.hide
+            opacity: 0
 
         ul
             display: flex
@@ -18,9 +22,9 @@
             // border: solid 1px
 
             li
-                max-width: 300px
+                width: 20%
                 padding: 20px 60px
-                margin-bottom: 40px
+                margin-bottom: 100px
 
                 .book
                     +size(130px, 180px)
@@ -80,6 +84,7 @@
                             &::after
                                 display: none
 
+                   
                     .firstPage
                         position: absolute
                         +size(100%, 100%)
@@ -87,7 +92,7 @@
                         left: 0
                         background: #222
                         border-radius: 5px 8px 8px 5px
-                        box-shadow: inset -2px -2px 10px rgba(#000, 0.7)
+                        box-shadow: inset -2px -2px 5px rgba(#000, 0.7)
                         transform-origin: left center
                         transition: 0.3s 0.2s
                         z-index: 1
@@ -96,7 +101,7 @@
                             content: ''
                             position: absolute
                             +size(calc(100% - 8px), calc(100% - 16px))
-                            top: 8px
+                            top: 6px
                             left: 0px
                             background: url(../images/paper.jpg) left center no-repeat
                             background-size: cover
@@ -145,7 +150,7 @@
                             content: ''
                             position: absolute
                             +size(calc(100% - 8px), calc(100% - 16px))
-                            top: 8px
+                            top: 6px
                             left: 0px
                             background: url(../images/paper.jpg) right center no-repeat
                             background-size: cover
@@ -166,12 +171,14 @@
                 .noteTitle
                     position: relative
                     max-width: 100%
+                    width: max-content
                     color: #FFF
                     margin: auto
                     margin-top: 25px
                     padding: 5px 10px
                     border-radius: 100px
                     text-align: center
+                    font-size: 90%
                     background: rgba(#000, 0.6)
                     overflow: hidden
                     text-overflow: ellipsis
@@ -197,6 +204,435 @@
 
 
 
+    
+    .editNoteArea
+        margin-top: 200px
+        width: calc(100% - 150px)
+        transition: 0.5s
+
+        &::-webkit-scrollbar
+            display: none
+
+        &.hide
+            opacity: 0
+
+        .editNoteBackground
+            position: relative
+            +size(100%, calc(100vh - 250px))
+            // background: rgba(#000, 0.7)
+
+            &::before
+                position: absolute
+                content: ''
+                display: block
+                +size(100%, calc(100vh - 230px))
+                top: -60px
+                left: -30px
+                background: rgba(#000, 0.3)
+                pointer-events: none
+                z-index: -1
+
+            &::after
+                position: absolute
+                content: ''
+                display: block
+                +size(calc(100% - 5px), calc(100vh - 235px))
+                top: -30px
+                left: -60px
+                border: solid 4px rgba(#000, 0.4)
+                pointer-events: none
+                z-index: -1
+
+
+            .top
+                display: flex
+                .noteTitleInput
+                    width: 300px
+                    margin-right: 10px
+                    letter-spacing: 1px
+
+                .noteTitleInput, .noteColorSelect
+                    padding: 8px 20px
+                    font-size: 110%
+                    color: #FFF
+                    background: rgba(#181818, 0.4)
+                    border: solid 1px rgba(#FFF, 0.4)
+                    box-shadow: inset 0 0 15px #000
+                    border-radius: 100px
+                    outline: none
+
+                .noteColorSelect
+                    cursor: pointer
+
+                .book
+                    position: absolute
+                    +size(130px, 180px)
+                    right: 80px
+                    // transform: rotate3d(1, -0.5, 0.33, 30deg)
+                    -webkit-perspective: 700
+                    -webkit-perspective-origin: 100% 100%
+                    -webkit-transform-style: -webkit-preserve-3d
+                    transition: 0.3s
+                    border-radius: 5px 8px 8px 5px
+                    transform: perspective(1000px) rotate3d(1, -1, 0.5, 15deg) translateX(50%)
+                    animation: bookFloat 5s 0.5s infinite
+                    user-select: none
+
+                    .firstPage
+                        position: absolute
+                        +size(100%, 100%)
+                        top: 0
+                        left: 0
+                        background: #222
+                        border-radius: 5px 8px 8px 5px
+                        transform-origin: left center
+                        box-shadow: 0px 1px #000, 0px 2px #000, 0 2px 15px #FFF, 2px 0 60px #FFF
+                        transition: 0.4s
+                        transform: rotate3d(0, 1, 0, -160deg)
+                        z-index: 1
+
+                        &::before
+                            content: ''
+                            position: absolute
+                            +size(calc(100% - 8px), calc(100% - 16px))
+                            top: 6px
+                            left: 0px
+                            background: url(../images/paper.jpg) left center no-repeat
+                            background-size: cover
+                            box-shadow: 0 1px rgba(#5f3e00, 0.5), 0 2px rgba(#5f3e00, 0.5), -2px 4px 5px rgba(#000, 0.7), 2px 0 30px #FFF
+                            transform: rotateY(-180deg)
+                            z-index: -1
+
+                        &::after
+                            content: ''
+                            position: absolute
+                            +size(calc(100% - 40px), calc(100% - 40px))
+                            top: 20px
+                            right: 25px
+                            opacity: 0.5
+                            background: url(../images/noteText.png) center left repeat space
+                            background-size: 150%
+                            transform: rotateY(-180deg)
+                            z-index: -1
+
+                    .backPages
+                        position: relative
+                        +size(100%, 100%)
+                        background: #111
+                        border-radius: 5px 8px 8px 5px
+                        box-shadow: 1px 1px #000, 1px 2px #000, 1px 3px #000, 2px 4px #000, 3px 7px #000, 0 5px 15px #FFF, 2px 0 60px #FFF
+                        transition: 0.3s
+                        z-index: 0
+
+                        &::before
+                            content: ''
+                            position: absolute
+                            +size(calc(100% - 8px), calc(100% - 16px))
+                            top: 6px
+                            left: 0px
+                            background: url(../images/paper.jpg) right center no-repeat
+                            background-size: cover
+                            box-shadow: 0 1px rgba(#5f3e00, 0.5), 0 2px rgba(#5f3e00, 0.5), 2px 4px 5px rgba(#000, 0.7), 2px 0 30px #FFF
+ 
+
+                        &::after
+                            content: ''
+                            position: absolute
+                            +size(calc(100% - 40px), calc(100% - 80px))
+                            top: 20px
+                            left: 20px
+                            opacity: 0.5
+                            background: url(../images/noteText.png) top center repeat
+                            background-size: 150%
+                            transition: 0.3s 0.2s
+
+
+
+            .noteContentTextArea
+                +size(70%, calc(100vh - 450px))
+                margin-top: 30px
+                padding: 8px 20px
+                font-size: 100%
+                color: #d4d4d4
+                background: linear-gradient(transparent 98%, rgba(#FFF, 0.1) 0)
+                background-color: rgba(#1d1d1d, 0.5)
+                background-attachment: local
+                line-height: 2.5em
+                background-size: 100% 2.5em
+                border: solid 1px rgba(#FFF, 0.4)
+                box-shadow: inset 0 0 15px #000
+                border-radius: 20px
+                outline: none
+                resize: none
+                
+                &::-webkit-scrollbar
+                    display: none
+
+            .buttons
+                width: 70%
+                display: flex
+                align-items: center
+                justify-content: center
+                margin-top: 25px
+
+                button
+                    padding: 8px 18px
+                    margin: 0 5px
+                    border: solid 1px rgba(#FFF, 0.3)
+                    font-size: 100%
+                    border-radius: 100px
+                    color: #FFF
+                    background: #000
+                    cursor: pointer
+                    outline: none
+                    transition: 0.3s
+
+                    &:hover
+                        background: #3a3a3a
+                    &:active
+                        transition: 0s
+                        background: #666666
+
+
+
+// 書本顏色
+.book
+    // 筆記本顏色 Start------------------------------------------------------------------------------------------------------------------------------------------------
+    &.red  // 紅
+        &:hover
+            .backPages
+                box-shadow: 0px 0px #2b0707, 0px 0px #2b0707, 0px 0px #2b0707, 0px 0px #2b0707, 0px 0px #2b0707, 0px 0px #2b0707, 0px 0px #2b0707 !important
+        &.active
+            .firstPage
+                box-shadow: 0px 1px #3f0b0b, 0px 2px #3f0b0b, 0 2px 15px #FFF, 2px 0 60px #FFF !important
+            .backPages
+                box-shadow: 1px 1px #3f0b0b, 1px 2px #3f0b0b, 1px 3px #3f0b0b, 2px 4px #3f0b0b, 3px 7px #3f0b0b, 0 5px 15px #FFF, 2px 0 60px #FFF !important
+        .firstPage
+            background: #832323 !important
+            box-shadow: inset -2px -2px 5px rgba(#1d0000, 0.9) !important
+            .bookTitle
+                color: #fdd1d1 !important
+                background: #641919 !important
+        .backPages
+            background: #641414 !important
+            box-shadow: 1px 1px #2b0707, 2px 2px #2b0707, 3px 3px #2b0707, 4px 4px #2b0707, 5px 5px #2b0707, 6px 6px #2b0707, 7px 7px #2b0707 !important
+
+    &.blue  // 藍
+        &:hover
+            .backPages
+                box-shadow: 0px 0px #071d2b, 0px 0px #071d2b, 0px 0px #071d2b, 0px 0px #071d2b, 0px 0px #071d2b, 0px 0px #071d2b, 0px 0px #071d2b !important
+        &.active
+            .firstPage
+                box-shadow: 0px 1px #0b283f, 0px 2px #0b283f, 0 2px 15px #FFF, 2px 0 60px #FFF !important
+            .backPages
+                box-shadow: 1px 1px #0b283f, 1px 2px #0b283f, 1px 3px #0b283f, 2px 4px #0b283f, 3px 7px #0b283f, 0 5px 15px #FFF, 2px 0 60px #FFF !important
+        .firstPage
+            background: #237083 !important
+            box-shadow: inset -2px -2px 5px rgba(#00101d, 0.9) !important
+            .bookTitle
+                color: #d1edfd !important
+                background: #194c64 !important
+        .backPages
+            background: #144b64 !important
+            box-shadow: 1px 1px #071d2b, 2px 2px #071d2b, 3px 3px #071d2b, 4px 4px #071d2b, 5px 5px #071d2b, 6px 6px #071d2b, 7px 7px #071d2b !important
+
+    &.green  // 綠
+        &:hover
+            .backPages
+                box-shadow: 0px 0px #072b0f, 0px 0px #072b0f, 0px 0px #072b0f, 0px 0px #072b0f, 0px 0px #072b0f, 0px 0px #072b0f, 0px 0px #072b0f !important
+        &.active
+            .firstPage
+                box-shadow: 0px 1px #0b3f1c, 0px 2px #0b3f1c, 0 2px 15px #FFF, 2px 0 60px #FFF !important
+            .backPages
+                box-shadow: 1px 1px #0b3f1c, 1px 2px #0b3f1c, 1px 3px #0b3f1c, 2px 4px #0b3f1c, 3px 7px #0b3f1c, 0 5px 15px #FFF, 2px 0 60px #FFF !important
+        .firstPage
+            background: #238340 !important
+            box-shadow: inset -2px -2px 5px rgba(#00101d, 0.9) !important
+            .bookTitle
+                color: #d1fdeb !important
+                background: #196436 !important
+        .backPages
+            background: #146438 !important
+            box-shadow: 1px 1px #072b0f, 2px 2px #072b0f, 3px 3px #072b0f, 4px 4px #072b0f, 5px 5px #072b0f, 6px 6px #072b0f, 7px 7px #072b0f !important
+            
+    &.greenBlue  // 藍綠
+        &:hover
+            .backPages
+                box-shadow: 0px 0px #072b22, 0px 0px #072b22, 0px 0px #072b22, 0px 0px #072b22, 0px 0px #072b22, 0px 0px #072b22, 0px 0px #072b22 !important
+        &.active
+            .firstPage
+                box-shadow: 0px 1px #0b3f32, 0px 2px #0b3f32, 0 2px 15px #FFF, 2px 0 60px #FFF !important
+            .backPages
+                box-shadow: 1px 1px #0b3f32, 1px 2px #0b3f32, 1px 3px #0b3f32, 2px 4px #0b3f32, 3px 7px #0b3f32, 0 5px 15px #FFF, 2px 0 60px #FFF !important
+        .firstPage
+            background: #23837e !important
+            box-shadow: inset -2px -2px 5px rgba(#001d1b, 0.9) !important
+            .bookTitle
+                color: #d1fdf7 !important
+                background: #196460 !important
+        .backPages
+            background: #14645d !important
+            box-shadow: 1px 1px #072b22, 2px 2px #072b22, 3px 3px #072b22, 4px 4px #072b22, 5px 5px #072b22, 6px 6px #072b22, 7px 7px #072b22 !important
+            
+    &.tiffiny  // 蒂芬妮藍
+        &:hover
+            .backPages
+                box-shadow: 0px 0px #065050, 0px 0px #065050, 0px 0px #065050, 0px 0px #065050, 0px 0px #065050, 0px 0px #065050, 0px 0px #065050 !important
+        &.active
+            .firstPage
+                box-shadow: 0px 1px #0b3f3f, 0px 2px #0b3f3f, 0 2px 15px #FFF, 2px 0 60px #FFF !important
+            .backPages
+                box-shadow: 1px 1px #0b3f3f, 1px 2px #0b3f3f, 1px 3px #0b3f3f, 2px 4px #0b3f3f, 3px 7px #0b3f3f, 0 5px 15px #FFF, 2px 0 60px #FFF !important
+        .firstPage
+            background: #7ddbd7 !important
+            box-shadow: inset -2px -2px 5px rgba(#001b1d, 0.9) !important
+            .bookTitle
+                color: #d1fdf7 !important
+                background: #3f7e7b !important
+        .backPages
+            background: #54c0bb !important
+            box-shadow: 1px 1px #065050, 2px 2px #065050, 3px 3px #065050, 4px 4px #065050, 5px 5px #065050, 6px 6px #065050, 7px 7px #065050 !important
+            
+    &.yellow  // 黃
+        &:hover
+            .backPages
+                box-shadow: 0px 0px #53502d, 0px 0px #53502d, 0px 0px #53502d, 0px 0px #53502d, 0px 0px #53502d, 0px 0px #53502d, 0px 0px #53502d !important
+        &.active
+            .firstPage
+                box-shadow: 0px 1px #3f3a0b, 0px 2px #3f3a0b, 0 2px 15px #FFF, 2px 0 60px #FFF !important
+            .backPages
+                box-shadow: 1px 1px #3f3a0b, 1px 2px #3f3a0b, 1px 3px #3f3a0b, 2px 4px #3f3a0b, 3px 7px #3f3a0b, 0 5px 15px #FFF, 2px 0 60px #FFF !important
+        .firstPage
+            background: #f1f081 !important
+            box-shadow: inset -2px -2px 5px rgba(#1d1900, 0.9) !important
+            .bookTitle
+                color: #fdfad1 !important
+                background: #918b59 !important
+        .backPages
+            background: #f1f083 !important
+            box-shadow: 1px 1px #53502d, 2px 2px #53502d, 3px 3px #53502d, 4px 4px #53502d, 5px 5px #53502d, 6px 6px #53502d, 7px 7px #53502d !important
+            
+    &.orange  // 橙
+        &:hover
+            .backPages
+                box-shadow: 0px 0px #492106, 0px 0px #492106, 0px 0px #492106, 0px 0px #492106, 0px 0px #492106, 0px 0px #492106, 0px 0px #492106 !important
+        &.active
+            .firstPage
+                box-shadow: 0px 1px #3f2a0b, 0px 2px #3f2a0b, 0 2px 15px #FFF, 2px 0 60px #FFF !important
+            .backPages
+                box-shadow: 1px 1px #3f2a0b, 1px 2px #3f2a0b, 1px 3px #3f2a0b, 2px 4px #3f2a0b, 3px 7px #3f2a0b, 0 5px 15px #FFF, 2px 0 60px #FFF !important
+        .firstPage
+            background: #c9743b !important
+            box-shadow: inset -2px -2px 5px rgba(#1d0c00, 0.9) !important
+            .bookTitle
+                color: #fde6d1 !important
+                background: #8d4706 !important
+        .backPages
+            background: #c9743b !important
+            box-shadow: 1px 1px #492106, 2px 2px #492106, 3px 3px #492106, 4px 4px #492106, 5px 5px #492106, 6px 6px #492106, 7px 7px #492106 !important
+            
+    &.purple  // 紫
+        &:hover
+            .backPages
+                box-shadow: 0px 0px #411b5a, 0px 0px #411b5a, 0px 0px #411b5a, 0px 0px #411b5a, 0px 0px #411b5a, 0px 0px #411b5a, 0px 0px #411b5a !important
+        &.active
+            .firstPage
+                box-shadow: 0px 1px #280b3f, 0px 2px #280b3f, 0 2px 15px #FFF, 2px 0 60px #FFF !important
+            .backPages
+                box-shadow: 1px 1px #280b3f, 1px 2px #280b3f, 1px 3px #280b3f, 2px 4px #280b3f, 3px 7px #280b3f, 0 5px 15px #FFF, 2px 0 60px #FFF !important
+        .firstPage
+            background: #9662eb !important
+            box-shadow: inset -2px -2px 5px rgba(#12001d, 0.9) !important
+            .bookTitle
+                color: #e2d1fd !important
+                background: #5b2c99 !important
+        .backPages
+            background: #9662eb !important
+            box-shadow: 1px 1px #411b5a, 2px 2px #411b5a, 3px 3px #411b5a, 4px 4px #411b5a, 5px 5px #411b5a, 6px 6px #411b5a, 7px 7px #411b5a !important
+            
+    &.pink  // 粉紅
+        &:hover
+            .backPages
+                box-shadow: 0px 0px #752d57, 0px 0px #752d57, 0px 0px #752d57, 0px 0px #752d57, 0px 0px #752d57, 0px 0px #752d57, 0px 0px #752d57 !important
+        &.active
+            .firstPage
+                box-shadow: 0px 1px #691d5f, 0px 2px #691d5f, 0 2px 15px #FFF, 2px 0 60px #FFF !important
+            .backPages
+                box-shadow: 1px 1px #691d5f, 1px 2px #691d5f, 1px 3px #691d5f, 2px 4px #691d5f, 3px 7px #691d5f, 0 5px 15px #FFF, 2px 0 60px #FFF !important
+        .firstPage
+            background: #e595db !important
+            box-shadow: inset -2px -2px 5px rgba(#1d0019, 0.9) !important
+            .bookTitle
+                color: #fdd1f9 !important
+                background: #703a64 !important
+        .backPages
+            background: #e595db !important
+            box-shadow: 1px 1px #752d57, 2px 2px #752d57, 3px 3px #752d57, 4px 4px #752d57, 5px 5px #752d57, 6px 6px #752d57, 7px 7px #752d57 !important
+            
+    &.black  // 黑
+        &:hover
+            .backPages
+                box-shadow: 0px 0px #111, 0px 0px #111, 0px 0px #111, 0px 0px #111, 0px 0px #111, 0px 0px #111, 0px 0px #111 !important
+        &.active
+            .firstPage
+                box-shadow: 0px 1px #000, 0px 2px #000, 0 2px 15px #FFF, 2px 0 60px #FFF !important
+            .backPages
+                box-shadow: 1px 1px #000, 1px 2px #000, 1px 3px #000, 2px 4px #000, 3px 7px #000, 0 5px 15px #FFF, 2px 0 60px #FFF !important
+        .firstPage
+            background: #222 !important
+            box-shadow: inset -2px -2px 5px rgba(#000, 0.7) !important
+            .bookTitle
+                color: #FFF !important
+                background: #000 !important
+        .backPages
+            background: #111 !important
+            box-shadow: 1px 1px #111, 2px 2px #111, 3px 3px #111, 4px 4px #111, 5px 5px #111, 6px 6px #111, 7px 7px #111 !important
+            
+    &.white  // 白
+        &:hover
+            .backPages
+                box-shadow: 0px 0px #746f61, 0px 0px #746f61, 0px 0px #746f61, 0px 0px #746f61, 0px 0px #746f61, 0px 0px #746f61, 0px 0px #746f61 !important
+        &.active
+            .firstPage
+                box-shadow: 0px 1px #746f61, 0px 2px #746f61, 0 2px 15px #FFF, 2px 0 60px #FFF !important
+            .backPages
+                box-shadow: 1px 1px #746f61, 1px 2px #746f61, 1px 3px #746f61, 2px 4px #746f61, 3px 7px #746f61, 0 5px 15px #FFF, 2px 0 60px #FFF !important
+        .firstPage
+            background: #e2e0d9 !important
+            box-shadow: inset -2px -2px 5px rgba(#382400, 0.9) !important
+            .bookTitle
+                color: #222 !important
+                background: #bebab6 !important
+        .backPages
+            background: #e2e0d9 !important
+            box-shadow: 1px 1px #746f61, 2px 2px #746f61, 3px 3px #746f61, 4px 4px #746f61, 5px 5px #746f61, 6px 6px #746f61, 7px 7px #746f61 !important
+            
+    &.gray  // 灰
+        &:hover
+            .backPages
+                box-shadow: 0px 0px #2c2c2c, 0px 0px #2c2c2c, 0px 0px #2c2c2c, 0px 0px #2c2c2c, 0px 0px #2c2c2c, 0px 0px #2c2c2c, 0px 0px #2c2c2c !important
+        &.active
+            .firstPage
+                box-shadow: 0px 1px #444444, 0px 2px #444444, 0 2px 15px #FFF, 2px 0 60px #FFF !important
+            .backPages
+                box-shadow: 1px 1px #444444, 1px 2px #444444, 1px 3px #444444, 2px 4px #444444, 3px 7px #444444, 0 5px 15px #FFF, 2px 0 60px #FFF !important
+        .firstPage
+            background: #646464 !important
+            box-shadow: inset -2px -2px 5px rgba(#000, 0.7) !important
+            .bookTitle
+                color: #FFF !important
+                background: #4e4e4e !important
+        .backPages
+            background: #646464 !important
+            box-shadow: 1px 1px #2c2c2c, 2px 2px #2c2c2c, 3px 3px #2c2c2c, 4px 4px #2c2c2c, 5px 5px #2c2c2c, 6px 6px #2c2c2c, 7px 7px #2c2c2c !important
+
+    // 筆記本顏色 End------------------------------------------------------------------------------------------------------------------------------------------------     
+
+
+                
+
+
+
 // Light Theme
 .lightTheme
     .notesPageBox
@@ -214,7 +650,7 @@
                                 box-shadow: 1px 1px #746f61, 1px 2px #746f61, 1px 3px #746f61, 2px 4px #746f61, 3px 7px #746f61, 0 5px 15px #FFF, 2px 0 60px #FFF
                         .firstPage
                             background: #e2e0d9
-                            box-shadow: inset -2px -2px 10px rgba(#382400, 0.9)
+                            box-shadow: inset -2px -2px 5px rgba(#382400, 0.9)
                             .bookTitle
                                 color: #222
                                 background: #bebab6
@@ -228,6 +664,45 @@
                             &::after
                                 background: rgba(#000, 0.3)
                                 color: #FFF
+        .editNoteArea
+            .editNoteBackground
+                &::before
+                    background: rgba(#FFF, 0.3)
+
+                &::after
+                    border: solid 4px rgba(#FFF, 0.4)
+                .top
+                    .noteTitleInput, .noteColorSelect
+                        color: #222
+                        background: rgba(#FFF, 0.4)
+                        border: solid 1px rgba(#FFF, 0.6)
+                        box-shadow: inset 0 0 15px #818181
+                    .book
+                        .firstPage
+                            background: #e2e0d9
+                            box-shadow: 0px 1px #746f61, 0px 2px #746f61, 0 2px 15px #FFF, 2px 0 60px #FFF
+                        .backPages
+                            background: #e2e0d9
+                            box-shadow: 1px 1px #746f61, 1px 2px #746f61, 1px 3px #746f61, 2px 4px #746f61, 3px 7px #746f61, 0 5px 15px #FFF, 2px 0 60px #FFF
+                .noteContentTextArea
+                    color: #555
+                    background: linear-gradient(transparent 98%, rgba(#000, 0.1) 0)
+                    background-color: rgba(#FFF, 0.5)
+                    background-attachment: local
+                    line-height: 2.5em
+                    background-size: 100% 2.5em
+                    box-shadow: inset 0 0 15px #818181
+                .buttons
+                    button
+                        color: #333
+                        border: solid 1px rgba(#000, 0.3)
+                        background: #d8d8d8
+                        &:hover
+                            background: #ececec
+                        &:active
+                            transition: 0s
+                            background: #FFF
+
 
 
 
@@ -239,6 +714,7 @@
         transform: perspective(1000px) rotate3d(1, -1, 0.5, 15deg) translateX(48%) translateY(-20px)
     100%
         transform: perspective(1000px) rotate3d(1, -1, 0.5, 15deg) translateX(50%) translateY(0px)
+
 +keyframes(bookBack)
     0%
         transform: perspective(1000px) rotate3d(1, -1, 0.5, 15deg) translateX(50%)
@@ -252,11 +728,14 @@
 @media screen and (max-width: 1400px)
     .notesPageBox
         .noteList
-            margin-top: 80px
-            padding: 45px
-            max-height: calc(100vh - 80px)
+            // padding: 45px
+            margin-left: 0
+            padding: 80px 60px 100px 60px
+            width: calc(100% - 150px)
             ul
                 li
+                    width: 33.3%
+                    margin-bottom: 40px
                     .book
                         +size(100px, 135px)
                         &.active
@@ -279,6 +758,64 @@
                         &.addNew
                             &::after
                                 font-size: 80%
+        .editNoteArea
+            margin-top: 80px
+            .editNoteBackground
+                +size(100%, calc(100vh - 130px))
+                &::before
+                    +size(100%, calc(100vh - 110px))
+                &::after
+                    +size(calc(100% - 5px), calc(100vh - 115px))
+                .top
+                    .noteTitleInput, .noteColorSelect
+                        font-size: 90%
+                    .book
+                        +size(100px, 135px)
+                        right: 40px
+                .noteContentTextArea
+                    +size(70%, calc(100vh - 330px))
+                    font-size: 90%
+
+
+@media screen and (max-width: 1000px)
+    .notesPageBox
+        .noteList
+            padding: 80px 0
+            width: 100%
+            ul
+                li
+                    width: 50%
+                    padding: 20px 10px
+                    .book
+                        +size(80px, 110px)
+                        .firstPage
+                            &::before
+                                +size(calc(100% - 8px), calc(100% - 12px))
+                                top: 4px
+                        .backPages
+                            &::before
+                                +size(calc(100% - 8px), calc(100% - 12px))
+                                top: 4px
+        .editNoteArea
+            width: 100%
+            .editNoteBackground
+                +size(100%, calc(100vh - 130px))
+                &::before
+                    left: 0
+                    +size(100%, calc(100vh - 110px))
+                &::after
+                    left: -5px
+                    +size(calc(100% + 5px), calc(100vh - 115px))
+                .top
+                    .noteTitleInput, .noteColorSelect
+                        font-size: 90%
+                    .book
+                        +size(100px, 135px)
+                        right: 40px
+                .noteContentTextArea
+                    margin-left: 5%
+                    +size(90%, calc(100vh - 330px))
+                    font-size: 90%
 
 
 

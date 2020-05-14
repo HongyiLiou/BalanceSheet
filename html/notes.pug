@@ -8,61 +8,79 @@ article.notesPageBox
                     .backPages
                 p.noteTitle 筆記筆記
             li
-                .book
+                .book.blue
                     .firstPage
                         p.bookTitle 倚天屠龍記
                     .backPages
                 p.noteTitle 倚天屠龍記倚天屠龍記倚天屠龍記倚天屠龍記
             li
-                .book
+                .book.red
                     .firstPage
                         p.bookTitle 一些秘密
                     .backPages
                 p.noteTitle 一些秘密
             li
-                .book
+                .book.green
                     .firstPage
                         p.bookTitle 一些秘密
                     .backPages
                 p.noteTitle 一些秘密
             li
-                .book
+                .book.tiffiny
                     .firstPage
                         p.bookTitle 一些秘密
                     .backPages
                 p.noteTitle 一些秘密
             li
-                .book
+                .book.greenBlue
                     .firstPage
                         p.bookTitle 一些秘密
                     .backPages
                 p.noteTitle 一些秘密
             li
-                .book
+                .book.orange
                     .firstPage
                         p.bookTitle 一些秘密
                     .backPages
                 p.noteTitle 一些秘密
             li
-                .book
+                .book.white
                     .firstPage
                         p.bookTitle 一些秘密
                     .backPages
                 p.noteTitle 一些秘密
             li
-                .book
+                .book.black
                     .firstPage
                         p.bookTitle 一些秘密
                     .backPages
                 p.noteTitle 一些秘密
             li
-                .book
+                .book.gray
+                    .firstPage
+                        p.bookTitle 灰色的書
+                    .backPages
+                p.noteTitle 灰色的書
+            li
+                .book.yellow
                     .firstPage
                         p.bookTitle 一些秘密
                     .backPages
                 p.noteTitle 一些秘密
             li
-                .book
+                .book.purple
+                    .firstPage
+                        p.bookTitle 一些秘密
+                    .backPages
+                p.noteTitle 一些秘密
+            li
+                .book.pink
+                    .firstPage
+                        p.bookTitle 一些秘密
+                    .backPages
+                p.noteTitle 一些秘密
+            li
+                .book.black
                     .firstPage
                         p.bookTitle 一些秘密
                     .backPages
@@ -73,3 +91,32 @@ article.notesPageBox
                         p.bookTitle ？？？
                     .backPages
                 p.noteTitle.addNew 新增記事本
+
+
+
+    section.editNoteArea
+        .editNoteBackground
+            .top
+                input.noteTitleInput(type="text" spellcheck="false" placeholder="記事本名稱")
+                select.noteColorSelect(name="noteColorSelect")
+                    option(value="default") 預設顏色
+                    option(value="red" style="background: #832323;") 紅
+                    option(value="blue" style="background: #237083;") 藍
+                    option(value="green" style="background: #238340;") 綠
+                    option(value="greenBlue" style="background: #23837e;") 藍綠
+                    option(value="tiffiny" style="background: #7ddbd7;") 蒂芬妮藍
+                    option(value="yellow" style="background: #f1f081; color: #000;") 黃
+                    option(value="orange" style="background: #c9743b;") 橙
+                    option(value="purple" style="background: #9662eb;") 紫
+                    option(value="pink" style="background: #e595db;") 粉紅
+                    option(value="black" style="background: #222;") 黑
+                    option(value="white" style="background: #e2e0d9; color: #000;") 白
+                    option(value="gray" style="background: #646464;") 灰
+                    
+                .book.active.red
+                    .firstPage
+                    .backPages
+            textarea.noteContentTextArea(spellcheck="false")
+            .buttons
+                button Cancel
+                button Save

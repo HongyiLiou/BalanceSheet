@@ -12,7 +12,7 @@
         <p class="noteTitle">筆記筆記</p>
       </li>
       <li>
-        <div class="book">
+        <div class="book blue">
           <div class="firstPage">
             <p class="bookTitle">倚天屠龍記</p>
           </div>
@@ -21,7 +21,7 @@
         <p class="noteTitle">倚天屠龍記倚天屠龍記倚天屠龍記倚天屠龍記</p>
       </li>
       <li>
-        <div class="book">
+        <div class="book red">
           <div class="firstPage">
             <p class="bookTitle">一些秘密</p>
           </div>
@@ -30,7 +30,7 @@
         <p class="noteTitle">一些秘密</p>
       </li>
       <li>
-        <div class="book">
+        <div class="book green">
           <div class="firstPage">
             <p class="bookTitle">一些秘密</p>
           </div>
@@ -39,7 +39,7 @@
         <p class="noteTitle">一些秘密</p>
       </li>
       <li>
-        <div class="book">
+        <div class="book tiffiny">
           <div class="firstPage">
             <p class="bookTitle">一些秘密</p>
           </div>
@@ -48,7 +48,7 @@
         <p class="noteTitle">一些秘密</p>
       </li>
       <li>
-        <div class="book">
+        <div class="book greenBlue">
           <div class="firstPage">
             <p class="bookTitle">一些秘密</p>
           </div>
@@ -57,7 +57,7 @@
         <p class="noteTitle">一些秘密</p>
       </li>
       <li>
-        <div class="book">
+        <div class="book orange">
           <div class="firstPage">
             <p class="bookTitle">一些秘密</p>
           </div>
@@ -66,7 +66,7 @@
         <p class="noteTitle">一些秘密</p>
       </li>
       <li>
-        <div class="book">
+        <div class="book white">
           <div class="firstPage">
             <p class="bookTitle">一些秘密</p>
           </div>
@@ -75,7 +75,7 @@
         <p class="noteTitle">一些秘密</p>
       </li>
       <li>
-        <div class="book">
+        <div class="book black">
           <div class="firstPage">
             <p class="bookTitle">一些秘密</p>
           </div>
@@ -84,7 +84,16 @@
         <p class="noteTitle">一些秘密</p>
       </li>
       <li>
-        <div class="book">
+        <div class="book gray">
+          <div class="firstPage">
+            <p class="bookTitle">灰色的書</p>
+          </div>
+          <div class="backPages"></div>
+        </div>
+        <p class="noteTitle">灰色的書</p>
+      </li>
+      <li>
+        <div class="book yellow">
           <div class="firstPage">
             <p class="bookTitle">一些秘密</p>
           </div>
@@ -93,7 +102,25 @@
         <p class="noteTitle">一些秘密</p>
       </li>
       <li>
-        <div class="book">
+        <div class="book purple">
+          <div class="firstPage">
+            <p class="bookTitle">一些秘密</p>
+          </div>
+          <div class="backPages"></div>
+        </div>
+        <p class="noteTitle">一些秘密</p>
+      </li>
+      <li>
+        <div class="book pink">
+          <div class="firstPage">
+            <p class="bookTitle">一些秘密</p>
+          </div>
+          <div class="backPages"></div>
+        </div>
+        <p class="noteTitle">一些秘密</p>
+      </li>
+      <li>
+        <div class="book black">
           <div class="firstPage">
             <p class="bookTitle">一些秘密</p>
           </div>
@@ -111,5 +138,36 @@
         <p class="noteTitle addNew">新增記事本</p>
       </li>
     </ul>
+  </section>
+  <section class="editNoteArea">
+    <div class="editNoteBackground">
+      <div class="top">
+        <input class="noteTitleInput" type="text" spellcheck="false" placeholder="記事本名稱"/>
+        <select class="noteColorSelect" name="noteColorSelect">
+          <option value="default">預設顏色</option>
+          <option value="red" style="background: #832323;">紅</option>
+          <option value="blue" style="background: #237083;">藍</option>
+          <option value="green" style="background: #238340;">綠</option>
+          <option value="greenBlue" style="background: #23837e;">藍綠</option>
+          <option value="tiffiny" style="background: #7ddbd7;">蒂芬妮藍</option>
+          <option value="yellow" style="background: #f1f081; color: #000;">黃</option>
+          <option value="orange" style="background: #c9743b;">橙</option>
+          <option value="purple" style="background: #9662eb;">紫</option>
+          <option value="pink" style="background: #e595db;">粉紅</option>
+          <option value="black" style="background: #222;">黑</option>
+          <option value="white" style="background: #e2e0d9; color: #000;">白</option>
+          <option value="gray" style="background: #646464;">灰</option>
+        </select>
+        <div class="book active red">
+          <div class="firstPage"></div>
+          <div class="backPages"></div>
+        </div>
+      </div>
+      <textarea class="noteContentTextArea" spellcheck="false"></textarea>
+      <div class="buttons">
+        <button>Cancel</button>
+        <button>Save</button>
+      </div>
+    </div>
   </section>
 </article>
