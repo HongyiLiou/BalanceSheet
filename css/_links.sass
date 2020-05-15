@@ -277,7 +277,9 @@
             max-height: calc(100vh - 100px)
             li
                 +size(100px, 115px)
-                margin: 0 10px 10px 0
+                margin: 0 15px 10px 0
+                &:nth-child(3n)
+                    margin: 0 0px 10px 0 !important
                 a
                     .logo
                         +size(50px, 50px)

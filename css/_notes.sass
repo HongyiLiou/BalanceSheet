@@ -216,6 +216,9 @@
         &.hide
             opacity: 0
 
+        .noteNo
+            display: none
+
         .editNoteBackground
             position: relative
             +size(100%, calc(100vh - 250px))
@@ -799,23 +802,31 @@
         .editNoteArea
             width: 100%
             .editNoteBackground
-                +size(100%, calc(100vh - 130px))
+                +size(100%, calc(100vh - 90px))
                 &::before
                     left: 0
-                    +size(100%, calc(100vh - 110px))
+                    +size(100%, calc(100vh - 70px))
                 &::after
                     left: -5px
-                    +size(calc(100% + 5px), calc(100vh - 115px))
+                    +size(calc(100% + 5px), calc(100vh - 75px))
                 .top
+                    padding: 120px 5% 0 5%
+                    justify-content: space-between
                     .noteTitleInput, .noteColorSelect
                         font-size: 90%
+                    .noteTitleInput
+                        width: 200px
+                        margin-right: 0
                     .book
-                        +size(100px, 135px)
-                        right: 40px
+                        +size(80px, 110px)
+                        top: -10px
+                        left: calc(50% - 40px)
                 .noteContentTextArea
                     margin-left: 5%
-                    +size(90%, calc(100vh - 330px))
+                    +size(90%, calc(100vh - 400px))
                     font-size: 90%
+                .buttons
+                    width: 100%
 
 
 

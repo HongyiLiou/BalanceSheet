@@ -1,5 +1,7 @@
 // Notes.js
 
+
+/** 重新載入記事本 */
 function onNoteActive() {
     const noteBooks = document.querySelectorAll('.notesPageBox .noteList ul li .book');
     const noteList = document.querySelector('.notesPageBox .noteList');
@@ -9,7 +11,6 @@ function onNoteActive() {
 
     noteBooks.forEach((book, i) => {
         book.addEventListener('click', () => {
-            console.log(123);
             
             noteBooks.forEach((x, j) => {
                 if (j !== i && x.classList.contains('active')) {
@@ -32,4 +33,13 @@ function onNoteActive() {
             }, 1000)
         });
     })
+}
+
+
+/** 取消按鈕 */
+function onNoteCancelBtn() {
+    const noteBooks = document.querySelectorAll('.notesPageBox .noteList ul li .book');
+    const noteList = document.querySelector('.notesPageBox .noteList');
+    const editNoteArea = document.querySelector('.notesPageBox .editNoteArea');
+
 }
