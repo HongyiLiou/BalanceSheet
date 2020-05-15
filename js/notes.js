@@ -1,16 +1,21 @@
 // Notes.js
 
 
+
+
 /** 重新載入記事本 */
 function onNoteActive() {
     const noteBooks = document.querySelectorAll('.notesPageBox .noteList ul li .book');
     const noteList = document.querySelector('.notesPageBox .noteList');
     const editNoteArea = document.querySelector('.notesPageBox .editNoteArea');
-
-    editNoteArea.classList.add('hide');
+    const noteNo = document.querySelector('.notesPageBox .noteNo');
 
     noteBooks.forEach((book, i) => {
         book.addEventListener('click', () => {
+            
+            editNoteArea.classList.add('hide');
+            editNoteArea.style.display = 'block';
+            noteNo.value = i;
             
             noteBooks.forEach((x, j) => {
                 if (j !== i && x.classList.contains('active')) {
@@ -27,9 +32,9 @@ function onNoteActive() {
                 noteList.classList.add('hide');
                 setTimeout(() => {
                     noteList.style.display = 'none';
-                    editNoteArea.style.display = 'block';
                     editNoteArea.classList.remove('hide');
                 }, 500)
+
             }, 1000)
         });
     })
@@ -38,8 +43,21 @@ function onNoteActive() {
 
 /** 取消按鈕 */
 function onNoteCancelBtn() {
+    const noteNo = document.querySelector('.notesPageBox .noteNo');
     const noteBooks = document.querySelectorAll('.notesPageBox .noteList ul li .book');
     const noteList = document.querySelector('.notesPageBox .noteList');
     const editNoteArea = document.querySelector('.notesPageBox .editNoteArea');
+
+    noteNo.value = '';
+    editNoteArea.classList.add('hide');
+    
+    setTimeout(() => {
+        noteList.classList.add('hide');
+        editNoteArea.style.display = 'none';
+        noteList.style.display = 'block';
+        setTimeout(() => {
+            noteList.classList.remove('hide');
+        }, 500);
+    }, 500);
 
 }
