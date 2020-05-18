@@ -65,13 +65,13 @@ function onNoteCancelBtn() {
             setTimeout(() => {
                 noteBooks.forEach(x => {
                     x.style.pointerEvents = 'auto';
-                    // if (x.classList.contains('active')) {
-                    //     x.classList.remove('active');
-                    //     x.classList.add('back');
-                    //     setTimeout(() => {
-                    //         x.classList.remove('back');
-                    //     }, 500)
-                    // }
+                    if (x.classList.contains('active')) {
+                        x.classList.remove('active');
+                        x.classList.add('back');
+                        setTimeout(() => {
+                            x.classList.remove('back');
+                        }, 500)
+                    }
                 })
             }, 100)
         }, 500);
