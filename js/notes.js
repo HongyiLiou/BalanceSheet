@@ -190,14 +190,14 @@ function onNoteCancelBtn() {
     const noteContentTextArea = document.querySelector('.notesPageBox .editNoteArea .noteContentTextArea');
 
     noteAddMode(false);
-    noteNo.value = '';
-    noteTitleInput.value = '';
-    colorInput.value = 'default';
-    noteContentTextArea.value = '';
     editNoteArea.classList.add('hide');
     
     setTimeout(() => {
         noteList.classList.add('hide');
+        noteNo.value = '';
+        noteTitleInput.value = '';
+        colorInput.value = 'default';
+        noteContentTextArea.value = '';
         // editNoteArea.style.display = 'none';
         // noteList.style.display = 'block';
         setTimeout(() => {
