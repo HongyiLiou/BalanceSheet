@@ -812,11 +812,13 @@
             .editNoteBackground
                 +size(100%, calc(100vh - 90px))
                 &::before
-                    left: 0
-                    +size(100%, calc(100vh - 70px))
+                    // left: 0
+                    // +size(100%, calc(100vh - 70px))
+                    display: none
                 &::after
-                    left: -5px
-                    +size(calc(100% + 5px), calc(100vh - 75px))
+                    // left: -5px
+                    // +size(calc(100% + 5px), calc(100vh - 75px))
+                    display: none
                 .top
                     padding: 150px 5% 0 5%
                     justify-content: space-between
