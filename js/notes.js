@@ -14,6 +14,7 @@ function getNotes() {
         showLoading(false);
         // console.log('Notes:', res);
 
+        noteAddMode(false);
         const resData = res;
         const noteList = document.querySelector('.notesPageBox .noteList ul');
         const outputData = [];
@@ -63,7 +64,7 @@ function getNotes() {
 
         noteList.innerHTML = noteList.innerHTML + `
             <li>
-                <div class="book addNew" title="新增一本新的記事本">
+                <div class="book addNew" title="新增一本新的記事本" onclick="noteAddMode(true)">
                     <div class="firstPage">
                         <p class="bookTitle">？？？</p>
                     </div>
@@ -130,6 +131,25 @@ function onNoteActive() {
 
 
 /**
+ * 新增/儲存記事本
+ * @param {boolean} addNew 
+ */
+function noteAddMode(addNew) {
+    const saveNote = document.querySelector('.notesPageBox .editNoteArea .saveNote');
+    const addNote = document.querySelector('.notesPageBox .editNoteArea .addNote');
+
+    if (addNew) {
+        saveNote.style.display = 'none';
+        addNote.style.display = 'block';
+        changeNoteColor(null);
+    } else {
+        saveNote.style.display = 'block';
+        addNote.style.display = 'none';
+    }
+}
+
+
+/**
  * 開啟一本記事本
  * @param {{
  *  name: string
@@ -150,6 +170,7 @@ function openNotebook(book) {
 }
 
 
+/** 變更記事本顏色 */
 function changeNoteColor(color) {
     const book = document.querySelector('.notesPageBox .editNoteArea .top .book');
     book.className = 'book active';
@@ -159,12 +180,20 @@ function changeNoteColor(color) {
 
 /** 取消按鈕 */
 function onNoteCancelBtn() {
-    const noteNo = document.querySelector('.notesPageBox .noteNo');
     const noteBooks = document.querySelectorAll('.notesPageBox .noteList ul li .book');
     const noteList = document.querySelector('.notesPageBox .noteList');
     const editNoteArea = document.querySelector('.notesPageBox .editNoteArea');
 
+    const noteNo = document.querySelector('.notesPageBox .noteNo');
+    const noteTitleInput = document.querySelector('.notesPageBox .editNoteArea .noteTitleInput');
+    const colorInput = document.querySelector('.notesPageBox .editNoteArea .noteColorSelect');
+    const noteContentTextArea = document.querySelector('.notesPageBox .editNoteArea .noteContentTextArea');
+
+    noteAddMode(false);
     noteNo.value = '';
+    noteTitleInput.value = '';
+    colorInput.value = 'default';
+    noteContentTextArea.value = '';
     editNoteArea.classList.add('hide');
     
     setTimeout(() => {
@@ -187,7 +216,101 @@ function onNoteCancelBtn() {
         }, 500);
 
     }, 500);
+}
+
+
+/** 儲存按鈕 */
+function onNoteSaveBtn() {
+    showLoading(true);
+
+    const noteNo = document.querySelector('.notesPageBox .noteNo');
+    const noteTitleInput = document.querySelector('.notesPageBox .editNoteArea .noteTitleInput');
+    const colorInput = document.querySelector('.notesPageBox .editNoteArea .noteColorSelect');
+    const noteContentTextArea = document.querySelector('.notesPageBox .editNoteArea .noteContentTextArea');
+
+    const accountNumber = JSON.parse(localStorage.getItem('login')).AccountNumber;
+    const parameter = {
+        accountNumber: accountNumber,
+        functionType: 'post',
+        index: noteNo.value,
+        data1: noteTitleInput.value,
+        data2: colorInput.value,
+        data3: noteContentTextArea.value,
+    };
+    
+    $.get('https://script.google.com/macros/s/AKfycbxzVWS4ccSSQx8Cp7pgzVhsU9j9m2JSN3Vnfe7HJ7X8oUE8RYE/exec', parameter).done(res => {
+        showLoading(false);
+        getNotes();
+        onNoteCancelBtn();
+        const popupObj = {
+            text: '已儲存',
+        }   
+        showPopupBox(popupObj);
+    });
+}
+
+
+/** 新增記事本 */
+function onAddNote() {
+    showLoading(true);
+
+    const noteTitleInput = document.querySelector('.notesPageBox .editNoteArea .noteTitleInput');
+    const colorInput = document.querySelector('.notesPageBox .editNoteArea .noteColorSelect');
+    const noteContentTextArea = document.querySelector('.notesPageBox .editNoteArea .noteContentTextArea');
+
+    const accountNumber = JSON.parse(localStorage.getItem('login')).AccountNumber;
+    const parameter = {
+        accountNumber: accountNumber,
+        functionType: 'add',
+        data1: noteTitleInput.value,
+        data2: colorInput.value,
+        data3: noteContentTextArea.value,
+    };
+    
+    $.get('https://script.google.com/macros/s/AKfycbxzVWS4ccSSQx8Cp7pgzVhsU9j9m2JSN3Vnfe7HJ7X8oUE8RYE/exec', parameter).done(res => {
+        showLoading(false);
+        getNotes();
+        onNoteCancelBtn();
+        const popupObj = {
+            text: `已新增[${noteTitleInput.value}]記事本`,
+        }   
+        showPopupBox(popupObj);
+    });
 
 }
+
+
+function onNoteDeleteBtn() {
+    const noteNo = document.querySelector('.notesPageBox .noteNo');
+
+
+    const popupObj = {
+            text: '確認刪除？',
+            showCancel: true,
+            enterClick: () => {
+                showLoading(true);                     
+                
+                const accountNumber = JSON.parse(localStorage.getItem('login')).AccountNumber;
+                const parameter = {
+                    accountNumber: accountNumber,
+                    functionType: 'delete',
+                    delIndex: noteNo.value,
+                };
+                $.get('https://script.google.com/macros/s/AKfycbxzVWS4ccSSQx8Cp7pgzVhsU9j9m2JSN3Vnfe7HJ7X8oUE8RYE/exec', parameter).done(res => {
+                    showLoading(false);
+                    getNotes();
+                    onNoteCancelBtn();
+                    const popupObj = {
+                        text: '已儲存',
+                    }   
+                    showPopupBox(popupObj);
+                });    
+            }
+
+        }   
+    showPopupBox(popupObj);
+}
+
+
 
 // https://script.google.com/macros/s/AKfycbxzVWS4ccSSQx8Cp7pgzVhsU9j9m2JSN3Vnfe7HJ7X8oUE8RYE/exec

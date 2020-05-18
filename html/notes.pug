@@ -48,5 +48,6 @@ article.notesPageBox
             textarea.noteContentTextArea(spellcheck="false")
             .buttons
                 button(onclick="onNoteCancelBtn()") Cancel
-                button Delete
-                button Save
+                button(onclick="onNoteDeleteBtn()") Delete
+                button.saveNote(onclick="onNoteSaveBtn()") Save
+                button.addNote(onclick="onAddNote()") Add

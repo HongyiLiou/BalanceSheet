@@ -737,9 +737,9 @@ input[type=number] {
   animation: beam 3s infinite;
 }
 .brightness .beams .beam1 {
-  width: 650px;
-  height: 30px;
-  transform: rotate(-24deg);
+  width: 550px;
+  height: 20px;
+  transform: rotate(-72deg);
   animation-delay: -0.5s;
 }
 @keyframes beam {
@@ -754,9 +754,9 @@ input[type=number] {
   }
 }
 .brightness .beams .beam2 {
-  width: 450px;
+  width: 500px;
   height: 10px;
-  transform: rotate(-24deg);
+  transform: rotate(-36deg);
   animation-delay: -1s;
 }
 @keyframes beam {
@@ -772,8 +772,8 @@ input[type=number] {
 }
 .brightness .beams .beam3 {
   width: 500px;
-  height: 30px;
-  transform: rotate(-48deg);
+  height: 10px;
+  transform: rotate(-60deg);
   animation-delay: -1.5s;
 }
 @keyframes beam {
@@ -790,7 +790,7 @@ input[type=number] {
 .brightness .beams .beam4 {
   width: 700px;
   height: 25px;
-  transform: rotate(-72deg);
+  transform: rotate(-48deg);
   animation-delay: -2s;
 }
 @keyframes beam {
@@ -805,9 +805,9 @@ input[type=number] {
   }
 }
 .brightness .beams .beam5 {
-  width: 550px;
-  height: 5px;
-  transform: rotate(-36deg);
+  width: 450px;
+  height: 25px;
+  transform: rotate(-48deg);
   animation-delay: -2.5s;
 }
 @keyframes beam {
@@ -823,8 +823,8 @@ input[type=number] {
 }
 .brightness .beams .beam6 {
   width: 450px;
-  height: 15px;
-  transform: rotate(-60deg);
+  height: 5px;
+  transform: rotate(-48deg);
   animation-delay: -3s;
 }
 @keyframes beam {
@@ -859,14 +859,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-300px, 120px);
+    transform: translate(-270px, 150px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-300px, 100px);
+    transform: translate(-150px, 150px);
   }
 }
 .brightness .shines .shine2 {
@@ -879,14 +879,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-210px, 180px);
+    transform: translate(-240px, 90px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-350px, 50px);
+    transform: translate(-500px, 500px);
   }
 }
 .brightness .shines .shine3 {
@@ -899,14 +899,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-30px, 270px);
+    transform: translate(-90px, 210px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-100px, 200px);
+    transform: translate(-200px, 400px);
   }
 }
 .brightness .shines .shine4 {
@@ -919,14 +919,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-300px, 30px);
+    transform: translate(-270px, 270px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-150px, 200px);
+    transform: translate(-400px, 100px);
   }
 }
 .brightness .shines .shine5 {
@@ -939,14 +939,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-30px, 210px);
+    transform: translate(-300px, 180px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-100px, 250px);
+    transform: translate(-250px, 450px);
   }
 }
 .brightness .shines .shine6 {
@@ -959,14 +959,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-180px, 120px);
+    transform: translate(-90px, 60px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-400px, 200px);
+    transform: translate(-50px, 300px);
   }
 }
 .brightness .shines .shine7 {
@@ -979,14 +979,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-30px, 30px);
+    transform: translate(-60px, 180px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-500px, 450px);
+    transform: translate(-400px, 250px);
   }
 }
 .brightness .shines .shine8 {
@@ -999,14 +999,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-120px, 300px);
+    transform: translate(-90px, 30px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-50px, 500px);
+    transform: translate(-200px, 300px);
   }
 }
 .brightness .shines .shine9 {
@@ -1019,14 +1019,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-180px, 30px);
+    transform: translate(-30px, 300px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-400px, 400px);
+    transform: translate(-500px, 250px);
   }
 }
 .brightness .shines .shine10 {
@@ -1039,14 +1039,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-30px, 210px);
+    transform: translate(-270px, 30px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-200px, 200px);
+    transform: translate(-300px, 350px);
   }
 }
 
@@ -2780,7 +2780,7 @@ input[type=number] {
   box-shadow: inset -2px -2px 5px rgba(29, 0, 0, 0.9) !important;
 }
 .book.red .firstPage .bookTitle {
-  color: #fdd1d1 !important;
+  color: #fff2f2 !important;
   background: #641919 !important;
 }
 .book.red .backPages {
@@ -2948,7 +2948,7 @@ input[type=number] {
   box-shadow: inset -2px -2px 5px rgba(29, 0, 25, 0.9) !important;
 }
 .book.pink .firstPage .bookTitle {
-  color: #fdd1f9 !important;
+  color: #fff6fe !important;
   background: #703a64 !important;
 }
 .book.pink .backPages {
@@ -3056,7 +3056,7 @@ input[type=number] {
 }
 .lightTheme .notesPageBox .editNoteArea .editNoteBackground .top .noteTitleInput, .lightTheme .notesPageBox .editNoteArea .editNoteBackground .top .noteColorSelect {
   color: #222;
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.7);
   border: solid 1px rgba(255, 255, 255, 0.6);
   box-shadow: inset 0 0 15px #818181;
 }
@@ -3071,7 +3071,7 @@ input[type=number] {
 .lightTheme .notesPageBox .editNoteArea .editNoteBackground .noteContentTextArea {
   color: #555;
   background: linear-gradient(transparent 98%, rgba(0, 0, 0, 0.1) 0);
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.7);
   background-attachment: local;
   line-height: 2.5em;
   background-size: 100% 2.5em;
