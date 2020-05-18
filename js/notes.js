@@ -21,6 +21,7 @@ function onNoteActive() {
             noteNo.value = i;
             
             noteBooks.forEach((x, j) => {
+                x.style.pointerEvents = 'none';
                 if (j !== i && x.classList.contains('active')) {
                     x.classList.remove('active');
                     x.classList.add('back');
@@ -60,7 +61,21 @@ function onNoteCancelBtn() {
         // noteList.style.display = 'block';
         setTimeout(() => {
             noteList.classList.remove('hide');
+
+            setTimeout(() => {
+                noteBooks.forEach(x => {
+                    x.style.pointerEvents = 'auto';
+                    if (x.classList.contains('active')) {
+                        x.classList.remove('active');
+                        x.classList.add('back');
+                        setTimeout(() => {
+                            x.classList.remove('back');
+                        }, 500)
+                    }
+                })
+            }, 100)
         }, 500);
+
     }, 500);
 
 }
