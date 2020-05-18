@@ -10,11 +10,14 @@ function onNoteActive() {
     const editNoteArea = document.querySelector('.notesPageBox .editNoteArea');
     const noteNo = document.querySelector('.notesPageBox .noteNo');
 
+    
+    editNoteArea.classList.add('hide');
+
     noteBooks.forEach((book, i) => {
         book.addEventListener('click', () => {
             
             editNoteArea.classList.add('hide');
-            editNoteArea.style.display = 'block';
+            // editNoteArea.style.display = 'block';
             noteNo.value = i;
             
             noteBooks.forEach((x, j) => {
@@ -31,7 +34,7 @@ function onNoteActive() {
             setTimeout(() => {
                 noteList.classList.add('hide');
                 setTimeout(() => {
-                    noteList.style.display = 'none';
+                    // noteList.style.display = 'none';
                     editNoteArea.classList.remove('hide');
                 }, 500)
 
@@ -53,8 +56,8 @@ function onNoteCancelBtn() {
     
     setTimeout(() => {
         noteList.classList.add('hide');
-        editNoteArea.style.display = 'none';
-        noteList.style.display = 'block';
+        // editNoteArea.style.display = 'none';
+        // noteList.style.display = 'block';
         setTimeout(() => {
             noteList.classList.remove('hide');
         }, 500);

@@ -731,9 +731,9 @@ input[type=number] {
   animation: beam 3s infinite;
 }
 .brightness .beams .beam1 {
-  width: 450px;
-  height: 25px;
-  transform: rotate(-72deg);
+  width: 700px;
+  height: 20px;
+  transform: rotate(-36deg);
   animation-delay: -0.5s;
 }
 @keyframes beam {
@@ -748,9 +748,9 @@ input[type=number] {
   }
 }
 .brightness .beams .beam2 {
-  width: 500px;
-  height: 10px;
-  transform: rotate(-72deg);
+  width: 450px;
+  height: 5px;
+  transform: rotate(-36deg);
   animation-delay: -1s;
 }
 @keyframes beam {
@@ -767,7 +767,7 @@ input[type=number] {
 .brightness .beams .beam3 {
   width: 600px;
   height: 20px;
-  transform: rotate(-24deg);
+  transform: rotate(-36deg);
   animation-delay: -1.5s;
 }
 @keyframes beam {
@@ -783,7 +783,7 @@ input[type=number] {
 }
 .brightness .beams .beam4 {
   width: 650px;
-  height: 5px;
+  height: 10px;
   transform: rotate(-36deg);
   animation-delay: -2s;
 }
@@ -800,8 +800,8 @@ input[type=number] {
 }
 .brightness .beams .beam5 {
   width: 450px;
-  height: 20px;
-  transform: rotate(-24deg);
+  height: 30px;
+  transform: rotate(-12deg);
   animation-delay: -2.5s;
 }
 @keyframes beam {
@@ -816,9 +816,9 @@ input[type=number] {
   }
 }
 .brightness .beams .beam6 {
-  width: 700px;
-  height: 30px;
-  transform: rotate(-12deg);
+  width: 450px;
+  height: 10px;
+  transform: rotate(-72deg);
   animation-delay: -3s;
 }
 @keyframes beam {
@@ -853,14 +853,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-210px, 90px);
+    transform: translate(-210px, 30px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-250px, 450px);
+    transform: translate(-400px, 400px);
   }
 }
 .brightness .shines .shine2 {
@@ -873,14 +873,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-150px, 240px);
+    transform: translate(-60px, 60px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-200px, 150px);
+    transform: translate(-200px, 500px);
   }
 }
 .brightness .shines .shine3 {
@@ -893,14 +893,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-270px, 180px);
+    transform: translate(-210px, 180px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-100px, 100px);
+    transform: translate(-350px, 350px);
   }
 }
 .brightness .shines .shine4 {
@@ -913,14 +913,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-120px, 270px);
+    transform: translate(-300px, 150px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-400px, 400px);
+    transform: translate(-400px, 250px);
   }
 }
 .brightness .shines .shine5 {
@@ -933,14 +933,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-150px, 150px);
+    transform: translate(-300px, 120px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-350px, 50px);
+    transform: translate(-100px, 50px);
   }
 }
 .brightness .shines .shine6 {
@@ -953,14 +953,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-300px, 240px);
+    transform: translate(-180px, 180px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-400px, 100px);
+    transform: translate(-100px, 350px);
   }
 }
 .brightness .shines .shine7 {
@@ -973,14 +973,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-240px, 150px);
+    transform: translate(-90px, 300px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-400px, 50px);
+    transform: translate(-250px, 500px);
   }
 }
 .brightness .shines .shine8 {
@@ -993,14 +993,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-300px, 270px);
+    transform: translate(-240px, 180px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-200px, 500px);
+    transform: translate(-500px, 500px);
   }
 }
 .brightness .shines .shine9 {
@@ -1013,14 +1013,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-240px, 150px);
+    transform: translate(-240px, 30px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-150px, 450px);
+    transform: translate(-350px, 500px);
   }
 }
 .brightness .shines .shine10 {
@@ -1033,14 +1033,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-90px, 150px);
+    transform: translate(-300px, 270px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-350px, 150px);
+    transform: translate(-50px, 250px);
   }
 }
 
@@ -2345,6 +2345,8 @@ input[type=number] {
   width: calc(125% - 150px);
   max-height: 100vh;
   overflow: auto;
+  opacity: 1;
+  pointer-events: auto;
   transition: 0.5s;
 }
 .notesPageBox .noteList::-webkit-scrollbar {
@@ -2352,6 +2354,7 @@ input[type=number] {
 }
 .notesPageBox .noteList.hide {
   opacity: 0;
+  pointer-events: none;
 }
 .notesPageBox .noteList ul {
   display: flex;
@@ -2551,8 +2554,12 @@ input[type=number] {
   transform: translateY(-50%);
 }
 .notesPageBox .editNoteArea {
-  margin-top: 200px;
+  position: absolute;
+  top: 200px;
+  left: 0;
   width: calc(100% - 150px);
+  opacity: 1;
+  pointer-events: auto;
   transition: 0.5s;
 }
 .notesPageBox .editNoteArea::-webkit-scrollbar {
@@ -2560,6 +2567,7 @@ input[type=number] {
 }
 .notesPageBox .editNoteArea.hide {
   opacity: 0;
+  pointer-events: none;
 }
 .notesPageBox .editNoteArea .noteNo {
   display: none;
@@ -2625,6 +2633,7 @@ input[type=number] {
   transition: 0.3s;
   border-radius: 5px 8px 8px 5px;
   transform: perspective(1000px) rotate3d(1, -1, 0.5, 15deg) translateX(50%);
+  animation: bookFloat 5s 0.5s infinite;
   -webkit-user-select: none;
       -ms-user-select: none;
           user-select: none;
@@ -3132,7 +3141,7 @@ input[type=number] {
     font-size: 80%;
   }
   .notesPageBox .editNoteArea {
-    margin-top: 80px;
+    top: 80px;
   }
   .notesPageBox .editNoteArea .editNoteBackground {
     width: 100%;
