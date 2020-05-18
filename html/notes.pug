@@ -1,105 +1,33 @@
 article.notesPageBox
     section.noteList
         ul
-            li
-                .book
-                    .firstPage
-                        p.bookTitle 筆記筆記
-                    .backPages
-                p.noteTitle 筆記筆記
-            li
-                .book.blue
-                    .firstPage
-                        p.bookTitle 倚天屠龍記
-                    .backPages
-                p.noteTitle 倚天屠龍記倚天屠龍記倚天屠龍記倚天屠龍記
-            li
-                .book.red
-                    .firstPage
-                        p.bookTitle 一些秘密
-                    .backPages
-                p.noteTitle 一些秘密
-            li
-                .book.green
-                    .firstPage
-                        p.bookTitle 一些秘密
-                    .backPages
-                p.noteTitle 一些秘密
-            li
-                .book.tiffiny
-                    .firstPage
-                        p.bookTitle 一些秘密
-                    .backPages
-                p.noteTitle 一些秘密
-            li
-                .book.greenBlue
-                    .firstPage
-                        p.bookTitle 一些秘密
-                    .backPages
-                p.noteTitle 一些秘密
-            li
-                .book.orange
-                    .firstPage
-                        p.bookTitle 一些秘密
-                    .backPages
-                p.noteTitle 一些秘密
-            li
-                .book.white
-                    .firstPage
-                        p.bookTitle 一些秘密
-                    .backPages
-                p.noteTitle 一些秘密
-            li
-                .book.black
-                    .firstPage
-                        p.bookTitle 一些秘密
-                    .backPages
-                p.noteTitle 一些秘密
-            li
-                .book.gray
-                    .firstPage
-                        p.bookTitle 灰色的書
-                    .backPages
-                p.noteTitle 灰色的書
-            li
-                .book.yellow
-                    .firstPage
-                        p.bookTitle 一些秘密
-                    .backPages
-                p.noteTitle 一些秘密
-            li
-                .book.purple
-                    .firstPage
-                        p.bookTitle 一些秘密
-                    .backPages
-                p.noteTitle 一些秘密
-            li
-                .book.pink
-                    .firstPage
-                        p.bookTitle 一些秘密
-                    .backPages
-                p.noteTitle 一些秘密
-            li
-                .book.black
-                    .firstPage
-                        p.bookTitle 一些秘密
-                    .backPages
-                p.noteTitle 一些秘密
-            li
-                .book.addNew(title="新增一本新的記事本")
-                    .firstPage
-                        p.bookTitle ？？？
-                    .backPages
-                p.noteTitle.addNew 新增記事本
+            //- li
+            //-     .book
+            //-         .firstPage
+            //-             p.bookTitle 筆記筆記
+            //-         .backPages
+            //-     p.noteTitle 筆記筆記
+            //- li
+            //-     .book.blue
+            //-         .firstPage
+            //-             p.bookTitle 倚天屠龍記
+            //-         .backPages
+            //-     p.noteTitle 倚天屠龍記倚天屠龍記倚天屠龍記倚天屠龍記
+            //- li
+            //-     .book.addNew(title="新增一本新的記事本")
+            //-         .firstPage
+            //-             p.bookTitle ？？？
+            //-         .backPages
+            //-     p.noteTitle.addNew 新增記事本
 
 
 
-    section.editNoteArea
+    section.editNoteArea.hide
         input.noteNo
         .editNoteBackground
             .top
                 input.noteTitleInput(type="text" spellcheck="false" placeholder="記事本名稱")
-                select.noteColorSelect(name="noteColorSelect")
+                select.noteColorSelect(name="noteColorSelect" onchange="changeNoteColor(value)")
                     option(value="default") 預設顏色
                     option(value="red" style="background: #832323;") 紅
                     option(value="blue" style="background: #237083;") 藍

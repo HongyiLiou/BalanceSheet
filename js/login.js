@@ -258,6 +258,9 @@ function afterLogin() {
     setShowLinksType(userSetting.showLinksType);
     showOrHideLinkListWithType('bottom', false);
     showOrHideLinkListWithType('right', false);
+
+    // 取得記事本
+    getNotes();
 }
 
 

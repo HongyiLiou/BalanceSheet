@@ -71,9 +71,9 @@ function loadPages() {
         sc.src = 'js/notes.js';
         $('body').append(sc);
 
-        setTimeout(() => {
-            onNoteActive();
-        }, 0);
+        // setTimeout(() => {
+        //     onNoteActive();
+        // }, 0);
     });
 
     // User Setting Page
