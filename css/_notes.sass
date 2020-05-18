@@ -278,7 +278,7 @@
                     transition: 0.3s
                     border-radius: 5px 8px 8px 5px
                     transform: perspective(1000px) rotate3d(1, -1, 0.5, 15deg) translateX(50%)
-                    animation: bookFloat_inner 5s 0.5s infinite
+                    // animation: bookFloat 5s 0.5s infinite
                     user-select: none
 
                     .firstPage
@@ -718,14 +718,6 @@
     100%
         transform: perspective(1000px) rotate3d(1, -1, 0.5, 15deg) translateX(50%) translateY(0px)
 
-+keyframes(bookFloat_inner)
-    0%
-        transform: perspective(1000px) rotate3d(1, -1, 0, 15deg) translateX(50%) translateY(0px)
-    60%
-        transform: perspective(1000px) rotate3d(1, -1, 0, 15deg) translateX(48%) translateY(-20px)
-    100%
-        transform: perspective(1000px) rotate3d(1, -1, 0, 15deg) translateX(50%) translateY(0px)
-
 +keyframes(bookBack)
     0%
         transform: perspective(1000px) rotate3d(1, -1, 0.5, 15deg) translateX(50%)
@@ -818,7 +810,7 @@
                     left: -5px
                     +size(calc(100% + 5px), calc(100vh - 75px))
                 .top
-                    padding: 120px 5% 0 5%
+                    padding: 150px 5% 0 5%
                     justify-content: space-between
                     .noteTitleInput, .noteColorSelect
                         font-size: 90%
@@ -827,11 +819,11 @@
                         margin-right: 0
                     .book
                         +size(80px, 110px)
-                        top: -10px
+                        top: 10px
                         left: calc(50% - 40px)
                 .noteContentTextArea
                     margin-left: 5%
-                    +size(90%, calc(100vh - 440px))
+                    +size(90%, calc(100vh - 450px))
                     font-size: 90%
                 .buttons
                     width: 100%

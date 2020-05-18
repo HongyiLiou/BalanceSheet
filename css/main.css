@@ -731,9 +731,9 @@ input[type=number] {
   animation: beam 3s infinite;
 }
 .brightness .beams .beam1 {
-  width: 500px;
-  height: 20px;
-  transform: rotate(-48deg);
+  width: 450px;
+  height: 25px;
+  transform: rotate(-72deg);
   animation-delay: -0.5s;
 }
 @keyframes beam {
@@ -748,9 +748,9 @@ input[type=number] {
   }
 }
 .brightness .beams .beam2 {
-  width: 600px;
-  height: 20px;
-  transform: rotate(-36deg);
+  width: 500px;
+  height: 10px;
+  transform: rotate(-72deg);
   animation-delay: -1s;
 }
 @keyframes beam {
@@ -765,9 +765,9 @@ input[type=number] {
   }
 }
 .brightness .beams .beam3 {
-  width: 450px;
+  width: 600px;
   height: 20px;
-  transform: rotate(-12deg);
+  transform: rotate(-24deg);
   animation-delay: -1.5s;
 }
 @keyframes beam {
@@ -782,9 +782,9 @@ input[type=number] {
   }
 }
 .brightness .beams .beam4 {
-  width: 450px;
-  height: 25px;
-  transform: rotate(-12deg);
+  width: 650px;
+  height: 5px;
+  transform: rotate(-36deg);
   animation-delay: -2s;
 }
 @keyframes beam {
@@ -799,9 +799,9 @@ input[type=number] {
   }
 }
 .brightness .beams .beam5 {
-  width: 600px;
-  height: 25px;
-  transform: rotate(-12deg);
+  width: 450px;
+  height: 20px;
+  transform: rotate(-24deg);
   animation-delay: -2.5s;
 }
 @keyframes beam {
@@ -817,7 +817,7 @@ input[type=number] {
 }
 .brightness .beams .beam6 {
   width: 700px;
-  height: 10px;
+  height: 30px;
   transform: rotate(-12deg);
   animation-delay: -3s;
 }
@@ -853,7 +853,7 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-180px, 30px);
+    transform: translate(-210px, 90px);
   }
   60% {
     opacity: 1;
@@ -873,14 +873,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-270px, 270px);
+    transform: translate(-150px, 240px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-50px, 200px);
+    transform: translate(-200px, 150px);
   }
 }
 .brightness .shines .shine3 {
@@ -893,14 +893,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-60px, 30px);
+    transform: translate(-270px, 180px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-100px, 300px);
+    transform: translate(-100px, 100px);
   }
 }
 .brightness .shines .shine4 {
@@ -913,14 +913,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-90px, 90px);
+    transform: translate(-120px, 270px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-150px, 150px);
+    transform: translate(-400px, 400px);
   }
 }
 .brightness .shines .shine5 {
@@ -933,14 +933,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-180px, 240px);
+    transform: translate(-150px, 150px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-150px, 150px);
+    transform: translate(-350px, 50px);
   }
 }
 .brightness .shines .shine6 {
@@ -953,14 +953,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-150px, 300px);
+    transform: translate(-300px, 240px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-400px, 300px);
+    transform: translate(-400px, 100px);
   }
 }
 .brightness .shines .shine7 {
@@ -973,14 +973,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-300px, 210px);
+    transform: translate(-240px, 150px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-200px, 150px);
+    transform: translate(-400px, 50px);
   }
 }
 .brightness .shines .shine8 {
@@ -993,14 +993,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-240px, 30px);
+    transform: translate(-300px, 270px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-150px, 450px);
+    transform: translate(-200px, 500px);
   }
 }
 .brightness .shines .shine9 {
@@ -1013,14 +1013,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-180px, 270px);
+    transform: translate(-240px, 150px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-500px, 300px);
+    transform: translate(-150px, 450px);
   }
 }
 .brightness .shines .shine10 {
@@ -1033,14 +1033,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-120px, 150px);
+    transform: translate(-90px, 150px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-150px, 250px);
+    transform: translate(-350px, 150px);
   }
 }
 
@@ -2625,7 +2625,6 @@ input[type=number] {
   transition: 0.3s;
   border-radius: 5px 8px 8px 5px;
   transform: perspective(1000px) rotate3d(1, -1, 0.5, 15deg) translateX(50%);
-  animation: bookFloat_inner 5s 0.5s infinite;
   -webkit-user-select: none;
       -ms-user-select: none;
           user-select: none;
@@ -3085,17 +3084,6 @@ input[type=number] {
     transform: perspective(1000px) rotate3d(1, -1, 0.5, 15deg) translateX(50%) translateY(0px);
   }
 }
-@keyframes bookFloat_inner {
-  0% {
-    transform: perspective(1000px) rotate3d(1, -1, 0, 15deg) translateX(50%) translateY(0px);
-  }
-  60% {
-    transform: perspective(1000px) rotate3d(1, -1, 0, 15deg) translateX(48%) translateY(-20px);
-  }
-  100% {
-    transform: perspective(1000px) rotate3d(1, -1, 0, 15deg) translateX(50%) translateY(0px);
-  }
-}
 @keyframes bookBack {
   0% {
     transform: perspective(1000px) rotate3d(1, -1, 0.5, 15deg) translateX(50%);
@@ -3213,7 +3201,7 @@ input[type=number] {
     height: calc(100vh - 75px);
   }
   .notesPageBox .editNoteArea .editNoteBackground .top {
-    padding: 120px 5% 0 5%;
+    padding: 150px 5% 0 5%;
     justify-content: space-between;
   }
   .notesPageBox .editNoteArea .editNoteBackground .top .noteTitleInput, .notesPageBox .editNoteArea .editNoteBackground .top .noteColorSelect {
@@ -3226,13 +3214,13 @@ input[type=number] {
   .notesPageBox .editNoteArea .editNoteBackground .top .book {
     width: 80px;
     height: 110px;
-    top: -10px;
+    top: 10px;
     left: calc(50% - 40px);
   }
   .notesPageBox .editNoteArea .editNoteBackground .noteContentTextArea {
     margin-left: 5%;
     width: 90%;
-    height: calc(100vh - 440px);
+    height: calc(100vh - 450px);
     font-size: 90%;
   }
   .notesPageBox .editNoteArea .editNoteBackground .buttons {
