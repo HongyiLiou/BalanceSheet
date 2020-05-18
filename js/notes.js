@@ -135,14 +135,17 @@ function onNoteActive() {
  * @param {boolean} addNew 
  */
 function noteAddMode(addNew) {
+    const deleteNote = document.querySelector('.notesPageBox .editNoteArea .deleteNote');
     const saveNote = document.querySelector('.notesPageBox .editNoteArea .saveNote');
     const addNote = document.querySelector('.notesPageBox .editNoteArea .addNote');
 
     if (addNew) {
+        deleteNote.style.display = 'none';
         saveNote.style.display = 'none';
         addNote.style.display = 'block';
         changeNoteColor(null);
     } else {
+        deleteNote.style.display = 'block';
         saveNote.style.display = 'block';
         addNote.style.display = 'none';
     }
