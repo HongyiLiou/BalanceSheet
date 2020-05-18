@@ -62,18 +62,16 @@ function onNoteCancelBtn() {
         setTimeout(() => {
             noteList.classList.remove('hide');
 
-            setTimeout(() => {
-                noteBooks.forEach(x => {
-                    x.style.pointerEvents = 'auto';
-                    if (x.classList.contains('active')) {
-                        x.classList.remove('active');
-                        x.classList.add('back');
-                        setTimeout(() => {
-                            x.classList.remove('back');
-                        }, 500)
-                    }
-                })
-            }, 100)
+            noteBooks.forEach(x => {
+                x.style.pointerEvents = 'auto';
+                if (x.classList.contains('active')) {
+                    x.classList.remove('active');
+                    x.classList.add('back');
+                    setTimeout(() => {
+                        x.classList.remove('back');
+                    }, 500)
+                }
+            })
         }, 500);
 
     }, 500);
