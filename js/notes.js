@@ -223,6 +223,7 @@ function onNoteCancelBtn() {
                 book.classList.remove('back');
             }, 1000);
         });
+        
 
     }, 500);
 }

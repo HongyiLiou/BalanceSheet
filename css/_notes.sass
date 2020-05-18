@@ -32,7 +32,7 @@
                 .book
                     +size(130px, 180px)
                     margin: auto
-                    transform: rotate3d(1, -0.5, 0.33, 30deg)
+                    transform: perspective(1000px) rotate3d(1, -0.5, 0.33, 30deg)
                     -webkit-perspective: 700
                     -webkit-perspective-origin: 100% 100%
                     -webkit-transform-style: -webkit-preserve-3d
@@ -731,7 +731,7 @@
     0%
         transform: perspective(1000px) rotate3d(1, -1, 0.5, 15deg) translateX(50%)
     100%
-        transform: rotate3d(1, -0.5, 0.33, 30deg) translateX(0%)
+        transform: perspective(1000px) rotate3d(1, -0.5, 0.33, 30deg) translateX(0%)
 
 
 
