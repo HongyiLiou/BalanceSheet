@@ -278,7 +278,7 @@
                     transition: 0.3s
                     border-radius: 5px 8px 8px 5px
                     transform: perspective(1000px) rotate3d(1, -1, 0.5, 15deg) translateX(50%)
-                    animation: bookFloat 5s 0.5s infinite
+                    animation: bookFloat_inner 5s 0.5s infinite
                     user-select: none
 
                     .firstPage
@@ -717,6 +717,14 @@
         transform: perspective(1000px) rotate3d(1, -1, 0.5, 15deg) translateX(48%) translateY(-20px)
     100%
         transform: perspective(1000px) rotate3d(1, -1, 0.5, 15deg) translateX(50%) translateY(0px)
+
++keyframes(bookFloat_inner)
+    0%
+        transform: perspective(1000px) rotate3d(1, -1, 0, 15deg) translateX(50%) translateY(0px)
+    60%
+        transform: perspective(1000px) rotate3d(1, -1, 0, 15deg) translateX(48%) translateY(-20px)
+    100%
+        transform: perspective(1000px) rotate3d(1, -1, 0, 15deg) translateX(50%) translateY(0px)
 
 +keyframes(bookBack)
     0%
