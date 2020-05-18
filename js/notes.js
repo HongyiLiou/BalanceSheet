@@ -62,43 +62,20 @@ function onNoteCancelBtn() {
         setTimeout(() => {
             noteList.classList.remove('hide');
 
-            // setTimeout(() => {
-                noteBooks.forEach((x, i) => {
+            setTimeout(() => {
+                noteBooks.forEach(x => {
                     x.style.pointerEvents = 'auto';
                     if (x.classList.contains('active')) {
-                        // x.classList.remove('active');
-                        // x.classList.add('back');
-                        // setTimeout(() => {
-                        //     x.classList.remove('back');
-                        // }, 500)
-                        closeNote(i);
+                        x.classList.remove('active');
+                        x.classList.add('back');
+                        setTimeout(() => {
+                            x.classList.remove('back');
+                        }, 500)
                     }
                 })
             }, 100)
-        // }, 500);
+        }, 500);
 
     }, 500);
 
-}
-
-
-/**
- * 關閉記事本
- * @param {number} index 
- */
-function closeNote(index) {
-    const noteBooks = document.querySelectorAll('.notesPageBox .noteList ul li .book');
-
-
-    setTimeout(() => {
-        // noteBooks.forEach((x, i) => {
-        // if (x.classList.contains('active')) {
-            noteBooks[index].classList.remove('active');
-            noteBooks[index].classList.add('back');
-            setTimeout(() => {
-                noteBooks[index].classList.remove('back');
-            }, 500)
-        // }
-        // })
-    }, 100)
 }
