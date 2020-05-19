@@ -740,8 +740,8 @@ input[type=number] {
 }
 .brightness .beams .beam1 {
   width: 600px;
-  height: 25px;
-  transform: rotate(-24deg);
+  height: 20px;
+  transform: rotate(-36deg);
   animation-delay: -0.5s;
 }
 @keyframes beam {
@@ -756,8 +756,8 @@ input[type=number] {
   }
 }
 .brightness .beams .beam2 {
-  width: 550px;
-  height: 15px;
+  width: 650px;
+  height: 5px;
   transform: rotate(-24deg);
   animation-delay: -1s;
 }
@@ -773,9 +773,9 @@ input[type=number] {
   }
 }
 .brightness .beams .beam3 {
-  width: 500px;
-  height: 10px;
-  transform: rotate(-60deg);
+  width: 700px;
+  height: 5px;
+  transform: rotate(-72deg);
   animation-delay: -1.5s;
 }
 @keyframes beam {
@@ -790,8 +790,8 @@ input[type=number] {
   }
 }
 .brightness .beams .beam4 {
-  width: 550px;
-  height: 25px;
+  width: 450px;
+  height: 30px;
   transform: rotate(-60deg);
   animation-delay: -2s;
 }
@@ -807,9 +807,9 @@ input[type=number] {
   }
 }
 .brightness .beams .beam5 {
-  width: 500px;
-  height: 10px;
-  transform: rotate(-72deg);
+  width: 650px;
+  height: 15px;
+  transform: rotate(-60deg);
   animation-delay: -2.5s;
 }
 @keyframes beam {
@@ -824,9 +824,9 @@ input[type=number] {
   }
 }
 .brightness .beams .beam6 {
-  width: 500px;
-  height: 20px;
-  transform: rotate(-24deg);
+  width: 450px;
+  height: 30px;
+  transform: rotate(-12deg);
   animation-delay: -3s;
 }
 @keyframes beam {
@@ -861,14 +861,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-210px, 90px);
+    transform: translate(-150px, 30px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-500px, 250px);
+    transform: translate(-350px, 300px);
   }
 }
 .brightness .shines .shine2 {
@@ -881,14 +881,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-270px, 30px);
+    transform: translate(-240px, 270px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-500px, 200px);
+    transform: translate(-350px, 300px);
   }
 }
 .brightness .shines .shine3 {
@@ -901,14 +901,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-150px, 210px);
+    transform: translate(-180px, 300px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-450px, 350px);
+    transform: translate(-300px, 300px);
   }
 }
 .brightness .shines .shine4 {
@@ -921,14 +921,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-180px, 90px);
+    transform: translate(-180px, 60px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-150px, 400px);
+    transform: translate(-250px, 300px);
   }
 }
 .brightness .shines .shine5 {
@@ -941,14 +941,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-300px, 60px);
+    transform: translate(-120px, 60px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-100px, 50px);
+    transform: translate(-100px, 250px);
   }
 }
 .brightness .shines .shine6 {
@@ -961,14 +961,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-210px, 120px);
+    transform: translate(-240px, 60px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-500px, 450px);
+    transform: translate(-400px, 350px);
   }
 }
 .brightness .shines .shine7 {
@@ -981,14 +981,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-150px, 60px);
+    transform: translate(-240px, 180px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-150px, 400px);
+    transform: translate(-250px, 450px);
   }
 }
 .brightness .shines .shine8 {
@@ -1001,14 +1001,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-210px, 270px);
+    transform: translate(-90px, 120px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-50px, 450px);
+    transform: translate(-50px, 100px);
   }
 }
 .brightness .shines .shine9 {
@@ -1021,14 +1021,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-90px, 180px);
+    transform: translate(-120px, 60px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-450px, 450px);
+    transform: translate(-250px, 200px);
   }
 }
 .brightness .shines .shine10 {
@@ -1041,14 +1041,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-240px, 270px);
+    transform: translate(-120px, 120px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-400px, 400px);
+    transform: translate(-350px, 200px);
   }
 }
 
@@ -2443,7 +2443,7 @@ input[type=number] {
   padding: 0 8px 0 5px;
   background: #222;
   border-radius: 5px 8px 8px 5px;
-  box-shadow: inset -2px -2px 5px rgba(0, 0, 0, 0.7);
+  box-shadow: inset -2px -2px 5px rgba(0, 0, 0, 0.7), inset 8px 0 rgba(0, 0, 0, 0.2);
   transform-origin: left center;
   transition: 0.3s 0.2s;
   z-index: 1;
@@ -2781,7 +2781,7 @@ input[type=number] {
 }
 .book.red .firstPage {
   background: #832323 !important;
-  box-shadow: inset -2px -2px 5px rgba(29, 0, 0, 0.9) !important;
+  box-shadow: inset -2px -2px 5px rgba(29, 0, 0, 0.9), inset 8px 0 rgba(0, 0, 0, 0.2) !important;
 }
 .book.red .firstPage .bookTitle {
   color: #fff2f2 !important;
@@ -2802,7 +2802,7 @@ input[type=number] {
 }
 .book.blue .firstPage {
   background: #237083 !important;
-  box-shadow: inset -2px -2px 5px rgba(0, 16, 29, 0.9) !important;
+  box-shadow: inset -2px -2px 5px rgba(0, 16, 29, 0.9), inset 8px 0 rgba(0, 0, 0, 0.2) !important;
 }
 .book.blue .firstPage .bookTitle {
   color: #d1edfd !important;
@@ -2823,7 +2823,7 @@ input[type=number] {
 }
 .book.green .firstPage {
   background: #238340 !important;
-  box-shadow: inset -2px -2px 5px rgba(0, 16, 29, 0.9) !important;
+  box-shadow: inset -2px -2px 5px rgba(0, 16, 29, 0.9), inset 8px 0 rgba(0, 0, 0, 0.2) !important;
 }
 .book.green .firstPage .bookTitle {
   color: #d1fdeb !important;
@@ -2844,7 +2844,7 @@ input[type=number] {
 }
 .book.greenBlue .firstPage {
   background: #23837e !important;
-  box-shadow: inset -2px -2px 5px rgba(0, 29, 27, 0.9) !important;
+  box-shadow: inset -2px -2px 5px rgba(0, 29, 27, 0.9), inset 8px 0 rgba(0, 0, 0, 0.2) !important;
 }
 .book.greenBlue .firstPage .bookTitle {
   color: #d1fdf7 !important;
@@ -2865,7 +2865,7 @@ input[type=number] {
 }
 .book.tiffiny .firstPage {
   background: #7ddbd7 !important;
-  box-shadow: inset -2px -2px 5px rgba(0, 27, 29, 0.9) !important;
+  box-shadow: inset -2px -2px 5px rgba(0, 27, 29, 0.9), inset 8px 0 rgba(0, 0, 0, 0.2) !important;
 }
 .book.tiffiny .firstPage .bookTitle {
   color: #d1fdf7 !important;
@@ -2886,7 +2886,7 @@ input[type=number] {
 }
 .book.yellow .firstPage {
   background: #f1f081 !important;
-  box-shadow: inset -2px -2px 5px rgba(29, 25, 0, 0.9) !important;
+  box-shadow: inset -2px -2px 5px rgba(29, 25, 0, 0.9), inset 8px 0 rgba(0, 0, 0, 0.2) !important;
 }
 .book.yellow .firstPage .bookTitle {
   color: #fdfad1 !important;
@@ -2907,7 +2907,7 @@ input[type=number] {
 }
 .book.orange .firstPage {
   background: #c9743b !important;
-  box-shadow: inset -2px -2px 5px rgba(29, 12, 0, 0.9) !important;
+  box-shadow: inset -2px -2px 5px rgba(29, 12, 0, 0.9), inset 8px 0 rgba(0, 0, 0, 0.2) !important;
 }
 .book.orange .firstPage .bookTitle {
   color: #fde6d1 !important;
@@ -2928,7 +2928,7 @@ input[type=number] {
 }
 .book.purple .firstPage {
   background: #9662eb !important;
-  box-shadow: inset -2px -2px 5px rgba(18, 0, 29, 0.9) !important;
+  box-shadow: inset -2px -2px 5px rgba(18, 0, 29, 0.9), inset 8px 0 rgba(0, 0, 0, 0.2) !important;
 }
 .book.purple .firstPage .bookTitle {
   color: #e2d1fd !important;
@@ -2949,7 +2949,7 @@ input[type=number] {
 }
 .book.pink .firstPage {
   background: #e595db !important;
-  box-shadow: inset -2px -2px 5px rgba(29, 0, 25, 0.9) !important;
+  box-shadow: inset -2px -2px 5px rgba(29, 0, 25, 0.9), inset 8px 0 rgba(0, 0, 0, 0.2) !important;
 }
 .book.pink .firstPage .bookTitle {
   color: #fff6fe !important;
@@ -2970,7 +2970,7 @@ input[type=number] {
 }
 .book.black .firstPage {
   background: #222 !important;
-  box-shadow: inset -2px -2px 5px rgba(0, 0, 0, 0.7) !important;
+  box-shadow: inset -2px -2px 5px rgba(0, 0, 0, 0.7), inset 8px 0 rgba(0, 0, 0, 0.2) !important;
 }
 .book.black .firstPage .bookTitle {
   color: #FFF !important;
@@ -2991,7 +2991,7 @@ input[type=number] {
 }
 .book.white .firstPage {
   background: #e2e0d9 !important;
-  box-shadow: inset -2px -2px 5px rgba(56, 36, 0, 0.9) !important;
+  box-shadow: inset -2px -2px 5px rgba(56, 36, 0, 0.9), inset 8px 0 rgba(0, 0, 0, 0.2) !important;
 }
 .book.white .firstPage .bookTitle {
   color: #222 !important;
@@ -3012,7 +3012,7 @@ input[type=number] {
 }
 .book.gray .firstPage {
   background: #646464 !important;
-  box-shadow: inset -2px -2px 5px rgba(0, 0, 0, 0.7) !important;
+  box-shadow: inset -2px -2px 5px rgba(0, 0, 0, 0.7), inset 8px 0 rgba(0, 0, 0, 0.2) !important;
 }
 .book.gray .firstPage .bookTitle {
   color: #FFF !important;
@@ -3034,7 +3034,7 @@ input[type=number] {
 }
 .lightTheme .notesPageBox .noteList ul li .book .firstPage {
   background: #e2e0d9;
-  box-shadow: inset -2px -2px 5px rgba(56, 36, 0, 0.9);
+  box-shadow: inset -2px -2px 5px rgba(56, 36, 0, 0.9), inset 8px 0 rgba(0, 0, 0, 0.2);
 }
 .lightTheme .notesPageBox .noteList ul li .book .firstPage .bookTitle {
   color: #222;
