@@ -210,11 +210,26 @@ function alarmClock() {
         /** 檢查時間是否到了 */
         const checkAlarm = (timeValue, key) => {
             const time = new Date();
-            console.log('123');
             
             if (timeValue === `${time.getHours()}:${time.getMinutes()}`) {
                 console.log('鬧鐘響了');
                 clearAlarm(key);
+                const audio = new Audio('./assets/mario-ring.mp3');
+                const popupObj = {
+                    text: '(鬧鐘正常發揮中)',
+                    enterBtn: '關閉鬧鐘',
+                    enterClick: () => {
+                        audio.pause();
+                        audio.currentTime = 0;
+                        button.style.display = 'block';
+                        clockText.style.display = 'none';
+                        clockText.innerHTML = '';
+                        clearAlarm(runAlarmClock);
+                    }
+                }
+                audio.play();
+                showPopupBox(popupObj);
+                
             }
         }
 
