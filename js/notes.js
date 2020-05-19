@@ -114,7 +114,7 @@ function onNoteActive() {
                     x.classList.add('back');
                     setTimeout(() => {
                         x.classList.remove('back');
-                    }, 400);
+                    }, 500);
                 }
             });
 
