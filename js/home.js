@@ -197,3 +197,84 @@ function removeAllSiderbarActive() {
 
 }
 
+/** 開始鬧鐘計時器 */
+let runAlarmClock;
+/** 鬧鐘設定 */
+function alarmClock() {
+    const settingAlarm = () => {
+        const timeInput = document.querySelector('#popupInputTime1');
+        const button = document.querySelector('.homePageBox .clock .alarmClockArea button');
+        const clockText = document.querySelector('.homePageBox .clock .alarmClockArea .clockText');
+        console.log('Alarm Clock:', timeInput.value);
+
+        /** 檢查時間是否到了 */
+        const checkAlarm = (timeValue, key) => {
+            const time = new Date();
+            console.log('123');
+            
+            if (timeValue === `${time.getHours()}:${time.getMinutes()}`) {
+                console.log('鬧鐘響了');
+                clearAlarm(key);
+            }
+        }
+
+        /** 清除計時器 */
+        const clearAlarm = (key) => {
+            clearInterval(key);
+        }
+
+        if (clockText.innerHTML) {
+            clearAlarm(runAlarmClock);
+        }
+
+        if (timeInput.value) {
+            let apm = '上午';
+            let hour = '12';
+            const minute = timeInput.value.substring(3, 5);
+            if (timeInput.value.substring(0, 2) === 0) {
+                hour = '12';
+            } else if (Number(timeInput.value.substring(0, 2)) > 12) {
+                apm = '下午';
+                hour = Number(timeInput.value.substring(0, 2)) - 12;
+            }
+            button.style.display = 'none';
+            clockText.style.display = 'block';
+            clockText.innerHTML = `${apm} ${hour}:${minute}`;
+
+            runAlarmClock = setInterval(function() {
+                checkAlarm(timeInput.value, runAlarmClock);
+            }, 1000);
+            
+
+        } else {
+            button.style.display = 'block';
+            clockText.style.display = 'none';
+            clearAlarm(runAlarmClock);
+        }
+        
+    }
+    const popupObj = {
+        text: '設定鬧鐘',
+        showCancel: true,
+        showInput: 3,
+        enterClick: settingAlarm
+    }
+    showPopupBox(popupObj);
+    
+}
+
+
+
+// function checkAlarm(timeValue, key) {
+//     const time = new Date();
+//     console.log('123');
+    
+//     if (timeValue === `${time.getHours()}:${time.getMinutes()}`) {
+//         console.log('鬧鐘響了');
+//         clearAlarm(key);
+//     }
+// }
+
+// function clearAlarm(key) {
+//     clearInterval(key);
+// }

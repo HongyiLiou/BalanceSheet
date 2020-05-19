@@ -206,6 +206,7 @@ function showScreenHolder(boolean, doSomething, cssClass) {
   text: 訊息文字,
   showCancel: 是否顯示取消按鈕,
   showInput: 顯示幾個 input(最多2個),
+  showInputTime: 顯示時間 input,
   inputText1: 第 1個 input標題文字,
   inputText2: 第 2個 input標題文字,
   enterBtn: 「確認」按鈕文字,
@@ -227,6 +228,10 @@ function showPopupBox(popupSettingObj) {
                 <p></p>
                 <input id="popupInput2" type="text" spellcheck="false" onblur="setPopupInputTitle(true, 1)">
             </label>
+            <label class="userInput">
+                <p></p>
+                <input id="popupInputTime1" type="time" value="00:00">
+            </label>
         </div>
         <div class="buttonArea">
             <button class="cancel">Cancel</button>
@@ -247,7 +252,9 @@ function showPopupBox(popupSettingObj) {
     popupBox_checkMessage.style.display = 'block';
     cancelBtn.style.display = settingObj.showCancel ? 'block' : 'none';
     popupInputArea.style.display = settingObj.showInput ? 'flex' : 'none';
-    popupInput[1].style.display = settingObj.showInput && settingObj.showInput === 1 ? 'none' : 'block';
+    popupInput[0].style.display = settingObj.showInput && (settingObj.showInput === 1 || settingObj.showInput === 2) ? 'block' : 'none';
+    popupInput[1].style.display = settingObj.showInput && settingObj.showInput === 2 ? 'block' : 'none';
+    popupInput[2].style.display = settingObj.showInput && settingObj.showInput === 3 ? 'block' : 'none';
     popupInputTitle[0].innerHTML = settingObj.inputText1 ? settingObj.inputText1 : '標題文字一';
     popupInputTitle[1].innerHTML = settingObj.inputText2 ? settingObj.inputText2 : '標題文字二';
     message.innerHTML = settingObj.text ? settingObj.text : '';
