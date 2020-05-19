@@ -504,6 +504,34 @@
             font-weight: 100
             vertical-align: baseline
 
+        // 鬧鐘
+        .clockArea
+            position: absolute
+            right: 0
+
+            button
+                padding: 8px 18px
+                margin: 0 5px
+                border: solid 1px rgba(#FFF, 0.3)
+                font-size: 100%
+                border-radius: 100px
+                color: #FFF
+                background: #111
+                cursor: pointer
+                outline: none
+                transition: 0.3s
+
+                &:hover
+                    background: #3a3a3a
+                &:active
+                    transition: 0s
+                    background: #666666
+
+                &::before
+                    content: '\f0f3'
+                    font-family: FontAwesome
+                    margin-right: 5px
+
 
 
 
