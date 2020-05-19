@@ -32,7 +32,7 @@
                 .book
                     +size(130px, 180px)
                     margin: auto
-                    transform: perspective(1000px) rotate3d(1, -0.5, 0.33, 30deg)
+                    transform: perspective(1500px) rotate3d(1, -0.5, 0.33, 30deg) translateX(0%)
                     -webkit-perspective: 700
                     -webkit-perspective-origin: 100% 100%
                     -webkit-transform-style: -webkit-preserve-3d
@@ -47,7 +47,7 @@
                             box-shadow: 0px 0px #111, 0px 0px #111, 0px 0px #111, 0px 0px #111, 0px 0px #111, 0px 0px #111, 0px 0px #111
                             
                     &.active
-                        transform: perspective(1000px) rotate3d(1, -1, 0.5, 15deg) translateX(50%)
+                        transform: perspective(1500px) rotate3d(1, -1, 0.5, 15deg) translateX(50%)
                         animation: bookFloat 5s 0.5s infinite
                         &:hover
                             box-shadow: unset
@@ -137,6 +137,7 @@
                             color: #FFF
                             background: #000
                             text-align: center
+                            font-size: 90%
                             font-weight: 900
                             transition: 0.3s 0.3s
                             user-select: none
@@ -286,7 +287,7 @@
                     -webkit-transform-style: -webkit-preserve-3d
                     transition: 0.3s
                     border-radius: 5px 8px 8px 5px
-                    transform: perspective(1000px) rotate3d(1, -1, 0.5, 15deg) translateX(50%)
+                    transform: perspective(1500px) rotate3d(1, -1, 0.5, 15deg) translateX(50%)
                     animation: bookFloat 5s 0.5s infinite
                     user-select: none
 
@@ -721,17 +722,17 @@
 // Animations
 +keyframes(bookFloat)
     0%
-        transform: perspective(1000px) rotate3d(1, -1, 0.5, 15deg) translateX(50%) translateY(0px)
+        transform: perspective(1500px) rotate3d(1, -1, 0.5, 15deg) translateX(50%) translateY(0px)
     60%
-        transform: perspective(1000px) rotate3d(1, -1, 0.5, 15deg) translateX(48%) translateY(-20px)
+        transform: perspective(1500px) rotate3d(1, -1, 0.5, 15deg) translateX(48%) translateY(-20px)
     100%
-        transform: perspective(1000px) rotate3d(1, -1, 0.5, 15deg) translateX(50%) translateY(0px)
+        transform: perspective(1500px) rotate3d(1, -1, 0.5, 15deg) translateX(50%) translateY(0px)
 
 +keyframes(bookBack)
     0%
-        transform: perspective(1000px) rotate3d(1, -1, 0.5, 15deg) translateX(50%)
+        transform: perspective(1500px) rotate3d(1, -1, 0.5, 15deg) translateX(50%)
     100%
-        transform: perspective(1000px) rotate3d(1, -0.5, 0.33, 30deg) translateX(0%)
+        transform: perspective(1500px) rotate3d(1, -0.5, 0.33, 30deg) translateX(0%)
 
 
 

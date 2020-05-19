@@ -25,7 +25,7 @@ function getNotes() {
         if (resData === 'true') {
             noteList.innerHTML = `
                 <li>
-                    <div class="book addNew" title="新增一本新的記事本">
+                    <div class="book addNew" title="新增一本新的記事本" onclick="noteAddMode(true)">
                         <div class="firstPage">
                             <p class="bookTitle">？？？</p>
                         </div>
@@ -34,54 +34,56 @@ function getNotes() {
                     <p class="noteTitle addNew">新增記事本</p>
                 </li>
             `;
-        }
+        } else {
 
-        resData.forEach(data => {
-            const listData = {
-                name: data[0],
-                color: data[1],
-                content: data[2]
-            };
-            outputData.push(listData);
-        });
-
-        console.log('Notes:', outputData);
-        
-        outputData.forEach((book, i) => {
-            const li = document.createElement('li');
-            li.innerHTML = `
-                <div class="book ${book.color === 'default' ? '' : book.color}" title="${book.name}">
-                    <div class="firstPage">
-                        <p class="bookTitle">${book.name}</p>
+            resData.forEach(data => {
+                const listData = {
+                    name: data[0],
+                    color: data[1],
+                    content: data[2]
+                };
+                outputData.push(listData);
+            });
+    
+            console.log('Notes:', outputData);
+            
+            outputData.forEach((book, i) => {
+                const li = document.createElement('li');
+                li.innerHTML = `
+                    <div class="book ${book.color === 'default' ? '' : book.color}" title="${book.name}">
+                        <div class="firstPage">
+                            <p class="bookTitle">${book.name}</p>
+                        </div>
+                        <div class="backPages"></div>
                     </div>
-                    <div class="backPages"></div>
-                </div>
-                <p class="noteTitle">${book.name}</p>
+                    <p class="noteTitle">${book.name}</p>
+                `;
+                noteList.appendChild(li);
+    
+            })
+    
+            noteList.innerHTML = noteList.innerHTML + `
+                <li>
+                    <div class="book addNew" title="新增一本新的記事本" onclick="noteAddMode(true);onAddNote;">
+                        <div class="firstPage">
+                            <p class="bookTitle">？？？</p>
+                        </div>
+                        <div class="backPages"></div>
+                    </div>
+                    <p class="noteTitle addNew">新增記事本</p>
+                </li>        
             `;
-            noteList.appendChild(li);
+            
+            const noteBooks = document.querySelectorAll('.notesPageBox .noteList ul li .book');
+            noteBooks.forEach((book, i) => {
+                if (!book.classList.contains('addNew')) {
+                    book.addEventListener('click', () => {
+                        openNotebook(outputData[i]);
+                    })
+                }
+            });
 
-        })
-
-        noteList.innerHTML = noteList.innerHTML + `
-            <li>
-                <div class="book addNew" title="新增一本新的記事本" onclick="noteAddMode(true)">
-                    <div class="firstPage">
-                        <p class="bookTitle">？？？</p>
-                    </div>
-                    <div class="backPages"></div>
-                </div>
-                <p class="noteTitle addNew">新增記事本</p>
-            </li>        
-        `;
-        
-        const noteBooks = document.querySelectorAll('.notesPageBox .noteList ul li .book');
-        noteBooks.forEach((book, i) => {
-            if (!book.classList.contains('addNew')) {
-                book.addEventListener('click', () => {
-                    openNotebook(outputData[i]);
-                })
-            }
-        });
+        }
 
         onNoteActive();
     });
@@ -282,7 +284,7 @@ function onAddNote() {
         getNotes();
         onNoteCancelBtn();
         const popupObj = {
-            text: `已新增[${noteTitleInput.value}]記事本`,
+            text: `已新增 "${noteTitleInput.value}" 記事本`,
         }   
         showPopupBox(popupObj);
     });
@@ -290,6 +292,7 @@ function onAddNote() {
 }
 
 
+/** 刪除記事本 */
 function onNoteDeleteBtn() {
     const noteNo = document.querySelector('.notesPageBox .noteNo');
 
