@@ -112,9 +112,9 @@ function onNoteActive() {
                 if (j !== i && x.classList.contains('active')) {
                     x.classList.remove('active');
                     x.classList.add('back');
-                    // setTimeout(() => {
-                    //     x.classList.remove('back');
-                    // }, 500);
+                    setTimeout(() => {
+                        x.classList.remove('back');
+                    }, 500);
                 }
             });
 
