@@ -170,7 +170,6 @@ input[type=number] {
   align-items: center;
   margin-top: 15px;
   -webkit-user-select: none;
-      -ms-user-select: none;
           user-select: none;
   cursor: pointer;
 }
@@ -741,7 +740,7 @@ input[type=number] {
 .brightness .beams .beam1 {
   width: 450px;
   height: 5px;
-  transform: rotate(-24deg);
+  transform: rotate(-60deg);
   animation-delay: -0.5s;
 }
 @keyframes beam {
@@ -756,9 +755,9 @@ input[type=number] {
   }
 }
 .brightness .beams .beam2 {
-  width: 600px;
-  height: 10px;
-  transform: rotate(-12deg);
+  width: 500px;
+  height: 25px;
+  transform: rotate(-60deg);
   animation-delay: -1s;
 }
 @keyframes beam {
@@ -773,9 +772,9 @@ input[type=number] {
   }
 }
 .brightness .beams .beam3 {
-  width: 700px;
-  height: 10px;
-  transform: rotate(-12deg);
+  width: 550px;
+  height: 5px;
+  transform: rotate(-36deg);
   animation-delay: -1.5s;
 }
 @keyframes beam {
@@ -790,9 +789,9 @@ input[type=number] {
   }
 }
 .brightness .beams .beam4 {
-  width: 550px;
+  width: 450px;
   height: 25px;
-  transform: rotate(-24deg);
+  transform: rotate(-36deg);
   animation-delay: -2s;
 }
 @keyframes beam {
@@ -807,9 +806,9 @@ input[type=number] {
   }
 }
 .brightness .beams .beam5 {
-  width: 600px;
-  height: 5px;
-  transform: rotate(-48deg);
+  width: 650px;
+  height: 10px;
+  transform: rotate(-24deg);
   animation-delay: -2.5s;
 }
 @keyframes beam {
@@ -826,7 +825,7 @@ input[type=number] {
 .brightness .beams .beam6 {
   width: 500px;
   height: 20px;
-  transform: rotate(-24deg);
+  transform: rotate(-48deg);
   animation-delay: -3s;
 }
 @keyframes beam {
@@ -861,14 +860,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-180px, 90px);
+    transform: translate(-120px, 240px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-200px, 450px);
+    transform: translate(-250px, 300px);
   }
 }
 .brightness .shines .shine2 {
@@ -881,14 +880,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-120px, 90px);
+    transform: translate(-240px, 180px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-200px, 350px);
+    transform: translate(-250px, 50px);
   }
 }
 .brightness .shines .shine3 {
@@ -901,14 +900,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-120px, 60px);
+    transform: translate(-240px, 270px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-250px, 500px);
+    transform: translate(-350px, 450px);
   }
 }
 .brightness .shines .shine4 {
@@ -921,14 +920,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-60px, 210px);
+    transform: translate(-300px, 300px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-100px, 200px);
+    transform: translate(-300px, 350px);
   }
 }
 .brightness .shines .shine5 {
@@ -941,14 +940,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-30px, 90px);
+    transform: translate(-90px, 270px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-500px, 200px);
+    transform: translate(-300px, 100px);
   }
 }
 .brightness .shines .shine6 {
@@ -961,14 +960,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-150px, 210px);
+    transform: translate(-210px, 150px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-150px, 300px);
+    transform: translate(-50px, 450px);
   }
 }
 .brightness .shines .shine7 {
@@ -981,14 +980,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-30px, 60px);
+    transform: translate(-180px, 150px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-200px, 350px);
+    transform: translate(-400px, 450px);
   }
 }
 .brightness .shines .shine8 {
@@ -1001,14 +1000,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-240px, 90px);
+    transform: translate(-270px, 300px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-100px, 250px);
+    transform: translate(-500px, 150px);
   }
 }
 .brightness .shines .shine9 {
@@ -1021,14 +1020,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-270px, 240px);
+    transform: translate(-180px, 210px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-200px, 400px);
+    transform: translate(-50px, 250px);
   }
 }
 .brightness .shines .shine10 {
@@ -1041,14 +1040,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-150px, 210px);
+    transform: translate(-180px, 270px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-400px, 50px);
+    transform: translate(-450px, 450px);
   }
 }
 
@@ -1327,9 +1326,10 @@ input[type=number] {
     font-size: 90%;
   }
   .homePageBox .clock .alarmClockArea {
-    left: 235px;
+    left: 305px;
   }
   .homePageBox .clock .alarmClockArea button {
+    margin-bottom: -16px;
     font-size: 90%;
   }
   .homePageBox .clock .alarmClockArea .clockText {
@@ -2120,7 +2120,6 @@ input[type=number] {
   position: relative;
   display: flex;
   width: -webkit-fit-content;
-  width: -moz-fit-content;
   width: fit-content;
   margin-top: 200px;
   padding: 8px 10px;
@@ -2557,7 +2556,6 @@ input[type=number] {
 .notesPageBox .noteList ul li .book .firstPage .bookTitle {
   display: block;
   width: -webkit-fit-content;
-  width: -moz-fit-content;
   width: fit-content;
   margin: auto;
   margin-top: 25px;
@@ -2569,7 +2567,6 @@ input[type=number] {
   font-weight: 900;
   transition: 0.3s 0.3s;
   -webkit-user-select: none;
-      -ms-user-select: none;
           user-select: none;
 }
 .notesPageBox .noteList ul li .book .backPages {
@@ -2723,7 +2720,6 @@ input[type=number] {
   transform: perspective(1500px) rotate3d(1, -1, 0.5, 15deg) translateX(50%);
   animation: bookFloat 5s 0.5s infinite;
   -webkit-user-select: none;
-      -ms-user-select: none;
           user-select: none;
 }
 .notesPageBox .editNoteArea .editNoteBackground .top .book .firstPage {
@@ -3353,7 +3349,6 @@ input[type=number] {
   padding-top: 40px;
   overflow-y: scroll;
   -webkit-user-select: none;
-      -ms-user-select: none;
           user-select: none;
 }
 .userSettingPageBox .container .content::-webkit-scrollbar {
@@ -4068,7 +4063,6 @@ input[type=number] {
   transition: background 0.4s;
   animation: showDatePicker 0.4s 0.1s forwards;
   -webkit-user-select: none;
-      -ms-user-select: none;
           user-select: none;
 }
 .datePickerBox.hide {
