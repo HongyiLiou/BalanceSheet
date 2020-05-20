@@ -213,7 +213,9 @@ function alarmClock() {
             if (timeValue === `${time.getHours() < 10 ? '0' + time.getHours() : time.getHours()}:${time.getMinutes()}`) {
                 console.log('鬧鐘響了');
                 clearAlarm(key);
-                const audio = new Audio('./assets/mario-ring.mp3');
+                // const audio = new Audio('./assets/mario-ring.mp3');
+                const audio = document.createElement('audio');
+                audio.src = './assets/mario-ring.mp3'
                 const popupObj = {
                     text: '(鬧鐘正常發揮中)',
                     enterBtn: '關閉鬧鐘',
