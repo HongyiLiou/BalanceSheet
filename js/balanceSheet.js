@@ -260,7 +260,7 @@ function setBalanceSheetDetail(res) {
         <li>
             <button class="delBtn"><i class="fa fa-close"></i></button>
             <input class="item itemInput" type="text" placeholder="收支項目">
-            <input class="amount amountInput" type="text" placeholder="收支金額">
+            <input class="amount amountInput" type="text" pattern="\d*" placeholder="收支金額">
             <select class="type" name="type">
                 <option value="expenditure">支出</option>
                 <option value="income">收入</option>
@@ -269,7 +269,7 @@ function setBalanceSheetDetail(res) {
         <li>
             <button class="delBtn"><i class="fa fa-close"></i></button>
             <input class="item itemInput" type="text" placeholder="收支項目">
-            <input class="amount amountInput" type="text" placeholder="收支金額">
+            <input class="amount amountInput" type="text" pattern="\d*" placeholder="收支金額">
             <select class="type" name="type">
                 <option value="expenditure">支出</option>
                 <option value="income">收入</option>
@@ -297,7 +297,7 @@ function setBalanceSheetDetail(res) {
             <li>
                 <button class="delBtn"><i class="fa fa-close"></i></button>
                 <input class="item itemInput" type="text" placeholder="收支項目" value="${ item }">
-                <input class="amount amountInput" type="text" placeholder="收支金額" value="${ Math.abs(detailAmounts[i]) }">
+                <input class="amount amountInput" type="text" pattern="\d*" placeholder="收支金額" value="${ Math.abs(detailAmounts[i]) }">
                 <select class="type" name="type">
                     <option value="expenditure">支出</option>
                     <option value="income">收入</option>
