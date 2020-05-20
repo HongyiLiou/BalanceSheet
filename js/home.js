@@ -31,8 +31,11 @@ function initialHomePageTime() {
     if (hour == 0) {
         showAPM.innerHTML = '上午';
         showHour.innerHTML = `12:`;
-    } else if (hour <= 12) {
+    } else if (hour < 12) {
         showAPM.innerHTML = '上午';
+        showHour.innerHTML = `${hour}:`;
+    } else if (hour == 12) {
+        showAPM.innerHTML = '下午';
         showHour.innerHTML = `${hour}:`;
     } else {
         showAPM.innerHTML = '下午';
@@ -65,8 +68,11 @@ function initialHomePageTime() {
                 showDate.innerHTML = `${year}年 ${month}月 ${date + 1}日  週${changeWeekDay(day)}`;
                 showAPM.innerHTML = '上午';
                 showHour.innerHTML = `12:`;
-            } else if (hour <= 12) {
+            } else if (hour < 12) {
                 showAPM.innerHTML = '上午';
+                showHour.innerHTML = `${hour}:`;
+            } else if (hour == 12) {
+                showAPM.innerHTML = '下午';
                 showHour.innerHTML = `${hour}:`;
             } else {
                 showAPM.innerHTML = '下午';
@@ -256,6 +262,9 @@ function alarmClock() {
             } else if (Number(timeInput.value.substring(0, 2)) > 12) {
                 apm = '下午';
                 hour = Number(timeInput.value.substring(0, 2)) - 12;
+            } else if (Number(timeInput.value.substring(0, 2)) == 12) {
+                apm = '下午';
+                hour = Number(timeInput.value.substring(0, 2));
             } else {
                 hour = Number(timeInput.value.substring(0, 2));
             }
@@ -264,6 +273,9 @@ function alarmClock() {
             clockText.innerHTML = `${apm} ${hour}:${minute}`;
 
             runAlarmClock = setInterval(function() {
+                const time = new Date();
+                console.log(`${timeInput.value}, ${time.getHours() < 10 ? '0' + time.getHours() : time.getHours()}:${time.getMinutes()}`);
+                
                 checkAlarm(timeInput.value, runAlarmClock);
             }, 1000);
             
