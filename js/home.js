@@ -205,6 +205,10 @@ function alarmClock() {
         const timeInput = document.querySelector('#popupInputTime1');
         const button = document.querySelector('.homePageBox .clock .alarmClockArea button');
         const clockText = document.querySelector('.homePageBox .clock .alarmClockArea .clockText');
+        const audio = document.createElement('audio');
+        audio.src = './assets/mario-ring.mp3'
+        audio.play();
+        audio.pause();
 
         /** 檢查時間是否到了 */
         const checkAlarm = (timeValue, key) => {
@@ -214,8 +218,6 @@ function alarmClock() {
                 console.log('鬧鐘響了');
                 clearAlarm(key);
                 // const audio = new Audio('./assets/mario-ring.mp3');
-                const audio = document.createElement('audio');
-                audio.src = './assets/mario-ring.mp3'
                 const popupObj = {
                     text: '(鬧鐘正常發揮中)',
                     enterBtn: '關閉鬧鐘',
@@ -228,9 +230,9 @@ function alarmClock() {
                         clearAlarm(runAlarmClock);
                     }
                 }
-                audio.play();
-                audio.pause();
-                audio.play();
+                setTimeout(() => {
+                    audio.play();
+                }, 0)
                 showPopupBox(popupObj);
                 
             }
