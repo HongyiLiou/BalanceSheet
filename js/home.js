@@ -216,7 +216,7 @@ function alarmClock() {
                 const audio = new Audio('./assets/mario-ring.mp3');
                 const popupObj = {
                     text: '(鬧鐘正常發揮中)',
-                    enterBtn: '關閉鬧鐘',
+                    enterBtn: '關閉',
                     enterClick: () => {
                         audio.pause();
                         audio.currentTime = 0;
