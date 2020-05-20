@@ -229,6 +229,8 @@ function alarmClock() {
                     }
                 }
                 audio.play();
+                audio.pause();
+                audio.play();
                 showPopupBox(popupObj);
                 
             }
