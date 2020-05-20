@@ -205,13 +205,12 @@ function alarmClock() {
         const timeInput = document.querySelector('#popupInputTime1');
         const button = document.querySelector('.homePageBox .clock .alarmClockArea button');
         const clockText = document.querySelector('.homePageBox .clock .alarmClockArea .clockText');
-        console.log('Alarm Clock:', timeInput.value);
 
         /** 檢查時間是否到了 */
         const checkAlarm = (timeValue, key) => {
             const time = new Date();
             
-            if (timeValue === `${time.getHours()}:${time.getMinutes()}`) {
+            if (timeValue === `${time.getHours() < 10 ? '0' + time.getHours() : time.getHours()}:${time.getMinutes()}`) {
                 console.log('鬧鐘響了');
                 clearAlarm(key);
                 const audio = new Audio('./assets/mario-ring.mp3');
@@ -251,6 +250,8 @@ function alarmClock() {
             } else if (Number(timeInput.value.substring(0, 2)) > 12) {
                 apm = '下午';
                 hour = Number(timeInput.value.substring(0, 2)) - 12;
+            } else {
+                hour = Number(timeInput.value.substring(0, 2));
             }
             button.style.display = 'none';
             clockText.style.display = 'block';
