@@ -95,6 +95,8 @@ function loadPages() {
 
 /** 載入日期選擇彈窗 Date Picker */
 function loadDatePicker() {
+    console.log(123);
+    
     datePickerType = 'datePicker_balanceSheet';
     $('.popupBox').load('html/datePicker.html', function() {
         const sc = document.createElement('script');
