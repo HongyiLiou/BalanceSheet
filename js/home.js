@@ -300,7 +300,7 @@ function alarmClock() {
 
 
 let youTubePlayer;
-function onYouTubeIframeAPIReady() {
+function onYouTubeIframeAPIReady(videoId) {
   var ctrlq = document.getElementById("youtube-audio");
   ctrlq.innerHTML = '<div id="youtube-player"></div>';
   ctrlq.style.cssText = 'display:none';
@@ -309,17 +309,23 @@ function onYouTubeIframeAPIReady() {
     height: '0',
     width: '0',
     // videoId: ctrlq.dataset.video,
+    // videoId: videoId,
     videoId: 'LHZXT6813VE',
     playerVars: {
-      autoplay: false,
       loop: 1,
-      start: 0
+      start: 1
     },
     events: {
       'onReady': function() {
         youTubePlayer.setPlaybackQuality("small");
         youTubePlayer.playVideo();
+        // youTubePlayer.stopVideo();
       }
     }
   });
+}
+
+
+function stopYouTubePlayer() {
+    youTubePlayer.stopVideo();
 }
