@@ -1,0 +1,92 @@
+.musicPageBox
+    position: relative
+
+    .albumList
+        padding: 200px 80px 200px 140px
+        margin-left: -200px
+        width: calc(125% - 150px)
+        max-height: 100vh
+        overflow: auto
+        opacity: 1
+        pointer-events: auto
+        transition: 0.5s
+
+        ul
+            display: flex
+            flex-wrap: wrap
+            width: 100%
+
+            li
+                width: 20%
+                padding: 20px 60px
+                margin-bottom: 100px
+
+                .album
+                    position: relative
+                    +size(170px, 170px)
+                    margin-left: 50%
+                    border-radius: 50%
+                    background: radial-gradient(circle, #000 5%, #111 10%, #000 15%, #111 20%, #000 25%, #111 27%, #000 30%, #000 35%, #111 37%, #111 38%, #000 39%, #111 50%, #000 52%, #111 53%, #000 55%, #000 60%, #111 61%, #111 65%, #000 66%, #000 100%)
+                    box-shadow: 0 10px 15px rgba(#000, 0.7)
+                    transition: 0.5s
+                    transform: translateX(-50%)
+                    cursor: pointer
+
+                    &::before
+                        content: ''
+                        position: absolute
+                        +size(100%, 100%)
+                        top: 0
+                        left: 0
+                        opacity: 0.4
+                        border-radius: 50%
+                        background: conic-gradient(#000 0deg, #FFF 15deg, #FFF 45deg, #000 60deg, #000 120deg, #FFF 135deg, #FFF 150deg, #000 165deg, #000 200deg, #333 215deg, #333 230deg, #000 245deg, #333 260deg, #333 280deg, #FFF 295deg, #FFF 305deg, #000 320deg, #000 360deg)
+                        z-index: -1
+
+                    &.active
+                        box-shadow: 0 5px 5px rgba(#000, 0.7)
+                        &::before
+                            animation: album 5s 0.5s infinite
+                        .albumPhoto
+                            animation: albumPhoto 10s 0.5s linear infinite
+
+                    .albumPhoto
+                        +ab_center
+                        +size(105px, 105px)
+                        border-radius: 50%
+                        background: url('https://i.imgur.com/9A4Mx75.jpg') center center no-repeat
+                        background-size: cover
+                        border: solid 6px #000
+
+                p
+                    position: relative
+                    max-width: 100%
+                    width: max-content
+                    color: #FFF
+                    margin: auto
+                    margin-top: 25px
+                    padding: 5px 10px
+                    border-radius: 100px
+                    text-align: center
+                    font-size: 90%
+                    background: rgba(#000, 0.6)
+                    overflow: hidden
+                    text-overflow: ellipsis
+                    white-space: nowrap
+
+
+
+// Animation
++keyframes(albumPhoto)
+    0%
+        transform: translate(-50%, -50%) rotate(0deg)
+    100%
+        transform: translate(-50%, -50%) rotate(360deg)
+
++keyframes(album)
+    0%
+        transform: rotate(0deg)
+    60%
+        transform: rotate(5deg)
+    100%
+        transform: rotate(0deg)

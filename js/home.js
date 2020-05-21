@@ -7,6 +7,7 @@ const sidebarList = [
     { name: '收支表', id: 'balanceSheetPage', class: 'balanceSheet', selected: false },
     { name: '快速連結', id: 'linksPage', class: 'links', selected: false },
     { name: '記事本', id: 'notesPage', class: 'notes', selected: false },
+    { name: '背景音樂', id: 'musicPage', class: 'music', selected: false },
     { name: '登出', id: 'loginPage', class: 'logOut', selected: false },
 ]
 
@@ -297,35 +298,3 @@ function alarmClock() {
     
 }
 
-
-
-let youTubePlayer;
-function onYouTubeIframeAPIReady(videoId) {
-  var ctrlq = document.getElementById("youtube-audio");
-  ctrlq.innerHTML = '<div id="youtube-player"></div>';
-  ctrlq.style.cssText = 'display:none';
-
-  youTubePlayer = new YT.Player('youtube-player', {
-    height: '0',
-    width: '0',
-    // videoId: ctrlq.dataset.video,
-    // videoId: videoId,
-    videoId: 'LHZXT6813VE',
-    playerVars: {
-      loop: 1,
-      start: 1
-    },
-    events: {
-      'onReady': function() {
-        youTubePlayer.setPlaybackQuality("small");
-        youTubePlayer.playVideo();
-        // youTubePlayer.stopVideo();
-      }
-    }
-  });
-}
-
-
-function stopYouTubePlayer() {
-    youTubePlayer.stopVideo();
-}

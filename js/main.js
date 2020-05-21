@@ -45,7 +45,7 @@ function loadPages() {
 
         initialHomePageTime();
         initialSidebar();
-        onYouTubeIframeAPIReady();
+        // onYouTubeIframeAPIReady();
     });
 
     // Balance Sheet Page
@@ -71,10 +71,13 @@ function loadPages() {
         const sc = document.createElement('script');
         sc.src = 'js/notes.js';
         $('body').append(sc);
+    });
 
-        // setTimeout(() => {
-        //     onNoteActive();
-        // }, 0);
+    // Music Page
+    $('#musicPage').load('html/music.html', function() {
+        const sc = document.createElement('script');
+        sc.src = 'js/music.js';
+        $('body').append(sc);
     });
 
     // User Setting Page
