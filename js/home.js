@@ -308,10 +308,12 @@ function onYouTubeIframeAPIReady() {
   youTubePlayer = new YT.Player('youtube-player', {
     height: '0',
     width: '0',
-    videoId: ctrlq.dataset.video,
+    // videoId: ctrlq.dataset.video,
+    videoId: 'LHZXT6813VE',
     playerVars: {
-      autoplay: ctrlq.dataset.autoplay,
-      loop: ctrlq.dataset.loop,
+      autoplay: false,
+      loop: 1,
+      start: 0
     },
     events: {
       'onReady': function() {
