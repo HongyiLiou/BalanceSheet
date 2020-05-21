@@ -45,6 +45,7 @@ function loadPages() {
 
         initialHomePageTime();
         initialSidebar();
+        onYouTubeIframeAPIReady();
     });
 
     // Balance Sheet Page

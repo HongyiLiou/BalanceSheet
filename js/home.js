@@ -299,16 +299,25 @@ function alarmClock() {
 
 
 
-// function checkAlarm(timeValue, key) {
-//     const time = new Date();
-//     console.log('123');
-    
-//     if (timeValue === `${time.getHours()}:${time.getMinutes()}`) {
-//         console.log('鬧鐘響了');
-//         clearAlarm(key);
-//     }
-// }
+let youTubePlayer;
+function onYouTubeIframeAPIReady() {
+  var ctrlq = document.getElementById("youtube-audio");
+  ctrlq.innerHTML = '<div id="youtube-player"></div>';
+  ctrlq.style.cssText = 'display:none';
 
-// function clearAlarm(key) {
-//     clearInterval(key);
-// }
+  youTubePlayer = new YT.Player('youtube-player', {
+    height: '0',
+    width: '0',
+    videoId: ctrlq.dataset.video,
+    playerVars: {
+      autoplay: ctrlq.dataset.autoplay,
+      loop: ctrlq.dataset.loop,
+    },
+    events: {
+      'onReady': function() {
+        youTubePlayer.setPlaybackQuality("small");
+        youTubePlayer.playVideo();
+      }
+    }
+  });
+}
