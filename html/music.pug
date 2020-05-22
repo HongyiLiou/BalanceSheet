@@ -2,17 +2,28 @@ article.musicPageBox
     button(onclick="pauseYouTubePlayer()") 暫停
     button(onclick="stopYouTubePlayer()") 停止
     button(onclick="playYouTubePlayer()") 繼續撥放
+
+    //- 唱片版型
     section.albumList
         ul
             li
                 .album(onclick="onYouTubeIframeAPIReady('LHZXT6813VE'); playYouTubePlayer();")
                     .albumPhoto
+                .setting
+                    button.edit(title="編輯")
+                    button.delete(title="刪除")
                 p 想見你
             li
                 .album
                     .albumPhoto
+                .setting
+                    button.edit(title="編輯")
+                    button.delete(title="刪除")
                 p 想見你
             li
                 .album
                     .albumPhoto
+                .setting
+                    button.edit(title="編輯")
+                    button.delete(title="刪除")
                 p 想見你

@@ -17,6 +17,7 @@
             width: 100%
 
             li
+                position: relative
                 width: 20%
                 padding: 20px 60px
                 margin-bottom: 100px
@@ -51,6 +52,12 @@
                         .albumPhoto
                             animation: albumPhoto 10s 0.5s linear infinite
 
+                    &.pause
+                        &::before
+                            animation-play-state: paused
+                        .albumPhoto
+                            animation-play-state: paused
+
                     .albumPhoto
                         +ab_center
                         +size(105px, 105px)
@@ -58,6 +65,75 @@
                         background: url('https://i.imgur.com/9A4Mx75.jpg') center center no-repeat
                         background-size: cover
                         border: solid 6px #000
+
+                .setting
+                    position: absolute
+                    display: flex
+                    +size(40px, 40px)
+                    padding: 4px 0
+                    right: 40px
+                    bottom: 55px
+                    flex-wrap: wrap
+                    justify-content: center
+                    border-radius: 50%
+                    background: rgba(#000, 0.5)
+                    overflow: hidden
+                    transition: 0.3s
+
+                    &:hover
+                        height: 84px
+                        border-radius: 100px
+                        &::before
+                            opacity: 0
+                        button
+                            opacity: 1
+
+                    &::before
+                        content: '\f142'
+                        +size(36px, 36px)
+                        +ab_center
+                        display: flex
+                        justify-content: center
+                        align-items: center
+                        border-radius: 50%
+                        background: #222
+                        font-family: FontAwesome
+                        color: #FFF
+                        font-size: 150%
+                        transition: 0.3s
+                        pointer-events: none
+
+                    button
+                        +size(36px, 36px)
+                        border-radius: 50%
+                        border: none
+                        background: #750707
+                        cursor: pointer
+                        opacity: 0
+                        outline: none
+                        transition: 0.3s
+
+                        &:hover
+                            background: lighten(#750707, 10)
+
+                        &::before
+                            content: '\f1f8'
+                            font-family: FontAwesome
+                            color: #FFF
+                            text-align: center
+                            line-height: 26px
+                            font-size: 150%
+
+                        &.edit
+                            background: #075f75
+                            margin-bottom: 5px
+                            &:hover
+                                background: lighten(#075f75, 10)
+                            &::before
+                                content: '\f040'
+
+
+                        
 
                 p
                     position: relative
@@ -88,6 +164,6 @@
     0%
         transform: rotate(0deg)
     60%
-        transform: rotate(5deg)
+        transform: rotate(30deg)
     100%
         transform: rotate(0deg)
