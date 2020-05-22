@@ -4,7 +4,7 @@
 /** YouTubePlayer */
 let youTubePlayer;
 /**
- * 重置播放器並播放音樂
+ * 重置播放器
  * @param {string}} videoId 
  */
 function onYouTubeIframeAPIReady(videoId) {
@@ -27,10 +27,23 @@ function onYouTubeIframeAPIReady(videoId) {
         events: {
             'onReady': function() {
                 youTubePlayer.setPlaybackQuality("small");
-                youTubePlayer.playVideo();
             }
         }
     });
+}
+
+
+/** 播放音樂 */
+function playYouTubePlayer() {
+    setTimeout(() => {
+        youTubePlayer.playVideo();
+    }, 800);
+}
+
+
+/** 暫停播放音樂 */
+function pauseYouTubePlayer() {
+    youTubePlayer.pauseVideo();
 }
 
 
@@ -38,3 +51,4 @@ function onYouTubeIframeAPIReady(videoId) {
 function stopYouTubePlayer() {
     youTubePlayer.stopVideo();
 }
+

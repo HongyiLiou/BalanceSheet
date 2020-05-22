@@ -1,8 +1,11 @@
 article.musicPageBox
+    button(onclick="pauseYouTubePlayer()") 暫停
+    button(onclick="stopYouTubePlayer()") 停止
+    button(onclick="playYouTubePlayer()") 繼續撥放
     section.albumList
         ul
             li
-                .album(onclick="onYouTubeIframeAPIReady('LHZXT6813VE')")
+                .album(onclick="onYouTubeIframeAPIReady('LHZXT6813VE'); playYouTubePlayer();")
                     .albumPhoto
                 p 想見你
             li
