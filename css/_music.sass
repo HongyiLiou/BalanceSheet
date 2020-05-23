@@ -1,5 +1,54 @@
 .musicPageBox
     position: relative
+    +size(100%, 100%)
+
+    .controler
+        position: absolute
+        display: flex
+        padding: 10px
+        bottom: 80px
+        left: -60px
+        height: 80px
+        background: rgba(#000, 0.6)
+        box-shadow: 0 2px 5px #000
+        z-index: 1
+
+        .alboumPhoto
+            +size(60px, 60px)
+            margin-right: 15px
+            background: url('https://i.imgur.com/9A4Mx75.jpg') center center no-repeat
+            background-size: cover
+            transition: 0.5s
+
+        .buttons
+            display: flex
+            align-items: center
+
+            button
+                position: relative
+                +size(36px, 36px)
+                margin-right: 5px
+                border-radius: 50%
+                border: solid 1px #FFF
+                background: transparent
+                color: #FFF
+                outline: none
+                transition: 0.3s
+                cursor: pointer
+
+                &:hover
+                    background: rgba(#FFF, 0.3)
+                &:active
+                    transition: 0s
+                    background: rgba(#FFF, 0.8)
+
+                &.pause
+                    display: none
+
+                i
+                    +ab_center
+                    display: block
+                    font-size: 120%
 
     .albumList
         padding: 200px 80px 200px 140px
@@ -49,14 +98,28 @@
                         box-shadow: 0 5px 5px rgba(#000, 0.7)
                         &::before
                             animation: album 5s 0.5s infinite
+                        .albumBg
+                            opacity: 0.18
+                            animation: albumPhoto 10s 0.5s linear infinite
                         .albumPhoto
                             animation: albumPhoto 10s 0.5s linear infinite
 
-                    &.pause
+                    &.paused
                         &::before
+                            animation-play-state: paused
+                        .albumBg
                             animation-play-state: paused
                         .albumPhoto
                             animation-play-state: paused
+
+                    .albumBg
+                        +ab_center
+                        +size(100%, 100%)
+                        border-radius: 50%
+                        background: url('https://i.imgur.com/9A4Mx75.jpg') center center no-repeat
+                        background-size: cover
+                        opacity: 0
+                        transition: 0.5s
 
                     .albumPhoto
                         +ab_center
@@ -64,13 +127,13 @@
                         border-radius: 50%
                         background: url('https://i.imgur.com/9A4Mx75.jpg') center center no-repeat
                         background-size: cover
-                        border: solid 6px #000
+                        border: solid 6px #111
 
                 .setting
                     position: absolute
                     display: flex
                     +size(40px, 40px)
-                    padding: 4px 0
+                    padding: 2px 0
                     right: 40px
                     bottom: 55px
                     flex-wrap: wrap
@@ -81,7 +144,7 @@
                     transition: 0.3s
 
                     &:hover
-                        height: 84px
+                        height: 82px
                         border-radius: 100px
                         &::before
                             opacity: 0

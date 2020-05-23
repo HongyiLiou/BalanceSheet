@@ -1,12 +1,19 @@
 
 <article class="musicPageBox">
-  <button onclick="pauseYouTubePlayer()">暫停</button>
-  <button onclick="stopYouTubePlayer()">停止</button>
-  <button onclick="playYouTubePlayer()">繼續撥放</button>
+  <div class="controler">
+    <div class="alboumPhoto"></div>
+    <div class="buttons">
+      <button class="pause" onclick="pauseYouTubePlayer()"><i class="fa fa-pause"></i></button>
+      <button class="play" onclick="playYouTubePlayer()"><i class="fa fa-play"></i></button>
+      <button onclick="stopYouTubePlayer()"><i class="fa fa-stop"></i></button>
+    </div>
+    <div class="viewer"></div>
+  </div>
   <section class="albumList">
     <ul>
       <li>
         <div class="album" onclick="onYouTubeIframeAPIReady('LHZXT6813VE'); playYouTubePlayer();">
+          <div class="albumBg"></div>
           <div class="albumPhoto"></div>
         </div>
         <div class="setting">
@@ -17,6 +24,7 @@
       </li>
       <li>
         <div class="album">
+          <div class="albumBg"></div>
           <div class="albumPhoto"></div>
         </div>
         <div class="setting">
@@ -27,6 +35,7 @@
       </li>
       <li>
         <div class="album">
+          <div class="albumBg"></div>
           <div class="albumPhoto"></div>
         </div>
         <div class="setting">
