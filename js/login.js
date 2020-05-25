@@ -145,8 +145,9 @@ function onLoginBtn(autoLogOut) {
 
         $.get('https://script.google.com/macros/s/AKfycbwKNaOjxPaTafWlrLMB4q9zt0RkAHKc2m9D0StpmXsWqsJvYXy1/exec', parameter).done(res => {
             console.log(res);
+            showLoading(false);
 
-            if (res == '帳號或密碼錯誤' || res == '密碼錯誤') {
+            if (res == '帳號或密碼錯誤' || res == '密碼錯誤') {                
                 const popupObj = {
                     text: res
                 }
