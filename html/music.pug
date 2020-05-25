@@ -8,8 +8,18 @@ article.musicPageBox
                 i.fa.fa-play
             button(onclick="stopYouTubePlayer()")
                 i.fa.fa-stop
+            button.unMute(onclick="muteYouTubePlayer()")
+                i.fa.fa-volume-up
+            button.mute(onclick="unMuteYouTubePlayer()")
+                i.fa.fa-volume-off
+            .volumebar
+                .barHolder
         .viewer
             p 正在播放：
+            .songName
+                span 想見你
+        .setting
+
 
     //- 唱片版型
     section.albumList

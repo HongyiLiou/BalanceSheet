@@ -6,7 +6,7 @@
         position: absolute
         display: flex
         padding: 10px
-        bottom: 80px
+        bottom: 100px
         left: -60px
         height: 80px
         background: rgba(#000, 0.6)
@@ -23,6 +23,7 @@
 
         .buttons
             display: flex
+            margin-right: 10px
             align-items: center
 
             button
@@ -30,26 +31,92 @@
                 +size(36px, 36px)
                 margin-right: 8px
                 border-radius: 50%
-                border: solid 1px #FFF
+                border: solid 1px rgba(#FFF, 0.7)
                 background: transparent
-                color: #FFF
+                color: rgba(#FFF, 0.7)
                 outline: none
                 transition: 0.3s
                 cursor: pointer
 
                 &:hover
+                    border: solid 1px rgba(#FFF, 1)
+                    color: rgba(#FFF, 1)
                     background: rgba(#FFF, 0.3)
                 &:active
                     transition: 0s
+                    border: solid 1px rgba(#FFF, 1)
+                    color: rgba(#FFF, 1)
                     background: rgba(#FFF, 0.8)
 
                 &.pause
                     display: none
 
+                &.mute
+                    display: none
+                    i
+                        font-size: 160%
+                    &::before
+                        position: absolute
+                        content: '｜'
+                        top: 32%
+                        left: 10%
+                        +size(10px, 1px)
+                        font-size: 150%
+                        transform-origin: center center
+                        transform: translate(-50%, -50%) rotate(-50deg)
+
                 i
                     +ab_center
                     display: block
                     font-size: 120%
+
+            .volumebar
+                position: relative
+                +size(100px, 6px)
+                margin: 0 15px 0 5px
+                background: #111
+                border-radius: 100px
+                cursor: pointer
+
+                &:hover
+                    .barHolder
+                        &::before
+                            transform: translateY(-50%) scale(1.5)
+
+                .barHolder
+                    position: absolute
+                    +size(60%, 100%)
+                    top: 0
+                    left: 0
+                    border-radius: 100px
+                    background: #FFF
+
+                    &::before
+                        position: absolute
+                        content: ''
+                        +size(15px, 15px)
+                        right: -5px
+                        top: 50%
+                        border-radius: 50%
+                        background: #FFF
+                        transform-origin: center center
+                        transform: translateY(-50%)
+                        transition: 0.3s
+
+
+        .viewer
+            display: flex
+            align-items: center
+
+            p
+                color: #FFF
+
+            .songName
+                width: 300px
+
+                span
+                    color: #FFF
+
 
     .albumList
         padding: 200px 80px 200px 140px
@@ -92,6 +159,7 @@
                         opacity: 0.4
                         border-radius: 50%
                         background: conic-gradient(#000 0deg, #FFF 15deg, #FFF 45deg, #000 60deg, #000 120deg, #FFF 135deg, #FFF 150deg, #000 165deg, #000 200deg, #333 215deg, #333 230deg, #000 245deg, #333 260deg, #333 280deg, #FFF 295deg, #FFF 305deg, #000 320deg, #000 360deg)
+                        transition: 0.5s
                         z-index: -1
 
                     &.active
@@ -129,6 +197,7 @@
                         background: url('https://i.imgur.com/9A4Mx75.jpg') center center no-repeat
                         background-size: cover
                         border: solid 6px #111
+                        transition: 0.5s
 
                 .setting
                     position: absolute
