@@ -69,7 +69,7 @@ function changeWeekDay(day) {
  * 取得滑鼠座標相對於文件位置
  * @param {MouseEvent} event 滑鼠事件
  */
-function getMousePos(event) {
+function getMouseElementPos(event) {
     const e = event || window.event;
     const scrollX = document.documentElement.scrollLeft || document.body.scrollLeft;
     const scrollY = document.documentElement.scrollTop || document.body.scrollTop;

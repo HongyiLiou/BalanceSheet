@@ -102,9 +102,39 @@ function unMuteYouTubePlayer() {
     youTubePlayer.unMute();
 }
 
-
+/** 音量調節 */
 function getVolumeYouTubePlayer() {
-    const volume = youTubePlayer.getVolume();
-    console.log('音量音量', volume);
+    const controler = document.querySelector('.musicPageBox .controler');
+    const volumebar = document.querySelector('.musicPageBox .controler .buttons .volumebar');
+    const barHolder = document.querySelector('.musicPageBox .controler .buttons .volumebar .barHolder');
+
+    let onMousemove = function() {
+        const volume = youTubePlayer.getVolume();
+        const volumebarWidth = volumebar.offsetWidth;
+        const mousePos = getMousePos(event);
+        const percent = Number(Math.round(mousePos.x / volumebarWidth * 100));
+        if (percent < 0) { percent = 0; }
+        if (percent > 100) { percent = 100; }
+        barHolder.style.width = `${percent}%`;
+        youTubePlayer.setVolume(percent);
+    }
+    
+    // 點擊
+    volumebar.addEventListener('click', () => {
+        onMousemove();
+    });
+
+    // 拖曳按下 / 放開 / 移出
+    volumebar.addEventListener('mousedown', () => {
+        volumebar.addEventListener('mousemove', onMousemove);
+    });
+    volumebar.addEventListener('mouseup', () => {
+        volumebar.removeEventListener('mousemove', onMousemove);
+    });
+    controler.addEventListener('mouseout', () => {
+        volumebar.removeEventListener('mousemove', onMousemove);
+    });
+
+
     
 }

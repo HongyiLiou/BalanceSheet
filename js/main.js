@@ -78,6 +78,10 @@ function loadPages() {
         const sc = document.createElement('script');
         sc.src = 'js/music.js';
         $('body').append(sc);
+
+        setTimeout(() => {
+            getVolumeYouTubePlayer();
+        }, 0);
     });
 
     // User Setting Page
