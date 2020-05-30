@@ -146,10 +146,18 @@ function changeBackground() {
 
     // 載入所有背景圖片
     const backgroundList = [
-        { name: 'default' },    // 預設
-        { name: 'AegeanSea' },  // 愛琴海
-        { name: 'Deer' },       // 夜鹿
-        { name: 'NightLake' },  // 夜湖
+        { name: 'default' },         // 預設
+        { name: 'AegeanSea' },       // 愛琴海
+        { name: 'Deer' },            // 夜鹿
+        { name: 'NightLake' },       // 夜湖
+        { name: 'BlueSkyDeer' },     // 藍天鹿
+        { name: 'BlueSkySea' },      // 藍天海
+        { name: 'FantasyPlanets' },  // 幻想星球
+        { name: 'GreenDeer' },       // 綠鹿
+        { name: 'GreenStreet' },     // 綠色隧道
+        { name: 'IronTower' },       // 鐵塔
+        { name: 'Sakura' },          // 櫻花
+        { name: 'PurpleSky' },       // 紫天
     ]
 
     backgroundList.forEach(background => {

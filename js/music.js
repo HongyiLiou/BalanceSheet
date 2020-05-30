@@ -63,7 +63,6 @@ function pauseYouTubePlayer() {
     playBtn.style.display = 'block';
     album.classList.add('paused');
     youTubePlayer.pauseVideo();
-    getVolumeYouTubePlayer();
 }
 
 
