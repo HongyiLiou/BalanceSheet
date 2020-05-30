@@ -104,7 +104,6 @@ function unMuteYouTubePlayer() {
 
 /** 音量調節 */
 function getVolumeYouTubePlayer() {
-    const controler = document.querySelector('.musicPageBox .controler');
     const volumebar = document.querySelector('.musicPageBox .controler .buttons .volumebar');
     const barHolder = document.querySelector('.musicPageBox .controler .buttons .volumebar .barHolder');
 
@@ -129,9 +128,6 @@ function getVolumeYouTubePlayer() {
         volumebar.addEventListener('mousemove', onMousemove);
     });
     volumebar.addEventListener('mouseup', () => {
-        volumebar.removeEventListener('mousemove', onMousemove);
-    });
-    controler.addEventListener('mouseout', () => {
         volumebar.removeEventListener('mousemove', onMousemove);
     });
 
