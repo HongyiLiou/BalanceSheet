@@ -108,7 +108,7 @@ function getVolumeYouTubePlayer() {
     const barHolder = document.querySelector('.musicPageBox .controler .buttons .volumebar .barHolder');
 
     let onMousemove = function() {
-        const volume = youTubePlayer.getVolume();
+        // const volume = youTubePlayer.getVolume();
         const volumebarWidth = volumebar.offsetWidth;
         const mousePos = getMousePos(event);
         const percent = Number(Math.round(mousePos.x / volumebarWidth * 100));
