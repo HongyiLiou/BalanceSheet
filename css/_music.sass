@@ -113,10 +113,52 @@
                 color: #FFF
 
             .songName
-                width: 300px
+                width: 150px
+                margin-right: 10px
+                overflow: hidden
 
                 span
+                    display: block
                     color: #FFF
+                    animation: songName 10s -5s linear infinite
+
+                    +keyframes(songName)
+                        0%
+                            transform: translateX(150px)
+                        100%
+                            transform: translateX(-150px)
+
+            .visual
+                position: relative
+                +size(150px, 60px)
+                background: rgba(#FFF, 0.5)
+                animation: visual 30s linear infinite
+                overflow: hidden
+
+                &::before
+                    content: ''
+                    position: absolute
+                    top: 0
+                    left: 0
+                    display: block
+                    +size(500%, 100%)
+                    background: url('../images/visualTop.png') left top no-repeat
+                    background-size: 100%
+                    animation: visualContent 15s linear infinite
+                    z-index: -1
+
+                &::after
+                    content: ''
+                    position: absolute
+                    bottom: 0
+                    left: 0
+                    display: block
+                    +size(500%, 100%)
+                    background: url('../images/visualBottom.png') left -130% no-repeat
+                    background-size: 100%
+                    animation: visualContent 25s linear infinite
+                    z-index: -1
+
 
 
     .albumList
@@ -301,3 +343,35 @@
         transform: rotate(30deg)
     100%
         transform: rotate(0deg)
+
++keyframes(visual)
+    0%, 100%
+        background: rgba(#fffd7e, 0.5)
+    10%
+        background: rgba(#7eff93, 0.5)
+    20%
+        background: rgba(#7effbe, 0.5)
+    30%
+        background: rgba(#7ef0ff, 0.5)
+    40%
+        background: rgba(#7ebaff, 0.5)
+    50%
+        background: rgba(#7e87ff, 0.5)
+    60%
+        background: rgba(#ba7eff, 0.5)
+    70%
+        background: rgba(#ff7ed8, 0.5)
+    80%
+        background: rgba(#ff7e7e, 0.5)
+    90%
+        background: rgba(#ffb27e, 0.5)
+
++keyframes(visualContent)
+    0%
+        opacity: 0
+        transform: translateX(0%)
+    5%, 90%
+        opacity: 1
+    100%
+        opacity: 0
+        transform: translateX(-80%)
