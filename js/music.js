@@ -44,12 +44,15 @@ function playYouTubePlayer() {
     const album = document.querySelector('.musicPageBox .albumList .album');
     const pauseBtn = document.querySelector('.musicPageBox .controler .buttons .pause');
     const playBtn = document.querySelector('.musicPageBox .controler .buttons .play');
+    const visual = document.querySelector('.musicPageBox .controler .viewer .visual');
     playBtn.style.display = 'none';
     pauseBtn.style.display = 'block';
     album.classList.remove('paused');
+    visual.classList.remove('paused');
     album.classList.add('active');
     setTimeout(() => {
         youTubePlayer.playVideo();
+        visual.classList.add('active');
     }, 1000);
 }
 
@@ -59,9 +62,11 @@ function pauseYouTubePlayer() {
     const album = document.querySelector('.musicPageBox .albumList .album');
     const pauseBtn = document.querySelector('.musicPageBox .controler .buttons .pause');
     const playBtn = document.querySelector('.musicPageBox .controler .buttons .play');
+    const visual = document.querySelector('.musicPageBox .controler .viewer .visual');
     pauseBtn.style.display = 'none';
     playBtn.style.display = 'block';
     album.classList.add('paused');
+    visual.classList.add('paused');
     youTubePlayer.pauseVideo();
 }
 
@@ -71,6 +76,7 @@ function stopYouTubePlayer() {
     const albums = document.querySelectorAll('.musicPageBox .albumList .album');
     const pauseBtn = document.querySelector('.musicPageBox .controler .buttons .pause');
     const playBtn = document.querySelector('.musicPageBox .controler .buttons .play');
+    const visual = document.querySelector('.musicPageBox .controler .viewer .visual');
     pauseBtn.style.display = 'none';
     playBtn.style.display = 'block';
     youTubePlayer.stopVideo();
@@ -78,6 +84,8 @@ function stopYouTubePlayer() {
     albums.forEach(album => {
         album.classList.remove('paused', 'active');
     });
+    
+    visual.classList.remove('paused', 'active');
 
     onYouTubeIframeAPIReady('LHZXT6813VE');
 }
