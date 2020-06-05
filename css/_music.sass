@@ -72,10 +72,9 @@
 
             .volumebar
                 position: relative
-                +size(100px, 6px)
+                +size(100px, 100%)
                 margin: 0 15px
-                background: #111
-                border-radius: 100px
+                // overflow: hidden
                 cursor: pointer
 
                 &:hover
@@ -83,10 +82,19 @@
                         &::before
                             transform: translateY(-50%) scale(1.5)
 
+                &::before
+                    content: ''
+                    position: absolute
+                    +size(100px, 6px)
+                    top: calc(50% - 3px)
+                    left: 0
+                    background: #111
+                    border-radius: 100px
+
                 .barHolder
                     position: absolute
-                    +size(100%, 100%)
-                    top: 0
+                    +size(100%, 6px)
+                    top: calc(50% - 3px)
                     left: 0
                     border-radius: 100px
                     background: #FFF

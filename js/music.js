@@ -122,7 +122,8 @@ function getVolumeYouTubePlayer() {
         const percent = Number(Math.round(mousePos.x / volumebarWidth * 100));
         if (percent < 0) { percent = 0; }
         if (percent > 100) { percent = 100; }
-        barHolder.style.width = `${percent}%`;
+        // barHolder.style.transform = `translateX(-${100 - percent}px)`;
+        barHolder.style.width = `${percent}px`;
         youTubePlayer.setVolume(percent);
     }
     
