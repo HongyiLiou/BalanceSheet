@@ -743,8 +743,8 @@ input[type=number] {
 }
 .brightness .beams .beam1 {
   width: 650px;
-  height: 30px;
-  transform: rotate(-72deg);
+  height: 5px;
+  transform: rotate(-24deg);
   animation-delay: -0.5s;
 }
 @keyframes beam {
@@ -759,9 +759,9 @@ input[type=number] {
   }
 }
 .brightness .beams .beam2 {
-  width: 550px;
-  height: 30px;
-  transform: rotate(-12deg);
+  width: 450px;
+  height: 5px;
+  transform: rotate(-36deg);
   animation-delay: -1s;
 }
 @keyframes beam {
@@ -776,9 +776,9 @@ input[type=number] {
   }
 }
 .brightness .beams .beam3 {
-  width: 600px;
-  height: 10px;
-  transform: rotate(-72deg);
+  width: 700px;
+  height: 25px;
+  transform: rotate(-36deg);
   animation-delay: -1.5s;
 }
 @keyframes beam {
@@ -794,8 +794,8 @@ input[type=number] {
 }
 .brightness .beams .beam4 {
   width: 550px;
-  height: 15px;
-  transform: rotate(-72deg);
+  height: 10px;
+  transform: rotate(-36deg);
   animation-delay: -2s;
 }
 @keyframes beam {
@@ -810,9 +810,9 @@ input[type=number] {
   }
 }
 .brightness .beams .beam5 {
-  width: 550px;
-  height: 20px;
-  transform: rotate(-24deg);
+  width: 600px;
+  height: 5px;
+  transform: rotate(-12deg);
   animation-delay: -2.5s;
 }
 @keyframes beam {
@@ -828,8 +828,8 @@ input[type=number] {
 }
 .brightness .beams .beam6 {
   width: 450px;
-  height: 20px;
-  transform: rotate(-24deg);
+  height: 30px;
+  transform: rotate(-60deg);
   animation-delay: -3s;
 }
 @keyframes beam {
@@ -864,14 +864,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-240px, 270px);
+    transform: translate(-120px, 30px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-100px, 300px);
+    transform: translate(-350px, 50px);
   }
 }
 .brightness .shines .shine2 {
@@ -884,14 +884,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-150px, 30px);
+    transform: translate(-210px, 180px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-450px, 250px);
+    transform: translate(-50px, 350px);
   }
 }
 .brightness .shines .shine3 {
@@ -904,14 +904,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-60px, 300px);
+    transform: translate(-150px, 120px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-400px, 450px);
+    transform: translate(-450px, 150px);
   }
 }
 .brightness .shines .shine4 {
@@ -924,14 +924,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-30px, 300px);
+    transform: translate(-180px, 30px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-50px, 450px);
+    transform: translate(-400px, 400px);
   }
 }
 .brightness .shines .shine5 {
@@ -944,14 +944,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-180px, 30px);
+    transform: translate(-150px, 150px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-400px, 200px);
+    transform: translate(-250px, 350px);
   }
 }
 .brightness .shines .shine6 {
@@ -964,14 +964,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-300px, 210px);
+    transform: translate(-30px, 270px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-50px, 450px);
+    transform: translate(-450px, 200px);
   }
 }
 .brightness .shines .shine7 {
@@ -984,14 +984,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-120px, 120px);
+    transform: translate(-30px, 120px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-350px, 300px);
+    transform: translate(-400px, 250px);
   }
 }
 .brightness .shines .shine8 {
@@ -1004,14 +1004,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-120px, 60px);
+    transform: translate(-180px, 180px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-150px, 50px);
+    transform: translate(-50px, 250px);
   }
 }
 .brightness .shines .shine9 {
@@ -1024,14 +1024,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-240px, 210px);
+    transform: translate(-30px, 240px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-100px, 500px);
+    transform: translate(-150px, 50px);
   }
 }
 .brightness .shines .shine10 {
@@ -1044,14 +1044,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-60px, 300px);
+    transform: translate(-120px, 30px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-450px, 500px);
+    transform: translate(-150px, 450px);
   }
 }
 
@@ -3337,10 +3337,10 @@ input[type=number] {
   position: absolute;
   display: flex;
   padding: 10px;
-  bottom: 100px;
+  bottom: 110px;
   left: -60px;
   height: 80px;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.85);
   box-shadow: 0 2px 5px #000;
   transition: 0.3s;
   z-index: 1;
@@ -3614,6 +3614,9 @@ input[type=number] {
   pointer-events: auto;
   transition: 0.5s;
 }
+.musicPageBox .albumList::-webkit-scrollbar {
+  display: none;
+}
 .musicPageBox .albumList ul {
   display: flex;
   flex-wrap: wrap;
@@ -3794,14 +3797,48 @@ input[type=number] {
   white-space: nowrap;
 }
 .musicPageBox .playList {
-  padding: 200px 80px 200px 140px;
+  display: flex;
   margin-left: -200px;
   width: calc(125% - 150px);
   max-height: 100vh;
-  overflow: auto;
   opacity: 1;
   pointer-events: auto;
   transition: 0.5s;
+}
+.musicPageBox .playList ul {
+  padding: 200px 5px 190px 140px;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: auto;
+  width: 902px;
+}
+.musicPageBox .playList ul::-webkit-scrollbar {
+  display: none;
+}
+.musicPageBox .playList ul li {
+  position: relative;
+  width: 100%;
+  margin-bottom: 5px;
+  background: rgba(0, 0, 0, 0.6);
+}
+.musicPageBox .playList ul li .list {
+  height: 100%;
+  display: flex;
+  padding: 0 10px;
+  align-items: center;
+}
+.musicPageBox .playList ul li .list .albumPhoto {
+  width: 60px;
+  height: 60px;
+  background: url("https://i.imgur.com/9A4Mx75.jpg") center center no-repeat;
+  background-size: cover;
+}
+.musicPageBox .playList .rightArea {
+  width: 400px;
+  height: 511px;
+  display: block;
+  margin-top: 200px;
+  background: #000;
 }
 @keyframes albumPhoto {
   0% {

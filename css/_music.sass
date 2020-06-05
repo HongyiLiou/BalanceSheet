@@ -6,10 +6,10 @@
         position: absolute
         display: flex
         padding: 10px
-        bottom: 100px
+        bottom: 110px
         left: -60px
         height: 80px
-        background: rgba(#000, 0.6)
+        background: rgba(#000, 0.85)
         box-shadow: 0 2px 5px #000
         transition: 0.3s
         z-index: 1
@@ -263,6 +263,9 @@
         opacity: 1
         pointer-events: auto
         transition: 0.5s
+        
+        &::-webkit-scrollbar
+            display: none
 
         ul
             display: flex
@@ -423,14 +426,46 @@
 
     // 清單版型
     .playList
-        padding: 200px 80px 200px 140px
+        display: flex
         margin-left: -200px
         width: calc(125% - 150px)
         max-height: 100vh
-        overflow: auto
         opacity: 1
         pointer-events: auto
         transition: 0.5s
+        
+        ul
+            padding: 200px 5px 190px 140px
+            display: flex
+            flex-wrap: wrap
+            overflow: auto
+            width: 902px
+            
+            &::-webkit-scrollbar
+                display: none
+
+            li
+                position: relative
+                width: 100%
+                margin-bottom: 5px
+                background: rgba(#000, 0.6)
+
+                .list
+                    height: 100%
+                    display: flex
+                    padding: 0 10px
+                    align-items: center
+
+                    .albumPhoto
+                        +size(60px, 60px)
+                        background: url('https://i.imgur.com/9A4Mx75.jpg') center center no-repeat
+                        background-size: cover
+
+        .rightArea
+            +size(400px, 511px)
+            display: block
+            margin-top: 200px
+            background: #000
 
 
 
