@@ -15,7 +15,7 @@ article.musicPageBox
             .volumebar
                 .barHolder
 
-        .viewer
+        .viewer(draggable="false")
             p 正在播放：
             .songName
                 span 想見你
@@ -25,12 +25,12 @@ article.musicPageBox
             label(for="showMusicType_album")
                 input(type="radio" id="showMusicType_album" name="showLinksType" value="album" checked)
                 .selectedHolder
-                p 唱片模式
+                p 唱片版型
 
             label(for="showMusicType_list")
                 input(type="radio" id="showMusicType_list" name="showLinksType" value="list")
                 .selectedHolder
-                p 清單模式
+                p 清單版型
 
 
     //- 唱片版型
@@ -60,3 +60,29 @@ article.musicPageBox
                     button.edit(title="編輯")
                     button.delete(title="刪除")
                 p 想見你
+
+
+    //- 清單版型
+    section.playList(style="display: none;")
+        ul
+            li
+                .list(onclick="onYouTubeIframeAPIReady('LHZXT6813VE'); playYouTubePlayer();")
+                    .albumPhoto
+                    p 想見你
+                .setting
+                    button.edit(title="編輯")
+                    button.delete(title="刪除")
+            li
+                .list(onclick="onYouTubeIframeAPIReady('LHZXT6813VE'); playYouTubePlayer();")
+                    .albumPhoto
+                    p 想見你
+                .setting
+                    button.edit(title="編輯")
+                    button.delete(title="刪除")
+            li
+                .list(onclick="onYouTubeIframeAPIReady('LHZXT6813VE'); playYouTubePlayer();")
+                    .albumPhoto
+                    p 想見你
+                .setting
+                    button.edit(title="編輯")
+                    button.delete(title="刪除")

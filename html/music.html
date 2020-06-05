@@ -12,7 +12,7 @@
         <div class="barHolder"></div>
       </div>
     </div>
-    <div class="viewer">
+    <div class="viewer" draggable="false">
       <p>正在播放：</p>
       <div class="songName"><span>想見你</span></div>
       <div class="visual"></div>
@@ -21,12 +21,12 @@
       <label for="showMusicType_album">
         <input type="radio" id="showMusicType_album" name="showLinksType" value="album" checked="checked"/>
         <div class="selectedHolder"></div>
-        <p>唱片模式</p>
+        <p>唱片版型</p>
       </label>
       <label for="showMusicType_list">
         <input type="radio" id="showMusicType_list" name="showLinksType" value="list"/>
         <div class="selectedHolder"></div>
-        <p>清單模式</p>
+        <p>清單版型</p>
       </label>
     </section>
   </div>
@@ -64,6 +64,40 @@
           <button class="delete" title="刪除"></button>
         </div>
         <p>想見你</p>
+      </li>
+    </ul>
+  </section>
+  <section class="playList" style="display: none;">
+    <ul>
+      <li>
+        <div class="list" onclick="onYouTubeIframeAPIReady('LHZXT6813VE'); playYouTubePlayer();">
+          <div class="albumPhoto"></div>
+          <p>想見你</p>
+        </div>
+        <div class="setting">
+          <button class="edit" title="編輯"></button>
+          <button class="delete" title="刪除"></button>
+        </div>
+      </li>
+      <li>
+        <div class="list" onclick="onYouTubeIframeAPIReady('LHZXT6813VE'); playYouTubePlayer();">
+          <div class="albumPhoto"></div>
+          <p>想見你</p>
+        </div>
+        <div class="setting">
+          <button class="edit" title="編輯"></button>
+          <button class="delete" title="刪除"></button>
+        </div>
+      </li>
+      <li>
+        <div class="list" onclick="onYouTubeIframeAPIReady('LHZXT6813VE'); playYouTubePlayer();">
+          <div class="albumPhoto"></div>
+          <p>想見你</p>
+        </div>
+        <div class="setting">
+          <button class="edit" title="編輯"></button>
+          <button class="delete" title="刪除"></button>
+        </div>
       </li>
     </ul>
   </section>
