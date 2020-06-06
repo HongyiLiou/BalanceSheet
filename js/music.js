@@ -52,6 +52,7 @@ function playYouTubePlayer() {
     album.classList.add('active');
     setTimeout(() => {
         youTubePlayer.playVideo();
+        youTubePlayer.setVolume(youTubePlayerVolume);
         visual.classList.add('active');
     }, 1000);
 }
@@ -110,6 +111,8 @@ function unMuteYouTubePlayer() {
     youTubePlayer.unMute();
 }
 
+/** 預設音量 */
+let youTubePlayerVolume = 100;
 /** 音量調節 */
 function getVolumeYouTubePlayer() {
     const volumebar = document.querySelector('.musicPageBox .controler .buttons .volumebar');
@@ -125,6 +128,7 @@ function getVolumeYouTubePlayer() {
         // barHolder.style.transform = `translateX(-${100 - percent}px)`;
         barHolder.style.width = `${percent}px`;
         youTubePlayer.setVolume(percent);
+        youTubePlayerVolume = percent;
     }
     
     // 點擊

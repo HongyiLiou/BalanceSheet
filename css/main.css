@@ -742,9 +742,9 @@ input[type=number] {
   animation: beam 3s infinite;
 }
 .brightness .beams .beam1 {
-  width: 650px;
-  height: 5px;
-  transform: rotate(-24deg);
+  width: 600px;
+  height: 15px;
+  transform: rotate(-72deg);
   animation-delay: -0.5s;
 }
 @keyframes beam {
@@ -759,9 +759,9 @@ input[type=number] {
   }
 }
 .brightness .beams .beam2 {
-  width: 450px;
-  height: 5px;
-  transform: rotate(-36deg);
+  width: 700px;
+  height: 15px;
+  transform: rotate(-72deg);
   animation-delay: -1s;
 }
 @keyframes beam {
@@ -777,8 +777,8 @@ input[type=number] {
 }
 .brightness .beams .beam3 {
   width: 700px;
-  height: 25px;
-  transform: rotate(-36deg);
+  height: 15px;
+  transform: rotate(-72deg);
   animation-delay: -1.5s;
 }
 @keyframes beam {
@@ -793,9 +793,9 @@ input[type=number] {
   }
 }
 .brightness .beams .beam4 {
-  width: 550px;
-  height: 10px;
-  transform: rotate(-36deg);
+  width: 450px;
+  height: 5px;
+  transform: rotate(-72deg);
   animation-delay: -2s;
 }
 @keyframes beam {
@@ -811,8 +811,8 @@ input[type=number] {
 }
 .brightness .beams .beam5 {
   width: 600px;
-  height: 5px;
-  transform: rotate(-12deg);
+  height: 25px;
+  transform: rotate(-24deg);
   animation-delay: -2.5s;
 }
 @keyframes beam {
@@ -827,9 +827,9 @@ input[type=number] {
   }
 }
 .brightness .beams .beam6 {
-  width: 450px;
-  height: 30px;
-  transform: rotate(-60deg);
+  width: 700px;
+  height: 15px;
+  transform: rotate(-36deg);
   animation-delay: -3s;
 }
 @keyframes beam {
@@ -864,14 +864,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-120px, 30px);
+    transform: translate(-210px, 150px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-350px, 50px);
+    transform: translate(-150px, 200px);
   }
 }
 .brightness .shines .shine2 {
@@ -884,14 +884,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-210px, 180px);
+    transform: translate(-210px, 270px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-50px, 350px);
+    transform: translate(-350px, 200px);
   }
 }
 .brightness .shines .shine3 {
@@ -904,14 +904,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-150px, 120px);
+    transform: translate(-180px, 300px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-450px, 150px);
+    transform: translate(-200px, 450px);
   }
 }
 .brightness .shines .shine4 {
@@ -924,14 +924,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-180px, 30px);
+    transform: translate(-60px, 90px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-400px, 400px);
+    transform: translate(-300px, 500px);
   }
 }
 .brightness .shines .shine5 {
@@ -944,14 +944,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-150px, 150px);
+    transform: translate(-240px, 150px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-250px, 350px);
+    transform: translate(-350px, 350px);
   }
 }
 .brightness .shines .shine6 {
@@ -964,14 +964,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-30px, 270px);
+    transform: translate(-240px, 30px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-450px, 200px);
+    transform: translate(-150px, 200px);
   }
 }
 .brightness .shines .shine7 {
@@ -984,14 +984,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-30px, 120px);
+    transform: translate(-300px, 150px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-400px, 250px);
+    transform: translate(-100px, 300px);
   }
 }
 .brightness .shines .shine8 {
@@ -1004,14 +1004,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-180px, 180px);
+    transform: translate(-150px, 120px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-50px, 250px);
+    transform: translate(-50px, 500px);
   }
 }
 .brightness .shines .shine9 {
@@ -1024,14 +1024,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-30px, 240px);
+    transform: translate(-270px, 120px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-150px, 50px);
+    transform: translate(-50px, 350px);
   }
 }
 .brightness .shines .shine10 {
@@ -1044,14 +1044,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-120px, 30px);
+    transform: translate(-60px, 270px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-150px, 450px);
+    transform: translate(-250px, 100px);
   }
 }
 
@@ -3340,7 +3340,7 @@ input[type=number] {
   bottom: 110px;
   left: -60px;
   height: 80px;
-  background: rgba(0, 0, 0, 0.85);
+  background: rgba(0, 0, 0, 0.9);
   box-shadow: 0 2px 5px #000;
   transition: 0.3s;
   z-index: 1;
@@ -3360,8 +3360,8 @@ input[type=number] {
 }
 .musicPageBox .controler .buttons button {
   position: relative;
-  width: 36px;
-  height: 36px;
+  width: 35px;
+  height: 35px;
   margin-right: 8px;
   border-radius: 50%;
   border: solid 1px rgba(255, 255, 255, 0.7);
@@ -3427,7 +3427,7 @@ input[type=number] {
   height: 6px;
   top: calc(50% - 3px);
   left: 0;
-  background: #111;
+  background: #5a5a5a;
   border-radius: 100px;
 }
 .musicPageBox .controler .buttons .volumebar .barHolder {
@@ -3437,7 +3437,7 @@ input[type=number] {
   top: calc(50% - 3px);
   left: 0;
   border-radius: 100px;
-  background: #FFF;
+  background: #dfdfdf;
 }
 .musicPageBox .controler .buttons .volumebar .barHolder::before {
   position: absolute;
@@ -3484,7 +3484,7 @@ input[type=number] {
   position: relative;
   width: 150px;
   height: 60px;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(255, 255, 255, 0.1);
   transition: 0.5s;
   overflow: hidden;
 }
@@ -3537,7 +3537,7 @@ input[type=number] {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  bottom: -38px;
+  bottom: -37px;
   left: 8px;
   padding: 8px;
   flex-wrap: nowrap;
@@ -3797,48 +3797,108 @@ input[type=number] {
   white-space: nowrap;
 }
 .musicPageBox .playList {
+  position: relative;
   display: flex;
   margin-left: -200px;
   width: calc(125% - 150px);
-  max-height: 100vh;
   opacity: 1;
   pointer-events: auto;
   transition: 0.5s;
 }
 .musicPageBox .playList ul {
-  padding: 200px 5px 190px 140px;
   display: flex;
+  width: 570px;
+  height: calc(100vh - 395px);
+  margin-top: 200px;
+  padding: 0 5px 0 140px;
+  flex-shrink: 0;
+  align-content: flex-start;
   flex-wrap: wrap;
   overflow: auto;
-  width: 902px;
 }
 .musicPageBox .playList ul::-webkit-scrollbar {
   display: none;
 }
 .musicPageBox .playList ul li {
+  display: flex;
   position: relative;
   width: 100%;
-  margin-bottom: 5px;
+  height: 68px;
+  margin-bottom: 1px;
   background: rgba(0, 0, 0, 0.6);
 }
 .musicPageBox .playList ul li .list {
+  width: calc(100% - 125px);
   height: 100%;
   display: flex;
-  padding: 0 10px;
+  padding: 6px;
   align-items: center;
 }
 .musicPageBox .playList ul li .list .albumPhoto {
-  width: 60px;
-  height: 60px;
+  width: 54px;
+  height: 54px;
+  flex-shrink: 0;
+  margin-right: 15px;
   background: url("https://i.imgur.com/9A4Mx75.jpg") center center no-repeat;
   background-size: cover;
 }
+.musicPageBox .playList ul li .list p {
+  color: #FFF;
+}
+.musicPageBox .playList ul li .setting {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.musicPageBox .playList ul li .setting button {
+  position: relative;
+  display: flex;
+  width: 30px;
+  height: 30px;
+  margin-left: 5px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: solid 1px rgba(255, 255, 255, 0.7);
+  border: none;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.7);
+  outline: none;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.musicPageBox .playList ul li .setting button:hover::before {
+  color: rgba(255, 255, 255, 0.8);
+}
+.musicPageBox .playList ul li .setting button:active::before {
+  transition: 0s;
+  color: white;
+}
+.musicPageBox .playList ul li .setting button::before {
+  font-size: 140%;
+  font-family: FontAwesome;
+  color: rgba(255, 255, 255, 0.5);
+  transition: 0.3s;
+}
+.musicPageBox .playList ul li .setting button.play::before {
+  content: "";
+}
+.musicPageBox .playList ul li .setting button.edit::before {
+  content: "";
+}
+.musicPageBox .playList ul li .setting button.delete::before {
+  content: "";
+}
 .musicPageBox .playList .rightArea {
-  width: 400px;
-  height: 511px;
+  width: 600px;
+  height: calc(100vh - 395px);
   display: block;
+  flex-shrink: 0;
   margin-top: 200px;
-  background: #000;
+  background: rgba(0, 0, 0, 0.8);
 }
 @keyframes albumPhoto {
   0% {
