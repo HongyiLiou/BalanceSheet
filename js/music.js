@@ -26,7 +26,7 @@ let youTubePlayerSetting = {
  * @param {string}} videoId 
  */
 function onYouTubeIframeAPIReady(videoId) {
-    const ctrlq = document.getElementById("youtube-audio");
+    const ctrlq = document.getElementById('youtube-audio');
     ctrlq.innerHTML = '<div id="youtube-player"></div>';
     ctrlq.style.cssText = 'display:none';
 
@@ -144,6 +144,105 @@ function getVolumeYouTubePlayer() {
         volumebar.removeEventListener('mousemove', onMousemove);
     });
 
+}
+
+
+/** albumBoxScroller */
+function albumBoxScroller() {
+    const albumBox = document.querySelector('.musicPageBox .playList .rightArea .albumBox');
+    const albums = document.querySelectorAll('.musicPageBox .playList .rightArea .albumBox .album');
+    const prevBtn = document.querySelector('.musicPageBox .playList .rightArea .buttonArea .prev');
+    const nextBtn = document.querySelector('.musicPageBox .playList .rightArea .buttonArea .next');
+    const playBtn = document.querySelector('.musicPageBox .playList .rightArea .buttonArea .play');
+
+    const width = albumBox.firstElementChild.offsetWidth;
+    let scrollWidth = 0;
+
+    prevBtn.addEventListener('click', () => {
+        if (albumBox.firstElementChild.classList.contains('center')) {
+            albumBox.firstElementChild.style.transition = '0.2s';
+            albumBox.firstElementChild.style.transform = 'translateX(10px) scale(1.8)';
+            albumBox.firstElementChild.nextElementSibling.style.transition = '0.2s';
+            albumBox.firstElementChild.nextElementSibling.style.transform = 'translateX(5px) scale(1.3)';
+            albumBox.firstElementChild.nextElementSibling.nextElementSibling.style.transition = '0.2s';
+            albumBox.firstElementChild.nextElementSibling.nextElementSibling.style.transform = 'translateX(2px)';
+            setTimeout(() => {
+                albumBox.firstElementChild.style.transition = '0.5s';
+                albumBox.firstElementChild.style.transform = 'translateX(0px) scale(1.8)';
+                albumBox.firstElementChild.nextElementSibling.style.transition = '0.5s';
+                albumBox.firstElementChild.nextElementSibling.style.transform = 'translateX(0px) scale(1.3)';
+                albumBox.firstElementChild.nextElementSibling.nextElementSibling.style.transition = '0.5s';
+                albumBox.firstElementChild.nextElementSibling.nextElementSibling.style.transform = 'translateX(0px)';
+            }, 100);
+            return;
+        }
+
+        scrollWidth -= width;
+        albumBox.style.transform = `translateX(${-scrollWidth}px)`;
+        albums.forEach(x => {
+            if (x.classList.contains('visableLeft')) {
+                x.classList.remove('visableLeft');
+                x.classList.add('left');    
+                if (x.previousElementSibling) {
+                    x.previousElementSibling.classList.add('visableLeft');
+                }
+            } else if (x.classList.contains('left')) {
+                x.classList.remove('left');
+                x.classList.add('center');
+            } else if (x.classList.contains('center')) {
+                x.classList.remove('center');
+                x.classList.add('right');
+            } else if (x.classList.contains('right')) {
+                x.classList.remove('right');
+                x.classList.add('visableRight');
+            } else if (x.classList.contains('visableRight')) {
+                x.classList.remove('visableRight');
+            }
+        });
+    });
+
+    nextBtn.addEventListener('click', () => {
+        if (albumBox.lastElementChild.classList.contains('center')) {
+            albumBox.lastElementChild.style.transition = '0.2s';
+            albumBox.lastElementChild.style.transform = 'translateX(-10px) scale(1.8)';
+            albumBox.lastElementChild.previousElementSibling.style.transition = '0.2s';
+            albumBox.lastElementChild.previousElementSibling.style.transform = 'translateX(-5px) scale(1.3)';
+            albumBox.lastElementChild.previousElementSibling.previousElementSibling.style.transition = '0.2s';
+            albumBox.lastElementChild.previousElementSibling.previousElementSibling.style.transform = 'translateX(-2px)';
+            setTimeout(() => {
+                albumBox.lastElementChild.style.transition = '0.5s';
+                albumBox.lastElementChild.style.transform = 'translateX(0px) scale(1.8)';
+                albumBox.lastElementChild.previousElementSibling.style.transition = '0.5s';
+                albumBox.lastElementChild.previousElementSibling.style.transform = 'translateX(0px) scale(1.3)';
+                albumBox.lastElementChild.previousElementSibling.previousElementSibling.style.transition = '0.5s';
+                albumBox.lastElementChild.previousElementSibling.previousElementSibling.style.transform = 'translateX(0px)';
+            }, 100);
+            return;
+        }
+
+        scrollWidth += width;
+        albumBox.style.transform = `translateX(${-scrollWidth}px)`;
+        albums.forEach(x => {
+            if (x.classList.contains('visableLeft')) {
+                x.classList.remove('visableLeft');
+            } else if (x.classList.contains('left')) {
+                x.classList.remove('left');
+                x.classList.add('visableLeft');
+            } else if (x.classList.contains('center')) {
+                x.classList.remove('center');
+                x.classList.add('left');
+            } else if (x.classList.contains('right')) {
+                x.classList.remove('right');
+                x.classList.add('center');
+            } else if (x.classList.contains('visableRight') && x.previousElementSibling.classList.contains('center')) {
+                x.classList.remove('visableRight');
+                x.classList.add('right');
+                if (x.nextElementSibling) {
+                    x.nextElementSibling.classList.add('visableRight');
+                }
+            }
+        });
+    });
 
     
 }

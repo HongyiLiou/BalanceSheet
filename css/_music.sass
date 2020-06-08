@@ -121,7 +121,7 @@
                 color: #FFF
 
             .songName
-                width: 150px
+                width: 300px
                 margin-right: 10px
                 overflow: hidden
 
@@ -132,7 +132,7 @@
 
                     +keyframes(songName)
                         0%
-                            transform: translateX(150px)
+                            transform: translateX(300px)
                         100%
                             transform: translateX(-150px)
 
@@ -530,12 +530,88 @@
 
 
         .rightArea
-            +size(600px, calc(100vh - 395px))
+            +size(700px, calc(100vh - 395px))
             display: block
             flex-shrink: 0
             margin-top: 200px
             background: rgba(#000, 0.8)
+            overflow: hidden
 
+            .albumBox
+                position: relative
+                display: flex
+                width: 100%
+                padding: 20px 40px
+                margin-top: 100px
+                align-items: center
+                flex-wrap: nowrap
+                // overflow: hidden
+                transition: 0.5s
+
+                .album
+                    +size(150px, 150px)
+                    background: rgba(#FFF, 0.5)
+                    background: url('https://i.imgur.com/9A4Mx75.jpg') center center no-repeat
+                    background-size: cover
+                    transform-origin: center center
+                    flex-shrink: 0
+                    box-shadow: 0 2px 5px rgba(#000, 0.7)
+                    opacity: 0
+                    transition: 0.5s
+                    cursor: pointer
+                    z-index: 0
+
+                    &.left
+                        margin: 0 0 0 -65px
+                        opacity: 1
+                        z-index: 1
+                        transform: scale(1.3)
+                    &.right
+                        margin: 0 -65px 0 0
+                        opacity: 1
+                        z-index: 1
+                        transform: scale(1.3)
+                    &.center
+                        opacity: 1
+                        z-index: 2
+                        transform: scale(1.8)
+                    &.visableLeft, &.visableRight
+                        opacity: 1
+
+                        
+            p
+                margin-top: 80px
+                color: #FFF
+                text-align: center
+                font-size: 150%
+                user-select: none
+                
+            .buttonArea
+                display: flex
+                align-items: center
+                justify-content: center
+                margin-top: 45px
+
+                button
+                    padding: 8px 18px
+                    margin: 0 5px
+                    border: solid 1px rgba(#FFF, 0.3)
+                    font-size: 100%
+                    border-radius: 100px
+                    color: #FFF
+                    background: #000
+                    cursor: pointer
+                    white-space: nowrap
+                    outline: none
+                    transition: 0.3s
+
+                    &:hover
+                        background: #3a3a3a
+                    &:active
+                        transition: 0s
+                        background: #666666
+
+                    
 
 
 
