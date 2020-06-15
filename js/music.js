@@ -155,8 +155,8 @@ function albumBoxScroller() {
     const nextBtn = document.querySelector('.musicPageBox .playList .rightArea .buttonArea .next');
     const playBtn = document.querySelector('.musicPageBox .playList .rightArea .buttonArea .play');
 
-    const width = albumBox.firstElementChild.offsetWidth;
-    let scrollWidth = 0;
+    const width = albumBox.firstElementChild.offsetWidth; // 150
+    let scrollWidth = 75;
 
     prevBtn.addEventListener('click', () => {
         if (albumBox.firstElementChild.classList.contains('center')) {
@@ -165,14 +165,21 @@ function albumBoxScroller() {
             albumBox.firstElementChild.nextElementSibling.style.transition = '0.2s';
             albumBox.firstElementChild.nextElementSibling.style.transform = 'translateX(5px) scale(1.3)';
             albumBox.firstElementChild.nextElementSibling.nextElementSibling.style.transition = '0.2s';
-            albumBox.firstElementChild.nextElementSibling.nextElementSibling.style.transform = 'translateX(2px)';
+            // albumBox.firstElementChild.nextElementSibling.nextElementSibling.style.transform = 'translateX(2px)';
             setTimeout(() => {
                 albumBox.firstElementChild.style.transition = '0.5s';
                 albumBox.firstElementChild.style.transform = 'translateX(0px) scale(1.8)';
                 albumBox.firstElementChild.nextElementSibling.style.transition = '0.5s';
                 albumBox.firstElementChild.nextElementSibling.style.transform = 'translateX(0px) scale(1.3)';
                 albumBox.firstElementChild.nextElementSibling.nextElementSibling.style.transition = '0.5s';
-                albumBox.firstElementChild.nextElementSibling.nextElementSibling.style.transform = 'translateX(0px)';
+                // albumBox.firstElementChild.nextElementSibling.nextElementSibling.style.transform = 'translateX(0px)';
+                setTimeout(() => {
+                    albumBox.firstElementChild.style.transition = '0.8s';
+                    albumBox.firstElementChild.style.transform = '';
+                    albumBox.firstElementChild.nextElementSibling.style.transition = '0.8s';
+                    albumBox.firstElementChild.nextElementSibling.style.transform = '';
+                    albumBox.firstElementChild.nextElementSibling.nextElementSibling.style.transition = '0.8s';
+                }, 500);
             }, 100);
             return;
         }
@@ -208,14 +215,21 @@ function albumBoxScroller() {
             albumBox.lastElementChild.previousElementSibling.style.transition = '0.2s';
             albumBox.lastElementChild.previousElementSibling.style.transform = 'translateX(-5px) scale(1.3)';
             albumBox.lastElementChild.previousElementSibling.previousElementSibling.style.transition = '0.2s';
-            albumBox.lastElementChild.previousElementSibling.previousElementSibling.style.transform = 'translateX(-2px)';
+            // albumBox.lastElementChild.previousElementSibling.previousElementSibling.style.transform = 'translateX(-2px)';
             setTimeout(() => {
                 albumBox.lastElementChild.style.transition = '0.5s';
                 albumBox.lastElementChild.style.transform = 'translateX(0px) scale(1.8)';
                 albumBox.lastElementChild.previousElementSibling.style.transition = '0.5s';
                 albumBox.lastElementChild.previousElementSibling.style.transform = 'translateX(0px) scale(1.3)';
                 albumBox.lastElementChild.previousElementSibling.previousElementSibling.style.transition = '0.5s';
-                albumBox.lastElementChild.previousElementSibling.previousElementSibling.style.transform = 'translateX(0px)';
+                // albumBox.lastElementChild.previousElementSibling.previousElementSibling.style.transform = 'translateX(0px)';
+                setTimeout(() => {
+                    albumBox.lastElementChild.style.transition = '0.8s';
+                    albumBox.lastElementChild.style.transform = '';
+                    albumBox.lastElementChild.previousElementSibling.style.transition = '0.8s';
+                    albumBox.lastElementChild.previousElementSibling.style.transform = '';
+                    albumBox.lastElementChild.previousElementSibling.previousElementSibling.style.transition = '0.8s';
+                }, 500);
             }, 100);
             return;
         }
@@ -243,6 +257,5 @@ function albumBoxScroller() {
             }
         });
     });
-
     
 }
