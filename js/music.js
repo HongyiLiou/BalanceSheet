@@ -157,7 +157,41 @@ function albumBoxScroller() {
 
     const width = albumBox.firstElementChild.offsetWidth; // 150
     let scrollWidth = 75;
+    let scrollPoint = 0;
 
+    // albumBox.addEventListener('mousedown')
+    let onMousemove = function() {
+        const albumBoxWidth = albumBox.offsetWidth;
+        const mousePos = getMousePos(event);
+        const translateX = Number(Math.round(mousePos.x));
+        console.log();
+
+        if (Math.round(width / translateX) > 5 && scrollPoint < translateX) {
+            for (let i = 0; i < Math.round(Math.round(width / translateX)%3); i++) {
+                console.log('i', i);
+                prevBtn.click();
+            }
+        }
+        // console.log('width / translateX', Math.round(width / translateX));
+        // console.log('scrollPoint', scrollPoint);
+        // console.log('translateX', translateX);
+        console.log(Math.round(6%3));
+        
+        
+        scrollPoint = translateX;
+        
+        // scrollWidth += translateX;
+    }
+    
+    // 拖曳按下 / 放開 / 移出
+    albumBox.addEventListener('mousedown', () => {
+        albumBox.addEventListener('mousemove', onMousemove);
+    });
+    albumBox.addEventListener('mouseup', () => {
+        albumBox.removeEventListener('mousemove', onMousemove);
+    });
+
+    // 上一首
     prevBtn.addEventListener('click', () => {
         if (albumBox.firstElementChild.classList.contains('center')) {
             albumBox.firstElementChild.style.transition = '0.2s';
@@ -208,6 +242,7 @@ function albumBoxScroller() {
         });
     });
 
+    // 下一首
     nextBtn.addEventListener('click', () => {
         if (albumBox.lastElementChild.classList.contains('center')) {
             albumBox.lastElementChild.style.transition = '0.2s';
