@@ -21,6 +21,92 @@ let youTubePlayerSetting = {
         }
     }
 }
+/** 預設音量 */
+let youTubePlayerVolume = 100;
+/** 背景音樂清單 */
+let youTubeMusicData = [
+    { id: 'LHZXT6813VE', name: '想見你', url: 'https://i.imgur.com/9A4Mx75.jpg' },
+    { id: '8tuzFSXeKI0', name: '與我無關', url: 'https://i.ytimg.com/vi/8tuzFSXeKI0/maxresdefault.jpg' },
+    { id: 'EZxVmhM6UpE', name: '突然好想你', url: 'https://i.kfs.io/album/global/111193,1v1/fit/500x500.jpg' },
+    { id: 'LHZXT6813VE', name: '想見你', url: 'https://i.imgur.com/9A4Mx75.jpg' },
+    { id: '8tuzFSXeKI0', name: '與我無關', url: 'https://i.ytimg.com/vi/8tuzFSXeKI0/maxresdefault.jpg' },
+    { id: 'EZxVmhM6UpE', name: '突然好想你', url: 'https://i.kfs.io/album/global/111193,1v1/fit/500x500.jpg' },
+    { id: 'LHZXT6813VE', name: '想見你', url: 'https://i.imgur.com/9A4Mx75.jpg' },
+    { id: '8tuzFSXeKI0', name: '與我無關', url: 'https://i.ytimg.com/vi/8tuzFSXeKI0/maxresdefault.jpg' },
+    { id: 'EZxVmhM6UpE', name: '突然好想你', url: 'https://i.kfs.io/album/global/111193,1v1/fit/500x500.jpg' },
+];
+
+
+/** 重置背景音樂清單 */
+function initialYouTubeMusicData() {
+    /** 右側可滑動區域 */const albumBox = document.querySelector('.musicPageBox .playList .rightArea .albumBox');
+    /** 右側可滑動區域_曲名 */const albumBox_name = document.querySelector('.musicPageBox .playList .rightArea p');
+
+    // 重新產生右側可滑動區域
+    let albumBoxHTML = '';
+    albumBox.innerHTML = '';
+    youTubeMusicData.forEach((musicData, i) => {
+        const htmlTemplate = `
+            <div data-id="${musicData.id}" data-name="${musicData.name}"
+                class="album ${i === 0 ? 'center' : ''}${i === 1 ? 'right' : ''}${i === 2 ? 'visableRight' : ''}"
+                style="background-image: url(${musicData.url})">
+            </div>
+        `;
+        albumBoxHTML += htmlTemplate;
+    })
+    albumBox.innerHTML = albumBoxHTML;
+    albumBox_name.innerHTML = youTubeMusicData[0].name;
+    setScrollAlbumClickEvent();
+    albumBoxScroller();
+
+}
+
+
+/** 設定右側可滑動區域 Album 點擊事件 */
+function setScrollAlbumClickEvent() {
+    const prevBtn = document.querySelector('.musicPageBox .playList .rightArea .buttonArea .prev');
+    const nextBtn = document.querySelector('.musicPageBox .playList .rightArea .buttonArea .next');
+    $('.album.visableLeft').off('click');
+    $('.album.left').off('click');
+    $('.album.right').off('click');
+    $('.album.visableRight').off('click');
+
+    $('.album.visableLeft').click(() => {
+        prevBtn.click();
+        setTimeout(() => {
+            prevBtn.click();
+            setPlayingMusicName();
+        }, 200)
+    });
+    $('.album.left').click(() => {
+        prevBtn.click();
+        setPlayingMusicName();
+    });
+    $('.album.right').click(() => {
+        nextBtn.click();
+        setPlayingMusicName();
+    });
+    $('.album.visableRight').click(() => {
+        nextBtn.click();
+        setTimeout(() => {
+            nextBtn.click();
+            setPlayingMusicName();
+        }, 200)
+    });
+}
+
+
+/** 設定正在播放的歌曲 */
+function setPlayingMusicName() {
+    /** 右側可滑動區域_曲名 */const albumBox_name = document.querySelector('.musicPageBox .playList .rightArea p');
+    const centerName = document.querySelector('.musicPageBox .playList .rightArea .albumBox .album.center');
+
+    setTimeout(() => {
+        albumBox_name.innerHTML = centerName.dataset.name;
+    }, 800);
+}
+
+
 /**
  * 重置播放器
  * @param {string}} videoId 
@@ -111,8 +197,7 @@ function unMuteYouTubePlayer() {
     youTubePlayer.unMute();
 }
 
-/** 預設音量 */
-let youTubePlayerVolume = 100;
+
 /** 音量調節 */
 function getVolumeYouTubePlayer() {
     const volumebar = document.querySelector('.musicPageBox .controler .buttons .volumebar');
@@ -147,6 +232,7 @@ function getVolumeYouTubePlayer() {
 }
 
 
+
 /** albumBoxScroller */
 function albumBoxScroller() {
     const albumBox = document.querySelector('.musicPageBox .playList .rightArea .albumBox');
@@ -158,29 +244,38 @@ function albumBoxScroller() {
     const width = albumBox.firstElementChild.offsetWidth; // 150
     let scrollWidth = 75;
     let scrollPoint = 0;
+    let canScroll = true;
 
     // albumBox.addEventListener('mousedown')
     let onMousemove = function() {
         const albumBoxWidth = albumBox.offsetWidth;
         const mousePos = getMousePos(event);
         const translateX = Number(Math.round(mousePos.x));
-        console.log();
 
-        if (Math.round(width / translateX) > 5 && scrollPoint < translateX) {
-            for (let i = 0; i < Math.round(Math.round(width / translateX)%3); i++) {
-                console.log('i', i);
-                prevBtn.click();
-            }
+        // 往左滑 (Next)
+        if (scrollPoint < mousePos.x && canScroll) {
+            nextBtn.click();
+            scrollPoint = 0;
+            canScroll = false;
+            setTimeout(() => {
+                canScroll = true;
+            }, 300);
+        
+        // 往右滑 (Prev)
+        } else if (scrollPoint > mousePos.x && canScroll) {
+            prevBtn.click();
+            scrollPoint = 0;
+            canScroll = false;
+            setTimeout(() => {
+                canScroll = true;
+            }, 300);
+
         }
-        // console.log('width / translateX', Math.round(width / translateX));
-        // console.log('scrollPoint', scrollPoint);
-        // console.log('translateX', translateX);
-        console.log(Math.round(6%3));
-        
-        
-        scrollPoint = translateX;
-        
-        // scrollWidth += translateX;
+
+        scrollPoint = mousePos.x;
+
+        console.log(mousePos);
+        // albumBox.style.transform = `translateX(${-scrollWidth}px)`;
     }
     
     // 拖曳按下 / 放開 / 移出
@@ -240,6 +335,8 @@ function albumBoxScroller() {
                 x.classList.remove('visableRight');
             }
         });
+        setScrollAlbumClickEvent();
+        setPlayingMusicName();
     });
 
     // 下一首
@@ -291,6 +388,16 @@ function albumBoxScroller() {
                 }
             }
         });
+        setScrollAlbumClickEvent();
+        setPlayingMusicName();
+    });
+
+    // 播放
+    playBtn.addEventListener('click', () => {
+        const centerName = document.querySelector('.musicPageBox .playList .rightArea .albumBox .album.center');
+        const playID = centerName.dataset.id;
+        onYouTubeIframeAPIReady(playID);
+        playYouTubePlayer();
     });
     
 }

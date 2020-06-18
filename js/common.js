@@ -89,7 +89,6 @@ function getMousePos(event) {
     return { x: x, y: y };
 }
 
-
 /**
  * 顯示 Loading畫面
  * @param {Boolean} isShow 是否顯示
@@ -102,7 +101,6 @@ function showLoading(isShow) {
     } else {
         loading.classList.remove('active');
     }
-
 }
 
 

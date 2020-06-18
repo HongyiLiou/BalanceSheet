@@ -81,7 +81,7 @@ function loadPages() {
 
         setTimeout(() => {
             getVolumeYouTubePlayer();
-            albumBoxScroller();
+            initialYouTubeMusicData();
         }, 0);
     });
 
