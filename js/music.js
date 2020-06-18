@@ -39,23 +39,48 @@ let youTubeMusicData = [
 
 /** 重置背景音樂清單 */
 function initialYouTubeMusicData() {
+    // 清單版型
+    /** List區域 */const playList = document.querySelector('.musicPageBox .playList ul');
     /** 右側可滑動區域 */const albumBox = document.querySelector('.musicPageBox .playList .rightArea .albumBox');
-    /** 右側可滑動區域_曲名 */const albumBox_name = document.querySelector('.musicPageBox .playList .rightArea p');
+    /** 右側可滑動區域_曲名 */const albumBox_songName = document.querySelector('.musicPageBox .playList .rightArea p');
 
-    // 重新產生右側可滑動區域
+    // 清單版型
+    let playListHTML = '';
     let albumBoxHTML = '';
+    playList.innerHTML = '';
     albumBox.innerHTML = '';
+
     youTubeMusicData.forEach((musicData, i) => {
-        const htmlTemplate = `
+        // 清單版型
+        const playListTemplate = `
+            <li>
+                <div class="list">
+                    <div class="albumPhoto" style="background-image: url(${musicData.url});"></div>
+                    <p>${musicData.name}</p>
+                </div>
+                <div class="setting">
+                    <button class="play" onclick="onYouTubeIframeAPIReady('${musicData.id}'); playYouTubePlayer();" title="播放"></button>
+                    <button class="edit" title="編輯"></button>
+                    <button class="delete" title="刪除"></button>
+                </div>
+            </li>
+        `;
+
+        const albumBoxTemplate = `
             <div data-id="${musicData.id}" data-name="${musicData.name}"
                 class="album ${i === 0 ? 'center' : ''}${i === 1 ? 'right' : ''}${i === 2 ? 'visableRight' : ''}"
                 style="background-image: url(${musicData.url})">
             </div>
         `;
-        albumBoxHTML += htmlTemplate;
+
+        playListHTML += playListTemplate;
+        albumBoxHTML += albumBoxTemplate;
     })
+
+    // 清單版型
+    playList.innerHTML = playListHTML;
     albumBox.innerHTML = albumBoxHTML;
-    albumBox_name.innerHTML = youTubeMusicData[0].name;
+    albumBox_songName.innerHTML = youTubeMusicData[0].name;
     setScrollAlbumClickEvent();
     albumBoxScroller();
 
@@ -113,7 +138,10 @@ function setPlayingMusicName() {
  */
 function onYouTubeIframeAPIReady(videoId) {
     const ctrlq = document.getElementById('youtube-audio');
+    /** 控制器_正在播放：曲名 */const controler_songName = document.querySelector('.musicPageBox .controler .viewer .songName span');
+    const matchMusicID = youTubeMusicData.find(x => x.id === videoId);
     ctrlq.innerHTML = '<div id="youtube-player"></div>';
+    controler_songName.innerHTML = matchMusicID.name;
     ctrlq.style.cssText = 'display:none';
 
     if (videoId) {
@@ -395,7 +423,10 @@ function albumBoxScroller() {
     // 播放
     playBtn.addEventListener('click', () => {
         const centerName = document.querySelector('.musicPageBox .playList .rightArea .albumBox .album.center');
+        /** 控制器_正在播放：曲名 */const controler_songName = document.querySelector('.musicPageBox .controler .viewer .songName span');
         const playID = centerName.dataset.id;
+        const playName = centerName.dataset.name;
+        controler_songName.innerHTML = centerName.dataset.name;
         onYouTubeIframeAPIReady(playID);
         playYouTubePlayer();
     });
