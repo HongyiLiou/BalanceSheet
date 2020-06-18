@@ -138,11 +138,15 @@ function setPlayingMusicName() {
  */
 function onYouTubeIframeAPIReady(videoId) {
     const ctrlq = document.getElementById('youtube-audio');
-    /** 控制器_正在播放：曲名 */const controler_songName = document.querySelector('.musicPageBox .controler .viewer .songName span');
+    const controler_albumPhoto = document.querySelector('.musicPageBox .controler .albumPhoto');
+    const controler_songName = document.querySelector('.musicPageBox .controler .viewer .songName span');
     const matchMusicID = youTubeMusicData.find(x => x.id === videoId);
     ctrlq.innerHTML = '<div id="youtube-player"></div>';
     controler_songName.innerHTML = matchMusicID.name;
     ctrlq.style.cssText = 'display:none';
+    controler_albumPhoto.style.backgroundImage = `url(${matchMusicID.url})`;
+    console.log(matchMusicID.url);
+    
 
     if (videoId) {
         youTubePlayerSetting.videoId = videoId;
