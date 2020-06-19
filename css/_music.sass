@@ -823,6 +823,54 @@
 
 
 
+@media screen and (max-width: 1000px)
+    .musicPageBox
+        .controler
+            height: auto
+            left: 0
+            bottom: 0
+            flex-wrap: wrap
+            justify-content: space-between
+            .albumPhoto
+                +size(90px, 90px)
+                margin-bottom: 4px
+            .buttons
+                button
+                    +size(35px, 35px)
+                    i
+                        font-size: 120%
+                    &.mute
+                        &::before
+                            position: absolute
+                            content: '｜'
+                            top: 32%
+                            left: 5%
+                            +size(10px, 1px)
+                            font-size: 150%
+                            transform-origin: center center
+                            transform: translate(-50%, -50%) rotate(-50deg)
+            .viewer
+                p
+                    white-space: nowrap
+                .visual
+                    +size(80px, 45px)
+            .setting
+                display: none
+        // 唱片版型
+        .albumList
+            display: none
+        // 清單版型
+        .playList
+            width: 100%
+            margin: 0
+            ul
+                +size(100vw, calc(100vh - 235px))
+                padding: 0
+            .rightArea
+                display: none
+
+
+
 
 
 
