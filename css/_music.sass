@@ -9,6 +9,7 @@
         bottom: 110px
         left: -60px
         height: 80px
+        align-items: center
         background: rgba(#000, 0.9)
         box-shadow: 0 2px 5px #000
         transition: 0.3s
@@ -255,6 +256,7 @@
 
     // 唱片版型
     .albumList
+        display: none
         padding: 200px 80px 200px 140px
         margin-left: -200px
         width: calc(125% - 150px)
@@ -263,9 +265,14 @@
         opacity: 1
         pointer-events: auto
         transition: 0.5s
+        animation: appear 0.5s forwards
         
         &::-webkit-scrollbar
             display: none
+
+        &.hide
+            animation: disappear 0.5s forwards
+            pointer-events: none
 
         ul
             display: flex
@@ -276,7 +283,7 @@
                 position: relative
                 width: 20%
                 padding: 20px 60px
-                margin-bottom: 100px
+                margin-bottom: 30px
 
                 .album
                     position: relative
@@ -433,6 +440,7 @@
         opacity: 1
         pointer-events: auto
         transition: 0.5s
+        animation: appear 0.5s forwards
 
         // &::before
         //     content: ''
@@ -442,6 +450,9 @@
         //     top: 200px
         //     left: 140px
         //     background: rgba(#1a1a1a, 0.5)
+        &.hide
+            animation: disappear 0.5s forwards
+            pointer-events: none
 
         
         ul
@@ -530,6 +541,7 @@
 
 
         .rightArea
+            position: relative
             +size(700px, calc(100vh - 395px))
             display: block
             flex-shrink: 0
@@ -540,8 +552,8 @@
             .albumBox
                 position: relative
                 display: flex
-                width: 100%
-                padding: 20px 0
+                width: fit-content
+                padding: 20px 0 300px 0
                 margin-top: 100px
                 padding-left: 50%
                 padding-right: 50%
@@ -588,7 +600,9 @@
 
                         
             p
-                margin-top: 80px
+                position: absolute
+                width: 100%
+                top: 380px
                 color: #FFF
                 text-align: center
                 font-size: 150%
@@ -596,7 +610,10 @@
                 transition: 0.3s
                 
             .buttonArea
+                position: absolute
                 display: flex
+                width: 100%
+                top: 410px
                 align-items: center
                 justify-content: center
                 margin-top: 45px
@@ -670,3 +687,144 @@
     100%
         opacity: 0
         transform: translateX(-80%)
+
++keyframes(appear)
+    0%
+        opacity: 0
+    100%
+        opacity: 1
+
++keyframes(disappear)
+    0%
+        opacity: 1
+    100%
+        opacity: 0
+
+
+
+// RWD
+@media screen and (max-width: 1400px)
+    .musicPageBox
+        .controler
+            height: 60px
+            bottom: 80px
+            padding: 8px
+            .albumPhoto
+                +size(45px, 45px)
+                margin-right: 10px
+            .buttons
+                margin-right: 8px
+                button
+                    +size(30px, 30px)
+                    margin-right: 5px
+                    i
+                        font-size: 100%
+                    &.mute
+                        &::before
+                            position: absolute
+                            content: '｜'
+                            top: 32%
+                            left: 5%
+                            +size(8px, 1px)
+                            font-size: 130%
+                            transform-origin: center center
+                            transform: translate(-50%, -50%) rotate(-50deg)
+                .volumebar
+                    &::bofore
+                        +size(100px, 3px)
+            .viewer
+                p
+                    font-size: 90%
+                .songName
+                    font-size: 90%
+                    width: 200px
+                    margin-right: 8px
+                    span
+                        +keyframes(songName)
+                            0%
+                                transform: translateX(200px)
+                            100%
+                                transform: translateX(-100px)
+                .visual
+                    +size(100px, 45px)
+            .setting
+                padding: 5px 8px
+                bottom: -29px
+                label
+                    .selectedHolder
+                        +size(18px, 18px)
+                        &::before
+                            font-size: 80%
+                    p
+                        font-size: 90%
+        // 唱片版型_RWD 1400
+        .albumList
+            padding: 80px 60px 140px 60px
+            ul
+                li
+                    width: 25%
+                    margin-bottom: 20px
+                    .album
+                        +size(140px, 140px)
+                        &.active
+                            +size(138px, 138px)
+                        .albumPhoto
+                            +size(90px, 90px)
+                            border: solid 4px #111
+                    .setting
+                        +size(30px, 30px)
+                        &:hover
+                            height: 62px
+                        &::before
+                            +size(26px, 26px)
+                            font-size: 100%
+                        button
+                            +size(26px, 26px)
+                            font-size: 65%
+                    p
+                        font-size: 80%
+        // 清單版型_RWD 1400
+        .playList
+            ul
+                margin-top: 80px
+                +size(450px, calc(100vh - 225px))
+                li
+                    +size(100%, 54px)
+                    .list
+                        padding: 4px
+                        +size(calc(100% - 95px), 100%)
+                        .albumPhoto
+                            +size(46px, 46px)
+                            margin-right: 8px
+                        p
+                            font-size: 85%
+                    .setting
+                        right: 8px
+                        button
+                            +size(22px, 22px)
+                            font-size: 80%
+            .rightArea
+                +size(580px, calc(100vh - 225px))
+                margin-top: 80px
+                .albumBox
+                    // padding: 10px 0 200px 0
+                    padding-top: 0px
+                    transform: translateX(-60px)
+                    .album
+                        +size(120px, 120px)
+                p
+                    top: 300px
+                    font-size: 130%
+                .buttonArea
+                    top: 300px
+                    button
+                        padding: 6px 12px
+                        font-size: 90%
+
+
+
+
+
+
+
+

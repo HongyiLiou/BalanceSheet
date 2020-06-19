@@ -23,92 +23,91 @@ article.musicPageBox
             .visual
 
         section.setting
+            label(for="showMusicType_list")
+                input(type="radio" id="showMusicType_list" name="showMusicsType" value="list" checked)
+                .selectedHolder
+                p 清單版型
             label(for="showMusicType_album")
-                input(type="radio" id="showMusicType_album" name="showLinksType" value="album" checked)
+                input(type="radio" id="showMusicType_album" name="showMusicsType" value="album")
                 .selectedHolder
                 p 唱片版型
 
-            label(for="showMusicType_list")
-                input(type="radio" id="showMusicType_list" name="showLinksType" value="list")
-                .selectedHolder
-                p 清單版型
-
 
     //- 唱片版型
-    section.albumList(style="display: none;")
+    section.albumList
         ul
-            li
-                .album(onclick="onYouTubeIframeAPIReady('LHZXT6813VE'); playYouTubePlayer();")
-                    .albumBg
-                    .albumPhoto
-                .setting
-                    button.edit(title="編輯")
-                    button.delete(title="刪除")
-                p 想見你
-            li
-                .album
-                    .albumBg
-                    .albumPhoto
-                .setting
-                    button.edit(title="編輯")
-                    button.delete(title="刪除")
-                p 想見你
-            li
-                .album
-                    .albumBg
-                    .albumPhoto
-                .setting
-                    button.edit(title="編輯")
-                    button.delete(title="刪除")
-                p 想見你
+            //- li
+            //-     .album(onclick="onYouTubeIframeAPIReady('LHZXT6813VE'); playYouTubePlayer();")
+            //-         .albumBg
+            //-         .albumPhoto
+            //-     .setting
+            //-         button.edit(title="編輯")
+            //-         button.delete(title="刪除")
+            //-     p 想見你
+            //- li
+            //-     .album
+            //-         .albumBg
+            //-         .albumPhoto
+            //-     .setting
+            //-         button.edit(title="編輯")
+            //-         button.delete(title="刪除")
+            //-     p 想見你
+            //- li
+            //-     .album
+            //-         .albumBg
+            //-         .albumPhoto
+            //-     .setting
+            //-         button.edit(title="編輯")
+            //-         button.delete(title="刪除")
+            //-     p 想見你
 
 
     //- 清單版型
     section.playList
         ul
-            li
-                .list
-                    .albumPhoto
-                    p 想見你想見你想見你想見你想見你想見你想見你想
-                .setting
-                    button.play(onclick="onYouTubeIframeAPIReady('LHZXT6813VE'); playYouTubePlayer();" title="播放")
-                    button.edit(title="編輯")
-                    button.delete(title="刪除")
-            li
-                .list
-                    .albumPhoto
-                    p 想見你
-                .setting
-                    button.play(onclick="onYouTubeIframeAPIReady('LHZXT6813VE'); playYouTubePlayer();" title="播放")
-                    button.edit(title="編輯")
-                    button.delete(title="刪除")
-            li
-                .list
-                    .albumPhoto
-                    p 想見你
-                .setting
-                    button.play(onclick="onYouTubeIframeAPIReady('LHZXT6813VE'); playYouTubePlayer();" title="播放")
-                    button.edit(title="編輯")
-                    button.delete(title="刪除")
-            li
-                .list
-                    .albumPhoto
-                    p 想見你
-                .setting
-                    button.play(onclick="onYouTubeIframeAPIReady('LHZXT6813VE'); playYouTubePlayer();" title="播放")
-                    button.edit(title="編輯")
-                    button.delete(title="刪除")
-            li
-                .list
-                    .albumPhoto
-                    p 想見你
-                .setting
-                    button.play(onclick="onYouTubeIframeAPIReady('LHZXT6813VE'); playYouTubePlayer();" title="播放")
-                    button.edit(title="編輯")
-                    button.delete(title="刪除")
-            li
-                .list(style="width: 100%;")
-                    p(style="width: 100%; text-align: center;") 尚無歌曲
+            //- li
+            //-     .list
+            //-         .albumPhoto
+            //-         p 想見你想見你想見你想見你想見你想見你想見你想
+            //-     .setting
+            //-         button.play(onclick="onYouTubeIframeAPIReady('LHZXT6813VE'); playYouTubePlayer();" title="播放")
+            //-         button.edit(title="編輯")
+            //-         button.delete(title="刪除")
+            //- li
+            //-     .list
+            //-         .albumPhoto
+            //-         p 想見你
+            //-     .setting
+            //-         button.play(onclick="onYouTubeIframeAPIReady('LHZXT6813VE'); playYouTubePlayer();" title="播放")
+            //-         button.edit(title="編輯")
+            //-         button.delete(title="刪除")
+            //- li
+            //-     .list
+            //-         .albumPhoto
+            //-         p 想見你
+            //-     .setting
+            //-         button.play(onclick="onYouTubeIframeAPIReady('LHZXT6813VE'); playYouTubePlayer();" title="播放")
+            //-         button.edit(title="編輯")
+            //-         button.delete(title="刪除")
+            //- li
+            //-     .list
+            //-         .albumPhoto
+            //-         p 想見你
+            //-     .setting
+            //-         button.play(onclick="onYouTubeIframeAPIReady('LHZXT6813VE'); playYouTubePlayer();" title="播放")
+            //-         button.edit(title="編輯")
+            //-         button.delete(title="刪除")
+            //- li
+            //-     .list
+            //-         .albumPhoto
+            //-         p 想見你
+            //-     .setting
+            //-         button.play(onclick="onYouTubeIframeAPIReady('LHZXT6813VE'); playYouTubePlayer();" title="播放")
+            //-         button.edit(title="編輯")
+            //-         button.delete(title="刪除")
+            //- li
+            //-     .list(style="width: 100%;")
+            //-         p(style="width: 100%; text-align: center;") 尚無歌曲
 
         .rightArea
             .albumBox

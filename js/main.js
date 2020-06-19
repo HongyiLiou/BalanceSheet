@@ -82,6 +82,7 @@ function loadPages() {
         setTimeout(() => {
             getVolumeYouTubePlayer();
             initialYouTubeMusicData();
+            setShowMusicType();
         }, 0);
     });
 

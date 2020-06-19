@@ -23,8 +23,19 @@ let youTubePlayerSetting = {
 }
 /** 預設音量 */
 let youTubePlayerVolume = 100;
+/** 正在播放 */
+let youTubePlayingIndex = 0;
 /** 背景音樂清單 */
 let youTubeMusicData = [
+    { id: 'LHZXT6813VE', name: '想見你', url: 'https://i.imgur.com/9A4Mx75.jpg' },
+    { id: '8tuzFSXeKI0', name: '與我無關', url: 'https://i.ytimg.com/vi/8tuzFSXeKI0/maxresdefault.jpg' },
+    { id: 'EZxVmhM6UpE', name: '突然好想你', url: 'https://i.kfs.io/album/global/111193,1v1/fit/500x500.jpg' },
+    { id: 'LHZXT6813VE', name: '想見你', url: 'https://i.imgur.com/9A4Mx75.jpg' },
+    { id: '8tuzFSXeKI0', name: '與我無關', url: 'https://i.ytimg.com/vi/8tuzFSXeKI0/maxresdefault.jpg' },
+    { id: 'EZxVmhM6UpE', name: '突然好想你', url: 'https://i.kfs.io/album/global/111193,1v1/fit/500x500.jpg' },
+    { id: 'LHZXT6813VE', name: '想見你', url: 'https://i.imgur.com/9A4Mx75.jpg' },
+    { id: '8tuzFSXeKI0', name: '與我無關', url: 'https://i.ytimg.com/vi/8tuzFSXeKI0/maxresdefault.jpg' },
+    { id: 'EZxVmhM6UpE', name: '突然好想你', url: 'https://i.kfs.io/album/global/111193,1v1/fit/500x500.jpg' },
     { id: 'LHZXT6813VE', name: '想見你', url: 'https://i.imgur.com/9A4Mx75.jpg' },
     { id: '8tuzFSXeKI0', name: '與我無關', url: 'https://i.ytimg.com/vi/8tuzFSXeKI0/maxresdefault.jpg' },
     { id: 'EZxVmhM6UpE', name: '突然好想你', url: 'https://i.kfs.io/album/global/111193,1v1/fit/500x500.jpg' },
@@ -44,11 +55,18 @@ function initialYouTubeMusicData() {
     /** 右側可滑動區域 */const albumBox = document.querySelector('.musicPageBox .playList .rightArea .albumBox');
     /** 右側可滑動區域_曲名 */const albumBox_songName = document.querySelector('.musicPageBox .playList .rightArea p');
 
+    // 唱片版型
+    /** Album區域 */const albumList = document.querySelector('.musicPageBox .albumList ul');
+    
     // 清單版型
     let playListHTML = '';
     let albumBoxHTML = '';
     playList.innerHTML = '';
     albumBox.innerHTML = '';
+
+    // 唱片版型
+    let albumListHTML = '';
+    albumList.innerHTML = '';
 
     youTubeMusicData.forEach((musicData, i) => {
         // 清單版型
@@ -59,7 +77,7 @@ function initialYouTubeMusicData() {
                     <p>${musicData.name}</p>
                 </div>
                 <div class="setting">
-                    <button class="play" onclick="onYouTubeIframeAPIReady('${musicData.id}'); playYouTubePlayer();" title="播放"></button>
+                    <button class="play" onclick="onYouTubeIframeAPIReady('${musicData.id}'); playYouTubePlayer(${i});" title="播放"></button>
                     <button class="edit" title="編輯"></button>
                     <button class="delete" title="刪除"></button>
                 </div>
@@ -67,18 +85,37 @@ function initialYouTubeMusicData() {
         `;
 
         const albumBoxTemplate = `
-            <div data-id="${musicData.id}" data-name="${musicData.name}"
+            <div data-index="${i}" data-id="${musicData.id}" data-name="${musicData.name}"
                 class="album ${i === 0 ? 'center' : ''}${i === 1 ? 'right' : ''}${i === 2 ? 'visableRight' : ''}"
                 style="background-image: url(${musicData.url})">
             </div>
         `;
 
+        // 唱片版型
+        const albumTemplate = `
+        <li>
+            <div class="album" data-index="${i}" data-id="${musicData.id}" data-name="${musicData.name}" onclick="onYouTubeIframeAPIReady('${musicData.id}'); playYouTubePlayer(${i});">
+                <div class="albumBg" style="background-image: url(${musicData.url});"></div>
+                <div class="albumPhoto" style="background-image: url(${musicData.url});"></div>
+            </div>
+            <div class="setting">
+                <button class="edit" title="編輯"></button>
+                <button class="delete" title="刪除"></button>
+            </div>
+            <p>${musicData.name}</p>
+        </li>
+    `;
+
+
         playListHTML += playListTemplate;
+        albumListHTML += albumTemplate;
+
         albumBoxHTML += albumBoxTemplate;
     })
 
     // 清單版型
     playList.innerHTML = playListHTML;
+    albumList.innerHTML = albumListHTML;
     albumBox.innerHTML = albumBoxHTML;
     albumBox_songName.innerHTML = youTubeMusicData[0].name;
     setScrollAlbumClickEvent();
@@ -145,8 +182,6 @@ function onYouTubeIframeAPIReady(videoId) {
     controler_songName.innerHTML = matchMusicID.name;
     ctrlq.style.cssText = 'display:none';
     controler_albumPhoto.style.backgroundImage = `url(${matchMusicID.url})`;
-    console.log(matchMusicID.url);
-    
 
     if (videoId) {
         youTubePlayerSetting.videoId = videoId;
@@ -158,47 +193,58 @@ function onYouTubeIframeAPIReady(videoId) {
 
 
 /** 播放音樂 */
-function playYouTubePlayer() {
-    const album = document.querySelector('.musicPageBox .albumList .album');
+function playYouTubePlayer(index) {
+    const album = document.querySelectorAll('.musicPageBox .albumList .album');
     const pauseBtn = document.querySelector('.musicPageBox .controler .buttons .pause');
     const playBtn = document.querySelector('.musicPageBox .controler .buttons .play');
     const visual = document.querySelector('.musicPageBox .controler .viewer .visual');
+    stopYouTubePlayer(true);
     playBtn.style.display = 'none';
     pauseBtn.style.display = 'block';
-    album.classList.remove('paused');
+    if (!index && index !== 0) {
+        index = youTubePlayingIndex;
+    } else {
+        youTubePlayingIndex = index;
+    }
+    
+    album[index].classList.remove('paused');
     visual.classList.remove('paused');
-    album.classList.add('active');
+    album[index].classList.add('active');
     setTimeout(() => {
         youTubePlayer.playVideo();
         youTubePlayer.setVolume(youTubePlayerVolume);
-        visual.classList.add('active');
+        visual.classList.add('active');        
     }, 1000);
 }
 
 
 /** 暫停播放音樂 */
 function pauseYouTubePlayer() {
-    const album = document.querySelector('.musicPageBox .albumList .album');
+    const albums = Array.from(document.querySelectorAll('.musicPageBox .albumList .album'));
     const pauseBtn = document.querySelector('.musicPageBox .controler .buttons .pause');
     const playBtn = document.querySelector('.musicPageBox .controler .buttons .play');
     const visual = document.querySelector('.musicPageBox .controler .viewer .visual');
+    const nowPlaying = albums.find(x => x.classList.contains('active'));
     pauseBtn.style.display = 'none';
     playBtn.style.display = 'block';
-    album.classList.add('paused');
+    nowPlaying.classList.add('paused');
     visual.classList.add('paused');
     youTubePlayer.pauseVideo();
 }
 
 
 /** 停止播放音樂 */
-function stopYouTubePlayer() {
+function stopYouTubePlayer(visaulOnly) {
     const albums = document.querySelectorAll('.musicPageBox .albumList .album');
     const pauseBtn = document.querySelector('.musicPageBox .controler .buttons .pause');
     const playBtn = document.querySelector('.musicPageBox .controler .buttons .play');
     const visual = document.querySelector('.musicPageBox .controler .viewer .visual');
     pauseBtn.style.display = 'none';
     playBtn.style.display = 'block';
-    youTubePlayer.stopVideo();
+
+    if (!visaulOnly) {
+        youTubePlayer.stopVideo();
+    }
 
     albums.forEach(album => {
         album.classList.remove('paused', 'active');
@@ -206,7 +252,7 @@ function stopYouTubePlayer() {
     
     visual.classList.remove('paused', 'active');
 
-    onYouTubeIframeAPIReady('LHZXT6813VE');
+    // onYouTubeIframeAPIReady('LHZXT6813VE');
 }
 
 
@@ -265,7 +311,7 @@ function getVolumeYouTubePlayer() {
 
 
 
-/** albumBoxScroller */
+/** 清單模式右方可滑動區域 */
 function albumBoxScroller() {
     const albumBox = document.querySelector('.musicPageBox .playList .rightArea .albumBox');
     const albums = document.querySelectorAll('.musicPageBox .playList .rightArea .albumBox .album');
@@ -274,18 +320,16 @@ function albumBoxScroller() {
     const playBtn = document.querySelector('.musicPageBox .playList .rightArea .buttonArea .play');
 
     const width = albumBox.firstElementChild.offsetWidth; // 150
-    let scrollWidth = 75;
+    let scrollWidth = width / 2;
     let scrollPoint = 0;
     let canScroll = true;
 
     // albumBox.addEventListener('mousedown')
     let onMousemove = function() {
-        const albumBoxWidth = albumBox.offsetWidth;
         const mousePos = getMousePos(event);
-        const translateX = Number(Math.round(mousePos.x));
 
         // 往左滑 (Next)
-        if (scrollPoint < mousePos.x && canScroll) {
+        if (scrollPoint > mousePos.x && canScroll) {
             nextBtn.click();
             scrollPoint = 0;
             canScroll = false;
@@ -294,28 +338,26 @@ function albumBoxScroller() {
             }, 300);
         
         // 往右滑 (Prev)
-        } else if (scrollPoint > mousePos.x && canScroll) {
+        } else if (scrollPoint < mousePos.x && canScroll) {
             prevBtn.click();
             scrollPoint = 0;
             canScroll = false;
             setTimeout(() => {
                 canScroll = true;
             }, 300);
-
         }
 
         scrollPoint = mousePos.x;
-
-        console.log(mousePos);
-        // albumBox.style.transform = `translateX(${-scrollWidth}px)`;
     }
     
     // 拖曳按下 / 放開 / 移出
     albumBox.addEventListener('mousedown', () => {
-        albumBox.addEventListener('mousemove', onMousemove);
+        const mousePos = getMousePos(event);
+        scrollPoint = mousePos.x;
+        albumBox.addEventListener('mousemove', onMousemove());
     });
     albumBox.addEventListener('mouseup', () => {
-        albumBox.removeEventListener('mousemove', onMousemove);
+        albumBox.removeEventListener('mousemove', onMousemove());
     });
 
     // 上一首
@@ -426,13 +468,68 @@ function albumBoxScroller() {
 
     // 播放
     playBtn.addEventListener('click', () => {
+        const albums = Array.from(document.querySelectorAll('.musicPageBox .albumList ul .album'));
         const centerName = document.querySelector('.musicPageBox .playList .rightArea .albumBox .album.center');
         /** 控制器_正在播放：曲名 */const controler_songName = document.querySelector('.musicPageBox .controler .viewer .songName span');
         const playID = centerName.dataset.id;
         const playName = centerName.dataset.name;
-        controler_songName.innerHTML = centerName.dataset.name;
+        const playIndex = centerName.dataset.index;
+        const findIndex = albums.find(x => x.dataset.index === playIndex);
+        console.log(findIndex);
+        
+        controler_songName.innerHTML = playName;
         onYouTubeIframeAPIReady(playID);
-        playYouTubePlayer();
+        playYouTubePlayer(findIndex.dataset.index);
     });
     
+}
+
+
+/** 設定顯示 Music的方式 */
+function setShowMusicType() {
+    const showMusicTypeRadio = document.querySelectorAll('.musicPageBox .controler .setting input');
+    const showMusicType = document.querySelectorAll('.musicPageBox .controler .setting label');
+    const showMusicTypeLocal = localStorage.getItem('showMusicType');
+    /** 唱片版型 */const albumList = document.querySelector('.musicPageBox .albumList');
+    /** 清單版型 */const playList = document.querySelector('.musicPageBox .playList');
+
+    if (showMusicTypeLocal === 'album') {
+        showMusicTypeRadio[1].setAttribute('checked', true);
+        albumList.style.display = 'block';
+        playList.style.display = 'none';
+    } else {
+        showMusicTypeRadio[0].setAttribute('checked', true);  
+        albumList.style.display = 'none';
+        playList.style.display = 'flex';      
+    }
+
+    showMusicType.forEach(radio => {
+        radio.addEventListener('click', (e) => {
+            e.stopPropagation();
+            setTimeout(() => {
+                const value = $('input[type="radio"][name="showMusicsType"]:checked').val();
+                console.log(value);
+
+                localStorage.setItem('showMusicType', value);
+
+                if (value === 'album') {                    
+                    playList.classList.add('hide');
+                    setTimeout(() => {
+                        albumList.style.display = 'block';
+                        playList.style.display = 'none';
+                        playList.classList.remove('hide');
+                    }, 500);
+
+                } else {
+                    albumList.classList.add('hide');
+                    setTimeout(() => {
+                        playList.style.display = 'flex';
+                        albumList.style.display = 'none';
+                        albumList.classList.remove('hide');
+                    }, 500);
+                }
+
+            }, 0);
+        });
+    });
 }
