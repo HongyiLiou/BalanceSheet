@@ -96,7 +96,7 @@ function initialYouTubeMusicData() {
                 <button class="edit" title="編輯"></button>
                 <button class="delete" title="刪除"></button>
             </div>
-            <p>${musicData.name}</p>
+            <p title="${musicData.name}">${musicData.name}</p>
         </li>
     `;
 
