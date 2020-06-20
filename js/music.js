@@ -5,8 +5,8 @@
 let youTubePlayer;
 /** YouTubePlayerSetting */
 let youTubePlayerSetting = {
-    height: '200',
-    width: '200',
+    height: '50',
+    width: '50',
     videoId: '',
     // videoId: 'LHZXT6813VE',
     playerVars: {
@@ -14,7 +14,8 @@ let youTubePlayerSetting = {
         loop: 1,
         start: 1,
         playlist: '',
-        enablejsapi: 1
+        enablejsapi: 1,
+        playsinline: 1 // ios 0.全螢幕  1.內嵌播放
     },
     events: {
         'onReady': function() {
@@ -193,7 +194,7 @@ function playYouTubePlayer(index) {
     const pauseBtn = document.querySelector('.musicPageBox .controler .buttons .pause');
     const playBtn = document.querySelector('.musicPageBox .controler .buttons .play');
     const visual = document.querySelector('.musicPageBox .controler .viewer .visual');
-    stopYouTubePlayer(true);
+    // stopYouTubePlayer(true);
     playBtn.style.display = 'none';
     pauseBtn.style.display = 'block';
     if (!index && index !== 0) {
@@ -207,10 +208,12 @@ function playYouTubePlayer(index) {
     album[index].classList.add('active');
     setTimeout(() => {
         youTubePlayer.playVideo();
-        playBtn.click();
+        // playBtn.click();
         youTubePlayer.setVolume(youTubePlayerVolume);
         visual.classList.add('active');        
     }, 1000);
+    console.log('play');
+    
 }
 
 
@@ -226,6 +229,7 @@ function pauseYouTubePlayer() {
     nowPlaying.classList.add('paused');
     visual.classList.add('paused');
     youTubePlayer.pauseVideo();
+    console.log('pause');
 }
 
 
@@ -247,6 +251,7 @@ function stopYouTubePlayer(visaulOnly) {
     });
     
     visual.classList.remove('paused', 'active');
+    console.log('stop');
 
     // onYouTubeIframeAPIReady('LHZXT6813VE');
 }
@@ -471,6 +476,7 @@ function albumBoxScroller() {
         const playName = centerName.dataset.name;
         const playIndex = centerName.dataset.index;
         const findIndex = albums.find(x => x.dataset.index === playIndex);
+        // const stopBtn = document.querySelector('.musicPageBox .controler .buttons .stop');
         console.log(findIndex);
         
         controler_songName.innerHTML = playName;
