@@ -10,6 +10,7 @@ let youTubePlayerSetting = {
     videoId: '',
     // videoId: 'LHZXT6813VE',
     playerVars: {
+        autoplay: 0,
         loop: 1,
         start: 1,
         playlist: '',
