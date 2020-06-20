@@ -49,6 +49,15 @@
                     color: rgba(#FFF, 1)
                     background: rgba(#FFF, 0.8)
 
+                &.play
+                    overflow: hidden
+                    position: relative
+                    .youtube-player
+                        position: absolute
+                        +size(200px, 200px)
+                        +ab_center
+                        // opacity: 0
+
                 &.pause
                     display: none
 

@@ -5,8 +5,8 @@
 let youTubePlayer;
 /** YouTubePlayerSetting */
 let youTubePlayerSetting = {
-    height: '0',
-    width: '0',
+    height: '200',
+    width: '200',
     videoId: '',
     // videoId: 'LHZXT6813VE',
     playerVars: {
@@ -176,7 +176,6 @@ function onYouTubeIframeAPIReady(videoId) {
     const matchMusicID = youTubeMusicData.find(x => x.id === videoId);
     ctrlq.innerHTML = '<div id="youtube-player"></div>';
     controler_songName.innerHTML = matchMusicID.name;
-    ctrlq.style.cssText = 'display:none';
     controler_albumPhoto.style.backgroundImage = `url(${matchMusicID.url})`;
 
     if (videoId) {
@@ -208,6 +207,7 @@ function playYouTubePlayer(index) {
     album[index].classList.add('active');
     setTimeout(() => {
         youTubePlayer.playVideo();
+        playBtn.click();
         youTubePlayer.setVolume(youTubePlayerVolume);
         visual.classList.add('active');        
     }, 1000);
