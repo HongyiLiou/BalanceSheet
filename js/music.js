@@ -29,7 +29,7 @@ let youTubePlayingIndex = 0;
 let youTubeMusicData = [
     { id: 'LHZXT6813VE', name: '想見你', url: 'https://i.imgur.com/9A4Mx75.jpg' },
     { id: 'Ykx8JjW-c8Y', name: '【陳情令】主題曲《無羈》肖戰 王一博', url: 'https://inews.gtimg.com/newsapp_bt/0/9554276998/641' },
-    { id: 'J_USGypwMrQ', name: '【陳情令】電視劇插曲《意難平》', url: 'https://lh3.googleusercontent.com/proxy/QR0VMSxYpzWOWrUL-tIu352agsX5vnmY-K40Ae_w-69Sz7yDp4TTNUN4B17Po03J19WBaGIjYiuf7DOVqovalAgdDbI0Z83P27HryUEV7dpoCijMWAlZkTIpZChROjUtXkesnw' },
+    { id: 'J_USGypwMrQ', name: '【陳情令】電視劇插曲《意難平》', url: 'https://i.ytimg.com/vi/-Zge37ofenc/hqdefault.jpg' },
     { id: 'HV9SQ3ZTGSA', name: 'Eric周興哲《This Is Love》', url: 'https://i.ytimg.com/vi/HV9SQ3ZTGSA/maxresdefault.jpg' },
     { id: 'lxsOcRm3dsU', name: 'Eric周興哲《小時候的我們 When We Were Young》', url: 'https://i.ytimg.com/vi/lxsOcRm3dsU/maxresdefault.jpg?x-oss-process=image/resize,m_lfit,h_78,w_140' },
     { id: 'rFj6azCUYrU', name: '艾怡良 Eve Ai《Forever Young》', url: 'https://img.mymusic.net.tw/mms/album/L/916/691916.jpg' },
@@ -38,7 +38,7 @@ let youTubeMusicData = [
     { id: '62aYD2lzTgw', name: '黃宣 YELLOW【一天 Someday】', url: 'https://i.ytimg.com/vi/62aYD2lzTgw/maxresdefault.jpg' },
     { id: 'LHZXT6813VE', name: "Eric周興哲《怎麼了 What's Wrong》", url: 'https://c-sf.smule.com/rs-s95/arr/a5/17/6165eb56-4b7f-4506-8b22-5cb60bb4eaa9.jpg' },
     { id: 'O9NAkgH33Ts', name: '八三夭【Last Dance】想見你 偶像劇插曲 cover 伍佰', url: 'https://i1.hdslb.com/bfs/archive/5bc90ddb47ba5f6776f2b8d008c924e0be679666.jpg' },
-    { id: 'SzrDEBV28oM', name: '告五人 Accusefive 【披星戴月的想你】', url: 'https://lh3.googleusercontent.com/proxy/c2jK10aJYJQKrlzugeY18iOpYzwdnGQCm1HepP38D22PdlKUy254ZUHYeLyslU6YrTBgni6RbffYWXOxIO8dhvvzyJzx2kgg0f-cKtScw6GgeFtlZtdzsZcE67ivtjSnNQPOqSyv4HajentwRNty7tcUFvEpeYbj__TbR0cFngRxdd-3fngvXE8SoQRAzimQASKrO8Xel8_RGuDpv9dWVA3B7p4vYoE-SmCItXK0Gujc5-Ui-a2X7Djk4Z67S13OfHxuUDx57Jl0OGyq5HBeqfwzurL3sCc3_Q2n-L4CjlgjSRlAfoIBJrLCCLad6lpdL-aMvtOogLA9LsDEzOyzB8s' },
+    { id: 'SzrDEBV28oM', name: '告五人 Accusefive 【披星戴月的想你】', url: 'https://cfstatic.streetvoice.com/song_covers/ac/cu/accusefive/afZSkqPhp3rbhD39Y9XkYY.jpeg?x-oss-process=image/resize,m_fill,h_600,w_600,limit_0/interlace,1/quality,q_85/format,jpg' },
 ];
 
 
