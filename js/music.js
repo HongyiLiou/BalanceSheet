@@ -194,6 +194,8 @@ function playYouTubePlayer(index) {
     const pauseBtn = document.querySelector('.musicPageBox .controler .buttons .pause');
     const playBtn = document.querySelector('.musicPageBox .controler .buttons .play');
     const visual = document.querySelector('.musicPageBox .controler .viewer .visual');
+    const stopBtn = document.querySelector('.musicPageBox .controler .buttons .stop');
+    const iframeBtn = document.querySelector('.musicPageBox .controler .buttons .play .youtube-player');
     // stopYouTubePlayer(true);
     playBtn.style.display = 'none';
     pauseBtn.style.display = 'block';
@@ -208,7 +210,8 @@ function playYouTubePlayer(index) {
     album[index].classList.add('active');
     setTimeout(() => {
         youTubePlayer.playVideo();
-        // playBtn.click();
+        stopBtn.click();
+        // iframeBtn.click();
         youTubePlayer.setVolume(youTubePlayerVolume);
         visual.classList.add('active');        
     }, 1000);
@@ -476,7 +479,6 @@ function albumBoxScroller() {
         const playName = centerName.dataset.name;
         const playIndex = centerName.dataset.index;
         const findIndex = albums.find(x => x.dataset.index === playIndex);
-        // const stopBtn = document.querySelector('.musicPageBox .controler .buttons .stop');
         console.log(findIndex);
         
         controler_songName.innerHTML = playName;
@@ -500,7 +502,7 @@ function setShowMusicType() {
         albumList.style.display = 'block';
         playList.style.display = 'none';
     } else {
-        showMusicTypeRadio[0].setAttribute('checked', true);  
+        showMusicTypeRadio[0].setAttribute('checked', true);
         albumList.style.display = 'none';
         playList.style.display = 'flex';      
     }
