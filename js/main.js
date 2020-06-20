@@ -80,7 +80,6 @@ function loadPages() {
         $('body').append(sc);
 
         setTimeout(() => {
-            getVolumeYouTubePlayer();
             initialYouTubeMusicData();
             setShowMusicType();
         }, 0);

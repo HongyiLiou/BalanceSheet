@@ -18,6 +18,7 @@ let youTubePlayerSetting = {
     events: {
         'onReady': function() {
             youTubePlayer.setPlaybackQuality("small");
+            getVolumeYouTubePlayer();
         }
     }
 }
