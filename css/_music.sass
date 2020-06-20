@@ -835,6 +835,7 @@
 @media screen and (max-width: 1000px)
     .musicPageBox
         .controler
+            position: fixed
             height: auto
             left: 0
             bottom: 0
@@ -870,10 +871,10 @@
             display: none
         // 清單版型
         .playList
-            width: 100%
-            margin: 0
+            width: calc(100vw - 6px)
+            margin: auto
             ul
-                +size(100vw, calc(100vh - 235px))
+                +size(calc(100vw - 6px), calc(100vh - 265px))
                 padding: 0
             .rightArea
                 display: none
