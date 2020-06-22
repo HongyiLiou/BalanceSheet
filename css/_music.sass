@@ -54,7 +54,6 @@
                     overflow: hidden
                     position: relative
                     .youtube-player
-                        display: none
                         +ab_center
                         overflow: hidden
                         +size(100%, 100%)
@@ -194,6 +193,28 @@
                     animation-play-state: paused
                     &::before, &::after
                         animation-play-state: paused
+
+            .mobileDisplayMode
+                position: relative
+                // display: flex
+                display: none
+                +size(150px, 60px)
+
+                button
+                    display: flex
+                    width: 50%
+                    justify-content: center
+                    align-items: center
+                    outline: none
+                    font-size: 150%
+                    color: #FFF
+                    background: transparent
+                    border: none
+                    opacity: 0.6
+                    transition: 0.3s
+
+                    &.active
+                        opacity: 1
         
         // 呈現類別選項
         .setting
@@ -862,9 +883,15 @@
                             transform-origin: center center
                             transform: translate(-50%, -50%) rotate(-50deg)
             .viewer
+                width: 100%
+                justify-content: space-between
                 p
                     white-space: nowrap
                 .visual
+                    display: none
+                    // +size(80px, 45px)
+                .mobileDisplayMode
+                    display: flex
                     +size(80px, 45px)
             .setting
                 display: none
@@ -877,11 +904,34 @@
             width: calc(100vw - 6px)
             right: 3px
             bottom: 155px
+            ul, .rightArea
+                animation: appear 0.5s forwards
+                &.hide
+                    animation: disappear 0.5s forwards
+                    pointer-events: none
             ul
-                +size(calc(100vw - 6px), calc(100vh - 220px))
-                padding: 0
-            .rightArea
                 display: none
+                +size(calc(100vw - 6px), calc(100vh - 240px))
+                padding: 0
+                transition: 0.5s
+            .rightArea
+                +size(calc(100vw - 6px), calc(100vh - 240px))
+                display: block
+                transition: 0.5s
+                .albumBox
+                    // padding: 10px 0 200px 0
+                    padding-top: 0px
+                    transform: translateX(-50px)
+                    .album
+                        +size(100px, 100px)
+                p
+                    top: 295px
+                    font-size: 130%
+                .buttonArea
+                    top: 335px
+                    button
+                        padding: 6px 12px
+                        font-size: 90%
 
 
 

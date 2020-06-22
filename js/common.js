@@ -89,6 +89,16 @@ function getMousePos(event) {
     return { x: x, y: y };
 }
 
+
+/** 取得手指座標相對於元素位置 */
+function getTouchPos(event) {
+    const e = event.touches[0] || window.event.touches[0];
+    const x = e.pageX;
+    const y = e.pageY;
+    // alert('x: ' + x + '\ny: ' + y);
+    return { x: x, y: y };
+}
+
 /**
  * 顯示 Loading畫面
  * @param {Boolean} isShow 是否顯示

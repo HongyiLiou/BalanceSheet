@@ -545,6 +545,68 @@ function setShowMusicType() {
 }
 
 
+/** 設定顯示 Music的方式_Mobile */
+function setShowMusicType_modile() {
+    const body = document.querySelector('body');
+
+    if (body.offsetWidth < 500) {
+        const mobileDisplayMode = document.querySelectorAll('.musicPageBox .controler .viewer .mobileDisplayMode button');
+        const mobileDisplayMode_local = localStorage.getItem('mobileDisplayMode');
+        const displayAreaUl = document.querySelector('.musicPageBox .playList ul');
+        const displayAreaRightArea = document.querySelector('.musicPageBox .playList .rightArea');
+        const mode = ['list', 'album'];
+
+        console.log('displayAreaUl', displayAreaUl);
+        console.log('displayAreaRightArea', displayAreaRightArea);
+        
+
+        if (mobileDisplayMode_local && mobileDisplayMode_local === 'album') {
+            displayAreaUl.classList.remove('hide');
+            displayAreaUl.style.display = 'none';
+            displayAreaRightArea.style.display = 'block';
+            mobileDisplayMode[0].classList.remove('active');
+            mobileDisplayMode[1].classList.add('active');
+        } else {
+            displayAreaRightArea.classList.remove('hide');
+            displayAreaRightArea.style.display = 'none';
+            displayAreaUl.style.display = 'flex';
+            mobileDisplayMode[1].classList.remove('active');
+            mobileDisplayMode[0].classList.add('active');
+        }
+
+        // 切換 Mode事件
+        mobileDisplayMode.forEach((modeBtn, i) => {
+            modeBtn.addEventListener('click', () => {
+                localStorage.setItem('mobileDisplayMode', mode[i]);
+                if (i === 0) {
+                    displayAreaRightArea.classList.add('hide');
+                    mobileDisplayMode[1].classList.remove('active');
+                    mobileDisplayMode[0].classList.add('active');
+                    setTimeout(() => {
+                        displayAreaRightArea.classList.remove('hide');
+                        displayAreaRightArea.style.display = 'none';
+                        displayAreaUl.style.display = 'flex';
+                    }, 500);
+
+                } else {
+                    displayAreaUl.classList.add('hide');
+                    mobileDisplayMode[0].classList.remove('active');
+                    mobileDisplayMode[1].classList.add('active');
+                    setTimeout(() => {
+                        displayAreaUl.classList.remove('hide');
+                        displayAreaUl.style.display = 'none';
+                        displayAreaRightArea.style.display = 'block';
+                    }, 500);
+                }
+            });
+        });
+
+    } else {
+        return;
+    }
+    
+}
+
 
 
 
