@@ -210,7 +210,7 @@ function playYouTubePlayer(index) {
     album[index].classList.add('active');
     setTimeout(() => {
         youTubePlayer.playVideo();
-        stopBtn.click();
+        // stopBtn.click();
         // iframeBtn.click();
         youTubePlayer.setVolume(youTubePlayerVolume);
         visual.classList.add('active');        
