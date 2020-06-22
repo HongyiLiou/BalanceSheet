@@ -72,7 +72,7 @@ function initialYouTubeMusicData() {
                     <p>${musicData.name}</p>
                 </div>
                 <div class="setting">
-                    <button class="play" onclick="onYouTubeIframeAPIReady('${musicData.id}'); playYouTubePlayer(${i});" title="播放"></button>
+                    <button class="play" onclick="onYouTubeIframeAPIReady('${musicData.id}'); clickToPlay(${i});" title="播放"></button>
                     <button class="edit" title="編輯"></button>
                     <button class="delete" title="刪除"></button>
                 </div>
@@ -89,7 +89,7 @@ function initialYouTubeMusicData() {
         // 唱片版型
         const albumTemplate = `
         <li>
-            <div class="album" data-index="${i}" data-id="${musicData.id}" data-name="${musicData.name}" onclick="onYouTubeIframeAPIReady('${musicData.id}'); playYouTubePlayer(${i});">
+            <div class="album" data-index="${i}" data-id="${musicData.id}" data-name="${musicData.name}" onclick="onYouTubeIframeAPIReady('${musicData.id}'); clickToPlay(${i});">
                 <div class="albumBg" style="background-image: url(${musicData.url});"></div>
                 <div class="albumPhoto" style="background-image: url(${musicData.url});"></div>
             </div>
@@ -192,8 +192,8 @@ function playYouTubePlayer(index) {
     const pauseBtn = document.querySelector('.musicPageBox .controler .buttons .pause');
     const playBtn = document.querySelector('.musicPageBox .controler .buttons .play');
     const visual = document.querySelector('.musicPageBox .controler .viewer .visual');
-    const stopBtn = document.querySelector('.musicPageBox .controler .buttons .stop');
-    const iframeBtn = document.querySelector('.musicPageBox .controler .buttons .play .youtube-player');
+    // const stopBtn = document.querySelector('.musicPageBox .controler .buttons .stop');
+    // const iframeBtn = document.querySelector('.musicPageBox .controler .buttons .play .youtube-player');
     // stopYouTubePlayer(true);
     playBtn.style.display = 'none';
     pauseBtn.style.display = 'block';
@@ -217,10 +217,11 @@ function playYouTubePlayer(index) {
     
 }
 
-function iframeCLick() {
-    const iframeBtn = document.querySelector('.musicPageBox .controler .buttons .play .youtube-player');
-    playYouTubePlayer();
-    youTubePlayer.playVideo();
+function clickToPlay(index) {
+    playYouTubePlayer(index);
+    setTimeout(() => {
+        youTubePlayer.playVideo();
+    }, 1000);
 
 }
 
@@ -488,7 +489,7 @@ function albumBoxScroller() {
         
         controler_songName.innerHTML = playName;
         onYouTubeIframeAPIReady(playID);
-        playYouTubePlayer(findIndex.dataset.index);
+        clickToPlay(findIndex.dataset.index);
     });
     
 }
