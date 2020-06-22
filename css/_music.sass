@@ -866,15 +866,17 @@
                     +size(80px, 45px)
             .setting
                 display: none
-        // 唱片版型
+        // 唱片版型_RWD 1000
         .albumList
             display: none
-        // 清單版型
+        // 清單版型_RWD 1000
         .playList
+            position: fixed
             width: calc(100vw - 6px)
-            margin: auto
+            right: 3px
+            bottom: 155px
             ul
-                +size(calc(100vw - 6px), calc(100vh - 265px))
+                +size(calc(100vw - 6px), calc(100vh - 220px))
                 padding: 0
             .rightArea
                 display: none
