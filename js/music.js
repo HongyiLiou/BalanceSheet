@@ -39,8 +39,6 @@ let youTubeMusicData = [
     { id: '56vWTa3GyAk', name: '郁可唯 Yisa Yu - 路過人間', url: 'https://i.kfs.io/album/global/50498542,3v1/fit/500x500.jpg' },
     { id: '-Km_NObPF5E', name: '孫盛希 Shi Shi【Someday or One Day】', url: 'https://i.ytimg.com/vi/-Km_NObPF5E/maxresdefault.jpg' },
     { id: '62aYD2lzTgw', name: '黃宣 YELLOW【一天 Someday】', url: 'https://i.ytimg.com/vi/62aYD2lzTgw/maxresdefault.jpg' },
-    { id: 'LHZXT6813VE', name: "Eric周興哲《怎麼了 What's Wrong》", url: 'https://c-sf.smule.com/rs-s95/arr/a5/17/6165eb56-4b7f-4506-8b22-5cb60bb4eaa9.jpg' },
-    { id: 'O9NAkgH33Ts', name: '八三夭【Last Dance】想見你 偶像劇插曲 cover 伍佰', url: 'https://i1.hdslb.com/bfs/archive/5bc90ddb47ba5f6776f2b8d008c924e0be679666.jpg' },
     { id: 'SzrDEBV28oM', name: '告五人 Accusefive 【披星戴月的想你】', url: 'https://cfstatic.streetvoice.com/song_covers/ac/cu/accusefive/afZSkqPhp3rbhD39Y9XkYY.jpeg?x-oss-process=image/resize,m_fill,h_600,w_600,limit_0/interlace,1/quality,q_85/format,jpg' },
 ];
 
