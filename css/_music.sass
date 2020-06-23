@@ -24,7 +24,7 @@
             transition: 0.5s
 
         .mobileMessage
-            display: block
+            display: none
             position: absolute
             left: 110px
             top: 5px
@@ -147,14 +147,16 @@
 
                 span
                     display: block
+                    width: fit-content
                     color: #FFF
+                    white-space: nowrap
                     animation: songName 10s -5s linear infinite
 
                     +keyframes(songName)
                         0%
-                            transform: translateX(300px)
+                            transform: translateX(100%)
                         100%
-                            transform: translateX(-300px)
+                            transform: translateX(-100%)
 
             .visual
                 position: relative
@@ -783,9 +785,9 @@
                     span
                         +keyframes(songName)
                             0%
-                                transform: translateX(200px)
+                                transform: translateX(100%)
                             100%
-                                transform: translateX(-200px)
+                                transform: translateX(-100%)
                 .visual
                     +size(100px, 45px)
             .setting
@@ -877,6 +879,8 @@
             .albumPhoto
                 +size(90px, 90px)
                 margin-bottom: 4px
+            .mobileMessage
+                display: block
             .buttons
                 margin-bottom: 15px
                 button
