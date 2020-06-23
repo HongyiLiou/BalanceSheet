@@ -2,6 +2,29 @@
     position: relative
     +size(100%, 100%)
 
+    .addMusic
+        position: absolute
+        top: 150px
+        left: -60px
+        padding: 8px 18px
+        border: solid 1px rgba(#FFF, 0.6)
+        font-size: 100%
+        border-radius: 100px
+        color: #FFF
+        background: #000
+        cursor: pointer
+        white-space: nowrap
+        outline: none
+        transition: 0.3s
+        z-index: 1
+
+        &:hover
+            background: #3a3a3a
+        &:active
+            transition: 0s
+            background: #666666
+
+
     .controler
         position: absolute
         display: flex
@@ -919,6 +942,10 @@
 // RWD
 @media screen and (max-width: 1400px)
     .musicPageBox
+        .addMusic
+            top: 40px
+            font-size: 90%
+            padding: 6px 12px
         .controler
             height: 60px
             bottom: 80px
@@ -1039,6 +1066,12 @@
 
 @media screen and (max-width: 1000px)
     .musicPageBox
+        .addMusic
+            left: initial
+            right: 10px
+            top: 20px
+            font-size: 90%
+            padding: 6px 12px
         .controler
             position: fixed
             height: auto
@@ -1097,11 +1130,11 @@
                     pointer-events: none
             ul
                 display: none
-                +size(calc(100vw - 6px), calc(100vh - 270px))
+                +size(calc(100vw - 6px), calc(100vh - 280px))
                 padding: 0
                 transition: 0.5s
             .rightArea
-                +size(calc(100vw - 6px), calc(100vh - 270px))
+                +size(calc(100vw - 6px), calc(100vh - 280px))
                 display: block
                 transition: 0.5s
                 .albumBox

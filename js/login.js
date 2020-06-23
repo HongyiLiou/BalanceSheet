@@ -262,6 +262,9 @@ function afterLogin() {
 
     // 取得記事本
     getNotes();
+
+    // 取得背景音樂
+    getMusic();
 }
 
 

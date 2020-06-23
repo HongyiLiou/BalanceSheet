@@ -43,79 +43,122 @@ let youTubeMusicData = [
 ];
 
 
-/** 重置背景音樂清單 */
-function initialYouTubeMusicData() {
-    // 清單版型
-    /** List區域 */const playList = document.querySelector('.musicPageBox .playList ul');
-    /** 右側可滑動區域 */const albumBox = document.querySelector('.musicPageBox .playList .rightArea .albumBox');
-    /** 右側可滑動區域_曲名 */const albumBox_songName = document.querySelector('.musicPageBox .playList .rightArea p');
+/** 初始化背景音樂 */
+function getMusic() {
+    showLoading(true);
 
-    // 唱片版型
-    /** Album區域 */const albumList = document.querySelector('.musicPageBox .albumList ul');
+    // https://script.google.com/macros/s/AKfycbwHwM6OtQBrS72hK_WPLWk56i-6xnP4CA-XkVxXJJdCzLU6tlsw/exec
+    const accountNumber = JSON.parse(localStorage.getItem('login')).AccountNumber;
+    const parameter = {
+        accountNumber: accountNumber,
+        functionType: 'get',
+    };
+    $.get('https://script.google.com/macros/s/AKfycbwHwM6OtQBrS72hK_WPLWk56i-6xnP4CA-XkVxXJJdCzLU6tlsw/exec', parameter).done(res => {
+        showLoading(false);
+        // console.log('Music', res);
+        const resData = res;
+
+        // 沒有背景音樂時
+        if (resData === 'true') {
+            albumList.innerHTML = `
+                <li>
+                    <p>尚無歌曲</p>
+                </li>
+            `;
+            playList.innerHTML = `
+                <li>
+                    <div class="list" style="width: 100%;">
+                        <p style="width: 100%; text-align: center;">尚無歌曲</p>
+                    </div>
+                </li>
+            `;
+
+        } else {
+            const outputData = [];
+            // 清單版型
+            /** List區域 */const playList = document.querySelector('.musicPageBox .playList ul');
+            /** 右側可滑動區域 */const albumBox = document.querySelector('.musicPageBox .playList .rightArea .albumBox');
+            /** 右側可滑動區域_曲名 */const albumBox_songName = document.querySelector('.musicPageBox .playList .rightArea p');
+        
+            // 唱片版型
+            /** Album區域 */const albumList = document.querySelector('.musicPageBox .albumList ul');
     
-    // 清單版型
-    let playListHTML = '';
-    let albumBoxHTML = '';
-    playList.innerHTML = '';
-    albumBox.innerHTML = '';
+            // 清單版型
+            let playListHTML = '';
+            let albumBoxHTML = '';
+            playList.innerHTML = '';
+            albumBox.innerHTML = '';
+        
+            // 唱片版型
+            let albumListHTML = '';
+            albumList.innerHTML = '';
 
-    // 唱片版型
-    let albumListHTML = '';
-    albumList.innerHTML = '';
+            resData.forEach(data => {
+                const listData = {
+                    id: data[0],
+                    name: data[1],
+                    url: data[2]
+                };
+                outputData.push(listData);
+            });
 
-    youTubeMusicData.forEach((musicData, i) => {
-        // 清單版型
-        const playListTemplate = `
-            <li>
-                <div class="list">
-                    <div class="albumPhoto" style="background-image: url(${musicData.url});"></div>
-                    <p>${musicData.name}</p>
-                </div>
-                <div class="setting">
-                    <button class="play" onclick="onYouTubeIframeAPIReady('${musicData.id}'); clickToPlay(${i});" title="播放"></button>
-                    <button class="edit" title="編輯"></button>
-                    <button class="delete" title="刪除"></button>
-                </div>
-            </li>
-        `;
+            console.log('Music:', outputData);
 
-        const albumBoxTemplate = `
-            <div data-index="${i}" data-id="${musicData.id}" data-name="${musicData.name}"
-                class="album ${i === 0 ? 'center' : ''}${i === 1 ? 'right' : ''}${i === 2 ? 'visableRight' : ''}"
-                style="background-image: url(${musicData.url})">
-            </div>
-        `;
+            outputData.forEach((music, i) => {
+                // 清單版型
+                const playListTemplate = `
+                    <li>
+                        <div class="list">
+                            <div class="albumPhoto" style="background-image: url(${music.url});"></div>
+                            <p>${music.name}</p>
+                        </div>
+                        <div class="setting">
+                            <button class="play" onclick="onYouTubeIframeAPIReady('${music.id}'); clickToPlay(${i});" title="播放"></button>
+                            <button class="edit" title="編輯"></button>
+                            <button class="delete" title="刪除"></button>
+                        </div>
+                    </li>
+                `;
+        
+                const albumBoxTemplate = `
+                    <div data-index="${i}" data-id="${music.id}" data-name="${music.name}"
+                        class="album ${i === 0 ? 'center' : ''}${i === 1 ? 'right' : ''}${i === 2 ? 'visableRight' : ''}"
+                        style="background-image: url(${music.url})">
+                    </div>
+                `;
+        
+                // 唱片版型
+                const albumTemplate = `
+                    <li>
+                        <div class="album" data-index="${i}" data-id="${music.id}" data-name="${music.name}" onclick="onYouTubeIframeAPIReady('${music.id}'); clickToPlay(${i});">
+                            <div class="albumBg" style="background-image: url(${music.url});"></div>
+                            <div class="albumPhoto" style="background-image: url(${music.url});"></div>
+                        </div>
+                        <div class="setting">
+                            <button class="edit" title="編輯"></button>
+                            <button class="delete" title="刪除"></button>
+                        </div>
+                        <p title="${music.name}">${music.name}</p>
+                    </li>
+                `;
+        
+        
+                playListHTML += playListTemplate;
+                albumListHTML += albumTemplate;
+        
+                albumBoxHTML += albumBoxTemplate;
 
-        // 唱片版型
-        const albumTemplate = `
-        <li>
-            <div class="album" data-index="${i}" data-id="${musicData.id}" data-name="${musicData.name}" onclick="onYouTubeIframeAPIReady('${musicData.id}'); clickToPlay(${i});">
-                <div class="albumBg" style="background-image: url(${musicData.url});"></div>
-                <div class="albumPhoto" style="background-image: url(${musicData.url});"></div>
-            </div>
-            <div class="setting">
-                <button class="edit" title="編輯"></button>
-                <button class="delete" title="刪除"></button>
-            </div>
-            <p title="${musicData.name}">${musicData.name}</p>
-        </li>
-    `;
+            });
 
-
-        playListHTML += playListTemplate;
-        albumListHTML += albumTemplate;
-
-        albumBoxHTML += albumBoxTemplate;
-    })
-
-    // 清單版型
-    playList.innerHTML = playListHTML;
-    albumList.innerHTML = albumListHTML;
-    albumBox.innerHTML = albumBoxHTML;
-    albumBox_songName.innerHTML = youTubeMusicData[0].name;
-    setScrollAlbumClickEvent();
-    albumBoxScroller();
-
+            // 清單版型
+            playList.innerHTML = playListHTML;
+            albumList.innerHTML = albumListHTML;
+            albumBox.innerHTML = albumBoxHTML;
+            albumBox_songName.innerHTML = youTubeMusicData[0].name;
+            setScrollAlbumClickEvent();
+            albumBoxScroller();
+        }
+    });
 }
 
 
@@ -375,23 +418,35 @@ function albumBoxScroller() {
         if (albumBox.firstElementChild.classList.contains('center')) {
             albumBox.firstElementChild.style.transition = '0.2s';
             albumBox.firstElementChild.style.transform = 'translateX(10px) scale(1.8)';
-            albumBox.firstElementChild.nextElementSibling.style.transition = '0.2s';
-            albumBox.firstElementChild.nextElementSibling.style.transform = 'translateX(5px) scale(1.3)';
-            albumBox.firstElementChild.nextElementSibling.nextElementSibling.style.transition = '0.2s';
-            // albumBox.firstElementChild.nextElementSibling.nextElementSibling.style.transform = 'translateX(2px)';
+            if (albumBox.firstElementChild.nextElementSibling) {
+                albumBox.firstElementChild.nextElementSibling.style.transition = '0.2s';
+                albumBox.firstElementChild.nextElementSibling.style.transform = 'translateX(5px) scale(1.3)';
+            }
+            if (albumBox.firstElementChild.nextElementSibling.nextElementSibling) {
+                albumBox.firstElementChild.nextElementSibling.nextElementSibling.style.transition = '0.2s';
+                // albumBox.firstElementChild.nextElementSibling.nextElementSibling.style.transform = 'translateX(2px)';
+            }
             setTimeout(() => {
                 albumBox.firstElementChild.style.transition = '0.5s';
                 albumBox.firstElementChild.style.transform = 'translateX(0px) scale(1.8)';
-                albumBox.firstElementChild.nextElementSibling.style.transition = '0.5s';
-                albumBox.firstElementChild.nextElementSibling.style.transform = 'translateX(0px) scale(1.3)';
-                albumBox.firstElementChild.nextElementSibling.nextElementSibling.style.transition = '0.5s';
-                // albumBox.firstElementChild.nextElementSibling.nextElementSibling.style.transform = 'translateX(0px)';
+                if (albumBox.firstElementChild.nextElementSibling) {
+                    albumBox.firstElementChild.nextElementSibling.style.transition = '0.5s';
+                    albumBox.firstElementChild.nextElementSibling.style.transform = 'translateX(0px) scale(1.3)';
+                }
+                if (albumBox.firstElementChild.nextElementSibling.nextElementSibling) {
+                    albumBox.firstElementChild.nextElementSibling.nextElementSibling.style.transition = '0.5s';
+                    // albumBox.firstElementChild.nextElementSibling.nextElementSibling.style.transform = 'translateX(0px)';
+                }
                 setTimeout(() => {
                     albumBox.firstElementChild.style.transition = '0.8s';
                     albumBox.firstElementChild.style.transform = '';
-                    albumBox.firstElementChild.nextElementSibling.style.transition = '0.8s';
-                    albumBox.firstElementChild.nextElementSibling.style.transform = '';
-                    albumBox.firstElementChild.nextElementSibling.nextElementSibling.style.transition = '0.8s';
+                    if (albumBox.firstElementChild.nextElementSibling) {
+                        albumBox.firstElementChild.nextElementSibling.style.transition = '0.8s';
+                        albumBox.firstElementChild.nextElementSibling.style.transform = '';
+                    }
+                    if (albumBox.firstElementChild.nextElementSibling.nextElementSibling) {
+                        albumBox.firstElementChild.nextElementSibling.nextElementSibling.style.transition = '0.8s';
+                    }
                 }, 500);
             }, 100);
             return;
@@ -428,23 +483,35 @@ function albumBoxScroller() {
         if (albumBox.lastElementChild.classList.contains('center')) {
             albumBox.lastElementChild.style.transition = '0.2s';
             albumBox.lastElementChild.style.transform = 'translateX(-10px) scale(1.8)';
-            albumBox.lastElementChild.previousElementSibling.style.transition = '0.2s';
-            albumBox.lastElementChild.previousElementSibling.style.transform = 'translateX(-5px) scale(1.3)';
-            albumBox.lastElementChild.previousElementSibling.previousElementSibling.style.transition = '0.2s';
-            // albumBox.lastElementChild.previousElementSibling.previousElementSibling.style.transform = 'translateX(-2px)';
+            if (albumBox.lastElementChild.previousElementSibling) {
+                albumBox.lastElementChild.previousElementSibling.style.transition = '0.2s';
+                albumBox.lastElementChild.previousElementSibling.style.transform = 'translateX(-5px) scale(1.3)';
+            }
+            if (albumBox.lastElementChild.previousElementSibling.previousElementSibling) {
+                albumBox.lastElementChild.previousElementSibling.previousElementSibling.style.transition = '0.2s';
+                // albumBox.lastElementChild.previousElementSibling.previousElementSibling.style.transform = 'translateX(-2px)';
+            }
             setTimeout(() => {
                 albumBox.lastElementChild.style.transition = '0.5s';
                 albumBox.lastElementChild.style.transform = 'translateX(0px) scale(1.8)';
-                albumBox.lastElementChild.previousElementSibling.style.transition = '0.5s';
-                albumBox.lastElementChild.previousElementSibling.style.transform = 'translateX(0px) scale(1.3)';
-                albumBox.lastElementChild.previousElementSibling.previousElementSibling.style.transition = '0.5s';
-                // albumBox.lastElementChild.previousElementSibling.previousElementSibling.style.transform = 'translateX(0px)';
+                if (albumBox.lastElementChild.previousElementSibling) {
+                    albumBox.lastElementChild.previousElementSibling.style.transition = '0.5s';
+                    albumBox.lastElementChild.previousElementSibling.style.transform = 'translateX(0px) scale(1.3)';
+                }
+                if (albumBox.lastElementChild.previousElementSibling.previousElementSibling) {
+                    albumBox.lastElementChild.previousElementSibling.previousElementSibling.style.transition = '0.5s';
+                    // albumBox.lastElementChild.previousElementSibling.previousElementSibling.style.transform = 'translateX(0px)';
+                }
                 setTimeout(() => {
                     albumBox.lastElementChild.style.transition = '0.8s';
                     albumBox.lastElementChild.style.transform = '';
-                    albumBox.lastElementChild.previousElementSibling.style.transition = '0.8s';
-                    albumBox.lastElementChild.previousElementSibling.style.transform = '';
-                    albumBox.lastElementChild.previousElementSibling.previousElementSibling.style.transition = '0.8s';
+                    if (albumBox.lastElementChild.previousElementSibling) {
+                        albumBox.lastElementChild.previousElementSibling.style.transition = '0.8s';
+                        albumBox.lastElementChild.previousElementSibling.style.transform = '';
+                    }
+                    if (albumBox.lastElementChild.previousElementSibling.previousElementSibling) {
+                        albumBox.lastElementChild.previousElementSibling.previousElementSibling.style.transition = '0.8s';
+                    }
                 }, 500);
             }, 100);
             return;

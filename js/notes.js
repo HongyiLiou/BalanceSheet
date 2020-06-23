@@ -60,7 +60,7 @@ function getNotes() {
                 `;
                 noteList.appendChild(li);
     
-            })
+            });
     
             noteList.innerHTML = noteList.innerHTML + `
                 <li>
