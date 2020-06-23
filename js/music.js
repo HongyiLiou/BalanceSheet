@@ -194,7 +194,7 @@ function playYouTubePlayer(index) {
     const visual = document.querySelector('.musicPageBox .controler .viewer .visual');
     // const stopBtn = document.querySelector('.musicPageBox .controler .buttons .stop');
     // const iframeBtn = document.querySelector('.musicPageBox .controler .buttons .play .youtube-player');
-    // stopYouTubePlayer(true);
+    stopYouTubePlayer(true);
     playBtn.style.display = 'none';
     pauseBtn.style.display = 'block';
     if (!index && index !== 0) {
