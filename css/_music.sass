@@ -23,6 +23,15 @@
             background-size: cover
             transition: 0.5s
 
+        .mobileMessage
+            display: block
+            position: absolute
+            left: 110px
+            top: 5px
+            padding-right: 3px
+            color: #FFF
+            font-size: 65%
+
         .buttons
             display: flex
             margin-right: 10px
@@ -864,10 +873,12 @@
             bottom: 0
             flex-wrap: wrap
             justify-content: space-between
+            align-items: flex-end
             .albumPhoto
                 +size(90px, 90px)
                 margin-bottom: 4px
             .buttons
+                margin-bottom: 15px
                 button
                     +size(35px, 35px)
                     i
@@ -911,11 +922,11 @@
                     pointer-events: none
             ul
                 display: none
-                +size(calc(100vw - 6px), calc(100vh - 240px))
+                +size(calc(100vw - 6px), calc(100vh - 270px))
                 padding: 0
                 transition: 0.5s
             .rightArea
-                +size(calc(100vw - 6px), calc(100vh - 240px))
+                +size(calc(100vw - 6px), calc(100vh - 270px))
                 display: block
                 transition: 0.5s
                 .albumBox
@@ -925,10 +936,10 @@
                     .album
                         +size(100px, 100px)
                 p
-                    top: 295px
+                    top: 270px
                     font-size: 130%
                 .buttonArea
-                    top: 335px
+                    top: 300px
                     button
                         padding: 6px 12px
                         font-size: 90%

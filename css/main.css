@@ -741,9 +741,9 @@ input[type=number] {
   animation: beam 3s infinite;
 }
 .brightness .beams .beam1 {
-  width: 550px;
-  height: 20px;
-  transform: rotate(-72deg);
+  width: 650px;
+  height: 15px;
+  transform: rotate(-48deg);
   animation-delay: -0.5s;
 }
 @keyframes beam {
@@ -758,9 +758,9 @@ input[type=number] {
   }
 }
 .brightness .beams .beam2 {
-  width: 500px;
-  height: 5px;
-  transform: rotate(-36deg);
+  width: 700px;
+  height: 10px;
+  transform: rotate(-48deg);
   animation-delay: -1s;
 }
 @keyframes beam {
@@ -775,8 +775,8 @@ input[type=number] {
   }
 }
 .brightness .beams .beam3 {
-  width: 700px;
-  height: 10px;
+  width: 550px;
+  height: 25px;
   transform: rotate(-60deg);
   animation-delay: -1.5s;
 }
@@ -792,9 +792,9 @@ input[type=number] {
   }
 }
 .brightness .beams .beam4 {
-  width: 550px;
-  height: 30px;
-  transform: rotate(-48deg);
+  width: 500px;
+  height: 5px;
+  transform: rotate(-60deg);
   animation-delay: -2s;
 }
 @keyframes beam {
@@ -809,9 +809,9 @@ input[type=number] {
   }
 }
 .brightness .beams .beam5 {
-  width: 700px;
-  height: 5px;
-  transform: rotate(-60deg);
+  width: 450px;
+  height: 15px;
+  transform: rotate(-48deg);
   animation-delay: -2.5s;
 }
 @keyframes beam {
@@ -826,9 +826,9 @@ input[type=number] {
   }
 }
 .brightness .beams .beam6 {
-  width: 500px;
-  height: 10px;
-  transform: rotate(-72deg);
+  width: 700px;
+  height: 5px;
+  transform: rotate(-12deg);
   animation-delay: -3s;
 }
 @keyframes beam {
@@ -863,14 +863,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-270px, 270px);
+    transform: translate(-210px, 210px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-100px, 350px);
+    transform: translate(-250px, 300px);
   }
 }
 .brightness .shines .shine2 {
@@ -883,14 +883,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-270px, 90px);
+    transform: translate(-240px, 60px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-150px, 250px);
+    transform: translate(-200px, 350px);
   }
 }
 .brightness .shines .shine3 {
@@ -903,14 +903,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-180px, 120px);
+    transform: translate(-180px, 270px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-150px, 250px);
+    transform: translate(-400px, 500px);
   }
 }
 .brightness .shines .shine4 {
@@ -923,14 +923,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-90px, 60px);
+    transform: translate(-30px, 30px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-300px, 400px);
+    transform: translate(-500px, 150px);
   }
 }
 .brightness .shines .shine5 {
@@ -943,14 +943,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-150px, 120px);
+    transform: translate(-180px, 270px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-500px, 400px);
+    transform: translate(-350px, 400px);
   }
 }
 .brightness .shines .shine6 {
@@ -963,14 +963,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-60px, 270px);
+    transform: translate(-180px, 210px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-400px, 200px);
+    transform: translate(-150px, 250px);
   }
 }
 .brightness .shines .shine7 {
@@ -983,14 +983,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-150px, 150px);
+    transform: translate(-90px, 240px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-50px, 500px);
+    transform: translate(-350px, 450px);
   }
 }
 .brightness .shines .shine8 {
@@ -1003,14 +1003,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-240px, 180px);
+    transform: translate(-240px, 120px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-400px, 300px);
+    transform: translate(-400px, 450px);
   }
 }
 .brightness .shines .shine9 {
@@ -1023,14 +1023,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-30px, 120px);
+    transform: translate(-150px, 240px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-300px, 400px);
+    transform: translate(-400px, 400px);
   }
 }
 .brightness .shines .shine10 {
@@ -1043,14 +1043,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-60px, 240px);
+    transform: translate(-180px, 240px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-300px, 100px);
+    transform: translate(-300px, 500px);
   }
 }
 
@@ -3348,6 +3348,15 @@ input[type=number] {
   background-size: cover;
   transition: 0.5s;
 }
+.musicPageBox .controler .mobileMessage {
+  display: block;
+  position: absolute;
+  left: 110px;
+  top: 5px;
+  padding-right: 3px;
+  color: #FFF;
+  font-size: 65%;
+}
 .musicPageBox .controler .buttons {
   display: flex;
   margin-right: 10px;
@@ -4292,11 +4301,15 @@ input[type=number] {
     bottom: 0;
     flex-wrap: wrap;
     justify-content: space-between;
+    align-items: flex-end;
   }
   .musicPageBox .controler .albumPhoto {
     width: 90px;
     height: 90px;
     margin-bottom: 4px;
+  }
+  .musicPageBox .controler .buttons {
+    margin-bottom: 15px;
   }
   .musicPageBox .controler .buttons button {
     width: 35px;
@@ -4353,13 +4366,13 @@ input[type=number] {
   .musicPageBox .playList ul {
     display: none;
     width: calc(100vw - 6px);
-    height: calc(100vh - 240px);
+    height: calc(100vh - 270px);
     padding: 0;
     transition: 0.5s;
   }
   .musicPageBox .playList .rightArea {
     width: calc(100vw - 6px);
-    height: calc(100vh - 240px);
+    height: calc(100vh - 270px);
     display: block;
     transition: 0.5s;
   }
@@ -4372,11 +4385,11 @@ input[type=number] {
     height: 100px;
   }
   .musicPageBox .playList .rightArea p {
-    top: 295px;
+    top: 270px;
     font-size: 130%;
   }
   .musicPageBox .playList .rightArea .buttonArea {
-    top: 335px;
+    top: 300px;
   }
   .musicPageBox .playList .rightArea .buttonArea button {
     padding: 6px 12px;
