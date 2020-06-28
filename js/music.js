@@ -30,16 +30,16 @@ let youTubePlayerVolume = 100;
 let youTubePlayingIndex = 0;
 /** 背景音樂清單 */
 let youTubeMusicData = [
-    { id: 'LHZXT6813VE', name: '想見你', url: 'https://i.imgur.com/9A4Mx75.jpg' },
-    { id: 'Ykx8JjW-c8Y', name: '【陳情令】主題曲《無羈》肖戰 王一博', url: 'https://inews.gtimg.com/newsapp_bt/0/9554276998/641' },
-    { id: 'J_USGypwMrQ', name: '【陳情令】電視劇插曲《意難平》', url: 'https://i.ytimg.com/vi/-Zge37ofenc/hqdefault.jpg' },
-    { id: 'HV9SQ3ZTGSA', name: 'Eric周興哲《This Is Love》', url: 'https://i.ytimg.com/vi/HV9SQ3ZTGSA/maxresdefault.jpg' },
-    { id: 'lxsOcRm3dsU', name: 'Eric周興哲《小時候的我們 When We Were Young》', url: 'https://i.ytimg.com/vi/lxsOcRm3dsU/maxresdefault.jpg?x-oss-process=image/resize,m_lfit,h_78,w_140' },
-    { id: 'rFj6azCUYrU', name: '艾怡良 Eve Ai《Forever Young》', url: 'https://img.mymusic.net.tw/mms/album/L/916/691916.jpg' },
-    { id: '56vWTa3GyAk', name: '郁可唯 Yisa Yu - 路過人間', url: 'https://i.kfs.io/album/global/50498542,3v1/fit/500x500.jpg' },
-    { id: '-Km_NObPF5E', name: '孫盛希 Shi Shi【Someday or One Day】', url: 'https://i.ytimg.com/vi/-Km_NObPF5E/maxresdefault.jpg' },
-    { id: '62aYD2lzTgw', name: '黃宣 YELLOW【一天 Someday】', url: 'https://i.ytimg.com/vi/62aYD2lzTgw/maxresdefault.jpg' },
-    { id: 'SzrDEBV28oM', name: '告五人 Accusefive 【披星戴月的想你】', url: 'https://cfstatic.streetvoice.com/song_covers/ac/cu/accusefive/afZSkqPhp3rbhD39Y9XkYY.jpeg?x-oss-process=image/resize,m_fill,h_600,w_600,limit_0/interlace,1/quality,q_85/format,jpg' },
+    // { id: 'LHZXT6813VE', name: '想見你', url: 'https://i.imgur.com/9A4Mx75.jpg' },
+    // { id: 'Ykx8JjW-c8Y', name: '【陳情令】主題曲《無羈》肖戰 王一博', url: 'https://inews.gtimg.com/newsapp_bt/0/9554276998/641' },
+    // { id: 'J_USGypwMrQ', name: '【陳情令】電視劇插曲《意難平》', url: 'https://i.ytimg.com/vi/-Zge37ofenc/hqdefault.jpg' },
+    // { id: 'HV9SQ3ZTGSA', name: 'Eric周興哲《This Is Love》', url: 'https://i.ytimg.com/vi/HV9SQ3ZTGSA/maxresdefault.jpg' },
+    // { id: 'lxsOcRm3dsU', name: 'Eric周興哲《小時候的我們 When We Were Young》', url: 'https://i.ytimg.com/vi/lxsOcRm3dsU/maxresdefault.jpg?x-oss-process=image/resize,m_lfit,h_78,w_140' },
+    // { id: 'rFj6azCUYrU', name: '艾怡良 Eve Ai《Forever Young》', url: 'https://img.mymusic.net.tw/mms/album/L/916/691916.jpg' },
+    // { id: '56vWTa3GyAk', name: '郁可唯 Yisa Yu - 路過人間', url: 'https://i.kfs.io/album/global/50498542,3v1/fit/500x500.jpg' },
+    // { id: '-Km_NObPF5E', name: '孫盛希 Shi Shi【Someday or One Day】', url: 'https://i.ytimg.com/vi/-Km_NObPF5E/maxresdefault.jpg' },
+    // { id: '62aYD2lzTgw', name: '黃宣 YELLOW【一天 Someday】', url: 'https://i.ytimg.com/vi/62aYD2lzTgw/maxresdefault.jpg' },
+    // { id: 'SzrDEBV28oM', name: '告五人 Accusefive 【披星戴月的想你】', url: 'https://cfstatic.streetvoice.com/song_covers/ac/cu/accusefive/afZSkqPhp3rbhD39Y9XkYY.jpeg?x-oss-process=image/resize,m_fill,h_600,w_600,limit_0/interlace,1/quality,q_85/format,jpg' },
 ];
 
 
@@ -57,6 +57,13 @@ function getMusic() {
         showLoading(false);
         // console.log('Music', res);
         const resData = res;
+        // 清單版型
+        /** List區域 */const playList = document.querySelector('.musicPageBox .playList ul');
+        /** 右側可滑動區域 */const albumBox = document.querySelector('.musicPageBox .playList .rightArea .albumBox');
+        /** 右側可滑動區域_曲名 */const albumBox_songName = document.querySelector('.musicPageBox .playList .rightArea p');
+    
+        // 唱片版型
+        /** Album區域 */const albumList = document.querySelector('.musicPageBox .albumList ul');
 
         // 沒有背景音樂時
         if (resData === 'true') {
@@ -75,13 +82,6 @@ function getMusic() {
 
         } else {
             const outputData = [];
-            // 清單版型
-            /** List區域 */const playList = document.querySelector('.musicPageBox .playList ul');
-            /** 右側可滑動區域 */const albumBox = document.querySelector('.musicPageBox .playList .rightArea .albumBox');
-            /** 右側可滑動區域_曲名 */const albumBox_songName = document.querySelector('.musicPageBox .playList .rightArea p');
-        
-            // 唱片版型
-            /** Album區域 */const albumList = document.querySelector('.musicPageBox .albumList ul');
     
             // 清單版型
             let playListHTML = '';
@@ -103,8 +103,9 @@ function getMusic() {
             });
 
             console.log('Music:', outputData);
+            youTubeMusicData = outputData;
 
-            outputData.forEach((music, i) => {
+            youTubeMusicData.forEach((music, i) => {
                 // 清單版型
                 const playListTemplate = `
                     <li>
@@ -675,32 +676,61 @@ function setShowMusicType_modile() {
 }
 
 
+/** 新增背景音樂彈窗 */
+function showPopupBox_addMusic() {
+    const popupBox_addMusic = document.createElement('div');
+    popupBox_addMusic.className = 'popupBox_addMusic';
+    popupBox_addMusic.innerHTML = `
+        <div class="inputArea">
+            <label class="userInput">
+                <p>歌曲名稱</p>
+                <input id="popupInput_musicName" type="text" spellcheck="false" onblur="setPopupInputTitle(true, 0)">
+            </label>
+            <label class="userInput">
+                <p>YouTube網址</p>
+                <input id="popupInput_musicUrl" type="text" spellcheck="false" onblur="setPopupInputTitle(true, 0)">
+            </label>
+            <label class="userInput">
+                <p>封面圖片網址</p>
+                <input id="popupInput_musicPhoto"type="text" spellcheck="false" onblur="setPopupInputTitle(true, 0)">
+            </label>
+        </div>
+        <div class="buttonArea">
+            <button class="cancel">Cancel</button>
+            <button class="enter">Add</button>
+        </div>
+    `;
+    document.body.appendChild(popupBox_addMusic);
 
+    /** 彈窗訊息 */const message = document.querySelector('.popupBox_addMusic p');
+    /** 彈窗 Input Area */const popupInputArea = document.querySelector('.popupBox_addMusic .inputArea');
+    /** 彈窗 Input */const popupInput = document.querySelectorAll('.popupBox_addMusic .inputArea .userInput');
+    /** 彈窗 Input 標題 */const popupInputTitle = document.querySelectorAll('.popupBox_addMusic .inputArea p');
+    /** 取消按鈕 */const cancelBtn = document.querySelector('.popupBox_addMusic .cancel');
+    /** 確認按鈕 */const enterBtn = document.querySelector('.popupBox_addMusic .enter');
+    
 
+    popupBox_addMusic.style.display = 'block';
 
+    const onClickScreenHolder = () => {
+        popupBox_addMusic.classList.add('hide');
+        setTimeout(() => {
+            popupBox_addMusic.classList.remove('hide');
+            document.body.removeChild(popupBox_addMusic);
+            cancelBtn.removeEventListener('click', timer);
+        }, 500);
+    }
+    
+    showScreenHolder(true, onClickScreenHolder);
 
+    const enterTimer = enterBtn.addEventListener('click', () => {
+        popupBox_addMusic.classList.add('hide');
+        showScreenHolder(false);
+        setTimeout(() => {
+            popupBox_addMusic.classList.remove('hide');
+            document.body.removeChild(popupBox_addMusic);
+            enterBtn.removeEventListener('click', enterTimer);
+        }, 500);
+    });
 
-
-//     妳說了分開的那晚我徹夜未眠，腦袋重播我們認識起開始的種種，我們是怎麼從那快樂的模樣走散的？
-// 第一個吸引我的是妳的笑臉，看著就讓人覺得療癒，像小天使一樣，後來才發現妳整個人都很治癒人心，很多舉動都非常可愛，不管別人怎麼說，我說的可愛都不是單指外表，不過妳好像從未聽懂我的意思。
-// 儘管有很多生活習慣不同，時常為了小事吵架，但其實在妳身邊總是開心、安心的，我很喜歡有妳陪伴。
-// 雖然不常說，但每次獨自一人的時候都是期待和妳見面的。因為近日有點久沒見面，時常和妳說想妳，沒想到這次妳不僅沒有感受到，還決定不再回應了。
-// 人和人之間，不知道哪一次見的就是最後一面了，我沒少經歷過，卻永遠無法習慣，總是覺得受傷。
-// 
-//     我不是一個好男友、答應妳的事沒做到讓妳覺得我說話不算話、傷害了妳使妳缺乏安全感、規矩很多讓妳覺得綁手綁腳、明明放假卻想在家休息、吵架就說一些刺人的話讓妳難過，但讓妳難過的我其實也在傷害自己，我何嘗不希望自己能犧牲些什麼來換取妳的笑臉，撫平妳的悲傷。
-// 漸漸的，我發覺只要一段時間沒見面，獨自一人的過程中妳就會開始疏遠我，然後我們變得連文字都會起爭執讓彼此難受，而且妳會很難過，然後我必須到妳身邊去，只有見到面才能真正解決當下的不愉快。所以每當我讓妳很難過時，即使犧牲精神體力休假也想到妳身邊安撫妳，只是因為不想讓妳繼續難過。
-// 後來我又發現，即使在當下安撫了妳，妳也並未看得見並把我的付出放在心上，只覺得我能去找妳很好，只有當下很好。雖說不求回報，但被一次次被忽視也讓人心寒。
-// 妳說我愛計較付出，我只是覺得應該把錢花在確實讓妳有幫助的事物上，但這些看起來妳同樣忘記了，因為他們不是讓妳感動的東西，不是妳想要的陪伴或出遊。
-// 我承認自己體力太差很需要休息，但休假還是會問問妳讓我去找妳，妳嘴上雖說讓我好好休息，心裡卻不見得真這麼想，久了就在心裡認為我不願付出時間精力陪妳，每逢假日只想在家休息。
-// 讓我在家好好休息的是妳，怨我放假只想休息的也是妳，妳說同妳出遊的朋友都雙雙對對只有妳孤身一人，卻忘了我把休假都拿來陪妳，而剩下的1.5天妳叫我留到我的生日。
-// 
-//     我不是不想好好陪妳，如妳所說多出去走走，活的不那麼封閉不要只剩自己，也決定趁朋友邀約的時機帶妳一起出遊，能讓妳開心也能把妳介紹給我為數不多的朋友。
-// 曾經也盯著剛出浴的妳，覺得像可愛公仔一樣療癒的同時，也覺得自己真的可以和眼前的妳劉孟宣一直走下去。儘管個性使然生活會爭吵，但我相信只要之後距離變近了、能更常見面了，興許就會好轉，畢竟我的觀察是因為遠距離造成疏遠，疏離感造成爭吵與傷害。
-// 我說過絕對不會主動提分手，原因是我覺得儘管有些時候會難過，但和妳一起的幸福快樂、妳的可愛等等都足以讓我繼續走下去，只要是劉孟宣就好，我一直相信我們會越來越好，簡單說就是沒想過要和妳分開。
-// 妳知道嗎，我不怕黑不怕冷不怕熱不怕蟑螂，但是很怕被傷害，我說過每當妳難過的時候我也會傷害自己，就算彼此現狀有點進退兩難，我還是想試著走下去，我覺得妳值得。
-// 可如今妳卻真的不要我了，既然這是妳認為正確的"往前"，那我便不再攔妳，或許這也是我自作自受，甚至還想到或許此刻有別的男生像當初的我一樣在妳身邊等妳了。
-// 最後還是有些建議，不要再找遠距離，妳沒辦法承受；發脾氣前想清楚自己情緒的源頭是生氣還是難過，是難過的話就好好說好好解決，比起吵架強太多了，這是妳最大的缺點了。
-// 決定把這些話寫在這裡，是因為想到妳或許還會想起我，或許還會來看看，但萬一沒看到也算了。
-// 一句"不重要了"就能讓想和自己在乎的妳討論自己在乎的事的人閉嘴，可真好用。
-// 我很喜歡妳，也還在學著用妳希望的方式愛妳，現在只覺得心疼自己。
-// 說好的小人國台東武嶺去不了，想一起吃的麵家二眷沒辦法，連最近說要陪妳去重新貼保護貼也不行了吧，但最最重要的是沒辦法再被妳療癒了，弘弘真的好難過哈哈。
+}

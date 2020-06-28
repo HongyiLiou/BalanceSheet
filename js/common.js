@@ -332,8 +332,6 @@ function showPopupBox(popupSettingObj) {
             }, 500);
         });
     }
-
-
 }
 
 
