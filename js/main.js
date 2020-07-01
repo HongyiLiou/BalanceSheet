@@ -59,6 +59,17 @@ function loadPages() {
         }, 0);
     });
 
+    // Calendar Page
+    $('#calendarPage').load('html/calendar.html', function() {
+        const sc = document.createElement('script');
+        sc.src = 'js/calendar.js';
+        $('body').append(sc);
+        
+        setTimeout(() => {
+            inititialDate_balanceSheet();
+        }, 0);
+    });
+
     // Links Page
     $('#linksPage').load('html/links.html', function() {
         const sc = document.createElement('script');

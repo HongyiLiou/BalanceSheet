@@ -676,7 +676,21 @@ function setShowMusicType_modile() {
 }
 
 
-/** 新增背景音樂彈窗 */
+/** 新增背景音樂彈窗
+ * @param {{
+ *  inputText1
+ *  inputText2
+ *  inputText3
+ *  enterBtn: string
+ *  enterClick: function()
+ * }} popupSettingObj
+ * 
+  inputText1: 「歌曲名稱」欄位值
+  inputText2: 「YouTube網址」欄位值
+  inputText3: 「封面圖片網址」欄位值
+  enterBtn: 「確認」按鈕文字,
+  enterClick: 「確認」按鈕 function,
+ */
 function showPopupBox_addMusic() {
     const popupBox_addMusic = document.createElement('div');
     popupBox_addMusic.className = 'popupBox_addMusic';
@@ -684,15 +698,15 @@ function showPopupBox_addMusic() {
         <div class="inputArea">
             <label class="userInput">
                 <p>歌曲名稱</p>
-                <input id="popupInput_musicName" type="text" spellcheck="false" onblur="setPopupInputTitle(true, 0)">
+                <input id="popupInput_musicName" type="text" spellcheck="false" onblur="setMusicPopupInputTitle(true, 0)">
             </label>
             <label class="userInput">
                 <p>YouTube網址</p>
-                <input id="popupInput_musicUrl" type="text" spellcheck="false" onblur="setPopupInputTitle(true, 0)">
+                <input id="popupInput_musicUrl" type="text" spellcheck="false" onblur="setMusicPopupInputTitle(true, 1)">
             </label>
             <label class="userInput">
                 <p>封面圖片網址</p>
-                <input id="popupInput_musicPhoto"type="text" spellcheck="false" onblur="setPopupInputTitle(true, 0)">
+                <input id="popupInput_musicPhoto"type="text" spellcheck="false" onblur="setMusicPopupInputTitle(true, 2)">
             </label>
         </div>
         <div class="buttonArea">
@@ -711,6 +725,20 @@ function showPopupBox_addMusic() {
     
 
     popupBox_addMusic.style.display = 'block';
+
+    setMusicPopupInputTitle(false);
+    setMusicPopupInputTitle(true, 0);
+    setMusicPopupInputTitle(true, 1);
+
+    const timer = cancelBtn.addEventListener('click', () => {
+        showScreenHolder(false);
+        popupBox_addMusic.classList.add('hide');
+        setTimeout(() => {
+            popupBox_addMusic.classList.remove('hide');
+            document.body.removeChild(popupBox_addMusic);
+            cancelBtn.removeEventListener('click', timer);
+        }, 500);
+    });
 
     const onClickScreenHolder = () => {
         popupBox_addMusic.classList.add('hide');
@@ -733,4 +761,33 @@ function showPopupBox_addMusic() {
         }, 500);
     });
 
+}
+
+
+/**
+ * 設定 Popup Input 標題 css
+ * @param {Boolean} check 是否檢查欄位值
+ * @param {Number} index
+ */
+function setMusicPopupInputTitle(check, index) {
+    const userInputTitle = document.querySelectorAll('.popupBox_addMusic .inputArea .userInput p');
+    const userInput = document.querySelectorAll('.popupBox_addMusic .inputArea .userInput input');
+    
+
+    if (check) {
+        if (userInput[index].value) {
+            userInputTitle[index].classList.add('active');
+        } else {
+            userInputTitle[index].classList.remove('active');
+        }
+    } else {
+        userInput.forEach((input, i) => {
+            input.addEventListener('focus', () => {
+                userInputTitle[i].classList.add('active');
+            })
+            if (input.value) {
+                userInputTitle[i].classList.add('active');
+            }
+        });
+    }
 }
