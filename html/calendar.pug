@@ -1,2 +1,142 @@
 article.calendarPageBox
-    p(style="font-size: 200%; font-weight: 900;") 開發中
+    //- p(style="font-size: 200%; font-weight: 900;") 開發中
+    //- Google Calendar test
+    button#authorize_button(style="display: none;") Authorize
+    button#signout_button(style="display: none;") Sign Out
+    button(onclick="handleAuthClick()") 登入驗證
+    button(onclick="handleSignoutClick()") 登出
+    pre#content(style="white-space: pre-wrap; color: #FFFFFF;")
+
+    section.showArea(style="display: none;")
+        header
+            p.week 星期六
+        .content
+            p.month Feb
+            p.day 16
+            p.year 2020
+
+    section.selectArea
+        header
+            .datePicker_year
+                p 2020 年
+                .prev
+                    i.fa.fa-chevron-left
+                .next
+                    i.fa.fa-chevron-right
+            .datePicker_month
+                p 2 月
+                .prev
+                    i.fa.fa-chevron-left
+                .next
+                    i.fa.fa-chevron-right
+
+        .calender
+            .userSelectArea.active
+                .weekDays
+                    p Sun
+                    p Mon
+                    p Tue
+                    p Wes
+                    p Thu
+                    p Fri
+                    p Sat
+                ul.datePicker_day
+                    li
+                    li
+                    li
+                        h6 1
+                    li
+                        h6 2
+                        .textArea
+                            p(title="十元買早餐") 十元買早餐
+                            p(title="八元買豆干") 八元買豆干
+                            p(title="長度測試長度測試長度測試長度測試") 長度測試長度測試長度測試長度測試
+                            p(title="高度測試") 高度測試
+                            p(title="高度測試") 高度測試
+                            p(title="高度測試") 高度測試
+                    li
+                        h6 3
+                    li
+                        h6 4
+                    li
+                        h6 5
+                    li
+                        h6 6
+                    li
+                        h6 7
+                    li
+                        h6 8
+                    li
+                        h6 9
+                    li
+                        h6 10
+                    li
+                        h6 11
+                    li
+                        h6 12
+                    li
+                        h6 13
+                    li
+                        h6 14
+                    li
+                        h6 15
+                    li
+                        h6 16
+                    li
+                        h6 17
+                    li
+                        h6 18
+                    li
+                        h6 19
+                    li
+                        h6 20
+                    li
+                        h6 21
+                    li
+                        h6 22
+                    li
+                        h6 23
+                    li
+                        h6 24
+                    li
+                        h6 25
+                    li
+                        h6 26
+                    li
+                        h6 27
+                    li
+                        h6 28
+                    li
+                        h6 29
+                    li
+                        h6 30
+                    li
+                    li
+                    li
+                    li
+                    li
+                    li
+                    li
+                    li
+                    li
+                    li
+
+            .selectYearArea(style="display: none;")
+                ul
+                    li 2020
+                    li 2021
+                    li 2022
+            .selectMonthArea(style="display: none;")
+                ul
+                    li 1 月
+                    li 2 月
+                    li 3 月
+                    li 4 月
+                    li 5 月
+                    li 6 月
+                    li 7 月
+                    li 8 月
+                    li 9 月
+                    li 10 月
+                    li 11 月
+                    li 12 月

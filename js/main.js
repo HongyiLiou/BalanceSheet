@@ -64,10 +64,14 @@ function loadPages() {
         const sc = document.createElement('script');
         sc.src = 'js/calendar.js';
         $('body').append(sc);
-        
+
         setTimeout(() => {
-            inititialDate_balanceSheet();
+            handleClientLoad();
+            window.onreadystatechange = function() {
+                if (this.readyState === 'complete') this.onload();
+            }
         }, 0);
+        
     });
 
     // Links Page

@@ -1,0 +1,199 @@
+.calendarPageBox
+    position: relative
+
+    .selectArea
+        position: relative
+        padding: 120px 80px 200px 200px
+        margin-left: -200px
+        width: calc(125% - 150px)
+        color: #FFF
+        max-height: 100vh
+        
+        header
+            +size(100%, 40px)
+            display: flex
+            padding: 0 5px
+            justify-content: center
+
+            .datePicker_year, .datePicker_month
+                position: relative
+                display: flex
+                justify-content: center
+                align-items: center
+                +size(180px, 100%)
+                line-height: 40px
+
+                p
+                    +size(70px, 25px)
+                    line-height: 25px
+                    text-align: center
+                    border-radius: 100px
+                    transition: 0.3s
+                    cursor: pointer
+
+                    &:hover
+                        background: rgba(#FFF, 0.6)
+                    &:active
+                        transition: 0s
+                        background: rgba(#FFF, 1)
+                
+                .prev, .next
+                    display: flex
+                    position: absolute
+                    +size(30px, 30px)
+                    top: 50%
+                    align-items: center
+                    justify-content: center
+                    transform: translateY(-50%)
+                    border-radius: 100px
+                    transition: 0.3s
+                    cursor: pointer
+
+                    &:hover
+                        background: rgba(#FFF, 0.7)
+                        i
+                            color: rgba(#000, 0.95)
+                    &:active
+                        transition: 0s
+                        background: rgba(#FFF, 1)
+
+                    i
+                        transition: 0.3s
+                        color: rgba(#000, 0.3)
+
+                .prev
+                    left: 15px
+
+                .next
+                    right: 15px
+
+        .calender
+            position: relative
+            width: 100%
+            .userSelectArea
+                width: 100%
+                position: absolute
+                opacity: 0
+                transition: 0.5s
+                pointer-events: none
+
+                &.active
+                    opacity: 1
+                    pointer-events: auto
+
+                .weekDays
+                    display: flex
+                    justify-content: space-between
+                    // padding: 0 25px
+                    
+                    p
+                        width: calc(100% / 7 - 1px)
+                        margin: 0 1px 1px 0
+                        background: rgba(#000, 0.7)
+                        text-align: center
+                        font-size: 90%
+                        line-height: 30px
+
+                    p:first-child, p:last-child
+                        color: #ff8f8f
+                        background: rgba(#630000, 0.6)
+
+                ul
+                    display: flex
+                    flex-wrap: wrap
+                    justify-content: space-between
+                    // padding: 0 25px
+
+                .datePicker_day
+                    li
+                        position: relative
+                        display: flex
+                        // +size(34px, 34px)
+                        padding-bottom: 8%
+                        margin: 0 1px 1px 0
+                        width: calc(100% / 7 - 1px)
+                        align-items: center
+                        justify-content: center
+                        font-size: 90%
+                        background: rgba(#000, 0.6)
+                        transition: 0.3s
+                        cursor: pointer
+
+                        &:hover
+                            background: rgba(#000, 0.4)
+
+                        &.active
+                            background: rgba(#000, 0.6)
+                            border: solid 2px rgba(#868686, 0.6)
+                            color: #FFF
+
+                        &:nth-child(7n), &:nth-child(7n + 1)
+                            color: #ff8f8f
+                            background: rgba(#2b0d0d, 0.6)                            
+
+                        &.pointerEventAuto
+                            pointer-events: auto
+
+                        h6
+                            position: absolute
+                            top: 5px
+                            left: 5px
+                            font-weight: normal 
+                            opacity: 0.7
+                        
+                        .textArea
+                            width: calc(100% - 10px)
+                            height: calc(100% - 30px)
+                            top: 25px
+                            left: 5px
+                            position: absolute
+                            // background: #000
+                            overflow-x: hidden
+                            overflow-y: auto
+
+                            &::-webkit-scrollbar
+                                display: none
+
+                            p
+                                width: 100%
+                                overflow: hidden
+                                text-overflow: ellipsis
+                                white-space: nowrap
+                                font-size: 90%
+                                // opacity: 0.7
+
+            .selectYearArea, .selectMonthArea
+                position: absolute
+                opacity: 0
+                transition: 0.5s
+                pointer-events: none
+                
+                &.active
+                    opacity: 1
+                    pointer-events: auto
+
+                ul
+                    display: flex
+                    flex-wrap: wrap
+                    justify-content: space-between
+                    padding: 0 21px
+
+                    li
+                        +size(60px, 35px)
+                        background: rgba(#FFF, 0.3)
+                        text-align: center
+                        font-size: 90%
+                        margin: 1px 2px
+                        line-height: 35px
+                        transition: 0.3s
+                        cursor: pointer
+
+                        &:hover
+                            background: rgba(#FFF, 0.7)
+                        &:active
+                            transition: 0s
+                            background: rgba(#FFF, 1)
+
+                        &.active
+                            background: rgba(#000, 0.6)
+                            color: #FFF
