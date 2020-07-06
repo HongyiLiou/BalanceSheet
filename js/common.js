@@ -23,8 +23,60 @@ function getToday() {
         minute: minute,
         second: second
     }
-    
+
     return timeObj;
+}
+
+
+/**轉換日期 yyyymmdd => yyyy-mm-dd
+ *
+ * @param date yyyymmdd: 字串 ex.20190823
+ */
+function convertDateString01(date) {
+    if (date) {
+        let dd, mm, yyyy;
+        dd = date.substr(6, 2);
+        mm = date.substr(4, 2);
+        yyyy = date.substr(0, 4);
+        return yyyy + '-' + mm + '-' + dd;
+    } else {
+        return '';
+    }
+}
+
+
+/** DateJson轉字串
+   *
+   * @param dateObj
+   */
+function convertDateJsonToDateString(dateObj) {
+    if (dateObj != null && dateObj !== '') {
+        return `${dateObj.year}-${dateObj.month}-${dateObj.date}`;
+    } else {
+        return null;
+    }
+}
+
+
+/** Date型態轉json
+ *
+ * @param dateObj 日期
+ */
+function convertDateToDateJson(dateObj) {
+    if (dateObj != null) {
+        let dd, mm, yyyy;
+        dd = dateObj.getDate();
+        mm = dateObj.getMonth() + 1;
+        yyyy = dateObj.getFullYear();
+        const dateJson = {
+            'year': yyyy,
+            'month': mm,
+            'day': dd
+        };
+        return dateJson;
+    } else {
+        return null;
+    }
 }
 
 
@@ -35,7 +87,7 @@ function getToday() {
 function changeWeekDay(day) {
     let dayString;
 
-    switch(day) {
+    switch (day) {
         case 0:
             dayString = '日';
             break;
@@ -119,13 +171,13 @@ function showLoading(isShow) {
  * @param {Document} document
  * @param {String[]} keys
  */
-function preventInputKeys(document, keys) {    
-    document.addEventListener('keypress', function(e) {
+function preventInputKeys(document, keys) {
+    document.addEventListener('keypress', function (e) {
         console.log(e.key);
-        
+
         keys.forEach(key => {
-            if (e.key === key) { 
-              e.preventDefault();
+            if (e.key === key) {
+                e.preventDefault();
             } // 當輸出等於 key的時候，阻止預設行為
         });
     })
@@ -157,21 +209,21 @@ function showScreenHolder(boolean, doSomething, cssClass) {
                 });
             }, 0)
         }
-    
+
         // 監聽事件
-        screenHolder.addEventListener('click', () => {            
+        screenHolder.addEventListener('click', () => {
             if (doSomething) {
                 doSomething();
             }
-    
+
             screenHolder.classList.remove('show');
-            
+
             if (cssClass) {
                 cssClass.forEach(cssClass => {
                     screenHolder.classList.remove(cssClass);
                 });
             }
-            
+
             setTimeout(() => {
                 document.body.removeChild(screenHolder);
             }, 300)
@@ -188,11 +240,11 @@ function showScreenHolder(boolean, doSomething, cssClass) {
         }
         setTimeout(() => {
             document.body.removeChild(screenHolder);
-            screenHolder = null;            
+            screenHolder = null;
         }, 300)
     }
 
-    
+
 
 }
 
@@ -255,7 +307,7 @@ function showPopupBox(popupSettingObj) {
     /** 取消按鈕 */const cancelBtn = document.querySelector('.popupBox_checkMessage .cancel');
     /** 確認按鈕 */const enterBtn = document.querySelector('.popupBox_checkMessage .enter');
     const settingObj = popupSettingObj;
-    
+
 
     popupBox_checkMessage.style.display = 'block';
     cancelBtn.style.display = settingObj.showCancel ? 'block' : 'none';
@@ -280,9 +332,9 @@ function showPopupBox(popupSettingObj) {
         cancelBtn.innerHTML = settingObj.cancelBtn;
     }
     if (settingObj.showInput && settingObj.showInput === 1) {
-        
+
     }
-    
+
     if (settingObj.enterClick) {
         enterBtn.addEventListener('click', settingObj.enterClick);
     }
@@ -295,7 +347,7 @@ function showPopupBox(popupSettingObj) {
             cancelBtn.removeEventListener('click', timer);
         }, 500);
     }
-    
+
     showScreenHolder(true, onClickScreenHolder);
 
     const enterTimer = enterBtn.addEventListener('click', () => {

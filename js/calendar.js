@@ -1,4 +1,3 @@
-console.log('Calendar Page is ready.');
 
 /** client_id */
 // 778859427056-10vjmc69bmoco4ihp23te7vn08pj7o4f.apps.googleusercontent.com
@@ -41,20 +40,20 @@ const credentialsJSON = {
 
 // Client ID and API key from the Developer Console
 // var CLIENT_ID = '642711235750-8rblvofmb9lpe7ldja07mkou1g38bf7u.apps.googleusercontent.com';
-var CLIENT_ID = '642711235750-8rblvofmb9lpe7ldja07mkou1g38bf7u.apps.googleusercontent.com';
-var API_KEY = 'AIzaSyDwWZgP8EiFW1IdT0_Ejctl9ecUl9shOvo';
+const CLIENT_ID = '642711235750-8rblvofmb9lpe7ldja07mkou1g38bf7u.apps.googleusercontent.com';
+const API_KEY = 'AIzaSyDwWZgP8EiFW1IdT0_Ejctl9ecUl9shOvo';
 
 // Array of API discovery doc URLs for APIs used by the quickstart
-var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"];
+const DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"];
 
 // Authorization scopes required by the API; multiple scopes can be
 // included, separated by spaces.
-var SCOPES = "https://www.googleapis.com/auth/calendar";
+const SCOPES = "https://www.googleapis.com/auth/calendar";
 
-var authorizeButton = document.getElementById('authorize_button');
-var signoutButton = document.getElementById('signout_button');
+const authorizeButton = document.getElementById('authorize_button');
+const signoutButton = document.getElementById('signout_button');
 
-var auth2;
+let auth2;
 
 /**
  *  On load, called to load the auth2 library and API client library.
@@ -63,7 +62,7 @@ function handleClientLoad() {
     gapi.load('client:auth2', initClient);
 }
 
-var revokeAllScopes = function () {
+const revokeAllScopes = function () {
     auth2.disconnect();
 }
 
@@ -81,7 +80,6 @@ function initClient() {
         auth2 = gapi.auth2.getAuthInstance();
         // Listen for sign-in state changes.
         auth2.isSignedIn.listen(updateSigninStatus);
-        auth2.disconnect();
         // Handle the initial sign-in state.
         updateSigninStatus(auth2.isSignedIn.get());
         authorizeButton.onclick = handleAuthClick;
@@ -162,4 +160,55 @@ function listUpcomingEvents() {
             appendPre('No upcoming events found.');
         }
     });
+}
+
+
+/** 寫入 Google 行事曆 */
+function insertEventToGoogleCalendar() {
+    const googleCalendarEvent = document.querySelectorAll('.googleCalendarEvent');
+
+    
+    const timeObj1 = {
+        year: 2020,
+        month: 7,
+        date: 9,
+    }
+
+    const timeObj2 = {
+        year: 2020,
+        month: 7,
+        date: 10,
+    }
+
+    
+    for (let i = 0; i < googleCalendarEvent.length ; i++) {
+        var event = {
+            'summary': googleCalendarEvent[i].value,
+            'location': "",
+            'description': '一些描述',
+            'start': {
+            'date': convertDateJsonToDateString(timeObj1),
+            'timeZone': 'Asia/Taipei'
+            },
+            'end': {
+            'date': convertDateJsonToDateString(timeObj2),
+            'timeZone': 'Asia/Taipei'
+            },
+            'reminders': {
+            'useDefault': false,
+            'overrides': [
+                // {'method': 'email', 'minutes': 24 * 60},
+                {'method': 'popup', 'minutes': 10}
+            ]
+            }
+        };
+
+        var request = gapi.client.calendar.events.insert({
+            'calendarId': 'primary',
+            'resource': event
+        });
+
+        request.execute();
+    }
+    // listUpcomingEvents();
 }

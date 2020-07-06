@@ -6,6 +6,9 @@ article.calendarPageBox
     button(onclick="handleAuthClick()") 登入驗證
     button(onclick="handleSignoutClick()") 登出
     pre#content(style="white-space: pre-wrap; color: #FFFFFF;")
+    input.googleCalendarEvent(type="text" placeholder="行程1")
+    input.googleCalendarEvent(type="text" placeholder="行程2")
+    button(onclick="insertEventToGoogleCalendar()") 寫入行程
 
     section.showArea(style="display: none;")
         header
