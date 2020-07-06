@@ -66,6 +66,7 @@ function loadPages() {
         $('body').append(sc);
 
         setTimeout(() => {
+            window.onload = function(){}
             handleClientLoad();
             window.onreadystatechange = function() {
                 if (this.readyState === 'complete') this.onload();

@@ -20,8 +20,8 @@ function setDateToShow(dateString) {
     /** 顯示年 */const dataPickerShowYear = document.querySelector('.datePickerBox .year');
     /** 顯示月 */const dataPickerShowMonth = document.querySelector('.datePickerBox .month');
     /** 顯示日 */const dataPickerShowDay = document.querySelector('.datePickerBox .day');
-    /** 年份選取按鈕 */const datePicker_year = document.querySelector('.datePicker_year p');
-    /** 月份選取按鈕 */const datePicker_month = document.querySelector('.datePicker_month p');
+    /** 年份選取按鈕 */const datePicker_year = document.querySelector('.datePickerBox .datePicker_year p');
+    /** 月份選取按鈕 */const datePicker_month = document.querySelector('.datePickerBox .datePicker_month p');
     const date = new Date(dateString);
     const dateToString = date.toString();
     
@@ -77,7 +77,7 @@ function setShowWeek(weekString) {
 function setCalender(monthString) {
     /** 顯示年 */const dataPickerShowYear = document.querySelector('.datePickerBox .year');
     /** 顯示日 */const dataPickerShowDay = document.querySelector('.datePickerBox .day');
-    /** 日期選取按鈕 */const datePicker_day = document.querySelectorAll('.datePicker_day li');
+    /** 日期選取按鈕 */const datePicker_day = document.querySelectorAll('.datePickerBox .datePicker_day li');
     const date = new Date(Number(dataPickerShowYear.innerHTML), monthString, 0);
     const week = new Date(`${dataPickerShowYear.innerHTML}/${monthString}/1`).getDay();
     const fullMonth = date.getDate();
@@ -123,17 +123,17 @@ function setCalender(monthString) {
 function setButtons() {
     /** 顯示年 */const dataPickerShowYear = document.querySelector('.datePickerBox .year');
     /** 顯示日 */const dataPickerShowDay = document.querySelector('.datePickerBox .day');
-    /** 年份選取按鈕 */const datePicker_year = document.querySelector('.datePicker_year p');
-    /** 月份選取按鈕 */const datePicker_month = document.querySelector('.datePicker_month p');
-    /** 區塊顯示 - 日期選擇 */const userSelectArea = document.querySelector('.userSelectArea');
-    /** 區塊顯示 - 年份選擇 */const selectYearArea = document.querySelector('.selectYearArea');
-    /** 區塊顯示 - 月份選擇  */const selectMonthArea = document.querySelector('.selectMonthArea');
-    /** 所有年份選單 */const selectYearAreaBtns = document.querySelectorAll('.selectYearArea ul li');
-    /** 所有月份選單 */const selectMonthAreaBtns = document.querySelectorAll('.selectMonthArea ul li');
-    /** Prev - year */const datePicker_yearPrevBtn = document.querySelector('.datePicker_year .prev');
-    /** Next - year */const datePicker_yearNextBtn = document.querySelector('.datePicker_year .next');
-    /** Prev - month */const datePicker_monthPrevBtn = document.querySelector('.datePicker_month .prev');
-    /** Next - month */const datePicker_monthNextBtn = document.querySelector('.datePicker_month .next');
+    /** 年份選取按鈕 */const datePicker_year = document.querySelector('.datePickerBox .datePicker_year p');
+    /** 月份選取按鈕 */const datePicker_month = document.querySelector('.datePickerBox .datePicker_month p');
+    /** 區塊顯示 - 日期選擇 */const userSelectArea = document.querySelector('.datePickerBox .userSelectArea');
+    /** 區塊顯示 - 年份選擇 */const selectYearArea = document.querySelector('.datePickerBox .selectYearArea');
+    /** 區塊顯示 - 月份選擇  */const selectMonthArea = document.querySelector('.datePickerBox .selectMonthArea');
+    /** 所有年份選單 */const selectYearAreaBtns = document.querySelectorAll('.datePickerBox .selectYearArea ul li');
+    /** 所有月份選單 */const selectMonthAreaBtns = document.querySelectorAll('.datePickerBox .selectMonthArea ul li');
+    /** Prev - year */const datePicker_yearPrevBtn = document.querySelector('.datePickerBox .datePicker_year .prev');
+    /** Next - year */const datePicker_yearNextBtn = document.querySelector('.datePickerBox .datePicker_year .next');
+    /** Prev - month */const datePicker_monthPrevBtn = document.querySelector('.datePickerBox .datePicker_month .prev');
+    /** Next - month */const datePicker_monthNextBtn = document.querySelector('.datePickerBox .datePicker_month .next');
     /** Today button */const todayBtn = document.querySelector('.datePickerBox .todayBtn');
     /** Cancel button */const cancelBtn = document.querySelector('.datePickerBox .cancelBtn');
     /** OK button */const okBtn = document.querySelector('.datePickerBox .okBtn');
