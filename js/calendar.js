@@ -166,7 +166,6 @@ function listUpcomingEvents() {
 /** 寫入 Google 行事曆 */
 function insertEventToGoogleCalendar() {
     const googleCalendarEvent = document.querySelectorAll('.googleCalendarEvent');
-
     
     const timeObj1 = {
         year: 2020,
@@ -179,7 +178,6 @@ function insertEventToGoogleCalendar() {
         month: 7,
         date: 10,
     }
-
     
     for (let i = 0; i < googleCalendarEvent.length ; i++) {
         var event = {
@@ -187,19 +185,19 @@ function insertEventToGoogleCalendar() {
             'location': "",
             'description': '一些描述',
             'start': {
-            'date': convertDateJsonToDateString(timeObj1),
-            'timeZone': 'Asia/Taipei'
-            },
+                'date': convertDateJsonToDateString(timeObj1),
+                'timeZone': 'Asia/Taipei'
+                },
             'end': {
-            'date': convertDateJsonToDateString(timeObj2),
-            'timeZone': 'Asia/Taipei'
-            },
+                'date': convertDateJsonToDateString(timeObj2),
+                'timeZone': 'Asia/Taipei'
+                },
             'reminders': {
-            'useDefault': false,
-            'overrides': [
-                // {'method': 'email', 'minutes': 24 * 60},
-                {'method': 'popup', 'minutes': 10}
-            ]
+                'useDefault': false,
+                'overrides': [
+                    // {'method': 'email', 'minutes': 24 * 60},
+                    {'method': 'popup', 'minutes': 10}
+                ]
             }
         };
 
@@ -211,4 +209,41 @@ function insertEventToGoogleCalendar() {
         request.execute();
     }
     // listUpcomingEvents();
+}
+
+
+function calendarListener() {
+    const dateBlocks = document.querySelectorAll('.calendarPageBox .selectArea .calender .userSelectArea .datePicker_day li');
+    const showArea_calendar = document.querySelector('.calendarPageBox .showArea_calendar');
+
+    dateBlocks.forEach(dayBlock => {
+        dayBlock.addEventListener('click', () => {
+            const mousePos = getMouseElementPos();
+            const windowWidth = document.body.offsetWidth;
+            const windowHeight = document.body.offsetHeight;
+            // console.log('mousePos', getMouseElementPos());
+            // console.log('offsetWidth', document.body.offsetWidth);
+            // console.log('offsetHeight', document.body.offsetHeight);
+            showArea_calendar.style.display = 'block';
+
+            // 畫面左右
+            if (mousePos.x < (windowWidth / 2)) {
+                showArea_calendar.style.left = `${mousePos.x - 500}px`;
+            }
+            if (mousePos.x > (windowWidth / 2)) {
+                showArea_calendar.style.left = `${mousePos.x - 950}px`;
+            }
+            // 畫面上下
+            if (mousePos.y < (windowHeight / 2)) {
+                showArea_calendar.style.top = 'initial';
+                showArea_calendar.style.bottom = `-${mousePos.y}px`;
+            }
+            if (mousePos.y > (windowHeight / 2)) {
+                showArea_calendar.style.top = 'initial';
+                showArea_calendar.style.bottom = `-${mousePos.y - 200}px`;
+            }
+            
+            
+        });
+    });
 }

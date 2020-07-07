@@ -1,6 +1,123 @@
 .calendarPageBox
     position: relative
 
+    .showArea_calendar
+        display: none
+        position: absolute
+        width: 300px
+        // top: 300px
+        // left: 400px
+        box-shadow: 0 3px 5px rgba(#000, 0.7)
+        transition: 0.5s
+        z-index: 1
+
+        header
+            height: 35px
+            line-height: 35px
+            // background: rgba(#FFF, 0.95)
+            background: rgba(#000, 0.9)
+            box-shadow: 0 5px 5px -5px rgba(#000, 0.9)
+            text-align: center
+            transition: background 0.4s
+            color: #fafafa
+
+        .content
+            text-align: center
+            // background: rgba(#FFF, 0.6)
+            background: rgba(#000, 0.6)
+            padding: 10px 0
+            transition: background 0.4s
+            color: #fafafa
+
+            .month
+                font-size: 150%
+            .day
+                font-size: 320%
+                font-weight: 600
+            .year
+                font-size: 100%
+                opacity: 0.9
+
+        .inputArea_calendar
+            // height: 300px
+            padding: 10px
+            color: #fafafa
+            background: rgba(#000, 0.8)
+
+            .list
+                font-size: 90%
+                color: #b8b8b8
+
+            ul
+                +size(100%, 120px)
+                padding: 5px
+                margin-top: 5px
+                overflow-y: auto
+                overflow-x: hidden
+
+                &::-webkit-scrollbar
+                    display: none
+
+                li
+                    width: 100%
+                    margin-bottom: 4px
+                    padding: 2px 5px
+                    font-size: 90%
+                    background: rgba(#FFF, 0.1)
+                    border-radius: 5px
+                    overflow: hidden
+                    text-overflow: ellipsis
+                    white-space: nowrap
+                    cursor: pointer
+
+            label
+                display: block
+                padding-top: 12px
+
+                .calendar_summary
+                    height: 25px
+
+                .calendar_summary, .calendar_description
+                    width: calc(100% - 10px)
+                    margin: 5px 0 0 5px
+                    padding: 0 5px
+                    background: transparent
+                    color: #fafafa
+                    border: solid 1px rgba(#FFF, 0.3)
+                    border-radius: 5px
+                    outline: none
+                    resize: none
+
+        footer
+            position: absolute
+            display: flex
+            width: 100%
+            height: 60px
+            top: 410px
+            align-items: center
+            justify-content: center
+            margin-top: 45px
+            background: rgba(#000, 0.8)
+
+            button
+                padding: 8px 18px
+                margin: 0 5px
+                border: solid 1px rgba(#FFF, 0.3)
+                font-size: 100%
+                border-radius: 100px
+                color: #FFF
+                background: #000
+                cursor: pointer
+                white-space: nowrap
+                outline: none
+                transition: 0.3s
+
+                &:hover
+                    background: #3a3a3a
+                &:active
+                    transition: 0s
+                    background: #666666
+
     .selectArea
         position: relative
         padding: 120px 80px 200px 200px
@@ -10,10 +127,12 @@
         max-height: 100vh
         
         header
-            +size(100%, 40px)
+            +size(100%, 32px)
             display: flex
             padding: 0 5px
+            margin-bottom: 1px
             justify-content: center
+            background: rgba(#000, 0.8)
 
             .datePicker_year, .datePicker_month
                 position: relative
@@ -30,12 +149,19 @@
                     border-radius: 100px
                     transition: 0.3s
                     cursor: pointer
+                    user-select: none
 
                     &:hover
-                        background: rgba(#FFF, 0.6)
+                        background: rgba(#FFF, 0.3)
                     &:active
                         transition: 0s
-                        background: rgba(#FFF, 1)
+                        background: rgba(#FFF, 0.5)
+
+                    // &:hover
+                    //     background: rgba(#FFF, 0.6)
+                    // &:active
+                    //     transition: 0s
+                    //     background: rgba(#FFF, 1)
                 
                 .prev, .next
                     display: flex
@@ -48,18 +174,28 @@
                     border-radius: 100px
                     transition: 0.3s
                     cursor: pointer
-
+                    
                     &:hover
-                        background: rgba(#FFF, 0.7)
+                        background: rgba(#FFF, 0.3)
                         i
-                            color: rgba(#000, 0.95)
+                            color: rgba(#FFF, 0.95)
                     &:active
                         transition: 0s
-                        background: rgba(#FFF, 1)
-
+                        background: rgba(#FFF, 0.5)
                     i
-                        transition: 0.3s
-                        color: rgba(#000, 0.3)
+                        color: rgba(#FFF, 0.3)
+
+                    // &:hover
+                    //     background: rgba(#FFF, 0.7)
+                    //     i
+                    //         color: rgba(#000, 0.95)
+                    // &:active
+                    //     transition: 0s
+                    //     background: rgba(#FFF, 1)
+
+                    // i
+                    //     transition: 0.3s
+                    //     color: rgba(#000, 0.3)
 
                 .prev
                     left: 15px

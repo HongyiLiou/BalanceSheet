@@ -742,8 +742,8 @@ input[type=number] {
 }
 .brightness .beams .beam1 {
   width: 450px;
-  height: 5px;
-  transform: rotate(-12deg);
+  height: 15px;
+  transform: rotate(-48deg);
   animation-delay: -0.5s;
 }
 @keyframes beam {
@@ -758,8 +758,8 @@ input[type=number] {
   }
 }
 .brightness .beams .beam2 {
-  width: 650px;
-  height: 25px;
+  width: 550px;
+  height: 10px;
   transform: rotate(-12deg);
   animation-delay: -1s;
 }
@@ -775,9 +775,9 @@ input[type=number] {
   }
 }
 .brightness .beams .beam3 {
-  width: 550px;
-  height: 10px;
-  transform: rotate(-36deg);
+  width: 450px;
+  height: 20px;
+  transform: rotate(-48deg);
   animation-delay: -1.5s;
 }
 @keyframes beam {
@@ -792,9 +792,9 @@ input[type=number] {
   }
 }
 .brightness .beams .beam4 {
-  width: 500px;
+  width: 700px;
   height: 10px;
-  transform: rotate(-72deg);
+  transform: rotate(-36deg);
   animation-delay: -2s;
 }
 @keyframes beam {
@@ -809,8 +809,8 @@ input[type=number] {
   }
 }
 .brightness .beams .beam5 {
-  width: 600px;
-  height: 30px;
+  width: 550px;
+  height: 25px;
   transform: rotate(-72deg);
   animation-delay: -2.5s;
 }
@@ -826,8 +826,8 @@ input[type=number] {
   }
 }
 .brightness .beams .beam6 {
-  width: 600px;
-  height: 10px;
+  width: 700px;
+  height: 20px;
   transform: rotate(-12deg);
   animation-delay: -3s;
 }
@@ -863,14 +863,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-30px, 210px);
+    transform: translate(-30px, 150px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-150px, 450px);
+    transform: translate(-400px, 400px);
   }
 }
 .brightness .shines .shine2 {
@@ -883,14 +883,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-60px, 60px);
+    transform: translate(-60px, 300px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-300px, 100px);
+    transform: translate(-200px, 150px);
   }
 }
 .brightness .shines .shine3 {
@@ -903,14 +903,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-270px, 300px);
+    transform: translate(-300px, 180px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-150px, 250px);
+    transform: translate(-300px, 400px);
   }
 }
 .brightness .shines .shine4 {
@@ -923,14 +923,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-300px, 60px);
+    transform: translate(-180px, 60px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-400px, 200px);
+    transform: translate(-450px, 350px);
   }
 }
 .brightness .shines .shine5 {
@@ -943,14 +943,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-90px, 90px);
+    transform: translate(-90px, 120px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-300px, 400px);
+    transform: translate(-350px, 150px);
   }
 }
 .brightness .shines .shine6 {
@@ -963,14 +963,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-150px, 90px);
+    transform: translate(-210px, 210px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-350px, 150px);
+    transform: translate(-500px, 300px);
   }
 }
 .brightness .shines .shine7 {
@@ -983,14 +983,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-150px, 60px);
+    transform: translate(-210px, 30px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-450px, 500px);
+    transform: translate(-200px, 400px);
   }
 }
 .brightness .shines .shine8 {
@@ -1003,14 +1003,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-150px, 90px);
+    transform: translate(-90px, 240px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-500px, 300px);
+    transform: translate(-300px, 200px);
   }
 }
 .brightness .shines .shine9 {
@@ -1023,14 +1023,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-180px, 300px);
+    transform: translate(-210px, 180px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-100px, 50px);
+    transform: translate(-50px, 400px);
   }
 }
 .brightness .shines .shine10 {
@@ -1043,14 +1043,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-270px, 120px);
+    transform: translate(-90px, 120px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-150px, 200px);
+    transform: translate(-450px, 300px);
   }
 }
 
@@ -2119,6 +2119,122 @@ input[type=number] {
 .calendarPageBox {
   position: relative;
 }
+.calendarPageBox .showArea_calendar {
+  display: none;
+  position: absolute;
+  width: 300px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.7);
+  transition: 0.5s;
+  z-index: 1;
+}
+.calendarPageBox .showArea_calendar header {
+  height: 35px;
+  line-height: 35px;
+  background: rgba(0, 0, 0, 0.9);
+  box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.9);
+  text-align: center;
+  transition: background 0.4s;
+  color: #fafafa;
+}
+.calendarPageBox .showArea_calendar .content {
+  text-align: center;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 10px 0;
+  transition: background 0.4s;
+  color: #fafafa;
+}
+.calendarPageBox .showArea_calendar .content .month {
+  font-size: 150%;
+}
+.calendarPageBox .showArea_calendar .content .day {
+  font-size: 320%;
+  font-weight: 600;
+}
+.calendarPageBox .showArea_calendar .content .year {
+  font-size: 100%;
+  opacity: 0.9;
+}
+.calendarPageBox .showArea_calendar .inputArea_calendar {
+  padding: 10px;
+  color: #fafafa;
+  background: rgba(0, 0, 0, 0.8);
+}
+.calendarPageBox .showArea_calendar .inputArea_calendar .list {
+  font-size: 90%;
+  color: #b8b8b8;
+}
+.calendarPageBox .showArea_calendar .inputArea_calendar ul {
+  width: 100%;
+  height: 120px;
+  padding: 5px;
+  margin-top: 5px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.calendarPageBox .showArea_calendar .inputArea_calendar ul::-webkit-scrollbar {
+  display: none;
+}
+.calendarPageBox .showArea_calendar .inputArea_calendar ul li {
+  width: 100%;
+  margin-bottom: 4px;
+  padding: 2px 5px;
+  font-size: 90%;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.calendarPageBox .showArea_calendar .inputArea_calendar label {
+  display: block;
+  padding-top: 12px;
+}
+.calendarPageBox .showArea_calendar .inputArea_calendar label .calendar_summary {
+  height: 25px;
+}
+.calendarPageBox .showArea_calendar .inputArea_calendar label .calendar_summary, .calendarPageBox .showArea_calendar .inputArea_calendar label .calendar_description {
+  width: calc(100% - 10px);
+  margin: 5px 0 0 5px;
+  padding: 0 5px;
+  background: transparent;
+  color: #fafafa;
+  border: solid 1px rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+  outline: none;
+  resize: none;
+}
+.calendarPageBox .showArea_calendar footer {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  height: 60px;
+  top: 410px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 45px;
+  background: rgba(0, 0, 0, 0.8);
+}
+.calendarPageBox .showArea_calendar footer button {
+  padding: 8px 18px;
+  margin: 0 5px;
+  border: solid 1px rgba(255, 255, 255, 0.3);
+  font-size: 100%;
+  border-radius: 100px;
+  color: #FFF;
+  background: #000;
+  cursor: pointer;
+  white-space: nowrap;
+  outline: none;
+  transition: 0.3s;
+}
+.calendarPageBox .showArea_calendar footer button:hover {
+  background: #3a3a3a;
+}
+.calendarPageBox .showArea_calendar footer button:active {
+  transition: 0s;
+  background: #666666;
+}
 .calendarPageBox .selectArea {
   position: relative;
   padding: 120px 80px 200px 200px;
@@ -2129,10 +2245,12 @@ input[type=number] {
 }
 .calendarPageBox .selectArea header {
   width: 100%;
-  height: 40px;
+  height: 32px;
   display: flex;
   padding: 0 5px;
+  margin-bottom: 1px;
   justify-content: center;
+  background: rgba(0, 0, 0, 0.8);
 }
 .calendarPageBox .selectArea header .datePicker_year, .calendarPageBox .selectArea header .datePicker_month {
   position: relative;
@@ -2151,13 +2269,15 @@ input[type=number] {
   border-radius: 100px;
   transition: 0.3s;
   cursor: pointer;
+  -webkit-user-select: none;
+          user-select: none;
 }
 .calendarPageBox .selectArea header .datePicker_year p:hover, .calendarPageBox .selectArea header .datePicker_month p:hover {
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.3);
 }
 .calendarPageBox .selectArea header .datePicker_year p:active, .calendarPageBox .selectArea header .datePicker_month p:active {
   transition: 0s;
-  background: white;
+  background: rgba(255, 255, 255, 0.5);
 }
 .calendarPageBox .selectArea header .datePicker_year .prev, .calendarPageBox .selectArea header .datePicker_year .next, .calendarPageBox .selectArea header .datePicker_month .prev, .calendarPageBox .selectArea header .datePicker_month .next {
   display: flex;
@@ -2173,18 +2293,17 @@ input[type=number] {
   cursor: pointer;
 }
 .calendarPageBox .selectArea header .datePicker_year .prev:hover, .calendarPageBox .selectArea header .datePicker_year .next:hover, .calendarPageBox .selectArea header .datePicker_month .prev:hover, .calendarPageBox .selectArea header .datePicker_month .next:hover {
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.3);
 }
 .calendarPageBox .selectArea header .datePicker_year .prev:hover i, .calendarPageBox .selectArea header .datePicker_year .next:hover i, .calendarPageBox .selectArea header .datePicker_month .prev:hover i, .calendarPageBox .selectArea header .datePicker_month .next:hover i {
-  color: rgba(0, 0, 0, 0.95);
+  color: rgba(255, 255, 255, 0.95);
 }
 .calendarPageBox .selectArea header .datePicker_year .prev:active, .calendarPageBox .selectArea header .datePicker_year .next:active, .calendarPageBox .selectArea header .datePicker_month .prev:active, .calendarPageBox .selectArea header .datePicker_month .next:active {
   transition: 0s;
-  background: white;
+  background: rgba(255, 255, 255, 0.5);
 }
 .calendarPageBox .selectArea header .datePicker_year .prev i, .calendarPageBox .selectArea header .datePicker_year .next i, .calendarPageBox .selectArea header .datePicker_month .prev i, .calendarPageBox .selectArea header .datePicker_month .next i {
-  transition: 0.3s;
-  color: rgba(0, 0, 0, 0.3);
+  color: rgba(255, 255, 255, 0.3);
 }
 .calendarPageBox .selectArea header .datePicker_year .prev, .calendarPageBox .selectArea header .datePicker_month .prev {
   left: 15px;
