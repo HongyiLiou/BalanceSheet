@@ -227,21 +227,10 @@ function calendarListener() {
             showArea_calendar.style.display = 'block';
 
             // 畫面左右
-            if (mousePos.x < (windowWidth / 2)) {
-                showArea_calendar.style.left = `${mousePos.x - 500}px`;
-            }
-            if (mousePos.x > (windowWidth / 2)) {
-                showArea_calendar.style.left = `${mousePos.x - 950}px`;
-            }
+            showArea_calendar.style.left = mousePos.x < (windowWidth / 2) ? `${mousePos.x - 500}px` : `${mousePos.x - 950}px`;
             // 畫面上下
-            if (mousePos.y < (windowHeight / 2)) {
-                showArea_calendar.style.top = 'initial';
-                showArea_calendar.style.bottom = `-${mousePos.y}px`;
-            }
-            if (mousePos.y > (windowHeight / 2)) {
-                showArea_calendar.style.top = 'initial';
-                showArea_calendar.style.bottom = `-${mousePos.y - 200}px`;
-            }
+            showArea_calendar.style.top = 'initial';
+            showArea_calendar.style.bottom = mousePos.y < (windowHeight / 2) ? `-${mousePos.y}px` : `-${mousePos.y - 200}px`;
             
             
         });
