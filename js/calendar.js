@@ -325,13 +325,13 @@ function setCalender_calendar(monthString) {
     });
 
     // 依據月份天數將日期置入月曆中
-    // for (let i = week; i < fullMonth + week; i++) {
-    //     datePicker_day[i].innerHTML = `<h6>${i - week + 1}</h6>`;
-    //     datePicker_day[i].classList.add('pointerEventAuto');
-    //     if (datePicker_day[i].innerHTML === dataPickerShowDay.innerHTML) {
-    //         datePicker_day[i].classList.add('active');
-    //     }
-    // }
+    for (let i = week; i < fullMonth + week; i++) {
+        datePicker_day[i].innerHTML = `<h6>${i - week + 1}</h6>`;
+        datePicker_day[i].classList.add('pointerEventAuto');
+        if (datePicker_day[i].innerHTML === dataPickerShowDay.innerHTML) {
+            datePicker_day[i].classList.add('active');
+        }
+    }
 
     // // 註冊點擊事件
     /** 所有日期 button */const dateBtns = document.querySelectorAll('.calendarPageBox .pointerEventAuto');
