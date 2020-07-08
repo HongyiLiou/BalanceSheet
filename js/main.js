@@ -73,7 +73,7 @@ function loadPages() {
             // }
             calendarListener();
             setDateToShow_calendar(`${ year }/${ month }/${ day }`);
-            setCalender_calendar(month);
+            // setCalender_calendar(month);
         }, 0);
         
     });
