@@ -254,11 +254,11 @@ function calendarListener() {
  * 日期字串，格式： yyyy/mm/dd
  */
 function setDateToShow_calendar(dateString) {
-    /** 顯示年 */const dataPickerShowYear = document.querySelector('.showArea_calendar .year');
-    /** 顯示月 */const dataPickerShowMonth = document.querySelector('.showArea_calendar .month');
-    /** 顯示日 */const dataPickerShowDay = document.querySelector('.showArea_calendar .day');
-    /** 年份選取按鈕 */const datePicker_year = document.querySelector('.calendarPageBox .datePicker_year p');
-    /** 月份選取按鈕 */const datePicker_month = document.querySelector('.calendarPageBox .datePicker_month p');
+    /** 顯示年 */const dataPickerShowYear = document.querySelector('.showArea_calendar .content .year');
+    /** 顯示月 */const dataPickerShowMonth = document.querySelector('.showArea_calendar .content .month');
+    /** 顯示日 */const dataPickerShowDay = document.querySelector('.showArea_calendar .content .day');
+    /** 年份選取按鈕 */const datePicker_year = document.querySelector('.calendarPageBox .selectArea header .datePicker_year p');
+    /** 月份選取按鈕 */const datePicker_month = document.querySelector('.calendarPageBox .selectArea header .datePicker_month p');
     const date = new Date(dateString);
     const dateToString = date.toString();    
     
@@ -279,7 +279,7 @@ function setDateToShow_calendar(dateString) {
 
 /** 轉換行日曆彈窗的顯示星期 */
 function setShowWeek_calendar(weekString) {
-    /** 顯示星期 */const dataPickerShowWeek = document.querySelector('.showArea_calendar .week');
+    /** 顯示星期 */const dataPickerShowWeek = document.querySelector('.showArea_calendar header .week');
     switch(weekString) {
         case 'Sun':
             dataPickerShowWeek.innerHTML = '星期日';
@@ -325,13 +325,13 @@ function setCalender_calendar(monthString) {
     });
 
     // 依據月份天數將日期置入月曆中
-    for (let i = week; i < fullMonth + week; i++) {
-        datePicker_day[i].innerHTML = `<h6>${i - week + 1}</h6>`;
-        datePicker_day[i].classList.add('pointerEventAuto');
-        if (datePicker_day[i].innerHTML === dataPickerShowDay.innerHTML) {
-            datePicker_day[i].classList.add('active');
-        }
-    }
+    // for (let i = week; i < fullMonth + week; i++) {
+    //     datePicker_day[i].innerHTML = `<h6>${i - week + 1}</h6>`;
+    //     datePicker_day[i].classList.add('pointerEventAuto');
+    //     if (datePicker_day[i].innerHTML === dataPickerShowDay.innerHTML) {
+    //         datePicker_day[i].classList.add('active');
+    //     }
+    // }
 
     // // 註冊點擊事件
     /** 所有日期 button */const dateBtns = document.querySelectorAll('.calendarPageBox .pointerEventAuto');
