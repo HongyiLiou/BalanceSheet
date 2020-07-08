@@ -82,6 +82,7 @@ function setCalender_datePicker(monthString) {
     const week = new Date(`${dataPickerShowYear.innerHTML}/${monthString}/1`).getDay();
     const fullMonth = date.getDate();
 
+
     datePicker_day.forEach(x => {
         x.innerHTML = '';
         x.classList = '';
@@ -89,7 +90,7 @@ function setCalender_datePicker(monthString) {
 
     // 依據月份天數將日期置入月曆中
     for (let i = week; i < fullMonth + week; i++) {
-        datePicker_day[i].innerHTML = i - week + 1;
+        datePicker_day[i].innerHTML = `${i - week + 1}`;
         datePicker_day[i].classList.add('pointerEventAuto');
         if (datePicker_day[i].innerHTML === dataPickerShowDay.innerHTML) {
             datePicker_day[i].classList.add('active');
@@ -97,7 +98,7 @@ function setCalender_datePicker(monthString) {
     }
 
     // 註冊點擊事件
-    /** 所有日期 button */const dateBtns = document.querySelectorAll('.pointerEventAuto');
+    /** 所有日期 button */const dateBtns = document.querySelectorAll('.datePickerBox .pointerEventAuto');
     /** OK button */const okBtn = document.querySelector('.datePickerBox .okBtn');
     dateBtns.forEach((btn, i) => {
         const timer = btn.addEventListener('click', () => {
