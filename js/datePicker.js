@@ -4,7 +4,7 @@
 function initialDatePicker() {
     setButtons();
     setDateToShow(`${ year }/${ month }/${ day }`);
-    setCalender(month);
+    setCalender_datePicker(month);
 }
 
 
@@ -74,7 +74,7 @@ function setShowWeek(weekString) {
  * @param {String} monthString
  * 月份字串 
  */
-function setCalender(monthString) {
+function setCalender_datePicker(monthString) {
     /** 顯示年 */const dataPickerShowYear = document.querySelector('.datePickerBox .year');
     /** 顯示日 */const dataPickerShowDay = document.querySelector('.datePickerBox .day');
     /** 日期選取按鈕 */const datePicker_day = document.querySelectorAll('.datePickerBox .datePicker_day li');
@@ -171,7 +171,7 @@ function setButtons() {
             const dateString = `${btn.innerHTML}/${datePicker_month.innerHTML.slice(0, 2).trim()}/${dataPickerShowDay.innerHTML}`;
             
             setDateToShow(dateString);
-            setCalender(datePicker_month.innerHTML.slice(0, 2).trim());
+            setCalender_datePicker(datePicker_month.innerHTML.slice(0, 2).trim());
             btn.classList.add('active');
             selectMonthArea.classList.remove('active');
             selectYearArea.classList.remove('active');
@@ -196,7 +196,7 @@ function setButtons() {
             }
 
             setDateToShow(dateString);
-            setCalender(i + 1);
+            setCalender_datePicker(i + 1);
             btn.classList.add('active');
             selectMonthArea.classList.remove('active');
             selectYearArea.classList.remove('active');
@@ -268,7 +268,7 @@ function setButtons() {
         });
 
         setDateToShow(`${ year }/${ month }/${ day }`);
-        setCalender(month);
+        setCalender_datePicker(month);
     });
 
     // 取消按鈕

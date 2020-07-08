@@ -120,18 +120,23 @@
                         background: rgba(#000, 0.6)
                         transition: 0.3s
                         cursor: pointer
+                        pointer-events: none
 
                         &:hover
                             background: rgba(#000, 0.4)
 
                         &.active
-                            background: rgba(#000, 0.6)
-                            border: solid 2px rgba(#868686, 0.6)
+                            background: rgba(#000, 0.8)
                             color: #FFF
 
                         &:nth-child(7n), &:nth-child(7n + 1)
                             color: #ff8f8f
                             background: rgba(#2b0d0d, 0.6)
+                            &:hover
+                                background: rgba(#2b0d0d, 0.4)
+                            &.active
+                                background: rgba(#470707, 0.8)
+                                color: #ff8f8f
 
                         &.pointerEventAuto
                             pointer-events: auto
@@ -364,14 +369,18 @@
                         li
                             background: rgba(#FFF, 0.7)
                             &:hover
-                                background: rgba(#FFF, 0.7)
+                                background: rgba(#FFF, 0.5)
                             &.active
-                                background: rgba(#000, 0.6)
-                                border: solid 2px rgba(#868686, 0.6)
-                                color: #FFF
+                                color: #111
+                                background: rgba(#FFF, 0.9)
                             &:nth-child(7n), &:nth-child(7n + 1)
                                 color: #460000
                                 background: rgba(#e9b7b7, 0.65)
+                                &:hover
+                                    background: rgba(#e9b7b7, 0.5)
+                                &.active
+                                    color: #830101
+                                    background: rgba(#e9b7b7, 0.9)
                             .textArea
                                 p
                                     color: #000

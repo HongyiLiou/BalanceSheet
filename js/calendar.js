@@ -212,9 +212,13 @@ function insertEventToGoogleCalendar() {
 }
 
 
+// 以下為行事曆彈窗程式______________________________________________________________________________________
+
+
 function calendarListener() {
     const dateBlocks = document.querySelectorAll('.selectArea .calender .userSelectArea .datePicker_day li');
     const showArea_calendar = document.querySelector('.showArea_calendar');
+    /** 日期選取按鈕 */const datePicker_day = document.querySelectorAll('.calendarPageBox .datePicker_day li');
 
     dateBlocks.forEach(dayBlock => {
         dayBlock.addEventListener('click', () => {
@@ -223,6 +227,9 @@ function calendarListener() {
             const windowHeight = document.body.offsetHeight;
             const hideCalendarInput = () => {
                 showArea_calendar.classList.remove('active');
+                datePicker_day.forEach(x => {
+                    x.classList.remove('active');
+                });
             }
             // console.log('mousePos', getMouseElementPos());
             // console.log('offsetWidth', document.body.offsetWidth);
@@ -239,3 +246,112 @@ function calendarListener() {
         });
     });
 }
+
+
+/**
+ * 設定行日曆彈窗的顯示日期
+ * @param {String} dateString
+ * 日期字串，格式： yyyy/mm/dd
+ */
+function setDateToShow_calendar(dateString) {
+    /** 顯示年 */const dataPickerShowYear = document.querySelector('.showArea_calendar .year');
+    /** 顯示月 */const dataPickerShowMonth = document.querySelector('.showArea_calendar .month');
+    /** 顯示日 */const dataPickerShowDay = document.querySelector('.showArea_calendar .day');
+    /** 年份選取按鈕 */const datePicker_year = document.querySelector('.calendarPageBox .datePicker_year p');
+    /** 月份選取按鈕 */const datePicker_month = document.querySelector('.calendarPageBox .datePicker_month p');
+    const date = new Date(dateString);
+    const dateToString = date.toString();    
+    
+    setShowWeek_calendar(dateToString.slice(0, 3));
+    dataPickerShowMonth.innerHTML = dateToString.slice(4, 7);
+    dataPickerShowYear.innerHTML = dateToString.slice(11, 15);
+
+    if (dateToString.slice(8, 9) == '0') {
+        dataPickerShowDay.innerHTML = dateToString.slice(9, 10);
+    } else {
+        dataPickerShowDay.innerHTML = dateToString.slice(8, 10);        
+    }
+
+    datePicker_year.innerHTML = `${dateToString.slice(11, 15)} 年`;
+    datePicker_month.innerHTML = `${date.getMonth() + 1} 月`;
+}
+
+
+/** 轉換行日曆彈窗的顯示星期 */
+function setShowWeek_calendar(weekString) {
+    /** 顯示星期 */const dataPickerShowWeek = document.querySelector('.showArea_calendar .week');
+    switch(weekString) {
+        case 'Sun':
+            dataPickerShowWeek.innerHTML = '星期日';
+            break;
+        case 'Mon':
+            dataPickerShowWeek.innerHTML = '星期一';
+            break;
+        case 'Tue':
+            dataPickerShowWeek.innerHTML = '星期二';
+            break;
+        case 'Wed':
+            dataPickerShowWeek.innerHTML = '星期三';
+            break;
+        case 'Thu':
+            dataPickerShowWeek.innerHTML = '星期四';
+            break;
+        case 'Fri':
+            dataPickerShowWeek.innerHTML = '星期五';
+            break;
+        case 'Sat':
+            dataPickerShowWeek.innerHTML = '星期六';
+            break;
+    }
+}
+
+
+/**
+ * 設定 Calender內容
+ * @param {String} monthString
+ * 月份字串 
+ */
+function setCalender_calendar(monthString) {
+    /** 顯示年 */const dataPickerShowYear = document.querySelector('.showArea_calendar .year');
+    /** 顯示日 */const dataPickerShowDay = document.querySelector('.showArea_calendar .day');
+    /** 日期選取按鈕 */const datePicker_day = document.querySelectorAll('.calendarPageBox .datePicker_day li');
+    const date = new Date(Number(dataPickerShowYear.innerHTML), monthString, 0);
+    const week = new Date(`${dataPickerShowYear.innerHTML}/${monthString}/1`).getDay();
+    const fullMonth = date.getDate();
+
+    datePicker_day.forEach(x => {
+        x.innerHTML = '';
+        x.classList = '';
+    });
+
+    // 依據月份天數將日期置入月曆中
+    for (let i = week; i < fullMonth + week; i++) {
+        datePicker_day[i].innerHTML = `<h6>${i - week + 1}</h6>`;
+        datePicker_day[i].classList.add('pointerEventAuto');
+        if (datePicker_day[i].innerHTML === dataPickerShowDay.innerHTML) {
+            datePicker_day[i].classList.add('active');
+        }
+    }
+
+    // // 註冊點擊事件
+    /** 所有日期 button */const dateBtns = document.querySelectorAll('.pointerEventAuto');
+    // /** OK button */const okBtn = document.querySelector('.datePickerBox .okBtn');
+    dateBtns.forEach((btn, i) => {
+        const timer = btn.addEventListener('click', () => {
+            dateBtns.forEach(x => {
+                x.classList.remove('active');
+            });
+
+            btn.classList.add('active');
+            setDateToShow_calendar(`${dataPickerShowYear.innerHTML}/${monthString}/${i + 1}`);
+            btn.removeEventListener('click', timer);
+        });
+
+        const timer2 = btn.addEventListener('dblclick', () => {
+            // okBtn.click();
+            btn.removeEventListener('dblclick', timer2);
+        });
+    });
+    
+}
+

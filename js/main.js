@@ -72,6 +72,8 @@ function loadPages() {
             //     if (this.readyState === 'complete') this.onload();
             // }
             calendarListener();
+            setDateToShow_calendar(`${ year }/${ month }/${ day }`);
+            setCalender_calendar(month);
         }, 0);
         
     });
