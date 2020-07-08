@@ -213,25 +213,28 @@ function insertEventToGoogleCalendar() {
 
 
 function calendarListener() {
-    const dateBlocks = document.querySelectorAll('.calendarPageBox .selectArea .calender .userSelectArea .datePicker_day li');
-    const showArea_calendar = document.querySelector('.calendarPageBox .showArea_calendar');
+    const dateBlocks = document.querySelectorAll('.selectArea .calender .userSelectArea .datePicker_day li');
+    const showArea_calendar = document.querySelector('.showArea_calendar');
 
     dateBlocks.forEach(dayBlock => {
         dayBlock.addEventListener('click', () => {
             const mousePos = getMouseElementPos();
             const windowWidth = document.body.offsetWidth;
             const windowHeight = document.body.offsetHeight;
+            const hideCalendarInput = () => {
+                showArea_calendar.classList.remove('active');
+            }
             // console.log('mousePos', getMouseElementPos());
             // console.log('offsetWidth', document.body.offsetWidth);
             // console.log('offsetHeight', document.body.offsetHeight);
-            showArea_calendar.style.display = 'block';
+            showArea_calendar.classList.add('active');
 
             // 畫面左右
-            showArea_calendar.style.left = mousePos.x < (windowWidth / 2) ? `${mousePos.x - 500}px` : `${mousePos.x - 950}px`;
+            showArea_calendar.style.left = mousePos.x < (windowWidth / 2) ? `${mousePos.x + 30}px` : `${mousePos.x - 330}px`;
             // 畫面上下
             showArea_calendar.style.top = 'initial';
-            showArea_calendar.style.bottom = mousePos.y < (windowHeight / 2) ? `-${mousePos.y}px` : `-${mousePos.y - 200}px`;
-            
+            showArea_calendar.style.top = mousePos.y < (windowHeight / 2) ? `${mousePos.y - 100}px` : `${mousePos.y - 430}px`;
+            showScreenHolder(true, hideCalendarInput)
             
         });
     });

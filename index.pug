@@ -110,6 +110,34 @@ body
     //-     .buttonArea
     //-         button.cancel Cancel
     //-         button.enter Add
+    
+    //- 行事曆編輯視窗
+    section.showArea_calendar
+        header
+            p.week 星期六
+        .content
+            p.month Feb
+            p.day 16
+            p.year 2020
+        .inputArea_calendar
+            p.list 行事曆清單
+            ul
+                li(title="十元買早餐") 十元買早餐
+                li(title="八元買豆干") 八元買豆干
+                li(title="長度測試長度測試長度測試長度測試長度測試") 長度測試長度測試長度測試長度測試長度測試
+                li(title="高度測試") 高度測試
+                li(title="高度測試") 高度測試
+                li(title="高度測試") 高度測試
+            label
+                p.list 標題
+                input.calendar_summary(type="text" placeholder="請輸入標題")
+            label
+                p.list 描述
+                textarea.calendar_description(type="text" placeholder="請輸入描述")
+        footer
+            button.delete Delete
+            button.add Add
+            button.saveAll Save All
 
 
     //- 底端快速連結
