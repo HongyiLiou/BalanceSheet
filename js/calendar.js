@@ -213,7 +213,8 @@ function insertEventToGoogleCalendar() {
 
 
 // 以下為行事曆彈窗程式______________________________________________________________________________________
-
+/** 某月行事曆標題 */let summaries_calendar
+/** 某月行事曆描述 */let descriptions_calendar;
 
 function calendarListener() {
     const dateBlocks = document.querySelectorAll('.calendarPageBox .selectArea .calender .userSelectArea .datePicker_day li');
@@ -312,9 +313,13 @@ function setShowWeek_calendar(weekString) {
  * 月份字串 
  */
 function setCalender_calendar(monthString) {
+    showLoading(true);
     /** 顯示年 */const dataPickerShowYear = document.querySelector('.showArea_calendar .year');
     /** 顯示日 */const dataPickerShowDay = document.querySelector('.showArea_calendar .day');
     /** 日期選取按鈕 */const datePicker_day = document.querySelectorAll('.calendarPageBox .datePicker_day li');
+    /** 行事曆清單 */const inputArea_calendar = document.querySelector('.showArea_calendar .inputArea_calendar ul');
+    /** 行事曆標題 */const calendarInput_summary = document.querySelector('.showArea_calendar .inputArea_calendar label .calendar_summary');
+    /** 行事曆描述 */const calendarInput_description = document.querySelector('.showArea_calendar .inputArea_calendar label .calendar_description');
     const date = new Date(Number(dataPickerShowYear.innerHTML), monthString, 0);
     const week = new Date(`${dataPickerShowYear.innerHTML}/${monthString}/1`).getDay();
     const fullMonth = date.getDate();
@@ -324,34 +329,77 @@ function setCalender_calendar(monthString) {
         x.classList = '';
     });
 
-    // 依據月份天數將日期置入月曆中
-    for (let i = week; i < fullMonth + week; i++) {
-        datePicker_day[i].innerHTML = `<h6>${i - week + 1}</h6>`;
-        datePicker_day[i].classList.add('pointerEventAuto');
-        if (datePicker_day[i].innerHTML === dataPickerShowDay.innerHTML) {
-            datePicker_day[i].classList.add('active');
-        }
-    }
+    const accountNumber = JSON.parse(localStorage.getItem('login')).AccountNumber;
+    const parameter = {
+        accountNumber: accountNumber,
+        functionType: 'get',
+        year: Number(dataPickerShowYear.innerHTML),
+        month: monthString
+    };
+    $.get('https://script.google.com/macros/s/AKfycbw6E5iG_GFX6pyyThqh9IYAvgvhXyrKt25DYdOG-UCsIE8F7d42/exec', parameter).done(res => {
+        showLoading(false);
+        // console.log(res);
 
-    // // 註冊點擊事件
-    /** 所有日期 button */const dateBtns = document.querySelectorAll('.calendarPageBox .pointerEventAuto');
-    // /** OK button */const okBtn = document.querySelector('.datePickerBox .okBtn');
-    dateBtns.forEach((btn, i) => {
-        const timer = btn.addEventListener('click', () => {
-            dateBtns.forEach(x => {
-                x.classList.remove('active');
+        const resData = res;
+        summaries_calendar = resData.summary;
+        descriptions_calendar = resData.description;
+        
+        // 依據月份天數將日期置入月曆中，順便置入行事曆內容
+        for (let i = week; i < fullMonth + week; i++) {
+            let datePicker_dayTemplate = `<h6>${i - week + 1}</h6><div class="textArea">`
+            const p = summaries_calendar[i - week].split(',');
+            p.forEach(x => {
+                datePicker_dayTemplate += `<p title="${x}">${x}</p>`;
+            });
+            datePicker_dayTemplate = datePicker_dayTemplate;
+            datePicker_day[i].innerHTML = datePicker_dayTemplate + '</div>';
+            datePicker_day[i].classList.add('pointerEventAuto');
+            if (datePicker_day[i].innerHTML === dataPickerShowDay.innerHTML) {
+                datePicker_day[i].classList.add('active');
+            }
+        }
+
+        
+        // // 註冊點擊事件
+        /** 所有日期 button */const dateBtns = document.querySelectorAll('.calendarPageBox .pointerEventAuto');
+        // /** OK button */const okBtn = document.querySelector('.datePickerBox .okBtn');
+        dateBtns.forEach((btn, i) => {
+            const timer = btn.addEventListener('click', () => {
+                inputArea_calendar.innerHTML = '';
+                calendarInput_summary.value = '';
+                calendarInput_description.value = '';
+                dateBtns.forEach(x => {
+                    x.classList.remove('active');
+                });
+
+                const summaries = summaries_calendar[i].split(',');
+                const descriptions = descriptions_calendar[i].split(',');
+                console.log(summaries);
+                
+                summaries.forEach((x, index) => {
+                    const li = document.createElement('li');
+                    li.title = x;
+                    li.innerHTML = x;
+                    if (x) {
+                        inputArea_calendar.appendChild(li);
+                        li.addEventListener('click', () => {
+                            calendarInput_summary.value = x;
+                            calendarInput_description.value = descriptions[index];
+                        });
+                    }
+                });
+
+                btn.classList.add('active');
+                setDateToShow_calendar(`${dataPickerShowYear.innerHTML}/${monthString}/${i + 1}`);
+                btn.removeEventListener('click', timer);
             });
 
-            btn.classList.add('active');
-            setDateToShow_calendar(`${dataPickerShowYear.innerHTML}/${monthString}/${i + 1}`);
-            btn.removeEventListener('click', timer);
-        });
-
-        const timer2 = btn.addEventListener('dblclick', () => {
-            // okBtn.click();
-            btn.removeEventListener('dblclick', timer2);
         });
     });
+
+    
+
+
     
 }
 
@@ -529,3 +577,17 @@ function setButtons_calendar() {
     // });
 
 }
+
+// https://script.google.com/macros/s/AKfycbw6E5iG_GFX6pyyThqh9IYAvgvhXyrKt25DYdOG-UCsIE8F7d42/exec
+
+function testCalendar() {
+}
+
+
+/** 行事曆編輯器 */
+// 1.點行事曆行程，出現 Delete。
+
+// 2.點 Add，隱藏 Delete，若標題欄位、描述欄位皆有值，則新增至行事曆清單暫存，清空標題、描述。
+
+// 3.點 Save All 讀取清單暫存全部存入行事曆，更新行事曆，清除標題、描述欄位。
+
