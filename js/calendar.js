@@ -216,6 +216,13 @@ function insertEventToGoogleCalendar() {
 /** 某月行事曆標題 */let summaries_calendar
 /** 某月行事曆描述 */let descriptions_calendar;
 
+/** 初始化行事曆 */
+function initialCalendar() {
+    calendarListener();
+    setDateToShow_calendar(`${ year }/${ month }/${ day }`);
+    setCalender_calendar(month);
+}
+
 function calendarListener() {
     const dateBlocks = document.querySelectorAll('.calendarPageBox .selectArea .calender .userSelectArea .datePicker_day li');
     const showArea_calendar = document.querySelector('.showArea_calendar');

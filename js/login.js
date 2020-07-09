@@ -260,6 +260,9 @@ function afterLogin() {
     showOrHideLinkListWithType('bottom', false);
     showOrHideLinkListWithType('right', false);
 
+    // 取得行事曆
+    initialCalendar();
+
     // 取得記事本
     getNotes();
 
