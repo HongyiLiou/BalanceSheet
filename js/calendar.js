@@ -327,6 +327,7 @@ function setCalender_calendar(monthString) {
     /** 行事曆清單 */const inputArea_calendar = document.querySelector('.showArea_calendar .inputArea_calendar ul');
     /** 行事曆標題 */const calendarInput_summary = document.querySelector('.showArea_calendar .inputArea_calendar label .calendar_summary');
     /** 行事曆描述 */const calendarInput_description = document.querySelector('.showArea_calendar .inputArea_calendar label .calendar_description');
+    /** 刪除按鈕 */const deleteBtn = document.querySelector('.showArea_calendar footer .delete');
     const date = new Date(Number(dataPickerShowYear.innerHTML), monthString, 0);
     const week = new Date(`${dataPickerShowYear.innerHTML}/${monthString}/1`).getDay();
     const fullMonth = date.getDate();
@@ -392,6 +393,7 @@ function setCalender_calendar(monthString) {
                         li.addEventListener('click', () => {
                             calendarInput_summary.value = x;
                             calendarInput_description.value = descriptions[index];
+                            deleteBtn.style.display = 'block';
                         });
                     }
                 });
@@ -414,26 +416,21 @@ function setCalender_calendar(monthString) {
 
 /** 設定所有按鈕 */
 function setButtons_calendar() {
-    /** 顯示年 */const dataPickerShowYear = document.querySelector('.datePickerBox .year');
-    /** 顯示日 */const dataPickerShowDay = document.querySelector('.datePickerBox .day');
-    /** 年份選取按鈕 */const datePicker_year = document.querySelector('.datePickerBox .datePicker_year p');
-    /** 月份選取按鈕 */const datePicker_month = document.querySelector('.datePickerBox .datePicker_month p');
-    /** 區塊顯示 - 日期選擇 */const userSelectArea = document.querySelector('.datePickerBox .userSelectArea');
-    /** 區塊顯示 - 年份選擇 */const selectYearArea = document.querySelector('.datePickerBox .selectYearArea');
-    /** 區塊顯示 - 月份選擇  */const selectMonthArea = document.querySelector('.datePickerBox .selectMonthArea');
-    /** 所有年份選單 */const selectYearAreaBtns = document.querySelectorAll('.datePickerBox .selectYearArea ul li');
-    /** 所有月份選單 */const selectMonthAreaBtns = document.querySelectorAll('.datePickerBox .selectMonthArea ul li');
-    /** Prev - year */const datePicker_yearPrevBtn = document.querySelector('.datePickerBox .datePicker_year .prev');
-    /** Next - year */const datePicker_yearNextBtn = document.querySelector('.datePickerBox .datePicker_year .next');
-    /** Prev - month */const datePicker_monthPrevBtn = document.querySelector('.datePickerBox .datePicker_month .prev');
-    /** Next - month */const datePicker_monthNextBtn = document.querySelector('.datePickerBox .datePicker_month .next');
-    /** Today button */const todayBtn = document.querySelector('.datePickerBox .todayBtn');
-    /** Cancel button */const cancelBtn = document.querySelector('.datePickerBox .cancelBtn');
-    /** OK button */const okBtn = document.querySelector('.datePickerBox .okBtn');
-    /** Toggle Switch */const toggleSwitch = document.querySelector('.datePickerBox .toggleSwitch');
+    /** 顯示年 */const dataPickerShowYear = document.querySelector('.calendarPageBox .year');
+    /** 顯示日 */const dataPickerShowDay = document.querySelector('.calendarPageBox .day');
+    /** 年份選取按鈕 */const datePicker_year = document.querySelector('.calendarPageBox .datePicker_year p');
+    /** 月份選取按鈕 */const datePicker_month = document.querySelector('.calendarPageBox .datePicker_month p');
+    /** 區塊顯示 - 日期選擇 */const userSelectArea = document.querySelector('.calendarPageBox .userSelectArea');
+    /** 區塊顯示 - 年份選擇 */const selectYearArea = document.querySelector('.calendarPageBox .selectYearArea');
+    /** 區塊顯示 - 月份選擇  */const selectMonthArea = document.querySelector('.calendarPageBox .selectMonthArea');
+    /** 所有年份選單 */const selectYearAreaBtns = document.querySelectorAll('.calendarPageBox .selectYearArea ul li');
+    /** 所有月份選單 */const selectMonthAreaBtns = document.querySelectorAll('.calendarPageBox .selectMonthArea ul li');
+    /** Prev - year */const datePicker_yearPrevBtn = document.querySelector('.calendarPageBox .datePicker_year .prev');
+    /** Next - year */const datePicker_yearNextBtn = document.querySelector('.calendarPageBox .datePicker_year .next');
+    /** Prev - month */const datePicker_monthPrevBtn = document.querySelector('.calendarPageBox .datePicker_month .prev');
+    /** Next - month */const datePicker_monthNextBtn = document.querySelector('.calendarPageBox .datePicker_month .next');
     
-    /** 主題開關 checkbox */const checkBox = document.querySelector('.datePickerBox .toggleSwitch input');
-    /** 最外層 BOX */const datePickerBox = document.querySelector('.datePickerBox');
+    /** 最外層 BOX */const calendarPageBox = document.querySelector('.calendarPageBox');
 
     const today = new Date();
     selectMonthAreaBtns[today.getMonth()].classList.add('active');
