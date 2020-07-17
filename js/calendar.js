@@ -376,6 +376,7 @@ function setCalender_calendar(monthString) {
                 inputArea_calendar.innerHTML = '';
                 calendarInput_summary.value = '';
                 calendarInput_description.value = '';
+                deleteBtn.style.display = 'none';
                 dateBtns.forEach(x => {
                     x.classList.remove('active');
                 });
@@ -404,6 +405,8 @@ function setCalender_calendar(monthString) {
             });
 
         });
+
+        setButtons_calendar();
     });
 
     
@@ -416,13 +419,13 @@ function setCalender_calendar(monthString) {
 
 /** 設定所有按鈕 */
 function setButtons_calendar() {
-    /** 顯示年 */const dataPickerShowYear = document.querySelector('.calendarPageBox .year');
-    /** 顯示日 */const dataPickerShowDay = document.querySelector('.calendarPageBox .day');
-    /** 年份選取按鈕 */const datePicker_year = document.querySelector('.calendarPageBox .datePicker_year p');
-    /** 月份選取按鈕 */const datePicker_month = document.querySelector('.calendarPageBox .datePicker_month p');
-    /** 區塊顯示 - 日期選擇 */const userSelectArea = document.querySelector('.calendarPageBox .userSelectArea');
-    /** 區塊顯示 - 年份選擇 */const selectYearArea = document.querySelector('.calendarPageBox .selectYearArea');
-    /** 區塊顯示 - 月份選擇  */const selectMonthArea = document.querySelector('.calendarPageBox .selectMonthArea');
+    /** 顯示年 */const dataPickerShowYear = document.querySelector('.showArea_calendar .year');
+    /** 顯示日 */const dataPickerShowDay = document.querySelector('.showArea_calendar .day');
+    /** 年份選取按鈕 */const datePicker_year = document.querySelector('.calendarPageBox .selectArea header .datePicker_year p');
+    /** 月份選取按鈕 */const datePicker_month = document.querySelector('.calendarPageBox .selectArea header .datePicker_month p');
+    /** 區塊顯示 - 日期選擇 */const userSelectArea = document.querySelector('.calendarPageBox .selectArea .calender .userSelectArea');
+    /** 區塊顯示 - 年份選擇 */const selectYearArea = document.querySelector('.calendarPageBox .selectArea .calender .selectYearArea');
+    /** 區塊顯示 - 月份選擇  */const selectMonthArea = document.querySelector('.calendarPageBox .selectArea .calender .selectMonthArea');
     /** 所有年份選單 */const selectYearAreaBtns = document.querySelectorAll('.calendarPageBox .selectYearArea ul li');
     /** 所有月份選單 */const selectMonthAreaBtns = document.querySelectorAll('.calendarPageBox .selectMonthArea ul li');
     /** Prev - year */const datePicker_yearPrevBtn = document.querySelector('.calendarPageBox .datePicker_year .prev');
@@ -473,6 +476,7 @@ function setButtons_calendar() {
     selectMonthAreaBtns.forEach((btn, i) => {
         btn.addEventListener('click', () => {
             selectMonthAreaBtns.forEach(x => {
+                console.log(123);
                 x.classList.remove('active');
             });
             let dateString;
