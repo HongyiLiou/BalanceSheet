@@ -741,9 +741,9 @@ input[type=number] {
   animation: beam 3s infinite;
 }
 .brightness .beams .beam1 {
-  width: 550px;
-  height: 5px;
-  transform: rotate(-24deg);
+  width: 650px;
+  height: 15px;
+  transform: rotate(-48deg);
   animation-delay: -0.5s;
 }
 @keyframes beam {
@@ -758,9 +758,9 @@ input[type=number] {
   }
 }
 .brightness .beams .beam2 {
-  width: 700px;
-  height: 20px;
-  transform: rotate(-36deg);
+  width: 600px;
+  height: 15px;
+  transform: rotate(-60deg);
   animation-delay: -1s;
 }
 @keyframes beam {
@@ -775,9 +775,9 @@ input[type=number] {
   }
 }
 .brightness .beams .beam3 {
-  width: 450px;
-  height: 20px;
-  transform: rotate(-12deg);
+  width: 550px;
+  height: 5px;
+  transform: rotate(-60deg);
   animation-delay: -1.5s;
 }
 @keyframes beam {
@@ -792,8 +792,8 @@ input[type=number] {
   }
 }
 .brightness .beams .beam4 {
-  width: 700px;
-  height: 5px;
+  width: 500px;
+  height: 25px;
   transform: rotate(-48deg);
   animation-delay: -2s;
 }
@@ -809,8 +809,8 @@ input[type=number] {
   }
 }
 .brightness .beams .beam5 {
-  width: 500px;
-  height: 5px;
+  width: 650px;
+  height: 30px;
   transform: rotate(-60deg);
   animation-delay: -2.5s;
 }
@@ -826,9 +826,9 @@ input[type=number] {
   }
 }
 .brightness .beams .beam6 {
-  width: 500px;
-  height: 25px;
-  transform: rotate(-48deg);
+  width: 450px;
+  height: 10px;
+  transform: rotate(-72deg);
   animation-delay: -3s;
 }
 @keyframes beam {
@@ -863,14 +863,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-210px, 90px);
+    transform: translate(-90px, 150px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-400px, 450px);
+    transform: translate(-50px, 150px);
   }
 }
 .brightness .shines .shine2 {
@@ -883,14 +883,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-180px, 60px);
+    transform: translate(-180px, 210px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-400px, 350px);
+    transform: translate(-450px, 450px);
   }
 }
 .brightness .shines .shine3 {
@@ -903,14 +903,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-150px, 300px);
+    transform: translate(-60px, 120px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-200px, 500px);
+    transform: translate(-500px, 150px);
   }
 }
 .brightness .shines .shine4 {
@@ -923,14 +923,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-300px, 210px);
+    transform: translate(-30px, 120px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-400px, 250px);
+    transform: translate(-500px, 250px);
   }
 }
 .brightness .shines .shine5 {
@@ -943,14 +943,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-270px, 180px);
+    transform: translate(-60px, 270px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-250px, 300px);
+    transform: translate(-100px, 50px);
   }
 }
 .brightness .shines .shine6 {
@@ -963,14 +963,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-270px, 300px);
+    transform: translate(-150px, 240px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-300px, 50px);
+    transform: translate(-300px, 150px);
   }
 }
 .brightness .shines .shine7 {
@@ -983,14 +983,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-180px, 180px);
+    transform: translate(-90px, 150px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-350px, 200px);
+    transform: translate(-50px, 50px);
   }
 }
 .brightness .shines .shine8 {
@@ -1003,14 +1003,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-30px, 120px);
+    transform: translate(-60px, 120px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-350px, 350px);
+    transform: translate(-450px, 350px);
   }
 }
 .brightness .shines .shine9 {
@@ -1023,14 +1023,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-90px, 210px);
+    transform: translate(-60px, 300px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-350px, 100px);
+    transform: translate(-200px, 50px);
   }
 }
 .brightness .shines .shine10 {
@@ -1043,14 +1043,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-270px, 90px);
+    transform: translate(-300px, 270px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-150px, 300px);
+    transform: translate(-500px, 350px);
   }
 }
 
@@ -2349,6 +2349,9 @@ input[type=number] {
   opacity: 1;
   pointer-events: auto;
 }
+.showArea_calendar.active .sidebar_calendar {
+  display: flex;
+}
 .showArea_calendar header {
   height: 35px;
   line-height: 35px;
@@ -2427,7 +2430,7 @@ input[type=number] {
   resize: none;
 }
 .showArea_calendar footer {
-  display: flex;
+  display: none;
   width: 100%;
   height: 60px;
   top: 410px;
@@ -2454,6 +2457,367 @@ input[type=number] {
 .showArea_calendar footer button:active {
   transition: 0s;
   background: #666666;
+}
+.showArea_calendar .sidebar_calendar {
+  position: absolute;
+  display: none;
+  right: -70%;
+  bottom: 0;
+  flex-direction: column;
+  transform: perspective(500px) rotate3d(0, -1, 0, 45deg) translateX(0%);
+  -webkit-perspective: 700;
+  -webkit-perspective-origin: 100% 100%;
+  -webkit-transform-style: -webkit-preserve-3d;
+}
+.showArea_calendar .sidebar_calendar button {
+  position: relative;
+  font-family: "Pinyon Script", cursive;
+  font-weight: 900;
+  padding: 7px 30px 3px 15px;
+  margin-bottom: 20px;
+  font-size: 150%;
+  background: transparent;
+  border: 0;
+  color: #fffbe8;
+  outline: none;
+  cursor: pointer;
+  opacity: 0;
+}
+.showArea_calendar .sidebar_calendar button:hover::after {
+  opacity: 1;
+}
+.showArea_calendar .sidebar_calendar button::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  border-radius: 0 50px 50px 0;
+  border: solid 2px rgba(255, 251, 232, 0.4);
+  background: linear-gradient(15deg, #020020, #242055 60%, #a9a3f5);
+  z-index: -1;
+}
+.showArea_calendar .sidebar_calendar button::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  border-radius: 0 50px 50px 0;
+  opacity: 0;
+  border: solid 2px rgba(255, 251, 232, 0.4);
+  background: linear-gradient(15deg, #020020, #242055);
+  transition: 0.3s;
+  z-index: -1;
+}
+.showArea_calendar .sidebar_calendar button.delete {
+  opacity: 0;
+  pointer-events: none;
+  transform: perspective(1500px) rotate3d(1, 0.4, 0, -40deg) translateX(-10%);
+  -webkit-perspective: 700;
+  -webkit-perspective-origin: 100% 100%;
+  -webkit-transform-style: -webkit-preserve-3d;
+}
+.showArea_calendar .sidebar_calendar button.delete::before {
+  box-shadow: 0 5px 7px rgba(0, 0, 0, 0.7), inset 0 -5px 5px rgba(32, 0, 0, 0.7);
+  background: linear-gradient(165deg, #200000, #552020 60%, #f5a3a3);
+}
+.showArea_calendar .sidebar_calendar button.delete::after {
+  background: linear-gradient(165deg, #470c0c, #744242 60%, #ffd7d7);
+}
+.showArea_calendar .sidebar_calendar button.delete.active {
+  opacity: 1;
+  pointer-events: auto;
+  animation: delete 0.6s 0s forwards;
+}
+@keyframes delete {
+  0% {
+    opacity: 0;
+    transform: perspective(1500px) rotate3d(1, 0.4, 0, -40deg) translateX(-30%);
+  }
+  100% {
+    opacity: 1;
+    transform: perspective(1500px) rotate3d(1, 0.4, 0, -40deg) translateX(-10%);
+  }
+}
+.showArea_calendar .sidebar_calendar button.add {
+  transform: perspective(1500px) rotate3d(0, -1, 0.25, 15deg) translateX(-5%);
+  -webkit-perspective: 700;
+  -webkit-perspective-origin: 100% 100%;
+  -webkit-transform-style: -webkit-preserve-3d;
+  animation: add 0.6s 0.2s forwards;
+}
+.showArea_calendar .sidebar_calendar button.add::before {
+  box-shadow: 0 5px 7px rgba(0, 0, 0, 0.7), inset 0 -5px 5px rgba(2, 0, 32, 0.7);
+  background: linear-gradient(90deg, #020020, #242055 60%, #a9a3f5);
+}
+.showArea_calendar .sidebar_calendar button.add::after {
+  background: linear-gradient(90deg, #151147, #4b477e 60%, #d6d3ff);
+}
+@keyframes add {
+  0% {
+    opacity: 0;
+    transform: perspective(1500px) rotate3d(0, -1, 0.25, 15deg) translateX(-25%);
+  }
+  100% {
+    opacity: 1;
+    transform: perspective(1500px) rotate3d(0, -1, 0.25, 15deg) translateX(-5%);
+  }
+}
+.showArea_calendar .sidebar_calendar button.saveAll {
+  transform: perspective(1500px) rotate3d(0.7, -0.5, 0.2, 30deg) translateX(-12%);
+  -webkit-perspective: 700;
+  -webkit-perspective-origin: 100% 100%;
+  -webkit-transform-style: -webkit-preserve-3d;
+  animation: saveAll 0.6s 0.4s forwards;
+}
+.showArea_calendar .sidebar_calendar button.saveAll::before {
+  box-shadow: 0 5px 7px rgba(0, 0, 0, 0.7), inset 0 -5px 5px rgba(0, 32, 27, 0.7);
+  background: linear-gradient(15deg, #00201b, #205549 60%, #a3f5dc);
+}
+.showArea_calendar .sidebar_calendar button.saveAll::after {
+  background: linear-gradient(15deg, #084138, #346d60 60%, #ccfff0);
+}
+@keyframes saveAll {
+  0% {
+    opacity: 0;
+    transform: perspective(1500px) rotate3d(0.7, -0.5, 0.2, 30deg) translateX(-32%);
+  }
+  100% {
+    opacity: 1;
+    transform: perspective(1500px) rotate3d(0.7, -0.5, 0.2, 30deg) translateX(-12%);
+  }
+}
+.showArea_calendar .sidebar_calendar button .border {
+  width: 70%;
+  height: 150%;
+  position: absolute;
+  background: url("../images/borderCenter.png") left bottom no-repeat;
+  background-size: cover;
+  transform: scale(-1, 1);
+  bottom: -16px;
+  right: -10px;
+}
+.showArea_calendar .sidebar_calendar button .brightLight {
+  width: 120%;
+  height: 120%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+.showArea_calendar .sidebar_calendar button .brightLight [class^=dot] {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: #FFF;
+  border-radius: 50%;
+  top: 0;
+  right: 0;
+  filter: blur(1px);
+}
+.showArea_calendar .sidebar_calendar button .brightLight .dot1 {
+  animation: shine1 20s infinite;
+  animation-delay: -1.5s;
+}
+@keyframes shine1 {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+    transform: translate(5px, 100px);
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(70px, 60px);
+  }
+}
+.showArea_calendar .sidebar_calendar button .brightLight .dot2 {
+  animation: shine2 20s infinite;
+  animation-delay: -3s;
+}
+@keyframes shine2 {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+    transform: translate(5px, 100px);
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(20px, 30px);
+  }
+}
+.showArea_calendar .sidebar_calendar button .brightLight .dot3 {
+  animation: shine3 20s infinite;
+  animation-delay: -4.5s;
+}
+@keyframes shine3 {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+    transform: translate(5px, 100px);
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(50px, 10px);
+  }
+}
+.showArea_calendar .sidebar_calendar button .brightLight .dot4 {
+  animation: shine4 20s infinite;
+  animation-delay: -6s;
+}
+@keyframes shine4 {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+    transform: translate(5px, 100px);
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(10px, 60px);
+  }
+}
+.showArea_calendar .sidebar_calendar button .brightLight .dot5 {
+  animation: shine5 20s infinite;
+  animation-delay: -7.5s;
+}
+@keyframes shine5 {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+    transform: translate(5px, 100px);
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(30px, 50px);
+  }
+}
+.showArea_calendar .sidebar_calendar button .brightLight .dot6 {
+  animation: shine6 20s infinite;
+  animation-delay: -9s;
+}
+@keyframes shine6 {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+    transform: translate(5px, 100px);
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(60px, 50px);
+  }
+}
+.showArea_calendar .sidebar_calendar button .brightLight .dot7 {
+  animation: shine7 20s infinite;
+  animation-delay: -10.5s;
+}
+@keyframes shine7 {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+    transform: translate(5px, 100px);
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(60px, 10px);
+  }
+}
+.showArea_calendar .sidebar_calendar button .brightLight .dot8 {
+  animation: shine8 20s infinite;
+  animation-delay: -12s;
+}
+@keyframes shine8 {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+    transform: translate(5px, 100px);
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(50px, 100px);
+  }
+}
+.showArea_calendar .sidebar_calendar button .brightLight .dot9 {
+  animation: shine9 20s infinite;
+  animation-delay: -13.5s;
+}
+@keyframes shine9 {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+    transform: translate(5px, 100px);
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(80px, 10px);
+  }
+}
+.showArea_calendar .sidebar_calendar button .brightLight .dot10 {
+  animation: shine10 20s infinite;
+  animation-delay: -15s;
+}
+@keyframes shine10 {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+    transform: translate(5px, 100px);
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(60px, 10px);
+  }
 }
 
 .lightTheme .calendarPageBox .selectArea {
@@ -2651,6 +3015,11 @@ input[type=number] {
   background: #FFF;
 }
 
+@media screen and (max-width: 1000px) {
+  .showArea_calendar footer {
+    display: flex;
+  }
+}
 .linksPageBox {
   position: relative;
 }

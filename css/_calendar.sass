@@ -225,6 +225,9 @@
         opacity: 1
         pointer-events: auto
 
+        .sidebar_calendar
+            display: flex
+
     header
         height: 35px
         line-height: 35px
@@ -303,7 +306,8 @@
                 resize: none
 
     footer
-        display: flex
+        // display: flex
+        display: none
         width: 100%
         height: 60px
         top: 410px
@@ -330,6 +334,173 @@
                 transition: 0s
                 background: #666666
 
+    .sidebar_calendar
+        position: absolute
+        // display: flex
+        display: none
+        right: -70%
+        bottom: 0
+        flex-direction: column
+        transform: perspective(500px) rotate3d(0, -1, 0, 45deg) translateX(0%)
+        -webkit-perspective: 700
+        -webkit-perspective-origin: 100% 100%
+        -webkit-transform-style: -webkit-preserve-3d
+
+        button
+            position: relative
+            // font-family: 'Lato', sans-serif
+            font-family: 'Pinyon Script', cursive
+            font-weight: 900
+            padding: 7px 30px 3px 15px
+            margin-bottom: 20px
+            font-size: 150%
+            // background: #030031
+            background: transparent
+            border: 0
+            color: #fffbe8
+            // box-shadow: 0 5px 7px rgba(#000, 0.7)
+            outline: none
+            cursor: pointer
+            opacity: 0
+            // transform: perspective(1500px) rotate3d(1, 0, 0.33, -15deg) translateX(0%)
+            // -webkit-perspective: 700
+            // -webkit-perspective-origin: 100% 100%
+            // -webkit-transform-style: -webkit-preserve-3d
+
+            &:hover
+                &::after
+                    opacity: 1
+
+            &::before
+                content: ''
+                position: absolute
+                +size(100%, 100%)
+                top: 0
+                right: 0
+                border-radius: 0 50px 50px 0
+                border: solid 2px rgba(#fffbe8, 0.4)
+                background: linear-gradient(15deg, #020020, #242055 60%, #a9a3f5)
+                // transform: rotateX(15deg) rotateY(-10deg) rotateZ(0deg)
+                z-index: -1
+
+            &::after
+                content: ''
+                position: absolute
+                +size(100%, 100%)
+                top: 0
+                right: 0
+                border-radius: 0 50px 50px 0
+                opacity: 0
+                border: solid 2px rgba(#fffbe8, 0.4)
+                background: linear-gradient(15deg, #020020, #242055)
+                transition: 0.3s
+                // transform: rotateX(15deg) rotateY(-10deg) rotateZ(0deg)
+                z-index: -1
+
+            &.delete
+                opacity: 0
+                pointer-events: none
+                transform: perspective(1500px) rotate3d(1, 0.4, 0, -40deg) translateX(-10%)
+                -webkit-perspective: 700
+                -webkit-perspective-origin: 100% 100%
+                -webkit-transform-style: -webkit-preserve-3d
+                &::before
+                    box-shadow: 0 5px 7px rgba(#000, 0.7), inset 0 -5px 5px rgba(#200000, 0.7)
+                    background: linear-gradient(165deg, #200000, #552020 60%, #f5a3a3)
+                &::after
+                    background: linear-gradient(165deg, #470c0c, #744242 60%, #ffd7d7)
+                &.active
+                    opacity: 1
+                    pointer-events: auto
+                    animation: delete 0.6s 0s forwards
+                @keyframes delete
+                    0%
+                        opacity: 0
+                        transform: perspective(1500px) rotate3d(1, 0.4, 0, -40deg) translateX(-30%)
+                    100%
+                        opacity: 1
+                        transform: perspective(1500px) rotate3d(1, 0.4, 0, -40deg) translateX(-10%)
+
+            &.add
+                transform: perspective(1500px) rotate3d(0, -1, 0.25, 15deg) translateX(-5%)
+                -webkit-perspective: 700
+                -webkit-perspective-origin: 100% 100%
+                -webkit-transform-style: -webkit-preserve-3d
+                animation: add 0.6s 0.2s forwards
+                &::before
+                    box-shadow: 0 5px 7px rgba(#000, 0.7), inset 0 -5px 5px rgba(#020020, 0.7)
+                    background: linear-gradient(90deg, #020020, #242055 60%, #a9a3f5)
+                &::after
+                    background: linear-gradient(90deg, #151147, #4b477e 60%, #d6d3ff)
+                @keyframes add
+                    0%
+                        opacity: 0
+                        transform: perspective(1500px) rotate3d(0, -1, 0.25, 15deg) translateX(-25%)
+                    100%
+                        opacity: 1
+                        transform: perspective(1500px) rotate3d(0, -1, 0.25, 15deg) translateX(-5%)
+
+            &.saveAll
+                transform: perspective(1500px) rotate3d(0.7, -0.5, 0.2, 30deg) translateX(-12%)
+                -webkit-perspective: 700
+                -webkit-perspective-origin: 100% 100%
+                -webkit-transform-style: -webkit-preserve-3d
+                animation: saveAll 0.6s 0.4s forwards
+                &::before
+                    box-shadow: 0 5px 7px rgba(#000, 0.7), inset 0 -5px 5px rgba(#00201b, 0.7)
+                    background: linear-gradient(15deg, #00201b, #205549 60%, #a3f5dc)
+                &::after
+                    background: linear-gradient(15deg, #084138, #346d60 60%, #ccfff0)
+                @keyframes saveAll
+                    0%
+                        opacity: 0
+                        transform: perspective(1500px) rotate3d(0.7, -0.5, 0.2, 30deg) translateX(-32%)
+                    100%
+                        opacity: 1
+                        transform: perspective(1500px) rotate3d(0.7, -0.5, 0.2, 30deg) translateX(-12%)
+
+            .border
+                +size(70%, 150%)
+                position: absolute
+                background: url('../images/borderCenter.png') left bottom no-repeat
+                background-size: cover
+                transform: scale(-1, 1)
+                bottom: -16px
+                right: -10px
+
+            .brightLight
+                +size(120%, 120%)
+                +ab_center
+                pointer-events: none
+
+                [class^='dot']
+                    position: absolute
+                    +size(2px, 2px)
+                    background: #FFF
+                    border-radius: 50%
+                    top: 0
+                    right: 0
+                    filter: blur(1px)
+                @for $i from 1 through 10
+                    .dot#{$i}
+                        $x1: random(10) * 10px
+                        $y1: random(10) * 10px
+                        $x2: random(10) * -5px
+                        $y2: random(10) * 5px
+                        animation: shine#{$i} 20s infinite
+                        animation-delay: $i*-1.5s
+
+                        +keyframes(shine#{$i})
+                            0%
+                                opacity: 0
+                            30%
+                                opacity: 1
+                                transform: translate(5px, 100px)
+                            60%
+                                opacity: 1
+                            100%
+                                opacity: 0
+                                transform: translate($x1, $y1)  
 
 
 
@@ -521,3 +692,9 @@
 
 
 
+// RWD
+@media screen and (max-width: 1400px)
+@media screen and (max-width: 1000px)
+    .showArea_calendar
+        footer
+            display: flex

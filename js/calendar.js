@@ -328,6 +328,7 @@ function setCalender_calendar(monthString) {
     /** 行事曆標題 */const calendarInput_summary = document.querySelector('.showArea_calendar .inputArea_calendar label .calendar_summary');
     /** 行事曆描述 */const calendarInput_description = document.querySelector('.showArea_calendar .inputArea_calendar label .calendar_description');
     /** 刪除按鈕 */const deleteBtn = document.querySelector('.showArea_calendar footer .delete');
+    /** 遊戲刪除按鈕 */const gameDeleteBtn = document.querySelector('.showArea_calendar .sidebar_calendar .delete');
     const date = new Date(Number(dataPickerShowYear.innerHTML), monthString, 0);
     const week = new Date(`${dataPickerShowYear.innerHTML}/${monthString}/1`).getDay();
     const fullMonth = date.getDate();
@@ -377,6 +378,7 @@ function setCalender_calendar(monthString) {
                 calendarInput_summary.value = '';
                 calendarInput_description.value = '';
                 deleteBtn.style.display = 'none';
+                gameDeleteBtn.classList.remove('active');
                 dateBtns.forEach(x => {
                     x.classList.remove('active');
                 });
@@ -395,6 +397,7 @@ function setCalender_calendar(monthString) {
                             calendarInput_summary.value = x;
                             calendarInput_description.value = descriptions[index];
                             deleteBtn.style.display = 'block';
+                            gameDeleteBtn.classList.add('active');
                         });
                     }
                 });
