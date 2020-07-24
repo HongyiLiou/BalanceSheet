@@ -373,6 +373,11 @@
                 .brightLight
                     opacity: 1
 
+            &:active
+                &::after
+                    transition: 0s
+                    opacity: 0
+
             &::before
                 content: ''
                 position: absolute
