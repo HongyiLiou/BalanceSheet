@@ -370,6 +370,8 @@
             &:hover
                 &::after
                     opacity: 1
+                .brightLight
+                    opacity: 1
 
             &::before
                 content: ''
@@ -421,6 +423,10 @@
                         opacity: 1
                         transform: perspective(1500px) rotate3d(1, 0.4, 0, -40deg) translateX(-10%)
 
+                .brightLight
+                    [class^='dot']
+                        background: #f5a3a3
+
             &.add
                 transform: perspective(1500px) rotate3d(0, -1, 0.25, 15deg) translateX(-5%)
                 -webkit-perspective: 700
@@ -439,6 +445,10 @@
                     100%
                         opacity: 1
                         transform: perspective(1500px) rotate3d(0, -1, 0.25, 15deg) translateX(-5%)
+
+                .brightLight
+                    [class^='dot']
+                        background: #a9a3f5
 
             &.saveAll
                 transform: perspective(1500px) rotate3d(0.7, -0.5, 0.2, 30deg) translateX(-12%)
@@ -459,6 +469,10 @@
                         opacity: 1
                         transform: perspective(1500px) rotate3d(0.7, -0.5, 0.2, 30deg) translateX(-12%)
 
+                .brightLight
+                    [class^='dot']
+                        background: #a3f5dc
+
             .border
                 +size(70%, 150%)
                 position: absolute
@@ -471,23 +485,25 @@
             .brightLight
                 +size(120%, 120%)
                 +ab_center
+                transition: 0.5s 0.3s
+                opacity: 0
                 pointer-events: none
 
                 [class^='dot']
-                    position: absolute
-                    +size(2px, 2px)
-                    background: #FFF
+                    position: absolute【
+                    +size(3px, 3px)
                     border-radius: 50%
-                    top: 0
-                    right: 0
+                    left: 0
                     filter: blur(1px)
                 @for $i from 1 through 10
                     .dot#{$i}
-                        $x1: random(10) * 10px
-                        $y1: random(10) * 10px
-                        $x2: random(10) * -5px
-                        $y2: random(10) * 5px
-                        animation: shine#{$i} 20s infinite
+                        $x1: random(5) * 50px + 100px
+                        $y1: random(10) * 3px
+                        $x2: random(10) * 3px
+                        $y2: random(10) * 3px
+                        $top: random(7) * 3px
+                        top: $top
+                        animation: shine#{$i} 8s infinite
                         animation-delay: $i*-1.5s
 
                         +keyframes(shine#{$i})
@@ -495,12 +511,12 @@
                                 opacity: 0
                             30%
                                 opacity: 1
-                                transform: translate(5px, 100px)
+                                // transform: translate(100px, $y2)
                             60%
                                 opacity: 1
                             100%
                                 opacity: 0
-                                transform: translate($x1, $y1)  
+                                transform: translate(300px, $y1)  
 
 
 
