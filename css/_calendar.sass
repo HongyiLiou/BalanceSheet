@@ -425,7 +425,9 @@
 
                 .brightLight
                     [class^='dot']
-                        background: #f5a3a3
+                        background: #fabfbf
+                    [class^='bean']
+                        background: linear-gradient(to right, transparent, #ffd2d2, transparent)
 
             &.add
                 transform: perspective(1500px) rotate3d(0, -1, 0.25, 15deg) translateX(-5%)
@@ -448,7 +450,9 @@
 
                 .brightLight
                     [class^='dot']
-                        background: #a9a3f5
+                        background: #c3beff
+                    [class^='bean']
+                        background: linear-gradient(to right, transparent, #d2ceff, transparent)
 
             &.saveAll
                 transform: perspective(1500px) rotate3d(0.7, -0.5, 0.2, 30deg) translateX(-12%)
@@ -471,7 +475,9 @@
 
                 .brightLight
                     [class^='dot']
-                        background: #a3f5dc
+                        background: #b1ffe8
+                    [class^='bean']
+                        background: linear-gradient(to right, transparent, #d0fff1, transparent)
 
             .border
                 +size(70%, 150%)
@@ -490,7 +496,7 @@
                 pointer-events: none
 
                 [class^='dot']
-                    position: absolute【
+                    position: absolute
                     +size(3px, 3px)
                     border-radius: 50%
                     left: 0
@@ -503,10 +509,10 @@
                         $y2: random(10) * 3px
                         $top: random(7) * 3px
                         top: $top
-                        animation: shine#{$i} 8s infinite
+                        animation: dot#{$i} 8s infinite
                         animation-delay: $i*-1.5s
 
-                        +keyframes(shine#{$i})
+                        +keyframes(dot#{$i})
                             0%
                                 opacity: 0
                             30%
@@ -517,6 +523,35 @@
                             100%
                                 opacity: 0
                                 transform: translate(300px, $y1)  
+                [class^='bean']
+                    position: absolute
+                    +size(100px, 3px)
+                    border-radius: 100px
+                    left: 0
+                    opacity: 0.5
+                    filter: blur(1px)
+                @for $i from 1 through 6
+                    .bean#{$i}
+                        $x1: random(5) * 50px + 100px
+                        $y1: random(6) * 1px
+                        $x2: random(10) * 3px
+                        $y2: random(10) * 3px
+                        $top: random(6) * 7px
+                        top: $top
+                        animation: bean#{$i} 1s infinite
+                        animation-delay: $i*-0.7s
+
+                        +keyframes(bean#{$i})
+                            0%
+                                opacity: 0
+                            30%
+                                opacity: 0.5
+                                // transform: translate(100px, $y2)
+                            60%
+                                opacity: 0.5
+                            100%
+                                opacity: 0
+                                transform: translate(200px, $y1)  
 
 
 
