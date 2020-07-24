@@ -228,7 +228,7 @@ function calendarListener() {
     const showArea_calendar = document.querySelector('.showArea_calendar');
     /** 日期選取按鈕 */const datePicker_day = document.querySelectorAll('.calendarPageBox .datePicker_day li');
 
-    dateBlocks.forEach(dayBlock => {
+    dateBlocks.forEach((dayBlock) => {
         dayBlock.addEventListener('click', () => {
             const mousePos = getMouseElementPos();
             const windowWidth = document.body.offsetWidth;
@@ -329,6 +329,10 @@ function setCalender_calendar(monthString) {
     /** 行事曆描述 */const calendarInput_description = document.querySelector('.showArea_calendar .inputArea_calendar label .calendar_description');
     /** 刪除按鈕 */const deleteBtn = document.querySelector('.showArea_calendar footer .delete');
     /** 遊戲刪除按鈕 */const gameDeleteBtn = document.querySelector('.showArea_calendar .sidebar_calendar .delete');
+    /** 新增按鈕 */const addBtn = document.querySelector('.showArea_calendar footer .add');
+    /** 遊戲新增按鈕 */const gameAddBtn = document.querySelector('.showArea_calendar .sidebar_calendar .add');
+    /** 全部儲存按鈕 */const saveAllBtn = document.querySelector('.showArea_calendar footer .saveAll');
+    /** 遊戲全部儲存按鈕 */const gameSaveAllBtn = document.querySelector('.showArea_calendar .sidebar_calendar .saveAll');
     const date = new Date(Number(dataPickerShowYear.innerHTML), monthString, 0);
     const week = new Date(`${dataPickerShowYear.innerHTML}/${monthString}/1`).getDay();
     const fullMonth = date.getDate();
@@ -352,6 +356,9 @@ function setCalender_calendar(monthString) {
         const resData = res;
         summaries_calendar = resData.summary;
         descriptions_calendar = resData.description;
+
+        console.log('summaries_calendar', summaries_calendar);
+        console.log('descriptions_calendar', descriptions_calendar);
         
         // 依據月份天數將日期置入月曆中，順便置入行事曆內容
         for (let i = week; i < fullMonth + week; i++) {
@@ -367,7 +374,6 @@ function setCalender_calendar(monthString) {
                 datePicker_day[i].classList.add('active');
             }
         }
-
         
         // // 註冊點擊事件
         /** 所有日期 button */const dateBtns = document.querySelectorAll('.calendarPageBox .pointerEventAuto');
@@ -401,26 +407,25 @@ function setCalender_calendar(monthString) {
                         });
                     }
                 });
-
                 btn.classList.add('active');
                 setDateToShow_calendar(`${dataPickerShowYear.innerHTML}/${monthString}/${i + 1}`);
                 btn.removeEventListener('click', timer);
+
+                // 新增按鈕
+                addBtn.addEventListener('click', () => { addBtnFunc(i); });
+                gameAddBtn.addEventListener('click', () => { addBtnFunc(i); });
             });
 
         });
 
         setButtons_calendar();
     });
-
-    
-
-
-    
+ 
 }
 
 
 
-/** 設定所有按鈕 */
+/** 設定月曆所有按鈕 */
 function setButtons_calendar() {
     /** 顯示年 */const dataPickerShowYear = document.querySelector('.showArea_calendar .year');
     /** 顯示日 */const dataPickerShowDay = document.querySelector('.showArea_calendar .day');
@@ -592,6 +597,43 @@ function setButtons_calendar() {
 // https://script.google.com/macros/s/AKfycbw6E5iG_GFX6pyyThqh9IYAvgvhXyrKt25DYdOG-UCsIE8F7d42/exec
 
 function testCalendar() {
+}
+
+
+/** 行事曆編輯器 - 新增按鈕 (Add) */
+function addBtnFunc(index) {
+    /** 行事曆標題 */const calendarInput_summary = document.querySelector('.showArea_calendar .inputArea_calendar label .calendar_summary');
+    /** 行事曆描述 */const calendarInput_description = document.querySelector('.showArea_calendar .inputArea_calendar label .calendar_description');
+    /** 行事曆清單 */const inputArea_calendar = document.querySelector('.showArea_calendar .inputArea_calendar ul');
+    /** 刪除按鈕 */const deleteBtn = document.querySelector('.showArea_calendar footer .delete');
+    /** 遊戲刪除按鈕 */const gameDeleteBtn = document.querySelector('.showArea_calendar .sidebar_calendar .delete');
+
+    if (calendarInput_summary.value && calendarInput_description.value) {
+        const oSummary = calendarInput_summary.value;
+        const oDescription = calendarInput_description.value;
+        const li = document.createElement('li');
+        li.title = calendarInput_summary.value;
+        li.innerHTML = calendarInput_summary.value;
+        summaries_calendar[index] = `${summaries_calendar[index]},${calendarInput_summary.value}`;
+        descriptions_calendar[index] = `${descriptions_calendar[index]},${calendarInput_description.value}`;
+        calendarInput_summary.value = '';
+        calendarInput_description.value = '';
+        deleteBtn.style.display = 'none';
+        gameDeleteBtn.classList.remove('active');
+        
+        inputArea_calendar.appendChild(li);
+        li.addEventListener('click', () => {
+            calendarInput_summary.value = oSummary;
+            calendarInput_description.value = oDescription;
+            deleteBtn.style.display = 'block';
+            gameDeleteBtn.classList.add('active');
+        });
+
+    } else {
+
+    }
+
+    console.log(1233);
 }
 
 

@@ -430,9 +430,9 @@
 
                 .brightLight
                     [class^='dot']
-                        background: #fabfbf
+                        background: #ff8686
                     [class^='bean']
-                        background: linear-gradient(to right, transparent, #ffd2d2, transparent)
+                        background: linear-gradient(to right, transparent, #ff8686, transparent)
 
             &.add
                 transform: perspective(1500px) rotate3d(0, -1, 0.25, 15deg) translateX(-5%)
@@ -455,9 +455,9 @@
 
                 .brightLight
                     [class^='dot']
-                        background: #c3beff
+                        background: #b8b1ff
                     [class^='bean']
-                        background: linear-gradient(to right, transparent, #d2ceff, transparent)
+                        background: linear-gradient(to right, transparent, #b8b1ff, transparent)
 
             &.saveAll
                 transform: perspective(1500px) rotate3d(0.7, -0.5, 0.2, 30deg) translateX(-12%)
@@ -480,9 +480,9 @@
 
                 .brightLight
                     [class^='dot']
-                        background: #b1ffe8
+                        background: #85ffdb
                     [class^='bean']
-                        background: linear-gradient(to right, transparent, #d0fff1, transparent)
+                        background: linear-gradient(to right, transparent, #85ffdb, transparent)
 
             .border
                 +size(70%, 150%)
@@ -541,7 +541,7 @@
                         $y1: random(6) * 1px
                         $x2: random(10) * 3px
                         $y2: random(10) * 3px
-                        $top: random(6) * 7px
+                        $top: random(3) * 7px
                         top: $top
                         animation: bean#{$i} 1s infinite
                         animation-delay: $i*-0.7s
@@ -728,7 +728,8 @@
                     resize: none
 
         footer
-            display: flex
+            // display: flex
+            display: none
             width: 100%
             height: 60px
             top: 410px
@@ -754,3 +755,5 @@
     .showArea_calendar
         footer
             display: flex
+        .sidebar_calendar
+            display: none
