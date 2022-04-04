@@ -91,7 +91,7 @@ function onLoginBtn(autoLogOut) {
     const rememberChecked = document.querySelector('.loginPageBox .remember .rememberChecked');
     const login = JSON.parse(localStorage.getItem('login'));
     
-    if (login) {
+    if (login && acn.value === login.AccountNumber) {
         // 直接幫登入
         showLoading(true);
 
@@ -108,7 +108,7 @@ function onLoginBtn(autoLogOut) {
             if (res == '帳號或密碼錯誤' || res == '密碼錯誤') {
                 const popupObj = {
                     text: res
-                }
+                };
                 showPopupBox(popupObj);
             } else {
                 const jsonString = JSON.stringify(res);
@@ -134,7 +134,6 @@ function onLoginBtn(autoLogOut) {
 
     } else if (acn.value && psw.value) {
 
-
         showLoading(true);
 
         const parameter = {
@@ -150,7 +149,7 @@ function onLoginBtn(autoLogOut) {
             if (res == '帳號或密碼錯誤' || res == '密碼錯誤') {                
                 const popupObj = {
                     text: res
-                }
+                };
                 showPopupBox(popupObj);
             } else {
                 const jsonString = JSON.stringify(res);
@@ -171,7 +170,6 @@ function onLoginBtn(autoLogOut) {
                 const login = JSON.stringify({ AccountNumber: acn.value, Password: psw.value });
                 localStorage.setItem('login', login);
 
-         
                 afterLogin();
 
                 // 歡迎回來
@@ -187,7 +185,7 @@ function onLoginBtn(autoLogOut) {
     } else {
         const popupSettingObj = {
             text: '請輸入帳號密碼'
-        }
+        };
         showPopupBox(popupSettingObj);
         return;
     }

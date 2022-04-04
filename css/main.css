@@ -674,8 +674,8 @@ input[type=number] {
   transition: 0.3s;
 }
 .loading .loadingCircle .border {
-  width: calc(100% + 10px);
-  height: calc(100% + 10px);
+  width: calc(100% + 5px);
+  height: calc(100% + 5px);
   position: absolute;
   left: 50%;
   top: 50%;
@@ -741,9 +741,9 @@ input[type=number] {
   animation: beam 3s infinite;
 }
 .brightness .beams .beam1 {
-  width: 650px;
-  height: 15px;
-  transform: rotate(-60deg);
+  width: 550px;
+  height: 25px;
+  transform: rotate(-24deg);
   animation-delay: -0.5s;
 }
 @keyframes beam {
@@ -758,9 +758,9 @@ input[type=number] {
   }
 }
 .brightness .beams .beam2 {
-  width: 600px;
-  height: 20px;
-  transform: rotate(-24deg);
+  width: 700px;
+  height: 10px;
+  transform: rotate(-48deg);
   animation-delay: -1s;
 }
 @keyframes beam {
@@ -775,9 +775,9 @@ input[type=number] {
   }
 }
 .brightness .beams .beam3 {
-  width: 700px;
-  height: 25px;
-  transform: rotate(-24deg);
+  width: 500px;
+  height: 15px;
+  transform: rotate(-72deg);
   animation-delay: -1.5s;
 }
 @keyframes beam {
@@ -792,9 +792,9 @@ input[type=number] {
   }
 }
 .brightness .beams .beam4 {
-  width: 500px;
-  height: 15px;
-  transform: rotate(-24deg);
+  width: 600px;
+  height: 25px;
+  transform: rotate(-36deg);
   animation-delay: -2s;
 }
 @keyframes beam {
@@ -809,9 +809,9 @@ input[type=number] {
   }
 }
 .brightness .beams .beam5 {
-  width: 700px;
-  height: 20px;
-  transform: rotate(-24deg);
+  width: 600px;
+  height: 15px;
+  transform: rotate(-36deg);
   animation-delay: -2.5s;
 }
 @keyframes beam {
@@ -826,9 +826,9 @@ input[type=number] {
   }
 }
 .brightness .beams .beam6 {
-  width: 600px;
+  width: 500px;
   height: 5px;
-  transform: rotate(-48deg);
+  transform: rotate(-72deg);
   animation-delay: -3s;
 }
 @keyframes beam {
@@ -863,14 +863,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-300px, 90px);
+    transform: translate(-60px, 60px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-100px, 300px);
+    transform: translate(-350px, 200px);
   }
 }
 .brightness .shines .shine2 {
@@ -883,14 +883,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-180px, 90px);
+    transform: translate(-240px, 210px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-300px, 300px);
+    transform: translate(-250px, 50px);
   }
 }
 .brightness .shines .shine3 {
@@ -903,14 +903,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-300px, 30px);
+    transform: translate(-300px, 120px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-350px, 350px);
+    transform: translate(-250px, 100px);
   }
 }
 .brightness .shines .shine4 {
@@ -923,14 +923,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-180px, 30px);
+    transform: translate(-120px, 210px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-300px, 200px);
+    transform: translate(-500px, 100px);
   }
 }
 .brightness .shines .shine5 {
@@ -943,14 +943,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-270px, 30px);
+    transform: translate(-120px, 180px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-150px, 300px);
+    transform: translate(-300px, 350px);
   }
 }
 .brightness .shines .shine6 {
@@ -963,14 +963,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-60px, 90px);
+    transform: translate(-270px, 180px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-100px, 250px);
+    transform: translate(-150px, 300px);
   }
 }
 .brightness .shines .shine7 {
@@ -983,14 +983,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-270px, 60px);
+    transform: translate(-270px, 90px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-200px, 150px);
+    transform: translate(-500px, 300px);
   }
 }
 .brightness .shines .shine8 {
@@ -1003,14 +1003,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-240px, 210px);
+    transform: translate(-150px, 150px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-400px, 250px);
+    transform: translate(-450px, 50px);
   }
 }
 .brightness .shines .shine9 {
@@ -1023,14 +1023,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-150px, 150px);
+    transform: translate(-240px, 90px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-100px, 250px);
+    transform: translate(-250px, 500px);
   }
 }
 .brightness .shines .shine10 {
@@ -1043,14 +1043,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-30px, 120px);
+    transform: translate(-90px, 60px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-450px, 50px);
+    transform: translate(-100px, 50px);
   }
 }
 
@@ -2661,11 +2661,11 @@ input[type=number] {
   }
   100% {
     opacity: 0;
-    transform: translate(300px, 27px);
+    transform: translate(300px, 3px);
   }
 }
 .showArea_calendar .sidebar_calendar button .brightLight .dot2 {
-  top: 15px;
+  top: 18px;
   animation: dot2 8s infinite;
   animation-delay: -3s;
 }
@@ -2681,11 +2681,11 @@ input[type=number] {
   }
   100% {
     opacity: 0;
-    transform: translate(300px, 27px);
+    transform: translate(300px, 6px);
   }
 }
 .showArea_calendar .sidebar_calendar button .brightLight .dot3 {
-  top: 21px;
+  top: 12px;
   animation: dot3 8s infinite;
   animation-delay: -4.5s;
 }
@@ -2701,11 +2701,11 @@ input[type=number] {
   }
   100% {
     opacity: 0;
-    transform: translate(300px, 24px);
+    transform: translate(300px, 15px);
   }
 }
 .showArea_calendar .sidebar_calendar button .brightLight .dot4 {
-  top: 9px;
+  top: 3px;
   animation: dot4 8s infinite;
   animation-delay: -6s;
 }
@@ -2721,11 +2721,11 @@ input[type=number] {
   }
   100% {
     opacity: 0;
-    transform: translate(300px, 12px);
+    transform: translate(300px, 6px);
   }
 }
 .showArea_calendar .sidebar_calendar button .brightLight .dot5 {
-  top: 21px;
+  top: 12px;
   animation: dot5 8s infinite;
   animation-delay: -7.5s;
 }
@@ -2741,11 +2741,11 @@ input[type=number] {
   }
   100% {
     opacity: 0;
-    transform: translate(300px, 9px);
+    transform: translate(300px, 27px);
   }
 }
 .showArea_calendar .sidebar_calendar button .brightLight .dot6 {
-  top: 12px;
+  top: 15px;
   animation: dot6 8s infinite;
   animation-delay: -9s;
 }
@@ -2761,11 +2761,11 @@ input[type=number] {
   }
   100% {
     opacity: 0;
-    transform: translate(300px, 21px);
+    transform: translate(300px, 27px);
   }
 }
 .showArea_calendar .sidebar_calendar button .brightLight .dot7 {
-  top: 21px;
+  top: 6px;
   animation: dot7 8s infinite;
   animation-delay: -10.5s;
 }
@@ -2781,11 +2781,11 @@ input[type=number] {
   }
   100% {
     opacity: 0;
-    transform: translate(300px, 15px);
+    transform: translate(300px, 24px);
   }
 }
 .showArea_calendar .sidebar_calendar button .brightLight .dot8 {
-  top: 18px;
+  top: 9px;
   animation: dot8 8s infinite;
   animation-delay: -12s;
 }
@@ -2801,11 +2801,11 @@ input[type=number] {
   }
   100% {
     opacity: 0;
-    transform: translate(300px, 30px);
+    transform: translate(300px, 24px);
   }
 }
 .showArea_calendar .sidebar_calendar button .brightLight .dot9 {
-  top: 6px;
+  top: 3px;
   animation: dot9 8s infinite;
   animation-delay: -13.5s;
 }
@@ -2825,7 +2825,7 @@ input[type=number] {
   }
 }
 .showArea_calendar .sidebar_calendar button .brightLight .dot10 {
-  top: 9px;
+  top: 12px;
   animation: dot10 8s infinite;
   animation-delay: -15s;
 }
@@ -2841,7 +2841,7 @@ input[type=number] {
   }
   100% {
     opacity: 0;
-    transform: translate(300px, 30px);
+    transform: translate(300px, 15px);
   }
 }
 .showArea_calendar .sidebar_calendar button .brightLight [class^=bean] {
@@ -2854,7 +2854,7 @@ input[type=number] {
   filter: blur(1px);
 }
 .showArea_calendar .sidebar_calendar button .brightLight .bean1 {
-  top: 21px;
+  top: 7px;
   animation: bean1 1s infinite;
   animation-delay: -0.7s;
 }
@@ -2870,11 +2870,11 @@ input[type=number] {
   }
   100% {
     opacity: 0;
-    transform: translate(200px, 2px);
+    transform: translate(200px, 1px);
   }
 }
 .showArea_calendar .sidebar_calendar button .brightLight .bean2 {
-  top: 21px;
+  top: 14px;
   animation: bean2 1s infinite;
   animation-delay: -1.4s;
 }
@@ -2890,11 +2890,11 @@ input[type=number] {
   }
   100% {
     opacity: 0;
-    transform: translate(200px, 4px);
+    transform: translate(200px, 3px);
   }
 }
 .showArea_calendar .sidebar_calendar button .brightLight .bean3 {
-  top: 21px;
+  top: 7px;
   animation: bean3 1s infinite;
   animation-delay: -2.1s;
 }
@@ -2910,7 +2910,7 @@ input[type=number] {
   }
   100% {
     opacity: 0;
-    transform: translate(200px, 6px);
+    transform: translate(200px, 3px);
   }
 }
 .showArea_calendar .sidebar_calendar button .brightLight .bean4 {
@@ -2934,7 +2934,7 @@ input[type=number] {
   }
 }
 .showArea_calendar .sidebar_calendar button .brightLight .bean5 {
-  top: 7px;
+  top: 21px;
   animation: bean5 1s infinite;
   animation-delay: -3.5s;
 }
@@ -2950,7 +2950,7 @@ input[type=number] {
   }
   100% {
     opacity: 0;
-    transform: translate(200px, 5px);
+    transform: translate(200px, 1px);
   }
 }
 .showArea_calendar .sidebar_calendar button .brightLight .bean6 {
@@ -2970,7 +2970,7 @@ input[type=number] {
   }
   100% {
     opacity: 0;
-    transform: translate(200px, 5px);
+    transform: translate(200px, 2px);
   }
 }
 
@@ -3183,8 +3183,6 @@ input[type=number] {
 .linksPageBox .showLinksType {
   position: relative;
   display: flex;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
   width: fit-content;
   margin-top: 200px;
   padding: 8px 10px;
@@ -3620,8 +3618,6 @@ input[type=number] {
 }
 .notesPageBox .noteList ul li .book .firstPage .bookTitle {
   display: block;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
   width: fit-content;
   margin: auto;
   margin-top: 25px;
@@ -3671,7 +3667,6 @@ input[type=number] {
 .notesPageBox .noteList ul li .noteTitle {
   position: relative;
   max-width: 100%;
-  width: -webkit-max-content;
   width: max-content;
   color: #FFF;
   margin: auto;
@@ -4658,8 +4653,6 @@ input[type=number] {
 .musicPageBox .controler .setting {
   position: absolute;
   display: flex;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
   width: fit-content;
   bottom: -37px;
   left: 8px;
@@ -4912,7 +4905,6 @@ input[type=number] {
 .musicPageBox .albumList ul li p {
   position: relative;
   max-width: 100%;
-  width: -webkit-max-content;
   width: max-content;
   color: #FFF;
   margin: auto;
@@ -5038,8 +5030,6 @@ input[type=number] {
 .musicPageBox .playList .rightArea .albumBox {
   position: relative;
   display: flex;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
   width: fit-content;
   padding: 20px 0 300px 0;
   margin-top: 100px;
