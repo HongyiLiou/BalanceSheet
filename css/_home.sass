@@ -51,13 +51,14 @@
 // 彈窗容器
 [class^='popupBox']
     +ab_center
+    position: fixed
     z-index: 3
 
 .popupBox_checkMessage, .popupBox_addMusic
     // display: none
     max-width: 300px
     padding: 25px 50px
-    background: rgba(#000, 0.8)
+    background: rgba(#000, 0.85)
     color: #fafafa
     border-radius: 8px
     box-shadow: 0 5px 8px rgba(#000, 0.5)
@@ -132,7 +133,7 @@
             cursor: pointer
             white-space: nowrap
             outline: none
-            transition: 0.3s
+            transition: 0.1s
 
             &:hover
                 background: #3a3a3a
@@ -523,7 +524,7 @@
                 background: #111
                 cursor: pointer
                 outline: none
-                transition: 0.3s
+                transition: 0.1s
 
                 &:hover
                     background: #3a3a3a
@@ -556,7 +557,7 @@
     .mainBackground
         background: #FFF
     .popupBox_checkMessage, .popupBox_addMusic
-        background: rgba(#FFF, 0.8)
+        background: rgba(#FFF, 0.9)
         color: #000
         box-shadow: 0 5px 8px rgba(#000, 0.5)
         .inputArea

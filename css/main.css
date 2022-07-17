@@ -191,7 +191,7 @@ input[type=number] {
 }
 .loginPageBox .userArea .remember .checkHolder::before {
   display: none;
-  content: "";
+  content: "\f00c";
   position: absolute;
   width: 100%;
   height: 100%;
@@ -359,13 +359,14 @@ input[type=number] {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  position: fixed;
   z-index: 3;
 }
 
 .popupBox_checkMessage, .popupBox_addMusic {
   max-width: 300px;
   padding: 25px 50px;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.85);
   color: #fafafa;
   border-radius: 8px;
   box-shadow: 0 5px 8px rgba(0, 0, 0, 0.5);
@@ -440,7 +441,7 @@ input[type=number] {
   cursor: pointer;
   white-space: nowrap;
   outline: none;
-  transition: 0.3s;
+  transition: 0.1s;
 }
 .popupBox_checkMessage .buttonArea button:hover, .popupBox_addMusic .buttonArea button:hover {
   background: #3a3a3a;
@@ -741,9 +742,9 @@ input[type=number] {
   animation: beam 3s infinite;
 }
 .brightness .beams .beam1 {
-  width: 550px;
-  height: 25px;
-  transform: rotate(-24deg);
+  width: 650px;
+  height: 30px;
+  transform: rotate(-48deg);
   animation-delay: -0.5s;
 }
 @keyframes beam {
@@ -758,9 +759,9 @@ input[type=number] {
   }
 }
 .brightness .beams .beam2 {
-  width: 700px;
-  height: 10px;
-  transform: rotate(-48deg);
+  width: 550px;
+  height: 15px;
+  transform: rotate(-24deg);
   animation-delay: -1s;
 }
 @keyframes beam {
@@ -776,8 +777,8 @@ input[type=number] {
 }
 .brightness .beams .beam3 {
   width: 500px;
-  height: 15px;
-  transform: rotate(-72deg);
+  height: 25px;
+  transform: rotate(-48deg);
   animation-delay: -1.5s;
 }
 @keyframes beam {
@@ -792,9 +793,9 @@ input[type=number] {
   }
 }
 .brightness .beams .beam4 {
-  width: 600px;
-  height: 25px;
-  transform: rotate(-36deg);
+  width: 450px;
+  height: 5px;
+  transform: rotate(-24deg);
   animation-delay: -2s;
 }
 @keyframes beam {
@@ -809,9 +810,9 @@ input[type=number] {
   }
 }
 .brightness .beams .beam5 {
-  width: 600px;
-  height: 15px;
-  transform: rotate(-36deg);
+  width: 550px;
+  height: 20px;
+  transform: rotate(-24deg);
   animation-delay: -2.5s;
 }
 @keyframes beam {
@@ -826,9 +827,9 @@ input[type=number] {
   }
 }
 .brightness .beams .beam6 {
-  width: 500px;
-  height: 5px;
-  transform: rotate(-72deg);
+  width: 550px;
+  height: 20px;
+  transform: rotate(-60deg);
   animation-delay: -3s;
 }
 @keyframes beam {
@@ -863,14 +864,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-60px, 60px);
+    transform: translate(-120px, 60px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-350px, 200px);
+    transform: translate(-500px, 450px);
   }
 }
 .brightness .shines .shine2 {
@@ -883,14 +884,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-240px, 210px);
+    transform: translate(-150px, 300px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-250px, 50px);
+    transform: translate(-300px, 350px);
   }
 }
 .brightness .shines .shine3 {
@@ -903,14 +904,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-300px, 120px);
+    transform: translate(-180px, 90px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-250px, 100px);
+    transform: translate(-150px, 250px);
   }
 }
 .brightness .shines .shine4 {
@@ -923,14 +924,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-120px, 210px);
+    transform: translate(-120px, 300px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-500px, 100px);
+    transform: translate(-300px, 150px);
   }
 }
 .brightness .shines .shine5 {
@@ -943,14 +944,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-120px, 180px);
+    transform: translate(-30px, 90px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-300px, 350px);
+    transform: translate(-300px, 250px);
   }
 }
 .brightness .shines .shine6 {
@@ -963,14 +964,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-270px, 180px);
+    transform: translate(-150px, 90px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-150px, 300px);
+    transform: translate(-150px, 500px);
   }
 }
 .brightness .shines .shine7 {
@@ -983,14 +984,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-270px, 90px);
+    transform: translate(-300px, 300px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-500px, 300px);
+    transform: translate(-100px, 200px);
   }
 }
 .brightness .shines .shine8 {
@@ -1003,14 +1004,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-150px, 150px);
+    transform: translate(-120px, 240px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-450px, 50px);
+    transform: translate(-350px, 50px);
   }
 }
 .brightness .shines .shine9 {
@@ -1023,14 +1024,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-240px, 90px);
+    transform: translate(-90px, 90px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-250px, 500px);
+    transform: translate(-450px, 300px);
   }
 }
 .brightness .shines .shine10 {
@@ -1043,14 +1044,14 @@ input[type=number] {
   }
   30% {
     opacity: 1;
-    transform: translate(-90px, 60px);
+    transform: translate(-90px, 270px);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(-100px, 50px);
+    transform: translate(-200px, 50px);
   }
 }
 
@@ -1121,7 +1122,7 @@ input[type=number] {
   background: #111;
   cursor: pointer;
   outline: none;
-  transition: 0.3s;
+  transition: 0.1s;
 }
 .homePageBox .clock .alarmClockArea button:hover {
   background: #3a3a3a;
@@ -1131,7 +1132,7 @@ input[type=number] {
   background: #666666;
 }
 .homePageBox .clock .alarmClockArea button::before {
-  content: "";
+  content: "\f0f3";
   font-family: FontAwesome;
   margin-right: 5px;
 }
@@ -1142,7 +1143,7 @@ input[type=number] {
   cursor: pointer;
 }
 .homePageBox .clock .alarmClockArea .clockText::before {
-  content: "";
+  content: "\f0f3";
   font-family: FontAwesome;
   margin-right: 5px;
 }
@@ -1151,7 +1152,7 @@ input[type=number] {
   background: #FFF;
 }
 .lightTheme .popupBox_checkMessage, .lightTheme .popupBox_addMusic {
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.9);
   color: #000;
   box-shadow: 0 5px 8px rgba(0, 0, 0, 0.5);
 }
@@ -1506,7 +1507,7 @@ input[type=number] {
   background: rgba(255, 255, 255, 0.6);
   outline: none;
   white-space: nowrap;
-  transition: 0.2s;
+  transition: 0.1s;
   cursor: pointer;
 }
 .showListArea .container header .editBtn:hover {
@@ -1523,7 +1524,7 @@ input[type=number] {
 .showListArea .container ul li {
   position: relative;
   display: flex;
-  padding: 0 30px;
+  padding: 0 15px;
   color: #FFF;
   line-height: 40px;
   transition: 0.3s;
@@ -1551,7 +1552,7 @@ input[type=number] {
   padding: 0;
 }
 .showListArea .container ul li.total .allTotal {
-  width: 50%;
+  width: 100%;
   height: 30px;
   display: flex;
   justify-content: space-between;
@@ -1582,25 +1583,83 @@ input[type=number] {
 .showListArea .container ul ol::-webkit-scrollbar {
   display: none;
 }
+.showListArea .container ul ol li::before {
+  pointer-events: none;
+}
 .showListArea .container ul ol li:nth-child(odd)::before {
   background: linear-gradient(to right, rgba(0, 0, 0, 0.5), transparent);
 }
 .showListArea .container ul ol li:nth-child(even)::before {
   background: linear-gradient(to left, rgba(0, 0, 0, 0.5), transparent);
 }
-.showListArea .container ul .item {
+.showListArea .container ul ol .plusBtn {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  float: right;
+  background: rgba(0, 0, 0, 0.8);
+  cursor: pointer;
+}
+.showListArea .container ul ol .plusBtn::before, .showListArea .container ul ol .plusBtn::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 2px;
+  background: #FFF;
+  top: 50%;
+  left: 50%;
+  transform-origin: center center;
+  transform: translate(-50%, -50%);
+}
+.showListArea .container ul ol .plusBtn::after {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+.showListArea .container ul p {
+  position: relative;
+}
+.showListArea .container ul p.item {
   width: 50%;
   padding-right: 5px;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-.showListArea .container ul .type {
+.showListArea .container ul p.type {
   width: 15%;
 }
-.showListArea .container ul .amount {
+.showListArea .container ul p.type select {
+  opacity: 0 !important;
+  background: #000 !important;
+}
+.showListArea .container ul p.amount {
   text-align: right;
   width: 35%;
+}
+.showListArea .container ul p.amount input {
+  text-align: right;
+}
+.showListArea .container ul p.isEditing {
+  color: transparent !important;
+  text-shadow: none !important;
+}
+.showListArea .container ul p.isEditing input {
+  opacity: 1;
+}
+.showListArea .container ul input, .showListArea .container ul select {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0;
+  font-size: 100%;
+  font-weight: 700;
+  color: #FFF;
+  background: transparent;
+  border: none;
+  outline: none;
+  opacity: 0;
+  cursor: pointer;
 }
 
 .editPopup {
@@ -1822,7 +1881,7 @@ input[type=number] {
 }
 .editPopup .toggleSwitch::before {
   position: absolute;
-  content: "";
+  content: "\f185";
   display: block;
   left: -35px;
   top: 50%;
@@ -1836,7 +1895,7 @@ input[type=number] {
 }
 .editPopup .toggleSwitch::after {
   position: absolute;
-  content: "";
+  content: "\f186";
   display: block;
   right: -35px;
   top: 50%;
@@ -1996,11 +2055,19 @@ input[type=number] {
   text-shadow: 0 0 5px #FFF;
   font-weight: 600;
 }
+.lightTheme .showListArea .container ul li p.type select {
+  opacity: 0 !important;
+  background: #FFF !important;
+}
 .lightTheme .showListArea .container ul ol li:nth-child(odd)::before {
   background: linear-gradient(to right, rgba(255, 255, 255, 0.5), transparent);
 }
 .lightTheme .showListArea .container ul ol li:nth-child(even)::before {
   background: linear-gradient(to left, rgba(255, 255, 255, 0.5), transparent);
+}
+.lightTheme .showListArea .container ul input, .lightTheme .showListArea .container ul select {
+  color: #111;
+  font-weight: 900;
 }
 
 @media screen and (max-width: 1400px) {
@@ -2085,7 +2152,7 @@ input[type=number] {
   }
   .balanceSheetBox .showListArea .container ul li.total .allTotal {
     position: absolute;
-    width: 75vw;
+    width: 90vw;
     bottom: -40px;
     left: 50%;
     flex-wrap: nowrap;
@@ -2214,7 +2281,7 @@ input[type=number] {
   justify-content: space-between;
 }
 .calendarPageBox .selectArea .calender .userSelectArea .weekDays p {
-  width: calc(100% / 7 - 1px);
+  width: calc(14.2857142857% - 1px);
   margin: 0 1px 1px 0;
   background: rgba(0, 0, 0, 0.7);
   text-align: center;
@@ -2235,7 +2302,7 @@ input[type=number] {
   display: flex;
   padding-bottom: 8%;
   margin: 0 1px 1px 0;
-  width: calc(100% / 7 - 1px);
+  width: calc(14.2857142857% - 1px);
   align-items: center;
   justify-content: center;
   font-size: 90%;
@@ -2310,7 +2377,7 @@ input[type=number] {
   justify-content: flex-start;
 }
 .calendarPageBox .selectArea .calender .selectYearArea ul li, .calendarPageBox .selectArea .calender .selectMonthArea ul li {
-  width: calc(100% / 3 - 1px);
+  width: calc(33.3333333333% - 1px);
   height: 100px;
   background: rgba(0, 0, 0, 0.65);
   color: #FFF;
@@ -2645,7 +2712,7 @@ input[type=number] {
   filter: blur(1px);
 }
 .showArea_calendar .sidebar_calendar button .brightLight .dot1 {
-  top: 21px;
+  top: 6px;
   animation: dot1 8s infinite;
   animation-delay: -1.5s;
 }
@@ -2661,11 +2728,11 @@ input[type=number] {
   }
   100% {
     opacity: 0;
-    transform: translate(300px, 3px);
+    transform: translate(300px, 9px);
   }
 }
 .showArea_calendar .sidebar_calendar button .brightLight .dot2 {
-  top: 18px;
+  top: 6px;
   animation: dot2 8s infinite;
   animation-delay: -3s;
 }
@@ -2681,11 +2748,11 @@ input[type=number] {
   }
   100% {
     opacity: 0;
-    transform: translate(300px, 6px);
+    transform: translate(300px, 27px);
   }
 }
 .showArea_calendar .sidebar_calendar button .brightLight .dot3 {
-  top: 12px;
+  top: 15px;
   animation: dot3 8s infinite;
   animation-delay: -4.5s;
 }
@@ -2701,11 +2768,11 @@ input[type=number] {
   }
   100% {
     opacity: 0;
-    transform: translate(300px, 15px);
+    transform: translate(300px, 9px);
   }
 }
 .showArea_calendar .sidebar_calendar button .brightLight .dot4 {
-  top: 3px;
+  top: 15px;
   animation: dot4 8s infinite;
   animation-delay: -6s;
 }
@@ -2721,11 +2788,11 @@ input[type=number] {
   }
   100% {
     opacity: 0;
-    transform: translate(300px, 6px);
+    transform: translate(300px, 12px);
   }
 }
 .showArea_calendar .sidebar_calendar button .brightLight .dot5 {
-  top: 12px;
+  top: 9px;
   animation: dot5 8s infinite;
   animation-delay: -7.5s;
 }
@@ -2745,7 +2812,7 @@ input[type=number] {
   }
 }
 .showArea_calendar .sidebar_calendar button .brightLight .dot6 {
-  top: 15px;
+  top: 12px;
   animation: dot6 8s infinite;
   animation-delay: -9s;
 }
@@ -2761,11 +2828,11 @@ input[type=number] {
   }
   100% {
     opacity: 0;
-    transform: translate(300px, 27px);
+    transform: translate(300px, 21px);
   }
 }
 .showArea_calendar .sidebar_calendar button .brightLight .dot7 {
-  top: 6px;
+  top: 3px;
   animation: dot7 8s infinite;
   animation-delay: -10.5s;
 }
@@ -2781,11 +2848,11 @@ input[type=number] {
   }
   100% {
     opacity: 0;
-    transform: translate(300px, 24px);
+    transform: translate(300px, 30px);
   }
 }
 .showArea_calendar .sidebar_calendar button .brightLight .dot8 {
-  top: 9px;
+  top: 21px;
   animation: dot8 8s infinite;
   animation-delay: -12s;
 }
@@ -2801,11 +2868,11 @@ input[type=number] {
   }
   100% {
     opacity: 0;
-    transform: translate(300px, 24px);
+    transform: translate(300px, 21px);
   }
 }
 .showArea_calendar .sidebar_calendar button .brightLight .dot9 {
-  top: 3px;
+  top: 18px;
   animation: dot9 8s infinite;
   animation-delay: -13.5s;
 }
@@ -2821,7 +2888,7 @@ input[type=number] {
   }
   100% {
     opacity: 0;
-    transform: translate(300px, 30px);
+    transform: translate(300px, 18px);
   }
 }
 .showArea_calendar .sidebar_calendar button .brightLight .dot10 {
@@ -2841,7 +2908,7 @@ input[type=number] {
   }
   100% {
     opacity: 0;
-    transform: translate(300px, 15px);
+    transform: translate(300px, 12px);
   }
 }
 .showArea_calendar .sidebar_calendar button .brightLight [class^=bean] {
@@ -2854,7 +2921,7 @@ input[type=number] {
   filter: blur(1px);
 }
 .showArea_calendar .sidebar_calendar button .brightLight .bean1 {
-  top: 7px;
+  top: 21px;
   animation: bean1 1s infinite;
   animation-delay: -0.7s;
 }
@@ -2870,11 +2937,11 @@ input[type=number] {
   }
   100% {
     opacity: 0;
-    transform: translate(200px, 1px);
+    transform: translate(200px, 6px);
   }
 }
 .showArea_calendar .sidebar_calendar button .brightLight .bean2 {
-  top: 14px;
+  top: 21px;
   animation: bean2 1s infinite;
   animation-delay: -1.4s;
 }
@@ -2890,11 +2957,11 @@ input[type=number] {
   }
   100% {
     opacity: 0;
-    transform: translate(200px, 3px);
+    transform: translate(200px, 2px);
   }
 }
 .showArea_calendar .sidebar_calendar button .brightLight .bean3 {
-  top: 7px;
+  top: 14px;
   animation: bean3 1s infinite;
   animation-delay: -2.1s;
 }
@@ -2910,7 +2977,7 @@ input[type=number] {
   }
   100% {
     opacity: 0;
-    transform: translate(200px, 3px);
+    transform: translate(200px, 1px);
   }
 }
 .showArea_calendar .sidebar_calendar button .brightLight .bean4 {
@@ -2930,11 +2997,11 @@ input[type=number] {
   }
   100% {
     opacity: 0;
-    transform: translate(200px, 4px);
+    transform: translate(200px, 3px);
   }
 }
 .showArea_calendar .sidebar_calendar button .brightLight .bean5 {
-  top: 21px;
+  top: 14px;
   animation: bean5 1s infinite;
   animation-delay: -3.5s;
 }
@@ -2950,11 +3017,11 @@ input[type=number] {
   }
   100% {
     opacity: 0;
-    transform: translate(200px, 1px);
+    transform: translate(200px, 5px);
   }
 }
 .showArea_calendar .sidebar_calendar button .brightLight .bean6 {
-  top: 7px;
+  top: 21px;
   animation: bean6 1s infinite;
   animation-delay: -4.2s;
 }
@@ -2970,7 +3037,7 @@ input[type=number] {
   }
   100% {
     opacity: 0;
-    transform: translate(200px, 2px);
+    transform: translate(200px, 5px);
   }
 }
 
@@ -3033,7 +3100,7 @@ input[type=number] {
   color: #000;
 }
 .lightTheme .calendarPageBox .selectArea .calender .selectYearArea ul li, .lightTheme .calendarPageBox .selectArea .calender .selectMonthArea ul li {
-  width: calc(100% / 3 - 1px);
+  width: calc(33.3333333333% - 1px);
   height: 100px;
   background: rgba(255, 255, 255, 0.65);
   color: #111;
@@ -3215,7 +3282,7 @@ input[type=number] {
 }
 .linksPageBox .showLinksType label .selectedHolder::before {
   display: none;
-  content: "";
+  content: "\f00c";
   position: absolute;
   width: 100%;
   height: 100%;
@@ -3685,7 +3752,7 @@ input[type=number] {
 }
 .notesPageBox .noteList ul li .noteTitle.addNew::after {
   position: absolute;
-  content: "";
+  content: "\f067";
   width: 20px;
   height: 20px;
   display: flex;
@@ -4687,7 +4754,7 @@ input[type=number] {
 }
 .musicPageBox .controler .setting label .selectedHolder::before {
   display: none;
-  content: "";
+  content: "\f00c";
   position: absolute;
   width: 100%;
   height: 100%;
@@ -4852,7 +4919,7 @@ input[type=number] {
   opacity: 1;
 }
 .musicPageBox .albumList ul li .setting::before {
-  content: "";
+  content: "\f142";
   width: 36px;
   height: 36px;
   position: absolute;
@@ -4885,7 +4952,7 @@ input[type=number] {
   background: #a50a0a;
 }
 .musicPageBox .albumList ul li .setting button::before {
-  content: "";
+  content: "\f1f8";
   font-family: FontAwesome;
   color: #FFF;
   text-align: center;
@@ -4900,7 +4967,7 @@ input[type=number] {
   background: #0a86a5;
 }
 .musicPageBox .albumList ul li .setting button.edit::before {
-  content: "";
+  content: "\f040";
 }
 .musicPageBox .albumList ul li p {
   position: relative;
@@ -5009,13 +5076,13 @@ input[type=number] {
   transition: 0.3s;
 }
 .musicPageBox .playList ul li .setting button.play::before {
-  content: "";
+  content: "\f04b";
 }
 .musicPageBox .playList ul li .setting button.edit::before {
-  content: "";
+  content: "\f040";
 }
 .musicPageBox .playList ul li .setting button.delete::before {
-  content: "";
+  content: "\f1f8";
 }
 .musicPageBox .playList .rightArea {
   position: relative;
@@ -5954,7 +6021,7 @@ input[type=number] {
   background: #777;
 }
 .sidebar .topArea .photo .editPhoto::before {
-  content: "";
+  content: "\f030";
   display: flex;
   position: absolute;
   width: 100%;
@@ -6087,28 +6154,31 @@ input[type=number] {
   transition: 0.3s;
 }
 .sidebar .sidebarContent ul li p.login::before {
-  content: "";
+  content: "\f090";
 }
 .sidebar .sidebarContent ul li p.logOut::before {
-  content: "";
+  content: "\f08b";
 }
 .sidebar .sidebarContent ul li p.home::before {
-  content: "";
+  content: "\f015";
 }
 .sidebar .sidebarContent ul li p.balanceSheet::before {
-  content: "";
+  content: "\f200";
+}
+.sidebar .sidebarContent ul li p.balanceSheetPro::before {
+  content: "\f200";
 }
 .sidebar .sidebarContent ul li p.calendar::before {
-  content: "";
+  content: "\f073";
 }
 .sidebar .sidebarContent ul li p.links::before {
-  content: "";
+  content: "\f0c1";
 }
 .sidebar .sidebarContent ul li p.notes::before {
-  content: "";
+  content: "\f02d";
 }
 .sidebar .sidebarContent ul li p.music::before {
-  content: "";
+  content: "\f001";
 }
 .sidebar .sidebarContent ul li .clickCircle {
   width: 5px;
@@ -6170,7 +6240,7 @@ input[type=number] {
 }
 .sidebar .userSettingBtn::before {
   position: absolute;
-  content: "";
+  content: "\f013";
   display: block;
   position: absolute;
   left: 50%;
@@ -6649,7 +6719,7 @@ input[type=number] {
   display: block;
   width: 60px;
   height: 34px;
-  left: calc(45% / 2);
+  left: 22.5%;
   bottom: 16px;
   border-radius: 100px;
   transform: translateX(-50%);
@@ -6659,7 +6729,7 @@ input[type=number] {
 }
 .datePickerBox .toggleSwitch::before {
   position: absolute;
-  content: "";
+  content: "\f185";
   display: block;
   left: -35px;
   top: 50%;
@@ -6673,7 +6743,7 @@ input[type=number] {
 }
 .datePickerBox .toggleSwitch::after {
   position: absolute;
-  content: "";
+  content: "\f186";
   display: block;
   right: -35px;
   top: 50%;

@@ -1,0 +1,267 @@
+
+<article class="balanceSheetBox" id="balanceSheetPro">
+  <div class="screenHolder show" v-if="showDatePicker" @click="toggleDatePickerShow"></div>
+  <date-picker :is-show="showDatePicker" @cancel="toggleDatePickerShow"></date-picker>
+  <section class="userInputArea_date"></section>
+  <section class="showListArea">
+    <div class="container">
+      <header>
+        <button class="editBtn" @click="toggleDatePickerShow">日期</button>
+        <button class="editBtn" style="margin-left: 5px;" @click="toggleDatePickerShow">儲存</button>
+      </header>
+      <ul>
+        <li class="topFix">
+          <p class="item">項目</p>
+          <p class="type">類別</p>
+          <p class="amount">收支金額</p>
+        </li>
+        <ol>
+          <li v-for="(item, index) in formData">
+            <p class="item" :class="{ 'isEditing': item.isEditing === 'item' }">{{ (index + 1) + '. ' + item.item }}
+              <input type="text" :value="item.item" @focus="item.isEditing = 'item'" @blur="item.isEditing = null" @input="onItemInput($event, index)"/>
+            </p>
+            <p class="type">{{ item.type }}
+              <select v-model="item.type" @change="onTypeChange($event, index)">
+                <option>支出</option>
+                <option>收入</option>
+              </select>
+            </p>
+            <p class="amount" :class="{ 'isEditing': item.isEditing === 'price' }">{{ (item.price < 0 ? '-$' : '$') + Math.abs(item.price) }}
+              <input type="number" :value="Math.abs(item.price)" @focus="item.isEditing = 'price'" @blur="onPriceBlur($event, index)" @input="onPriceInput($event, index)"/>
+            </p>
+          </li>
+          <div class="plusBtn" @click="onAddClick"></div>
+        </ol>
+        <li class="total">
+          <div class="allTotal"><span>日合計： -</span><span>月合計： -</span><span>年合計： -</span></div>
+          <p></p>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <section class="editPopup">
+    <button class="closeBtn" onClick="toggleBalanceSheetEdit()">✖</button>
+    <div class="userInputArea_itemList">
+      <ul></ul>
+    </div>
+    <footer>
+      <button class="controlBtn clearBtn" onClick="onClickResetBtn()" title="清除全部">Clear</button>
+      <button class="controlBtn" onClick="onClickAddBtn()" title="新增">Add</button>
+      <button class="controlBtn" onClick="onClickSendBtn()" title="送出">Send</button>
+    </footer>
+    <label class="toggleSwitch" title="主題變更">
+      <input id="toggleInput" type="checkbox"/><span class="slider"></span>
+    </label>
+  </section>
+</article>
+<script id="balanceSheetProDatePicker" type="text/x-template">
+  <div class="popupBox" v-if="datePicker.isShow">
+    <article class="datePickerBox" :class="{'darkTheme': datePicker.theme === 'dark'}">
+      <section class="showArea">
+        <header>
+          <p class="week">星期六</p>
+        </header>
+        <div class="content">
+          <p class="month">Feb</p>
+          <p class="day">16</p>
+          <p class="year">2020</p>
+        </div>
+      </section>
+      <section class="selectArea">
+        <header>
+          <div class="datePicker_year">
+            <p>2020 年</p>
+            <div class="prev"><i class="fa fa-chevron-left"></i></div>
+            <div class="next"><i class="fa fa-chevron-right"></i></div>
+          </div>
+          <div class="datePicker_month">
+            <p>2 月</p>
+            <div class="prev"><i class="fa fa-chevron-left"></i></div>
+            <div class="next"><i class="fa fa-chevron-right"></i></div>
+          </div>
+        </header>
+        <div class="calender">
+          <div class="userSelectArea active">
+            <div class="weekDays">
+              <p>Sun</p>
+              <p>Mon</p>
+              <p>Tue</p>
+              <p>Wes</p>
+              <p>Thu</p>
+              <p>Fri</p>
+              <p>Sat</p>
+            </div>
+            <ul class="datePicker_day">
+              <li class="pointerEventAuto" v-for="item in datePicker.calendarDays" :key="item">{{ item }}</li>
+            </ul>
+          </div>
+          <div class="selectYearArea">
+            <ul>
+              <li>2020</li>
+              <li>2021</li>
+              <li>2022</li>
+            </ul>
+          </div>
+          <div class="selectMonthArea">
+            <ul>
+              <li>1 月</li>
+              <li>2 月</li>
+              <li>3 月</li>
+              <li>4 月</li>
+              <li>5 月</li>
+              <li>6 月</li>
+              <li>7 月</li>
+              <li>8 月</li>
+              <li>9 月</li>
+              <li>10 月</li>
+              <li>11 月</li>
+              <li>12 月</li>
+            </ul>
+          </div>
+        </div>
+        <footer>
+          <button class="todayBtn">Today</button>
+          <button class="cancelBtn" @click="onCancel">Cancel</button>
+          <button class="okBtn">OK</button>
+        </footer>
+      </section>
+      <label class="toggleSwitch">
+        <input id="toggleInput" type="checkbox" v-model="datePicker.isThemeChecked"/><span class="slider"></span>
+      </label>
+    </article>
+  </div>
+</script>
+<script>
+  Vue.component('date-picker', {
+    template: '#balanceSheetProDatePicker',
+    props: {
+      isShow: Boolean,
+    },
+    data: function() {
+      return {
+        datePicker: {
+          theme: 'dark',
+          isThemeChecked: true,
+          isShow: this.isShow,
+          calendarDays: [...Array(42)].map((_, idx) => idx),
+        },
+      };
+    },
+    mounted: function() {
+      setTimeout(() => {
+        this.setTheme();
+      }, 50);
+    },
+    methods: {
+      setTheme: function() {
+        const userTheme = JSON.parse(localStorage.getItem('userSetting')).datePickerTheme;
+        const localTheme = localStorage.getItem('datePickerTheme');
+        const that = this;
+        if (usertheme && userTheme === 'dark') {
+          that.datePicker.theme = 'dark';
+          that.datePicker.isThemeChecked = true;
+        } else if (localTheme && localTheme === 'dark') {
+          that.datePicker.theme = 'dark';
+          that.datePicker.isThemeChecked = true;
+        } else {
+          that.datePicker.theme = 'light';
+          that.datePicker.isThemeChecked = false;
+        }
+        console.log('usertheme', usertheme);
+        console.log('localTheme', localTheme);
+      },
+      changeTheme: function(isChecked) {
+        const that = this;
+        setTimeout(() => {
+          if (isChecked) {
+            that.datePicker.theme = 'dark';
+            localStorage.setItem('datePickerTheme', 'dark');
+            const userSetting = JSON.parse(localStorage.getItem('userSetting'));
+            const accountNumber = JSON.parse(localStorage.getItem('login')).AccountNumber;
+            const parameter = {
+                accountNumber: accountNumber,
+                url: userSetting.userSettingUrl,
+                name: userSetting.userSettingName,
+                functionType: 'post',
+                dataType: 7, // datePickerTheme
+                data: 'dark',
+            }
+            $.get('https://script.google.com/macros/s/AKfycbwKNaOjxPaTafWlrLMB4q9zt0RkAHKc2m9D0StpmXsWqsJvYXy1/exec', parameter)
+          } else {
+            that.datePicker.theme = 'light';
+            localStorage.removeItem('datePickerTheme');
+            const userSetting = JSON.parse(localStorage.getItem('userSetting'));
+            const accountNumber = JSON.parse(localStorage.getItem('login')).AccountNumber;
+            const parameter = {
+                accountNumber: accountNumber,
+                url: userSetting.userSettingUrl,
+                name: userSetting.userSettingName,
+                functionType: 'post',
+                dataType: 7, // datePickerTheme
+                data: 'light',
+            }
+            $.get('https://script.google.com/macros/s/AKfycbwKNaOjxPaTafWlrLMB4q9zt0RkAHKc2m9D0StpmXsWqsJvYXy1/exec', parameter)
+          }
+        }, 50);
+      },
+      onCancel: function() {
+        this.datePicker.isShow = false;
+        this.$emit('cancel');
+        console.log('calendarDays', this.datePicker.calendarDays);
+      },
+    },
+    watch: {
+      'isShow': {
+        handler: function(val) {
+          this.datePicker.isShow = val;
+        }
+      },
+      'datePicker.isThemeChecked': {
+        handler: function(val) {
+          this.changeTheme(val);
+        }
+      },
+    }
+  });
+  
+  //- Balance Sheet Pro
+  new Vue({
+    el: '#balanceSheetPro',
+    data: function() {
+      return {
+        showDatePicker: false,
+        formData: [
+          { item: '', type: '支出', price: 0, isEditing: null },
+        ],
+      };
+    },
+    methods: {
+      toggleDatePickerShow: function() {
+        this.showDatePicker = !this.showDatePicker;
+      },
+      onItemInput: function(e, idx) {
+        const item = e.target.value;
+        this.formData[idx].item = item;
+      },
+      onTypeChange: function(e, idx) {
+        const type = e.target.value;
+        const price = Math.abs(this.formData[idx].price);
+        this.formData[idx].price = type === '收入' ? price : -price;
+      },
+      onPriceInput: function(e, idx) {
+        const price = Math.abs(e.target.value);
+        const type = this.formData[idx].type;
+        this.formData[idx].price = type === '收入' ? price : -price;
+      },
+      onPriceBlur: function(e, idx) {
+        const price = Math.abs(e.target.value);
+        const type = this.formData[idx].type;
+        this.formData[idx].price = type === '收入' ? price : -price;
+        this.formData[idx].isEditing = null;
+      },
+      onAddClick: function() {
+        this.formData.push({ item: '', type: '支出', price: 0, isEditing: null });
+      },
+    },
+  })
+</script>

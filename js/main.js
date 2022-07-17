@@ -59,19 +59,30 @@ function loadPages() {
         }, 0);
     });
 
+    // Balance Sheet Pro Page
+    $('#balanceSheetProPage').load('html/balanceSheetPro.html', function() {
+        const sc = document.createElement('script');
+        sc.src = 'js/balanceSheetPro.js';
+        $('body').append(sc);
+        
+        // setTimeout(() => {
+        //     inititialDate_balanceSheetPro();
+        // }, 50);
+    });
+
     // Calendar Page
     $('#calendarPage').load('html/calendar.html', function() {
         const sc = document.createElement('script');
         sc.src = 'js/calendar.js';
         $('body').append(sc);
 
-        setTimeout(() => {
+        // setTimeout(() => {
             // window.onload = function(){}
             // handleClientLoad();
             // window.onreadystatechange = function() {
             //     if (this.readyState === 'complete') this.onload();
             // }
-        }, 0);
+        // }, 0);
         
     });
 

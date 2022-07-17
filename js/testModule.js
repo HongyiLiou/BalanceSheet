@@ -1,5 +1,4 @@
 
-
 export class testClass {
     constructor() {
 
@@ -7,6 +6,5 @@ export class testClass {
 
     logSomeThing() {
         console.log('模組化測試成功！！');
-        
     }
 }

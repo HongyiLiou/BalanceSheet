@@ -167,9 +167,8 @@ function toggleSwitch_BalanceSheet() {
                     functionType: 'post',
                     dataType: 6, // balanceSheetEditTheme
                     data: 'light',
-                }
-                $.get('https://script.google.com/macros/s/AKfycbwKNaOjxPaTafWlrLMB4q9zt0RkAHKc2m9D0StpmXsWqsJvYXy1/exec', parameter)
-                
+                };
+                $.get('https://script.google.com/macros/s/AKfycbwKNaOjxPaTafWlrLMB4q9zt0RkAHKc2m9D0StpmXsWqsJvYXy1/exec', parameter);
 
             } else {
                 balanceSheetEdit.classList.remove('lightTheme');
@@ -183,8 +182,8 @@ function toggleSwitch_BalanceSheet() {
                     functionType: 'post',
                     dataType: 6, // balanceSheetEditTheme
                     data: 'dark',
-                }
-                $.get('https://script.google.com/macros/s/AKfycbwKNaOjxPaTafWlrLMB4q9zt0RkAHKc2m9D0StpmXsWqsJvYXy1/exec', parameter)
+                };
+                $.get('https://script.google.com/macros/s/AKfycbwKNaOjxPaTafWlrLMB4q9zt0RkAHKc2m9D0StpmXsWqsJvYXy1/exec', parameter);
             }
         }, 50);
     });
@@ -405,7 +404,6 @@ function sendBalanceSheet() {
             showPopupBox(popupObj);
         }
     });
-
 }
 
 
@@ -463,10 +461,9 @@ function sendBalanceSheetDetail() {
         day: Number(dayInput.value) + 1,
     };
 
-    $.get('https://script.google.com/macros/s/AKfycbwC9bl6xw2PIbL6mF0ojN1RqokP_43JtxurpA2839FP80Ih2l19/exec', parameter).done(res => {
+    $.get('https://script.google.com/macros/s/AKfycbwC9bl6xw2PIbL6mF0ojN1RqokP_43JtxurpA2839FP80Ih2l19/exec', parameter).done(() => {
         showLoading(false);
     });
-
 }
 
 
@@ -477,7 +474,6 @@ function sendBalanceSheetDetail() {
 /** 讀取收支表 */
 function getBalanceSheet() {
     showLoading(true);
-    
     
     const userSetting = JSON.parse(localStorage.getItem('userSetting'));
     console.log(userSetting);
@@ -499,9 +495,16 @@ function getBalanceSheet() {
         console.log('balanceSheet', res);
         setBalanceSheetTotal(res);
         showLoading(false);
-        
     });
 
+    const params = {
+        functionType: 'get',
+        userID: 'test',
+        date: '2022/07/03'
+    };
+    $.get('https://script.google.com/macros/s/AKfycbwcYm_WcR94uF5iH9y4kFUJL5Bz6zvCVTJs1R8IZsBzaK9KInMJKbDjAAf93ndaFglqnQ/exec', params).done(res => {
+        console.log('測試 Pro', res);
+    });
 }
 
 
@@ -526,9 +529,7 @@ function getBalanceSheetDetail() {
     $.get('https://script.google.com/macros/s/AKfycbwC9bl6xw2PIbL6mF0ojN1RqokP_43JtxurpA2839FP80Ih2l19/exec', parameter).done(res => {
         console.log('balanceSheetDetail', res);
         setBalanceSheetDetail(res);
-        
         showLoading(false);
-        
     });
 
 }

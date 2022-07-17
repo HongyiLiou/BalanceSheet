@@ -9,8 +9,7 @@ export class test2 {
             test.logSomeThing();
         }, 2000);
 
-        
     }
 }
 
-new test2(); 
+// new test2();

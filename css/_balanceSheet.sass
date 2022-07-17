@@ -96,7 +96,7 @@
                 background: rgba(#FFF, 0.6)
                 outline: none
                 white-space: nowrap
-                transition: 0.2s
+                transition: 0.1s
                 cursor: pointer
                 // transform: translateY(5px)
 
@@ -114,7 +114,7 @@
             li
                 position: relative
                 display: flex
-                padding: 0 30px
+                padding: 0 15px
                 color: #FFF
                 line-height: 40px
                 transition: 0.3s
@@ -140,7 +140,7 @@
                     padding: 0
 
                     .allTotal
-                        +size(50%, 30px)
+                        +size(100%, 30px)
                         display: flex
                         justify-content: space-between
                         align-items: center
@@ -171,6 +171,8 @@
                     display: none
 
                 li
+                    &::before
+                        pointer-events: none
                     &:nth-child(odd)
                         &::before
                             background: linear-gradient(to right, rgba(#000, 0.5), transparent)
@@ -178,17 +180,65 @@
                         &::before
                             background: linear-gradient(to left, rgba(#000, 0.5), transparent)
 
-            .item
-                width: 50%
-                padding-right: 5px
-                overflow: hidden
-                white-space: nowrap
-                text-overflow: ellipsis
-            .type
-                width: 15%
-            .amount
-                text-align: right
-                width: 35%
+                .plusBtn
+                    position: relative
+                    +size(40px, 40px)
+                    float: right
+                    background: rgba(#000, 0.8)
+                    cursor: pointer
+                    &::before, &::after
+                        content: ''
+                        position: absolute
+                        width: 20px
+                        height: 2px
+                        background: #FFF
+                        top: 50%
+                        left: 50%
+                        transform-origin: center center
+                        transform: translate(-50%, -50%)
+                    &::after
+                        transform: translate(-50%, -50%) rotate(90deg)
+
+
+            p
+                position: relative
+                &.item
+                    width: 50%
+                    padding-right: 5px
+                    overflow: hidden
+                    white-space: nowrap
+                    text-overflow: ellipsis
+                &.type
+                    width: 15%
+                    select
+                        opacity: 0 !important
+                        background: #000 !important
+                &.amount
+                    text-align: right
+                    width: 35%
+                    input
+                        text-align: right
+                &.isEditing
+                    color: transparent !important
+                    text-shadow: none !important
+                    input
+                        opacity: 1
+
+            input, select
+                position: absolute
+                top: 0
+                left: 0
+                right: 0
+                bottom: 0
+                padding: 0
+                font-size: 100%
+                font-weight: 700
+                color: #FFF
+                background: transparent
+                border: none
+                outline: none
+                opacity: 0
+                cursor: pointer
 
 
 // 彈窗
@@ -567,6 +617,10 @@
                         color: #111
                         text-shadow: 0 0 5px #FFF
                         font-weight: 600
+                        &.type
+                            select
+                                opacity: 0 !important
+                                background: #FFF !important
                 ol
                     li
                         &:nth-child(odd)
@@ -575,6 +629,9 @@
                         &:nth-child(even)
                             &::before
                                 background: linear-gradient(to left, rgba(#FFF, 0.5), transparent)
+                input, select
+                    color: #111
+                    font-weight: 900
 
 
 
@@ -644,7 +701,7 @@
                             justify-content: flex-end
                             .allTotal
                                 position: absolute
-                                width: 75vw
+                                width: 90vw
                                 bottom: -40px
                                 left: 50%
                                 flex-wrap: nowrap

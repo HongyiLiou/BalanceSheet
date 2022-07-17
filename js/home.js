@@ -4,7 +4,8 @@
 const sidebarList = [
     { name: '登入', id: 'loginPage', class: 'login', selected: true },
     { name: '首頁', id: 'homePage', class: 'home', selected: false },
-    { name: '收支表', id: 'balanceSheetPage', class: 'balanceSheet', selected: false },
+    { name: '收支表 Pro', id: 'balanceSheetProPage', class: 'balanceSheetPro', selected: false },
+    { name: '收支表 (已棄用)', id: 'balanceSheetPage', class: 'balanceSheet', selected: false },
     { name: '行事曆', id: 'calendarPage', class: 'calendar', selected: false },
     { name: '快速連結', id: 'linksPage', class: 'links', selected: false },
     { name: '記事本', id: 'notesPage', class: 'notes', selected: false },
